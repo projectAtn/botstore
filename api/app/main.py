@@ -2,6 +2,9 @@ from enum import Enum
 from typing import Optional
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from sqlmodel import Field, SQLModel, Session, create_engine, select
 
 
@@ -52,11 +55,26 @@ sqlite_file_name = "./botstore.db"
 engine = create_engine(f"sqlite:///{sqlite_file_name}", echo=False)
 
 app = FastAPI(title="BotStore API", version="0.1.0")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.on_event("startup")
 def on_startup() -> None:
     SQLModel.metadata.create_all(engine)
+
+
+app.mount("/web", StaticFiles(directory="../web", html=True), name="web")
+
+
+@app.get("/")
+def root() -> FileResponse:
+    return FileResponse("../web/index.html")
 
 
 @app.get("/health")

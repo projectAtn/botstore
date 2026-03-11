@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BotStore</title>
+  <style>
+    body{font-family:Inter,system-ui,Arial,sans-serif;background:#0b1020;color:#e6e9f5;margin:0}
+    .wrap{max-width:1000px;margin:24px auto;padding:0 16px}
+    .card{background:#141a32;border:1px solid #27315f;border-radius:14px;padding:16px;margin-bottom:16px}
+    h1,h2{margin:0 0 12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+    .pack{background:#11172e;border:1px solid #2a376b;border-radius:12px;padding:12px}
+    button{background:#4c6fff;border:0;color:white;padding:8px 12px;border-radius:10px;cursor:pointer}
+    input,select,textarea{width:100%;margin:6px 0 10px;padding:8px;border-radius:8px;border:1px solid #2a376b;background:#0f1530;color:#e6e9f5}
+    .muted{color:#97a2d3;font-size:13px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .pill{display:inline-block;padding:2px 8px;border-radius:999px;background:#223065;color:#aecdff;font-size:12px;margin-right:6px}
+    .ok{color:#6ee7a3}
+    .err{color:#ff9a9a}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>BotStore MVP</h1>
+  <p class="muted">Install personality and skill packs for your bot kingdom.</p>
+
+  <div class="card">
+    <h2>Publish Pack</h2>
+    <div class="row">
+      <input id="slug" placeholder="slug (e.g. king-gilgamesh)" />
+      <input id="title" placeholder="title" />
+    </div>
+    <div class="row">
+      <select id="type"><option value="personality">personality</option><option value="skill">skill</option><option value="bundle">bundle</option></select>
+      <select id="risk"><option>low</option><option>medium</option><option>high</option></select>
+    </div>
+    <textarea id="desc" rows="3" placeholder="description"></textarea>
+    <button onclick="publishPack()">Publish</button>
+    <div id="publishStatus" class="muted"></div>
+  </div>
+
+  <div class="card">
+    <h2>Catalog</h2>
+    <label class="muted">Filter type</label>
+    <select id="filter" onchange="loadPacks()"><option value="">all</option><option value="personality">personality</option><option value="skill">skill</option><option value="bundle">bundle</option></select>
+    <div id="packs" class="grid"></div>
+  </div>
+
+  <div class="card">
+    <h2>Installs</h2>
+    <div class="row">
+      <input id="userId" value="demo-user" placeholder="user id"/>
+      <button onclick="loadInstalls()">Refresh Installs</button>
+    </div>
+    <div id="installs"></div>
+  </div>
+</div>
+
+<script>
+const API = '';
+async function j(url, options={}) {
+  const r = await fetch(API + url, {headers:{'Content-Type':'application/json'}, ...options});
+  const data = await r.json();
+  if(!r.ok) throw new Error(data.detail || 'Request failed');
+  return data;
+}
+
+async function publishPack(){
+  const payload = {
+    slug: document.getElementById('slug').value.trim(),
+    title: document.getElementById('title').value.trim(),
+    type: document.getElementById('type').value,
+    description: document.getElementById('desc').value.trim(),
+    risk_level: document.getElementById('risk').value
+  };
+  const st = document.getElementById('publishStatus');
+  try {
+    await j('/packs',{method:'POST',body:JSON.stringify(payload)});
+    st.className='ok'; st.textContent='Published.';
+    loadPacks();
+  } catch(e){ st.className='err'; st.textContent=e.message; }
+}
+
+async function installPack(packId){
+  const user_id = document.getElementById('userId').value.trim() || 'demo-user';
+  try{
+    await j('/installs',{method:'POST',body:JSON.stringify({user_id,pack_id:packId})});
+    loadInstalls();
+  }catch(e){alert(e.message)}
+}
+
+async function rollbackInstall(id){
+  try{
+    await j(`/installs/${id}/rollback`,{method:'POST'});
+    loadInstalls();
+  }catch(e){alert(e.message)}
+}
+
+async function loadPacks(){
+  const f = document.getElementById('filter').value;
+  const packs = await j('/packs'+(f?`?type=${f}`:''));
+  const root = document.getElementById('packs');
+  root.innerHTML = '';
+  for(const p of packs){
+    const el = document.createElement('div');
+    el.className='pack';
+    el.innerHTML = `
+      <h3>${p.title}</h3>
+      <div><span class='pill'>${p.type}</span><span class='pill'>risk:${p.risk_level}</span></div>
+      <p class='muted'>${p.description}</p>
+      <button onclick='installPack(${p.id})'>Install</button>
+    `;
+    root.appendChild(el);
+  }
+}
+
+async function loadInstalls(){
+  const user = document.getElementById('userId').value.trim() || 'demo-user';
+  const installs = await j(`/installs?user_id=${encodeURIComponent(user)}`);
+  const root = document.getElementById('installs');
+  root.innerHTML = installs.length ? '' : '<p class="muted">No installs yet.</p>';
+  installs.forEach(i=>{
+    const row = document.createElement('div');
+    row.className='pack';
+    row.innerHTML = `#${i.id} pack:${i.pack_id} version:${i.version} status:${i.status} <button onclick='rollbackInstall(${i.id})'>Rollback</button>`;
+    root.appendChild(row);
+  })
+}
+
+loadPacks(); loadInstalls();
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-from sqlmodel import Session
+from sqlmodel import Session, SQLModel
 from app.main import engine, Pack, PackType
 
 SEED = [
@@ -6,6 +6,8 @@ SEED = [
     Pack(slug="inbox-calendar-ops", title="Inbox & Calendar Operator", type=PackType.skill, description="Email/calendar triage and scheduling workflows", risk_level="medium"),
     Pack(slug="research-analyst", title="Research Analyst", type=PackType.skill, description="Search/summarize/citation workflow", risk_level="low"),
 ]
+
+SQLModel.metadata.create_all(engine)
 
 with Session(engine) as s:
     for p in SEED:
