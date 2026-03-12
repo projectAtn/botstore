@@ -54,7 +54,8 @@
       <input id="scopes" placeholder="scopes CSV e.g. email.read,email.send" />
     </div>
     <label class="muted">Bundle child packs (for bundle type)</label>
-    <select id="bundlePackIds" multiple size="6"></select>
+    <input id="bundleSearch" placeholder="Search packs for bundle..." oninput="filterBundleOptions()" />
+    <div id="bundleChecks" class="pack" style="max-height:180px;overflow:auto"></div>
     <label class="muted"><input id="isFeatured" type="checkbox" /> Mark as featured feature</label>
     <textarea id="desc" rows="3" placeholder="description"></textarea>
     <button onclick="publishPack()">Publish</button>
@@ -127,20 +128,33 @@ async function loadCreators(){
   });
 }
 
+let bundlePackCatalog = [];
+
+function renderBundleOptions(filterText=''){
+  const root = document.getElementById('bundleChecks');
+  const q = (filterText || '').trim().toLowerCase();
+  const checked = new Set(Array.from(document.querySelectorAll('#bundleChecks input[type="checkbox"]:checked')).map(i => i.value));
+  root.innerHTML = '';
+  bundlePackCatalog
+    .filter(p => !q || `${p.id} ${p.title} ${p.type}`.toLowerCase().includes(q))
+    .forEach(p => {
+      const row = document.createElement('label');
+      row.className = 'muted';
+      row.style.display = 'block';
+      const isChecked = checked.has(String(p.id));
+      row.innerHTML = `<input type='checkbox' value='${p.id}' ${isChecked ? 'checked' : ''}/> #${p.id} ${p.title} (${p.type})`;
+      root.appendChild(row);
+    });
+}
+
+function filterBundleOptions(){
+  renderBundleOptions(document.getElementById('bundleSearch').value || '');
+}
+
 async function loadBundlePackOptions(){
   const catalog = await j('/catalog');
-  const sel = document.getElementById('bundlePackIds');
-  const prev = new Set(Array.from(sel.selectedOptions || []).map(o => o.value));
-  sel.innerHTML = '';
-  catalog
-    .filter(p => p.type !== 'bundle')
-    .forEach(p => {
-      const o = document.createElement('option');
-      o.value = p.id;
-      o.textContent = `#${p.id} ${p.title} (${p.type})`;
-      if (prev.has(String(p.id))) o.selected = true;
-      sel.appendChild(o);
-    });
+  bundlePackCatalog = catalog.filter(p => p.type !== 'bundle');
+  renderBundleOptions(document.getElementById('bundleSearch').value || '');
 }
 
 async function createCreator(){
@@ -159,8 +173,8 @@ async function createCreator(){
 
 async function publishPack(){
   const creatorRaw = document.getElementById('creatorSelect').value;
-  const bundleSelected = Array.from(document.getElementById('bundlePackIds').selectedOptions || [])
-    .map(o => Number(o.value))
+  const bundleSelected = Array.from(document.querySelectorAll('#bundleChecks input[type="checkbox"]:checked'))
+    .map(i => Number(i.value))
     .filter(n => Number.isFinite(n) && n > 0);
 
   const payload = {
