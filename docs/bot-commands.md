@@ -1,9 +1,15 @@
 # Bot command mapping (Telegram-ready)
 
-Use this endpoint from your bot backend:
+Use these endpoints from your bot backend:
 
 - `POST /bot/command`
   - body: `{ "user_id": "telegram:<chat_id>", "text": "/store" }`
+- `POST /bot/callback`
+  - body: `{ "user_id": "telegram:<chat_id>", "callback_data": "approve:12" }`
+
+Optional auth hardening:
+- set env `BOTSTORE_BOT_KEY` on server
+- then send header `X-Botstore-Key: <same-value>` to all `/bot/*` endpoints
 
 ## Supported commands
 
@@ -14,7 +20,7 @@ Use this endpoint from your bot backend:
 - `/bundle <bundle-slug>`
   - Installs bundle + defined child packs.
 - `/approvals`
-  - Lists pending approval queue for user.
+  - Lists pending approval queue for user and returns inline button payloads for approve/reject.
 - `/approve <approval-id>`
   - Approves pending approval item.
 - `/reject <approval-id>`

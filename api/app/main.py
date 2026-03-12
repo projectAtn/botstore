@@ -1,7 +1,8 @@
+import os
 from enum import Enum
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -164,6 +165,11 @@ class BotCommandResponse(SQLModel):
     data: dict = {}
 
 
+class BotCallbackRequest(SQLModel):
+    user_id: str
+    callback_data: str
+
+
 class InstallSetup(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     install_id: int = Field(foreign_key="install.id", unique=True, index=True)
@@ -199,6 +205,12 @@ def on_startup() -> None:
 
 
 app.mount("/web", StaticFiles(directory="../web", html=True), name="web")
+
+
+def _enforce_bot_auth(x_botstore_key: Optional[str]) -> None:
+    required = os.getenv("BOTSTORE_BOT_KEY", "").strip()
+    if required and x_botstore_key != required:
+        raise HTTPException(status_code=401, detail="unauthorized bot key")
 
 
 def _scopes_to_csv(scopes: list[str]) -> str:
@@ -335,18 +347,21 @@ def catalog(type: Optional[PackType] = None, featured_only: bool = False) -> lis
 
 
 @app.get("/bot/store", response_model=list[CatalogPack])
-def bot_store(user_id: str, type: Optional[PackType] = None) -> list[CatalogPack]:
+def bot_store(user_id: str, type: Optional[PackType] = None, x_botstore_key: Optional[str] = Header(None)) -> list[CatalogPack]:
+    _enforce_bot_auth(x_botstore_key)
     _ = user_id  # reserved for personalization in later phases
     return catalog(type=type, featured_only=False)
 
 
 @app.get("/bot/open-store-link")
-def bot_open_store_link(user_id: str, base_url: str = "http://127.0.0.1:8787/") -> dict:
+def bot_open_store_link(user_id: str, base_url: str = "http://127.0.0.1:8787/", x_botstore_key: Optional[str] = Header(None)) -> dict:
+    _enforce_bot_auth(x_botstore_key)
     return {"url": f"{base_url}?user_id={user_id}"}
 
 
 @app.post("/bot/install", response_model=InstallResult)
-def bot_install(payload: BotCommandInstallRequest) -> InstallResult:
+def bot_install(payload: BotCommandInstallRequest, x_botstore_key: Optional[str] = Header(None)) -> InstallResult:
+    _enforce_bot_auth(x_botstore_key)
     with Session(engine) as session:
         pack = _pack_by_slug(session, payload.pack_slug)
         if not pack:
@@ -355,7 +370,8 @@ def bot_install(payload: BotCommandInstallRequest) -> InstallResult:
 
 
 @app.post("/bot/install-bundle", response_model=BundleInstallResult)
-def bot_install_bundle(payload: BotCommandBundleInstallRequest) -> BundleInstallResult:
+def bot_install_bundle(payload: BotCommandBundleInstallRequest, x_botstore_key: Optional[str] = Header(None)) -> BundleInstallResult:
+    _enforce_bot_auth(x_botstore_key)
     with Session(engine) as session:
         bundle = _pack_by_slug(session, payload.bundle_slug)
         if not bundle:
@@ -374,17 +390,20 @@ def bot_install_bundle(payload: BotCommandBundleInstallRequest) -> BundleInstall
 
 
 @app.get("/bot/installs", response_model=list[Install])
-def bot_installs(user_id: str) -> list[Install]:
+def bot_installs(user_id: str, x_botstore_key: Optional[str] = Header(None)) -> list[Install]:
+    _enforce_bot_auth(x_botstore_key)
     return list_installs(user_id=user_id)
 
 
 @app.get("/bot/approvals", response_model=list[Approval])
-def bot_approvals(user_id: str, pending_only: bool = True) -> list[Approval]:
+def bot_approvals(user_id: str, pending_only: bool = True, x_botstore_key: Optional[str] = Header(None)) -> list[Approval]:
+    _enforce_bot_auth(x_botstore_key)
     return list_approvals(user_id=user_id, status=ApprovalStatus.pending if pending_only else None)
 
 
 @app.post("/bot/command", response_model=BotCommandResponse)
-def bot_command(payload: BotCommandRequest) -> BotCommandResponse:
+def bot_command(payload: BotCommandRequest, x_botstore_key: Optional[str] = Header(None)) -> BotCommandResponse:
+    _enforce_bot_auth(x_botstore_key)
     text = (payload.text or "").strip()
     if not text:
         return BotCommandResponse(message="Empty command", action="help")
@@ -393,7 +412,7 @@ def bot_command(payload: BotCommandRequest) -> BotCommandResponse:
     cmd = parts[0].lower()
 
     if cmd == "/store":
-        url = bot_open_store_link(user_id=payload.user_id)["url"]
+        url = bot_open_store_link(user_id=payload.user_id, x_botstore_key=x_botstore_key)["url"]
         return BotCommandResponse(
             message="Open store",
             action="open_store",
@@ -403,7 +422,7 @@ def bot_command(payload: BotCommandRequest) -> BotCommandResponse:
     if cmd == "/install":
         if len(parts) < 2:
             return BotCommandResponse(ok=False, message="Usage: /install <pack-slug>", action="help")
-        res = bot_install(BotCommandInstallRequest(user_id=payload.user_id, pack_slug=parts[1]))
+        res = bot_install(BotCommandInstallRequest(user_id=payload.user_id, pack_slug=parts[1]), x_botstore_key=x_botstore_key)
         if res.approval_id:
             return BotCommandResponse(message=f"Install pending approval #{res.approval_id}", action="approval_pending", data={"approval_id": res.approval_id})
         return BotCommandResponse(message=f"Installed {parts[1]}", action="installed", data={"install_id": res.install.id})
@@ -411,17 +430,21 @@ def bot_command(payload: BotCommandRequest) -> BotCommandResponse:
     if cmd == "/bundle":
         if len(parts) < 2:
             return BotCommandResponse(ok=False, message="Usage: /bundle <bundle-slug>", action="help")
-        res = bot_install_bundle(BotCommandBundleInstallRequest(user_id=payload.user_id, bundle_slug=parts[1]))
+        res = bot_install_bundle(BotCommandBundleInstallRequest(user_id=payload.user_id, bundle_slug=parts[1]), x_botstore_key=x_botstore_key)
         pending = len([x for x in res.installs if x.approval_id])
         installed = len([x for x in res.installs if x.install.status == InstallStatus.installed])
         return BotCommandResponse(message=f"Bundle processed: {installed} installed, {pending} pending approvals", action="bundle_installed")
 
     if cmd == "/approvals":
-        approvals = bot_approvals(user_id=payload.user_id, pending_only=True)
+        approvals = bot_approvals(user_id=payload.user_id, pending_only=True, x_botstore_key=x_botstore_key)
         if not approvals:
             return BotCommandResponse(message="No pending approvals", action="approvals")
         summary = ", ".join([f"#{a.id}(pack:{a.pack_id})" for a in approvals])
-        return BotCommandResponse(message=f"Pending approvals: {summary}", action="approvals", data={"count": len(approvals)})
+        buttons = [[
+            {"text": f"✅ Approve #{a.id}", "callback_data": f"approve:{a.id}", "style": "success"},
+            {"text": f"❌ Reject #{a.id}", "callback_data": f"reject:{a.id}", "style": "danger"},
+        ] for a in approvals[:5]]
+        return BotCommandResponse(message=f"Pending approvals: {summary}", action="approvals", data={"count": len(approvals), "buttons": buttons})
 
     if cmd == "/approve":
         if len(parts) < 2 or not parts[1].isdigit():
@@ -438,10 +461,32 @@ def bot_command(payload: BotCommandRequest) -> BotCommandResponse:
         return BotCommandResponse(message=f"Rejected #{approval_id}", action="rejected", data={"approval_id": updated.id})
 
     if cmd == "/installs":
-        installs = bot_installs(user_id=payload.user_id)
+        installs = bot_installs(user_id=payload.user_id, x_botstore_key=x_botstore_key)
         return BotCommandResponse(message=f"Total installs: {len(installs)}", action="installs", data={"count": len(installs)})
 
     return BotCommandResponse(ok=False, message="Unknown command. Use /store, /install <slug>, /bundle <slug>, /approvals, /approve <id>, /reject <id>, /installs", action="help")
+
+
+@app.post("/bot/callback", response_model=BotCommandResponse)
+def bot_callback(payload: BotCallbackRequest, x_botstore_key: Optional[str] = Header(None)) -> BotCommandResponse:
+    _enforce_bot_auth(x_botstore_key)
+    data = (payload.callback_data or "").strip()
+    if data.startswith("install:"):
+        slug = data.split(":", 1)[1]
+        return bot_command(BotCommandRequest(user_id=payload.user_id, text=f"/install {slug}"), x_botstore_key=x_botstore_key)
+    if data.startswith("bundle:"):
+        slug = data.split(":", 1)[1]
+        return bot_command(BotCommandRequest(user_id=payload.user_id, text=f"/bundle {slug}"), x_botstore_key=x_botstore_key)
+    if data.startswith("approve:"):
+        aid = data.split(":", 1)[1]
+        return bot_command(BotCommandRequest(user_id=payload.user_id, text=f"/approve {aid}"), x_botstore_key=x_botstore_key)
+    if data.startswith("reject:"):
+        aid = data.split(":", 1)[1]
+        return bot_command(BotCommandRequest(user_id=payload.user_id, text=f"/reject {aid}"), x_botstore_key=x_botstore_key)
+    if data.startswith("open:"):
+        url = data.split(":", 1)[1]
+        return BotCommandResponse(message=f"Open: {url}", action="open_store", data={"url": url})
+    return BotCommandResponse(ok=False, message="Unknown callback", action="help")
 
 
 def _pack_by_slug(session: Session, slug: str) -> Optional[Pack]:

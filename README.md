@@ -37,6 +37,8 @@ Then open: `http://localhost:8787/docs`
 - `GET /bot/approvals?user_id=<id>&pending_only=true`
 - `GET /bot/open-store-link?user_id=<id>` → returns `/?user_id=<id>` URL for direct webview opening
 - `POST /bot/command` with `{ user_id, text }` for `/store`, `/install`, `/bundle`, `/approvals`, `/approve`, `/reject`, `/installs`
+- `POST /bot/callback` with `{ user_id, callback_data }` for button callbacks (`install:slug`, `bundle:slug`, `approve:id`, `reject:id`, `open:url`)
+- Optional endpoint auth: set `BOTSTORE_BOT_KEY` env var and send `X-Botstore-Key` header on `/bot/*`
 - See `docs/bot-commands.md` for Telegram-ready mapping details
 
 ## Next milestones
