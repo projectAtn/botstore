@@ -63,6 +63,7 @@ class Pack(SQLModel, table=True):
     description: str
     risk_level: str = "low"
     scopes_csv: str = ""
+    bundle_pack_ids_csv: str = ""
     is_featured: bool = False
     creator_id: Optional[int] = Field(default=None, foreign_key="creator.id")
 
@@ -75,6 +76,7 @@ class PackCreate(SQLModel):
     description: str
     risk_level: str = "low"
     scopes: list[str] = []
+    bundle_pack_ids: list[int] = []
     is_featured: bool = False
     creator_id: Optional[int] = None
 
@@ -88,6 +90,7 @@ class CatalogPack(SQLModel):
     description: str
     risk_level: str
     scopes: list[str]
+    bundle_pack_ids: list[int] = []
     requires_approval: bool
     is_featured: bool = False
     creator_id: Optional[int] = None
@@ -186,6 +189,24 @@ def _csv_to_scopes(scopes_csv: str) -> list[str]:
     return [s.strip() for s in scopes_csv.split(",") if s.strip()]
 
 
+def _csv_to_ints(values_csv: str) -> list[int]:
+    if not values_csv:
+        return []
+    out: list[int] = []
+    for raw in values_csv.split(","):
+        raw = raw.strip()
+        if not raw:
+            continue
+        if raw.isdigit():
+            out.append(int(raw))
+    return out
+
+
+def _ints_to_csv(values: list[int]) -> str:
+    uniq = sorted({int(v) for v in values if int(v) > 0})
+    return ",".join(str(v) for v in uniq)
+
+
 def _requires_approval(pack: Pack) -> bool:
     scopes = set(_csv_to_scopes(pack.scopes_csv))
     return pack.risk_level.lower() == "high" or bool(scopes.intersection(SENSITIVE_SCOPES))
@@ -225,6 +246,11 @@ def create_pack(payload: PackCreate) -> Pack:
             raise HTTPException(status_code=409, detail="slug already exists")
         if payload.creator_id and not session.get(Creator, payload.creator_id):
             raise HTTPException(status_code=404, detail="creator not found")
+        if payload.type == PackType.bundle:
+            for child_id in payload.bundle_pack_ids:
+                child = session.get(Pack, child_id)
+                if not child:
+                    raise HTTPException(status_code=404, detail=f"bundle child pack not found: {child_id}")
         pack = Pack(
             slug=payload.slug,
             title=payload.title,
@@ -233,6 +259,7 @@ def create_pack(payload: PackCreate) -> Pack:
             description=payload.description,
             risk_level=payload.risk_level,
             scopes_csv=_scopes_to_csv(payload.scopes),
+            bundle_pack_ids_csv=_ints_to_csv(payload.bundle_pack_ids),
             is_featured=payload.is_featured,
             creator_id=payload.creator_id,
         )
@@ -273,6 +300,7 @@ def catalog(type: Optional[PackType] = None, featured_only: bool = False) -> lis
                     description=p.description,
                     risk_level=p.risk_level,
                     scopes=_csv_to_scopes(p.scopes_csv),
+                    bundle_pack_ids=_csv_to_ints(p.bundle_pack_ids_csv),
                     requires_approval=_requires_approval(p),
                     is_featured=p.is_featured,
                     creator_id=p.creator_id,
@@ -335,6 +363,29 @@ def one_click_install_bundle(payload: BundleInstallCreate) -> BundleInstallResul
             if not pack:
                 raise HTTPException(status_code=404, detail=f"pack not found: {pack_id}")
             installs.append(_create_install(session, payload.user_id, pack))
+        return BundleInstallResult(installs=installs)
+
+
+@app.post("/one-click-install-bundle/{bundle_pack_id}", response_model=BundleInstallResult)
+def one_click_install_bundle_pack(bundle_pack_id: int, user_id: str = "demo-user") -> BundleInstallResult:
+    with Session(engine) as session:
+        bundle = session.get(Pack, bundle_pack_id)
+        if not bundle:
+            raise HTTPException(status_code=404, detail="bundle pack not found")
+        if bundle.type != PackType.bundle:
+            raise HTTPException(status_code=400, detail="pack is not a bundle")
+
+        child_ids = _csv_to_ints(bundle.bundle_pack_ids_csv)
+        if not child_ids:
+            raise HTTPException(status_code=400, detail="bundle has no defined child packs")
+
+        installs: list[InstallResult] = []
+        installs.append(_create_install(session, user_id, bundle))
+        for child_id in child_ids:
+            child = session.get(Pack, child_id)
+            if not child:
+                raise HTTPException(status_code=404, detail=f"bundle child pack not found: {child_id}")
+            installs.append(_create_install(session, user_id, child))
         return BundleInstallResult(installs=installs)
 
 

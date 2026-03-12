@@ -53,6 +53,7 @@
       <select id="creatorSelect"></select>
       <input id="scopes" placeholder="scopes CSV e.g. email.read,email.send" />
     </div>
+    <input id="bundlePackIds" placeholder="bundle child pack IDs CSV (for bundle type), e.g. 1,2,3" />
     <label class="muted"><input id="isFeatured" type="checkbox" /> Mark as featured feature</label>
     <textarea id="desc" rows="3" placeholder="description"></textarea>
     <button onclick="publishPack()">Publish</button>
@@ -148,6 +149,7 @@ async function publishPack(){
     description: document.getElementById('desc').value.trim(),
     risk_level: document.getElementById('risk').value,
     scopes: (document.getElementById('scopes').value || '').split(',').map(s=>s.trim()).filter(Boolean),
+    bundle_pack_ids: (document.getElementById('bundlePackIds').value || '').split(',').map(s=>Number(s.trim())).filter(n=>Number.isFinite(n) && n>0),
     is_featured: document.getElementById('isFeatured').checked,
     creator_id: creatorRaw ? Number(creatorRaw) : null,
   };
@@ -190,24 +192,28 @@ async function oneClickInstall(packId){
   }catch(e){alert(e.message)}
 }
 
-async function oneClickStarterBundle(){
+async function oneClickInstallBundlePack(bundlePackId){
   const user_id = document.getElementById('userId').value.trim() || 'demo-user';
   try{
-    const catalog = await j('/catalog');
-    const personality = catalog.find(p=>p.type==='personality');
-    const skills = catalog.filter(p=>p.type==='skill').slice(0,2);
-    if(!personality || skills.length < 2){
-      alert('Need at least 1 personality and 2 skills in catalog');
-      return;
-    }
-    const payload = { user_id, pack_ids: [personality.id, ...skills.map(s=>s.id)] };
-    const res = await j('/one-click-install-bundle',{method:'POST', body: JSON.stringify(payload)});
+    const res = await j(`/one-click-install-bundle/${bundlePackId}?user_id=${encodeURIComponent(user_id)}`,{method:'POST'});
     const pending = res.installs.filter(x=>x.approval_id).length;
     const installed = res.installs.filter(x=>x.install.status==='installed').length;
     alert(`Bundle installed: ${installed} installed, ${pending} pending approval.`);
     const firstInstalled = res.installs.find(x=>x.install.status==='installed');
     if(firstInstalled) showUndoToast(firstInstalled.install);
     refreshAll();
+  }catch(e){alert(e.message)}
+}
+
+async function oneClickStarterBundle(){
+  try{
+    const catalog = await j('/catalog');
+    const bundle = catalog.find(p=>p.slug==='founder-command-bundle' && p.type==='bundle');
+    if(!bundle){
+      alert('Founder Command Bundle not found');
+      return;
+    }
+    await oneClickInstallBundlePack(bundle.id);
   }catch(e){alert(e.message)}
 }
 
@@ -260,11 +266,14 @@ async function loadFeatured(){
   for(const p of packs){
     const el = document.createElement('div');
     el.className='pack';
+    const action = p.type === 'bundle'
+      ? `<button onclick='oneClickInstallBundlePack(${p.id})'>One-click install bundle</button>`
+      : `<button onclick='oneClickInstall(${p.id})'>One-click install</button>`;
     el.innerHTML = `
       <h3>${p.title}</h3>
       <span class='pill'>${p.type}</span>
       <p class='muted'>${p.description}</p>
-      <button onclick='oneClickInstall(${p.id})'>One-click install</button>
+      ${action}
     `;
     root.appendChild(el);
   }

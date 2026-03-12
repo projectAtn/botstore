@@ -67,4 +67,14 @@ with Session(engine) as s:
             s.add(p)
     s.commit()
 
+    by_slug = {p.slug: p for p in s.exec(select(Pack)).all()}
+    bundle = by_slug.get("founder-command-bundle")
+    gil = by_slug.get("gilgamesh-king")
+    inbox = by_slug.get("inbox-calendar-ops")
+    research = by_slug.get("research-analyst")
+    if bundle and gil and inbox and research:
+        bundle.bundle_pack_ids_csv = f"{gil.id},{inbox.id},{research.id}"
+        s.add(bundle)
+        s.commit()
+
 print("Seed complete")
