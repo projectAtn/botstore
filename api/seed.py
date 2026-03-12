@@ -27,6 +27,7 @@ with Session(engine) as s:
             description="Regal mythic advisor persona",
             risk_level="low",
             scopes_csv="memory.read,memory.write",
+            is_featured=True,
             creator_id=creator_map["Epic Labs"].id,
         ),
         Pack(
@@ -36,6 +37,7 @@ with Session(engine) as s:
             description="Email/calendar triage and scheduling workflows",
             risk_level="medium",
             scopes_csv="calendar.read,calendar.write,email.read,email.send",
+            is_featured=True,
             creator_id=creator_map["Ops Foundry"].id,
         ),
         Pack(

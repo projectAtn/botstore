@@ -53,9 +53,16 @@
       <select id="creatorSelect"></select>
       <input id="scopes" placeholder="scopes CSV e.g. email.read,email.send" />
     </div>
+    <label class="muted"><input id="isFeatured" type="checkbox" /> Mark as featured feature</label>
     <textarea id="desc" rows="3" placeholder="description"></textarea>
     <button onclick="publishPack()">Publish</button>
     <div id="publishStatus" class="muted"></div>
+  </div>
+
+  <div class="card">
+    <h2>One-click featured features</h2>
+    <p class="muted">Install curated features instantly. Sensitive packs still require approval.</p>
+    <div id="featured" class="grid"></div>
   </div>
 
   <div class="card">
@@ -124,6 +131,7 @@ async function publishPack(){
     description: document.getElementById('desc').value.trim(),
     risk_level: document.getElementById('risk').value,
     scopes: (document.getElementById('scopes').value || '').split(',').map(s=>s.trim()).filter(Boolean),
+    is_featured: document.getElementById('isFeatured').checked,
     creator_id: creatorRaw ? Number(creatorRaw) : null,
   };
   const st = document.getElementById('publishStatus');
@@ -145,6 +153,17 @@ async function installPack(packId){
   }catch(e){alert(e.message)}
 }
 
+async function oneClickInstall(packId){
+  const user_id = document.getElementById('userId').value.trim() || 'demo-user';
+  try{
+    const res = await j(`/one-click-install/${packId}?user_id=${encodeURIComponent(user_id)}`,{method:'POST'});
+    if(res.approval_id){
+      alert(`One-click queued approval (#${res.approval_id})`);
+    }
+    refreshAll();
+  }catch(e){alert(e.message)}
+}
+
 async function rollbackInstall(id){
   try{
     await j(`/installs/${id}/rollback`,{method:'POST'});
@@ -157,6 +176,22 @@ async function decideApproval(id, approve){
     await j(`/approvals/${id}/decide`,{method:'POST',body:JSON.stringify({approve,note:approve?'approved in web UI':'rejected in web UI'})});
     refreshAll();
   }catch(e){alert(e.message)}
+}
+
+async function loadFeatured(){
+  const packs = await j('/catalog?featured_only=true');
+  const root = document.getElementById('featured');
+  root.innerHTML = packs.length ? '' : '<p class="muted">No featured features yet.</p>';
+  for(const p of packs){
+    const el = document.createElement('div');
+    el.className='pack';
+    el.innerHTML = `
+      <h3>${p.title}</h3>
+      <p class='muted'>${p.description}</p>
+      <button onclick='oneClickInstall(${p.id})'>One-click install</button>
+    `;
+    root.appendChild(el);
+  }
 }
 
 async function loadPacks(){
@@ -214,6 +249,7 @@ async function loadApprovals(){
 
 async function refreshAll(){
   await loadCreators();
+  await loadFeatured();
   await loadPacks();
   await loadInstalls();
   await loadApprovals();

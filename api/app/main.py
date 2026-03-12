@@ -63,6 +63,7 @@ class Pack(SQLModel, table=True):
     description: str
     risk_level: str = "low"
     scopes_csv: str = ""
+    is_featured: bool = False
     creator_id: Optional[int] = Field(default=None, foreign_key="creator.id")
 
 
@@ -74,6 +75,7 @@ class PackCreate(SQLModel):
     description: str
     risk_level: str = "low"
     scopes: list[str] = []
+    is_featured: bool = False
     creator_id: Optional[int] = None
 
 
@@ -87,6 +89,7 @@ class CatalogPack(SQLModel):
     risk_level: str
     scopes: list[str]
     requires_approval: bool
+    is_featured: bool = False
     creator_id: Optional[int] = None
     creator_name: Optional[str] = None
     creator_verification: Optional[VerificationStatus] = None
@@ -205,6 +208,7 @@ def create_pack(payload: PackCreate) -> Pack:
             description=payload.description,
             risk_level=payload.risk_level,
             scopes_csv=_scopes_to_csv(payload.scopes),
+            is_featured=payload.is_featured,
             creator_id=payload.creator_id,
         )
         session.add(pack)
@@ -223,11 +227,13 @@ def list_packs(type: Optional[PackType] = None) -> list[Pack]:
 
 
 @app.get("/catalog", response_model=list[CatalogPack])
-def catalog(type: Optional[PackType] = None) -> list[CatalogPack]:
+def catalog(type: Optional[PackType] = None, featured_only: bool = False) -> list[CatalogPack]:
     with Session(engine) as session:
         query = select(Pack)
         if type:
             query = query.where(Pack.type == type)
+        if featured_only:
+            query = query.where(Pack.is_featured == True)
         packs = list(session.exec(query).all())
         out: list[CatalogPack] = []
         for p in packs:
@@ -243,6 +249,7 @@ def catalog(type: Optional[PackType] = None) -> list[CatalogPack]:
                     risk_level=p.risk_level,
                     scopes=_csv_to_scopes(p.scopes_csv),
                     requires_approval=_requires_approval(p),
+                    is_featured=p.is_featured,
                     creator_id=p.creator_id,
                     creator_name=creator.name if creator else None,
                     creator_verification=creator.verification if creator else None,
@@ -252,33 +259,46 @@ def catalog(type: Optional[PackType] = None) -> list[CatalogPack]:
         return out
 
 
+def _create_install(session: Session, user_id: str, pack: Pack) -> InstallResult:
+    needs_approval = _requires_approval(pack)
+    status = InstallStatus.pending_approval if needs_approval else InstallStatus.installed
+    install = Install(
+        user_id=user_id,
+        pack_id=pack.id or 0,
+        version=pack.version,
+        status=status,
+        approval_required=needs_approval,
+    )
+    session.add(install)
+    session.commit()
+    session.refresh(install)
+
+    approval_id = None
+    if needs_approval:
+        approval = Approval(install_id=install.id or 0, user_id=user_id, pack_id=pack.id or 0)
+        session.add(approval)
+        session.commit()
+        session.refresh(approval)
+        approval_id = approval.id
+    return InstallResult(install=install, approval_id=approval_id)
+
+
 @app.post("/installs", response_model=InstallResult)
 def install_pack(payload: InstallCreate) -> InstallResult:
     with Session(engine) as session:
         pack = session.get(Pack, payload.pack_id)
         if not pack:
             raise HTTPException(status_code=404, detail="pack not found")
-        needs_approval = _requires_approval(pack)
-        status = InstallStatus.pending_approval if needs_approval else InstallStatus.installed
-        install = Install(
-            user_id=payload.user_id,
-            pack_id=payload.pack_id,
-            version=pack.version,
-            status=status,
-            approval_required=needs_approval,
-        )
-        session.add(install)
-        session.commit()
-        session.refresh(install)
+        return _create_install(session, payload.user_id, pack)
 
-        approval_id = None
-        if needs_approval:
-            approval = Approval(install_id=install.id or 0, user_id=payload.user_id, pack_id=pack.id or 0)
-            session.add(approval)
-            session.commit()
-            session.refresh(approval)
-            approval_id = approval.id
-        return InstallResult(install=install, approval_id=approval_id)
+
+@app.post("/one-click-install/{pack_id}", response_model=InstallResult)
+def one_click_install(pack_id: int, user_id: str = "demo-user") -> InstallResult:
+    with Session(engine) as session:
+        pack = session.get(Pack, pack_id)
+        if not pack:
+            raise HTTPException(status_code=404, detail="pack not found")
+        return _create_install(session, user_id, pack)
 
 
 @app.post("/installs/{install_id}/rollback", response_model=Install)
