@@ -53,7 +53,8 @@
       <select id="creatorSelect"></select>
       <input id="scopes" placeholder="scopes CSV e.g. email.read,email.send" />
     </div>
-    <input id="bundlePackIds" placeholder="bundle child pack IDs CSV (for bundle type), e.g. 1,2,3" />
+    <label class="muted">Bundle child packs (for bundle type)</label>
+    <select id="bundlePackIds" multiple size="6"></select>
     <label class="muted"><input id="isFeatured" type="checkbox" /> Mark as featured feature</label>
     <textarea id="desc" rows="3" placeholder="description"></textarea>
     <button onclick="publishPack()">Publish</button>
@@ -126,6 +127,22 @@ async function loadCreators(){
   });
 }
 
+async function loadBundlePackOptions(){
+  const catalog = await j('/catalog');
+  const sel = document.getElementById('bundlePackIds');
+  const prev = new Set(Array.from(sel.selectedOptions || []).map(o => o.value));
+  sel.innerHTML = '';
+  catalog
+    .filter(p => p.type !== 'bundle')
+    .forEach(p => {
+      const o = document.createElement('option');
+      o.value = p.id;
+      o.textContent = `#${p.id} ${p.title} (${p.type})`;
+      if (prev.has(String(p.id))) o.selected = true;
+      sel.appendChild(o);
+    });
+}
+
 async function createCreator(){
   const payload = {
     name: document.getElementById('creatorName').value.trim(),
@@ -142,6 +159,10 @@ async function createCreator(){
 
 async function publishPack(){
   const creatorRaw = document.getElementById('creatorSelect').value;
+  const bundleSelected = Array.from(document.getElementById('bundlePackIds').selectedOptions || [])
+    .map(o => Number(o.value))
+    .filter(n => Number.isFinite(n) && n > 0);
+
   const payload = {
     slug: document.getElementById('slug').value.trim(),
     title: document.getElementById('title').value.trim(),
@@ -149,7 +170,7 @@ async function publishPack(){
     description: document.getElementById('desc').value.trim(),
     risk_level: document.getElementById('risk').value,
     scopes: (document.getElementById('scopes').value || '').split(',').map(s=>s.trim()).filter(Boolean),
-    bundle_pack_ids: (document.getElementById('bundlePackIds').value || '').split(',').map(s=>Number(s.trim())).filter(n=>Number.isFinite(n) && n>0),
+    bundle_pack_ids: bundleSelected,
     is_featured: document.getElementById('isFeatured').checked,
     creator_id: creatorRaw ? Number(creatorRaw) : null,
   };
@@ -336,6 +357,7 @@ async function refreshAll(){
   await loadCreators();
   await loadFeatured();
   await loadPacks();
+  await loadBundlePackOptions();
   await loadInstalls();
   await loadApprovals();
 }
