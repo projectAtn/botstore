@@ -62,6 +62,7 @@
   <div class="card">
     <h2>One-click featured features</h2>
     <p class="muted">Install curated features instantly. Sensitive packs still require approval.</p>
+    <button class="secondary" onclick="oneClickStarterBundle()">One-click starter bundle (personality + 2 skills)</button>
     <div id="featured" class="grid"></div>
   </div>
 
@@ -82,9 +83,25 @@
   </div>
 
   <div class="card">
+    <h2>Setup wizard (post-install)</h2>
+    <div class="row">
+      <input id="setupInstallId" placeholder="install id (e.g. 2)" />
+      <button class="secondary" onclick="loadSetup()">Load setup</button>
+    </div>
+    <label class="muted"><input id="setupGmail" type="checkbox" /> Gmail connected</label><br/>
+    <label class="muted"><input id="setupCalendar" type="checkbox" /> Calendar connected</label><br/>
+    <label class="muted"><input id="setupNotion" type="checkbox" /> Notion connected</label><br/>
+    <label class="muted"><input id="setupSlack" type="checkbox" /> Slack connected</label><br/><br/>
+    <button onclick="saveSetup()">Save setup</button>
+    <div id="setupStatus" class="muted"></div>
+  </div>
+
+  <div class="card">
     <h2>Pending Approvals</h2>
     <div id="approvals"></div>
   </div>
+
+  <div id="toast" class="card" style="display:none; position:sticky; bottom:10px;"></div>
 </div>
 
 <script>
@@ -153,13 +170,43 @@ async function installPack(packId){
   }catch(e){alert(e.message)}
 }
 
+function showUndoToast(install){
+  const t = document.getElementById('toast');
+  t.style.display = 'block';
+  t.innerHTML = `Installed pack ${install.pack_id} as install #${install.id}. <button class='danger' onclick='rollbackInstall(${install.id})'>Undo</button>`;
+  setTimeout(()=>{ t.style.display='none'; }, 10000);
+}
+
 async function oneClickInstall(packId){
   const user_id = document.getElementById('userId').value.trim() || 'demo-user';
   try{
     const res = await j(`/one-click-install/${packId}?user_id=${encodeURIComponent(user_id)}`,{method:'POST'});
     if(res.approval_id){
       alert(`One-click queued approval (#${res.approval_id})`);
+    } else if (res.install && res.install.status === 'installed') {
+      showUndoToast(res.install);
     }
+    refreshAll();
+  }catch(e){alert(e.message)}
+}
+
+async function oneClickStarterBundle(){
+  const user_id = document.getElementById('userId').value.trim() || 'demo-user';
+  try{
+    const catalog = await j('/catalog');
+    const personality = catalog.find(p=>p.type==='personality');
+    const skills = catalog.filter(p=>p.type==='skill').slice(0,2);
+    if(!personality || skills.length < 2){
+      alert('Need at least 1 personality and 2 skills in catalog');
+      return;
+    }
+    const payload = { user_id, pack_ids: [personality.id, ...skills.map(s=>s.id)] };
+    const res = await j('/one-click-install-bundle',{method:'POST', body: JSON.stringify(payload)});
+    const pending = res.installs.filter(x=>x.approval_id).length;
+    const installed = res.installs.filter(x=>x.install.status==='installed').length;
+    alert(`Bundle installed: ${installed} installed, ${pending} pending approval.`);
+    const firstInstalled = res.installs.find(x=>x.install.status==='installed');
+    if(firstInstalled) showUndoToast(firstInstalled.install);
     refreshAll();
   }catch(e){alert(e.message)}
 }
@@ -178,6 +225,34 @@ async function decideApproval(id, approve){
   }catch(e){alert(e.message)}
 }
 
+async function loadSetup(){
+  const installId = document.getElementById('setupInstallId').value.trim();
+  if(!installId) return;
+  try{
+    const s = await j(`/installs/${installId}/setup`);
+    document.getElementById('setupGmail').checked = !!s.gmail_connected;
+    document.getElementById('setupCalendar').checked = !!s.calendar_connected;
+    document.getElementById('setupNotion').checked = !!s.notion_connected;
+    document.getElementById('setupSlack').checked = !!s.slack_connected;
+    document.getElementById('setupStatus').textContent = 'Setup loaded.';
+  }catch(e){alert(e.message)}
+}
+
+async function saveSetup(){
+  const installId = document.getElementById('setupInstallId').value.trim();
+  if(!installId){ alert('Enter install id'); return; }
+  const payload = {
+    gmail_connected: document.getElementById('setupGmail').checked,
+    calendar_connected: document.getElementById('setupCalendar').checked,
+    notion_connected: document.getElementById('setupNotion').checked,
+    slack_connected: document.getElementById('setupSlack').checked,
+  };
+  try{
+    await j(`/installs/${installId}/setup`, {method:'PUT', body: JSON.stringify(payload)});
+    document.getElementById('setupStatus').textContent = 'Setup saved.';
+  }catch(e){alert(e.message)}
+}
+
 async function loadFeatured(){
   const packs = await j('/catalog?featured_only=true');
   const root = document.getElementById('featured');
@@ -187,6 +262,7 @@ async function loadFeatured(){
     el.className='pack';
     el.innerHTML = `
       <h3>${p.title}</h3>
+      <span class='pill'>${p.type}</span>
       <p class='muted'>${p.description}</p>
       <button onclick='oneClickInstall(${p.id})'>One-click install</button>
     `;

@@ -49,6 +49,16 @@ with Session(engine) as s:
             scopes_csv="web.search,web.fetch,files.read",
             creator_id=creator_map["Scholar Guild"].id,
         ),
+        Pack(
+            slug="founder-command-bundle",
+            title="Founder Command Bundle",
+            type=PackType.bundle,
+            description="One-click starter stack: chief-of-staff behavior + inbox/calendar + research",
+            risk_level="medium",
+            scopes_csv="calendar.read,calendar.write,email.read,email.send,web.search,web.fetch",
+            is_featured=True,
+            creator_id=creator_map["Ops Foundry"].id,
+        ),
     ]
 
     for p in seed:

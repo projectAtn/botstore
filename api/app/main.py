@@ -130,6 +130,31 @@ class ApprovalDecision(SQLModel):
     note: Optional[str] = None
 
 
+class BundleInstallCreate(SQLModel):
+    user_id: str
+    pack_ids: list[int]
+
+
+class BundleInstallResult(SQLModel):
+    installs: list[InstallResult]
+
+
+class InstallSetup(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    install_id: int = Field(foreign_key="install.id", unique=True, index=True)
+    gmail_connected: bool = False
+    calendar_connected: bool = False
+    notion_connected: bool = False
+    slack_connected: bool = False
+
+
+class InstallSetupUpdate(SQLModel):
+    gmail_connected: bool = False
+    calendar_connected: bool = False
+    notion_connected: bool = False
+    slack_connected: bool = False
+
+
 sqlite_file_name = "./botstore.db"
 engine = create_engine(f"sqlite:///{sqlite_file_name}", echo=False)
 
@@ -301,6 +326,18 @@ def one_click_install(pack_id: int, user_id: str = "demo-user") -> InstallResult
         return _create_install(session, user_id, pack)
 
 
+@app.post("/one-click-install-bundle", response_model=BundleInstallResult)
+def one_click_install_bundle(payload: BundleInstallCreate) -> BundleInstallResult:
+    with Session(engine) as session:
+        installs: list[InstallResult] = []
+        for pack_id in payload.pack_ids:
+            pack = session.get(Pack, pack_id)
+            if not pack:
+                raise HTTPException(status_code=404, detail=f"pack not found: {pack_id}")
+            installs.append(_create_install(session, payload.user_id, pack))
+        return BundleInstallResult(installs=installs)
+
+
 @app.post("/installs/{install_id}/rollback", response_model=Install)
 def rollback_install(install_id: int) -> Install:
     with Session(engine) as session:
@@ -321,6 +358,37 @@ def list_installs(user_id: Optional[str] = None) -> list[Install]:
         if user_id:
             query = query.where(Install.user_id == user_id)
         return list(session.exec(query).all())
+
+
+@app.get("/installs/{install_id}/setup", response_model=InstallSetup)
+def get_install_setup(install_id: int) -> InstallSetup:
+    with Session(engine) as session:
+        setup = session.exec(select(InstallSetup).where(InstallSetup.install_id == install_id)).first()
+        if setup:
+            return setup
+        return InstallSetup(install_id=install_id)
+
+
+@app.put("/installs/{install_id}/setup", response_model=InstallSetup)
+def upsert_install_setup(install_id: int, payload: InstallSetupUpdate) -> InstallSetup:
+    with Session(engine) as session:
+        install = session.get(Install, install_id)
+        if not install:
+            raise HTTPException(status_code=404, detail="install not found")
+
+        setup = session.exec(select(InstallSetup).where(InstallSetup.install_id == install_id)).first()
+        if not setup:
+            setup = InstallSetup(install_id=install_id)
+
+        setup.gmail_connected = payload.gmail_connected
+        setup.calendar_connected = payload.calendar_connected
+        setup.notion_connected = payload.notion_connected
+        setup.slack_connected = payload.slack_connected
+
+        session.add(setup)
+        session.commit()
+        session.refresh(setup)
+        return setup
 
 
 @app.get("/approvals", response_model=list[Approval])
