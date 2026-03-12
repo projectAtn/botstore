@@ -152,6 +152,18 @@ class BotCommandBundleInstallRequest(SQLModel):
     bundle_slug: str
 
 
+class BotCommandRequest(SQLModel):
+    user_id: str
+    text: str
+
+
+class BotCommandResponse(SQLModel):
+    ok: bool = True
+    message: str
+    action: str
+    data: dict = {}
+
+
 class InstallSetup(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     install_id: int = Field(foreign_key="install.id", unique=True, index=True)
@@ -369,6 +381,53 @@ def bot_installs(user_id: str) -> list[Install]:
 @app.get("/bot/approvals", response_model=list[Approval])
 def bot_approvals(user_id: str, pending_only: bool = True) -> list[Approval]:
     return list_approvals(user_id=user_id, status=ApprovalStatus.pending if pending_only else None)
+
+
+@app.post("/bot/command", response_model=BotCommandResponse)
+def bot_command(payload: BotCommandRequest) -> BotCommandResponse:
+    text = (payload.text or "").strip()
+    if not text:
+        return BotCommandResponse(message="Empty command", action="help")
+
+    parts = text.split()
+    cmd = parts[0].lower()
+
+    if cmd == "/store":
+        url = bot_open_store_link(user_id=payload.user_id)["url"]
+        return BotCommandResponse(
+            message="Open store",
+            action="open_store",
+            data={"url": url, "buttons": [[{"text": "Open BotStore", "callback_data": f"open:{url}", "style": "primary"}]]},
+        )
+
+    if cmd == "/install":
+        if len(parts) < 2:
+            return BotCommandResponse(ok=False, message="Usage: /install <pack-slug>", action="help")
+        res = bot_install(BotCommandInstallRequest(user_id=payload.user_id, pack_slug=parts[1]))
+        if res.approval_id:
+            return BotCommandResponse(message=f"Install pending approval #{res.approval_id}", action="approval_pending", data={"approval_id": res.approval_id})
+        return BotCommandResponse(message=f"Installed {parts[1]}", action="installed", data={"install_id": res.install.id})
+
+    if cmd == "/bundle":
+        if len(parts) < 2:
+            return BotCommandResponse(ok=False, message="Usage: /bundle <bundle-slug>", action="help")
+        res = bot_install_bundle(BotCommandBundleInstallRequest(user_id=payload.user_id, bundle_slug=parts[1]))
+        pending = len([x for x in res.installs if x.approval_id])
+        installed = len([x for x in res.installs if x.install.status == InstallStatus.installed])
+        return BotCommandResponse(message=f"Bundle processed: {installed} installed, {pending} pending approvals", action="bundle_installed")
+
+    if cmd == "/approvals":
+        approvals = bot_approvals(user_id=payload.user_id, pending_only=True)
+        if not approvals:
+            return BotCommandResponse(message="No pending approvals", action="approvals")
+        summary = ", ".join([f"#{a.id}(pack:{a.pack_id})" for a in approvals])
+        return BotCommandResponse(message=f"Pending approvals: {summary}", action="approvals", data={"count": len(approvals)})
+
+    if cmd == "/installs":
+        installs = bot_installs(user_id=payload.user_id)
+        return BotCommandResponse(message=f"Total installs: {len(installs)}", action="installs", data={"count": len(installs)})
+
+    return BotCommandResponse(ok=False, message="Unknown command. Use /store, /install <slug>, /bundle <slug>, /approvals, /installs", action="help")
 
 
 def _pack_by_slug(session: Session, slug: str) -> Optional[Pack]:
