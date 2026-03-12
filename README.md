@@ -36,7 +36,7 @@ Then open: `http://localhost:8787/docs`
 - `GET /bot/installs?user_id=<id>`
 - `GET /bot/approvals?user_id=<id>&pending_only=true`
 - `GET /bot/open-store-link?user_id=<id>` → returns `/?user_id=<id>` URL for direct webview opening
-- `POST /bot/command` with `{ user_id, text }` for `/store`, `/install`, `/bundle`, `/approvals`, `/installs`
+- `POST /bot/command` with `{ user_id, text }` for `/store`, `/install`, `/bundle`, `/approvals`, `/approve`, `/reject`, `/installs`
 - See `docs/bot-commands.md` for Telegram-ready mapping details
 
 ## Next milestones

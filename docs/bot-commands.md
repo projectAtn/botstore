@@ -15,6 +15,10 @@ Use this endpoint from your bot backend:
   - Installs bundle + defined child packs.
 - `/approvals`
   - Lists pending approval queue for user.
+- `/approve <approval-id>`
+  - Approves pending approval item.
+- `/reject <approval-id>`
+  - Rejects pending approval item.
 - `/installs`
   - Returns install count for user.
 

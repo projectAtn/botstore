@@ -423,11 +423,25 @@ def bot_command(payload: BotCommandRequest) -> BotCommandResponse:
         summary = ", ".join([f"#{a.id}(pack:{a.pack_id})" for a in approvals])
         return BotCommandResponse(message=f"Pending approvals: {summary}", action="approvals", data={"count": len(approvals)})
 
+    if cmd == "/approve":
+        if len(parts) < 2 or not parts[1].isdigit():
+            return BotCommandResponse(ok=False, message="Usage: /approve <approval-id>", action="help")
+        approval_id = int(parts[1])
+        updated = decide_approval(approval_id, ApprovalDecision(approve=True, note="approved via bot command"))
+        return BotCommandResponse(message=f"Approved #{approval_id}", action="approved", data={"approval_id": updated.id})
+
+    if cmd == "/reject":
+        if len(parts) < 2 or not parts[1].isdigit():
+            return BotCommandResponse(ok=False, message="Usage: /reject <approval-id>", action="help")
+        approval_id = int(parts[1])
+        updated = decide_approval(approval_id, ApprovalDecision(approve=False, note="rejected via bot command"))
+        return BotCommandResponse(message=f"Rejected #{approval_id}", action="rejected", data={"approval_id": updated.id})
+
     if cmd == "/installs":
         installs = bot_installs(user_id=payload.user_id)
         return BotCommandResponse(message=f"Total installs: {len(installs)}", action="installs", data={"count": len(installs)})
 
-    return BotCommandResponse(ok=False, message="Unknown command. Use /store, /install <slug>, /bundle <slug>, /approvals, /installs", action="help")
+    return BotCommandResponse(ok=False, message="Unknown command. Use /store, /install <slug>, /bundle <slug>, /approvals, /approve <id>, /reject <id>, /installs", action="help")
 
 
 def _pack_by_slug(session: Session, slug: str) -> Optional[Pack]:
