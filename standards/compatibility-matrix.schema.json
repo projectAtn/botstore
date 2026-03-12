@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://botstore.dev/schemas/compatibility-matrix-0.1.json",
+  "title": "BotPack Compatibility Matrix v0.1",
+  "type": "object",
+  "required": ["packId", "packVersion", "results"],
+  "properties": {
+    "packId": { "type": "string" },
+    "packVersion": { "type": "string" },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["runtime", "runtimeVersion", "adapter", "status", "tests"],
+        "properties": {
+          "runtime": { "type": "string" },
+          "runtimeVersion": { "type": "string" },
+          "adapter": { "type": "string" },
+          "status": { "enum": ["pass", "partial", "fail"] },
+          "notes": { "type": "string" },
+          "tests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "name", "status"],
+              "properties": {
+                "id": { "type": "string" },
+                "name": { "type": "string" },
+                "status": { "enum": ["pass", "fail", "skip"] },
+                "latencyMs": { "type": "number", "minimum": 0 },
+                "error": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

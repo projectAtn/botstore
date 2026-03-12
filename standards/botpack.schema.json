@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://botstore.dev/schemas/botpack-0.1.json",
+  "title": "BotPack v0.1",
+  "type": "object",
+  "required": ["schemaVersion", "id", "kind", "name", "version", "publisher", "capabilities", "compatibility", "policy"],
+  "properties": {
+    "schemaVersion": { "const": "0.1" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-_.]{2,100}$" },
+    "kind": { "enum": ["personality", "skill", "bundle"] },
+    "name": { "type": "string", "minLength": 2, "maxLength": 120 },
+    "description": { "type": "string", "maxLength": 4000 },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.]+)?$" },
+    "publisher": {
+      "type": "object",
+      "required": ["id", "name", "verification"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "verification": { "enum": ["unverified", "verified", "enterprise"] },
+        "signature": { "type": "string" }
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "memory.read", "memory.write", "files.read", "files.write", "files.delete",
+          "calendar.read", "calendar.write", "email.read", "email.send", "message.send",
+          "social.post", "payment.charge", "web.search", "web.fetch", "code.exec"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "compatibility": {
+      "type": "object",
+      "required": ["runtimes"],
+      "properties": {
+        "runtimes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "minVersion", "status"],
+            "properties": {
+              "name": { "type": "string" },
+              "minVersion": { "type": "string" },
+              "maxVersion": { "type": "string" },
+              "status": { "enum": ["native", "adapter", "partial", "unsupported"] }
+            }
+          }
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "required": ["riskLevel", "approvalRules"],
+      "properties": {
+        "riskLevel": { "enum": ["low", "medium", "high"] },
+        "approvalRules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["whenCapability", "required"],
+            "properties": {
+              "whenCapability": { "type": "string" },
+              "required": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "pricing": {
+      "type": "object",
+      "properties": {
+        "model": { "enum": ["free", "one_time", "subscription", "usage"] },
+        "amountUsd": { "type": "number", "minimum": 0 }
+      }
+    }
+  }
+}

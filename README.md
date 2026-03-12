@@ -21,9 +21,17 @@ uvicorn app.main:app --reload --port 8787
 
 Then open: `http://localhost:8787/docs`
 
+## Standards + SDK (new)
+- `standards/botpack.schema.json` — portable BotPack manifest schema
+- `standards/compatibility-matrix.schema.json` — cross-runtime test result schema
+- `standards/conformance-spec.md` — required validation and policy tests
+- `sdk/python/botpack_adapter.py` — Python adapter contract example
+- `sdk/typescript/adapter.ts` — TypeScript adapter contract example
+- `research/top-demand-skills-personalities-2026-03.md` — demand-oriented pack ranking
+
 ## Next milestones
-1. Permission manifests + approval engine
-2. Verified creators and trust score
-3. Ratings + ranking
-4. Billing + revenue split
-5. Web UI
+1. Add auth + publisher namespaces
+2. Ratings/ranking with anti-fraud signals
+3. Billing + revenue split
+4. Signed pack artifacts + verification in install flow
+5. Conformance runner CLI producing compatibility matrix JSON
