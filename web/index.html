@@ -124,6 +124,16 @@
 
 <script>
 const API = '';
+const urlParams = new URLSearchParams(window.location.search);
+
+function bootstrapUserFromQuery(){
+  const qUser = urlParams.get('user_id') || urlParams.get('uid');
+  if(qUser){
+    const el = document.getElementById('userId');
+    if(el) el.value = qUser;
+  }
+}
+
 async function j(url, options={}) {
   const r = await fetch(API + url, {headers:{'Content-Type':'application/json'}, ...options});
   const data = await r.json();
@@ -442,6 +452,7 @@ async function refreshAll(){
   await loadApprovals();
 }
 
+bootstrapUserFromQuery();
 refreshAll();
 </script>
 </body>

@@ -142,6 +142,16 @@ class BundleInstallResult(SQLModel):
     installs: list[InstallResult]
 
 
+class BotCommandInstallRequest(SQLModel):
+    user_id: str
+    pack_slug: str
+
+
+class BotCommandBundleInstallRequest(SQLModel):
+    user_id: str
+    bundle_slug: str
+
+
 class InstallSetup(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     install_id: int = Field(foreign_key="install.id", unique=True, index=True)
@@ -310,6 +320,59 @@ def catalog(type: Optional[PackType] = None, featured_only: bool = False) -> lis
                 )
             )
         return out
+
+
+@app.get("/bot/store", response_model=list[CatalogPack])
+def bot_store(user_id: str, type: Optional[PackType] = None) -> list[CatalogPack]:
+    _ = user_id  # reserved for personalization in later phases
+    return catalog(type=type, featured_only=False)
+
+
+@app.get("/bot/open-store-link")
+def bot_open_store_link(user_id: str, base_url: str = "http://127.0.0.1:8787/") -> dict:
+    return {"url": f"{base_url}?user_id={user_id}"}
+
+
+@app.post("/bot/install", response_model=InstallResult)
+def bot_install(payload: BotCommandInstallRequest) -> InstallResult:
+    with Session(engine) as session:
+        pack = _pack_by_slug(session, payload.pack_slug)
+        if not pack:
+            raise HTTPException(status_code=404, detail="pack slug not found")
+        return _create_install(session, payload.user_id, pack)
+
+
+@app.post("/bot/install-bundle", response_model=BundleInstallResult)
+def bot_install_bundle(payload: BotCommandBundleInstallRequest) -> BundleInstallResult:
+    with Session(engine) as session:
+        bundle = _pack_by_slug(session, payload.bundle_slug)
+        if not bundle:
+            raise HTTPException(status_code=404, detail="bundle slug not found")
+        if bundle.type != PackType.bundle:
+            raise HTTPException(status_code=400, detail="slug is not a bundle")
+
+        child_ids = _csv_to_ints(bundle.bundle_pack_ids_csv)
+        installs: list[InstallResult] = [_create_install(session, payload.user_id, bundle)]
+        for child_id in child_ids:
+            child = session.get(Pack, child_id)
+            if not child:
+                raise HTTPException(status_code=404, detail=f"bundle child pack not found: {child_id}")
+            installs.append(_create_install(session, payload.user_id, child))
+        return BundleInstallResult(installs=installs)
+
+
+@app.get("/bot/installs", response_model=list[Install])
+def bot_installs(user_id: str) -> list[Install]:
+    return list_installs(user_id=user_id)
+
+
+@app.get("/bot/approvals", response_model=list[Approval])
+def bot_approvals(user_id: str, pending_only: bool = True) -> list[Approval]:
+    return list_approvals(user_id=user_id, status=ApprovalStatus.pending if pending_only else None)
+
+
+def _pack_by_slug(session: Session, slug: str) -> Optional[Pack]:
+    return session.exec(select(Pack).where(Pack.slug == slug)).first()
 
 
 def _create_install(session: Session, user_id: str, pack: Pack) -> InstallResult:

@@ -29,6 +29,14 @@ Then open: `http://localhost:8787/docs`
 - `sdk/typescript/adapter.ts` — TypeScript adapter contract example
 - `research/top-demand-skills-personalities-2026-03.md` — demand-oriented pack ranking
 
+## Bot-environment endpoints
+- `GET /bot/store?user_id=<id>` — list store catalog for bot surfaces
+- `POST /bot/install` with `{ user_id, pack_slug }`
+- `POST /bot/install-bundle` with `{ user_id, bundle_slug }`
+- `GET /bot/installs?user_id=<id>`
+- `GET /bot/approvals?user_id=<id>&pending_only=true`
+- `GET /bot/open-store-link?user_id=<id>` → returns `/?user_id=<id>` URL for direct webview opening
+
 ## Next milestones
 1. Add auth + publisher namespaces
 2. Ratings/ranking with anti-fraud signals
