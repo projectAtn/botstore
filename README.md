@@ -4,9 +4,11 @@ App store for bot personalities + skills.
 
 ## Scope (v0)
 - Publish/list packs (`personality`, `skill`, `bundle`)
-- Install packs to a user
+- Creator profiles with verification + trust score
+- Permission scopes per pack
+- Risk-aware install flow with approval queue
 - Roll back installed packs
-- Basic catalog filtering by type
+- Catalog filtering by type
 
 ## Quick start (API)
 ```bash

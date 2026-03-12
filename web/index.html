@@ -6,24 +6,38 @@
   <title>BotStore</title>
   <style>
     body{font-family:Inter,system-ui,Arial,sans-serif;background:#0b1020;color:#e6e9f5;margin:0}
-    .wrap{max-width:1000px;margin:24px auto;padding:0 16px}
+    .wrap{max-width:1100px;margin:24px auto;padding:0 16px}
     .card{background:#141a32;border:1px solid #27315f;border-radius:14px;padding:16px;margin-bottom:16px}
-    h1,h2{margin:0 0 12px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+    h1,h2,h3{margin:0 0 10px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
     .pack{background:#11172e;border:1px solid #2a376b;border-radius:12px;padding:12px}
     button{background:#4c6fff;border:0;color:white;padding:8px 12px;border-radius:10px;cursor:pointer}
+    button.secondary{background:#2b3769}
+    button.danger{background:#aa3f5e}
     input,select,textarea{width:100%;margin:6px 0 10px;padding:8px;border-radius:8px;border:1px solid #2a376b;background:#0f1530;color:#e6e9f5}
     .muted{color:#97a2d3;font-size:13px}
     .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-    .pill{display:inline-block;padding:2px 8px;border-radius:999px;background:#223065;color:#aecdff;font-size:12px;margin-right:6px}
-    .ok{color:#6ee7a3}
-    .err{color:#ff9a9a}
+    .pill{display:inline-block;padding:2px 8px;border-radius:999px;background:#223065;color:#aecdff;font-size:12px;margin:2px 6px 2px 0}
+    .ok{color:#6ee7a3}.err{color:#ff9a9a}.warn{color:#ffd37c}
   </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>BotStore MVP</h1>
-  <p class="muted">Install personality and skill packs for your bot kingdom.</p>
+  <h1>BotStore MVP+ (Trust & Approvals)</h1>
+  <p class="muted">Marketplace for personality + skill packs with creator verification and approval gates.</p>
+
+  <div class="card">
+    <h2>Create Creator</h2>
+    <div class="row">
+      <input id="creatorName" placeholder="creator name" />
+      <select id="creatorVerification"><option value="unverified">unverified</option><option value="verified">verified</option></select>
+    </div>
+    <div class="row">
+      <input id="creatorTrust" type="number" min="0" max="1" step="0.01" value="0.8" placeholder="trust score 0..1" />
+      <button onclick="createCreator()">Create Creator</button>
+    </div>
+    <div id="creatorStatus" class="muted"></div>
+  </div>
 
   <div class="card">
     <h2>Publish Pack</h2>
@@ -34,6 +48,10 @@
     <div class="row">
       <select id="type"><option value="personality">personality</option><option value="skill">skill</option><option value="bundle">bundle</option></select>
       <select id="risk"><option>low</option><option>medium</option><option>high</option></select>
+    </div>
+    <div class="row">
+      <select id="creatorSelect"></select>
+      <input id="scopes" placeholder="scopes CSV e.g. email.read,email.send" />
     </div>
     <textarea id="desc" rows="3" placeholder="description"></textarea>
     <button onclick="publishPack()">Publish</button>
@@ -51,9 +69,14 @@
     <h2>Installs</h2>
     <div class="row">
       <input id="userId" value="demo-user" placeholder="user id"/>
-      <button onclick="loadInstalls()">Refresh Installs</button>
+      <button onclick="refreshAll()">Refresh</button>
     </div>
     <div id="installs"></div>
+  </div>
+
+  <div class="card">
+    <h2>Pending Approvals</h2>
+    <div id="approvals"></div>
   </div>
 </div>
 
@@ -66,13 +89,42 @@ async function j(url, options={}) {
   return data;
 }
 
+async function loadCreators(){
+  const creators = await j('/creators');
+  const sel = document.getElementById('creatorSelect');
+  sel.innerHTML = '<option value="">No creator</option>';
+  creators.forEach(c=>{
+    const o = document.createElement('option');
+    o.value = c.id;
+    o.textContent = `${c.name} (${c.verification}, trust ${c.trust_score})`;
+    sel.appendChild(o);
+  });
+}
+
+async function createCreator(){
+  const payload = {
+    name: document.getElementById('creatorName').value.trim(),
+    verification: document.getElementById('creatorVerification').value,
+    trust_score: Number(document.getElementById('creatorTrust').value || 0.5),
+  };
+  const st = document.getElementById('creatorStatus');
+  try {
+    await j('/creators',{method:'POST',body:JSON.stringify(payload)});
+    st.className='ok'; st.textContent='Creator created.';
+    await loadCreators();
+  } catch(e){ st.className='err'; st.textContent=e.message; }
+}
+
 async function publishPack(){
+  const creatorRaw = document.getElementById('creatorSelect').value;
   const payload = {
     slug: document.getElementById('slug').value.trim(),
     title: document.getElementById('title').value.trim(),
     type: document.getElementById('type').value,
     description: document.getElementById('desc').value.trim(),
-    risk_level: document.getElementById('risk').value
+    risk_level: document.getElementById('risk').value,
+    scopes: (document.getElementById('scopes').value || '').split(',').map(s=>s.trim()).filter(Boolean),
+    creator_id: creatorRaw ? Number(creatorRaw) : null,
   };
   const st = document.getElementById('publishStatus');
   try {
@@ -85,30 +137,45 @@ async function publishPack(){
 async function installPack(packId){
   const user_id = document.getElementById('userId').value.trim() || 'demo-user';
   try{
-    await j('/installs',{method:'POST',body:JSON.stringify({user_id,pack_id:packId})});
-    loadInstalls();
+    const res = await j('/installs',{method:'POST',body:JSON.stringify({user_id,pack_id:packId})});
+    if(res.approval_id){
+      alert(`Install pending approval (#${res.approval_id})`);
+    }
+    refreshAll();
   }catch(e){alert(e.message)}
 }
 
 async function rollbackInstall(id){
   try{
     await j(`/installs/${id}/rollback`,{method:'POST'});
-    loadInstalls();
+    refreshAll();
+  }catch(e){alert(e.message)}
+}
+
+async function decideApproval(id, approve){
+  try{
+    await j(`/approvals/${id}/decide`,{method:'POST',body:JSON.stringify({approve,note:approve?'approved in web UI':'rejected in web UI'})});
+    refreshAll();
   }catch(e){alert(e.message)}
 }
 
 async function loadPacks(){
   const f = document.getElementById('filter').value;
-  const packs = await j('/packs'+(f?`?type=${f}`:''));
+  const packs = await j('/catalog'+(f?`?type=${f}`:''));
   const root = document.getElementById('packs');
   root.innerHTML = '';
   for(const p of packs){
     const el = document.createElement('div');
     el.className='pack';
+    const creator = p.creator_name ? `${p.creator_name} • ${p.creator_verification} • trust ${p.creator_trust_score}` : 'No creator';
+    const scopes = p.scopes.length ? p.scopes.map(s=>`<span class='pill'>${s}</span>`).join('') : '<span class="muted">no scopes</span>';
     el.innerHTML = `
       <h3>${p.title}</h3>
-      <div><span class='pill'>${p.type}</span><span class='pill'>risk:${p.risk_level}</span></div>
+      <div><span class='pill'>${p.type}</span><span class='pill'>risk:${p.risk_level}</span>${p.requires_approval?"<span class='pill'>approval required</span>":""}</div>
       <p class='muted'>${p.description}</p>
+      <p class='muted'>Creator: ${creator}</p>
+      <div>${scopes}</div>
+      <br/>
       <button onclick='installPack(${p.id})'>Install</button>
     `;
     root.appendChild(el);
@@ -123,12 +190,36 @@ async function loadInstalls(){
   installs.forEach(i=>{
     const row = document.createElement('div');
     row.className='pack';
-    row.innerHTML = `#${i.id} pack:${i.pack_id} version:${i.version} status:${i.status} <button onclick='rollbackInstall(${i.id})'>Rollback</button>`;
+    row.innerHTML = `#${i.id} pack:${i.pack_id} version:${i.version} status:${i.status} ${i.status==='installed'?`<button class='secondary' onclick='rollbackInstall(${i.id})'>Rollback</button>`:''}`;
     root.appendChild(row);
   })
 }
 
-loadPacks(); loadInstalls();
+async function loadApprovals(){
+  const user = document.getElementById('userId').value.trim() || 'demo-user';
+  const approvals = await j(`/approvals?user_id=${encodeURIComponent(user)}&status=pending`);
+  const root = document.getElementById('approvals');
+  root.innerHTML = approvals.length ? '' : '<p class="muted">No pending approvals.</p>';
+  approvals.forEach(a=>{
+    const row = document.createElement('div');
+    row.className='pack';
+    row.innerHTML = `Approval #${a.id} for install #${a.install_id} (pack ${a.pack_id})
+      <div style='margin-top:8px'>
+        <button onclick='decideApproval(${a.id}, true)'>Approve</button>
+        <button class='danger' onclick='decideApproval(${a.id}, false)'>Reject</button>
+      </div>`;
+    root.appendChild(row);
+  })
+}
+
+async function refreshAll(){
+  await loadCreators();
+  await loadPacks();
+  await loadInstalls();
+  await loadApprovals();
+}
+
+refreshAll();
 </script>
 </body>
 </html>
