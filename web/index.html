@@ -55,6 +55,11 @@
     </div>
     <label class="muted">Bundle child packs (for bundle type)</label>
     <input id="bundleSearch" placeholder="Search packs for bundle..." oninput="filterBundleOptions()" />
+    <div class="row">
+      <button class="secondary" onclick="selectAllBundleOptions()" type="button">Select all shown</button>
+      <button class="secondary" onclick="clearAllBundleOptions()" type="button">Clear</button>
+    </div>
+    <div class="muted" id="bundleSelectedCount">Selected: 0</div>
     <div id="bundleChecks" class="pack" style="max-height:180px;overflow:auto"></div>
     <label class="muted"><input id="isFeatured" type="checkbox" /> Mark as featured feature</label>
     <textarea id="desc" rows="3" placeholder="description"></textarea>
@@ -71,8 +76,18 @@
 
   <div class="card">
     <h2>Catalog</h2>
-    <label class="muted">Filter type</label>
-    <select id="filter" onchange="loadPacks()"><option value="">all</option><option value="personality">personality</option><option value="skill">skill</option><option value="bundle">bundle</option></select>
+    <div class="row">
+      <input id="catalogSearch" placeholder="Search catalog..." oninput="loadPacks()" />
+      <select id="filter" onchange="loadPacks()"><option value="">all</option><option value="personality">personality</option><option value="skill">skill</option><option value="bundle">bundle</option></select>
+    </div>
+    <div class="row">
+      <label class="muted"><input id="catalogFeaturedOnly" type="checkbox" onchange="loadPacks()" /> Featured only</label>
+      <label class="muted"><input id="catalogApprovalOnly" type="checkbox" onchange="loadPacks()" /> Approval-required only</label>
+    </div>
+    <div class="row">
+      <div class="muted" id="catalogSelectedCount">Selected: 0</div>
+      <button class="secondary" onclick="installSelectedCatalogPacks()">Install selected</button>
+    </div>
     <div id="packs" class="grid"></div>
   </div>
 
@@ -129,6 +144,16 @@ async function loadCreators(){
 }
 
 let bundlePackCatalog = [];
+const selectedCatalogPackIds = new Set();
+
+function updateBundleSelectedCount(){
+  const n = document.querySelectorAll('#bundleChecks input[type="checkbox"]:checked').length;
+  document.getElementById('bundleSelectedCount').textContent = `Selected: ${n}`;
+}
+
+function updateCatalogSelectedCount(){
+  document.getElementById('catalogSelectedCount').textContent = `Selected: ${selectedCatalogPackIds.size}`;
+}
 
 function renderBundleOptions(filterText=''){
   const root = document.getElementById('bundleChecks');
@@ -142,13 +167,24 @@ function renderBundleOptions(filterText=''){
       row.className = 'muted';
       row.style.display = 'block';
       const isChecked = checked.has(String(p.id));
-      row.innerHTML = `<input type='checkbox' value='${p.id}' ${isChecked ? 'checked' : ''}/> #${p.id} ${p.title} (${p.type})`;
+      row.innerHTML = `<input type='checkbox' value='${p.id}' ${isChecked ? 'checked' : ''} onchange='updateBundleSelectedCount()'/> #${p.id} ${p.title} (${p.type})`;
       root.appendChild(row);
     });
+  updateBundleSelectedCount();
 }
 
 function filterBundleOptions(){
   renderBundleOptions(document.getElementById('bundleSearch').value || '');
+}
+
+function selectAllBundleOptions(){
+  document.querySelectorAll('#bundleChecks input[type="checkbox"]').forEach(i => i.checked = true);
+  updateBundleSelectedCount();
+}
+
+function clearAllBundleOptions(){
+  document.querySelectorAll('#bundleChecks input[type="checkbox"]').forEach(i => i.checked = false);
+  updateBundleSelectedCount();
 }
 
 async function loadBundlePackOptions(){
@@ -223,6 +259,20 @@ async function oneClickInstall(packId){
     } else if (res.install && res.install.status === 'installed') {
       showUndoToast(res.install);
     }
+    refreshAll();
+  }catch(e){alert(e.message)}
+}
+
+async function installSelectedCatalogPacks(){
+  const user_id = document.getElementById('userId').value.trim() || 'demo-user';
+  const pack_ids = Array.from(selectedCatalogPackIds);
+  if(!pack_ids.length){ alert('No selected packs'); return; }
+  try{
+    const res = await j('/one-click-install-bundle', {method:'POST', body: JSON.stringify({user_id, pack_ids})});
+    const pending = res.installs.filter(x=>x.approval_id).length;
+    const installed = res.installs.filter(x=>x.install.status==='installed').length;
+    alert(`Installed selected: ${installed} installed, ${pending} pending approval.`);
+    selectedCatalogPackIds.clear();
     refreshAll();
   }catch(e){alert(e.message)}
 }
@@ -314,9 +364,22 @@ async function loadFeatured(){
   }
 }
 
+function toggleCatalogPack(id, checked){
+  if(checked) selectedCatalogPackIds.add(id);
+  else selectedCatalogPackIds.delete(id);
+  updateCatalogSelectedCount();
+}
+
 async function loadPacks(){
   const f = document.getElementById('filter').value;
-  const packs = await j('/catalog'+(f?`?type=${f}`:''));
+  const featuredOnly = document.getElementById('catalogFeaturedOnly').checked;
+  const approvalOnly = document.getElementById('catalogApprovalOnly').checked;
+  const q = (document.getElementById('catalogSearch').value || '').trim().toLowerCase();
+  const url = '/catalog' + (f || featuredOnly ? `?${new URLSearchParams({ ...(f?{type:f}:{}), ...(featuredOnly?{featured_only:'true'}:{}) }).toString()}` : '');
+  let packs = await j(url);
+  if (approvalOnly) packs = packs.filter(p => p.requires_approval);
+  if (q) packs = packs.filter(p => `${p.title} ${p.description} ${p.type}`.toLowerCase().includes(q));
+
   const root = document.getElementById('packs');
   root.innerHTML = '';
   for(const p of packs){
@@ -324,7 +387,9 @@ async function loadPacks(){
     el.className='pack';
     const creator = p.creator_name ? `${p.creator_name} • ${p.creator_verification} • trust ${p.creator_trust_score}` : 'No creator';
     const scopes = p.scopes.length ? p.scopes.map(s=>`<span class='pill'>${s}</span>`).join('') : '<span class="muted">no scopes</span>';
+    const checked = selectedCatalogPackIds.has(p.id) ? 'checked' : '';
     el.innerHTML = `
+      <label class='muted'><input type='checkbox' ${checked} onchange='toggleCatalogPack(${p.id}, this.checked)'/> Select</label>
       <h3>${p.title}</h3>
       <div><span class='pill'>${p.type}</span><span class='pill'>risk:${p.risk_level}</span>${p.requires_approval?"<span class='pill'>approval required</span>":""}</div>
       <p class='muted'>${p.description}</p>
@@ -335,6 +400,7 @@ async function loadPacks(){
     `;
     root.appendChild(el);
   }
+  updateCatalogSelectedCount();
 }
 
 async function loadInstalls(){
