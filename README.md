@@ -41,6 +41,7 @@ Then open: `http://localhost:8787/docs`
 - Optional endpoint auth: set `BOTSTORE_BOT_KEY` env var and send `X-Botstore-Key` header on `/bot/*`
 - See `docs/bot-commands.md` for Telegram-ready mapping details
 - Run `integrations/telegram_bridge.py` for direct Telegram chat integration (see `docs/telegram-bridge.md`)
+- Autonomous-agent vision + architecture: `docs/botstore-v1-autonomous-agents.md`
 
 ## Next milestones
 1. Add auth + publisher namespaces
