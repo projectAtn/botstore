@@ -170,6 +170,42 @@ class BotCallbackRequest(SQLModel):
     callback_data: str
 
 
+class AgentSearchRequest(SQLModel):
+    user_id: str
+    runtime: str
+    runtime_version: Optional[str] = None
+    intent: str = ""
+    missing_capabilities: list[str] = []
+    limit: int = 10
+
+
+class AgentInstallByCapabilityRequest(SQLModel):
+    user_id: str
+    runtime: str
+    required_capabilities: list[str]
+
+
+class AgentPolicyEvaluateRequest(SQLModel):
+    user_id: str
+    runtime: str
+    pack_id: int
+
+
+class AgentPolicyEvaluateResponse(SQLModel):
+    decision: str
+    reason: str
+
+
+class AgentOutcomeRequest(SQLModel):
+    user_id: str
+    task_id: str
+    runtime: str
+    pack_id: int
+    success: bool
+    latency_ms: Optional[float] = None
+    error_class: Optional[str] = None
+
+
 class InstallSetup(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     install_id: int = Field(foreign_key="install.id", unique=True, index=True)
@@ -184,6 +220,17 @@ class InstallSetupUpdate(SQLModel):
     calendar_connected: bool = False
     notion_connected: bool = False
     slack_connected: bool = False
+
+
+class AgentOutcome(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    user_id: str = Field(index=True)
+    task_id: str = Field(index=True)
+    runtime: str = Field(index=True)
+    pack_id: int = Field(foreign_key="pack.id", index=True)
+    success: bool
+    latency_ms: Optional[float] = None
+    error_class: Optional[str] = None
 
 
 sqlite_file_name = "./botstore.db"
@@ -344,6 +391,139 @@ def catalog(type: Optional[PackType] = None, featured_only: bool = False) -> lis
                 )
             )
         return out
+
+
+def _pack_score_for_capabilities(pack: Pack, required: list[str]) -> float:
+    pack_caps = set(_csv_to_scopes(pack.scopes_csv))
+    req = [c.strip() for c in required if c.strip()]
+    if not req:
+        return 0.0
+    covered = len([c for c in req if c in pack_caps])
+    coverage = covered / max(len(req), 1)
+    risk_penalty = {"low": 0.0, "medium": 0.08, "high": 0.2}.get(pack.risk_level.lower(), 0.1)
+    return coverage - risk_penalty
+
+
+@app.post("/agent/search-capabilities")
+def agent_search_capabilities(payload: AgentSearchRequest) -> dict:
+    with Session(engine) as session:
+        packs = list(session.exec(select(Pack)).all())
+        ranked = []
+        for p in packs:
+            score = _pack_score_for_capabilities(p, payload.missing_capabilities)
+            if score <= 0:
+                continue
+            ranked.append({
+                "pack_id": p.id,
+                "slug": p.slug,
+                "title": p.title,
+                "type": p.type,
+                "score": round(score, 4),
+                "capabilities": _csv_to_scopes(p.scopes_csv),
+                "requires_approval": _requires_approval(p),
+            })
+        ranked.sort(key=lambda x: x["score"], reverse=True)
+        return {
+            "runtime": payload.runtime,
+            "intent": payload.intent,
+            "required_capabilities": payload.missing_capabilities,
+            "results": ranked[: max(1, min(payload.limit, 50))],
+        }
+
+
+@app.post("/agent/install-by-capability")
+def agent_install_by_capability(payload: AgentInstallByCapabilityRequest) -> dict:
+    search = agent_search_capabilities(
+        AgentSearchRequest(
+            user_id=payload.user_id,
+            runtime=payload.runtime,
+            missing_capabilities=payload.required_capabilities,
+            limit=10,
+        )
+    )
+    chosen = search.get("results", [])
+    if not chosen:
+        return {"ok": False, "message": "no matching packs", "installs": []}
+
+    installs: list[dict] = []
+    with Session(engine) as session:
+        covered_caps: set[str] = set()
+        req = [c.strip() for c in payload.required_capabilities if c.strip()]
+        for candidate in chosen:
+            pack = session.get(Pack, int(candidate["pack_id"]))
+            if not pack:
+                continue
+            pack_caps = set(_csv_to_scopes(pack.scopes_csv))
+            if not any(c in pack_caps for c in req if c not in covered_caps):
+                continue
+            res = _create_install(session, payload.user_id, pack)
+            installs.append({
+                "pack_id": pack.id,
+                "slug": pack.slug,
+                "install_id": res.install.id,
+                "status": res.install.status,
+                "approval_id": res.approval_id,
+            })
+            covered_caps.update(pack_caps)
+            if all(c in covered_caps for c in req):
+                break
+
+    return {
+        "ok": True,
+        "required_capabilities": payload.required_capabilities,
+        "installed_count": len(installs),
+        "installs": installs,
+    }
+
+
+@app.post("/agent/policy-evaluate", response_model=AgentPolicyEvaluateResponse)
+def agent_policy_evaluate(payload: AgentPolicyEvaluateRequest) -> AgentPolicyEvaluateResponse:
+    with Session(engine) as session:
+        pack = session.get(Pack, payload.pack_id)
+        if not pack:
+            raise HTTPException(status_code=404, detail="pack not found")
+        if _requires_approval(pack):
+            return AgentPolicyEvaluateResponse(decision="require_approval", reason="risk/scopes require approval")
+        return AgentPolicyEvaluateResponse(decision="allow", reason="low-risk pack")
+
+
+@app.post("/agent/outcome")
+def agent_outcome(payload: AgentOutcomeRequest) -> dict:
+    with Session(engine) as session:
+        pack = session.get(Pack, payload.pack_id)
+        if not pack:
+            raise HTTPException(status_code=404, detail="pack not found")
+        row = AgentOutcome(
+            user_id=payload.user_id,
+            task_id=payload.task_id,
+            runtime=payload.runtime,
+            pack_id=payload.pack_id,
+            success=payload.success,
+            latency_ms=payload.latency_ms,
+            error_class=payload.error_class,
+        )
+        session.add(row)
+        session.commit()
+        session.refresh(row)
+        return {"ok": True, "outcome_id": row.id}
+
+
+@app.get("/agent/compatibility/{pack_id}")
+def agent_compatibility(pack_id: int, runtime: str, version: Optional[str] = None) -> dict:
+    _ = version
+    with Session(engine) as session:
+        pack = session.get(Pack, pack_id)
+        if not pack:
+            raise HTTPException(status_code=404, detail="pack not found")
+        caps = _csv_to_scopes(pack.scopes_csv)
+        supported = True if caps else False
+        return {
+            "pack_id": pack_id,
+            "runtime": runtime,
+            "status": "native" if supported else "partial",
+            "capabilities": caps,
+            "requires_approval": _requires_approval(pack),
+        }
 
 
 @app.get("/bot/store", response_model=list[CatalogPack])
