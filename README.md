@@ -49,6 +49,7 @@ Then open: `http://localhost:8787/docs`
 - `POST /agent/outcome`
 - `GET /agent/compatibility/{pack_id}?runtime=<name>&version=<opt>`
 - Autonomous-agent vision + architecture: `docs/botstore-v1-autonomous-agents.md`
+- Content system starter: `docs/content-strategy-v1.md`
 
 ## Next milestones
 1. Add auth + publisher namespaces
