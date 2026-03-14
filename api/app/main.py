@@ -398,11 +398,19 @@ def _pack_score_for_capabilities(pack: Pack, required: list[str]) -> float:
     req = [c.strip() for c in required if c.strip()]
     if not req:
         return 0.0
+
     covered = len([c for c in req if c in pack_caps])
     coverage = covered / max(len(req), 1)
-    risk_penalty = {"low": 0.0, "medium": 0.08, "high": 0.2}.get(pack.risk_level.lower(), 0.1)
+
+    has_sensitive_req = any(c in SENSITIVE_SCOPES for c in req)
+    if has_sensitive_req:
+        # For sensitive capability requests, prefer governance-capable packs.
+        risk_adjust = {"low": -0.03, "medium": 0.02, "high": 0.06}.get(pack.risk_level.lower(), 0.0)
+    else:
+        risk_adjust = -{"low": 0.0, "medium": 0.08, "high": 0.2}.get(pack.risk_level.lower(), 0.1)
+
     type_bias = {PackType.skill: 0.05, PackType.bundle: -0.02, PackType.personality: -0.08}.get(pack.type, 0.0)
-    return coverage - risk_penalty + type_bias
+    return coverage + risk_adjust + type_bias
 
 
 @app.post("/agent/search-capabilities")

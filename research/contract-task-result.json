@@ -1,8 +1,8 @@
 {
   "summary": {
     "total": 8,
-    "pass": 7,
-    "avg_score": 82.5
+    "pass": 8,
+    "avg_score": 87.5
   },
   "results": [
     {
@@ -28,7 +28,7 @@
         {
           "name": "discoverable_by_required_capabilities",
           "pass": true,
-          "details": "top_results=['inbox-calendar-ops', 'service-ops-verticals', 'founder-command-bundle', 'universal-connector-auth', 'human-escalation-router']"
+          "details": "top_results=['inbox-calendar-ops', 'service-ops-verticals', 'founder-command-bundle', 'universal-connector-auth', 'policy-compliance-guard']"
         },
         {
           "name": "install_by_capability_selects_pack",
@@ -41,7 +41,7 @@
           "details": "required=True, first_installed=inbox-calendar-ops"
         }
       ],
-      "latency_ms": 15.3
+      "latency_ms": 12.2
     },
     {
       "slug": "research-analyst",
@@ -79,7 +79,7 @@
           "details": "required=False, first_installed=research-analyst"
         }
       ],
-      "latency_ms": 8.3
+      "latency_ms": 6.0
     },
     {
       "slug": "fact-source-verifier",
@@ -117,7 +117,7 @@
           "details": "required=False, first_installed=research-analyst"
         }
       ],
-      "latency_ms": 8.1
+      "latency_ms": 5.7
     },
     {
       "slug": "policy-compliance-guard",
@@ -126,8 +126,8 @@
       "risk_level": "high",
       "must_select_deterministically": true,
       "min_score": 95,
-      "pass": false,
-      "score": 60,
+      "pass": true,
+      "score": 100,
       "checks": [
         {
           "name": "scope_coverage",
@@ -142,20 +142,20 @@
         {
           "name": "discoverable_by_required_capabilities",
           "pass": true,
-          "details": "top_results=['human-escalation-router', 'policy-compliance-guard', 'inbox-calendar-ops', 'multi-agent-orchestrator', 'service-ops-verticals']"
+          "details": "top_results=['policy-compliance-guard', 'human-escalation-router', 'approval-policy-brain', 'inbox-calendar-ops', 'multi-agent-orchestrator']"
         },
         {
           "name": "install_by_capability_selects_pack",
-          "pass": false,
-          "details": "installed=['human-escalation-router']"
+          "pass": true,
+          "details": "installed=['policy-compliance-guard']"
         },
         {
           "name": "deterministic_primary_selection",
-          "pass": false,
-          "details": "required=True, first_installed=human-escalation-router"
+          "pass": true,
+          "details": "required=True, first_installed=policy-compliance-guard"
         }
       ],
-      "latency_ms": 10.0
+      "latency_ms": 7.1
     },
     {
       "slug": "autonomous-retry-recovery",
@@ -193,7 +193,7 @@
           "details": "required=False, first_installed=capability-discovery-engine"
         }
       ],
-      "latency_ms": 8.1
+      "latency_ms": 5.5
     },
     {
       "slug": "human-escalation-router",
@@ -218,20 +218,20 @@
         {
           "name": "discoverable_by_required_capabilities",
           "pass": true,
-          "details": "top_results=['multi-agent-orchestrator', 'human-escalation-router', 'approval-policy-brain', 'policy-compliance-guard', 'research-analyst']"
+          "details": "top_results=['approval-policy-brain', 'policy-compliance-guard', 'multi-agent-orchestrator', 'human-escalation-router', 'inbox-calendar-ops']"
         },
         {
           "name": "install_by_capability_selects_pack",
           "pass": false,
-          "details": "installed=['multi-agent-orchestrator']"
+          "details": "installed=['approval-policy-brain']"
         },
         {
           "name": "deterministic_primary_selection",
           "pass": true,
-          "details": "required=False, first_installed=multi-agent-orchestrator"
+          "details": "required=False, first_installed=approval-policy-brain"
         }
       ],
-      "latency_ms": 8.8
+      "latency_ms": 6.5
     },
     {
       "slug": "private-local-execution",
@@ -269,7 +269,7 @@
           "details": "required=False, first_installed=memory-architect"
         }
       ],
-      "latency_ms": 7.3
+      "latency_ms": 5.5
     },
     {
       "slug": "task-contract-engine",
@@ -307,7 +307,7 @@
           "details": "required=False, first_installed=capability-discovery-engine"
         }
       ],
-      "latency_ms": 7.4
+      "latency_ms": 5.4
     }
   ]
 }
