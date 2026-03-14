@@ -4,6 +4,7 @@ import os
 import time
 import urllib.parse
 import urllib.request
+from typing import Dict, Optional
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 BOTSTORE_API = os.getenv("BOTSTORE_API", "http://127.0.0.1:8787").rstrip("/")
@@ -15,7 +16,7 @@ if not BOT_TOKEN:
 API_BASE = f"https://api.telegram.org/bot{BOT_TOKEN}"
 
 
-def http_json(url: str, method: str = "GET", payload: dict | None = None, headers: dict | None = None) -> dict:
+def http_json(url: str, method: str = "GET", payload: Optional[Dict] = None, headers: Optional[Dict] = None) -> Dict:
     data = None
     req_headers = headers or {}
     if payload is not None:
