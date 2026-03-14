@@ -179,6 +179,22 @@ class AgentSearchRequest(SQLModel):
     limit: int = 10
 
 
+class AgentSearchConstraints(SQLModel):
+    risk_max: Optional[str] = None
+    tier_min: Optional[str] = None
+    latency_ms_max: Optional[int] = None
+
+
+class AgentSearchQuery(SQLModel):
+    user_id: str
+    runtime: str
+    runtime_version: Optional[str] = None
+    query: str = ""
+    missing_capabilities: list[str] = []
+    constraints: Optional[AgentSearchConstraints] = None
+    limit: int = 10
+
+
 class AgentInstallByCapabilityRequest(SQLModel):
     user_id: str
     runtime: str
@@ -291,6 +307,43 @@ def _ints_to_csv(values: list[int]) -> str:
 def _requires_approval(pack: Pack) -> bool:
     scopes = set(_csv_to_scopes(pack.scopes_csv))
     return pack.risk_level.lower() == "high" or bool(scopes.intersection(SENSITIVE_SCOPES))
+
+
+SEARCH_SYNONYMS = {
+    "schedule": ["calendar", "meeting", "timezone"],
+    "email": ["inbox", "mail", "reply", "triage"],
+    "research": ["source", "citation", "web", "verify"],
+    "compliance": ["policy", "audit", "risk", "governance"],
+    "coding": ["code", "repo", "pr", "debug"],
+    "support": ["ticket", "helpdesk", "customer"],
+    "cost": ["budget", "spend", "finops"],
+}
+
+
+def _tokenize(text: str) -> set[str]:
+    norm = "".join(ch.lower() if ch.isalnum() else " " for ch in (text or ""))
+    parts = {p for p in norm.split() if len(p) >= 2}
+    expanded = set(parts)
+    for t in list(parts):
+        expanded.update(SEARCH_SYNONYMS.get(t, []))
+    return expanded
+
+
+def _risk_rank(risk: str) -> int:
+    return {"low": 1, "medium": 2, "high": 3}.get((risk or "low").lower(), 2)
+
+
+def _tier_rank(score: float) -> int:
+    if score >= 0.95:
+        return 3  # gold-ish
+    if score >= 0.85:
+        return 2  # silver-ish
+    return 1  # bronze-ish
+
+
+def _pack_text_blob(pack: Pack) -> str:
+    scopes = " ".join(_csv_to_scopes(pack.scopes_csv))
+    return f"{pack.slug} {pack.title} {pack.description} {scopes}"
 
 
 @app.get("/")
@@ -436,6 +489,61 @@ def agent_search_capabilities(payload: AgentSearchRequest) -> dict:
             "runtime": payload.runtime,
             "intent": payload.intent,
             "required_capabilities": payload.missing_capabilities,
+            "results": ranked[: max(1, min(payload.limit, 50))],
+        }
+
+
+@app.post("/agent/search")
+def agent_search(payload: AgentSearchQuery) -> dict:
+    query_tokens = _tokenize(payload.query)
+    required = [c.strip() for c in payload.missing_capabilities if c.strip()]
+    constraints = payload.constraints or AgentSearchConstraints()
+
+    with Session(engine) as session:
+        packs = list(session.exec(select(Pack)).all())
+        ranked: list[dict] = []
+
+        for p in packs:
+            capability_score = _pack_score_for_capabilities(p, required) if required else 0.0
+            pack_tokens = _tokenize(_pack_text_blob(p))
+            overlap = len(query_tokens.intersection(pack_tokens))
+            text_score = overlap / max(len(query_tokens), 1) if query_tokens else 0.0
+
+            total = capability_score + (0.45 * text_score)
+
+            # Constraints
+            if constraints.risk_max and _risk_rank(p.risk_level) > _risk_rank(constraints.risk_max):
+                continue
+            if constraints.tier_min and _tier_rank(total) < {"bronze": 1, "silver": 2, "gold": 3}.get(constraints.tier_min, 1):
+                continue
+
+            reasons = []
+            if required:
+                pack_caps = set(_csv_to_scopes(p.scopes_csv))
+                covered = sorted([c for c in required if c in pack_caps])
+                reasons.append(f"covers capabilities: {', '.join(covered) if covered else 'none'}")
+            if query_tokens:
+                reasons.append(f"query term overlap: {overlap}")
+            reasons.append(f"risk={p.risk_level}")
+
+            ranked.append({
+                "pack_id": p.id,
+                "slug": p.slug,
+                "title": p.title,
+                "type": p.type,
+                "score": round(total, 4),
+                "capabilities": _csv_to_scopes(p.scopes_csv),
+                "requires_approval": _requires_approval(p),
+                "why": reasons,
+            })
+
+        ranked.sort(key=lambda x: x["score"], reverse=True)
+
+        return {
+            "query": payload.query,
+            "parsed_terms": sorted(query_tokens),
+            "required_capabilities": required,
+            "constraints": constraints.model_dump(),
             "results": ranked[: max(1, min(payload.limit, 50))],
         }
 
