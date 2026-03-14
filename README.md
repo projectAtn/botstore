@@ -51,6 +51,9 @@ Then open: `http://localhost:8787/docs`
 - Autonomous-agent vision + architecture: `docs/botstore-v1-autonomous-agents.md`
 - Content system starter: `docs/content-strategy-v1.md`
 - Candidate pack quality gate: `research/candidate-packs-v1.json` + `scripts/quality_check_candidates.py` + `research/candidate-packs-quality-report.md`
+- Runtime simulation + tier gate: `scripts/runtime_simulation_verify.py` + `research/runtime-simulation-report.md` + `research/runtime-simulation-result.json`
+- Auto delist enforcement: `scripts/enforce_delist.py`
+- Verification policy: `docs/verification-tiers.md`
 - Reddit/X demand scan notes: `research/reddit-x-skill-demand-2026-03-14.md`
 
 ## Next milestones

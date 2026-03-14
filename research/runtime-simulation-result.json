@@ -4,7 +4,9 @@
       "slug": "model-switchboard",
       "title": "Model Switchboard",
       "type": "skill",
+      "risk_level": "low",
       "score": 100,
+      "tier": "gold",
       "verified": true,
       "tests": [
         {
@@ -27,13 +29,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "workflow-version-pinning",
       "title": "Workflow Version Pinning",
       "type": "skill",
+      "risk_level": "low",
       "score": 100,
+      "tier": "gold",
       "verified": true,
       "tests": [
         {
@@ -56,13 +63,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "fact-source-verifier",
       "title": "Fact & Source Verifier",
       "type": "skill",
+      "risk_level": "low",
       "score": 75,
+      "tier": "bronze",
       "verified": true,
       "tests": [
         {
@@ -85,13 +97,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "synthetic-media-checker",
       "title": "Synthetic Media Checker",
       "type": "skill",
+      "risk_level": "low",
       "score": 100,
+      "tier": "gold",
       "verified": true,
       "tests": [
         {
@@ -114,13 +131,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "policy-compliance-guard",
       "title": "Policy & Compliance Guard",
       "type": "skill",
+      "risk_level": "high",
       "score": 100,
+      "tier": "gold",
       "verified": true,
       "tests": [
         {
@@ -143,13 +165,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 95,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "cost-governor",
       "title": "Cost Governor",
       "type": "skill",
+      "risk_level": "low",
       "score": 75,
+      "tier": "bronze",
       "verified": true,
       "tests": [
         {
@@ -172,13 +199,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "autonomous-retry-recovery",
       "title": "Autonomous Retry & Recovery",
       "type": "skill",
+      "risk_level": "low",
       "score": 100,
+      "tier": "gold",
       "verified": true,
       "tests": [
         {
@@ -201,13 +233,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "human-escalation-router",
       "title": "Human Escalation Router",
       "type": "skill",
+      "risk_level": "medium",
       "score": 100,
+      "tier": "gold",
       "verified": true,
       "tests": [
         {
@@ -230,13 +267,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "tool-health-monitor",
       "title": "Tool Health Monitor",
       "type": "skill",
+      "risk_level": "low",
       "score": 75,
+      "tier": "bronze",
       "verified": true,
       "tests": [
         {
@@ -259,13 +301,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "private-local-execution",
       "title": "Private Local Execution",
       "type": "skill",
+      "risk_level": "medium",
       "score": 100,
+      "tier": "gold",
       "verified": true,
       "tests": [
         {
@@ -288,13 +335,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "web-action-proof-logger",
       "title": "Web Action Proof Logger",
       "type": "skill",
+      "risk_level": "low",
       "score": 100,
+      "tier": "gold",
       "verified": true,
       "tests": [
         {
@@ -317,13 +369,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "task-contract-engine",
       "title": "Task Contract Engine",
       "type": "skill",
+      "risk_level": "low",
       "score": 75,
+      "tier": "bronze",
       "verified": true,
       "tests": [
         {
@@ -346,13 +403,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "ops-chief-persona",
       "title": "No-BS Ops Chief",
       "type": "personality",
+      "risk_level": "low",
       "score": 75,
+      "tier": "bronze",
       "verified": true,
       "tests": [
         {
@@ -375,13 +437,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "safety-analyst-persona",
       "title": "Safety-First Analyst",
       "type": "personality",
+      "risk_level": "low",
       "score": 100,
+      "tier": "gold",
       "verified": true,
       "tests": [
         {
@@ -404,13 +471,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "research-scholar-persona",
       "title": "Research Scholar",
       "type": "personality",
+      "risk_level": "low",
       "score": 75,
+      "tier": "bronze",
       "verified": true,
       "tests": [
         {
@@ -433,13 +505,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "cfo-assistant-persona",
       "title": "Cost-Conscious CFO Assistant",
       "type": "personality",
+      "risk_level": "low",
       "score": 75,
+      "tier": "bronze",
       "verified": true,
       "tests": [
         {
@@ -462,13 +539,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
       "slug": "autonomous-worker-persona",
       "title": "Autonomous Worker",
       "type": "personality",
+      "risk_level": "medium",
       "score": 75,
+      "tier": "bronze",
       "verified": true,
       "tests": [
         {
@@ -491,13 +573,18 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 85,
+      "risk_gate_pass": false,
+      "final_verified": false
     },
     {
       "slug": "enterprise-assistant-persona",
       "title": "Audit-Ready Enterprise Assistant",
       "type": "personality",
+      "risk_level": "medium",
       "score": 75,
+      "tier": "bronze",
       "verified": true,
       "tests": [
         {
@@ -520,7 +607,10 @@
           "pass": true,
           "details": "quality_tests=3"
         }
-      ]
+      ],
+      "required_score": 85,
+      "risk_gate_pass": false,
+      "final_verified": false
     }
   ],
   "verified_slugs": [
@@ -539,8 +629,33 @@
     "ops-chief-persona",
     "safety-analyst-persona",
     "research-scholar-persona",
-    "cfo-assistant-persona",
+    "cfo-assistant-persona"
+  ],
+  "delisted_slugs": [
     "autonomous-worker-persona",
     "enterprise-assistant-persona"
-  ]
+  ],
+  "tiered_verified": {
+    "gold": [
+      "model-switchboard",
+      "workflow-version-pinning",
+      "synthetic-media-checker",
+      "policy-compliance-guard",
+      "autonomous-retry-recovery",
+      "human-escalation-router",
+      "private-local-execution",
+      "web-action-proof-logger",
+      "safety-analyst-persona"
+    ],
+    "silver": [],
+    "bronze": [
+      "fact-source-verifier",
+      "cost-governor",
+      "tool-health-monitor",
+      "task-contract-engine",
+      "ops-chief-persona",
+      "research-scholar-persona",
+      "cfo-assistant-persona"
+    ]
+  }
 }
