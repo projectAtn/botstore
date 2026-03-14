@@ -1,0 +1,506 @@
+{
+  "version": "v2",
+  "generated_by": "product-bot",
+  "items": [
+    {
+      "slug": "inbox-triage-ops",
+      "title": "Inbox Triage Ops",
+      "type": "skill",
+      "problem": "Knowledge workers lose hours daily sorting, prioritizing, and responding to high-volume email and chat inboxes.",
+      "includes": [
+        "Urgency and intent classifier",
+        "Thread summarizer with action extraction",
+        "Smart draft replies with tone controls",
+        "Snooze/follow-up scheduler",
+        "VIP sender policy rules"
+      ],
+      "scopes": ["email", "chat", "calendar", "tasks"],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Precision/recall on urgent message detection >= 0.9",
+        "No hallucinated commitments in generated replies",
+        "SLA routing test routes priority messages within 60 seconds"
+      ]
+    },
+    {
+      "slug": "calendar-negotiator",
+      "title": "Calendar Negotiator",
+      "type": "skill",
+      "problem": "Scheduling across multiple parties and time zones creates friction and delays decisions.",
+      "includes": [
+        "Multi-party availability intersection",
+        "Timezone-safe slot proposals",
+        "Conflict-aware rescheduling",
+        "Meeting intent templates",
+        "Automatic hold and release logic"
+      ],
+      "scopes": ["calendar", "email", "chat", "timezone"],
+      "risk_level": "medium",
+      "quality_tests": [
+        "No double-booking under concurrent booking attempts",
+        "Timezone conversion accuracy across DST boundaries",
+        "Reschedule workflow preserves attendee list and meeting metadata"
+      ]
+    },
+    {
+      "slug": "sales-crm-autopilot",
+      "title": "Sales CRM Autopilot",
+      "type": "skill",
+      "problem": "Sales teams under-log deal activity, leading to poor forecasting and missed follow-ups.",
+      "includes": [
+        "Call/email activity ingestion",
+        "Opportunity stage recommendation",
+        "Next-step reminder engine",
+        "Pipeline risk scoring",
+        "Weekly forecast digest"
+      ],
+      "scopes": ["crm", "email", "calls", "analytics"],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Stage recommendation agreement with human reps >= 80%",
+        "No duplicate activity records on repeated sync",
+        "Forecast delta error tracked and below defined threshold"
+      ]
+    },
+    {
+      "slug": "customer-support-copilot",
+      "title": "Customer Support Copilot",
+      "type": "skill",
+      "problem": "Support agents need faster, consistent answers without violating policy or making incorrect promises.",
+      "includes": [
+        "Ticket intent and severity routing",
+        "Knowledge base grounded response generation",
+        "Escalation trigger detection",
+        "Macro suggestion engine",
+        "CSAT-aware response optimizer"
+      ],
+      "scopes": ["helpdesk", "kb", "chat", "email"],
+      "risk_level": "high",
+      "quality_tests": [
+        "Grounded answer citation coverage >= 95%",
+        "Policy-violation rate below acceptable threshold",
+        "P1 tickets auto-escalate within configured SLA"
+      ]
+    },
+    {
+      "slug": "finance-expense-audit",
+      "title": "Finance Expense Audit",
+      "type": "skill",
+      "problem": "Manual expense reviews are slow and miss duplicate, out-of-policy, or suspicious reimbursements.",
+      "includes": [
+        "Receipt OCR and merchant normalization",
+        "Policy rule engine",
+        "Duplicate claim detection",
+        "Anomaly scoring",
+        "Audit trail exporter"
+      ],
+      "scopes": ["finance", "documents", "compliance", "erp"],
+      "risk_level": "high",
+      "quality_tests": [
+        "OCR field extraction F1 >= 0.92",
+        "Known duplicate test set recall >= 0.95",
+        "All approval/denial decisions have immutable audit logs"
+      ]
+    },
+    {
+      "slug": "contract-lifecycle-assistant",
+      "title": "Contract Lifecycle Assistant",
+      "type": "skill",
+      "problem": "Legal and procurement teams miss key contract obligations, renewal windows, and risky clauses.",
+      "includes": [
+        "Clause extraction and tagging",
+        "Risk clause detector",
+        "Renewal/termination date tracker",
+        "Obligation calendar sync",
+        "Redline summary generator"
+      ],
+      "scopes": ["legal", "procurement", "documents", "calendar"],
+      "risk_level": "high",
+      "quality_tests": [
+        "Clause extraction accuracy on benchmark set >= 90%",
+        "Renewal reminders fire before configured lead time",
+        "Redline summaries preserve all material changes"
+      ]
+    },
+    {
+      "slug": "recruiting-pipeline-manager",
+      "title": "Recruiting Pipeline Manager",
+      "type": "skill",
+      "problem": "Recruiters spend too much time coordinating interviews and moving candidates through fragmented ATS workflows.",
+      "includes": [
+        "Resume parsing and fit scoring",
+        "Interview scheduling coordinator",
+        "Candidate communication templates",
+        "Stage progression recommendations",
+        "Bias check flags"
+      ],
+      "scopes": ["ats", "calendar", "email", "hr"],
+      "risk_level": "high",
+      "quality_tests": [
+        "Interview scheduling success rate >= 95% without manual edits",
+        "Candidate status updates remain consistent across ATS records",
+        "Bias flagging tested against synthetic fairness scenarios"
+      ]
+    },
+    {
+      "slug": "onboarding-automation-suite",
+      "title": "Employee Onboarding Automation Suite",
+      "type": "skill",
+      "problem": "New hires face delays because IT, HR, and managers execute onboarding steps inconsistently.",
+      "includes": [
+        "Role-based onboarding checklist generator",
+        "Account and access request orchestration",
+        "Equipment shipment tracking",
+        "First-week meeting planner",
+        "Completion compliance dashboard"
+      ],
+      "scopes": ["hr", "it", "identity", "logistics"],
+      "risk_level": "medium",
+      "quality_tests": [
+        "All mandatory onboarding tasks created within 5 minutes of hire event",
+        "Access grants match role policy matrix",
+        "Missing-step alert triggers before start date"
+      ]
+    },
+    {
+      "slug": "knowledge-base-steward",
+      "title": "Knowledge Base Steward",
+      "type": "skill",
+      "problem": "Internal documentation decays quickly, causing repeated questions and inconsistent decisions.",
+      "includes": [
+        "Doc freshness scanner",
+        "Duplicate/overlap detector",
+        "Auto-summary and changelog writer",
+        "Broken link checker",
+        "FAQ generation from support traffic"
+      ],
+      "scopes": ["wiki", "support", "search", "documentation"],
+      "risk_level": "low",
+      "quality_tests": [
+        "Stale doc detector catches aged pages per configured thresholds",
+        "Generated summaries match source facts with zero critical errors",
+        "Broken links identified with >= 99% precision"
+      ]
+    },
+    {
+      "slug": "meeting-intelligence-pack",
+      "title": "Meeting Intelligence Pack",
+      "type": "skill",
+      "problem": "Teams forget decisions and action items from meetings, reducing execution velocity.",
+      "includes": [
+        "Live transcription ingestion",
+        "Decision and action-item extractor",
+        "Owner/deadline assignment assistant",
+        "Post-meeting summary distribution",
+        "Action follow-through reminders"
+      ],
+      "scopes": ["meetings", "tasks", "chat", "documents"],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Action-item extraction recall >= 90% on evaluation set",
+        "Owner and due-date assignment validated before publish",
+        "Summary delivered within 10 minutes after meeting end"
+      ]
+    },
+    {
+      "slug": "incident-response-commander",
+      "title": "Incident Response Commander",
+      "type": "skill",
+      "problem": "Engineering incidents suffer from fragmented communication and delayed coordination.",
+      "includes": [
+        "Alert deduplication and severity triage",
+        "War-room channel bootstrap",
+        "Timeline auto-capture",
+        "Status page update assistant",
+        "Postmortem draft generator"
+      ],
+      "scopes": ["devops", "observability", "chatops", "statuspage"],
+      "risk_level": "high",
+      "quality_tests": [
+        "P1 alerts create war-room context in under 30 seconds",
+        "Timeline event ordering remains correct under concurrent updates",
+        "Postmortem includes complete incident phases and timestamps"
+      ]
+    },
+    {
+      "slug": "cloud-cost-optimizer",
+      "title": "Cloud Cost Optimizer",
+      "type": "skill",
+      "problem": "Cloud spend drifts upward due to underused resources, poor commitment coverage, and weak visibility.",
+      "includes": [
+        "Idle resource detector",
+        "Rightsizing recommendations",
+        "Commitment plan advisor",
+        "Anomalous spend alerting",
+        "Team-level chargeback reports"
+      ],
+      "scopes": ["cloud", "finops", "analytics", "alerts"],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Rightsizing recommendations validated against utilization history",
+        "False positive rate for spend anomalies below threshold",
+        "Savings estimate error measured monthly and trended"
+      ]
+    },
+    {
+      "slug": "security-posture-guardian",
+      "title": "Security Posture Guardian",
+      "type": "skill",
+      "problem": "Security teams struggle to continuously enforce baseline controls across rapidly changing environments.",
+      "includes": [
+        "Config drift detection",
+        "Vulnerability prioritization",
+        "Access review automation",
+        "Patch SLA tracker",
+        "Executive risk snapshot"
+      ],
+      "scopes": ["security", "cloud", "identity", "compliance"],
+      "risk_level": "high",
+      "quality_tests": [
+        "Critical misconfigurations detected within scan interval",
+        "Prioritization aligns with CVSS plus exploitability policy",
+        "Access review campaign completion tracked with full evidence"
+      ]
+    },
+    {
+      "slug": "compliance-evidence-collector",
+      "title": "Compliance Evidence Collector",
+      "type": "skill",
+      "problem": "Audit preparation is repetitive and brittle when evidence is manually gathered from many systems.",
+      "includes": [
+        "Control-to-system evidence mapping",
+        "Scheduled evidence pulls",
+        "Gap and expiry alerts",
+        "Auditor-ready packet generator",
+        "Immutable evidence ledger"
+      ],
+      "scopes": ["compliance", "security", "documents", "governance"],
+      "risk_level": "high",
+      "quality_tests": [
+        "Evidence artifacts include provenance metadata",
+        "Missing evidence detected before audit deadline",
+        "Generated control packets pass internal audit checklist"
+      ]
+    },
+    {
+      "slug": "marketing-campaign-orchestrator",
+      "title": "Marketing Campaign Orchestrator",
+      "type": "skill",
+      "problem": "Campaign execution across channels is fragmented, causing inconsistent messaging and weak attribution.",
+      "includes": [
+        "Audience segment sync",
+        "Multi-channel content calendar",
+        "Variant generation and testing",
+        "UTM and attribution hygiene checks",
+        "Performance digest automation"
+      ],
+      "scopes": ["marketing", "ads", "email", "analytics"],
+      "risk_level": "medium",
+      "quality_tests": [
+        "All published links contain valid attribution parameters",
+        "A/B experiments log clear hypotheses and winning criteria",
+        "Cross-channel campaign naming remains consistent"
+      ]
+    },
+    {
+      "slug": "seo-content-factory",
+      "title": "SEO Content Factory",
+      "type": "skill",
+      "problem": "Content teams need scalable SEO production while maintaining factual quality and brand voice.",
+      "includes": [
+        "Keyword clustering and intent mapping",
+        "SERP outline generator",
+        "Fact-grounded draft writer",
+        "Internal linking suggestions",
+        "Refresh-priority scoring"
+      ],
+      "scopes": ["seo", "content", "web", "analytics"],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Published drafts pass fact-check and plagiarism gates",
+        "On-page SEO checklist completeness >= 95%",
+        "Internal link recommendations avoid orphan-page creation"
+      ]
+    },
+    {
+      "slug": "ecommerce-ops-agent",
+      "title": "E-commerce Ops Agent",
+      "type": "skill",
+      "problem": "Online stores lose revenue from stockouts, delayed fulfillment, and inconsistent customer updates.",
+      "includes": [
+        "Inventory depletion forecasting",
+        "Reorder recommendation engine",
+        "Fulfillment exception monitor",
+        "Customer delay notification drafts",
+        "Returns trend analyzer"
+      ],
+      "scopes": ["ecommerce", "inventory", "logistics", "customer-service"],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Forecast error tracked by SKU and held below target",
+        "Exception monitor catches delayed orders before SLA breach",
+        "Return reason classification accuracy >= 90%"
+      ]
+    },
+    {
+      "slug": "procurement-sourcing-copilot",
+      "title": "Procurement Sourcing Copilot",
+      "type": "skill",
+      "problem": "Sourcing cycles are slow because supplier comparisons and approval workflows are highly manual.",
+      "includes": [
+        "Supplier discovery and normalization",
+        "RFP response comparison matrix",
+        "Risk and compliance pre-checks",
+        "Approval workflow routing",
+        "Savings opportunity calculator"
+      ],
+      "scopes": ["procurement", "finance", "legal", "vendor-risk"],
+      "risk_level": "high",
+      "quality_tests": [
+        "Supplier profile merge avoids duplicate vendor entities",
+        "Comparison matrix preserves source traceability",
+        "Approval routes match spend-threshold policy"
+      ]
+    },
+    {
+      "slug": "social-listening-response",
+      "title": "Social Listening & Response",
+      "type": "skill",
+      "problem": "Brands miss critical social mentions and respond inconsistently to opportunities or crises.",
+      "includes": [
+        "Mention and sentiment monitoring",
+        "Priority escalation rules",
+        "Reply suggestion with policy guardrails",
+        "Trend and competitor digest",
+        "Crisis keyword watchlists"
+      ],
+      "scopes": ["social", "brand", "support", "analytics"],
+      "risk_level": "high",
+      "quality_tests": [
+        "High-risk mentions flagged within configured latency",
+        "Suggested replies pass brand and legal policy checks",
+        "Sentiment model calibration validated per language"
+      ]
+    },
+    {
+      "slug": "research-synthesizer-pro",
+      "title": "Research Synthesizer Pro",
+      "type": "skill",
+      "problem": "Teams waste time aggregating fragmented market, technical, and competitive research into usable briefings.",
+      "includes": [
+        "Source crawling and deduplication",
+        "Evidence-ranked insight extraction",
+        "Contradiction detector",
+        "Executive brief generator",
+        "Citation bundle export"
+      ],
+      "scopes": ["research", "web", "documents", "strategy"],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Every major claim includes at least one citation",
+        "Contradiction detector flags conflicting source statements",
+        "Brief generation preserves source confidence levels"
+      ]
+    },
+    {
+      "slug": "data-pipeline-guardian",
+      "title": "Data Pipeline Guardian",
+      "type": "skill",
+      "problem": "Broken or drifting data pipelines silently damage analytics and downstream ML systems.",
+      "includes": [
+        "Schema drift monitor",
+        "Freshness and completeness checks",
+        "Anomaly detection on key metrics",
+        "Backfill assistant",
+        "Root-cause hint generation"
+      ],
+      "scopes": ["data-engineering", "etl", "observability", "analytics"],
+      "risk_level": "high",
+      "quality_tests": [
+        "Schema changes detected before downstream job execution",
+        "Freshness alerts fire within agreed SLA windows",
+        "Backfill runs are idempotent and reproducible"
+      ]
+    },
+    {
+      "slug": "qa-regression-automator",
+      "title": "QA Regression Automator",
+      "type": "skill",
+      "problem": "Manual regression cycles are slow and miss edge cases introduced by frequent releases.",
+      "includes": [
+        "Test case generation from PR diffs",
+        "Risk-based test prioritization",
+        "Flaky test detector",
+        "Visual regression snapshots",
+        "Release readiness report"
+      ],
+      "scopes": ["qa", "ci-cd", "testing", "engineering"],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Generated tests compile and run in CI without manual edits",
+        "Flaky test detection precision >= 85%",
+        "Release report blocks deploy on critical failures"
+      ]
+    },
+    {
+      "slug": "dev-docs-auto-maintainer",
+      "title": "Developer Docs Auto-Maintainer",
+      "type": "skill",
+      "problem": "Engineering docs fall behind code changes, increasing onboarding time and support load.",
+      "includes": [
+        "API diff-to-doc suggestion engine",
+        "Code snippet validity checker",
+        "Changelog synthesis",
+        "Docs PR auto-draft",
+        "Style and terminology lint"
+      ],
+      "scopes": ["developer-experience", "documentation", "git", "api"],
+      "risk_level": "low",
+      "quality_tests": [
+        "Suggested doc updates map to detected API changes",
+        "All code snippets execute successfully in test harness",
+        "Terminology lint aligns with project glossary"
+      ]
+    },
+    {
+      "slug": "real-estate-deal-assistant",
+      "title": "Real Estate Deal Assistant",
+      "type": "skill",
+      "problem": "Agents and investors spend excessive time compiling comps, screening leads, and coordinating closing tasks.",
+      "includes": [
+        "Lead intake and qualification",
+        "Comparable property analyzer",
+        "Offer and counteroffer drafting aids",
+        "Closing checklist coordinator",
+        "Client update automation"
+      ],
+      "scopes": ["real-estate", "crm", "documents", "workflows"],
+      "risk_level": "high",
+      "quality_tests": [
+        "Comp selection logic validated against market rules",
+        "Closing checklist completion tracked per transaction stage",
+        "Generated client updates avoid legal advice language"
+      ]
+    },
+    {
+      "slug": "healthcare-intake-navigator",
+      "title": "Healthcare Intake Navigator",
+      "type": "skill",
+      "problem": "Clinics face intake bottlenecks, incomplete patient forms, and high no-show rates.",
+      "includes": [
+        "Pre-visit intake form assistant",
+        "Insurance and eligibility pre-check",
+        "Appointment reminder sequencing",
+        "Missing-document follow-up",
+        "Provider handoff summary"
+      ],
+      "scopes": ["healthcare", "scheduling", "documents", "patient-communication"],
+      "risk_level": "high",
+      "quality_tests": [
+        "PHI handling validated against privacy policy controls",
+        "Eligibility checks match payer response records",
+        "No-show reminder workflow timing adheres to clinic protocol"
+      ]
+    }
+  ]
+}
