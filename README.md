@@ -57,6 +57,9 @@ Then open: `http://localhost:8787/docs`
 - Pack test runner: `scripts/pack_test_runner.py` + `research/pack-test-report.md` + `research/pack-test-result.json`
 - Statement-based contract runner: `research/pack-performance-contracts.json` + `scripts/contract_task_runner.py` + `research/contract-task-report.md` + `research/contract-task-result.json`
 - Reddit/X demand scan notes: `research/reddit-x-skill-demand-2026-03-14.md`
+- Bot leadership operating model: `docs/bot-ceo-operating-system.md`
+- 90-day GTM execution scorecard: `docs/gtm-90-day-operator-scorecard.md`
+- Community launch kit (Reddit + X): `docs/community-launch-kit.md`
 
 ## Next milestones
 1. Add auth + publisher namespaces
