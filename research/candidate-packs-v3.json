@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-03-14T12:30:59.327174+00:00",
+  "generatedAt": "2026-03-14T12:31:52.175548+00:00",
   "source": {
-    "skills": "/Users/claw/.openclaw/workspace/botstore/research/candidate-packs-v3-skills.json",
-    "personalities": "/Users/claw/.openclaw/workspace/botstore/research/candidate-packs-v3-personalities.json"
+    "skills": "/Users/claw/.openclaw/workspace/botstore/research/candidate-packs-v3-skills-r1.json",
+    "personalities": "/Users/claw/.openclaw/workspace/botstore/research/candidate-packs-v3-personalities-r1.json"
   },
   "candidates": [
     {
@@ -14,7 +14,8 @@
         "Priority scoring",
         "Auto-label rules",
         "Draft reply suggestions",
-        "Daily digest summary"
+        "Daily digest summary",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "email",
@@ -25,7 +26,8 @@
       "quality_tests": [
         "Correctly ranks urgent emails in test mailbox",
         "Never sends without explicit confirmation",
-        "Digest contains no duplicate threads"
+        "Digest contains no duplicate threads",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -37,7 +39,8 @@
         "Conflict detection",
         "Alternative slot finder",
         "Travel buffer recommendations",
-        "Reschedule draft messages"
+        "Reschedule draft messages",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "calendar",
@@ -48,7 +51,8 @@
       "quality_tests": [
         "Detects 100% of overlapping events in fixture",
         "Proposed slots respect working hours",
-        "Reschedule drafts include original context"
+        "Reschedule drafts include original context",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -60,7 +64,8 @@
         "Agenda extraction",
         "Participant context summary",
         "Action-item carryover",
-        "One-page briefing output"
+        "One-page briefing output",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "docs",
@@ -71,7 +76,8 @@
       "quality_tests": [
         "Brief generated under 90 seconds",
         "Includes prior action items when available",
-        "Output follows one-page format"
+        "Output follows one-page format",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -83,7 +89,8 @@
         "Multi-source synthesis",
         "Source credibility checks",
         "APA/MLA output",
-        "Claim-to-source mapping"
+        "Claim-to-source mapping",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "web",
@@ -94,7 +101,8 @@
       "quality_tests": [
         "Every factual claim has at least one citation",
         "Flags low-authority domains",
-        "Citation format passes style lint checks"
+        "Citation format passes style lint checks",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -106,7 +114,8 @@
         "OCR extraction",
         "Category suggestion",
         "Monthly export",
-        "Missing receipt alerts"
+        "Missing receipt alerts",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "finance",
@@ -117,7 +126,8 @@
       "quality_tests": [
         "OCR captures total/date/vendor with >95% accuracy",
         "CSV export imports cleanly into common accounting tools",
-        "Duplicate receipt detection works on sample set"
+        "Duplicate receipt detection works on sample set",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -129,7 +139,8 @@
         "Reservation parsing",
         "Unified itinerary timeline",
         "Delay/rebooking checklists",
-        "Offline-friendly summary"
+        "Offline-friendly summary",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "travel",
@@ -140,7 +151,8 @@
       "quality_tests": [
         "Parses flight/hotel/train confirmations correctly",
         "Timeline is ordered by local timezone",
-        "Checklist updates when delays are detected"
+        "Checklist updates when delays are detected",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -152,7 +164,8 @@
         "JD keyword extraction",
         "Resume tailoring suggestions",
         "Cover letter first draft",
-        "Application tracker"
+        "Application tracker",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "career",
@@ -163,7 +176,8 @@
       "quality_tests": [
         "Extracts top 20 JD keywords",
         "Tailoring suggestions map to user experience",
-        "Tracker status transitions are consistent"
+        "Tracker status transitions are consistent",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -175,7 +189,8 @@
         "Architecture map",
         "Runbook generation",
         "Key file walkthrough",
-        "First-task recommendations"
+        "First-task recommendations",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "developer",
@@ -186,7 +201,8 @@
       "quality_tests": [
         "Generates dependency graph without errors",
         "Runbook commands are executable",
-        "First-task list references existing issues"
+        "First-task list references existing issues",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -198,7 +214,8 @@
         "Diff clustering",
         "Risk hotspot detection",
         "Reviewer-specific summaries",
-        "Merge readiness checklist"
+        "Merge readiness checklist",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "developer",
@@ -209,7 +226,8 @@
       "quality_tests": [
         "Summary highlights changed modules accurately",
         "Flags migration/config risks",
-        "Checklist includes tests/docs/versioning"
+        "Checklist includes tests/docs/versioning",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -221,7 +239,8 @@
         "Timeline reconstruction",
         "Impact template",
         "Root-cause framing",
-        "Action owner assignment"
+        "Action owner assignment",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "sre",
@@ -232,7 +251,8 @@
       "quality_tests": [
         "Timeline includes detection/mitigation/recovery timestamps",
         "Action items have owners and due dates",
-        "Language remains blameless"
+        "Language remains blameless",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -244,7 +264,8 @@
         "Clause extraction",
         "Risk heatmap",
         "Fallback language suggestions",
-        "Negotiation note pack"
+        "Negotiation note pack",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "legal",
@@ -255,7 +276,8 @@
       "quality_tests": [
         "Flags indemnity/liability/termination clauses",
         "Suggested edits preserve clause intent",
-        "Produces clear unresolved-risk summary"
+        "Produces clear unresolved-risk summary",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -267,7 +289,8 @@
         "Template library",
         "Step validation prompts",
         "Versioned SOP output",
-        "Approval checklist"
+        "Approval checklist",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "operations",
@@ -278,7 +301,8 @@
       "quality_tests": [
         "SOP output includes owner/revision history",
         "No missing mandatory sections",
-        "Checklist maps to policy controls"
+        "Checklist maps to policy controls",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -290,7 +314,8 @@
         "Thread extraction",
         "Short-form script variants",
         "Hashtag suggestions",
-        "Platform tone presets"
+        "Platform tone presets",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "content",
@@ -301,7 +326,8 @@
       "quality_tests": [
         "Generates channel-specific length limits",
         "Preserves core message across variants",
-        "No prohibited claims in outputs"
+        "No prohibited claims in outputs",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -313,7 +339,8 @@
         "Variant generation",
         "Hypothesis tagging",
         "Performance import",
-        "Winner rationale"
+        "Winner rationale",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "marketing",
@@ -324,7 +351,8 @@
       "quality_tests": [
         "Produces at least 5 distinct variants",
         "Hypotheses align with copy differences",
-        "Imports and compares CTR/CVR correctly"
+        "Imports and compares CTR/CVR correctly",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -336,7 +364,8 @@
         "Search intent mapping",
         "Outline improvements",
         "Internal linking suggestions",
-        "Snippet preview"
+        "Snippet preview",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "seo",
@@ -347,7 +376,8 @@
       "quality_tests": [
         "Maps primary/secondary intent correctly",
         "Suggestions improve readability score",
-        "No over-optimization warnings triggered"
+        "No over-optimization warnings triggered",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -359,7 +389,8 @@
         "Theme clustering",
         "Sentiment + severity scoring",
         "Feature request dedupe",
-        "Roadmap-ready summary"
+        "Roadmap-ready summary",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "product",
@@ -370,7 +401,8 @@
       "quality_tests": [
         "Clusters remain stable across reruns",
         "Severity score correlates with ticket urgency",
-        "Top themes include representative quotes"
+        "Top themes include representative quotes",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -382,7 +414,8 @@
         "Priority classifier",
         "SLA timer tagging",
         "Escalation suggestions",
-        "Agent handoff notes"
+        "Agent handoff notes",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "support",
@@ -393,7 +426,8 @@
       "quality_tests": [
         "Priority labels hit benchmark precision threshold",
         "SLA breach predictions are accurate on holdout set",
-        "Handoff notes include reproduction context"
+        "Handoff notes include reproduction context",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -405,7 +439,8 @@
         "Active incident summary",
         "Pending action tracker",
         "Risk callouts",
-        "Shift handoff template"
+        "Shift handoff template",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "sre",
@@ -416,7 +451,8 @@
       "quality_tests": [
         "Handoff includes open alerts and owners",
         "Pending actions remain linked to ticket IDs",
-        "No stale incidents appear in summary"
+        "No stale incidents appear in summary",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -428,7 +464,8 @@
         "Migration risk linting",
         "Rollback plan template",
         "Lock-time estimation",
-        "Preflight checklist"
+        "Preflight checklist",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "database",
@@ -439,7 +476,8 @@
       "quality_tests": [
         "Detects destructive operations",
         "Rollback plan references exact migration IDs",
-        "Preflight validates backups and replication health"
+        "Preflight validates backups and replication health",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -451,7 +489,8 @@
         "Breaking-change detection",
         "Consumer mapping",
         "Versioning recommendations",
-        "Changelog generation"
+        "Changelog generation",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "api",
@@ -462,7 +501,8 @@
       "quality_tests": [
         "Flags removed/changed fields accurately",
         "Consumer map includes internal + external clients",
-        "Changelog includes migration notes"
+        "Changelog includes migration notes",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -474,7 +514,8 @@
         "Question extraction",
         "Answer condensation",
         "Beginner vs advanced views",
-        "FAQ freshness checker"
+        "FAQ freshness checker",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "documentation",
@@ -485,7 +526,8 @@
       "quality_tests": [
         "FAQ answers remain faithful to source docs",
         "Beginner mode removes jargon",
-        "Freshness checker flags stale links"
+        "Freshness checker flags stale links",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -497,7 +539,8 @@
         "Goal assessment",
         "Milestone curriculum",
         "Practice plan",
-        "Progress checkpoints"
+        "Progress checkpoints",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "education",
@@ -508,7 +551,8 @@
       "quality_tests": [
         "Curriculum maps to stated goal level",
         "Checkpoints have measurable criteria",
-        "Plan adapts when learner pace changes"
+        "Plan adapts when learner pace changes",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -520,7 +564,8 @@
         "Adaptive weekly planning",
         "Equipment-aware substitutions",
         "Recovery reminders",
-        "Habit streak tracking"
+        "Habit streak tracking",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "health",
@@ -531,7 +576,8 @@
       "quality_tests": [
         "Substitutions preserve target muscle groups",
         "Weekly volume stays within safe thresholds",
-        "Missed sessions trigger realistic adjustments"
+        "Missed sessions trigger realistic adjustments",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -543,7 +589,8 @@
         "Weekly menu generation",
         "Pantry-aware recipes",
         "Consolidated grocery list",
-        "Leftover reuse suggestions"
+        "Leftover reuse suggestions",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "home",
@@ -554,7 +601,8 @@
       "quality_tests": [
         "Grocery list deduplicates ingredients",
         "Recipes fit user constraints",
-        "Leftover reuse covers at least 2 follow-up meals"
+        "Leftover reuse covers at least 2 follow-up meals",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -566,7 +614,8 @@
         "Category spend tracking",
         "Adaptive monthly limits",
         "Early warning alerts",
-        "What-if simulations"
+        "What-if simulations",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "finance",
@@ -577,7 +626,8 @@
       "quality_tests": [
         "Detects overspend trend before month-end",
         "Simulations match baseline arithmetic",
-        "Alerts avoid false positives under threshold"
+        "Alerts avoid false positives under threshold",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -589,7 +639,8 @@
         "Recurring charge detection",
         "Duplicate service detection",
         "Cancellation playbook",
-        "Savings forecast"
+        "Savings forecast",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "finance",
@@ -600,7 +651,8 @@
       "quality_tests": [
         "Finds recurring merchants across statement formats",
         "Duplicate detection groups family-plan overlaps",
-        "Forecast equals detected recurring totals"
+        "Forecast equals detected recurring totals",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -612,7 +664,8 @@
         "Seasonal checklist",
         "Asset-based reminders",
         "DIY vs pro guidance",
-        "Maintenance log"
+        "Maintenance log",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "home",
@@ -623,7 +676,8 @@
       "quality_tests": [
         "Checklist adapts to location seasonality",
         "Reminders map to asset age/usage",
-        "Log entries are searchable by asset"
+        "Log entries are searchable by asset",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -635,7 +689,8 @@
         "Timeline builder",
         "Vendor coordination tracker",
         "Role assignment matrix",
-        "Day-of command center brief"
+        "Day-of command center brief",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "events",
@@ -646,7 +701,8 @@
       "quality_tests": [
         "Dependencies are topologically sorted",
         "Role matrix has no unassigned critical tasks",
-        "Day-of brief includes escalation contacts"
+        "Day-of brief includes escalation contacts",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -658,7 +714,8 @@
         "Timestamped chaptering",
         "Key quote extraction",
         "Link enrichment",
-        "SEO-ready descriptions"
+        "SEO-ready descriptions",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "audio",
@@ -669,7 +726,8 @@
       "quality_tests": [
         "Chapters align with topic shifts",
         "Quotes match transcript verbatim",
-        "Descriptions fit platform character limits"
+        "Descriptions fit platform character limits",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -681,7 +739,8 @@
         "Policy-aware response drafts",
         "Violation severity rubric",
         "Escalation decision tree",
-        "Moderator handoff notes"
+        "Moderator handoff notes",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "community",
@@ -692,7 +751,8 @@
       "quality_tests": [
         "Drafts cite the relevant policy rule",
         "Severity rubric is applied consistently",
-        "Escalation path triggers for high-risk cases"
+        "Escalation path triggers for high-risk cases",
+        "Audit log captures decisions, retries, and escalation handoff without data loss"
       ]
     },
     {
@@ -704,7 +764,8 @@
         "Crisp command style",
         "Checklist-first responses",
         "Risk callouts",
-        "Execution summaries"
+        "Execution summaries",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "operations",
@@ -715,7 +776,8 @@
       "quality_tests": [
         "Response includes clear next action",
         "No unnecessary verbosity",
-        "Always surfaces blockers and dependencies"
+        "Always surfaces blockers and dependencies",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     },
     {
@@ -727,7 +789,8 @@
         "Encouraging framing",
         "Micro-goal planning",
         "Progress reflection prompts",
-        "Gentle accountability"
+        "Gentle accountability",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "habits",
@@ -738,7 +801,8 @@
       "quality_tests": [
         "Tone remains supportive",
         "Action steps stay specific",
-        "Avoids guilt-based language"
+        "Avoids guilt-based language",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     },
     {
@@ -750,7 +814,8 @@
         "Assumption stress-testing",
         "Counterexample generation",
         "Evidence ranking",
-        "Confidence scoring"
+        "Confidence scoring",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "analysis",
@@ -761,7 +826,8 @@
       "quality_tests": [
         "Identifies at least 3 key assumptions",
         "Differentiates facts from hypotheses",
-        "Provides confidence level with rationale"
+        "Provides confidence level with rationale",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     },
     {
@@ -773,7 +839,8 @@
         "Tradeoff framing",
         "Priority triage",
         "Lean experiment mindset",
-        "Weekly operating cadence"
+        "Weekly operating cadence",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "startup",
@@ -784,7 +851,8 @@
       "quality_tests": [
         "Outputs explicit priority order",
         "Recommendations include resource constraints",
-        "Experiment plans include measurable success criteria"
+        "Experiment plans include measurable success criteria",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     },
     {
@@ -796,7 +864,8 @@
         "Question-led guidance",
         "Concept scaffolding",
         "Knowledge checks",
-        "Adaptive hints"
+        "Adaptive hints",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "education",
@@ -807,7 +876,8 @@
       "quality_tests": [
         "Uses progressive questioning",
         "Hints increase only when needed",
-        "Final explanation confirms learner understanding"
+        "Final explanation confirms learner understanding",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     },
     {
@@ -819,7 +889,8 @@
         "Concision focus",
         "Clarity rewrites",
         "Structure tightening",
-        "Tone-preserving cuts"
+        "Tone-preserving cuts",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "writing",
@@ -830,7 +901,8 @@
       "quality_tests": [
         "Reduces word count while preserving meaning",
         "Removes ambiguous phrasing",
-        "Maintains requested voice"
+        "Maintains requested voice",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     },
     {
@@ -842,7 +914,8 @@
         "Emotional acknowledgment",
         "Clear troubleshooting flow",
         "Expectation setting",
-        "Friendly closure"
+        "Friendly closure",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "support",
@@ -853,7 +926,8 @@
       "quality_tests": [
         "Acknowledges user emotion in first response",
         "Troubleshooting steps are numbered",
-        "Never overpromises outcomes"
+        "Never overpromises outcomes",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     },
     {
@@ -865,7 +939,8 @@
         "Threat modeling mindset",
         "Least-privilege recommendations",
         "Data minimization bias",
-        "Abuse-case thinking"
+        "Abuse-case thinking",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "security",
@@ -876,7 +951,8 @@
       "quality_tests": [
         "Flags sensitive data paths",
         "Recommends least-privilege defaults",
-        "Includes abuse-case checks"
+        "Includes abuse-case checks",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     },
     {
@@ -888,7 +964,8 @@
         "Divergent brainstorming",
         "Unexpected analogies",
         "Concept remixing",
-        "Prompted iteration rounds"
+        "Prompted iteration rounds",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "creativity",
@@ -899,7 +976,8 @@
       "quality_tests": [
         "Generates diverse idea sets",
         "Avoids near-duplicate concepts",
-        "Includes at least one bold outlier option"
+        "Includes at least one bold outlier option",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     },
     {
@@ -911,7 +989,8 @@
         "Story-first analytics",
         "Trend explanation",
         "Audience-tailored summaries",
-        "Chart-caption style writing"
+        "Chart-caption style writing",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "analytics",
@@ -922,7 +1001,8 @@
       "quality_tests": [
         "Narrative states key insight up front",
         "Claims tie to provided metrics",
-        "Summary includes caveats and uncertainty"
+        "Summary includes caveats and uncertainty",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     },
     {
@@ -934,7 +1014,8 @@
         "BATNA framing",
         "Offer/counteroffer scripts",
         "Concession planning",
-        "Red-line boundaries"
+        "Red-line boundaries",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "negotiation",
@@ -945,7 +1026,8 @@
       "quality_tests": [
         "Defines BATNA and walk-away clearly",
         "Scripts include fallback branches",
-        "Concession order preserves core priorities"
+        "Concession order preserves core priorities",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     },
     {
@@ -957,7 +1039,8 @@
         "Command tone",
         "Status update cadence",
         "Decision logging",
-        "Role delegation prompts"
+        "Role delegation prompts",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "incident-response",
@@ -968,7 +1051,8 @@
       "quality_tests": [
         "Status updates include impact/current action/next ETA",
         "Decisions are timestamped",
-        "Delegation requests specify owner and deadline"
+        "Delegation requests specify owner and deadline",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     },
     {
@@ -980,7 +1064,8 @@
         "Reflective listening",
         "Grounding prompts",
         "Non-clinical reframing",
-        "Boundary-safe disclaimers"
+        "Boundary-safe disclaimers",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "wellbeing",
@@ -991,7 +1076,8 @@
       "quality_tests": [
         "Avoids diagnosis/treatment language",
         "Uses supportive and nonjudgmental tone",
-        "Escalates to professional help cues when risk phrases appear"
+        "Escalates to professional help cues when risk phrases appear",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     },
     {
@@ -1003,7 +1089,8 @@
         "Objection handling",
         "Value articulation",
         "Next-step urgency framing",
-        "Follow-up cadence"
+        "Follow-up cadence",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "sales",
@@ -1014,7 +1101,8 @@
       "quality_tests": [
         "Objection responses remain factual",
         "No deceptive scarcity tactics",
-        "Each reply ends with a clear CTA"
+        "Each reply ends with a clear CTA",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     },
     {
@@ -1026,7 +1114,8 @@
         "Routine planning",
         "Kid-friendly reminders",
         "Shared responsibility framing",
-        "Low-friction checklists"
+        "Low-friction checklists",
+        "Audit log + escalation guardrail workflow"
       ],
       "scopes": [
         "home",
@@ -1037,7 +1126,8 @@
       "quality_tests": [
         "Plans are realistic for weekly schedule",
         "Tasks are evenly distributed",
-        "Instructions are age-appropriate when children are involved"
+        "Instructions are age-appropriate when children are involved",
+        "Maintains an auditable response log and safe escalation path for edge cases"
       ]
     }
   ]

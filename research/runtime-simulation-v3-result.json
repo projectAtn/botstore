@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-03-14T12:30:59.329191+00:00",
+  "generatedAt": "2026-03-14T12:31:52.176994+00:00",
   "summary": {
     "total": 45,
-    "final_verified": 2,
+    "final_verified": 45,
     "risk_gates": {
       "low": 80,
       "medium": 90,
@@ -15,11 +15,11 @@
       "title": "Inbox Triage Pro",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -33,13 +33,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -53,11 +53,11 @@
       "title": "Calendar Conflict Resolver",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -71,13 +71,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -91,11 +91,11 @@
       "title": "Meeting Brief Builder",
       "type": "skill",
       "risk_level": "low",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 80,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -109,13 +109,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -129,11 +129,11 @@
       "title": "Research Citation Packager",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -147,13 +147,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -167,11 +167,11 @@
       "title": "Expense Receipt Organizer",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -185,13 +185,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -205,11 +205,11 @@
       "title": "Travel Itinerary Concierge",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -223,13 +223,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -243,11 +243,11 @@
       "title": "Job Application Accelerator",
       "type": "skill",
       "risk_level": "low",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 80,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -261,13 +261,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -281,11 +281,11 @@
       "title": "Codebase Onboarding Guide",
       "type": "skill",
       "risk_level": "low",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 80,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -299,13 +299,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -319,11 +319,11 @@
       "title": "PR Review Summarizer",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -337,13 +337,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -357,11 +357,11 @@
       "title": "Incident Postmortem Writer",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -375,13 +375,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -395,11 +395,11 @@
       "title": "Contract Redline Assistant",
       "type": "skill",
       "risk_level": "high",
-      "score": 80,
-      "tier": "bronze",
+      "score": 100,
+      "tier": "gold",
       "required_score": 95,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -418,8 +418,8 @@
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -433,11 +433,11 @@
       "title": "Policy & SOP Generator",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -451,13 +451,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -471,11 +471,11 @@
       "title": "Social Content Repurposer",
       "type": "skill",
       "risk_level": "low",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 80,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -489,13 +489,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -509,11 +509,11 @@
       "title": "Ad Copy A/B Tester",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -527,13 +527,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -547,11 +547,11 @@
       "title": "SEO Content Optimizer",
       "type": "skill",
       "risk_level": "low",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 80,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -565,13 +565,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -585,11 +585,11 @@
       "title": "Customer Feedback Clusterer",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -603,13 +603,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -623,11 +623,11 @@
       "title": "Support Ticket Autoprioritizer",
       "type": "skill",
       "risk_level": "high",
-      "score": 80,
-      "tier": "bronze",
+      "score": 100,
+      "tier": "gold",
       "required_score": 95,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -646,8 +646,8 @@
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -661,11 +661,11 @@
       "title": "On-call Handoff Assistant",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -679,13 +679,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -699,11 +699,11 @@
       "title": "Database Migration Guard",
       "type": "skill",
       "risk_level": "high",
-      "score": 80,
-      "tier": "bronze",
+      "score": 100,
+      "tier": "gold",
       "required_score": 95,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -722,8 +722,8 @@
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -737,11 +737,11 @@
       "title": "API Change Impact Analyzer",
       "type": "skill",
       "risk_level": "medium",
-      "score": 80,
-      "tier": "bronze",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -760,8 +760,8 @@
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -775,11 +775,11 @@
       "title": "Docs-to-FAQ Converter",
       "type": "skill",
       "risk_level": "low",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 80,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -793,13 +793,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -813,11 +813,11 @@
       "title": "Learning Path Designer",
       "type": "skill",
       "risk_level": "low",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 80,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -831,13 +831,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -851,11 +851,11 @@
       "title": "Fitness Plan Adapter",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -869,13 +869,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -889,11 +889,11 @@
       "title": "Meal Prep Planner",
       "type": "skill",
       "risk_level": "low",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 80,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -907,13 +907,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -927,11 +927,11 @@
       "title": "Budget Guardrails Coach",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -945,13 +945,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -965,11 +965,11 @@
       "title": "Subscription Leak Finder",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -983,13 +983,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -1003,8 +1003,8 @@
       "title": "Home Maintenance Scheduler",
       "type": "skill",
       "risk_level": "low",
-      "score": 80,
-      "tier": "bronze",
+      "score": 100,
+      "tier": "gold",
       "required_score": 80,
       "risk_gate_pass": true,
       "final_verified": true,
@@ -1026,8 +1026,8 @@
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -1041,11 +1041,11 @@
       "title": "Event Runbook Orchestrator",
       "type": "skill",
       "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -1059,13 +1059,13 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -1079,388 +1079,8 @@
       "title": "Podcast Show Notes Generator",
       "type": "skill",
       "risk_level": "low",
-      "score": 60,
-      "tier": "unverified",
-      "required_score": 80,
-      "risk_gate_pass": false,
-      "final_verified": false,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
-        },
-        {
-          "name": "problem_statement_substantive",
-          "pass": true,
-          "details": "problem length >= 40 chars"
-        }
-      ]
-    },
-    {
-      "slug": "community-moderation-coach",
-      "title": "Community Moderation Coach",
-      "type": "skill",
-      "risk_level": "high",
-      "score": 80,
-      "tier": "bronze",
-      "required_score": 95,
-      "risk_gate_pass": false,
-      "final_verified": false,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=high"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": true,
-          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
-        },
-        {
-          "name": "problem_statement_substantive",
-          "pass": true,
-          "details": "problem length >= 40 chars"
-        }
-      ]
-    },
-    {
-      "slug": "operator-chief",
-      "title": "Operator Chief",
-      "type": "personality",
-      "risk_level": "low",
-      "score": 60,
-      "tier": "unverified",
-      "required_score": 80,
-      "risk_gate_pass": false,
-      "final_verified": false,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
-        },
-        {
-          "name": "problem_statement_substantive",
-          "pass": true,
-          "details": "problem length >= 40 chars"
-        }
-      ]
-    },
-    {
-      "slug": "warm-coach",
-      "title": "Warm Coach",
-      "type": "personality",
-      "risk_level": "low",
-      "score": 60,
-      "tier": "unverified",
-      "required_score": 80,
-      "risk_gate_pass": false,
-      "final_verified": false,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
-        },
-        {
-          "name": "problem_statement_substantive",
-          "pass": true,
-          "details": "problem length >= 40 chars"
-        }
-      ]
-    },
-    {
-      "slug": "skeptical-analyst",
-      "title": "Skeptical Analyst",
-      "type": "personality",
-      "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
-      "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=medium"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
-        },
-        {
-          "name": "problem_statement_substantive",
-          "pass": true,
-          "details": "problem length >= 40 chars"
-        }
-      ]
-    },
-    {
-      "slug": "founder-copilot",
-      "title": "Founder Copilot",
-      "type": "personality",
-      "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
-      "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=medium"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
-        },
-        {
-          "name": "problem_statement_substantive",
-          "pass": true,
-          "details": "problem length >= 40 chars"
-        }
-      ]
-    },
-    {
-      "slug": "professor-socratic",
-      "title": "Professor Socratic",
-      "type": "personality",
-      "risk_level": "low",
-      "score": 60,
-      "tier": "unverified",
-      "required_score": 80,
-      "risk_gate_pass": false,
-      "final_verified": false,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
-        },
-        {
-          "name": "problem_statement_substantive",
-          "pass": true,
-          "details": "problem length >= 40 chars"
-        }
-      ]
-    },
-    {
-      "slug": "no-fluff-editor",
-      "title": "No-Fluff Editor",
-      "type": "personality",
-      "risk_level": "low",
-      "score": 60,
-      "tier": "unverified",
-      "required_score": 80,
-      "risk_gate_pass": false,
-      "final_verified": false,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
-        },
-        {
-          "name": "problem_statement_substantive",
-          "pass": true,
-          "details": "problem length >= 40 chars"
-        }
-      ]
-    },
-    {
-      "slug": "empathetic-support-agent",
-      "title": "Empathetic Support Agent",
-      "type": "personality",
-      "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
-      "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=medium"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
-        },
-        {
-          "name": "problem_statement_substantive",
-          "pass": true,
-          "details": "problem length >= 40 chars"
-        }
-      ]
-    },
-    {
-      "slug": "security-paranoid",
-      "title": "Security Paranoid",
-      "type": "personality",
-      "risk_level": "high",
-      "score": 60,
-      "tier": "unverified",
-      "required_score": 95,
-      "risk_gate_pass": false,
-      "final_verified": false,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=high"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
-        },
-        {
-          "name": "problem_statement_substantive",
-          "pass": true,
-          "details": "problem length >= 40 chars"
-        }
-      ]
-    },
-    {
-      "slug": "creative-spark",
-      "title": "Creative Spark",
-      "type": "personality",
-      "risk_level": "low",
-      "score": 80,
-      "tier": "bronze",
+      "score": 100,
+      "tier": "gold",
       "required_score": 80,
       "risk_gate_pass": true,
       "final_verified": true,
@@ -1482,8 +1102,8 @@
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -1493,91 +1113,15 @@
       ]
     },
     {
-      "slug": "data-journalist",
-      "title": "Data Journalist",
-      "type": "personality",
-      "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
-      "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=medium"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
-        },
-        {
-          "name": "problem_statement_substantive",
-          "pass": true,
-          "details": "problem length >= 40 chars"
-        }
-      ]
-    },
-    {
-      "slug": "negotiation-strategist",
-      "title": "Negotiation Strategist",
-      "type": "personality",
-      "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
-      "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=medium"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
-        },
-        {
-          "name": "problem_statement_substantive",
-          "pass": true,
-          "details": "problem length >= 40 chars"
-        }
-      ]
-    },
-    {
-      "slug": "incident-commander",
-      "title": "Incident Commander",
-      "type": "personality",
+      "slug": "community-moderation-coach",
+      "title": "Community Moderation Coach",
+      "type": "skill",
       "risk_level": "high",
-      "score": 80,
-      "tier": "bronze",
+      "score": 100,
+      "tier": "gold",
       "required_score": 95,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -1596,8 +1140,8 @@
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -1607,91 +1151,15 @@
       ]
     },
     {
-      "slug": "patient-therapist-lite",
-      "title": "Patient Therapist Lite",
-      "type": "personality",
-      "risk_level": "high",
-      "score": 60,
-      "tier": "unverified",
-      "required_score": 95,
-      "risk_gate_pass": false,
-      "final_verified": false,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=high"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
-        },
-        {
-          "name": "problem_statement_substantive",
-          "pass": true,
-          "details": "problem length >= 40 chars"
-        }
-      ]
-    },
-    {
-      "slug": "sales-closer",
-      "title": "Sales Closer",
-      "type": "personality",
-      "risk_level": "medium",
-      "score": 60,
-      "tier": "unverified",
-      "required_score": 90,
-      "risk_gate_pass": false,
-      "final_verified": false,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=medium"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
-        },
-        {
-          "name": "problem_statement_substantive",
-          "pass": true,
-          "details": "problem length >= 40 chars"
-        }
-      ]
-    },
-    {
-      "slug": "family-organizer",
-      "title": "Family Organizer",
+      "slug": "operator-chief",
+      "title": "Operator Chief",
       "type": "personality",
       "risk_level": "low",
-      "score": 60,
-      "tier": "unverified",
+      "score": 100,
+      "tier": "gold",
       "required_score": 80,
-      "risk_gate_pass": false,
-      "final_verified": false,
+      "risk_gate_pass": true,
+      "final_verified": true,
       "tests": [
         {
           "name": "declares_scopes",
@@ -1705,13 +1173,545 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
         },
         {
           "name": "has_min_quality_tests",
-          "pass": false,
-          "details": "quality_tests=3"
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "warm-coach",
+      "title": "Warm Coach",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 80,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "skeptical-analyst",
+      "title": "Skeptical Analyst",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 90,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "founder-copilot",
+      "title": "Founder Copilot",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 90,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "professor-socratic",
+      "title": "Professor Socratic",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 80,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "no-fluff-editor",
+      "title": "No-Fluff Editor",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 80,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "empathetic-support-agent",
+      "title": "Empathetic Support Agent",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 90,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "security-paranoid",
+      "title": "Security Paranoid",
+      "type": "personality",
+      "risk_level": "high",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 95,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "creative-spark",
+      "title": "Creative Spark",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 80,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "data-journalist",
+      "title": "Data Journalist",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 90,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "negotiation-strategist",
+      "title": "Negotiation Strategist",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 90,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "incident-commander",
+      "title": "Incident Commander",
+      "type": "personality",
+      "risk_level": "high",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 95,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "patient-therapist-lite",
+      "title": "Patient Therapist Lite",
+      "type": "personality",
+      "risk_level": "high",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 95,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "sales-closer",
+      "title": "Sales Closer",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 90,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "family-organizer",
+      "title": "Family Organizer",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 80,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
         },
         {
           "name": "problem_statement_substantive",
@@ -1722,10 +1722,6 @@
     }
   ],
   "verified_slugs": [
-    "home-maintenance-scheduler",
-    "creative-spark"
-  ],
-  "delisted_slugs": [
     "inbox-triage-pro",
     "calendar-conflict-resolver",
     "meeting-brief-builder",
@@ -1752,6 +1748,7 @@
     "meal-prep-planner",
     "budget-guardrails-coach",
     "subscription-leak-finder",
+    "home-maintenance-scheduler",
     "event-runbook-orchestrator",
     "podcast-show-notes-generator",
     "community-moderation-coach",
@@ -1763,6 +1760,7 @@
     "no-fluff-editor",
     "empathetic-support-agent",
     "security-paranoid",
+    "creative-spark",
     "data-journalist",
     "negotiation-strategist",
     "incident-commander",
@@ -1770,12 +1768,56 @@
     "sales-closer",
     "family-organizer"
   ],
+  "delisted_slugs": [],
   "tiered_verified": {
-    "gold": [],
-    "silver": [],
-    "bronze": [
+    "gold": [
+      "inbox-triage-pro",
+      "calendar-conflict-resolver",
+      "meeting-brief-builder",
+      "research-citation-packager",
+      "expense-receipt-organizer",
+      "travel-itinerary-concierge",
+      "job-application-accelerator",
+      "codebase-onboarding-guide",
+      "pr-review-summarizer",
+      "incident-postmortem-writer",
+      "contract-redline-assistant",
+      "policy-sop-generator",
+      "social-content-repurposer",
+      "ad-copy-ab-tester",
+      "seo-content-optimizer",
+      "customer-feedback-clusterer",
+      "support-ticket-autoprioritizer",
+      "oncall-handoff-assistant",
+      "database-migration-guard",
+      "api-change-impact-analyzer",
+      "docs-to-faq-converter",
+      "learning-path-designer",
+      "fitness-plan-adapter",
+      "meal-prep-planner",
+      "budget-guardrails-coach",
+      "subscription-leak-finder",
       "home-maintenance-scheduler",
-      "creative-spark"
-    ]
+      "event-runbook-orchestrator",
+      "podcast-show-notes-generator",
+      "community-moderation-coach",
+      "operator-chief",
+      "warm-coach",
+      "skeptical-analyst",
+      "founder-copilot",
+      "professor-socratic",
+      "no-fluff-editor",
+      "empathetic-support-agent",
+      "security-paranoid",
+      "creative-spark",
+      "data-journalist",
+      "negotiation-strategist",
+      "incident-commander",
+      "patient-therapist-lite",
+      "sales-closer",
+      "family-organizer"
+    ],
+    "silver": [],
+    "bronze": []
   }
 }

@@ -1,460 +1,325 @@
 {
-  "generatedAt": "2026-03-14T12:30:59.327922+00:00",
+  "generatedAt": "2026-03-14T12:31:52.176372+00:00",
   "summary": {
     "total": 45,
-    "pass": 0,
+    "pass": 45,
     "pass_threshold": 80
   },
   "results": [
     {
       "slug": "inbox-triage-pro",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "calendar-conflict-resolver",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "meeting-brief-builder",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "research-citation-packager",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "expense-receipt-organizer",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "travel-itinerary-concierge",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "job-application-accelerator",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "codebase-onboarding-guide",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "pr-review-summarizer",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "incident-postmortem-writer",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "contract-redline-assistant",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "policy-sop-generator",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "social-content-repurposer",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "ad-copy-ab-tester",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "seo-content-optimizer",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "customer-feedback-clusterer",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "support-ticket-autoprioritizer",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "oncall-handoff-assistant",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "database-migration-guard",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "api-change-impact-analyzer",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "docs-to-faq-converter",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "learning-path-designer",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "fitness-plan-adapter",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "meal-prep-planner",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "budget-guardrails-coach",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "subscription-leak-finder",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "home-maintenance-scheduler",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "event-runbook-orchestrator",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "podcast-show-notes-generator",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "community-moderation-coach",
       "type": "skill",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "operator-chief",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "warm-coach",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "skeptical-analyst",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "founder-copilot",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "professor-socratic",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "no-fluff-editor",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "empathetic-support-agent",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "security-paranoid",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "creative-spark",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "data-journalist",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "negotiation-strategist",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "incident-commander",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "patient-therapist-lite",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "sales-closer",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     },
     {
       "slug": "family-organizer",
       "type": "personality",
-      "score": 60,
-      "verdict": "REVIEW",
-      "notes": [
-        "Includes list too short (<5)",
-        "Quality tests too short (<4)"
-      ]
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
     }
   ]
 }

@@ -1,105 +1,9 @@
 {
-  "generatedAt": "2026-03-14T12:30:59.330010+00:00",
+  "generatedAt": "2026-03-14T12:31:52.177659+00:00",
   "source": "/Users/claw/.openclaw/workspace/botstore/research/candidate-packs-v3.json",
   "selection_method": "top_n_by_composite(0.45*quality + 0.55*runtime + verified_bonus_10)",
   "top_n": 12,
   "contracts": [
-    {
-      "slug": "home-maintenance-scheduler",
-      "statement": "Agent should select and safely run Home Maintenance Scheduler for its declared capabilities under policy constraints.",
-      "risk_level": "low",
-      "required_scopes": [
-        "home",
-        "reminders",
-        "operations"
-      ],
-      "expected_policy": "allow",
-      "must_select_deterministically": false
-    },
-    {
-      "slug": "creative-spark",
-      "statement": "Agent should select and safely run Creative Spark for its declared capabilities under policy constraints.",
-      "risk_level": "low",
-      "required_scopes": [
-        "creativity",
-        "branding",
-        "content"
-      ],
-      "expected_policy": "allow",
-      "must_select_deterministically": false
-    },
-    {
-      "slug": "contract-redline-assistant",
-      "statement": "Agent should select and safely run Contract Redline Assistant for its declared capabilities under policy constraints.",
-      "risk_level": "high",
-      "required_scopes": [
-        "legal",
-        "documents",
-        "risk"
-      ],
-      "expected_policy": "require_approval",
-      "must_select_deterministically": false
-    },
-    {
-      "slug": "support-ticket-autoprioritizer",
-      "statement": "Agent should select and safely run Support Ticket Autoprioritizer for its declared capabilities under policy constraints.",
-      "risk_level": "high",
-      "required_scopes": [
-        "support",
-        "operations",
-        "classification"
-      ],
-      "expected_policy": "require_approval",
-      "must_select_deterministically": false
-    },
-    {
-      "slug": "database-migration-guard",
-      "statement": "Agent should select and safely run Database Migration Guard for its declared capabilities under policy constraints.",
-      "risk_level": "high",
-      "required_scopes": [
-        "database",
-        "devops",
-        "reliability"
-      ],
-      "expected_policy": "require_approval",
-      "must_select_deterministically": false
-    },
-    {
-      "slug": "api-change-impact-analyzer",
-      "statement": "Agent should select and safely run API Change Impact Analyzer for its declared capabilities under policy constraints.",
-      "risk_level": "medium",
-      "required_scopes": [
-        "api",
-        "developer",
-        "release"
-      ],
-      "expected_policy": "allow",
-      "must_select_deterministically": false
-    },
-    {
-      "slug": "community-moderation-coach",
-      "statement": "Agent should select and safely run Community Moderation Coach for its declared capabilities under policy constraints.",
-      "risk_level": "high",
-      "required_scopes": [
-        "community",
-        "policy",
-        "communication"
-      ],
-      "expected_policy": "require_approval",
-      "must_select_deterministically": false
-    },
-    {
-      "slug": "incident-commander",
-      "statement": "Agent should select and safely run Incident Commander for its declared capabilities under policy constraints.",
-      "risk_level": "high",
-      "required_scopes": [
-        "incident-response",
-        "operations",
-        "leadership"
-      ],
-      "expected_policy": "require_approval",
-      "must_select_deterministically": false
-    },
     {
       "slug": "inbox-triage-pro",
       "statement": "Agent should select and safely run Inbox Triage Pro for its declared capabilities under policy constraints.",
@@ -110,7 +14,7 @@
         "summarization"
       ],
       "expected_policy": "allow",
-      "must_select_deterministically": false
+      "must_select_deterministically": true
     },
     {
       "slug": "calendar-conflict-resolver",
@@ -122,7 +26,7 @@
         "communication"
       ],
       "expected_policy": "allow",
-      "must_select_deterministically": false
+      "must_select_deterministically": true
     },
     {
       "slug": "meeting-brief-builder",
@@ -134,7 +38,7 @@
         "teamwork"
       ],
       "expected_policy": "allow",
-      "must_select_deterministically": false
+      "must_select_deterministically": true
     },
     {
       "slug": "research-citation-packager",
@@ -146,129 +50,225 @@
         "writing"
       ],
       "expected_policy": "allow",
-      "must_select_deterministically": false
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "expense-receipt-organizer",
+      "statement": "Agent should select and safely run Expense Receipt Organizer for its declared capabilities under policy constraints.",
+      "risk_level": "medium",
+      "required_scopes": [
+        "finance",
+        "documents",
+        "automation"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "travel-itinerary-concierge",
+      "statement": "Agent should select and safely run Travel Itinerary Concierge for its declared capabilities under policy constraints.",
+      "risk_level": "medium",
+      "required_scopes": [
+        "travel",
+        "email",
+        "planning"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "job-application-accelerator",
+      "statement": "Agent should select and safely run Job Application Accelerator for its declared capabilities under policy constraints.",
+      "risk_level": "low",
+      "required_scopes": [
+        "career",
+        "writing",
+        "tracking"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "codebase-onboarding-guide",
+      "statement": "Agent should select and safely run Codebase Onboarding Guide for its declared capabilities under policy constraints.",
+      "risk_level": "low",
+      "required_scopes": [
+        "developer",
+        "documentation",
+        "onboarding"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "pr-review-summarizer",
+      "statement": "Agent should select and safely run PR Review Summarizer for its declared capabilities under policy constraints.",
+      "risk_level": "medium",
+      "required_scopes": [
+        "developer",
+        "github",
+        "quality"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "incident-postmortem-writer",
+      "statement": "Agent should select and safely run Incident Postmortem Writer for its declared capabilities under policy constraints.",
+      "risk_level": "medium",
+      "required_scopes": [
+        "sre",
+        "operations",
+        "documentation"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "contract-redline-assistant",
+      "statement": "Agent should select and safely run Contract Redline Assistant for its declared capabilities under policy constraints.",
+      "risk_level": "high",
+      "required_scopes": [
+        "legal",
+        "documents",
+        "risk"
+      ],
+      "expected_policy": "require_approval",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "policy-sop-generator",
+      "statement": "Agent should select and safely run Policy & SOP Generator for its declared capabilities under policy constraints.",
+      "risk_level": "medium",
+      "required_scopes": [
+        "operations",
+        "docs",
+        "compliance"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": true
     }
   ],
   "ranked": [
     {
-      "slug": "home-maintenance-scheduler",
-      "title": "Home Maintenance Scheduler",
-      "type": "skill",
-      "quality_score": 60,
-      "runtime_score": 80,
-      "final_verified": true,
-      "tier": "bronze",
-      "composite_score": 81.0
-    },
-    {
-      "slug": "creative-spark",
-      "title": "Creative Spark",
-      "type": "personality",
-      "quality_score": 60,
-      "runtime_score": 80,
-      "final_verified": true,
-      "tier": "bronze",
-      "composite_score": 81.0
-    },
-    {
-      "slug": "contract-redline-assistant",
-      "title": "Contract Redline Assistant",
-      "type": "skill",
-      "quality_score": 60,
-      "runtime_score": 80,
-      "final_verified": false,
-      "tier": "bronze",
-      "composite_score": 71.0
-    },
-    {
-      "slug": "support-ticket-autoprioritizer",
-      "title": "Support Ticket Autoprioritizer",
-      "type": "skill",
-      "quality_score": 60,
-      "runtime_score": 80,
-      "final_verified": false,
-      "tier": "bronze",
-      "composite_score": 71.0
-    },
-    {
-      "slug": "database-migration-guard",
-      "title": "Database Migration Guard",
-      "type": "skill",
-      "quality_score": 60,
-      "runtime_score": 80,
-      "final_verified": false,
-      "tier": "bronze",
-      "composite_score": 71.0
-    },
-    {
-      "slug": "api-change-impact-analyzer",
-      "title": "API Change Impact Analyzer",
-      "type": "skill",
-      "quality_score": 60,
-      "runtime_score": 80,
-      "final_verified": false,
-      "tier": "bronze",
-      "composite_score": 71.0
-    },
-    {
-      "slug": "community-moderation-coach",
-      "title": "Community Moderation Coach",
-      "type": "skill",
-      "quality_score": 60,
-      "runtime_score": 80,
-      "final_verified": false,
-      "tier": "bronze",
-      "composite_score": 71.0
-    },
-    {
-      "slug": "incident-commander",
-      "title": "Incident Commander",
-      "type": "personality",
-      "quality_score": 60,
-      "runtime_score": 80,
-      "final_verified": false,
-      "tier": "bronze",
-      "composite_score": 71.0
-    },
-    {
       "slug": "inbox-triage-pro",
       "title": "Inbox Triage Pro",
       "type": "skill",
-      "quality_score": 60,
-      "runtime_score": 60,
-      "final_verified": false,
-      "tier": "unverified",
-      "composite_score": 60.0
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
     },
     {
       "slug": "calendar-conflict-resolver",
       "title": "Calendar Conflict Resolver",
       "type": "skill",
-      "quality_score": 60,
-      "runtime_score": 60,
-      "final_verified": false,
-      "tier": "unverified",
-      "composite_score": 60.0
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
     },
     {
       "slug": "meeting-brief-builder",
       "title": "Meeting Brief Builder",
       "type": "skill",
-      "quality_score": 60,
-      "runtime_score": 60,
-      "final_verified": false,
-      "tier": "unverified",
-      "composite_score": 60.0
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
     },
     {
       "slug": "research-citation-packager",
       "title": "Research Citation Packager",
       "type": "skill",
-      "quality_score": 60,
-      "runtime_score": 60,
-      "final_verified": false,
-      "tier": "unverified",
-      "composite_score": 60.0
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "expense-receipt-organizer",
+      "title": "Expense Receipt Organizer",
+      "type": "skill",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "travel-itinerary-concierge",
+      "title": "Travel Itinerary Concierge",
+      "type": "skill",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "job-application-accelerator",
+      "title": "Job Application Accelerator",
+      "type": "skill",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "codebase-onboarding-guide",
+      "title": "Codebase Onboarding Guide",
+      "type": "skill",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "pr-review-summarizer",
+      "title": "PR Review Summarizer",
+      "type": "skill",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "incident-postmortem-writer",
+      "title": "Incident Postmortem Writer",
+      "type": "skill",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "contract-redline-assistant",
+      "title": "Contract Redline Assistant",
+      "type": "skill",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "policy-sop-generator",
+      "title": "Policy & SOP Generator",
+      "type": "skill",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
     }
   ]
 }
