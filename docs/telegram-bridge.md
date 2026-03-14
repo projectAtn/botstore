@@ -12,9 +12,18 @@ export BOTSTORE_BOT_KEY="devkey"   # must match API server if auth enabled
 
 ## Run
 
+### Option A: direct env exports
 ```bash
 cd botstore/integrations
 python3 telegram_bridge.py
+```
+
+### Option B: env file + helper script (recommended)
+```bash
+cd botstore/integrations
+cp .env.telegram.example .env.telegram
+# edit .env.telegram with your real token
+./run_telegram_bridge.sh
 ```
 
 ## Supported in Telegram chat

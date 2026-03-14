@@ -40,7 +40,7 @@ Then open: `http://localhost:8787/docs`
 - `POST /bot/callback` with `{ user_id, callback_data }` for button callbacks (`install:slug`, `bundle:slug`, `approve:id`, `reject:id`, `open:url`)
 - Optional endpoint auth: set `BOTSTORE_BOT_KEY` env var and send `X-Botstore-Key` header on `/bot/*`
 - See `docs/bot-commands.md` for Telegram-ready mapping details
-- Run `integrations/telegram_bridge.py` for direct Telegram chat integration (see `docs/telegram-bridge.md`)
+- Run `integrations/telegram_bridge.py` (or `integrations/run_telegram_bridge.sh`) for direct Telegram chat integration (see `docs/telegram-bridge.md`)
 
 ## Agent-native endpoints (autonomous mode)
 - `POST /agent/search-capabilities`
