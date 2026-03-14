@@ -14,6 +14,7 @@ if not BOT_TOKEN:
     raise SystemExit("Missing TELEGRAM_BOT_TOKEN")
 
 API_BASE = f"https://api.telegram.org/bot{BOT_TOKEN}"
+BOT_NAMESPACE = "telegram"
 
 
 def http_json(url: str, method: str = "GET", payload: Optional[Dict] = None, headers: Optional[Dict] = None) -> Dict:
@@ -47,7 +48,7 @@ def handle_message(msg: dict) -> None:
     text = (msg.get("text") or "").strip()
     if not text:
         return
-    user_id = f"telegram:{chat_id}"
+    user_id = f"{BOT_NAMESPACE}:{chat_id}"
     res = call_botstore("/bot/command", {"user_id": user_id, "text": text})
     tg_send(chat_id, res.get("message", "OK"), res.get("data", {}).get("buttons"))
 
@@ -55,15 +56,29 @@ def handle_message(msg: dict) -> None:
 def handle_callback(cb: dict) -> None:
     chat_id = cb["message"]["chat"]["id"]
     data = (cb.get("data") or "").strip()
-    user_id = f"telegram:{chat_id}"
+    user_id = f"{BOT_NAMESPACE}:{chat_id}"
     res = call_botstore("/bot/callback", {"user_id": user_id, "callback_data": data})
     tg_send(chat_id, res.get("message", "Done"), res.get("data", {}).get("buttons"))
     http_json(f"{API_BASE}/answerCallbackQuery", method="POST", payload={"callback_query_id": cb["id"]})
 
 
 def main() -> None:
+    global BOT_NAMESPACE
     offset = 0
-    print("Telegram bridge started")
+
+    try:
+        me = http_json(f"{API_BASE}/getMe")
+        result = me.get("result", {}) if isinstance(me, dict) else {}
+        username = (result.get("username") or "").strip()
+        bot_id = str(result.get("id") or "").strip()
+        if username:
+            BOT_NAMESPACE = f"telegram:{username.lower()}"
+        elif bot_id:
+            BOT_NAMESPACE = f"telegram:{bot_id}"
+    except Exception:
+        BOT_NAMESPACE = "telegram:unknownbot"
+
+    print(f"Telegram bridge started (namespace={BOT_NAMESPACE})")
     while True:
         try:
             url = f"{API_BASE}/getUpdates?timeout=25&offset={offset}"

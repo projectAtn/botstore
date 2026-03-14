@@ -26,6 +26,13 @@ cp .env.telegram.example .env.telegram
 ./run_telegram_bridge.sh
 ```
 
+## Identity isolation (important)
+
+Bridge now namespaces users by bot identity:
+- `user_id = telegram:<bot_username>:<chat_id>` (fallback `telegram:<bot_id>:<chat_id>`)
+
+This keeps installs separated per Telegram bot, even if the same human chat id exists across multiple bots.
+
 ## Supported in Telegram chat
 
 - `/store`
