@@ -1,0 +1,789 @@
+{
+  "summary": {
+    "total": 30,
+    "pass": 30,
+    "avg_score": 94.2
+  },
+  "results": [
+    {
+      "pack_id": 1,
+      "slug": "gilgamesh-king",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 20.3,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 2,
+      "slug": "inbox-calendar-ops",
+      "type": "skill",
+      "score": 75,
+      "latency_ms": 11.6,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": false
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 3,
+      "slug": "research-analyst",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 4,
+      "slug": "founder-command-bundle",
+      "type": "bundle",
+      "score": 75,
+      "latency_ms": 9.4,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": false
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 5,
+      "slug": "capability-discovery-engine",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.9,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 6,
+      "slug": "universal-connector-auth",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.8,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 7,
+      "slug": "browser-operator-pro",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.8,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 8,
+      "slug": "memory-architect",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.8,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 9,
+      "slug": "approval-policy-brain",
+      "type": "skill",
+      "score": 75,
+      "latency_ms": 9.0,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": false
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 10,
+      "slug": "task-decomposer",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.5,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 11,
+      "slug": "error-recovery-self-heal",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.5,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 12,
+      "slug": "quality-eval-gate",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.5,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 13,
+      "slug": "multi-agent-orchestrator",
+      "type": "skill",
+      "score": 75,
+      "latency_ms": 8.6,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": false
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 14,
+      "slug": "service-ops-verticals",
+      "type": "skill",
+      "score": 75,
+      "latency_ms": 8.3,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": false
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 15,
+      "slug": "model-switchboard",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 16,
+      "slug": "workflow-version-pinning",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 17,
+      "slug": "fact-source-verifier",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.3,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 18,
+      "slug": "synthetic-media-checker",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 19,
+      "slug": "policy-compliance-guard",
+      "type": "skill",
+      "score": 75,
+      "latency_ms": 8.5,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": false
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 20,
+      "slug": "cost-governor",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 21,
+      "slug": "autonomous-retry-recovery",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.0,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 22,
+      "slug": "human-escalation-router",
+      "type": "skill",
+      "score": 75,
+      "latency_ms": 8.0,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": false
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 23,
+      "slug": "tool-health-monitor",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.0,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 24,
+      "slug": "private-local-execution",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 25,
+      "slug": "web-action-proof-logger",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 26,
+      "slug": "task-contract-engine",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 27,
+      "slug": "ops-chief-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 7.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 28,
+      "slug": "safety-analyst-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 7.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 29,
+      "slug": "research-scholar-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 7.3,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 30,
+      "slug": "cfo-assistant-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 6.9,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    }
+  ]
+}

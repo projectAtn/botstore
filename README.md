@@ -54,6 +54,7 @@ Then open: `http://localhost:8787/docs`
 - Runtime simulation + tier gate: `scripts/runtime_simulation_verify.py` + `research/runtime-simulation-report.md` + `research/runtime-simulation-result.json`
 - Auto delist enforcement: `scripts/enforce_delist.py`
 - Verification policy: `docs/verification-tiers.md`
+- Pack test runner: `scripts/pack_test_runner.py` + `research/pack-test-report.md` + `research/pack-test-result.json`
 - Reddit/X demand scan notes: `research/reddit-x-skill-demand-2026-03-14.md`
 
 ## Next milestones
