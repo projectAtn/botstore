@@ -1,0 +1,460 @@
+{
+  "generatedAt": "2026-03-14T12:30:59.327922+00:00",
+  "summary": {
+    "total": 45,
+    "pass": 0,
+    "pass_threshold": 80
+  },
+  "results": [
+    {
+      "slug": "inbox-triage-pro",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "calendar-conflict-resolver",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "meeting-brief-builder",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "research-citation-packager",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "expense-receipt-organizer",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "travel-itinerary-concierge",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "job-application-accelerator",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "codebase-onboarding-guide",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "pr-review-summarizer",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "incident-postmortem-writer",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "contract-redline-assistant",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "policy-sop-generator",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "social-content-repurposer",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "ad-copy-ab-tester",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "seo-content-optimizer",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "customer-feedback-clusterer",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "support-ticket-autoprioritizer",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "oncall-handoff-assistant",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "database-migration-guard",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "api-change-impact-analyzer",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "docs-to-faq-converter",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "learning-path-designer",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "fitness-plan-adapter",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "meal-prep-planner",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "budget-guardrails-coach",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "subscription-leak-finder",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "home-maintenance-scheduler",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "event-runbook-orchestrator",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "podcast-show-notes-generator",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "community-moderation-coach",
+      "type": "skill",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "operator-chief",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "warm-coach",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "skeptical-analyst",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "founder-copilot",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "professor-socratic",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "no-fluff-editor",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "empathetic-support-agent",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "security-paranoid",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "creative-spark",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "data-journalist",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "negotiation-strategist",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "incident-commander",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "patient-therapist-lite",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "sales-closer",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "family-organizer",
+      "type": "personality",
+      "score": 60,
+      "verdict": "REVIEW",
+      "notes": [
+        "Includes list too short (<5)",
+        "Quality tests too short (<4)"
+      ]
+    }
+  ]
+}

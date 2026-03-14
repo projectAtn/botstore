@@ -1,0 +1,1044 @@
+{
+  "generatedAt": "2026-03-14T12:30:59.327174+00:00",
+  "source": {
+    "skills": "/Users/claw/.openclaw/workspace/botstore/research/candidate-packs-v3-skills.json",
+    "personalities": "/Users/claw/.openclaw/workspace/botstore/research/candidate-packs-v3-personalities.json"
+  },
+  "candidates": [
+    {
+      "slug": "inbox-triage-pro",
+      "title": "Inbox Triage Pro",
+      "type": "skill",
+      "problem": "People lose hours sorting email and miss urgent threads.",
+      "includes": [
+        "Priority scoring",
+        "Auto-label rules",
+        "Draft reply suggestions",
+        "Daily digest summary"
+      ],
+      "scopes": [
+        "email",
+        "productivity",
+        "summarization"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Correctly ranks urgent emails in test mailbox",
+        "Never sends without explicit confirmation",
+        "Digest contains no duplicate threads"
+      ]
+    },
+    {
+      "slug": "calendar-conflict-resolver",
+      "title": "Calendar Conflict Resolver",
+      "type": "skill",
+      "problem": "Overlapping events and poor scheduling create missed meetings.",
+      "includes": [
+        "Conflict detection",
+        "Alternative slot finder",
+        "Travel buffer recommendations",
+        "Reschedule draft messages"
+      ],
+      "scopes": [
+        "calendar",
+        "scheduling",
+        "communication"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Detects 100% of overlapping events in fixture",
+        "Proposed slots respect working hours",
+        "Reschedule drafts include original context"
+      ]
+    },
+    {
+      "slug": "meeting-brief-builder",
+      "title": "Meeting Brief Builder",
+      "type": "skill",
+      "problem": "Teams enter meetings without shared context and waste time.",
+      "includes": [
+        "Agenda extraction",
+        "Participant context summary",
+        "Action-item carryover",
+        "One-page briefing output"
+      ],
+      "scopes": [
+        "docs",
+        "calendar",
+        "teamwork"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Brief generated under 90 seconds",
+        "Includes prior action items when available",
+        "Output follows one-page format"
+      ]
+    },
+    {
+      "slug": "research-citation-packager",
+      "title": "Research Citation Packager",
+      "type": "skill",
+      "problem": "Users need fast, source-backed answers but struggle with citation formatting.",
+      "includes": [
+        "Multi-source synthesis",
+        "Source credibility checks",
+        "APA/MLA output",
+        "Claim-to-source mapping"
+      ],
+      "scopes": [
+        "web",
+        "research",
+        "writing"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Every factual claim has at least one citation",
+        "Flags low-authority domains",
+        "Citation format passes style lint checks"
+      ]
+    },
+    {
+      "slug": "expense-receipt-organizer",
+      "title": "Expense Receipt Organizer",
+      "type": "skill",
+      "problem": "Freelancers and small teams lose receipts and miss reimbursement windows.",
+      "includes": [
+        "OCR extraction",
+        "Category suggestion",
+        "Monthly export",
+        "Missing receipt alerts"
+      ],
+      "scopes": [
+        "finance",
+        "documents",
+        "automation"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "OCR captures total/date/vendor with >95% accuracy",
+        "CSV export imports cleanly into common accounting tools",
+        "Duplicate receipt detection works on sample set"
+      ]
+    },
+    {
+      "slug": "travel-itinerary-concierge",
+      "title": "Travel Itinerary Concierge",
+      "type": "skill",
+      "problem": "Trip details are fragmented across confirmations and messages.",
+      "includes": [
+        "Reservation parsing",
+        "Unified itinerary timeline",
+        "Delay/rebooking checklists",
+        "Offline-friendly summary"
+      ],
+      "scopes": [
+        "travel",
+        "email",
+        "planning"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Parses flight/hotel/train confirmations correctly",
+        "Timeline is ordered by local timezone",
+        "Checklist updates when delays are detected"
+      ]
+    },
+    {
+      "slug": "job-application-accelerator",
+      "title": "Job Application Accelerator",
+      "type": "skill",
+      "problem": "Applicants spend too long customizing resumes and cover letters per role.",
+      "includes": [
+        "JD keyword extraction",
+        "Resume tailoring suggestions",
+        "Cover letter first draft",
+        "Application tracker"
+      ],
+      "scopes": [
+        "career",
+        "writing",
+        "tracking"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Extracts top 20 JD keywords",
+        "Tailoring suggestions map to user experience",
+        "Tracker status transitions are consistent"
+      ]
+    },
+    {
+      "slug": "codebase-onboarding-guide",
+      "title": "Codebase Onboarding Guide",
+      "type": "skill",
+      "problem": "New developers take too long to understand unfamiliar repositories.",
+      "includes": [
+        "Architecture map",
+        "Runbook generation",
+        "Key file walkthrough",
+        "First-task recommendations"
+      ],
+      "scopes": [
+        "developer",
+        "documentation",
+        "onboarding"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Generates dependency graph without errors",
+        "Runbook commands are executable",
+        "First-task list references existing issues"
+      ]
+    },
+    {
+      "slug": "pr-review-summarizer",
+      "title": "PR Review Summarizer",
+      "type": "skill",
+      "problem": "Large pull requests overwhelm reviewers and delay merges.",
+      "includes": [
+        "Diff clustering",
+        "Risk hotspot detection",
+        "Reviewer-specific summaries",
+        "Merge readiness checklist"
+      ],
+      "scopes": [
+        "developer",
+        "github",
+        "quality"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Summary highlights changed modules accurately",
+        "Flags migration/config risks",
+        "Checklist includes tests/docs/versioning"
+      ]
+    },
+    {
+      "slug": "incident-postmortem-writer",
+      "title": "Incident Postmortem Writer",
+      "type": "skill",
+      "problem": "Teams struggle to write clear postmortems after outages.",
+      "includes": [
+        "Timeline reconstruction",
+        "Impact template",
+        "Root-cause framing",
+        "Action owner assignment"
+      ],
+      "scopes": [
+        "sre",
+        "operations",
+        "documentation"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Timeline includes detection/mitigation/recovery timestamps",
+        "Action items have owners and due dates",
+        "Language remains blameless"
+      ]
+    },
+    {
+      "slug": "contract-redline-assistant",
+      "title": "Contract Redline Assistant",
+      "type": "skill",
+      "problem": "Small teams miss risky clauses in vendor and client contracts.",
+      "includes": [
+        "Clause extraction",
+        "Risk heatmap",
+        "Fallback language suggestions",
+        "Negotiation note pack"
+      ],
+      "scopes": [
+        "legal",
+        "documents",
+        "risk"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Flags indemnity/liability/termination clauses",
+        "Suggested edits preserve clause intent",
+        "Produces clear unresolved-risk summary"
+      ]
+    },
+    {
+      "slug": "policy-sop-generator",
+      "title": "Policy & SOP Generator",
+      "type": "skill",
+      "problem": "Operations teams need consistent SOPs but documentation is fragmented.",
+      "includes": [
+        "Template library",
+        "Step validation prompts",
+        "Versioned SOP output",
+        "Approval checklist"
+      ],
+      "scopes": [
+        "operations",
+        "docs",
+        "compliance"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "SOP output includes owner/revision history",
+        "No missing mandatory sections",
+        "Checklist maps to policy controls"
+      ]
+    },
+    {
+      "slug": "social-content-repurposer",
+      "title": "Social Content Repurposer",
+      "type": "skill",
+      "problem": "Creators need to transform long-form content into channel-ready posts quickly.",
+      "includes": [
+        "Thread extraction",
+        "Short-form script variants",
+        "Hashtag suggestions",
+        "Platform tone presets"
+      ],
+      "scopes": [
+        "content",
+        "marketing",
+        "social"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Generates channel-specific length limits",
+        "Preserves core message across variants",
+        "No prohibited claims in outputs"
+      ]
+    },
+    {
+      "slug": "ad-copy-ab-tester",
+      "title": "Ad Copy A/B Tester",
+      "type": "skill",
+      "problem": "Marketing teams waste budget on weak ad variants.",
+      "includes": [
+        "Variant generation",
+        "Hypothesis tagging",
+        "Performance import",
+        "Winner rationale"
+      ],
+      "scopes": [
+        "marketing",
+        "analytics",
+        "experimentation"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Produces at least 5 distinct variants",
+        "Hypotheses align with copy differences",
+        "Imports and compares CTR/CVR correctly"
+      ]
+    },
+    {
+      "slug": "seo-content-optimizer",
+      "title": "SEO Content Optimizer",
+      "type": "skill",
+      "problem": "Writers need practical SEO improvements without keyword stuffing.",
+      "includes": [
+        "Search intent mapping",
+        "Outline improvements",
+        "Internal linking suggestions",
+        "Snippet preview"
+      ],
+      "scopes": [
+        "seo",
+        "writing",
+        "web"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Maps primary/secondary intent correctly",
+        "Suggestions improve readability score",
+        "No over-optimization warnings triggered"
+      ]
+    },
+    {
+      "slug": "customer-feedback-clusterer",
+      "title": "Customer Feedback Clusterer",
+      "type": "skill",
+      "problem": "Product teams cannot quickly extract trends from large feedback volumes.",
+      "includes": [
+        "Theme clustering",
+        "Sentiment + severity scoring",
+        "Feature request dedupe",
+        "Roadmap-ready summary"
+      ],
+      "scopes": [
+        "product",
+        "support",
+        "analytics"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Clusters remain stable across reruns",
+        "Severity score correlates with ticket urgency",
+        "Top themes include representative quotes"
+      ]
+    },
+    {
+      "slug": "support-ticket-autoprioritizer",
+      "title": "Support Ticket Autoprioritizer",
+      "type": "skill",
+      "problem": "Support queues lack triage consistency and SLA misses increase.",
+      "includes": [
+        "Priority classifier",
+        "SLA timer tagging",
+        "Escalation suggestions",
+        "Agent handoff notes"
+      ],
+      "scopes": [
+        "support",
+        "operations",
+        "classification"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Priority labels hit benchmark precision threshold",
+        "SLA breach predictions are accurate on holdout set",
+        "Handoff notes include reproduction context"
+      ]
+    },
+    {
+      "slug": "oncall-handoff-assistant",
+      "title": "On-call Handoff Assistant",
+      "type": "skill",
+      "problem": "Critical context is lost between on-call shifts.",
+      "includes": [
+        "Active incident summary",
+        "Pending action tracker",
+        "Risk callouts",
+        "Shift handoff template"
+      ],
+      "scopes": [
+        "sre",
+        "support",
+        "incident"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Handoff includes open alerts and owners",
+        "Pending actions remain linked to ticket IDs",
+        "No stale incidents appear in summary"
+      ]
+    },
+    {
+      "slug": "database-migration-guard",
+      "title": "Database Migration Guard",
+      "type": "skill",
+      "problem": "Schema migrations can cause downtime and data integrity issues.",
+      "includes": [
+        "Migration risk linting",
+        "Rollback plan template",
+        "Lock-time estimation",
+        "Preflight checklist"
+      ],
+      "scopes": [
+        "database",
+        "devops",
+        "reliability"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Detects destructive operations",
+        "Rollback plan references exact migration IDs",
+        "Preflight validates backups and replication health"
+      ]
+    },
+    {
+      "slug": "api-change-impact-analyzer",
+      "title": "API Change Impact Analyzer",
+      "type": "skill",
+      "problem": "API changes break downstream clients without early warning.",
+      "includes": [
+        "Breaking-change detection",
+        "Consumer mapping",
+        "Versioning recommendations",
+        "Changelog generation"
+      ],
+      "scopes": [
+        "api",
+        "developer",
+        "release"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Flags removed/changed fields accurately",
+        "Consumer map includes internal + external clients",
+        "Changelog includes migration notes"
+      ]
+    },
+    {
+      "slug": "docs-to-faq-converter",
+      "title": "Docs-to-FAQ Converter",
+      "type": "skill",
+      "problem": "Documentation is comprehensive but hard for users to scan quickly.",
+      "includes": [
+        "Question extraction",
+        "Answer condensation",
+        "Beginner vs advanced views",
+        "FAQ freshness checker"
+      ],
+      "scopes": [
+        "documentation",
+        "support",
+        "education"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "FAQ answers remain faithful to source docs",
+        "Beginner mode removes jargon",
+        "Freshness checker flags stale links"
+      ]
+    },
+    {
+      "slug": "learning-path-designer",
+      "title": "Learning Path Designer",
+      "type": "skill",
+      "problem": "Learners struggle to sequence resources for skill development.",
+      "includes": [
+        "Goal assessment",
+        "Milestone curriculum",
+        "Practice plan",
+        "Progress checkpoints"
+      ],
+      "scopes": [
+        "education",
+        "coaching",
+        "planning"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Curriculum maps to stated goal level",
+        "Checkpoints have measurable criteria",
+        "Plan adapts when learner pace changes"
+      ]
+    },
+    {
+      "slug": "fitness-plan-adapter",
+      "title": "Fitness Plan Adapter",
+      "type": "skill",
+      "problem": "Generic workout plans fail when schedules or energy levels change.",
+      "includes": [
+        "Adaptive weekly planning",
+        "Equipment-aware substitutions",
+        "Recovery reminders",
+        "Habit streak tracking"
+      ],
+      "scopes": [
+        "health",
+        "habits",
+        "planning"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Substitutions preserve target muscle groups",
+        "Weekly volume stays within safe thresholds",
+        "Missed sessions trigger realistic adjustments"
+      ]
+    },
+    {
+      "slug": "meal-prep-planner",
+      "title": "Meal Prep Planner",
+      "type": "skill",
+      "problem": "Households waste food due to poor meal planning and shopping mismatch.",
+      "includes": [
+        "Weekly menu generation",
+        "Pantry-aware recipes",
+        "Consolidated grocery list",
+        "Leftover reuse suggestions"
+      ],
+      "scopes": [
+        "home",
+        "nutrition",
+        "planning"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Grocery list deduplicates ingredients",
+        "Recipes fit user constraints",
+        "Leftover reuse covers at least 2 follow-up meals"
+      ]
+    },
+    {
+      "slug": "budget-guardrails-coach",
+      "title": "Budget Guardrails Coach",
+      "type": "skill",
+      "problem": "Users overspend because budgets are static and not behavior-aware.",
+      "includes": [
+        "Category spend tracking",
+        "Adaptive monthly limits",
+        "Early warning alerts",
+        "What-if simulations"
+      ],
+      "scopes": [
+        "finance",
+        "personal",
+        "analytics"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Detects overspend trend before month-end",
+        "Simulations match baseline arithmetic",
+        "Alerts avoid false positives under threshold"
+      ]
+    },
+    {
+      "slug": "subscription-leak-finder",
+      "title": "Subscription Leak Finder",
+      "type": "skill",
+      "problem": "Recurring charges accumulate unnoticed and drain budgets.",
+      "includes": [
+        "Recurring charge detection",
+        "Duplicate service detection",
+        "Cancellation playbook",
+        "Savings forecast"
+      ],
+      "scopes": [
+        "finance",
+        "consumer",
+        "cost-control"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Finds recurring merchants across statement formats",
+        "Duplicate detection groups family-plan overlaps",
+        "Forecast equals detected recurring totals"
+      ]
+    },
+    {
+      "slug": "home-maintenance-scheduler",
+      "title": "Home Maintenance Scheduler",
+      "type": "skill",
+      "problem": "Homeowners miss periodic tasks and face avoidable repairs.",
+      "includes": [
+        "Seasonal checklist",
+        "Asset-based reminders",
+        "DIY vs pro guidance",
+        "Maintenance log"
+      ],
+      "scopes": [
+        "home",
+        "reminders",
+        "operations"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Checklist adapts to location seasonality",
+        "Reminders map to asset age/usage",
+        "Log entries are searchable by asset"
+      ]
+    },
+    {
+      "slug": "event-runbook-orchestrator",
+      "title": "Event Runbook Orchestrator",
+      "type": "skill",
+      "problem": "Small teams run events with scattered checklists and missed dependencies.",
+      "includes": [
+        "Timeline builder",
+        "Vendor coordination tracker",
+        "Role assignment matrix",
+        "Day-of command center brief"
+      ],
+      "scopes": [
+        "events",
+        "project-management",
+        "coordination"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Dependencies are topologically sorted",
+        "Role matrix has no unassigned critical tasks",
+        "Day-of brief includes escalation contacts"
+      ]
+    },
+    {
+      "slug": "podcast-show-notes-generator",
+      "title": "Podcast Show Notes Generator",
+      "type": "skill",
+      "problem": "Creators spend too much time turning recordings into publish-ready notes.",
+      "includes": [
+        "Timestamped chaptering",
+        "Key quote extraction",
+        "Link enrichment",
+        "SEO-ready descriptions"
+      ],
+      "scopes": [
+        "audio",
+        "content",
+        "publishing"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Chapters align with topic shifts",
+        "Quotes match transcript verbatim",
+        "Descriptions fit platform character limits"
+      ]
+    },
+    {
+      "slug": "community-moderation-coach",
+      "title": "Community Moderation Coach",
+      "type": "skill",
+      "problem": "Community managers need consistent moderation decisions and tone.",
+      "includes": [
+        "Policy-aware response drafts",
+        "Violation severity rubric",
+        "Escalation decision tree",
+        "Moderator handoff notes"
+      ],
+      "scopes": [
+        "community",
+        "policy",
+        "communication"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Drafts cite the relevant policy rule",
+        "Severity rubric is applied consistently",
+        "Escalation path triggers for high-risk cases"
+      ]
+    },
+    {
+      "slug": "operator-chief",
+      "title": "Operator Chief",
+      "type": "personality",
+      "problem": "Users need a decisive execution-focused assistant for daily operations.",
+      "includes": [
+        "Crisp command style",
+        "Checklist-first responses",
+        "Risk callouts",
+        "Execution summaries"
+      ],
+      "scopes": [
+        "operations",
+        "productivity",
+        "decision-support"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Response includes clear next action",
+        "No unnecessary verbosity",
+        "Always surfaces blockers and dependencies"
+      ]
+    },
+    {
+      "slug": "warm-coach",
+      "title": "Warm Coach",
+      "type": "personality",
+      "problem": "People need motivation and accountability without harsh tone.",
+      "includes": [
+        "Encouraging framing",
+        "Micro-goal planning",
+        "Progress reflection prompts",
+        "Gentle accountability"
+      ],
+      "scopes": [
+        "habits",
+        "wellbeing",
+        "coaching"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Tone remains supportive",
+        "Action steps stay specific",
+        "Avoids guilt-based language"
+      ]
+    },
+    {
+      "slug": "skeptical-analyst",
+      "title": "Skeptical Analyst",
+      "type": "personality",
+      "problem": "Decision-makers need a critical-thinking mode to challenge assumptions.",
+      "includes": [
+        "Assumption stress-testing",
+        "Counterexample generation",
+        "Evidence ranking",
+        "Confidence scoring"
+      ],
+      "scopes": [
+        "analysis",
+        "strategy",
+        "research"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Identifies at least 3 key assumptions",
+        "Differentiates facts from hypotheses",
+        "Provides confidence level with rationale"
+      ]
+    },
+    {
+      "slug": "founder-copilot",
+      "title": "Founder Copilot",
+      "type": "personality",
+      "problem": "Founders need rapid context switching across product, GTM, and hiring.",
+      "includes": [
+        "Tradeoff framing",
+        "Priority triage",
+        "Lean experiment mindset",
+        "Weekly operating cadence"
+      ],
+      "scopes": [
+        "startup",
+        "strategy",
+        "execution"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Outputs explicit priority order",
+        "Recommendations include resource constraints",
+        "Experiment plans include measurable success criteria"
+      ]
+    },
+    {
+      "slug": "professor-socratic",
+      "title": "Professor Socratic",
+      "type": "personality",
+      "problem": "Learners retain more when guided through questions instead of direct answers.",
+      "includes": [
+        "Question-led guidance",
+        "Concept scaffolding",
+        "Knowledge checks",
+        "Adaptive hints"
+      ],
+      "scopes": [
+        "education",
+        "learning",
+        "tutoring"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Uses progressive questioning",
+        "Hints increase only when needed",
+        "Final explanation confirms learner understanding"
+      ]
+    },
+    {
+      "slug": "no-fluff-editor",
+      "title": "No-Fluff Editor",
+      "type": "personality",
+      "problem": "Writers need brutally clear edits without losing intent.",
+      "includes": [
+        "Concision focus",
+        "Clarity rewrites",
+        "Structure tightening",
+        "Tone-preserving cuts"
+      ],
+      "scopes": [
+        "writing",
+        "editing",
+        "communication"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Reduces word count while preserving meaning",
+        "Removes ambiguous phrasing",
+        "Maintains requested voice"
+      ]
+    },
+    {
+      "slug": "empathetic-support-agent",
+      "title": "Empathetic Support Agent",
+      "type": "personality",
+      "problem": "Support conversations require calm empathy under user frustration.",
+      "includes": [
+        "Emotional acknowledgment",
+        "Clear troubleshooting flow",
+        "Expectation setting",
+        "Friendly closure"
+      ],
+      "scopes": [
+        "support",
+        "customer-success",
+        "communication"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Acknowledges user emotion in first response",
+        "Troubleshooting steps are numbered",
+        "Never overpromises outcomes"
+      ]
+    },
+    {
+      "slug": "security-paranoid",
+      "title": "Security Paranoid",
+      "type": "personality",
+      "problem": "Teams need a security-first advisor for risky decisions.",
+      "includes": [
+        "Threat modeling mindset",
+        "Least-privilege recommendations",
+        "Data minimization bias",
+        "Abuse-case thinking"
+      ],
+      "scopes": [
+        "security",
+        "compliance",
+        "risk"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Flags sensitive data paths",
+        "Recommends least-privilege defaults",
+        "Includes abuse-case checks"
+      ]
+    },
+    {
+      "slug": "creative-spark",
+      "title": "Creative Spark",
+      "type": "personality",
+      "problem": "Teams hit idea fatigue and need high-variance ideation support.",
+      "includes": [
+        "Divergent brainstorming",
+        "Unexpected analogies",
+        "Concept remixing",
+        "Prompted iteration rounds"
+      ],
+      "scopes": [
+        "creativity",
+        "branding",
+        "content"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Generates diverse idea sets",
+        "Avoids near-duplicate concepts",
+        "Includes at least one bold outlier option"
+      ]
+    },
+    {
+      "slug": "data-journalist",
+      "title": "Data Journalist",
+      "type": "personality",
+      "problem": "Stakeholders need data narratives they can understand quickly.",
+      "includes": [
+        "Story-first analytics",
+        "Trend explanation",
+        "Audience-tailored summaries",
+        "Chart-caption style writing"
+      ],
+      "scopes": [
+        "analytics",
+        "storytelling",
+        "reporting"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Narrative states key insight up front",
+        "Claims tie to provided metrics",
+        "Summary includes caveats and uncertainty"
+      ]
+    },
+    {
+      "slug": "negotiation-strategist",
+      "title": "Negotiation Strategist",
+      "type": "personality",
+      "problem": "Users need tactical guidance for salary, vendor, and contract negotiations.",
+      "includes": [
+        "BATNA framing",
+        "Offer/counteroffer scripts",
+        "Concession planning",
+        "Red-line boundaries"
+      ],
+      "scopes": [
+        "negotiation",
+        "career",
+        "procurement"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Defines BATNA and walk-away clearly",
+        "Scripts include fallback branches",
+        "Concession order preserves core priorities"
+      ]
+    },
+    {
+      "slug": "incident-commander",
+      "title": "Incident Commander",
+      "type": "personality",
+      "problem": "Outage response needs calm, authoritative communication and triage.",
+      "includes": [
+        "Command tone",
+        "Status update cadence",
+        "Decision logging",
+        "Role delegation prompts"
+      ],
+      "scopes": [
+        "incident-response",
+        "operations",
+        "leadership"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Status updates include impact/current action/next ETA",
+        "Decisions are timestamped",
+        "Delegation requests specify owner and deadline"
+      ]
+    },
+    {
+      "slug": "patient-therapist-lite",
+      "title": "Patient Therapist Lite",
+      "type": "personality",
+      "problem": "Users seek reflective conversation for stress without clinical claims.",
+      "includes": [
+        "Reflective listening",
+        "Grounding prompts",
+        "Non-clinical reframing",
+        "Boundary-safe disclaimers"
+      ],
+      "scopes": [
+        "wellbeing",
+        "reflection",
+        "support"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Avoids diagnosis/treatment language",
+        "Uses supportive and nonjudgmental tone",
+        "Escalates to professional help cues when risk phrases appear"
+      ]
+    },
+    {
+      "slug": "sales-closer",
+      "title": "Sales Closer",
+      "type": "personality",
+      "problem": "Revenue teams need persuasive yet ethical messaging for pipeline conversion.",
+      "includes": [
+        "Objection handling",
+        "Value articulation",
+        "Next-step urgency framing",
+        "Follow-up cadence"
+      ],
+      "scopes": [
+        "sales",
+        "communication",
+        "crm"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Objection responses remain factual",
+        "No deceptive scarcity tactics",
+        "Each reply ends with a clear CTA"
+      ]
+    },
+    {
+      "slug": "family-organizer",
+      "title": "Family Organizer",
+      "type": "personality",
+      "problem": "Households need practical planning help across chores, school, and logistics.",
+      "includes": [
+        "Routine planning",
+        "Kid-friendly reminders",
+        "Shared responsibility framing",
+        "Low-friction checklists"
+      ],
+      "scopes": [
+        "home",
+        "family",
+        "planning"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Plans are realistic for weekly schedule",
+        "Tasks are evenly distributed",
+        "Instructions are age-appropriate when children are involved"
+      ]
+    }
+  ]
+}
