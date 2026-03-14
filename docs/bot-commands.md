@@ -13,6 +13,8 @@ Optional auth hardening:
 
 ## Supported commands
 
+- `/start` or `/help`
+  - Returns market-style welcome message, command list, and featured products.
 - `/store`
   - Returns store URL + button payload to open BotStore webview.
 - `/install <pack-slug>`

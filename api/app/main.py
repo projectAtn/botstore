@@ -591,12 +591,47 @@ def bot_command(payload: BotCommandRequest, x_botstore_key: Optional[str] = Head
     parts = text.split()
     cmd = parts[0].lower()
 
-    if cmd == "/store":
+    if cmd in {"/start", "/store", "/help"}:
         url = bot_open_store_link(user_id=payload.user_id, x_botstore_key=x_botstore_key)["url"]
+        featured = [p for p in bot_store(user_id=payload.user_id, x_botstore_key=x_botstore_key) if p.is_featured][:3]
+
+        products_lines = []
+        product_buttons = []
+        for p in featured:
+            label = f"• {p.title} ({p.type.value})"
+            suffix = " — approval may be required" if p.requires_approval else ""
+            products_lines.append(label + suffix)
+            cb = f"bundle:{p.slug}" if p.type == PackType.bundle else f"install:{p.slug}"
+            product_buttons.append([{"text": f"Install: {p.title}", "callback_data": cb, "style": "primary"}])
+
+        welcome = "\n".join([
+            "👋 Welcome to BotStore — the marketplace for bot skills and personalities.",
+            "",
+            "🚀 Featured products:",
+            *(products_lines or ["• No featured products yet"]),
+            "",
+            "🧭 Commands:",
+            "/store - Open BotStore web view",
+            "/install <pack-slug> - Install one product",
+            "/bundle <bundle-slug> - Install a full bundle",
+            "/approvals - Show pending approvals",
+            "/approve <id> - Approve pending install",
+            "/reject <id> - Reject pending install",
+            "/installs - Show your install count",
+            "",
+            "Tip: Use /approvals after installs to approve sensitive packs.",
+        ])
+
+        buttons = [
+            [{"text": "🛍 Open BotStore", "callback_data": f"open:{url}", "style": "primary"}],
+            [{"text": "📋 Approvals", "callback_data": "open:approvals", "style": "success"}],
+            *product_buttons,
+        ]
+
         return BotCommandResponse(
-            message="Open store",
+            message=welcome,
             action="open_store",
-            data={"url": url, "buttons": [[{"text": "Open BotStore", "callback_data": f"open:{url}", "style": "primary"}]]},
+            data={"url": url, "buttons": buttons},
         )
 
     if cmd == "/install":
@@ -663,6 +698,8 @@ def bot_callback(payload: BotCallbackRequest, x_botstore_key: Optional[str] = He
     if data.startswith("reject:"):
         aid = data.split(":", 1)[1]
         return bot_command(BotCommandRequest(user_id=payload.user_id, text=f"/reject {aid}"), x_botstore_key=x_botstore_key)
+    if data == "open:approvals":
+        return bot_command(BotCommandRequest(user_id=payload.user_id, text="/approvals"), x_botstore_key=x_botstore_key)
     if data.startswith("open:"):
         url = data.split(":", 1)[1]
         return BotCommandResponse(message=f"Open: {url}", action="open_store", data={"url": url})
