@@ -1,0 +1,546 @@
+{
+  "results": [
+    {
+      "slug": "model-switchboard",
+      "title": "Model Switchboard",
+      "type": "skill",
+      "score": 100,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=2"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "workflow-version-pinning",
+      "title": "Workflow Version Pinning",
+      "type": "skill",
+      "score": 100,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=2"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "fact-source-verifier",
+      "title": "Fact & Source Verifier",
+      "type": "skill",
+      "score": 75,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "synthetic-media-checker",
+      "title": "Synthetic Media Checker",
+      "type": "skill",
+      "score": 100,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=1"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "policy-compliance-guard",
+      "title": "Policy & Compliance Guard",
+      "type": "skill",
+      "score": 100,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=4"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "cost-governor",
+      "title": "Cost Governor",
+      "type": "skill",
+      "score": 75,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=2"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "autonomous-retry-recovery",
+      "title": "Autonomous Retry & Recovery",
+      "type": "skill",
+      "score": 100,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "human-escalation-router",
+      "title": "Human Escalation Router",
+      "type": "skill",
+      "score": 100,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "tool-health-monitor",
+      "title": "Tool Health Monitor",
+      "type": "skill",
+      "score": 75,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "private-local-execution",
+      "title": "Private Local Execution",
+      "type": "skill",
+      "score": 100,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "web-action-proof-logger",
+      "title": "Web Action Proof Logger",
+      "type": "skill",
+      "score": 100,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=2"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "task-contract-engine",
+      "title": "Task Contract Engine",
+      "type": "skill",
+      "score": 75,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=2"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "ops-chief-persona",
+      "title": "No-BS Ops Chief",
+      "type": "personality",
+      "score": 75,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=2"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "safety-analyst-persona",
+      "title": "Safety-First Analyst",
+      "type": "personality",
+      "score": 100,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=2"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "research-scholar-persona",
+      "title": "Research Scholar",
+      "type": "personality",
+      "score": 75,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "cfo-assistant-persona",
+      "title": "Cost-Conscious CFO Assistant",
+      "type": "personality",
+      "score": 75,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=2"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "autonomous-worker-persona",
+      "title": "Autonomous Worker",
+      "type": "personality",
+      "score": 75,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    },
+    {
+      "slug": "enterprise-assistant-persona",
+      "title": "Audit-Ready Enterprise Assistant",
+      "type": "personality",
+      "score": 75,
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ]
+    }
+  ],
+  "verified_slugs": [
+    "model-switchboard",
+    "workflow-version-pinning",
+    "fact-source-verifier",
+    "synthetic-media-checker",
+    "policy-compliance-guard",
+    "cost-governor",
+    "autonomous-retry-recovery",
+    "human-escalation-router",
+    "tool-health-monitor",
+    "private-local-execution",
+    "web-action-proof-logger",
+    "task-contract-engine",
+    "ops-chief-persona",
+    "safety-analyst-persona",
+    "research-scholar-persona",
+    "cfo-assistant-persona",
+    "autonomous-worker-persona",
+    "enterprise-assistant-persona"
+  ]
+}

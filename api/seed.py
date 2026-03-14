@@ -171,12 +171,21 @@ with Session(engine) as s:
         s.commit()
 
     candidates_path = Path(__file__).resolve().parents[1] / "research" / "candidate-packs-v1.json"
+    simulation_result_path = Path(__file__).resolve().parents[1] / "research" / "runtime-simulation-result.json"
     if candidates_path.exists():
         payload = json.loads(candidates_path.read_text())
         candidates = payload.get("candidates", [])
 
+        verified_slugs = None
+        if simulation_result_path.exists():
+            sim = json.loads(simulation_result_path.read_text())
+            verified_slugs = set(sim.get("verified_slugs", []))
+
         for c in candidates:
             slug = c["slug"]
+            if verified_slugs is not None and slug not in verified_slugs:
+                continue
+
             existing = s.exec(select(Pack).where(Pack.slug == slug)).first()
             if existing:
                 continue
