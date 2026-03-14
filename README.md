@@ -50,6 +50,8 @@ Then open: `http://localhost:8787/docs`
 - `GET /agent/compatibility/{pack_id}?runtime=<name>&version=<opt>`
 - Autonomous-agent vision + architecture: `docs/botstore-v1-autonomous-agents.md`
 - Content system starter: `docs/content-strategy-v1.md`
+- Candidate pack quality gate: `research/candidate-packs-v1.json` + `scripts/quality_check_candidates.py` + `research/candidate-packs-quality-report.md`
+- Reddit/X demand scan notes: `research/reddit-x-skill-demand-2026-03-14.md`
 
 ## Next milestones
 1. Add auth + publisher namespaces

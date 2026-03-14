@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 from sqlmodel import SQLModel, Session, select
 
 from app.main import Creator, Pack, PackType, VerificationStatus, engine
@@ -165,6 +168,32 @@ with Session(engine) as s:
     if bundle and gil and inbox and research:
         bundle.bundle_pack_ids_csv = f"{gil.id},{inbox.id},{research.id}"
         s.add(bundle)
+        s.commit()
+
+    candidates_path = Path(__file__).resolve().parents[1] / "research" / "candidate-packs-v1.json"
+    if candidates_path.exists():
+        payload = json.loads(candidates_path.read_text())
+        candidates = payload.get("candidates", [])
+
+        for c in candidates:
+            slug = c["slug"]
+            existing = s.exec(select(Pack).where(Pack.slug == slug)).first()
+            if existing:
+                continue
+
+            ptype = PackType(c["type"])
+            creator_id = creator_map["Ops Foundry"].id if ptype == PackType.skill else creator_map["Epic Labs"].id
+            pack = Pack(
+                slug=slug,
+                title=c["title"],
+                type=ptype,
+                description=c["problem"],
+                risk_level=c.get("risk_level", "low"),
+                scopes_csv=",".join(c.get("scopes", [])),
+                is_featured=False,
+                creator_id=creator_id,
+            )
+            s.add(pack)
         s.commit()
 
 print("Seed complete")

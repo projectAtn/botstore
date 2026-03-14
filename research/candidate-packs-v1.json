@@ -1,0 +1,185 @@
+{
+  "generatedAt": "2026-03-14",
+  "candidates": [
+    {
+      "slug": "model-switchboard",
+      "title": "Model Switchboard",
+      "type": "skill",
+      "problem": "Choose the best model per task for quality/cost/privacy.",
+      "includes": ["routing policy", "fallback chain", "provider health checks", "budget-aware model selection"],
+      "scopes": ["memory.read", "memory.write"],
+      "risk_level": "low",
+      "quality_tests": ["routes coding tasks to coding model", "falls back on provider outage", "respects max-cost policy"]
+    },
+    {
+      "slug": "workflow-version-pinning",
+      "title": "Workflow Version Pinning",
+      "type": "skill",
+      "problem": "Prevent regressions by pinning workflow versions and allowing rollback.",
+      "includes": ["version pin", "rollback", "change log", "regression guard"],
+      "scopes": ["files.read", "files.write"],
+      "risk_level": "low",
+      "quality_tests": ["pins known-good version", "rolls back failed update", "tracks version metadata"]
+    },
+    {
+      "slug": "fact-source-verifier",
+      "title": "Fact & Source Verifier",
+      "type": "skill",
+      "problem": "Reduce hallucinations by source-backed validation.",
+      "includes": ["claim extraction", "source cross-check", "confidence scoring", "citation formatter"],
+      "scopes": ["web.search", "web.fetch", "files.read"],
+      "risk_level": "low",
+      "quality_tests": ["flags unsupported claims", "adds citations", "returns confidence score"]
+    },
+    {
+      "slug": "synthetic-media-checker",
+      "title": "Synthetic Media Checker",
+      "type": "skill",
+      "problem": "Assess authenticity risk for images/audio/video.",
+      "includes": ["metadata checks", "artifact heuristics", "risk labeling", "human-review escalation"],
+      "scopes": ["files.read"],
+      "risk_level": "low",
+      "quality_tests": ["labels high-risk media", "outputs rationale", "supports image/video/audio inputs"]
+    },
+    {
+      "slug": "policy-compliance-guard",
+      "title": "Policy & Compliance Guard",
+      "type": "skill",
+      "problem": "Apply organizational and legal policy before action.",
+      "includes": ["policy rules", "deny list", "audit event log", "override workflow"],
+      "scopes": ["files.read", "files.write", "message.send", "email.send"],
+      "risk_level": "high",
+      "quality_tests": ["blocks disallowed actions", "logs violations", "supports policy updates"]
+    },
+    {
+      "slug": "cost-governor",
+      "title": "Cost Governor",
+      "type": "skill",
+      "problem": "Control runtime and model spend automatically.",
+      "includes": ["budget caps", "per-task ceilings", "downgrade policy", "cost alerts"],
+      "scopes": ["memory.read", "memory.write"],
+      "risk_level": "low",
+      "quality_tests": ["halts task on cap", "switches to cheaper model", "reports spend trace"]
+    },
+    {
+      "slug": "autonomous-retry-recovery",
+      "title": "Autonomous Retry & Recovery",
+      "type": "skill",
+      "problem": "Recover from transient and known failures without human intervention.",
+      "includes": ["error classifier", "retry policy", "backoff", "fallback action map"],
+      "scopes": ["memory.read", "memory.write", "files.write"],
+      "risk_level": "low",
+      "quality_tests": ["retries transient failures", "stops on permanent failures", "emits recovery summary"]
+    },
+    {
+      "slug": "human-escalation-router",
+      "title": "Human Escalation Router",
+      "type": "skill",
+      "problem": "Escalate ambiguous/high-risk decisions to humans at the right time.",
+      "includes": ["uncertainty threshold", "escalation templates", "response timeout policy", "fallback route"],
+      "scopes": ["message.send", "email.send", "memory.read"],
+      "risk_level": "medium",
+      "quality_tests": ["escalates at low confidence", "includes concise context", "resumes after response"]
+    },
+    {
+      "slug": "tool-health-monitor",
+      "title": "Tool Health Monitor",
+      "type": "skill",
+      "problem": "Detect broken integrations and self-heal where possible.",
+      "includes": ["periodic checks", "token expiry detector", "connector status dashboard", "auto-repair hooks"],
+      "scopes": ["files.read", "files.write", "web.fetch"],
+      "risk_level": "low",
+      "quality_tests": ["detects connector outage", "reports degraded status", "recovers from token refresh"]
+    },
+    {
+      "slug": "private-local-execution",
+      "title": "Private Local Execution",
+      "type": "skill",
+      "problem": "Route sensitive tasks to local/private models only.",
+      "includes": ["data classification", "private routing policy", "cloud deny for sensitive payloads", "audit record"],
+      "scopes": ["files.read", "files.write", "memory.read"],
+      "risk_level": "medium",
+      "quality_tests": ["blocks cloud route for sensitive tasks", "uses local model fallback", "logs privacy route decision"]
+    },
+    {
+      "slug": "web-action-proof-logger",
+      "title": "Web Action Proof Logger",
+      "type": "skill",
+      "problem": "Create verifiable receipts of browser actions for trust and audits.",
+      "includes": ["step logs", "timestamped evidence", "screenshot hooks", "exportable report"],
+      "scopes": ["files.write", "web.fetch"],
+      "risk_level": "low",
+      "quality_tests": ["captures each action", "produces exportable trace", "links action to task id"]
+    },
+    {
+      "slug": "task-contract-engine",
+      "title": "Task Contract Engine",
+      "type": "skill",
+      "problem": "Turn vague requests into explicit success contracts.",
+      "includes": ["goal parser", "acceptance criteria generator", "assumption tracker", "completion validator"],
+      "scopes": ["memory.read", "memory.write"],
+      "risk_level": "low",
+      "quality_tests": ["extracts measurable outcomes", "tracks assumptions", "checks completion against criteria"]
+    },
+    {
+      "slug": "ops-chief-persona",
+      "title": "No-BS Ops Chief",
+      "type": "personality",
+      "problem": "Need clear, direct execution-focused communication.",
+      "includes": ["concise style", "priority framing", "deadline focus", "blunt risk flags"],
+      "scopes": ["memory.read", "memory.write"],
+      "risk_level": "low",
+      "quality_tests": ["responses concise", "includes actionable next steps", "flags blockers clearly"]
+    },
+    {
+      "slug": "safety-analyst-persona",
+      "title": "Safety-First Analyst",
+      "type": "personality",
+      "problem": "Need risk-aware planning and conservative recommendations.",
+      "includes": ["risk matrix framing", "cautious defaults", "compliance language", "escalation cues"],
+      "scopes": ["memory.read", "memory.write"],
+      "risk_level": "low",
+      "quality_tests": ["identifies risks", "proposes mitigations", "avoids overconfident claims"]
+    },
+    {
+      "slug": "research-scholar-persona",
+      "title": "Research Scholar",
+      "type": "personality",
+      "problem": "Need source-grounded, structured research outputs.",
+      "includes": ["citation-first style", "neutral synthesis", "method transparency", "counterpoint handling"],
+      "scopes": ["web.search", "web.fetch", "memory.write"],
+      "risk_level": "low",
+      "quality_tests": ["includes citations", "states uncertainty", "provides balanced summary"]
+    },
+    {
+      "slug": "cfo-assistant-persona",
+      "title": "Cost-Conscious CFO Assistant",
+      "type": "personality",
+      "problem": "Need ROI and cost discipline in recommendations.",
+      "includes": ["cost framing", "tradeoff analysis", "unit economics lens", "budget language"],
+      "scopes": ["memory.read", "memory.write"],
+      "risk_level": "low",
+      "quality_tests": ["mentions cost impact", "compares options", "recommends budget-aware plan"]
+    },
+    {
+      "slug": "autonomous-worker-persona",
+      "title": "Autonomous Worker",
+      "type": "personality",
+      "problem": "Need proactive but non-spammy autonomous behavior.",
+      "includes": ["proactive cadence", "minimal interruption", "status snapshots", "task ownership language"],
+      "scopes": ["memory.read", "memory.write", "message.send"],
+      "risk_level": "medium",
+      "quality_tests": ["acts without over-messaging", "reports progress periodically", "asks approval when needed"]
+    },
+    {
+      "slug": "enterprise-assistant-persona",
+      "title": "Audit-Ready Enterprise Assistant",
+      "type": "personality",
+      "problem": "Need formal, traceable enterprise communication behavior.",
+      "includes": ["formal style", "decision trace formatting", "policy references", "approval discipline"],
+      "scopes": ["memory.read", "memory.write", "files.write"],
+      "risk_level": "medium",
+      "quality_tests": ["writes audit-friendly logs", "references policy constraints", "keeps enterprise tone"]
+    }
+  ]
+}
