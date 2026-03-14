@@ -1,4 +1,6 @@
+import json
 import os
+from pathlib import Path
 from enum import Enum
 from typing import Optional
 
@@ -258,8 +260,16 @@ class OpsProgress(BaseModel):
     next_task: str
 
 
+class OpsProgressUpdate(BaseModel):
+    phase: str = "execution"
+    percent: int
+    current_task: str = ""
+    next_task: str = ""
+
+
 sqlite_file_name = "./botstore.db"
 engine = create_engine(f"sqlite:///{sqlite_file_name}", echo=False)
+OPS_PROGRESS_PATH = Path("../research/ops-progress.json")
 
 app = FastAPI(title="BotStore API", version="0.2.0")
 app.add_middleware(
@@ -442,13 +452,47 @@ def _bar(percent: int, width: int = 10) -> str:
 
 @app.get("/ops/progress", response_model=OpsProgress)
 def ops_progress() -> OpsProgress:
-    # Lightweight operational progress snapshot for chat/UI.
+    # Dynamic progress sourced from a shared JSON state file when available.
+    if OPS_PROGRESS_PATH.exists():
+        try:
+            payload = json.loads(OPS_PROGRESS_PATH.read_text())
+            p = int(payload.get("percent", 0))
+            return OpsProgress(
+                phase=str(payload.get("phase", "execution")),
+                percent=max(0, min(100, p)),
+                bar=_bar(p),
+                current_task=str(payload.get("current_task", "")),
+                next_task=str(payload.get("next_task", "")),
+            )
+        except Exception:
+            pass
+
     return OpsProgress(
         phase="execution",
-        percent=82,
-        bar=_bar(82),
-        current_task="v4 pipeline promotion + search refinement",
-        next_task="round-3 test-customer retest",
+        percent=0,
+        bar=_bar(0),
+        current_task="idle",
+        next_task="awaiting next task",
+    )
+
+
+@app.post("/ops/progress", response_model=OpsProgress)
+def set_ops_progress(payload: OpsProgressUpdate) -> OpsProgress:
+    p = max(0, min(100, int(payload.percent)))
+    data = {
+        "phase": payload.phase,
+        "percent": p,
+        "current_task": payload.current_task,
+        "next_task": payload.next_task,
+    }
+    OPS_PROGRESS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    OPS_PROGRESS_PATH.write_text(json.dumps(data, indent=2))
+    return OpsProgress(
+        phase=payload.phase,
+        percent=p,
+        bar=_bar(p),
+        current_task=payload.current_task,
+        next_task=payload.next_task,
     )
 
 
