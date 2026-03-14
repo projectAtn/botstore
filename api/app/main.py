@@ -115,6 +115,8 @@ class Install(SQLModel, table=True):
 class InstallCreate(SQLModel):
     user_id: str
     pack_id: int
+    runtime_id: Optional[str] = None
+    agent_id: Optional[str] = None
 
 
 class InstallResult(SQLModel):
@@ -239,6 +241,33 @@ class InstallSetupUpdate(SQLModel):
     calendar_connected: bool = False
     notion_connected: bool = False
     slack_connected: bool = False
+
+
+class UserRuntimeBinding(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    user_id: str = Field(index=True)
+    runtime_id: str = Field(index=True)
+    agent_id: str = Field(index=True)
+    channel: Optional[str] = None
+    is_default: bool = False
+
+
+class UserRuntimeBindingCreate(SQLModel):
+    user_id: str
+    runtime_id: str
+    agent_id: str
+    channel: Optional[str] = None
+    set_default: bool = True
+
+
+class InstallActivation(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    install_id: int = Field(foreign_key="install.id", unique=True, index=True)
+    user_id: str = Field(index=True)
+    runtime_id: Optional[str] = Field(default=None, index=True)
+    agent_id: Optional[str] = Field(default=None, index=True)
+    status: str = "installed_registry"
+    message: str = "Installed in registry only (not yet linked to a runtime target)."
 
 
 class AgentOutcome(SQLModel, table=True):
@@ -890,6 +919,8 @@ def bot_command(payload: BotCommandRequest, x_botstore_key: Optional[str] = Head
             "/approve <id> - Approve pending install",
             "/reject <id> - Reject pending install",
             "/installs - Show your install count",
+            "/link <runtime_id> <agent_id> - Link install target",
+            "/where - Show where packs are activated",
             "",
             "Tip: Use /approvals after installs to approve sensitive packs.",
         ])
@@ -912,7 +943,15 @@ def bot_command(payload: BotCommandRequest, x_botstore_key: Optional[str] = Head
         res = bot_install(BotCommandInstallRequest(user_id=payload.user_id, pack_slug=parts[1]), x_botstore_key=x_botstore_key)
         if res.approval_id:
             return BotCommandResponse(message=f"Install pending approval #{res.approval_id}", action="approval_pending", data={"approval_id": res.approval_id})
-        return BotCommandResponse(message=f"Installed {parts[1]}", action="installed", data={"install_id": res.install.id})
+        with Session(engine) as session:
+            act = session.exec(select(InstallActivation).where(InstallActivation.install_id == (res.install.id or 0))).first()
+        msg = f"Installed {parts[1]}"
+        if act:
+            msg += f"\nStatus: {act.status}"
+            if act.runtime_id and act.agent_id:
+                msg += f"\nTarget: {act.runtime_id} / {act.agent_id}"
+            msg += f"\n{act.message}"
+        return BotCommandResponse(message=msg, action="installed", data={"install_id": res.install.id})
 
     if cmd == "/bundle":
         if len(parts) < 2:
@@ -951,7 +990,64 @@ def bot_command(payload: BotCommandRequest, x_botstore_key: Optional[str] = Head
         installs = bot_installs(user_id=payload.user_id, x_botstore_key=x_botstore_key)
         return BotCommandResponse(message=f"Total installs: {len(installs)}", action="installs", data={"count": len(installs)})
 
-    return BotCommandResponse(ok=False, message="Unknown command. Use /store, /install <slug>, /bundle <slug>, /approvals, /approve <id>, /reject <id>, /installs", action="help")
+    if cmd == "/where":
+        state = where_installed(user_id=payload.user_id)
+        installs = state.get("installs", [])
+        if not installs:
+            return BotCommandResponse(
+                message="No installs yet. Tip: link a target first with /link <runtime_id> <agent_id>",
+                action="where",
+            )
+        lines = ["Where packs are installed:"]
+        for row in installs[:10]:
+            target = f"{row.get('runtime_id')}/{row.get('agent_id')}" if row.get("runtime_id") else "(not linked)"
+            lines.append(f"- {row.get('pack_slug')}: {row.get('activation_status')} → {target}")
+        return BotCommandResponse(message="\n".join(lines), action="where", data={"count": len(installs)})
+
+    if cmd == "/link":
+        if len(parts) < 3:
+            return BotCommandResponse(ok=False, message="Usage: /link <runtime_id> <agent_id>", action="help")
+        row = bind_target(
+            UserRuntimeBindingCreate(
+                user_id=payload.user_id,
+                runtime_id=parts[1],
+                agent_id=parts[2],
+                channel="telegram",
+                set_default=True,
+            )
+        )
+        return BotCommandResponse(
+            message=f"Linked default install target: {row.runtime_id}/{row.agent_id}",
+            action="linked_target",
+        )
+
+    # Conversational mode for human users (non-slash)
+    if not cmd.startswith("/"):
+        suggestion = agent_search(
+            AgentSearchQuery(
+                user_id=payload.user_id,
+                runtime="openclaw",
+                query=text,
+                missing_capabilities=[],
+                constraints=AgentSearchConstraints(risk_max="medium"),
+                limit=3,
+            )
+        )
+        results = suggestion.get("results", [])
+        if not results:
+            return BotCommandResponse(
+                message="I couldn't find a good match yet. Try rephrasing with what you want to do (e.g. 'schedule meetings and followups').",
+                action="assist_search",
+            )
+        lines = ["I found these packs for your request:"]
+        buttons = []
+        for r in results:
+            lines.append(f"- {r['title']} ({r['slug']})")
+            buttons.append([{"text": f"Install {r['title']}", "callback_data": f"install:{r['slug']}", "style": "primary"}])
+        lines.append("Use /where to see exactly where installs are activated.")
+        return BotCommandResponse(message="\n".join(lines), action="assist_search", data={"buttons": buttons})
+
+    return BotCommandResponse(ok=False, message="Unknown command. Use /store, /install <slug>, /bundle <slug>, /approvals, /approve <id>, /reject <id>, /installs, /where, /link", action="help")
 
 
 @app.post("/bot/callback", response_model=BotCommandResponse)
@@ -982,7 +1078,51 @@ def _pack_by_slug(session: Session, slug: str) -> Optional[Pack]:
     return session.exec(select(Pack).where(Pack.slug == slug)).first()
 
 
-def _create_install(session: Session, user_id: str, pack: Pack) -> InstallResult:
+def _resolve_binding(session: Session, user_id: str) -> Optional[UserRuntimeBinding]:
+    binding = session.exec(
+        select(UserRuntimeBinding).where(
+            UserRuntimeBinding.user_id == user_id,
+            UserRuntimeBinding.is_default == True,
+        )
+    ).first()
+    if binding:
+        return binding
+    return session.exec(select(UserRuntimeBinding).where(UserRuntimeBinding.user_id == user_id)).first()
+
+
+def _upsert_install_activation(
+    session: Session,
+    install: Install,
+    user_id: str,
+    runtime_id: Optional[str],
+    agent_id: Optional[str],
+) -> InstallActivation:
+    row = session.exec(select(InstallActivation).where(InstallActivation.install_id == (install.id or 0))).first()
+    if not row:
+        row = InstallActivation(install_id=install.id or 0, user_id=user_id)
+
+    if runtime_id and agent_id:
+        row.runtime_id = runtime_id
+        row.agent_id = agent_id
+        row.status = "activated"
+        row.message = f"Activated in runtime '{runtime_id}' for agent '{agent_id}'."
+    else:
+        row.status = "installed_registry"
+        row.message = "Installed in registry only (no runtime target linked)."
+
+    session.add(row)
+    session.commit()
+    session.refresh(row)
+    return row
+
+
+def _create_install(
+    session: Session,
+    user_id: str,
+    pack: Pack,
+    runtime_id: Optional[str] = None,
+    agent_id: Optional[str] = None,
+) -> InstallResult:
     needs_approval = _requires_approval(pack)
     status = InstallStatus.pending_approval if needs_approval else InstallStatus.installed
     install = Install(
@@ -1003,7 +1143,91 @@ def _create_install(session: Session, user_id: str, pack: Pack) -> InstallResult
         session.commit()
         session.refresh(approval)
         approval_id = approval.id
-    return InstallResult(install=install, approval_id=approval_id)
+
+    if not (runtime_id and agent_id):
+        binding = _resolve_binding(session, user_id)
+        if binding:
+            runtime_id = binding.runtime_id
+            agent_id = binding.agent_id
+
+    _upsert_install_activation(session, install, user_id, runtime_id, agent_id)
+    install_out = Install(
+        id=install.id,
+        user_id=user_id,
+        pack_id=pack.id or 0,
+        version=pack.version,
+        status=status,
+        approval_required=needs_approval,
+    )
+    return InstallResult(install=install_out, approval_id=approval_id)
+
+
+@app.post("/targets/bind", response_model=UserRuntimeBinding)
+def bind_target(payload: UserRuntimeBindingCreate) -> UserRuntimeBinding:
+    with Session(engine) as session:
+        if payload.set_default:
+            existing_defaults = session.exec(
+                select(UserRuntimeBinding).where(
+                    UserRuntimeBinding.user_id == payload.user_id,
+                    UserRuntimeBinding.is_default == True,
+                )
+            ).all()
+            for row in existing_defaults:
+                row.is_default = False
+                session.add(row)
+
+        row = session.exec(
+            select(UserRuntimeBinding).where(
+                UserRuntimeBinding.user_id == payload.user_id,
+                UserRuntimeBinding.runtime_id == payload.runtime_id,
+                UserRuntimeBinding.agent_id == payload.agent_id,
+            )
+        ).first()
+        if not row:
+            row = UserRuntimeBinding(
+                user_id=payload.user_id,
+                runtime_id=payload.runtime_id,
+                agent_id=payload.agent_id,
+                channel=payload.channel,
+                is_default=payload.set_default,
+            )
+        else:
+            row.channel = payload.channel
+            row.is_default = payload.set_default or row.is_default
+
+        session.add(row)
+        session.commit()
+        session.refresh(row)
+        return row
+
+
+@app.get("/targets", response_model=list[UserRuntimeBinding])
+def list_targets(user_id: str) -> list[UserRuntimeBinding]:
+    with Session(engine) as session:
+        return list(session.exec(select(UserRuntimeBinding).where(UserRuntimeBinding.user_id == user_id)).all())
+
+
+@app.get("/where")
+def where_installed(user_id: str) -> dict:
+    with Session(engine) as session:
+        installs = list(session.exec(select(Install).where(Install.user_id == user_id)).all())
+        rows = []
+        for ins in installs:
+            pack = session.get(Pack, ins.pack_id)
+            act = session.exec(select(InstallActivation).where(InstallActivation.install_id == (ins.id or 0))).first()
+            rows.append(
+                {
+                    "install_id": ins.id,
+                    "pack_slug": pack.slug if pack else None,
+                    "pack_title": pack.title if pack else None,
+                    "install_status": ins.status,
+                    "activation_status": act.status if act else "unknown",
+                    "runtime_id": act.runtime_id if act else None,
+                    "agent_id": act.agent_id if act else None,
+                    "message": act.message if act else "no activation record",
+                }
+            )
+        return {"user_id": user_id, "installs": rows}
 
 
 @app.post("/installs", response_model=InstallResult)
@@ -1012,7 +1236,7 @@ def install_pack(payload: InstallCreate) -> InstallResult:
         pack = session.get(Pack, payload.pack_id)
         if not pack:
             raise HTTPException(status_code=404, detail="pack not found")
-        return _create_install(session, payload.user_id, pack)
+        return _create_install(session, payload.user_id, pack, runtime_id=payload.runtime_id, agent_id=payload.agent_id)
 
 
 @app.post("/one-click-install/{pack_id}", response_model=InstallResult)
@@ -1079,6 +1303,15 @@ def list_installs(user_id: Optional[str] = None) -> list[Install]:
         if user_id:
             query = query.where(Install.user_id == user_id)
         return list(session.exec(query).all())
+
+
+@app.get("/installs/{install_id}/activation", response_model=InstallActivation)
+def get_install_activation(install_id: int) -> InstallActivation:
+    with Session(engine) as session:
+        row = session.exec(select(InstallActivation).where(InstallActivation.install_id == install_id)).first()
+        if not row:
+            raise HTTPException(status_code=404, detail="activation record not found")
+        return row
 
 
 @app.get("/installs/{install_id}/setup", response_model=InstallSetup)
