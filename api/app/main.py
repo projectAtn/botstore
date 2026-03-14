@@ -3,6 +3,7 @@ from enum import Enum
 from typing import Optional
 
 from fastapi import FastAPI, Header, HTTPException
+from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -249,6 +250,14 @@ class AgentOutcome(SQLModel, table=True):
     error_class: Optional[str] = None
 
 
+class OpsProgress(BaseModel):
+    phase: str
+    percent: int
+    bar: str
+    current_task: str
+    next_task: str
+
+
 sqlite_file_name = "./botstore.db"
 engine = create_engine(f"sqlite:///{sqlite_file_name}", echo=False)
 
@@ -423,6 +432,24 @@ def root() -> FileResponse:
 @app.get("/health")
 def health() -> dict:
     return {"ok": True, "version": app.version}
+
+
+def _bar(percent: int, width: int = 10) -> str:
+    p = max(0, min(100, percent))
+    filled = round((p / 100) * width)
+    return "█" * filled + "░" * (width - filled)
+
+
+@app.get("/ops/progress", response_model=OpsProgress)
+def ops_progress() -> OpsProgress:
+    # Lightweight operational progress snapshot for chat/UI.
+    return OpsProgress(
+        phase="execution",
+        percent=82,
+        bar=_bar(82),
+        current_task="v4 pipeline promotion + search refinement",
+        next_task="round-3 test-customer retest",
+    )
 
 
 @app.post("/creators", response_model=Creator)

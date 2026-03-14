@@ -27,6 +27,11 @@
   <p class="muted">Marketplace for personality + skill packs with creator verification and approval gates.</p>
 
   <div class="card">
+    <h2>Ops Progress</h2>
+    <div id="opsProgress" class="muted">Loading...</div>
+  </div>
+
+  <div class="card">
     <h2>Create Creator</h2>
     <div class="row">
       <input id="creatorName" placeholder="creator name" />
@@ -139,6 +144,15 @@ async function j(url, options={}) {
   const data = await r.json();
   if(!r.ok) throw new Error(data.detail || 'Request failed');
   return data;
+}
+
+async function loadOpsProgress(){
+  try{
+    const p = await j('/ops/progress');
+    document.getElementById('opsProgress').textContent = `${p.bar} ${p.percent}% — ${p.current_task} (next: ${p.next_task})`;
+  }catch(e){
+    document.getElementById('opsProgress').textContent = 'Progress unavailable';
+  }
 }
 
 async function loadCreators(){
@@ -444,6 +458,7 @@ async function loadApprovals(){
 }
 
 async function refreshAll(){
+  await loadOpsProgress();
   await loadCreators();
   await loadFeatured();
   await loadPacks();
