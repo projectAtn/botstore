@@ -312,11 +312,27 @@ def _requires_approval(pack: Pack) -> bool:
 SEARCH_SYNONYMS = {
     "schedule": ["calendar", "meeting", "timezone"],
     "email": ["inbox", "mail", "reply", "triage"],
-    "research": ["source", "citation", "web", "verify"],
-    "compliance": ["policy", "audit", "risk", "governance"],
+    "research": ["source", "citation", "web", "verify", "writing"],
+    "compliance": ["policy", "audit", "risk", "governance", "enforce"],
     "coding": ["code", "repo", "pr", "debug"],
     "support": ["ticket", "helpdesk", "customer"],
     "cost": ["budget", "spend", "finops"],
+    "seo": ["search", "content", "ranking", "optimize"],
+    "campaign": ["marketing", "orchestration", "conversion", "growth"],
+    "repurpose": ["rewrite", "transform", "content", "distribution"],
+    "creator": ["content", "audience", "publish", "social"],
+}
+
+
+CAPABILITY_ALIASES = {
+    "audit.log.read": ["files.read", "web.fetch"],
+    "audit.log.write": ["files.write"],
+    "policy.enforce": ["message.send", "email.send"],
+    "risk.evaluate": ["memory.read", "memory.write"],
+    "marketing.seo": ["web.search", "web.fetch"],
+    "marketing.content_repurpose": ["files.write", "web.fetch"],
+    "marketing.campaign_orchestration": ["message.send", "email.send", "calendar.write"],
+    "marketing.analytics": ["files.read", "memory.read"],
 }
 
 
@@ -339,6 +355,24 @@ def _tier_rank(score: float) -> int:
     if score >= 0.85:
         return 2  # silver-ish
     return 1  # bronze-ish
+
+
+def _expand_capabilities(capabilities: list[str]) -> list[str]:
+    expanded: list[str] = []
+    for c in capabilities:
+        c = c.strip()
+        if not c:
+            continue
+        expanded.append(c)
+        expanded.extend(CAPABILITY_ALIASES.get(c, []))
+    # preserve order, de-dup
+    out = []
+    seen = set()
+    for c in expanded:
+        if c not in seen:
+            out.append(c)
+            seen.add(c)
+    return out
 
 
 def _pack_text_blob(pack: Pack) -> str:
@@ -496,7 +530,7 @@ def agent_search_capabilities(payload: AgentSearchRequest) -> dict:
 @app.post("/agent/search")
 def agent_search(payload: AgentSearchQuery) -> dict:
     query_tokens = _tokenize(payload.query)
-    required = [c.strip() for c in payload.missing_capabilities if c.strip()]
+    required = _expand_capabilities([c.strip() for c in payload.missing_capabilities if c.strip()])
     constraints = payload.constraints or AgentSearchConstraints()
 
     with Session(engine) as session:
@@ -504,12 +538,17 @@ def agent_search(payload: AgentSearchQuery) -> dict:
         ranked: list[dict] = []
 
         for p in packs:
+            creator = session.get(Creator, p.creator_id) if p.creator_id else None
+            creator_trust = float(creator.trust_score) if creator else 0.5
+            creator_verified = 1.0 if (creator and creator.verification == VerificationStatus.verified) else 0.0
+
             capability_score = _pack_score_for_capabilities(p, required) if required else 0.0
             pack_tokens = _tokenize(_pack_text_blob(p))
             overlap = len(query_tokens.intersection(pack_tokens))
             text_score = overlap / max(len(query_tokens), 1) if query_tokens else 0.0
 
-            total = capability_score + (0.45 * text_score)
+            trust_score = (0.08 * creator_trust) + (0.04 * creator_verified)
+            total = capability_score + (0.45 * text_score) + trust_score
 
             # Constraints
             if constraints.risk_max and _risk_rank(p.risk_level) > _risk_rank(constraints.risk_max):
@@ -525,6 +564,7 @@ def agent_search(payload: AgentSearchQuery) -> dict:
             if query_tokens:
                 reasons.append(f"query term overlap: {overlap}")
             reasons.append(f"risk={p.risk_level}")
+            reasons.append(f"creator_trust={creator_trust}")
 
             ranked.append({
                 "pack_id": p.id,
@@ -537,7 +577,14 @@ def agent_search(payload: AgentSearchQuery) -> dict:
                 "why": reasons,
             })
 
-        ranked.sort(key=lambda x: x["score"], reverse=True)
+        ranked.sort(
+            key=lambda x: (
+                x["score"],
+                1 if x["requires_approval"] else 0,
+                x["slug"],
+            ),
+            reverse=True,
+        )
 
         return {
             "query": payload.query,
