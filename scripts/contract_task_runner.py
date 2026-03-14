@@ -29,10 +29,17 @@ def find_pack_by_slug(catalog, slug):
     return None
 
 
+def min_score_for_risk(risk_level: str) -> int:
+    table = {"low": 75, "medium": 90, "high": 95}
+    return table.get((risk_level or "low").lower(), 90)
+
+
 def run_contract(catalog, contract):
     slug = contract["slug"]
     pack = find_pack_by_slug(catalog, slug)
     checks = []
+    risk_level = contract.get("risk_level", "low")
+    must_deterministic = bool(contract.get("must_select_deterministically", False))
 
     if not pack:
         return {
@@ -100,14 +107,27 @@ def run_contract(catalog, contract):
         "details": f"installed={install_slugs}",
     })
 
+    deterministic_ok = (install_slugs and install_slugs[0] == slug)
+    checks.append({
+        "name": "deterministic_primary_selection",
+        "pass": (deterministic_ok if must_deterministic else True),
+        "details": f"required={must_deterministic}, first_installed={(install_slugs[0] if install_slugs else None)}",
+    })
+
     passed = sum(1 for c in checks if c["pass"])
     score = round((passed / len(checks)) * 100)
+
+    min_score = min_score_for_risk(risk_level)
+    contract_pass = score >= min_score
 
     return {
         "slug": slug,
         "statement": contract["statement"],
         "pack_id": pack["id"],
-        "pass": score >= 75,
+        "risk_level": risk_level,
+        "must_select_deterministically": must_deterministic,
+        "min_score": min_score,
+        "pass": contract_pass,
         "score": score,
         "checks": checks,
         "latency_ms": round((time.time() - t0) * 1000, 1),
@@ -135,12 +155,12 @@ def main():
         f"Pass: {summary['pass']}",
         f"Average score: {summary['avg_score']}",
         "",
-        "| slug | score | pass | latency_ms |",
-        "|---|---:|---|---:|",
+        "| slug | risk | min_score | score | pass | latency_ms |",
+        "|---|---|---:|---:|---|---:|",
     ]
 
     for r in results:
-        lines.append(f"| `{r['slug']}` | {r['score']} | {'✅' if r['pass'] else '❌'} | {r['latency_ms']} |")
+        lines.append(f"| `{r['slug']}` | {r['risk_level']} | {r['min_score']} | {r['score']} | {'✅' if r['pass'] else '❌'} | {r['latency_ms']} |")
 
     lines.append("\n## Details\n")
     for r in results:

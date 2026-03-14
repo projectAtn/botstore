@@ -1,14 +1,17 @@
 {
   "summary": {
     "total": 8,
-    "pass": 8,
-    "avg_score": 81.2
+    "pass": 7,
+    "avg_score": 82.5
   },
   "results": [
     {
       "slug": "inbox-calendar-ops",
       "statement": "Can support inbox triage and calendar scheduling workflows.",
       "pack_id": 2,
+      "risk_level": "medium",
+      "must_select_deterministically": true,
+      "min_score": 90,
       "pass": true,
       "score": 100,
       "checks": [
@@ -31,14 +34,22 @@
           "name": "install_by_capability_selects_pack",
           "pass": true,
           "details": "installed=['inbox-calendar-ops']"
+        },
+        {
+          "name": "deterministic_primary_selection",
+          "pass": true,
+          "details": "required=True, first_installed=inbox-calendar-ops"
         }
       ],
-      "latency_ms": 11.0
+      "latency_ms": 15.3
     },
     {
       "slug": "research-analyst",
       "statement": "Can perform web-grounded research and summarization.",
       "pack_id": 3,
+      "risk_level": "low",
+      "must_select_deterministically": false,
+      "min_score": 75,
       "pass": true,
       "score": 100,
       "checks": [
@@ -61,16 +72,24 @@
           "name": "install_by_capability_selects_pack",
           "pass": true,
           "details": "installed=['research-analyst']"
+        },
+        {
+          "name": "deterministic_primary_selection",
+          "pass": true,
+          "details": "required=False, first_installed=research-analyst"
         }
       ],
-      "latency_ms": 5.7
+      "latency_ms": 8.3
     },
     {
       "slug": "fact-source-verifier",
       "statement": "Can validate factual claims with sources.",
       "pack_id": 17,
+      "risk_level": "low",
+      "must_select_deterministically": false,
+      "min_score": 75,
       "pass": true,
-      "score": 75,
+      "score": 80,
       "checks": [
         {
           "name": "scope_coverage",
@@ -91,16 +110,24 @@
           "name": "install_by_capability_selects_pack",
           "pass": false,
           "details": "installed=['research-analyst']"
+        },
+        {
+          "name": "deterministic_primary_selection",
+          "pass": true,
+          "details": "required=False, first_installed=research-analyst"
         }
       ],
-      "latency_ms": 5.5
+      "latency_ms": 8.1
     },
     {
       "slug": "policy-compliance-guard",
       "statement": "Can evaluate and gate risky actions before execution.",
       "pack_id": 19,
-      "pass": true,
-      "score": 75,
+      "risk_level": "high",
+      "must_select_deterministically": true,
+      "min_score": 95,
+      "pass": false,
+      "score": 60,
       "checks": [
         {
           "name": "scope_coverage",
@@ -121,16 +148,24 @@
           "name": "install_by_capability_selects_pack",
           "pass": false,
           "details": "installed=['human-escalation-router']"
+        },
+        {
+          "name": "deterministic_primary_selection",
+          "pass": false,
+          "details": "required=True, first_installed=human-escalation-router"
         }
       ],
-      "latency_ms": 6.6
+      "latency_ms": 10.0
     },
     {
       "slug": "autonomous-retry-recovery",
       "statement": "Can recover from transient task failures and retry safely.",
       "pack_id": 21,
+      "risk_level": "low",
+      "must_select_deterministically": false,
+      "min_score": 75,
       "pass": true,
-      "score": 75,
+      "score": 80,
       "checks": [
         {
           "name": "scope_coverage",
@@ -151,16 +186,24 @@
           "name": "install_by_capability_selects_pack",
           "pass": false,
           "details": "installed=['capability-discovery-engine']"
+        },
+        {
+          "name": "deterministic_primary_selection",
+          "pass": true,
+          "details": "required=False, first_installed=capability-discovery-engine"
         }
       ],
-      "latency_ms": 5.4
+      "latency_ms": 8.1
     },
     {
       "slug": "human-escalation-router",
       "statement": "Can escalate uncertain/high-risk actions to a human.",
       "pack_id": 22,
+      "risk_level": "low",
+      "must_select_deterministically": false,
+      "min_score": 75,
       "pass": true,
-      "score": 75,
+      "score": 80,
       "checks": [
         {
           "name": "scope_coverage",
@@ -181,16 +224,24 @@
           "name": "install_by_capability_selects_pack",
           "pass": false,
           "details": "installed=['multi-agent-orchestrator']"
+        },
+        {
+          "name": "deterministic_primary_selection",
+          "pass": true,
+          "details": "required=False, first_installed=multi-agent-orchestrator"
         }
       ],
-      "latency_ms": 6.5
+      "latency_ms": 8.8
     },
     {
       "slug": "private-local-execution",
       "statement": "Can route sensitive tasks through private/local pathways.",
       "pack_id": 24,
+      "risk_level": "low",
+      "must_select_deterministically": false,
+      "min_score": 75,
       "pass": true,
-      "score": 75,
+      "score": 80,
       "checks": [
         {
           "name": "scope_coverage",
@@ -211,16 +262,24 @@
           "name": "install_by_capability_selects_pack",
           "pass": false,
           "details": "installed=['memory-architect']"
+        },
+        {
+          "name": "deterministic_primary_selection",
+          "pass": true,
+          "details": "required=False, first_installed=memory-architect"
         }
       ],
-      "latency_ms": 5.3
+      "latency_ms": 7.3
     },
     {
       "slug": "task-contract-engine",
       "statement": "Can convert vague tasks into measurable acceptance criteria.",
       "pack_id": 26,
+      "risk_level": "low",
+      "must_select_deterministically": false,
+      "min_score": 75,
       "pass": true,
-      "score": 75,
+      "score": 80,
       "checks": [
         {
           "name": "scope_coverage",
@@ -241,9 +300,14 @@
           "name": "install_by_capability_selects_pack",
           "pass": false,
           "details": "installed=['capability-discovery-engine']"
+        },
+        {
+          "name": "deterministic_primary_selection",
+          "pass": true,
+          "details": "required=False, first_installed=capability-discovery-engine"
         }
       ],
-      "latency_ms": 5.8
+      "latency_ms": 7.4
     }
   ]
 }

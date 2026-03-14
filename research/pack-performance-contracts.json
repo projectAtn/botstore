@@ -5,7 +5,9 @@
       "slug": "inbox-calendar-ops",
       "statement": "Can support inbox triage and calendar scheduling workflows.",
       "required_scopes": ["email.read", "email.send", "calendar.read", "calendar.write"],
-      "expected_policy": "require_approval"
+      "expected_policy": "require_approval",
+      "risk_level": "medium",
+      "must_select_deterministically": true
     },
     {
       "slug": "research-analyst",
@@ -23,7 +25,9 @@
       "slug": "policy-compliance-guard",
       "statement": "Can evaluate and gate risky actions before execution.",
       "required_scopes": ["message.send", "email.send"],
-      "expected_policy": "require_approval"
+      "expected_policy": "require_approval",
+      "risk_level": "high",
+      "must_select_deterministically": true
     },
     {
       "slug": "autonomous-retry-recovery",
