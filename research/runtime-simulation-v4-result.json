@@ -1,0 +1,2338 @@
+{
+  "generatedAt": "2026-03-14T13:39:57.185428+00:00",
+  "summary": {
+    "total": 59,
+    "final_verified": 12,
+    "risk_gates": {
+      "low": 80,
+      "medium": 90,
+      "high": 95
+    }
+  },
+  "results": [
+    {
+      "slug": "tool-failure-recovery-engine",
+      "title": "Tool Failure Recovery Engine",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "approval-gate-orchestrator",
+      "title": "Approval Gate Orchestrator",
+      "type": "skill",
+      "risk_level": "high",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "spend-aware-model-router",
+      "title": "Spend-Aware Model Router",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "source-grounded-claim-verifier",
+      "title": "Source-Grounded Claim Verifier",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "plan-decompose-execute-loop",
+      "title": "Plan-Decompose-Execute Loop",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "connector-health-sentinel",
+      "title": "Connector Health Sentinel",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "long-horizon-task-tracker",
+      "title": "Long-Horizon Task Tracker",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 80,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "memory-schema-steward",
+      "title": "Memory Schema Steward",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "autonomous-inbox-calendar-operator",
+      "title": "Autonomous Inbox + Calendar Operator",
+      "type": "skill",
+      "risk_level": "high",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "incident-auto-remediator",
+      "title": "Incident Auto-Remediator",
+      "type": "skill",
+      "risk_level": "high",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "runbook-executor-safe-mode",
+      "title": "Runbook Executor (Safe Mode)",
+      "type": "skill",
+      "risk_level": "high",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "browser-workflow-autopilot",
+      "title": "Browser Workflow Autopilot",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "multi-agent-coordinator",
+      "title": "Multi-Agent Coordinator",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "human-escalation-judge",
+      "title": "Human Escalation Judge",
+      "type": "skill",
+      "risk_level": "high",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "policy-drift-detector",
+      "title": "Policy Drift Detector",
+      "type": "skill",
+      "risk_level": "high",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "compliance-evidence-collector",
+      "title": "Compliance Evidence Collector",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "pii-redaction-firewall",
+      "title": "PII Redaction Firewall",
+      "type": "skill",
+      "risk_level": "high",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "secret-leak-preventer",
+      "title": "Secret Leak Preventer",
+      "type": "skill",
+      "risk_level": "high",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "api-contract-watchdog",
+      "title": "API Contract Watchdog",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "change-review-gatekeeper",
+      "title": "Change Review Gatekeeper",
+      "type": "skill",
+      "risk_level": "high",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "release-readiness-auditor",
+      "title": "Release Readiness Auditor",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "synthetic-monitor-builder",
+      "title": "Synthetic Monitor Builder",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "customer-support-resolution-agent",
+      "title": "Customer Support Resolution Agent",
+      "type": "skill",
+      "risk_level": "high",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "crm-followup-autopilot",
+      "title": "CRM Follow-up Autopilot",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "meeting-to-action-operator",
+      "title": "Meeting-to-Action Operator",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 80,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "procurement-risk-screener",
+      "title": "Procurement Risk Screener",
+      "type": "skill",
+      "risk_level": "high",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "invoice-to-payment-controller",
+      "title": "Invoice-to-Payment Controller",
+      "type": "skill",
+      "risk_level": "high",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "travel-disruption-replanner",
+      "title": "Travel Disruption Replanner",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "personal-admin-lifeops",
+      "title": "Personal Admin LifeOps",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 80,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "research-brief-factory",
+      "title": "Research Brief Factory",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "data-quality-reconciler",
+      "title": "Data Quality Reconciler",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "spreadsheet-ops-agent",
+      "title": "Spreadsheet Ops Agent",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 80,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "sql-insight-analyst",
+      "title": "SQL Insight Analyst",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "kpi-anomaly-explainer",
+      "title": "KPI Anomaly Explainer",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "social-listening-response-drafter",
+      "title": "Social Listening Response Drafter",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "moderation-safety-triage",
+      "title": "Moderation Safety Triage",
+      "type": "skill",
+      "risk_level": "high",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "growth-experiment-orchestrator",
+      "title": "Growth Experiment Orchestrator",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "ad-creative-feedback-loop",
+      "title": "Ad Creative Feedback Loop",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 80,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "onboarding-offboarding-operator",
+      "title": "Onboarding/Offboarding Operator",
+      "type": "skill",
+      "risk_level": "high",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "autonomous-qa-regression-planner",
+      "title": "Autonomous QA Regression Planner",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 60,
+      "tier": "unverified",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": false,
+          "details": "quality_tests=3"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "ops-autopilot-director",
+      "title": "Ops Autopilot Director",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 90,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "compliance-sentinel-analyst",
+      "title": "Compliance Sentinel Analyst",
+      "type": "personality",
+      "risk_level": "high",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 95,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "finops-variance-investigator",
+      "title": "FinOps Variance Investigator",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 90,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "procurement-negotiation-strategist",
+      "title": "Procurement Negotiation Strategist",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "security-incident-commander",
+      "title": "Security Incident Commander",
+      "type": "personality",
+      "risk_level": "high",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 95,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "customer-support-orchestrator",
+      "title": "Customer Support Orchestrator",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 90,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "revops-pipeline-governor",
+      "title": "RevOps Pipeline Governor",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "hr-workforce-planning-partner",
+      "title": "HR Workforce Planning Partner",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "supply-chain-disruption-navigator",
+      "title": "Supply Chain Disruption Navigator",
+      "type": "personality",
+      "risk_level": "high",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 95,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "it-change-control-steward",
+      "title": "IT Change Control Steward",
+      "type": "personality",
+      "risk_level": "high",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 95,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "knowledge-governance-curator",
+      "title": "Knowledge Governance Curator",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 80,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "portfolio-prioritization-chief",
+      "title": "Portfolio Prioritization Chief",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "legal-intake-triage-counsel",
+      "title": "Legal Intake Triage Counsel",
+      "type": "personality",
+      "risk_level": "high",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "data-quality-remediation-lead",
+      "title": "Data Quality Remediation Lead",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "autonomous-onboarding-concierge",
+      "title": "Autonomous Onboarding Concierge",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 80,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "vendor-risk-assurance-agent",
+      "title": "Vendor Risk Assurance Agent",
+      "type": "personality",
+      "risk_level": "high",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 95,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=high"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "enterprise-research-scout",
+      "title": "Enterprise Research Scout",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 80,
+      "tier": "bronze",
+      "required_score": 90,
+      "risk_gate_pass": false,
+      "final_verified": false,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": false,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "autonomous-quality-assurance-manager",
+      "title": "Autonomous Quality Assurance Manager",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 90,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    },
+    {
+      "slug": "resilience-drill-facilitator",
+      "title": "Resilience Drill Facilitator",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "required_score": 90,
+      "risk_gate_pass": true,
+      "final_verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback/guardrail"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=4"
+        },
+        {
+          "name": "problem_statement_substantive",
+          "pass": true,
+          "details": "problem length >= 40 chars"
+        }
+      ]
+    }
+  ],
+  "verified_slugs": [
+    "meeting-to-action-operator",
+    "ops-autopilot-director",
+    "compliance-sentinel-analyst",
+    "finops-variance-investigator",
+    "security-incident-commander",
+    "customer-support-orchestrator",
+    "supply-chain-disruption-navigator",
+    "it-change-control-steward",
+    "knowledge-governance-curator",
+    "autonomous-onboarding-concierge",
+    "autonomous-quality-assurance-manager",
+    "resilience-drill-facilitator"
+  ],
+  "delisted_slugs": [
+    "tool-failure-recovery-engine",
+    "approval-gate-orchestrator",
+    "spend-aware-model-router",
+    "source-grounded-claim-verifier",
+    "plan-decompose-execute-loop",
+    "connector-health-sentinel",
+    "long-horizon-task-tracker",
+    "memory-schema-steward",
+    "autonomous-inbox-calendar-operator",
+    "incident-auto-remediator",
+    "runbook-executor-safe-mode",
+    "browser-workflow-autopilot",
+    "multi-agent-coordinator",
+    "human-escalation-judge",
+    "policy-drift-detector",
+    "compliance-evidence-collector",
+    "pii-redaction-firewall",
+    "secret-leak-preventer",
+    "api-contract-watchdog",
+    "change-review-gatekeeper",
+    "release-readiness-auditor",
+    "synthetic-monitor-builder",
+    "customer-support-resolution-agent",
+    "crm-followup-autopilot",
+    "procurement-risk-screener",
+    "invoice-to-payment-controller",
+    "travel-disruption-replanner",
+    "personal-admin-lifeops",
+    "research-brief-factory",
+    "data-quality-reconciler",
+    "spreadsheet-ops-agent",
+    "sql-insight-analyst",
+    "kpi-anomaly-explainer",
+    "social-listening-response-drafter",
+    "moderation-safety-triage",
+    "growth-experiment-orchestrator",
+    "ad-creative-feedback-loop",
+    "onboarding-offboarding-operator",
+    "autonomous-qa-regression-planner",
+    "procurement-negotiation-strategist",
+    "revops-pipeline-governor",
+    "hr-workforce-planning-partner",
+    "portfolio-prioritization-chief",
+    "legal-intake-triage-counsel",
+    "data-quality-remediation-lead",
+    "vendor-risk-assurance-agent",
+    "enterprise-research-scout"
+  ],
+  "tiered_verified": {
+    "gold": [
+      "ops-autopilot-director",
+      "compliance-sentinel-analyst",
+      "finops-variance-investigator",
+      "security-incident-commander",
+      "customer-support-orchestrator",
+      "supply-chain-disruption-navigator",
+      "it-change-control-steward",
+      "autonomous-quality-assurance-manager",
+      "resilience-drill-facilitator"
+    ],
+    "silver": [],
+    "bronze": [
+      "meeting-to-action-operator",
+      "knowledge-governance-curator",
+      "autonomous-onboarding-concierge"
+    ]
+  }
+}

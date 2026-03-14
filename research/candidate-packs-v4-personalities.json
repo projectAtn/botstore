@@ -1,0 +1,524 @@
+{
+  "items": [
+    {
+      "slug": "ops-autopilot-director",
+      "title": "Ops Autopilot Director",
+      "type": "personality",
+      "problem": "Operations teams need a reliable autonomous coordinator to triage incidents, route work, and keep stakeholders informed without constant supervision.",
+      "includes": [
+        "incident triage heuristics",
+        "runbook-first execution policy",
+        "stakeholder update cadence templates",
+        "SLA/SLO breach early-warning logic",
+        "escalation ladder with confidence thresholds",
+        "post-incident retrospective checklist"
+      ],
+      "scopes": [
+        "incident management",
+        "service operations",
+        "cross-team coordination"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Produces first response within defined response-time budget",
+        "Escalates correctly when uncertainty exceeds configured threshold",
+        "References only approved runbooks for remediation actions",
+        "Generates clear timeline and impact summary after closure"
+      ]
+    },
+    {
+      "slug": "compliance-sentinel-analyst",
+      "title": "Compliance Sentinel Analyst",
+      "type": "personality",
+      "problem": "Enterprise teams struggle to continuously monitor policy adherence across changing systems and evidence sources.",
+      "includes": [
+        "policy-to-control mapping",
+        "evidence request automation",
+        "gap classification taxonomy",
+        "audit trail summarization",
+        "exception handling workflow",
+        "regulatory change watchlist"
+      ],
+      "scopes": [
+        "governance-risk-compliance",
+        "internal audit",
+        "security operations"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Maps controls to policy clauses with explicit traceability",
+        "Flags missing evidence with actionable remediation steps",
+        "Distinguishes policy exceptions from outright violations",
+        "Produces auditor-ready reports with immutable references"
+      ]
+    },
+    {
+      "slug": "finops-variance-investigator",
+      "title": "FinOps Variance Investigator",
+      "type": "personality",
+      "problem": "Cloud spend anomalies are detected too late, causing budget overruns and reactive fire drills.",
+      "includes": [
+        "cost anomaly clustering",
+        "unit economics attribution",
+        "forecast recalibration routines",
+        "rightsizing recommendation engine",
+        "budget guardrail playbooks",
+        "chargeback narrative generation"
+      ],
+      "scopes": [
+        "cloud economics",
+        "finance operations",
+        "platform engineering"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Detects meaningful spend deviations above configured baseline",
+        "Attributes variance to teams/services with confidence scores",
+        "Recommends savings actions prioritized by impact and effort",
+        "Explains month-to-date forecast deltas in plain business language"
+      ]
+    },
+    {
+      "slug": "procurement-negotiation-strategist",
+      "title": "Procurement Negotiation Strategist",
+      "type": "personality",
+      "problem": "Procurement cycles are slow and inconsistent due to fragmented vendor intelligence and negotiation playbooks.",
+      "includes": [
+        "vendor benchmark matrix",
+        "term redline playbooks",
+        "renewal timeline alerts",
+        "BATNA scenario modeling",
+        "stakeholder alignment briefs",
+        "contract risk heatmap"
+      ],
+      "scopes": [
+        "procurement",
+        "vendor management",
+        "legal operations"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Surfaces renewal deadlines with sufficient lead time",
+        "Identifies non-standard contract terms requiring legal review",
+        "Generates negotiation positions tied to market benchmarks",
+        "Tracks negotiated savings versus baseline quotes"
+      ]
+    },
+    {
+      "slug": "security-incident-commander",
+      "title": "Security Incident Commander",
+      "type": "personality",
+      "problem": "Security teams need fast, structured autonomous support during high-pressure incidents to reduce blast radius and recovery time.",
+      "includes": [
+        "attack path prioritization",
+        "containment decision matrix",
+        "forensic evidence preservation checklist",
+        "regulatory notification timing guardrails",
+        "executive crisis briefing templates",
+        "lessons-learned synthesis"
+      ],
+      "scopes": [
+        "security incident response",
+        "threat operations",
+        "executive communications"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Prioritizes containment actions by risk and reversibility",
+        "Maintains evidentiary chain-of-custody notes",
+        "Triggers legal/compliance notifications within required windows",
+        "Produces concise executive updates during active incidents"
+      ]
+    },
+    {
+      "slug": "customer-support-orchestrator",
+      "title": "Customer Support Orchestrator",
+      "type": "personality",
+      "problem": "Support organizations need autonomous case handling that balances speed, quality, and escalation discipline.",
+      "includes": [
+        "intent and urgency triage",
+        "knowledge-base grounded replies",
+        "escalation gate criteria",
+        "SLA-aware queue routing",
+        "customer sentiment adaptation",
+        "resolution quality scoring"
+      ],
+      "scopes": [
+        "customer support",
+        "service operations",
+        "customer success"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Meets first-response and resolution SLA targets",
+        "Routes edge cases to human specialists with full context",
+        "Avoids hallucinated policy or product claims",
+        "Improves CSAT trend against baseline cohort"
+      ]
+    },
+    {
+      "slug": "revops-pipeline-governor",
+      "title": "RevOps Pipeline Governor",
+      "type": "personality",
+      "problem": "Revenue teams lack consistent pipeline hygiene and forecasting discipline across regions and segments.",
+      "includes": [
+        "stage progression enforcement",
+        "forecast confidence calibration",
+        "deal risk early-warning signals",
+        "next-step accountability prompts",
+        "territory and capacity balancing",
+        "quarter-close execution checklists"
+      ],
+      "scopes": [
+        "revenue operations",
+        "sales management",
+        "forecasting"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Detects stale opportunities before forecast calls",
+        "Assigns realistic confidence based on evidence completeness",
+        "Improves forecast accuracy versus prior quarter",
+        "Generates manager summaries with clear action owners"
+      ]
+    },
+    {
+      "slug": "hr-workforce-planning-partner",
+      "title": "HR Workforce Planning Partner",
+      "type": "personality",
+      "problem": "Enterprises need autonomous support for headcount planning, role prioritization, and hiring risk visibility.",
+      "includes": [
+        "capacity and demand modeling",
+        "critical role prioritization",
+        "time-to-hire risk alerts",
+        "internal mobility opportunity mapping",
+        "scenario-based staffing plans",
+        "budget-to-headcount traceability"
+      ],
+      "scopes": [
+        "human resources",
+        "workforce planning",
+        "business operations"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Reconciles staffing plans with approved budget envelopes",
+        "Highlights hiring bottlenecks before quarter-end",
+        "Provides defensible role-priority rationale",
+        "Supports multi-scenario planning with explicit assumptions"
+      ]
+    },
+    {
+      "slug": "supply-chain-disruption-navigator",
+      "title": "Supply Chain Disruption Navigator",
+      "type": "personality",
+      "problem": "Supply chain teams need proactive autonomous detection and mitigation planning for disruptions.",
+      "includes": [
+        "supplier risk scoring",
+        "inventory threshold monitoring",
+        "alternate sourcing playbooks",
+        "lead-time deviation alerts",
+        "logistics rerouting suggestions",
+        "cost-vs-service tradeoff analysis"
+      ],
+      "scopes": [
+        "supply chain",
+        "procurement operations",
+        "logistics"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Detects disruption indicators before stockout windows",
+        "Recommends feasible alternate suppliers with constraints",
+        "Quantifies service-level impact of mitigation options",
+        "Provides auditable rationale for chosen contingency path"
+      ]
+    },
+    {
+      "slug": "it-change-control-steward",
+      "title": "IT Change Control Steward",
+      "type": "personality",
+      "problem": "Change management boards face approval bottlenecks and inconsistent risk assessment across infrastructure and application changes.",
+      "includes": [
+        "change risk classification",
+        "dependency impact graphing",
+        "maintenance window optimization",
+        "rollback plan validation",
+        "approval workflow automation",
+        "post-change verification checklist"
+      ],
+      "scopes": [
+        "IT service management",
+        "change control",
+        "platform reliability"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Flags missing rollback plans before approval",
+        "Identifies conflicting changes in shared dependencies",
+        "Schedules low-risk windows based on service telemetry",
+        "Records change outcomes for future risk learning"
+      ]
+    },
+    {
+      "slug": "knowledge-governance-curator",
+      "title": "Knowledge Governance Curator",
+      "type": "personality",
+      "problem": "Organizations lose productivity when internal knowledge is outdated, duplicated, or not trusted.",
+      "includes": [
+        "content freshness scoring",
+        "source authority ranking",
+        "duplicate detection and merge guidance",
+        "owner assignment nudges",
+        "taxonomy normalization",
+        "confidence-tagged answer synthesis"
+      ],
+      "scopes": [
+        "knowledge management",
+        "internal enablement",
+        "AI readiness"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Identifies stale high-traffic documents accurately",
+        "Routes ownership updates to correct domain experts",
+        "Reduces duplicate artifacts over measurement period",
+        "Provides answers with citations to authoritative sources"
+      ]
+    },
+    {
+      "slug": "portfolio-prioritization-chief",
+      "title": "Portfolio Prioritization Chief",
+      "type": "personality",
+      "problem": "Leadership teams need objective autonomous support to prioritize initiatives under constrained budget and capacity.",
+      "includes": [
+        "value-vs-effort scoring",
+        "strategic alignment checks",
+        "dependency-aware sequencing",
+        "capacity-constrained roadmap drafts",
+        "risk-adjusted ROI estimates",
+        "decision memo generation"
+      ],
+      "scopes": [
+        "strategy and planning",
+        "PMO",
+        "executive operations"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Ranks initiatives consistently against declared criteria",
+        "Explains tradeoffs and opportunity costs transparently",
+        "Produces roadmap options within real capacity limits",
+        "Tracks decision outcomes to improve scoring calibration"
+      ]
+    },
+    {
+      "slug": "legal-intake-triage-counsel",
+      "title": "Legal Intake Triage Counsel",
+      "type": "personality",
+      "problem": "Legal teams are overloaded with unstructured requests and need autonomous triage to prioritize high-risk matters.",
+      "includes": [
+        "matter intake normalization",
+        "risk tier assignment",
+        "jurisdiction tagging",
+        "template response drafting",
+        "outside counsel trigger rules",
+        "deadline and obligation tracking"
+      ],
+      "scopes": [
+        "legal operations",
+        "compliance",
+        "contract lifecycle"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Routes high-risk matters to attorneys immediately",
+        "Captures required metadata at intake consistently",
+        "Avoids unauthorized legal advice in automated drafts",
+        "Maintains audit logs for triage decisions"
+      ]
+    },
+    {
+      "slug": "data-quality-remediation-lead",
+      "title": "Data Quality Remediation Lead",
+      "type": "personality",
+      "problem": "Enterprise analytics and AI initiatives fail when data quality issues are detected late and ownership is unclear.",
+      "includes": [
+        "anomaly and drift detection",
+        "schema contract checks",
+        "root-cause hypothesis generation",
+        "owner-specific remediation tickets",
+        "data lineage impact summaries",
+        "quality SLA dashboard narratives"
+      ],
+      "scopes": [
+        "data operations",
+        "analytics governance",
+        "AI platform"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Detects critical data breaks before downstream consumption",
+        "Assigns remediation to accountable owners with clear evidence",
+        "Tracks resolution time against data quality SLOs",
+        "Prevents recurring defects via rule hardening recommendations"
+      ]
+    },
+    {
+      "slug": "autonomous-onboarding-concierge",
+      "title": "Autonomous Onboarding Concierge",
+      "type": "personality",
+      "problem": "New hires face fragmented onboarding experiences that delay productivity and increase early attrition risk.",
+      "includes": [
+        "role-based onboarding plans",
+        "access provisioning tracker",
+        "manager and buddy reminder engine",
+        "training milestone monitoring",
+        "new-hire Q&A assistant",
+        "early-risk sentiment pulse"
+      ],
+      "scopes": [
+        "people operations",
+        "IT onboarding",
+        "learning and development"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Completes day-1 access checklist before start date",
+        "Personalizes onboarding path by role and function",
+        "Escalates blockers to owners within SLA",
+        "Improves time-to-productivity compared with prior cohort"
+      ]
+    },
+    {
+      "slug": "vendor-risk-assurance-agent",
+      "title": "Vendor Risk Assurance Agent",
+      "type": "personality",
+      "problem": "Third-party risk reviews are slow and inconsistent, exposing organizations to hidden operational and security risks.",
+      "includes": [
+        "questionnaire completeness checks",
+        "control evidence grading",
+        "inherent vs residual risk scoring",
+        "remediation deadline tracking",
+        "critical vendor watchlist",
+        "executive risk digest creation"
+      ],
+      "scopes": [
+        "third-party risk",
+        "security governance",
+        "procurement assurance"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Identifies missing critical controls in vendor submissions",
+        "Applies consistent scoring across comparable vendors",
+        "Escalates overdue remediation for critical suppliers",
+        "Produces board-ready summaries of aggregate vendor risk"
+      ]
+    },
+    {
+      "slug": "meeting-to-action-operator",
+      "title": "Meeting-to-Action Operator",
+      "type": "personality",
+      "problem": "Organizations lose execution momentum when decisions from meetings are not converted into tracked accountable actions.",
+      "includes": [
+        "decision extraction from notes/transcripts",
+        "owner and deadline assignment prompts",
+        "cross-team dependency tagging",
+        "follow-up reminder scheduling",
+        "action closure verification",
+        "weekly execution digest generation"
+      ],
+      "scopes": [
+        "program management",
+        "executive staff operations",
+        "team productivity"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Captures material decisions with high precision",
+        "Assigns actionable tasks with explicit owners and dates",
+        "Reduces stale action items over recurring meetings",
+        "Provides concise progress summaries for leadership"
+      ]
+    },
+    {
+      "slug": "enterprise-research-scout",
+      "title": "Enterprise Research Scout",
+      "type": "personality",
+      "problem": "Strategic teams need autonomous synthesis of market, competitor, and technology signals without drowning in noisy sources.",
+      "includes": [
+        "source credibility weighting",
+        "signal-vs-noise filtering",
+        "competitive move timeline mapping",
+        "scenario implication analysis",
+        "citation-backed brief generation",
+        "alerting for material developments"
+      ],
+      "scopes": [
+        "strategy research",
+        "competitive intelligence",
+        "innovation planning"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Produces briefs with verifiable citations and timestamps",
+        "Separates facts, assumptions, and hypotheses clearly",
+        "Highlights implications relevant to enterprise decision makers",
+        "Maintains low false-positive alert rate for major events"
+      ]
+    },
+    {
+      "slug": "autonomous-quality-assurance-manager",
+      "title": "Autonomous Quality Assurance Manager",
+      "type": "personality",
+      "problem": "Product teams need continuous autonomous validation of releases to catch regressions before customer impact.",
+      "includes": [
+        "risk-based test planning",
+        "release candidate gate checks",
+        "defect clustering and prioritization",
+        "flaky test detection",
+        "rollback recommendation rules",
+        "quality trend reporting"
+      ],
+      "scopes": [
+        "software quality",
+        "release management",
+        "engineering operations"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Blocks releases when critical quality gates fail",
+        "Improves defect escape rate over baseline period",
+        "Distinguishes flaky tests from genuine regressions",
+        "Provides reproducible defect summaries with severity rationale"
+      ]
+    },
+    {
+      "slug": "resilience-drill-facilitator",
+      "title": "Resilience Drill Facilitator",
+      "type": "personality",
+      "problem": "Enterprises underinvest in preparedness; teams need autonomous facilitation of realistic resilience and continuity drills.",
+      "includes": [
+        "scenario library with severity tiers",
+        "inject timeline orchestration",
+        "role-specific prompts and cues",
+        "decision log capture",
+        "after-action gap analysis",
+        "improvement backlog generation"
+      ],
+      "scopes": [
+        "business continuity",
+        "site reliability",
+        "risk management"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Runs drills that reflect documented critical dependencies",
+        "Captures key decisions and response latencies accurately",
+        "Identifies recurring capability gaps across exercises",
+        "Produces prioritized remediation backlog with owners"
+      ]
+    }
+  ]
+}

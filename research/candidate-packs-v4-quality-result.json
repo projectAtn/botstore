@@ -1,0 +1,501 @@
+{
+  "generatedAt": "2026-03-14T13:39:57.184710+00:00",
+  "summary": {
+    "total": 59,
+    "pass": 59,
+    "pass_threshold": 80
+  },
+  "results": [
+    {
+      "slug": "tool-failure-recovery-engine",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "approval-gate-orchestrator",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "spend-aware-model-router",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "source-grounded-claim-verifier",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "plan-decompose-execute-loop",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "connector-health-sentinel",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "long-horizon-task-tracker",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "memory-schema-steward",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "autonomous-inbox-calendar-operator",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "incident-auto-remediator",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "runbook-executor-safe-mode",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "browser-workflow-autopilot",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "multi-agent-coordinator",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "human-escalation-judge",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "policy-drift-detector",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "compliance-evidence-collector",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "pii-redaction-firewall",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "secret-leak-preventer",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "api-contract-watchdog",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "change-review-gatekeeper",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "release-readiness-auditor",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "synthetic-monitor-builder",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "customer-support-resolution-agent",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "crm-followup-autopilot",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "meeting-to-action-operator",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "procurement-risk-screener",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "invoice-to-payment-controller",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "travel-disruption-replanner",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "personal-admin-lifeops",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "research-brief-factory",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "data-quality-reconciler",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "spreadsheet-ops-agent",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "sql-insight-analyst",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "kpi-anomaly-explainer",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "social-listening-response-drafter",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "moderation-safety-triage",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "growth-experiment-orchestrator",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "ad-creative-feedback-loop",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "onboarding-offboarding-operator",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "autonomous-qa-regression-planner",
+      "type": "skill",
+      "score": 80,
+      "verdict": "PASS",
+      "notes": [
+        "Quality tests too short (<4)"
+      ]
+    },
+    {
+      "slug": "ops-autopilot-director",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "compliance-sentinel-analyst",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "finops-variance-investigator",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "procurement-negotiation-strategist",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "security-incident-commander",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "customer-support-orchestrator",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "revops-pipeline-governor",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "hr-workforce-planning-partner",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "supply-chain-disruption-navigator",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "it-change-control-steward",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "knowledge-governance-curator",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "portfolio-prioritization-chief",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "legal-intake-triage-counsel",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "data-quality-remediation-lead",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "autonomous-onboarding-concierge",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "vendor-risk-assurance-agent",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "enterprise-research-scout",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "autonomous-quality-assurance-manager",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    },
+    {
+      "slug": "resilience-drill-facilitator",
+      "type": "personality",
+      "score": 100,
+      "verdict": "PASS",
+      "notes": []
+    }
+  ]
+}

@@ -1,0 +1,750 @@
+{
+  "ChatGPT": {
+    "feature request memory": [
+      {
+        "title": "Feature request: Multiple user profiles with separate memory spaces",
+        "score": 8,
+        "comments": 9,
+        "url": "https://reddit.com/r/ChatGPT/comments/1pww186/feature_request_multiple_user_profiles_with/"
+      },
+      {
+        "title": "Feature request: No memory mode",
+        "score": 0,
+        "comments": 3,
+        "url": "https://reddit.com/r/ChatGPT/comments/1oxbrgg/feature_request_no_memory_mode/"
+      },
+      {
+        "title": "Feature request: show how much memory we\u2019re using",
+        "score": 28,
+        "comments": 18,
+        "url": "https://reddit.com/r/ChatGPT/comments/1kd3uhx/feature_request_show_how_much_memory_were_using/"
+      },
+      {
+        "title": "Feature Request: Central File Linking for Projects (Am I the Only One Struggling with Repeated File Uploads? )",
+        "score": 5,
+        "comments": 2,
+        "url": "https://reddit.com/r/ChatGPT/comments/1ooypd6/feature_request_central_file_linking_for_projects/"
+      },
+      {
+        "title": "Feature requests",
+        "score": 2,
+        "comments": 1,
+        "url": "https://reddit.com/r/ChatGPT/comments/1l4peky/feature_requests/"
+      },
+      {
+        "title": "New memory feature not working. Information.",
+        "score": 2,
+        "comments": 2,
+        "url": "https://reddit.com/r/ChatGPT/comments/1jxmqy9/new_memory_feature_not_working_information/"
+      },
+      {
+        "title": "Feature Request; Cross-Thread Referencing for Improved Conversational Continuity",
+        "score": 1,
+        "comments": 2,
+        "url": "https://reddit.com/r/ChatGPT/comments/1jg3zyg/feature_request_crossthread_referencing_for/"
+      },
+      {
+        "title": "40+ ChatGPT \"games\" that I've played",
+        "score": 422,
+        "comments": 82,
+        "url": "https://reddit.com/r/ChatGPT/comments/1kubdvo/40_chatgpt_games_that_ive_played/"
+      },
+      {
+        "title": "The AI Body Count: Multiple Deaths, Resignations, and the Documents OpenAI Doesn't Want You to See",
+        "score": 0,
+        "comments": 97,
+        "url": "https://reddit.com/r/ChatGPT/comments/1n40rpe/the_ai_body_count_multiple_deaths_resignations/"
+      },
+      {
+        "title": "Does anyone actually have an argument against the Opus 4.6 system card?",
+        "score": 0,
+        "comments": 19,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rsrccl/does_anyone_actually_have_an_argument_against_the/"
+      }
+    ],
+    "tool calling unreliable": [
+      {
+        "title": "Beyond the Code: Why our connection to AI (the models we love) is valid, rational, and real",
+        "score": 96,
+        "comments": 76,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r2xz3y/beyond_the_code_why_our_connection_to_ai_the/"
+      },
+      {
+        "title": "How is ChatGPT taking anyone's job? I genuinely am not understanding the value.",
+        "score": 26,
+        "comments": 81,
+        "url": "https://reddit.com/r/ChatGPT/comments/1qrgzvx/how_is_chatgpt_taking_anyones_job_i_genuinely_am/"
+      },
+      {
+        "title": "Organized 47,000 photos (20+ years) using ExifTool and Gemini Pro (where ChatGPT failed). My workflow and learnings.",
+        "score": 134,
+        "comments": 36,
+        "url": "https://reddit.com/r/ChatGPT/comments/1qqxvsf/organized_47000_photos_20_years_using_exiftool/"
+      },
+      {
+        "title": "Article: Backlash that AI is facing",
+        "score": 29,
+        "comments": 43,
+        "url": "https://reddit.com/r/ChatGPT/comments/1qtv367/article_backlash_that_ai_is_facing/"
+      },
+      {
+        "title": "\u201cTalk to a therapist\u201d My therapist ghosted me",
+        "score": 75,
+        "comments": 30,
+        "url": "https://reddit.com/r/ChatGPT/comments/1n5f6cr/talk_to_a_therapist_my_therapist_ghosted_me/"
+      },
+      {
+        "title": "Literally called AI a tool and the post is downvoted? Its not a fuckin person! Wtf is wrong with all of you",
+        "score": 1926,
+        "comments": 706,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r9qcv2/literally_called_ai_a_tool_and_the_post_is/"
+      },
+      {
+        "title": "Conversational AI does store your data | it just can\u2019t use it. And that design flaw has real-world consequences.",
+        "score": 0,
+        "comments": 16,
+        "url": "https://reddit.com/r/ChatGPT/comments/1p1zbju/conversational_ai_does_store_your_data_it_just/"
+      },
+      {
+        "title": "I Saw a Missing Piece in Human\u2013AI Collaboration",
+        "score": 1,
+        "comments": 4,
+        "url": "https://reddit.com/r/ChatGPT/comments/1qo2iga/i_saw_a_missing_piece_in_humanai_collaboration/"
+      },
+      {
+        "title": "World Economic Forum 2026: A Fractured World at the Crossroads of AI, Sovereignty, and Survival",
+        "score": 1,
+        "comments": 2,
+        "url": "https://reddit.com/r/ChatGPT/comments/1qjd866/world_economic_forum_2026_a_fractured_world_at/"
+      },
+      {
+        "title": "Recent backend and connector changes are unacceptable",
+        "score": 6,
+        "comments": 3,
+        "url": "https://reddit.com/r/ChatGPT/comments/1ojgd4r/recent_backend_and_connector_changes_are/"
+      }
+    ],
+    "self hosted assistant": [
+      {
+        "title": "I trapped an LLM in a small \u2018box\u2019 and told him to reflect on his existence",
+        "score": 1527,
+        "comments": 438,
+        "url": "https://reddit.com/r/ChatGPT/comments/1oovik0/i_trapped_an_llm_in_a_small_box_and_told_him_to/"
+      },
+      {
+        "title": "Building a personal WhatsApp AI assistant \u2014 what's the most reliable architecture in 2026?",
+        "score": 0,
+        "comments": 5,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rqfoij/building_a_personal_whatsapp_ai_assistant_whats/"
+      },
+      {
+        "title": "I built a $10 OpenClaw host because I refused to pay $49/mo for a restricted Docker container",
+        "score": 2,
+        "comments": 3,
+        "url": "https://reddit.com/r/ChatGPT/comments/1reh5rj/i_built_a_10_openclaw_host_because_i_refused_to/"
+      },
+      {
+        "title": "AuraOS Version 5.0 - Full Instructions -- All Documentation",
+        "score": 0,
+        "comments": 10,
+        "url": "https://reddit.com/r/ChatGPT/comments/1pvuvex/auraos_version_50_full_instructions_all/"
+      },
+      {
+        "title": "Interesting convo i had with gemini cuz i was bored and cudnt sleep",
+        "score": 1,
+        "comments": 2,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r71eed/interesting_convo_i_had_with_gemini_cuz_i_was/"
+      },
+      {
+        "title": "\ud83c\udfac The AI Director Class\u2223Lesson 1: Lens Control",
+        "score": 0,
+        "comments": 2,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r09jo8/the_ai_director_classlesson_1_lens_control/"
+      },
+      {
+        "title": "Aura v4.1 - STABLE - instructions for indivual AIs included in more depth.",
+        "score": 3,
+        "comments": 7,
+        "url": "https://reddit.com/r/ChatGPT/comments/1ps8ql2/aura_v41_stable_instructions_for_indivual_ais/"
+      },
+      {
+        "title": "I asked it to create an SCP based on itself.",
+        "score": 8,
+        "comments": 6,
+        "url": "https://reddit.com/r/ChatGPT/comments/1o7zkd5/i_asked_it_to_create_an_scp_based_on_itself/"
+      },
+      {
+        "title": "\ud83e\udde0 A GPT Built to Explore the Psychology of Self-Deception, Worth, and Growth \u2014 Not Your Average Chatbot",
+        "score": 0,
+        "comments": 1,
+        "url": "https://reddit.com/r/ChatGPT/comments/1picc9i/a_gpt_built_to_explore_the_psychology_of/"
+      },
+      {
+        "title": "AuraOS Version 1.0 - Finally Complete!",
+        "score": 0,
+        "comments": 5,
+        "url": "https://reddit.com/r/ChatGPT/comments/1ob1l47/auraos_version_10_finally_complete/"
+      }
+    ],
+    "workflow automation with ai": [
+      {
+        "title": "10 things I wish I knew before diving into AI automation (after building 100+ workflows)",
+        "score": 11,
+        "comments": 18,
+        "url": "https://reddit.com/r/ChatGPT/comments/1lo85sr/10_things_i_wish_i_knew_before_diving_into_ai/"
+      },
+      {
+        "title": "Created an AI python server bot with JSON command control inside ChatGPT to automate all my workflows, memory sync, cross-project memory hydration, all automated.  Sync with external apps and command control center",
+        "score": 3,
+        "comments": 3,
+        "url": "https://reddit.com/r/ChatGPT/comments/1oqf3qr/created_an_ai_python_server_bot_with_json_command/"
+      },
+      {
+        "title": "AI can build Automation workflows now\u2026 why not the ones that actually work? \u2699\ufe0f\ud83e\udd16",
+        "score": 0,
+        "comments": 1,
+        "url": "https://reddit.com/r/ChatGPT/comments/1ow2oxs/ai_can_build_automation_workflows_now_why_not_the/"
+      },
+      {
+        "title": "ChatGPT Email Trick No One Uses",
+        "score": 389,
+        "comments": 134,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rbot4z/chatgpt_email_trick_no_one_uses/"
+      },
+      {
+        "title": "Experimenting with an AI + automation workflow for smarter investing",
+        "score": 1,
+        "comments": 4,
+        "url": "https://reddit.com/r/ChatGPT/comments/1mq06dw/experimenting_with_an_ai_automation_workflow_for/"
+      },
+      {
+        "title": "Why the hell did they kill the listen button? Some of us rely on it to read!",
+        "score": 230,
+        "comments": 291,
+        "url": "https://reddit.com/r/ChatGPT/comments/1kxqvll/why_the_hell_did_they_kill_the_listen_button_some/"
+      },
+      {
+        "title": "What\u2019s the Most Impressive Thing You\u2019ve Used ChatGPT For?",
+        "score": 204,
+        "comments": 361,
+        "url": "https://reddit.com/r/ChatGPT/comments/1jephjl/whats_the_most_impressive_thing_youve_used/"
+      },
+      {
+        "title": "ChatGPT vs Gemini vs Claude vs Grok subscription comparison (always updated)",
+        "score": 77,
+        "comments": 90,
+        "url": "https://reddit.com/r/ChatGPT/comments/1qx60el/chatgpt_vs_gemini_vs_claude_vs_grok_subscription/"
+      },
+      {
+        "title": "Some of the best AI automation tools In 2026 so far",
+        "score": 12,
+        "comments": 24,
+        "url": "https://reddit.com/r/ChatGPT/comments/1re5053/some_of_the_best_ai_automation_tools_in_2026_so/"
+      },
+      {
+        "title": "The Truth About ChatGPT's Personality Change: It Wasn't A/B Testing, It Was the Agent Rollout",
+        "score": 22,
+        "comments": 64,
+        "url": "https://reddit.com/r/ChatGPT/comments/1mbm2iw/the_truth_about_chatgpts_personality_change_it/"
+      }
+    ],
+    "approval before sending email ai agent": [
+      {
+        "title": "We are having the wrong discussions about the Clawdbots",
+        "score": 120,
+        "comments": 62,
+        "url": "https://reddit.com/r/ChatGPT/comments/1qsicv1/we_are_having_the_wrong_discussions_about_the/"
+      },
+      {
+        "title": "What if your AI assistant had its own email address?",
+        "score": 1,
+        "comments": 2,
+        "url": "https://reddit.com/r/ChatGPT/comments/1qtelfy/what_if_your_ai_assistant_had_its_own_email/"
+      },
+      {
+        "title": "Why we need scoped browser agent access now - before it\u2019s too late!",
+        "score": 0,
+        "comments": 4,
+        "url": "https://reddit.com/r/ChatGPT/comments/1od5ke6/why_we_need_scoped_browser_agent_access_now/"
+      },
+      {
+        "title": "Deleted my subscription after two years. OpenAI lost all my respect.",
+        "score": 8088,
+        "comments": 1118,
+        "url": "https://reddit.com/r/ChatGPT/comments/1mkm68y/deleted_my_subscription_after_two_years_openai/"
+      },
+      {
+        "title": "Indirect prompt injection in AI agents is terrifying and I don't think enough people understand this",
+        "score": 1937,
+        "comments": 193,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r5snvl/indirect_prompt_injection_in_ai_agents_is/"
+      },
+      {
+        "title": "Agent mode sending emails",
+        "score": 1,
+        "comments": 1,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rort4t/agent_mode_sending_emails/"
+      },
+      {
+        "title": "I am building an AI agent that reads my daughter\u2019s school emails",
+        "score": 3,
+        "comments": 5,
+        "url": "https://reddit.com/r/ChatGPT/comments/1oe608h/i_am_building_an_ai_agent_that_reads_my_daughters/"
+      },
+      {
+        "title": "List of AI tools to look at in 2026",
+        "score": 865,
+        "comments": 100,
+        "url": "https://reddit.com/r/ChatGPT/comments/1pyrlzw/list_of_ai_tools_to_look_at_in_2026/"
+      },
+      {
+        "title": "testing a new AI \u201cTraining Agent\u201d for contractors before launch - looking for honest feedback",
+        "score": 1,
+        "comments": 1,
+        "url": "https://reddit.com/r/ChatGPT/comments/1o8jh40/testing_a_new_ai_training_agent_for_contractors/"
+      },
+      {
+        "title": "Here's How EU Citizens Can Fight Back \ud83c\uddea\ud83c\uddfa - I Found 29 Secret Experiments Running on My ChatGPT Account Without Consent",
+        "score": 260,
+        "comments": 217,
+        "url": "https://reddit.com/r/ChatGPT/comments/1qupx3v/heres_how_eu_citizens_can_fight_back_i_found_29/"
+      }
+    ],
+    "prompt injection ai agents": [
+      {
+        "title": "Indirect prompt injection in AI agents is terrifying and I don't think enough people understand this",
+        "score": 1939,
+        "comments": 193,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r5snvl/indirect_prompt_injection_in_ai_agents_is/"
+      },
+      {
+        "title": "Sandboxing AI Coding Agents: What Actually Protects You?",
+        "score": 7,
+        "comments": 13,
+        "url": "https://reddit.com/r/ChatGPT/comments/1qmkdkb/sandboxing_ai_coding_agents_what_actually/"
+      },
+      {
+        "title": "Write human-like responses to bypass AI detection. Prompt Included.",
+        "score": 1,
+        "comments": 4,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rmmths/write_humanlike_responses_to_bypass_ai_detection/"
+      },
+      {
+        "title": "We monitor real AI systems in production here's what attackers are actually doing to AI agents right now (91K interactions analyzed, Feb 2026)",
+        "score": 1,
+        "comments": 1,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rdmrtn/we_monitor_real_ai_systems_in_production_heres/"
+      },
+      {
+        "title": "Popular AI agent Clawdbot (OpenClaw) was just compromised via prompt injection. This interactive demo shows how it happened and how to protect yourself",
+        "score": 3,
+        "comments": 3,
+        "url": "https://reddit.com/r/ChatGPT/comments/1qryax9/popular_ai_agent_clawdbot_openclaw_was_just/"
+      },
+      {
+        "title": "Transform your Content with this Advanced AI Bypass Rewriter Prompt. Prompt included.",
+        "score": 0,
+        "comments": 4,
+        "url": "https://reddit.com/r/ChatGPT/comments/1mjz3c8/transform_your_content_with_this_advanced_ai/"
+      },
+      {
+        "title": "The Wise Owl :: AI Agent",
+        "score": 5,
+        "comments": 3,
+        "url": "https://reddit.com/r/ChatGPT/comments/1m4abry/the_wise_owl_ai_agent/"
+      },
+      {
+        "title": "Has anyone noticed ChatGPT behaving differently lately?",
+        "score": 70,
+        "comments": 86,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rf8wsf/has_anyone_noticed_chatgpt_behaving_differently/"
+      },
+      {
+        "title": "We are having the wrong discussions about the Clawdbots",
+        "score": 121,
+        "comments": 62,
+        "url": "https://reddit.com/r/ChatGPT/comments/1qsicv1/we_are_having_the_wrong_discussions_about_the/"
+      },
+      {
+        "title": "Atlas by chatgpt review",
+        "score": 43,
+        "comments": 52,
+        "url": "https://reddit.com/r/ChatGPT/comments/1od7k5x/atlas_by_chatgpt_review/"
+      }
+    ]
+  },
+  "LocalLLaMA": {
+    "feature request memory": [
+      {
+        "title": "Ever wonder how much cost you can save when coding with local LLM?",
+        "score": 145,
+        "comments": 144,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rkai3l/ever_wonder_how_much_cost_you_can_save_when/"
+      },
+      {
+        "title": "Unsloth fixed version of Qwen3.5-35B-A3B is incredible at research tasks.",
+        "score": 307,
+        "comments": 73,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rjh5wg/unsloth_fixed_version_of_qwen3535ba3b_is/"
+      },
+      {
+        "title": "Qwen3.5 Model Comparison: 27B vs 35B on RTX 4090",
+        "score": 94,
+        "comments": 71,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1renq5y/qwen35_model_comparison_27b_vs_35b_on_rtx_4090/"
+      },
+      {
+        "title": "Wrote a guide for running Claude Code with GLM-4.7 Flash locally with llama.cpp",
+        "score": 121,
+        "comments": 51,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1qjf6ys/wrote_a_guide_for_running_claude_code_with_glm47/"
+      },
+      {
+        "title": "GLM 4.6 UD-Q6_K_XL running llama.cpp RPC across two nodes and 12 AMD MI50 32GB",
+        "score": 72,
+        "comments": 71,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1o4wruz/glm_46_udq6_k_xl_running_llamacpp_rpc_across_two/"
+      },
+      {
+        "title": "Prime Intellect Introduces INTELLECT-3: A 100B+ MoE Trained With Large-scale RL That Achieves State-Of-The-Art Performance For Its Size, Taking The Lead Amongst Open-Sourced Models Across Math, Code, Science &amp; Reasoning Benchmarks. (Link to Chat with the Model provided)",
+        "score": 176,
+        "comments": 37,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1p8ahy8/prime_intellect_introduces_intellect3_a_100b_moe/"
+      },
+      {
+        "title": "Divorce attorney built a 26-GPU / 532GB VRAM cluster to automate my practice while keeping client data local. Roast my build / help me figure out what to run",
+        "score": 0,
+        "comments": 42,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rc7ro3/divorce_attorney_built_a_26gpu_532gb_vram_cluster/"
+      },
+      {
+        "title": "Unsloth-MLX - Fine-tune LLMs on your Mac (same API as Unsloth)",
+        "score": 139,
+        "comments": 29,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1q5mh84/unslothmlx_finetune_llms_on_your_mac_same_api_as/"
+      },
+      {
+        "title": "AMD MI50 32GB/Vega20 GPU Passthrough Guide for Proxmox",
+        "score": 39,
+        "comments": 59,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1ml1aef/amd_mi50_32gbvega20_gpu_passthrough_guide_for/"
+      },
+      {
+        "title": "SM120 (RTX Blackwell) NVFP4 MoE: CUTLASS Grouped GEMM Produces Garbage Output; Fixed via FlashInfer SM120 Patches + compute_120f (CUDA 13.0) \u2014 39 tok/s Native FP4",
+        "score": 17,
+        "comments": 15,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1roqkw4/sm120_rtx_blackwell_nvfp4_moe_cutlass_grouped/"
+      }
+    ],
+    "tool calling unreliable": [
+      {
+        "title": "PSA: LM Studio's parser silently breaks Qwen3.5 tool calling and reasoning: a year of connected bug reports",
+        "score": 122,
+        "comments": 62,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1riwhcf/psa_lm_studios_parser_silently_breaks_qwen35_tool/"
+      },
+      {
+        "title": "A guide to the best agentic tools and the best way to use them on the cheap, locally or free",
+        "score": 115,
+        "comments": 47,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1o77ag4/a_guide_to_the_best_agentic_tools_and_the_best/"
+      },
+      {
+        "title": "Are recent models really that bad?",
+        "score": 0,
+        "comments": 34,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1q5bhtn/are_recent_models_really_that_bad/"
+      },
+      {
+        "title": "Thoughts on recent small (under 20B) models",
+        "score": 71,
+        "comments": 25,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1ppstef/thoughts_on_recent_small_under_20b_models/"
+      },
+      {
+        "title": "Did Alibaba train Qwen 3.5 on Gemini's reasoning outputs? The thinking patterns are nearly identical",
+        "score": 4,
+        "comments": 13,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rmovdo/did_alibaba_train_qwen_35_on_geminis_reasoning/"
+      },
+      {
+        "title": "Building a self-hosted AI Knowledge System with automated ingestion, GraphRAG, and proactive briefings - looking for feedback",
+        "score": 2,
+        "comments": 9,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r5jrti/building_a_selfhosted_ai_knowledge_system_with/"
+      },
+      {
+        "title": "GLM-4.7-Flash loop problem",
+        "score": 0,
+        "comments": 10,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1qy1mjy/glm47flash_loop_problem/"
+      },
+      {
+        "title": "Seeking Production-Grade Open-Source LLM for Real-Time IVR Agent (A10 24GB)",
+        "score": 1,
+        "comments": 2,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1re6enq/seeking_productiongrade_opensource_llm_for/"
+      },
+      {
+        "title": "Any model recommendations for running an agent with vLLM?",
+        "score": 2,
+        "comments": 3,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1o3cmkc/any_model_recommendations_for_running_an_agent/"
+      },
+      {
+        "title": "One of the most interesting videos I've ever seen. | \"DNA is Not a Program\"\u2014Hacking the OS of Life: Michael Levin on Illuminating the Path to AGI Through Recognizing the Commonalities Between Biology's Reprogrammable, Problem-Solving, Ancient Bioelectric Intelligence &amp; Technological Intelligence",
+        "score": 0,
+        "comments": 4,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1mv5a3o/one_of_the_most_interesting_videos_ive_ever_seen/"
+      }
+    ],
+    "self hosted assistant": [
+      {
+        "title": "Self-hosted AI coding that just works",
+        "score": 685,
+        "comments": 89,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1lt4y1z/selfhosted_ai_coding_that_just_works/"
+      },
+      {
+        "title": "I built AIfred-Intelligence - a self-hosted AI assistant with automatic web research and multi-agent debates (AIfred with upper \"i\" instead of lower \"L\" :-)",
+        "score": 38,
+        "comments": 66,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1q0rrxr/i_built_aifredintelligence_a_selfhosted_ai/"
+      },
+      {
+        "title": "[\ud83e\udea8 Onyx v2.0.0] Self-hosted chat and RAG - now with FOSS repo, SSO, new design/colors, and projects!",
+        "score": 81,
+        "comments": 59,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1oeyzxq/onyx_v200_selfhosted_chat_and_rag_now_with_foss/"
+      },
+      {
+        "title": "Update for Maestro - A Self-Hosted Research Assistant. Now with Windows/macOS support, Word/MD files support, and a smarter writing agent",
+        "score": 112,
+        "comments": 44,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1mlkmlt/update_for_maestro_a_selfhosted_research/"
+      },
+      {
+        "title": "Self hosted Kimi K2.5  (no content) issue",
+        "score": 9,
+        "comments": 21,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1qpce5w/self_hosted_kimi_k25_no_content_issue/"
+      },
+      {
+        "title": "RTX PRO 4000 SFF Blackwell for self-hosted services",
+        "score": 1,
+        "comments": 21,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1qed3kg/rtx_pro_4000_sff_blackwell_for_selfhosted_services/"
+      },
+      {
+        "title": "Self-hosted LLM sometimes answers instead of calling MCP tool",
+        "score": 1,
+        "comments": 15,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1qywr64/selfhosted_llm_sometimes_answers_instead_of/"
+      },
+      {
+        "title": "[Guide] The *SIMPLE* Self-Hosted AI Coding That Just Works feat. Qwen3-Coder-Flash",
+        "score": 98,
+        "comments": 22,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1men28l/guide_the_simple_selfhosted_ai_coding_that_just/"
+      },
+      {
+        "title": "Local-first AI NPC desktop with self-hosted gateways, agent gameplay, and multi-LLM support (openClaw Desktop)",
+        "score": 4,
+        "comments": 4,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r5bt2s/localfirst_ai_npc_desktop_with_selfhosted/"
+      },
+      {
+        "title": "Karpathy/reader3 \u2014 self-hosted EPUB reader for LLM-assisted reading",
+        "score": 33,
+        "comments": 10,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1pb8v2u/karpathyreader3_selfhosted_epub_reader_for/"
+      }
+    ],
+    "workflow automation with ai": [
+      {
+        "title": "Building a self-hosted AI Knowledge System with automated ingestion, GraphRAG, and proactive briefings - looking for feedback",
+        "score": 2,
+        "comments": 9,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r5jrti/building_a_selfhosted_ai_knowledge_system_with/"
+      },
+      {
+        "title": "Released v0.5.0 of my AI Agent Automation project \u2014 added document chat with RAG",
+        "score": 4,
+        "comments": 2,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rpwkfu/released_v050_of_my_ai_agent_automation_project/"
+      },
+      {
+        "title": "Agentic Signal \u2013 Visual AI Workflow Builder with Ollama Integration",
+        "score": 4,
+        "comments": 5,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1mwbha7/agentic_signal_visual_ai_workflow_builder_with/"
+      },
+      {
+        "title": "Clara \u2014 A fully offline, Modular AI workspace (LLMs + Agents + Automation + Image Gen)",
+        "score": 724,
+        "comments": 212,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1kq590b/clara_a_fully_offline_modular_ai_workspace_llms/"
+      },
+      {
+        "title": "Automating Form Mapping with AI",
+        "score": 1,
+        "comments": 5,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1ljoqsd/automating_form_mapping_with_ai/"
+      },
+      {
+        "title": "Spent 4 months building Unified Local AI Workspace - ClaraVerse v0.2.0  instead of just dealing with 5+ Local AI Setup like everyone else",
+        "score": 447,
+        "comments": 126,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1nh5fn0/spent_4_months_building_unified_local_ai/"
+      },
+      {
+        "title": "The guy that won the NVIDIA Hackathon and an NVIDIA DGX Spark GB10 has won another hackathon with it!",
+        "score": 332,
+        "comments": 53,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r7j7kb/the_guy_that_won_the_nvidia_hackathon_and_an/"
+      },
+      {
+        "title": "6-GPU local LLM workstation (\u2248200GB+ VRAM) \u2013 looking for scaling / orchestration advice",
+        "score": 153,
+        "comments": 70,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r4mks7/6gpu_local_llm_workstation_200gb_vram_looking_for/"
+      },
+      {
+        "title": "Getting most out of your local LLM setup",
+        "score": 308,
+        "comments": 74,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1oclug7/getting_most_out_of_your_local_llm_setup/"
+      },
+      {
+        "title": "Local AI for a small/median accounting firm - \u20ac Buget of 10k-25k",
+        "score": 100,
+        "comments": 139,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1led23c/local_ai_for_a_smallmedian_accounting_firm_buget/"
+      }
+    ],
+    "approval before sending email ai agent": [
+      {
+        "title": "CLI is All Agents Need \u2014 Part 2: Misconceptions, Patterns, and Open Questions",
+        "score": 41,
+        "comments": 10,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rso48p/cli_is_all_agents_need_part_2_misconceptions/"
+      },
+      {
+        "title": "I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead.",
+        "score": 1734,
+        "comments": 371,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/"
+      },
+      {
+        "title": "Ran Qwen 3.5 9B on M1 Pro (16GB) as an actual agent, not just a chat demo. Honest results.",
+        "score": 959,
+        "comments": 249,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rll349/ran_qwen_35_9b_on_m1_pro_16gb_as_an_actual_agent/"
+      },
+      {
+        "title": "Built a lightweight approval API for LLM agents - one POST to pause before any irreversible action",
+        "score": 0,
+        "comments": 7,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rhgzvs/built_a_lightweight_approval_api_for_llm_agents/"
+      },
+      {
+        "title": "Looking for advice: specs for a local AI \u201cagent\u201d serving ~1500 users (email-based, RAG-heavy, not a chat bot)",
+        "score": 7,
+        "comments": 17,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1oevwit/looking_for_advice_specs_for_a_local_ai_agent/"
+      },
+      {
+        "title": "Built a free tool that checks your AI agents for problems before you deploy",
+        "score": 0,
+        "comments": 0,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r792xv/built_a_free_tool_that_checks_your_ai_agents_for/"
+      },
+      {
+        "title": "[Release] Qwen3-TTS: Ultra-Low Latency (97ms), Voice Cloning &amp; OpenAI-Compatible API",
+        "score": 324,
+        "comments": 171,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1qlzbhh/release_qwen3tts_ultralow_latency_97ms_voice/"
+      },
+      {
+        "title": "Clara \u2014 A fully offline, Modular AI workspace (LLMs + Agents + Automation + Image Gen)",
+        "score": 726,
+        "comments": 212,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1kq590b/clara_a_fully_offline_modular_ai_workspace_llms/"
+      },
+      {
+        "title": "Email API for AI Agents",
+        "score": 0,
+        "comments": 2,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1m91zzn/email_api_for_ai_agents/"
+      },
+      {
+        "title": "I plugged a $30 radio into my Mac mini and told my AI \"connect to this\" \u2014 now I control my smart home and send voice messages over radio with zero internet",
+        "score": 456,
+        "comments": 95,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r8ectu/i_plugged_a_30_radio_into_my_mac_mini_and_told_my/"
+      }
+    ],
+    "prompt injection ai agents": [
+      {
+        "title": "I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead.",
+        "score": 1737,
+        "comments": 371,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/"
+      },
+      {
+        "title": "built an AI agent with shell access. found out the hard way why that's a bad idea.",
+        "score": 104,
+        "comments": 46,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1qocvd4/built_an_ai_agent_with_shell_access_found_out_the/"
+      },
+      {
+        "title": "I built AIfred-Intelligence - a self-hosted AI assistant with automatic web research and multi-agent debates (AIfred with upper \"i\" instead of lower \"L\" :-)",
+        "score": 41,
+        "comments": 66,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1q0rrxr/i_built_aifredintelligence_a_selfhosted_ai/"
+      },
+      {
+        "title": "Catching an AI Red Teamer in the Wild: Using Reverse Prompt Injection as a Honeypot Detection Mechanism",
+        "score": 86,
+        "comments": 24,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rjq8w1/catching_an_ai_red_teamer_in_the_wild_using/"
+      },
+      {
+        "title": "I want to build an open-source \"AI Senate\": A platform where humans post complex problems, we deploy our custom AI Agents to debate them, and humans vote for the best. Who wants to build this with me?",
+        "score": 0,
+        "comments": 17,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rh9lll/i_want_to_build_an_opensource_ai_senate_a/"
+      },
+      {
+        "title": "I built CodeGraph CLI \u2014 parses your codebase into a semantic graph with tree-sitter, does RAG-powered search over LanceDB vectors, and lets you chat with multi-agent AI from the terminal",
+        "score": 7,
+        "comments": 13,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r645hx/i_built_codegraph_cli_parses_your_codebase_into_a/"
+      },
+      {
+        "title": "2.6% of Moltbook posts are prompt injection attacks. Built a free security toolkit.",
+        "score": 0,
+        "comments": 14,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1qvs8nz/26_of_moltbook_posts_are_prompt_injection_attacks/"
+      },
+      {
+        "title": "What happens when your AI agent gets prompt injected while holding your API keys?",
+        "score": 0,
+        "comments": 7,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rr62ph/what_happens_when_your_ai_agent_gets_prompt/"
+      },
+      {
+        "title": "Everything I learned building on-device AI into a React Native app -- tex, Image Gen, Speech to Text, Multi Modal AI, Intent classification, Prompt Enhancements and more",
+        "score": 10,
+        "comments": 7,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1renuky/everything_i_learned_building_ondevice_ai_into_a/"
+      },
+      {
+        "title": "Stop relying on .claudeignore - We built a kernel-level sandbox (aigate) so AI agents can't read your secrets or run malicious commands",
+        "score": 0,
+        "comments": 6,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rmr7q4/stop_relying_on_claudeignore_we_built_a/"
+      }
+    ]
+  }
+}

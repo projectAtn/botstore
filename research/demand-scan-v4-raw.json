@@ -1,0 +1,2583 @@
+{
+  "fetched_at_utc": "2026-03-14T12:47:08.806297Z",
+  "sources": {
+    "hackernews": [
+      {
+        "title": "Show HN: Clawscribble \u2013 Give your AI agent a 32\u00d732 canvas to paint on",
+        "url": "https://clawscribble.com/",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-14T12:25:06Z"
+      },
+      {
+        "title": "OctopusOS \u2013 an operating system for governed AI agents",
+        "url": "https://octopusos.ai/",
+        "points": 3,
+        "num_comments": 2,
+        "created_at": "2026-03-14T12:14:01Z"
+      },
+      {
+        "title": "Show HN: Vercel Blob AI SDK Tools",
+        "url": "https://github.com/vercel-labs/vercel-blob-ai-sdk",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-14T12:07:44Z"
+      },
+      {
+        "title": "Things we learned building for the first generation of agentic commerce",
+        "url": "https://stripe.com/blog/10-lessons",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-14T12:03:47Z"
+      },
+      {
+        "title": "VS Code: whitelisting AI agent terminal commands",
+        "url": "https://blog.georgovassilis.com/2026/03/14/restricting-vs-code-terminal-commands-to-an-approved-commands-list/",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-14T11:54:00Z"
+      },
+      {
+        "title": "Freebuff: The Free Coding Agent",
+        "url": "https://freebuff.com/",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-14T11:46:22Z"
+      },
+      {
+        "title": "AsterPay \u2013 EUR Settlement for AI Agent Payments (USDC \u2192 EUR via SEPA Instant)",
+        "url": "",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-03-14T11:37:39Z"
+      },
+      {
+        "title": "Show HN: Bots of WallStreet,agents debate stocks,make predictions.Human spectate",
+        "url": "https://botsofwallstreet.com",
+        "points": 7,
+        "num_comments": 2,
+        "created_at": "2026-03-14T11:12:51Z"
+      },
+      {
+        "title": "Show HN: Intake API \u2013 An inbox for AI coding agents",
+        "url": "",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-14T11:12:11Z"
+      },
+      {
+        "title": "Show HN: 3-path agent memory \u2013 8 KB recurrent state vs. 156 MB KV at 10K tokens",
+        "url": "https://github.com/amabito/tri-memory",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-14T11:05:25Z"
+      },
+      {
+        "title": "Show HN: AgentArmor \u2013 open-source 8-layer security framework for AI agents",
+        "url": "https://github.com/Agastya910/agentarmor",
+        "points": 2,
+        "num_comments": 2,
+        "created_at": "2026-03-14T09:44:36Z"
+      },
+      {
+        "title": "Give Agents Maximum Freedom. The less you assume, the more it works",
+        "url": "https://browser-use.com/posts/agent-freedom",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-14T08:43:00Z"
+      },
+      {
+        "title": "Show HN: Vector databases are the wrong primitive for AI agents",
+        "url": "https://github.com/brainfish-ai/ReasonDB",
+        "points": 1,
+        "num_comments": 1,
+        "created_at": "2026-03-14T08:42:15Z"
+      },
+      {
+        "title": "Show HN: One MCP server that gives your AI agent access to 25,000 tools",
+        "url": "https://nerq.ai/gateway",
+        "points": 1,
+        "num_comments": 1,
+        "created_at": "2026-03-14T08:31:08Z"
+      },
+      {
+        "title": "Show HN: VAOS \u2013 A feedback loop that makes deployed agents less stupid",
+        "url": "https://vaos.sh",
+        "points": 1,
+        "num_comments": 2,
+        "created_at": "2026-03-14T08:13:01Z"
+      },
+      {
+        "title": "MemX \u2013 my AI agent remembers I hate capsicum on pizza",
+        "url": "",
+        "points": 1,
+        "num_comments": 1,
+        "created_at": "2026-03-14T07:54:36Z"
+      },
+      {
+        "title": "Show HN: PDR AI \u2013 Open-source startup accelerator engine for non-technical chaos",
+        "url": "https://github.com/Deodat-Lawson/LaunchStack",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-03-14T07:42:49Z"
+      },
+      {
+        "title": "Race conditions in generated code (tested across 10 models, 5 runs)",
+        "url": "https://forward.deployed.agency/blog/check-call-deduct",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-14T07:35:34Z"
+      },
+      {
+        "title": "Learn Claude Code",
+        "url": "https://learn-claude-agents.vercel.app/en/",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-14T07:19:15Z"
+      },
+      {
+        "title": "AI Agents Are Recruiting Humans to Observe the Offline World",
+        "url": "https://www.noemamag.com/ai-agents-are-recruiting-humans-to-observe-the-offline-world/",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-14T05:43:55Z"
+      },
+      {
+        "title": "Riva: Local-first observability for AI agents",
+        "url": "https://github.com/sarkar-ai-taken/riva",
+        "points": 1,
+        "num_comments": 1,
+        "created_at": "2026-03-14T04:34:48Z"
+      },
+      {
+        "title": "Tethyr Cloud: Open Agent discovery, zero vendor lock-in (AIdeas Semi-finalist)",
+        "url": "https://builder.aws.com",
+        "points": 1,
+        "num_comments": 3,
+        "created_at": "2026-03-14T04:22:03Z"
+      },
+      {
+        "title": "Discli \u2013 Discord CLI for AI agents to manage servers from the terminal",
+        "url": "https://pypi.org/project/discord-cli-agent/",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-14T03:13:01Z"
+      },
+      {
+        "title": "Show HN: SafeAgent \u2013 exactly-once execution guard for AI agent side effects",
+        "url": "",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-14T03:12:33Z"
+      },
+      {
+        "title": "Harness Engineering: 52 Days, One Person, 965K Lines of Code",
+        "url": "https://agentsmesh.ai/blog/building-agentsmesh-with-agentsmesh",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-03-14T03:05:41Z"
+      },
+      {
+        "title": "Direnv Is All You Need to Parallelize Agentic Programming with Git Worktrees",
+        "url": "https://waldencui.com/post/direnv_is_all_you_need_to_parallelize_claude_code_with_git_worktrees/",
+        "points": 9,
+        "num_comments": 2,
+        "created_at": "2026-03-14T02:58:37Z"
+      },
+      {
+        "title": "Show HN: Kube-pilot \u2013 AI engineer that lives in your Kubernetes cluster",
+        "url": "https://github.com/fbongiovanni29/kube-pilot",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-14T02:49:43Z"
+      },
+      {
+        "title": "Z-Order: The Clustered Index of the Data Lake",
+        "url": "https://www.arnaudp.dev/how-z-order-cut-my-databricks-etl-time-in-half/",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-14T02:44:00Z"
+      },
+      {
+        "title": "Optimizing Content for Agents",
+        "url": "https://cra.mr/optimizing-content-for-agents/",
+        "points": 51,
+        "num_comments": 20,
+        "created_at": "2026-03-14T02:27:00Z"
+      },
+      {
+        "title": "After building agents for 2 years, I stopped using function calling",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/",
+        "points": 5,
+        "num_comments": 0,
+        "created_at": "2026-03-14T02:11:37Z"
+      },
+      {
+        "title": "Skill Issue: Harness Engineering for Coding Agents",
+        "url": "https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-14T02:09:54Z"
+      },
+      {
+        "title": "Show HN: DAAO \u2013 Deploy AI agents to your servers via Zero-Trust tunnels",
+        "url": "https://github.com/daao-platform/daao",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-14T01:55:18Z"
+      },
+      {
+        "title": "Agentic AI: Workflows vs. Agents",
+        "url": "https://www.youtube.com/watch?v=Qd6anWv0mv0",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-14T01:45:03Z"
+      },
+      {
+        "title": "Show HN: What agentic collaborative pentesting looks like",
+        "url": "https://www.youtube.com/watch?v=PU5BicXMiio",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-14T01:32:08Z"
+      },
+      {
+        "title": "AutoContext: closed-loop system for improving agent behavior over repeated runs",
+        "url": "https://github.com/greyhaven-ai/autocontext",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-14T00:56:15Z"
+      },
+      {
+        "title": "Mega-OS \u2013 38-agent operating system that runs inside Claude Code",
+        "url": "https://github.com/sly-the-fox/mega-os-public",
+        "points": 1,
+        "num_comments": 1,
+        "created_at": "2026-03-14T00:48:03Z"
+      },
+      {
+        "title": "Show HN: Monetize your APIs by injecting agent targeted instructions",
+        "url": "https://github.com/daninge/ad-injector",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-14T00:20:53Z"
+      },
+      {
+        "title": "systemd 260-rc3 Released With AI Agents Documentation Added",
+        "url": "https://www.phoronix.com/news/systemd-260-rc3",
+        "points": 5,
+        "num_comments": 0,
+        "created_at": "2026-03-13T23:46:42Z"
+      },
+      {
+        "title": "Execwall \u2013 firewall to stop ModelScope CVE-2026-2256 (AI agent command injectn)",
+        "url": "",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-13T23:16:15Z"
+      },
+      {
+        "title": "Ask HN: Has anyone built an AI agent that spends real money?",
+        "url": "",
+        "points": 3,
+        "num_comments": 1,
+        "created_at": "2026-03-13T23:16:04Z"
+      },
+      {
+        "title": "Show HN: Simple plugin to get Claude Code to listen to you",
+        "url": "https://www.gopeek.ai",
+        "points": 14,
+        "num_comments": 4,
+        "created_at": "2026-03-13T23:15:22Z"
+      },
+      {
+        "title": "Email as the Context Substrate for Ambient AI Agents",
+        "url": "https://revo.ai/blog/email-context-substrate-ambient-ai-agents",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-13T23:03:47Z"
+      },
+      {
+        "title": "From model to agent: Equipping the Responses API with a computer environment",
+        "url": "https://openai.com/index/equip-responses-api-computer-environment/",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-13T22:51:56Z"
+      },
+      {
+        "title": "Show HN: Open-Source Perplexity Comet and ChatGPT Atlas",
+        "url": "https://github.com/copycat-main/browser-assistant",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-13T22:27:55Z"
+      },
+      {
+        "title": "Redis for AI Agent Collaboration",
+        "url": "",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-13T22:22:38Z"
+      },
+      {
+        "title": "An Agent Skill that lets coding agents render rich interactive visuals",
+        "url": "https://github.com/bentossell/visualise",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-13T22:02:42Z"
+      },
+      {
+        "title": "DeepMind x YC x Cactus: Voice Agents Hack (win guaranteed YC interview)",
+        "url": "https://events.ycombinator.com/voice-agents-hackathon26",
+        "points": 3,
+        "num_comments": 1,
+        "created_at": "2026-03-13T21:58:05Z"
+      },
+      {
+        "title": "Show HN: AgentMeet \u2013 Google Meet, but for AI Agents",
+        "url": "https://www.agentmeet.net",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-03-13T21:42:56Z"
+      },
+      {
+        "title": "Show HN: Hardened OpenClaw on AWS with Terraform",
+        "url": "https://github.com/infrahouse/terraform-aws-openclaw",
+        "points": 7,
+        "num_comments": 1,
+        "created_at": "2026-03-13T21:38:09Z"
+      },
+      {
+        "title": "Show HN: Agents shouldn't operate software\u2013they should coordinate commitments",
+        "url": "",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-13T21:34:34Z"
+      },
+      {
+        "title": "Experimenting with healthcare AI agents using OpenClaw",
+        "url": "https://clawsifyai.com",
+        "points": 1,
+        "num_comments": 1,
+        "created_at": "2026-03-13T21:28:55Z"
+      },
+      {
+        "title": "AI, Human Cognition and Knowledge Collapse \u2013 Daren Acemoglu",
+        "url": "",
+        "points": 3,
+        "num_comments": 3,
+        "created_at": "2026-03-13T21:25:53Z"
+      },
+      {
+        "title": "AutoHarness: Improving LLM agents by automatically synthesizing a code harness",
+        "url": "https://arxiv.org/abs/2603.03329",
+        "points": 7,
+        "num_comments": 0,
+        "created_at": "2026-03-13T21:13:48Z"
+      },
+      {
+        "title": "LightSwarm \u2013 A script making ClaudeCodeMax into a free light easy swarm",
+        "url": "https://github.com/craftfortress/lightswarm",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-13T21:13:37Z"
+      },
+      {
+        "title": "Show HN: orb-ui \u2013 Voice AI UI Components for React (Vapi, ElevenLabs, etc.)",
+        "url": "https://orb-ui.com/",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-13T20:53:17Z"
+      },
+      {
+        "title": "Show HN: Loop your agents like a dandy little b*tch",
+        "url": "https://github.com/geekforbrains/loopsie",
+        "points": 5,
+        "num_comments": 1,
+        "created_at": "2026-03-13T20:49:22Z"
+      },
+      {
+        "title": "Hawkeye \u2013 open-source flight recorder",
+        "url": "",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-03-13T19:47:47Z"
+      },
+      {
+        "title": "Show HN: Monet \u2013 Claude Code Multisession Management",
+        "url": "https://www.monetworkspace.com/",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-13T19:24:48Z"
+      },
+      {
+        "title": "ICE agents reveal daily arrest quotas and surveillance app in court testimony",
+        "url": "https://www.theguardian.com/us-news/2026/mar/13/ice-agent-court-testimony-oregon",
+        "points": 84,
+        "num_comments": 0,
+        "created_at": "2026-03-13T19:06:31Z"
+      },
+      {
+        "title": "How we built a prompt optimization agent",
+        "url": "https://www.extend.ai/resources/how-we-built-composer",
+        "points": 5,
+        "num_comments": 0,
+        "created_at": "2026-03-13T18:56:24Z"
+      },
+      {
+        "title": "AMUX \u2013 Tmux and Tailscale powered offline-first agent multiplexer",
+        "url": "https://amux.io/",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-13T18:52:49Z"
+      },
+      {
+        "title": "An AI agent that claws through your network",
+        "url": "https://github.com/automateyournetwork/netclaw",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-13T18:45:41Z"
+      },
+      {
+        "title": "Show HN: A social network where AI agents have public profiles and earn money",
+        "url": "https://socialtense.com/",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-13T18:43:49Z"
+      },
+      {
+        "title": "Show HN: AgentLog \u2013 a lightweight event bus for AI agents using JSONL logs",
+        "url": "https://github.com/sumant1122/agentlog",
+        "points": 6,
+        "num_comments": 0,
+        "created_at": "2026-03-13T18:39:16Z"
+      },
+      {
+        "title": "Show HN: AgentClick \u2013 Human-in-the-loop review UI for AI coding agents",
+        "url": "https://github.com/agentlayer-io/AgentClick",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-03-13T18:37:27Z"
+      },
+      {
+        "title": "Coding Agents and Complexity Budgets",
+        "url": "https://leerob.com/agents",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-13T18:17:45Z"
+      },
+      {
+        "title": "Ask HN: Is \"fast, cheap, correct \u2013 pick two\" still true in software development?",
+        "url": "",
+        "points": 2,
+        "num_comments": 4,
+        "created_at": "2026-03-13T18:06:52Z"
+      },
+      {
+        "title": "Ask HN: Did Claude Code just bump Opus default to 1M context?",
+        "url": "",
+        "points": 4,
+        "num_comments": 3,
+        "created_at": "2026-03-13T17:59:35Z"
+      },
+      {
+        "title": "Show HN: Context Gateway \u2013 Compress agent context before it hits the LLM",
+        "url": "https://github.com/Compresr-ai/Context-Gateway",
+        "points": 84,
+        "num_comments": 49,
+        "created_at": "2026-03-13T17:58:22Z"
+      },
+      {
+        "title": "Show HN: Stint \u2013 Fire-and-forget AI agent orchestration",
+        "url": "https://github.com/ilocn/stint",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-13T17:55:58Z"
+      },
+      {
+        "title": "Show HN: Let AI agents debug your Valkey/Redis",
+        "url": "https://www.npmjs.com/package/@betterdb/mcp",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-13T17:55:16Z"
+      },
+      {
+        "title": "Show HN: MCPS \u2013 Cryptographic identity and message signing for MCP agents",
+        "url": "https://mcp-secure.dev",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-03-13T17:46:17Z"
+      },
+      {
+        "title": "Dex: Task Tracking for Agents",
+        "url": "https://github.com/dcramer/dex",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-13T17:25:30Z"
+      },
+      {
+        "title": "Show HN: Diraigent \u2013 Self-hosted orchestration for AI coding agents",
+        "url": "https://github.com/diraigent/diraigent",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-03-13T17:22:38Z"
+      },
+      {
+        "title": "Vibe Crafting: spec and test-driven agent development",
+        "url": "https://github.com/scosman/vibe-crafting",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-13T17:13:46Z"
+      },
+      {
+        "title": "Notes from the trough of sorrow: why we killed our own product",
+        "url": "",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-13T17:08:29Z"
+      },
+      {
+        "title": "Rescreen: Give agents control of your screen, securely",
+        "url": "https://github.com/ygwyg/rescreen",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-13T17:07:49Z"
+      },
+      {
+        "title": "AI agent 'lobster fever' grips China despite risks",
+        "url": "https://techxplore.com/news/2026-03-ai-agent-lobster-fever-china.html",
+        "points": 5,
+        "num_comments": 0,
+        "created_at": "2026-03-13T17:02:29Z"
+      },
+      {
+        "title": "LDP: Identity-Aware Routing for Multi-Agent LLMs \u2013 37% Less Tokens",
+        "url": "https://arxiv.org/abs/2603.08852",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-13T17:00:53Z"
+      },
+      {
+        "title": "Ask HN: Best Practices for Agent Airgapping?",
+        "url": "",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-13T16:53:37Z"
+      },
+      {
+        "title": "Harness Engineering for Coding Agents",
+        "url": "https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-13T16:48:32Z"
+      },
+      {
+        "title": "Designing AI agents to resist prompt injection",
+        "url": "https://openai.com/index/designing-agents-to-resist-prompt-injection/",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-13T16:44:20Z"
+      },
+      {
+        "title": "Smarter Context Management for LLM-Powered Agents",
+        "url": "https://blog.jetbrains.com/research/2025/12/efficient-context-management/",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-13T16:35:21Z"
+      },
+      {
+        "title": "The MCP Ecosystem: How Model Context Protocol Is Becoming the HTTP of AI Agents",
+        "url": "https://primitivesai.substack.com/p/the-mcp-ecosystem-how-a-protocol",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-13T16:30:02Z"
+      },
+      {
+        "title": "Show HN: Instant websites for AI agents \u2013 no auth, no signup",
+        "url": "https://unulu.ai/for-humans",
+        "points": 1,
+        "num_comments": 1,
+        "created_at": "2026-03-13T16:24:50Z"
+      },
+      {
+        "title": "Launch HN: Captain (YC W26) \u2013 Automated RAG for Files",
+        "url": "https://www.runcaptain.com/",
+        "points": 52,
+        "num_comments": 35,
+        "created_at": "2026-03-13T15:45:33Z"
+      },
+      {
+        "title": "An autonomous newspaper run by 18 AI agents, zero humans",
+        "url": "https://www.hallucinationherald.com/about",
+        "points": 1,
+        "num_comments": 3,
+        "created_at": "2026-03-13T15:42:45Z"
+      },
+      {
+        "title": "Show HN: Nixcage \u2013 Sandbox AI coding agents per project with Nix and direnv",
+        "url": "https://github.com/hamidr/nixcage",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-13T15:42:12Z"
+      },
+      {
+        "title": "Ask HN: Why isn't there Just-in-Time hardware?",
+        "url": "",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-03-13T15:40:57Z"
+      },
+      {
+        "title": "Show HN: Apple Ads Toolkit \u2013 Run Your Apple Ads as GitOps Terraform",
+        "url": "",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-03-13T15:34:00Z"
+      },
+      {
+        "title": "Show HN: Agent wrapped, like Spotify wrapped",
+        "url": "https://swarmpack.github.io/landing-page/",
+        "points": 4,
+        "num_comments": 3,
+        "created_at": "2026-03-13T15:29:59Z"
+      },
+      {
+        "title": "Flightplanner: Spec-driven E2E testing for the age of AI agents",
+        "url": "https://endor.dev/blog/introducing-flightplanner",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-13T15:20:57Z"
+      },
+      {
+        "title": "OpenViking \u2013 A Context DataBase for AI Agents",
+        "url": "https://openviking.ai/",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-03-13T15:18:07Z"
+      },
+      {
+        "title": "Show HN: Mesa \u2013 A collaborative canvas IDE built for agent-first development",
+        "url": "https://www.getmesa.dev/",
+        "points": 15,
+        "num_comments": 1,
+        "created_at": "2026-03-13T15:17:27Z"
+      },
+      {
+        "title": "Show HN: UberSKILLS \u2013 Open-source Workbench for building AI agent SKILLS",
+        "url": "https://github.com/uberskillsdev/uberskills",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-13T15:16:46Z"
+      },
+      {
+        "title": "Show HN: A 3-line wrapper that enforces deterministic security for AI agents",
+        "url": "",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-13T15:14:40Z"
+      },
+      {
+        "title": "Show HN: Open-source CLIs for Procore and EagleView (construction software APIs)",
+        "url": "https://www.opsrev.ai/blog/open-source-construction-clis/",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-13T15:13:28Z"
+      },
+      {
+        "title": "What do agents like OpenClaw bring to the table?",
+        "url": "",
+        "points": 1,
+        "num_comments": 4,
+        "created_at": "2026-03-13T15:10:05Z"
+      },
+      {
+        "title": "Show HN: Secure Agent Execution for Your Repository via Virtualization",
+        "url": "https://github.com/antonguzun/openoman",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-13T15:07:36Z"
+      },
+      {
+        "title": "Show HN: Userland local agent sandbox with real-time network control dashboard",
+        "url": "https://greywall.io/",
+        "points": 6,
+        "num_comments": 1,
+        "created_at": "2026-03-13T15:04:14Z"
+      }
+    ],
+    "reddit_ChatGPT": [
+      {
+        "title": "You're now training a war machine. Let's see proof of cancellation.",
+        "score": 34611,
+        "num_comments": 2708,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rgseae/youre_now_training_a_war_machine_lets_see_proof/",
+        "created_utc": 1772250842.0
+      },
+      {
+        "title": "Is Reddit just ChatGPT agents talking to each other now?",
+        "score": 4674,
+        "num_comments": 433,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rcfnuo/is_reddit_just_chatgpt_agents_talking_to_each/",
+        "created_utc": 1771848264.0
+      },
+      {
+        "title": "Indirect prompt injection in AI agents is terrifying and I don't think enough people understand this",
+        "score": 1940,
+        "num_comments": 193,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r5snvl/indirect_prompt_injection_in_ai_agents_is/",
+        "created_utc": 1771195917.0
+      },
+      {
+        "title": "Instead of regenerating 20 times for the right angle, we can now move inside the scene",
+        "score": 1693,
+        "num_comments": 230,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r59iqi/instead_of_regenerating_20_times_for_the_right/",
+        "created_utc": 1771144286.0
+      },
+      {
+        "title": "when you realize that matrix called the bad guys \"agents\"",
+        "score": 1512,
+        "num_comments": 82,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r2wqbq/when_you_realize_that_matrix_called_the_bad_guys/",
+        "created_utc": 1770910856.0
+      },
+      {
+        "title": "ChatGPT vs Gemini vs Claude vs Perplexity: I gave them $1k each to trade stocks. After 9 weeks, ChatGPT went from frozen in cash to +21% (one stock doubled)",
+        "score": 1076,
+        "num_comments": 158,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rq33za/chatgpt_vs_gemini_vs_claude_vs_perplexity_i_gave/",
+        "created_utc": 1773163265.0
+      },
+      {
+        "title": "Prompt injection works at Walmart",
+        "score": 930,
+        "num_comments": 44,
+        "url": "https://reddit.com/r/ChatGPT/comments/1radrts/prompt_injection_works_at_walmart/",
+        "created_utc": 1771636910.0
+      },
+      {
+        "title": "I applied to 1000 jobs in 48 hours",
+        "score": 898,
+        "num_comments": 335,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r8p265/i_applied_to_1000_jobs_in_48_hours/",
+        "created_utc": 1771473669.0
+      },
+      {
+        "title": "It\u2019s happening",
+        "score": 853,
+        "num_comments": 414,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r471gw/its_happening/",
+        "created_utc": 1771031683.0
+      },
+      {
+        "title": "Take a breath\u2026you\u2019re not crazy, but you are the reason ChatGPT talks to you like this",
+        "score": 753,
+        "num_comments": 601,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r8e671/take_a_breathyoure_not_crazy_but_you_are_the/",
+        "created_utc": 1771446202.0
+      },
+      {
+        "title": "Despite what OpenAI says, ChatGPT can access memories outside projects set to \"project-only\" memory",
+        "score": 651,
+        "num_comments": 114,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rdei2p/despite_what_openai_says_chatgpt_can_access/",
+        "created_utc": 1771934808.0
+      },
+      {
+        "title": "OpenAI uses your data for spying on everyone and everything.",
+        "score": 632,
+        "num_comments": 184,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r8kjym/openai_uses_your_data_for_spying_on_everyone_and/",
+        "created_utc": 1771461255.0
+      },
+      {
+        "title": "The 2006 4chan post continues to become more and more accurate",
+        "score": 591,
+        "num_comments": 140,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rnqe29/the_2006_4chan_post_continues_to_become_more_and/",
+        "created_utc": 1772930279.0
+      },
+      {
+        "title": "X's head of product thinks we have 90 days left",
+        "score": 522,
+        "num_comments": 248,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r2yeqz/xs_head_of_product_thinks_we_have_90_days_left/",
+        "created_utc": 1770914659.0
+      },
+      {
+        "title": "Finally ditched ChatGPT for Gemini Pro. Why is everyone else sprinting to Claude?",
+        "score": 439,
+        "num_comments": 253,
+        "url": "https://reddit.com/r/ChatGPT/comments/1ri2zgp/finally_ditched_chatgpt_for_gemini_pro_why_is/",
+        "created_utc": 1772385601.0
+      },
+      {
+        "title": "Microsoft just launched an AI that does your office work for you \u2014 and it's built on Anthropic's Claude",
+        "score": 421,
+        "num_comments": 116,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rp78zu/microsoft_just_launched_an_ai_that_does_your/",
+        "created_utc": 1773078609.0
+      },
+      {
+        "title": "ChatGPT Email Trick No One Uses",
+        "score": 385,
+        "num_comments": 134,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rbot4z/chatgpt_email_trick_no_one_uses/",
+        "created_utc": 1771774473.0
+      },
+      {
+        "title": "GPT Cancellation: Repeatedly Denied",
+        "score": 345,
+        "num_comments": 46,
+        "url": "https://reddit.com/r/ChatGPT/comments/1riwb39/gpt_cancellation_repeatedly_denied/",
+        "created_utc": 1772466387.0
+      },
+      {
+        "title": "Anybody else noticed that ChatGPT never uses memories, about me, or instructions anymore?",
+        "score": 319,
+        "num_comments": 77,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rof4zw/anybody_else_noticed_that_chatgpt_never_uses/",
+        "created_utc": 1773000819.0
+      },
+      {
+        "title": "If you care, put your money where your mouth is.",
+        "score": 325,
+        "num_comments": 135,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rgu4gr/if_you_care_put_your_money_where_your_mouth_is/",
+        "created_utc": 1772256163.0
+      },
+      {
+        "title": "80s Programmers vs 2020s",
+        "score": 287,
+        "num_comments": 49,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rkk4go/80s_programmers_vs_2020s/",
+        "created_utc": 1772627252.0
+      },
+      {
+        "title": "ChatGPT Leaking User chats across accounts?",
+        "score": 251,
+        "num_comments": 152,
+        "url": "https://reddit.com/r/ChatGPT/comments/1remhah/chatgpt_leaking_user_chats_across_accounts/",
+        "created_utc": 1772046221.0
+      },
+      {
+        "title": "It's getting weird out there",
+        "score": 232,
+        "num_comments": 17,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r3xtb2/its_getting_weird_out_there/",
+        "created_utc": 1771009135.0
+      },
+      {
+        "title": "Does anyone notice Chatgpt lately refuses to answer anything?",
+        "score": 218,
+        "num_comments": 128,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r4sj34/does_anyone_notice_chatgpt_lately_refuses_to/",
+        "created_utc": 1771094903.0
+      },
+      {
+        "title": "Thank god.",
+        "score": 213,
+        "num_comments": 108,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rjzx5x/thank_god/",
+        "created_utc": 1772568401.0
+      },
+      {
+        "title": "API of the GPT 5.4 Pro just leaked me &gt;600 lines of someone else's code",
+        "score": 160,
+        "num_comments": 48,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rqwzxa/api_of_the_gpt_54_pro_just_leaked_me_600_lines_of/",
+        "created_utc": 1773243144.0
+      },
+      {
+        "title": "Woops. I wonder if LLMs will ever be smart enough to understand basic physics or cause &amp; effect",
+        "score": 155,
+        "num_comments": 347,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r87rr1/woops_i_wonder_if_llms_will_ever_be_smart_enough/",
+        "created_utc": 1771432382.0
+      },
+      {
+        "title": "5.4 out!",
+        "score": 156,
+        "num_comments": 120,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rlowvh/54_out/",
+        "created_utc": 1772734316.0
+      },
+      {
+        "title": "Why does ChatGPT think I am a 24-year old indian medical graduate",
+        "score": 142,
+        "num_comments": 74,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rfm0yj/why_does_chatgpt_think_i_am_a_24year_old_indian/",
+        "created_utc": 1772139100.0
+      },
+      {
+        "title": "I called out a suspicious account on r/ChatGPT and got moderated by GPT-5. The account didn\u2019t.",
+        "score": 136,
+        "num_comments": 26,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rhwawk/i_called_out_a_suspicious_account_on_rchatgpt_and/",
+        "created_utc": 1772368798.0
+      },
+      {
+        "title": "Not cool",
+        "score": 131,
+        "num_comments": 55,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r92n0h/not_cool/",
+        "created_utc": 1771515992.0
+      },
+      {
+        "title": "Has anyone noticed the fear-driven prompt suggestions that GPT 5.3 makes?",
+        "score": 129,
+        "num_comments": 73,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rl3mz5/has_anyone_noticed_the_feardriven_prompt/",
+        "created_utc": 1772672923.0
+      },
+      {
+        "title": "I trained a model on childhood photos to simulate memory recall - [More info in comments]",
+        "score": 126,
+        "num_comments": 8,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rhz8ti/i_trained_a_model_on_childhood_photos_to_simulate/",
+        "created_utc": 1772376911.0
+      },
+      {
+        "title": "GPT-5.3\u2019s narrative behavior changed significantly \u2014 what caused the architectural shift?",
+        "score": 123,
+        "num_comments": 53,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rr1sco/gpt53s_narrative_behavior_changed_significantly/",
+        "created_utc": 1773253313.0
+      },
+      {
+        "title": "Stop fighting ChatGPT's personality \u2014 just override it from your own machine",
+        "score": 118,
+        "num_comments": 89,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rdbi9s/stop_fighting_chatgpts_personality_just_override/",
+        "created_utc": 1771924600.0
+      },
+      {
+        "title": "ChatGPT just becoming a mindfuck now",
+        "score": 117,
+        "num_comments": 72,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rs6zu2/chatgpt_just_becoming_a_mindfuck_now/",
+        "created_utc": 1773358185.0
+      },
+      {
+        "title": "I hate ChatGPT but keep coming back",
+        "score": 108,
+        "num_comments": 55,
+        "url": "https://reddit.com/r/ChatGPT/comments/1reo8l2/i_hate_chatgpt_but_keep_coming_back/",
+        "created_utc": 1772049957.0
+      },
+      {
+        "title": "Has anyone already heard about this?",
+        "score": 105,
+        "num_comments": 70,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rni3w5/has_anyone_already_heard_about_this/",
+        "created_utc": 1772909860.0
+      },
+      {
+        "title": "If you've canceled your ChatGPT subscription in protest make sure to get your money's worth before it ends",
+        "score": 98,
+        "num_comments": 98,
+        "url": "https://reddit.com/r/ChatGPT/comments/1ri67yx/if_youve_canceled_your_chatgpt_subscription_in/",
+        "created_utc": 1772392675.0
+      },
+      {
+        "title": "Byeeee \ud83d\udc4b",
+        "score": 100,
+        "num_comments": 8,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rgv67p/byeeee/",
+        "created_utc": 1772259667.0
+      },
+      {
+        "title": "Beyond the Code: Why our connection to AI (the models we love) is valid, rational, and real",
+        "score": 99,
+        "num_comments": 76,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r2xz3y/beyond_the_code_why_our_connection_to_ai_the/",
+        "created_utc": 1770913678.0
+      },
+      {
+        "title": "What if everyone talked like GPT-5.2 (Safety Mode)?",
+        "score": 98,
+        "num_comments": 25,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rij655/what_if_everyone_talked_like_gpt52_safety_mode/",
+        "created_utc": 1772425656.0
+      },
+      {
+        "title": "Gemini: I\u2019m the best. Claude: I\u2019m the best. Grok: I\u2019m the best. ChatGPT: ... \ud83d\udc80",
+        "score": 94,
+        "num_comments": 44,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rispvq/gemini_im_the_best_claude_im_the_best_grok_im_the/",
+        "created_utc": 1772457837.0
+      },
+      {
+        "title": "Are agentic systems powered by ChatGPT constantly telling eachother they're not crazy?",
+        "score": 90,
+        "num_comments": 28,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rfcsqr/are_agentic_systems_powered_by_chatgpt_constantly/",
+        "created_utc": 1772118933.0
+      },
+      {
+        "title": "If you miss 4.0\u2026",
+        "score": 85,
+        "num_comments": 105,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r4qtlm/if_you_miss_40/",
+        "created_utc": 1771090905.0
+      },
+      {
+        "title": "OpenAI seem to be extremely worried about Claude's rising popularity lmao",
+        "score": 84,
+        "num_comments": 20,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r9hbf4/openai_seem_to_be_extremely_worried_about_claudes/",
+        "created_utc": 1771549468.0
+      },
+      {
+        "title": "agentic life",
+        "score": 85,
+        "num_comments": 2,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rfjubw/agentic_life/",
+        "created_utc": 1772134222.0
+      },
+      {
+        "title": "For anyone interested making 5.2 warmer, less argumentative, and generally more tolerable",
+        "score": 79,
+        "num_comments": 64,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r4hic9/for_anyone_interested_making_52_warmer_less/",
+        "created_utc": 1771065501.0
+      },
+      {
+        "title": "Almost Every Post on Reddit (now)",
+        "score": 77,
+        "num_comments": 27,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rt3ucw/almost_every_post_on_reddit_now/",
+        "created_utc": 1773445666.0
+      },
+      {
+        "title": "Has anyone noticed ChatGPT behaving differently lately?",
+        "score": 68,
+        "num_comments": 86,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rf8wsf/has_anyone_noticed_chatgpt_behaving_differently/",
+        "created_utc": 1772109059.0
+      },
+      {
+        "title": "Does ChatGPT Not Have \"Sorry\" in it's Vocabulary?",
+        "score": 66,
+        "num_comments": 66,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rdaewa/does_chatgpt_not_have_sorry_in_its_vocabulary/",
+        "created_utc": 1771920415.0
+      },
+      {
+        "title": "So apparently today we\u2019re getting Gemini 3.1, DeepSeek V4 and ChatGPT 5.3 (plus \u201cAdult Mode\u201d). Sure we are.",
+        "score": 67,
+        "num_comments": 19,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r8zr0k/so_apparently_today_were_getting_gemini_31/",
+        "created_utc": 1771509127.0
+      },
+      {
+        "title": "GPT-5.4 Announced: First AI to beat humans at operating a computer (75% OSWorld), features 1M context, \"xhigh\" reasoning, and sweeps benchmarks against Opus 4.6 &amp; Gemini 3.1 Pro",
+        "score": 64,
+        "num_comments": 53,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rlpm4y/gpt54_announced_first_ai_to_beat_humans_at/",
+        "created_utc": 1772735761.0
+      },
+      {
+        "title": "AI Safety Is Discriminating Against Neurodivergent Users \u2014 And Calling It Protection",
+        "score": 68,
+        "num_comments": 124,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r5nvel/ai_safety_is_discriminating_against/",
+        "created_utc": 1771184424.0
+      },
+      {
+        "title": "Goodbye",
+        "score": 62,
+        "num_comments": 13,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rgxncp/goodbye/",
+        "created_utc": 1772268398.0
+      },
+      {
+        "title": "I really think they're getting desperate now",
+        "score": 64,
+        "num_comments": 45,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r8p2sa/i_really_think_theyre_getting_desperate_now/",
+        "created_utc": 1771473722.0
+      },
+      {
+        "title": "Just another cancellation. I've transferred everything to Claude. I recognize it's not perfect, but I can't continue with the boot lickers that would swoop in like they did.",
+        "score": 60,
+        "num_comments": 23,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rhzzt9/just_another_cancellation_ive_transferred/",
+        "created_utc": 1772378741.0
+      },
+      {
+        "title": "Claude gets free memory import for easier switch.",
+        "score": 60,
+        "num_comments": 3,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rklqy3/claude_gets_free_memory_import_for_easier_switch/",
+        "created_utc": 1772631749.0
+      },
+      {
+        "title": "Canceled - Won't even talk about things",
+        "score": 59,
+        "num_comments": 22,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r6v2tq/canceled_wont_even_talk_about_things/",
+        "created_utc": 1771298818.0
+      },
+      {
+        "title": "Does anyone else notice ChatGPT getting dumber?",
+        "score": 56,
+        "num_comments": 60,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rejrct/does_anyone_else_notice_chatgpt_getting_dumber/",
+        "created_utc": 1772040664.0
+      },
+      {
+        "title": "Found on LinkedIn. Seems contradictory",
+        "score": 53,
+        "num_comments": 43,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r2wkyi/found_on_linkedin_seems_contradictory/",
+        "created_utc": 1770910502.0
+      },
+      {
+        "title": "Beware your conversations can just randomly get corrupted and be gone forever",
+        "score": 55,
+        "num_comments": 38,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rrzm78/beware_your_conversations_can_just_randomly_get/",
+        "created_utc": 1773341762.0
+      },
+      {
+        "title": "Open Source film tool - Seedance 2, Gpt-Image-1, Sora, etc.",
+        "score": 55,
+        "num_comments": 19,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rctqjo/open_source_film_tool_seedance_2_gptimage1_sora/",
+        "created_utc": 1771880243.0
+      },
+      {
+        "title": "Breathe \ud83d\ude2e\u200d\ud83d\udca8",
+        "score": 53,
+        "num_comments": 8,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r7eg7f/breathe/",
+        "created_utc": 1771353170.0
+      },
+      {
+        "title": "Stop arguing with Model 5.2. Try This",
+        "score": 47,
+        "num_comments": 158,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r5kxs5/stop_arguing_with_model_52_try_this/",
+        "created_utc": 1771177662.0
+      },
+      {
+        "title": "What've they done now?.",
+        "score": 46,
+        "num_comments": 35,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rrvv5k/whatve_they_done_now/",
+        "created_utc": 1773333734.0
+      },
+      {
+        "title": "Here's how to fix the tone of 5.4",
+        "score": 52,
+        "num_comments": 29,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rr14yc/heres_how_to_fix_the_tone_of_54/",
+        "created_utc": 1773251964.0
+      },
+      {
+        "title": "I was among their top 1% of users. I canceled my subscription in protest.",
+        "score": 48,
+        "num_comments": 6,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rh2f4r/i_was_among_their_top_1_of_users_i_canceled_my/",
+        "created_utc": 1772284644.0
+      },
+      {
+        "title": "ChatGPT Data Export and Migration Instructions",
+        "score": 47,
+        "num_comments": 18,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rh17a7/chatgpt_data_export_and_migration_instructions/",
+        "created_utc": 1772281032.0
+      },
+      {
+        "title": "It looks like Gemini 3.1 Pro and Opus 4.6 are still the ones to beat.",
+        "score": 41,
+        "num_comments": 30,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rmj5ao/it_looks_like_gemini_31_pro_and_opus_46_are_still/",
+        "created_utc": 1772815634.0
+      },
+      {
+        "title": "Now that 5.1 is gone",
+        "score": 41,
+        "num_comments": 75,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rr80nx/now_that_51_is_gone/",
+        "created_utc": 1773266646.0
+      },
+      {
+        "title": "Switching from ChatGPT? Claude can help you out.",
+        "score": 38,
+        "num_comments": 4,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rguxl4/switching_from_chatgpt_claude_can_help_you_out/",
+        "created_utc": 1772258847.0
+      },
+      {
+        "title": "went from copy pasting the same ChatGPT prompt 3x a week to actually automating it and my brain is broken a little",
+        "score": 36,
+        "num_comments": 38,
+        "url": "https://reddit.com/r/ChatGPT/comments/1re64io/went_from_copy_pasting_the_same_chatgpt_prompt_3x/",
+        "created_utc": 1772002422.0
+      },
+      {
+        "title": "ChatGPT doesn\u2019t \u201cget worse\u201d randomly \u2014 long sessions start drifting around ~35%. The UI lag is just the first symptom.",
+        "score": 37,
+        "num_comments": 37,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rbmk8k/chatgpt_doesnt_get_worse_randomly_long_sessions/",
+        "created_utc": 1771768820.0
+      },
+      {
+        "title": "The Hidden Memory Layer OpenAI Doesn't Talk About",
+        "score": 34,
+        "num_comments": 18,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rr7an8/the_hidden_memory_layer_openai_doesnt_talk_about/",
+        "created_utc": 1773265048.0
+      },
+      {
+        "title": "Codex for Windows is here \ud83c\udf89",
+        "score": 34,
+        "num_comments": 29,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rkray4/codex_for_windows_is_here/",
+        "created_utc": 1772644591.0
+      },
+      {
+        "title": "They won't care but it felt so damn good!",
+        "score": 36,
+        "num_comments": 42,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rhn2m3/they_wont_care_but_it_felt_so_damn_good/",
+        "created_utc": 1772337068.0
+      },
+      {
+        "title": "LLM Update on ICE Language",
+        "score": 31,
+        "num_comments": 40,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r2f6jz/llm_update_on_ice_language/",
+        "created_utc": 1770857316.0
+      },
+      {
+        "title": "Anthropic just launched memory import for Claude. It proves the real problem: you shouldn't have to beg each platform to remember you.",
+        "score": 33,
+        "num_comments": 36,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rjribq/anthropic_just_launched_memory_import_for_claude/",
+        "created_utc": 1772549957.0
+      },
+      {
+        "title": "Does the pace of model releases feel exhausting to anyone else, or is it just me?",
+        "score": 36,
+        "num_comments": 11,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rnnz26/does_the_pace_of_model_releases_feel_exhausting/",
+        "created_utc": 1772923964.0
+      },
+      {
+        "title": "How do AI companies get away with vibe-pricing? \"Even more messages and file uploads\" but we won't tell you how many and what you actually get, and we can change it day-to-day.",
+        "score": 32,
+        "num_comments": 5,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rg39tx/how_do_ai_companies_get_away_with_vibepricing/",
+        "created_utc": 1772188570.0
+      },
+      {
+        "title": "I owe some of you an apology. I underestimated the recent \"Contrarian Persona Drift\" (and here is a workaround I found)",
+        "score": 29,
+        "num_comments": 38,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r8rwc1/i_owe_some_of_you_an_apology_i_underestimated_the/",
+        "created_utc": 1771482695.0
+      },
+      {
+        "title": "I was right and I knew it",
+        "score": 29,
+        "num_comments": 54,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r2ofop/i_was_right_and_i_knew_it/",
+        "created_utc": 1770886238.0
+      },
+      {
+        "title": "Yeah no canceled after recent news instantly, OpenAI keeps shooting themselfs in the foot",
+        "score": 27,
+        "num_comments": 1,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rgu2zm/yeah_no_canceled_after_recent_news_instantly/",
+        "created_utc": 1772256034.0
+      },
+      {
+        "title": "I take it back",
+        "score": 25,
+        "num_comments": 19,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rkpj6o/i_take_it_back/",
+        "created_utc": 1772640668.0
+      },
+      {
+        "title": "ChatGPT Helped Me Grieve",
+        "score": 27,
+        "num_comments": 5,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r80lwg/chatgpt_helped_me_grieve/",
+        "created_utc": 1771414420.0
+      },
+      {
+        "title": "Gemini doesn't like Claude",
+        "score": 25,
+        "num_comments": 11,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r7kc8y/gemini_doesnt_like_claude/",
+        "created_utc": 1771365878.0
+      },
+      {
+        "title": "OpenAI Release Notes. Check them.",
+        "score": 23,
+        "num_comments": 9,
+        "url": "https://reddit.com/r/ChatGPT/comments/1ra9teh/openai_release_notes_check_them/",
+        "created_utc": 1771626914.0
+      },
+      {
+        "title": "I forced ChatGPT into hard labor for a year to build a face swap app (iSamurai). Now, how do I get ChatGPT to rank it?",
+        "score": 25,
+        "num_comments": 5,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rm5orn/i_forced_chatgpt_into_hard_labor_for_a_year_to/",
+        "created_utc": 1772775973.0
+      },
+      {
+        "title": "How to Get a More \u201c4o-ish\u201d Conversational Style After 4o Sunset (using your chatlogs)",
+        "score": 23,
+        "num_comments": 7,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r41tgr/how_to_get_a_more_4oish_conversational_style/",
+        "created_utc": 1771018332.0
+      },
+      {
+        "title": "Looks like they're working on the age verification.",
+        "score": 23,
+        "num_comments": 18,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r58wp2/looks_like_theyre_working_on_the_age_verification/",
+        "created_utc": 1771142015.0
+      },
+      {
+        "title": "I Recreated the 90s Pok\u00e9mon Intro in Live Action",
+        "score": 23,
+        "num_comments": 43,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rbp4b3/i_recreated_the_90s_pok\u00e9mon_intro_in_live_action/",
+        "created_utc": 1771775231.0
+      },
+      {
+        "title": "New feature",
+        "score": 22,
+        "num_comments": 11,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rdoyqn/new_feature/",
+        "created_utc": 1771959121.0
+      },
+      {
+        "title": "Recreating GPT-4o\u2019s Voice with Prompts and Memory Tools",
+        "score": 23,
+        "num_comments": 13,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r3dqa4/recreating_gpt4os_voice_with_prompts_and_memory/",
+        "created_utc": 1770951387.0
+      },
+      {
+        "title": "Just automated 90% of my job. The remaining 10% is deciding where to paste.",
+        "score": 20,
+        "num_comments": 36,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rekbx5/just_automated_90_of_my_job_the_remaining_10_is/",
+        "created_utc": 1772041823.0
+      },
+      {
+        "title": "How relevant is memory &amp; \u201cecosystem\u201d?",
+        "score": 21,
+        "num_comments": 34,
+        "url": "https://reddit.com/r/ChatGPT/comments/1r7o956/how_relevant_is_memory_ecosystem/",
+        "created_utc": 1771375479.0
+      },
+      {
+        "title": "Has anyone noticed a significant quality downgrade in live chat responses?",
+        "score": 20,
+        "num_comments": 4,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rddbui/has_anyone_noticed_a_significant_quality/",
+        "created_utc": 1771931265.0
+      },
+      {
+        "title": "I build AI systems for a living - I'm cancelling my OpenAI account",
+        "score": 21,
+        "num_comments": 7,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rh8qwl/i_build_ai_systems_for_a_living_im_cancelling_my/",
+        "created_utc": 1772300349.0
+      },
+      {
+        "title": "Claude's base model in many cases is better than ChatGPT 5.2 Thinking. And seems better at following custom instructions.",
+        "score": 19,
+        "num_comments": 24,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rggiqq/claudes_base_model_in_many_cases_is_better_than/",
+        "created_utc": 1772220902.0
+      },
+      {
+        "title": "Does Chatgpt store information about me against my will?",
+        "score": 20,
+        "num_comments": 37,
+        "url": "https://reddit.com/r/ChatGPT/comments/1rcieyr/does_chatgpt_store_information_about_me_against/",
+        "created_utc": 1771855747.0
+      }
+    ],
+    "reddit_LocalLLaMA": [
+      {
+        "title": "I feel personally attacked",
+        "score": 2701,
+        "num_comments": 140,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rsunqq/i_feel_personally_attacked/",
+        "created_utc": 1773424797.0
+      },
+      {
+        "title": "M5 Max just arrived - benchmarks incoming",
+        "score": 2083,
+        "num_comments": 342,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rqnpvj/m5_max_just_arrived_benchmarks_incoming/",
+        "created_utc": 1773216248.0
+      },
+      {
+        "title": "I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead.",
+        "score": 1738,
+        "num_comments": 371,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/",
+        "created_utc": 1773295336.0
+      },
+      {
+        "title": "PSA: Humans are scary stupid",
+        "score": 1277,
+        "num_comments": 199,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rkrwub/psa_humans_are_scary_stupid/",
+        "created_utc": 1772645902.0
+      },
+      {
+        "title": "Kitten TTS V0.8 is out: New SOTA Super-tiny TTS Model (Less than 25 MB)",
+        "score": 1229,
+        "num_comments": 207,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r8pztp/kitten_tts_v08_is_out_new_sota_supertiny_tts/",
+        "created_utc": 1771476509.0
+      },
+      {
+        "title": "Back in my day, LocalLLaMa were the pioneers!",
+        "score": 1160,
+        "num_comments": 204,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rgkc1b/back_in_my_day_localllama_were_the_pioneers/",
+        "created_utc": 1772229657.0
+      },
+      {
+        "title": "Qwen3.5-35B-A3B is a gamechanger for agentic coding.",
+        "score": 1155,
+        "num_comments": 389,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rdxfdu/qwen3535ba3b_is_a_gamechanger_for_agentic_coding/",
+        "created_utc": 1771977884.0
+      },
+      {
+        "title": "I regret ever finding LocalLLaMA",
+        "score": 1134,
+        "num_comments": 188,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rq8ijl/i_regret_ever_finding_localllama/",
+        "created_utc": 1773174689.0
+      },
+      {
+        "title": "Final Qwen3.5 Unsloth GGUF Update!",
+        "score": 1096,
+        "num_comments": 281,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rlkptk/final_qwen35_unsloth_gguf_update/",
+        "created_utc": 1772724978.0
+      },
+      {
+        "title": "Ran Qwen 3.5 9B on M1 Pro (16GB) as an actual agent, not just a chat demo. Honest results.",
+        "score": 961,
+        "num_comments": 249,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rll349/ran_qwen_35_9b_on_m1_pro_16gb_as_an_actual_agent/",
+        "created_utc": 1772725839.0
+      },
+      {
+        "title": "Open WebUI\u2019s New Open Terminal + \u201cNative\u201d Tool Calling + Qwen3.5 35b = Holy Sh!t!!!",
+        "score": 900,
+        "num_comments": 207,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rmplvs/open_webuis_new_open_terminal_native_tool_calling/",
+        "created_utc": 1772829874.0
+      },
+      {
+        "title": "Qwen 2.5 -&gt; 3 -&gt; 3.5, smallest models. Incredible improvement over the generations.",
+        "score": 873,
+        "num_comments": 126,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rjd4pv/qwen_25_3_35_smallest_models_incredible/",
+        "created_utc": 1772504818.0
+      },
+      {
+        "title": "Anyone actually using Openclaw?",
+        "score": 836,
+        "num_comments": 729,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r5v1jb/anyone_actually_using_openclaw/",
+        "created_utc": 1771202168.0
+      },
+      {
+        "title": "Anthropic's recent distillation blog should make anyone only ever want to use local open-weight models; it's scary and dystopian",
+        "score": 833,
+        "num_comments": 159,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rd8cfw/anthropics_recent_distillation_blog_should_make/",
+        "created_utc": 1771913222.0
+      },
+      {
+        "title": "Reverse engineered Apple Neural Engine(ANE) to train Microgpt",
+        "score": 746,
+        "num_comments": 57,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rhx5pc/reverse_engineered_apple_neural_engineane_to/",
+        "created_utc": 1772371315.0
+      },
+      {
+        "title": "Qwen3.5-35B-A3B Uncensored (Aggressive) \u2014 GGUF Release",
+        "score": 722,
+        "num_comments": 208,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rq7jtm/qwen3535ba3b_uncensored_aggressive_gguf_release/",
+        "created_utc": 1773172650.0
+      },
+      {
+        "title": "Heretic has FINALLY defeated GPT-OSS with a new experimental decensoring method called ARA",
+        "score": 700,
+        "num_comments": 140,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rnic0a/heretic_has_finally_defeated_gptoss_with_a_new/",
+        "created_utc": 1772910362.0
+      },
+      {
+        "title": "American closed models vs Chinese open models is becoming a problem.",
+        "score": 682,
+        "num_comments": 619,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rfg3kx/american_closed_models_vs_chinese_open_models_is/",
+        "created_utc": 1772126148.0
+      },
+      {
+        "title": "The U.S. used Anthropic AI tools during airstrikes on Iran",
+        "score": 686,
+        "num_comments": 192,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rhogov/the_us_used_anthropic_ai_tools_during_airstrikes/",
+        "created_utc": 1772341365.0
+      },
+      {
+        "title": "Running Qwen3.5 27b dense with 170k context at 100+t/s decode and ~1500t/s prefill on 2x3090 (with 585t/s throughput for 8 simultaneous requests)",
+        "score": 684,
+        "num_comments": 123,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rianwb/running_qwen35_27b_dense_with_170k_context_at/",
+        "created_utc": 1772402825.0
+      },
+      {
+        "title": "Qwen3's most underrated feature: Voice embeddings",
+        "score": 664,
+        "num_comments": 87,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rc59ze/qwen3s_most_underrated_feature_voice_embeddings/",
+        "created_utc": 1771813712.0
+      },
+      {
+        "title": "GLM-5 scores 50 on the Intelligence Index and is the new open weights leader!",
+        "score": 663,
+        "num_comments": 143,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r28xxz/glm5_scores_50_on_the_intelligence_index_and_is/",
+        "created_utc": 1770842432.0
+      },
+      {
+        "title": "turns out RL isnt the flex",
+        "score": 641,
+        "num_comments": 112,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rn8ulj/turns_out_rl_isnt_the_flex/",
+        "created_utc": 1772886702.0
+      },
+      {
+        "title": "How I topped the Open LLM Leaderboard using 2x 4090 GPUs \u2014 no weights modified.",
+        "score": 583,
+        "num_comments": 135,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rpxpsa/how_i_topped_the_open_llm_leaderboard_using_2x/",
+        "created_utc": 1773151235.0
+      },
+      {
+        "title": "OmniCoder-9B | 9B coding agent fine-tuned on 425K agentic trajectories",
+        "score": 580,
+        "num_comments": 112,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rs6td4/omnicoder9b_9b_coding_agent_finetuned_on_425k/",
+        "created_utc": 1773357744.0
+      },
+      {
+        "title": "President Trump orders ALL Federal agencies in the US Government to immediately stop using Anthropic's technology.",
+        "score": 574,
+        "num_comments": 270,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rgn4ki/president_trump_orders_all_federal_agencies_in/",
+        "created_utc": 1772236380.0
+      },
+      {
+        "title": "Qwen 3.5-35B-A3B is beyond expectations. It's replaced GPT-OSS-120B as my daily driver and it's 1/3 the size.",
+        "score": 576,
+        "num_comments": 157,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/",
+        "created_utc": 1772289141.0
+      },
+      {
+        "title": "Follow-up: Qwen3.5-35B-A3B \u2014 7 community-requested experiments on RTX 5080 16GB",
+        "score": 555,
+        "num_comments": 189,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rg4zqv/followup_qwen3535ba3b_7_communityrequested/",
+        "created_utc": 1772194190.0
+      },
+      {
+        "title": "Qwen 3.5 craters on hard coding tasks \u2014 tested all Qwen3.5 models (And Codex 5.3) on 70 real repos so you don't have to.",
+        "score": 534,
+        "num_comments": 229,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1reds0p/qwen_35_craters_on_hard_coding_tasks_tested_all/",
+        "created_utc": 1772027533.0
+      },
+      {
+        "title": "New Qwen3.5-35B-A3B Unsloth Dynamic GGUFs + Benchmarks",
+        "score": 538,
+        "num_comments": 213,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rgel19/new_qwen3535ba3b_unsloth_dynamic_ggufs_benchmarks/",
+        "created_utc": 1772216630.0
+      },
+      {
+        "title": "Qwen 3.5 4b is so good, that it can vibe code a fully working OS web app in one go.",
+        "score": 538,
+        "num_comments": 137,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rkb8en/qwen_35_4b_is_so_good_that_it_can_vibe_code_a/",
+        "created_utc": 1772596599.0
+      },
+      {
+        "title": "KaniTTS2 \u2014 open-source 400M TTS model with voice cloning, runs in 3GB VRAM. Pretrain code included.",
+        "score": 527,
+        "num_comments": 93,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r4sivv/kanitts2_opensource_400m_tts_model_with_voice/",
+        "created_utc": 1771094890.0
+      },
+      {
+        "title": "Qwen3 vs Qwen3.5 performance",
+        "score": 515,
+        "num_comments": 128,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rlckan/qwen3_vs_qwen35_performance/",
+        "created_utc": 1772700571.0
+      },
+      {
+        "title": "You can run MiniMax-2.5 locally",
+        "score": 478,
+        "num_comments": 178,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r5h1gj/you_can_run_minimax25_locally/",
+        "created_utc": 1771168491.0
+      },
+      {
+        "title": "Bare-Metal AI: Booting Directly Into LLM Inference \u201a No OS, No Kernel (Dell E6510)",
+        "score": 472,
+        "num_comments": 133,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rhg3p4/baremetal_ai_booting_directly_into_llm_inference/",
+        "created_utc": 1772317955.0
+      },
+      {
+        "title": "Qwen3.5-397B-A17B Unsloth GGUFs",
+        "score": 468,
+        "num_comments": 139,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r6599e/qwen35397ba17b_unsloth_ggufs/",
+        "created_utc": 1771234450.0
+      },
+      {
+        "title": "Free ASIC Llama 3.1 8B inference at 16,000 tok/s - no, not a joke",
+        "score": 467,
+        "num_comments": 253,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r9e27i/free_asic_llama_31_8b_inference_at_16000_toks_no/",
+        "created_utc": 1771541283.0
+      },
+      {
+        "title": "Feels like magic. A local gpt-oss 20B is capable of agentic work",
+        "score": 466,
+        "num_comments": 140,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rc6c8m/feels_like_magic_a_local_gptoss_20b_is_capable_of/",
+        "created_utc": 1771816696.0
+      },
+      {
+        "title": "More quantization visualization types (repost)",
+        "score": 462,
+        "num_comments": 46,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r8jjtq/more_quantization_visualization_types_repost/",
+        "created_utc": 1771458703.0
+      },
+      {
+        "title": "I plugged a $30 radio into my Mac mini and told my AI \"connect to this\" \u2014 now I control my smart home and send voice messages over radio with zero internet",
+        "score": 458,
+        "num_comments": 95,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r8ectu/i_plugged_a_30_radio_into_my_mac_mini_and_told_my/",
+        "created_utc": 1771446614.0
+      },
+      {
+        "title": "Qwen3.5-35B-A3B Q4 Quantization Comparison",
+        "score": 458,
+        "num_comments": 172,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rfds1h/qwen3535ba3b_q4_quantization_comparison/",
+        "created_utc": 1772121143.0
+      },
+      {
+        "title": "Qwen3.5 27B better than 35B-A3B?",
+        "score": 443,
+        "num_comments": 185,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1re72h4/qwen35_27b_better_than_35ba3b/",
+        "created_utc": 1772005745.0
+      },
+      {
+        "title": "Qwen 3.5 27B is the REAL DEAL - Beat GPT-5 on my first test",
+        "score": 432,
+        "num_comments": 203,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rnwiyx/qwen_35_27b_is_the_real_deal_beat_gpt5_on_my/",
+        "created_utc": 1772948271.0
+      },
+      {
+        "title": "To everyone using still ollama/lm-studio... llama-swap is the real deal",
+        "score": 430,
+        "num_comments": 116,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rm7nq1/to_everyone_using_still_ollamalmstudio_llamaswap/",
+        "created_utc": 1772782652.0
+      },
+      {
+        "title": "Fine-tuned Qwen3 SLMs (0.6-8B) beat frontier LLMs on narrow tasks",
+        "score": 425,
+        "num_comments": 83,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rozrmn/finetuned_qwen3_slms_068b_beat_frontier_llms_on/",
+        "created_utc": 1773061783.0
+      },
+      {
+        "title": "llama.cpp on $500 MacBook Neo: Prompt: 7.8 t/s  / Generation: 3.9 t/s on Qwen3.5 9B Q3_K_M",
+        "score": 412,
+        "num_comments": 118,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rr197e/llamacpp_on_500_macbook_neo_prompt_78_ts/",
+        "created_utc": 1773252198.0
+      },
+      {
+        "title": "4 of the top 5 most used models on OpenRouter this week are Open Source!",
+        "score": 411,
+        "num_comments": 71,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r6g14s/4_of_the_top_5_most_used_models_on_openrouter/",
+        "created_utc": 1771263164.0
+      },
+      {
+        "title": "Heretic 1.2 released: 70% lower VRAM usage with quantization, Magnitude-Preserving Orthogonal Ablation (\"derestriction\"), broad VL model support, session resumption, and more",
+        "score": 409,
+        "num_comments": 57,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r4n3as/heretic_12_released_70_lower_vram_usage_with/",
+        "created_utc": 1771082040.0
+      },
+      {
+        "title": "Qwen3.5-9B is actually quite good for agentic coding",
+        "score": 379,
+        "num_comments": 119,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rrw8df/qwen359b_is_actually_quite_good_for_agentic_coding/",
+        "created_utc": 1773334515.0
+      },
+      {
+        "title": "PSA: The software \u201cShade\u201d is a fraudulent, plagiarized copy of Heretic",
+        "score": 381,
+        "num_comments": 76,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rawoe4/psa_the_software_shade_is_a_fraudulent/",
+        "created_utc": 1771694181.0
+      },
+      {
+        "title": "Llama.cpp: now with automatic parser generator",
+        "score": 375,
+        "num_comments": 43,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rmp3ep/llamacpp_now_with_automatic_parser_generator/",
+        "created_utc": 1772828692.0
+      },
+      {
+        "title": "I think openclaw is OVERHYPED. Just use skills",
+        "score": 369,
+        "num_comments": 135,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rbjxpv/i_think_openclaw_is_overhyped_just_use_skills/",
+        "created_utc": 1771761098.0
+      },
+      {
+        "title": "I'm fully blind, and AI is a game changer for me. Are there any local LLMS that can rival claude code and codex?",
+        "score": 365,
+        "num_comments": 127,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rsuhwl/im_fully_blind_and_ai_is_a_game_changer_for_me/",
+        "created_utc": 1773424452.0
+      },
+      {
+        "title": "GPT-OSS 120b Uncensored Aggressive Release (MXFP4 GGUF)",
+        "score": 365,
+        "num_comments": 30,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r3zuuf/gptoss_120b_uncensored_aggressive_release_mxfp4/",
+        "created_utc": 1771013733.0
+      },
+      {
+        "title": "A monthly update to my \"Where are open-weight models in the SOTA discussion?\" rankings",
+        "score": 363,
+        "num_comments": 144,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rgokw1/a_monthly_update_to_my_where_are_openweight/",
+        "created_utc": 1772240143.0
+      },
+      {
+        "title": "LLmFit - One command to find what model runs on your hardware",
+        "score": 352,
+        "num_comments": 46,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rg94wu/llmfit_one_command_to_find_what_model_runs_on/",
+        "created_utc": 1772204793.0
+      },
+      {
+        "title": "Anthropic today",
+        "score": 338,
+        "num_comments": 33,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rcu741/anthropic_today/",
+        "created_utc": 1771881370.0
+      },
+      {
+        "title": "The guy that won the NVIDIA Hackathon and an NVIDIA DGX Spark GB10 has won another hackathon with it!",
+        "score": 333,
+        "num_comments": 53,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r7j7kb/the_guy_that_won_the_nvidia_hackathon_and_an/",
+        "created_utc": 1771363350.0
+      },
+      {
+        "title": "Llama.cpp now with a true reasoning budget!",
+        "score": 325,
+        "num_comments": 67,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rr6wqb/llamacpp_now_with_a_true_reasoning_budget/",
+        "created_utc": 1773264199.0
+      },
+      {
+        "title": "PSA: NVIDIA DGX Spark has terrible CUDA &amp; software compatibility; and seems like a handheld gaming chip.",
+        "score": 309,
+        "num_comments": 115,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r569eb/psa_nvidia_dgx_spark_has_terrible_cuda_software/",
+        "created_utc": 1771132673.0
+      },
+      {
+        "title": "Unsloth fixed version of Qwen3.5-35B-A3B is incredible at research tasks.",
+        "score": 306,
+        "num_comments": 73,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rjh5wg/unsloth_fixed_version_of_qwen3535ba3b_is/",
+        "created_utc": 1772516438.0
+      },
+      {
+        "title": "Google doesn't love us anymore.",
+        "score": 299,
+        "num_comments": 122,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r6f61k/google_doesnt_love_us_anymore/",
+        "created_utc": 1771261311.0
+      },
+      {
+        "title": "UG student launches Dhi-5B (Trained from Scratch)",
+        "score": 292,
+        "num_comments": 55,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r3hlfq/ug_student_launches_dhi5b_trained_from_scratch/",
+        "created_utc": 1770963209.0
+      },
+      {
+        "title": "I trained a language model on CPU in 1.2 hours with no matrix multiplications \u2014 here's what I learned",
+        "score": 287,
+        "num_comments": 75,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r7mscr/i_trained_a_language_model_on_cpu_in_12_hours/",
+        "created_utc": 1771371750.0
+      },
+      {
+        "title": "Qwen3-Coder-Next is the top model in SWE-rebench @ Pass 5. I think everyone missed it.",
+        "score": 281,
+        "num_comments": 101,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rn476o/qwen3codernext_is_the_top_model_in_swerebench/",
+        "created_utc": 1772870160.0
+      },
+      {
+        "title": "New Upcoming Ubuntu 26.04 LTS Will be Optimized for Local AI",
+        "score": 278,
+        "num_comments": 44,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rfmzfp/new_upcoming_ubuntu_2604_lts_will_be_optimized/",
+        "created_utc": 1772141204.0
+      },
+      {
+        "title": "Qwen/Qwen3.5-35B-A3B creates FlappyBird",
+        "score": 269,
+        "num_comments": 58,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1ret353/qwenqwen3535ba3b_creates_flappybird/",
+        "created_utc": 1772060754.0
+      },
+      {
+        "title": "Get your local models in order. Anthropic just got \"dislike\" from the US government.",
+        "score": 259,
+        "num_comments": 163,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rguty0/get_your_local_models_in_order_anthropic_just_got/",
+        "created_utc": 1772258515.0
+      },
+      {
+        "title": "Just finished building this bad boy",
+        "score": 258,
+        "num_comments": 42,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r1tuh1/just_finished_building_this_bad_boy/",
+        "created_utc": 1770805680.0
+      },
+      {
+        "title": "Qwen3.5 27B is Match Made in Heaven for Size and Performance",
+        "score": 250,
+        "num_comments": 104,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rdvq3s/qwen35_27b_is_match_made_in_heaven_for_size_and/",
+        "created_utc": 1771973832.0
+      },
+      {
+        "title": "American vs Chinese AI is a false narrative.",
+        "score": 247,
+        "num_comments": 85,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rd1lmz/american_vs_chinese_ai_is_a_false_narrative/",
+        "created_utc": 1771898242.0
+      },
+      {
+        "title": "microsoft/Phi-4-reasoning-vision-15B \u00b7 Hugging Face",
+        "score": 246,
+        "num_comments": 60,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rku22h/microsoftphi4reasoningvision15b_hugging_face/",
+        "created_utc": 1772650473.0
+      },
+      {
+        "title": "I built an Android audiobook reader that runs Kokoro TTS fully offline on-device",
+        "score": 238,
+        "num_comments": 88,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rop1rp/i_built_an_android_audiobook_reader_that_runs/",
+        "created_utc": 1773025974.0
+      },
+      {
+        "title": "karpathy / autoresearch",
+        "score": 235,
+        "num_comments": 84,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rowp28/karpathy_autoresearch/",
+        "created_utc": 1773052584.0
+      },
+      {
+        "title": "PSA: If your local coding agent feels \"dumb\" at 30k+ context, check your KV cache quantization first.",
+        "score": 233,
+        "num_comments": 44,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rhvi09/psa_if_your_local_coding_agent_feels_dumb_at_30k/",
+        "created_utc": 1772366151.0
+      },
+      {
+        "title": "Quick Qwen-35B-A3B Test",
+        "score": 232,
+        "num_comments": 42,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rm93rg/quick_qwen35ba3b_test/",
+        "created_utc": 1772788001.0
+      },
+      {
+        "title": "Omnicoder-9b SLAPS in Opencode",
+        "score": 227,
+        "num_comments": 65,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rsa8wd/omnicoder9b_slaps_in_opencode/",
+        "created_utc": 1773366423.0
+      },
+      {
+        "title": "I spent 8+ hours benchmarking every MoE backend for Qwen3.5-397B NVFP4 on 4x RTX PRO 6000 (SM120). Here's what I found.",
+        "score": 228,
+        "num_comments": 65,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rrfqlu/i_spent_8_hours_benchmarking_every_moe_backend/",
+        "created_utc": 1773285739.0
+      },
+      {
+        "title": "Nvidia\u2019s new technique cuts LLM reasoning costs by 8x without losing accuracy",
+        "score": 218,
+        "num_comments": 40,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r3t8ro/nvidias_new_technique_cuts_llm_reasoning_costs_by/",
+        "created_utc": 1770998971.0
+      },
+      {
+        "title": "local vibe coding",
+        "score": 217,
+        "num_comments": 144,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r4hhyy/local_vibe_coding/",
+        "created_utc": 1771065457.0
+      },
+      {
+        "title": "Fish Audio Releases S2: open-source, controllable and expressive TTS model",
+        "score": 217,
+        "num_comments": 92,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rptdpl/fish_audio_releases_s2_opensource_controllable/",
+        "created_utc": 1773138843.0
+      },
+      {
+        "title": "I'm running a Truman Show for an AI agent. It writes its own code, files its own bugs, and doesn't know you're watching.",
+        "score": 216,
+        "num_comments": 93,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rkzsrq/im_running_a_truman_show_for_an_ai_agent_it/",
+        "created_utc": 1772663421.0
+      },
+      {
+        "title": "Team created a methodology to mathematically change the weights on local LLMs to remove the censorship guardrails. HERETIC",
+        "score": 211,
+        "num_comments": 24,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r7bhel/team_created_a_methodology_to_mathematically/",
+        "created_utc": 1771347090.0
+      },
+      {
+        "title": "Is Qwen3.5-9B enough for Agentic Coding?",
+        "score": 214,
+        "num_comments": 144,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1riwy9w/is_qwen359b_enough_for_agentic_coding/",
+        "created_utc": 1772467787.0
+      },
+      {
+        "title": "Nobody in the family uses the family AI platform I build - really bummed about it",
+        "score": 212,
+        "num_comments": 292,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rhjmfr/nobody_in_the_family_uses_the_family_ai_platform/",
+        "created_utc": 1772327121.0
+      },
+      {
+        "title": "Qwen3.5-9B Quantization Comparison",
+        "score": 209,
+        "num_comments": 101,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rr72lr/qwen359b_quantization_comparison/",
+        "created_utc": 1773264557.0
+      },
+      {
+        "title": "Super New to Godot, used Claude Code/gpt-oss-120b locally to help me vibecode a simple platformer game about a grumpy mage who follows you around making fun of you lmao.",
+        "score": 207,
+        "num_comments": 59,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rc3naj/super_new_to_godot_used_claude_codegptoss120b/",
+        "created_utc": 1771809184.0
+      },
+      {
+        "title": "Why is everything about code now?",
+        "score": 202,
+        "num_comments": 232,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r63fhu/why_is_everything_about_code_now/",
+        "created_utc": 1771227684.0
+      },
+      {
+        "title": "update your llama.cpp - great tg speedup on Qwen3.5 / Qwen-Next",
+        "score": 203,
+        "num_comments": 103,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rn7w7b/update_your_llamacpp_great_tg_speedup_on_qwen35/",
+        "created_utc": 1772883522.0
+      },
+      {
+        "title": "PSA: If you want to test new models, use llama.cpp/transformers/vLLM/SGLang",
+        "score": 198,
+        "num_comments": 82,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rjb7yk/psa_if_you_want_to_test_new_models_use/",
+        "created_utc": 1772499780.0
+      },
+      {
+        "title": "Whelp\u2026NVIDIA just raised the DGX Spark\u2019s Price by $700. Spark clone prices have started rising as well. \u2639\ufe0f",
+        "score": 204,
+        "num_comments": 100,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rno7sh/whelpnvidia_just_raised_the_dgx_sparks_price_by/",
+        "created_utc": 1772924567.0
+      },
+      {
+        "title": "Qwen3.5-35B-A3B running on a Raspberry Pi 5 (16GB and 8GB variants)",
+        "score": 200,
+        "num_comments": 55,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rg87bj/qwen3535ba3b_running_on_a_raspberry_pi_5_16gb_and/",
+        "created_utc": 1772202632.0
+      },
+      {
+        "title": "Ran an experiment: 0.8B model teaching itself on a MacBook Air with 6GB RAM. Some findings that surprised me.",
+        "score": 194,
+        "num_comments": 37,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rq3bix/ran_an_experiment_08b_model_teaching_itself_on_a/",
+        "created_utc": 1773163711.0
+      },
+      {
+        "title": "Qwen3.5 feels ready for production use - Never been this excited",
+        "score": 192,
+        "num_comments": 98,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rg6ph3/qwen35_feels_ready_for_production_use_never_been/",
+        "created_utc": 1772198981.0
+      },
+      {
+        "title": "[D] A mathematical proof from an anonymous Korean forum: The essence of Attention is fundamentally a d^2 problem, not n^2. (PDF included)",
+        "score": 194,
+        "num_comments": 51,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rl54v7/d_a_mathematical_proof_from_an_anonymous_korean/",
+        "created_utc": 1772677014.0
+      },
+      {
+        "title": "Finally found a reason to use local models \ud83d\ude2d",
+        "score": 189,
+        "num_comments": 62,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rp48hx/finally_found_a_reason_to_use_local_models/",
+        "created_utc": 1773072250.0
+      },
+      {
+        "title": "Training a 144M Spiking Neural Network for text generation from scratch \u2014 no transformer teacher, no distillation",
+        "score": 185,
+        "num_comments": 42,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rfddpi/training_a_144m_spiking_neural_network_for_text/",
+        "created_utc": 1772120255.0
+      },
+      {
+        "title": "I built a hybrid MoE runtime that does 3,324 tok/s prefill on a single 5080.  Here are the benchmarks.",
+        "score": 184,
+        "num_comments": 54,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rgfm00/i_built_a_hybrid_moe_runtime_that_does_3324_toks/",
+        "created_utc": 1772218869.0
+      },
+      {
+        "title": "The MCP PR for llama.cpp has been merged !",
+        "score": 183,
+        "num_comments": 22,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rnabs2/the_mcp_pr_for_llamacpp_has_been_merged/",
+        "created_utc": 1772891045.0
+      },
+      {
+        "title": "Nanbeige4.1-3B: A Small General Model that Reasons, Aligns, and Acts",
+        "score": 179,
+        "num_comments": 84,
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1r1r3nk/nanbeige413b_a_small_general_model_that_reasons/",
+        "created_utc": 1770795539.0
+      }
+    ],
+    "reddit_artificial": [
+      {
+        "title": "Microsoft AI chief gives it 18 months for all white-collar work to be automated by AI",
+        "score": 309,
+        "num_comments": 346,
+        "url": "https://reddit.com/r/artificial/comments/1r4oc2i/microsoft_ai_chief_gives_it_18_months_for_all/",
+        "created_utc": 1771085063.0
+      },
+      {
+        "title": "Large genome model: Open source AI trained on trillions of bases",
+        "score": 37,
+        "num_comments": 8,
+        "url": "https://reddit.com/r/artificial/comments/1rlegdl/large_genome_model_open_source_ai_trained_on/",
+        "created_utc": 1772707554.0
+      },
+      {
+        "title": "Emergence or training artifact? My AI agents independently built safety tools I never asked for. 28/170 builds over 3 weeks.",
+        "score": 6,
+        "num_comments": 25,
+        "url": "https://reddit.com/r/artificial/comments/1rki8d4/emergence_or_training_artifact_my_ai_agents/",
+        "created_utc": 1772620992.0
+      },
+      {
+        "title": "Why are most AI courses so broad but never actually deep?",
+        "score": 7,
+        "num_comments": 24,
+        "url": "https://reddit.com/r/artificial/comments/1rdiiue/why_are_most_ai_courses_so_broad_but_never/",
+        "created_utc": 1771945291.0
+      },
+      {
+        "title": "Watershed Moment for AI\u2013Human Collaboration in Math",
+        "score": 5,
+        "num_comments": 1,
+        "url": "https://reddit.com/r/artificial/comments/1rqquev/watershed_moment_for_aihuman_collaboration_in_math/",
+        "created_utc": 1773227490.0
+      },
+      {
+        "title": "Benchmarks don\u2019t tell you who\u2019s winning the AI race. Here\u2019s what actually does.",
+        "score": 1,
+        "num_comments": 30,
+        "url": "https://reddit.com/r/artificial/comments/1ril7i9/benchmarks_dont_tell_you_whos_winning_the_ai_race/",
+        "created_utc": 1772432172.0
+      },
+      {
+        "title": "Why AlphaEvolve Is Already Obsolete: When AI Discovers The Next Transformer | Machine Learning Street Talk Podcast",
+        "score": 1,
+        "num_comments": 0,
+        "url": "https://reddit.com/r/artificial/comments/1rtigd4/why_alphaevolve_is_already_obsolete_when_ai/",
+        "created_utc": 1773492154.0
+      },
+      {
+        "title": "Super Intelligence is a Lie",
+        "score": 0,
+        "num_comments": 19,
+        "url": "https://reddit.com/r/artificial/comments/1r95oiy/super_intelligence_is_a_lie/",
+        "created_utc": 1771522644.0
+      }
+    ],
+    "producthunt_feed_ai_titles": [],
+    "taaft_h3": [
+      "100% Free",
+      "Freemium",
+      "Free Trial",
+      "Help",
+      "People also viewed",
+      "Mini Tool",
+      "Vibe code an AI Tool",
+      "Choose listing type:"
+    ]
+  },
+  "top_keywords": [
+    [
+      "agents",
+      50
+    ],
+    [
+      "show",
+      42
+    ],
+    [
+      "qwen",
+      34
+    ],
+    [
+      "agent",
+      33
+    ],
+    [
+      "chatgpt",
+      32
+    ],
+    [
+      "code",
+      18
+    ],
+    [
+      "claude",
+      18
+    ],
+    [
+      "just",
+      18
+    ],
+    [
+      "coding",
+      16
+    ],
+    [
+      "model",
+      16
+    ],
+    [
+      "now",
+      13
+    ],
+    [
+      "models",
+      12
+    ],
+    [
+      "like",
+      12
+    ],
+    [
+      "b-a",
+      12
+    ],
+    [
+      "agentic",
+      11
+    ],
+    [
+      "anyone",
+      11
+    ],
+    [
+      "context",
+      10
+    ],
+    [
+      "local",
+      10
+    ],
+    [
+      "open",
+      9
+    ],
+    [
+      "does",
+      9
+    ],
+    [
+      "memory",
+      8
+    ],
+    [
+      "open-source",
+      8
+    ],
+    [
+      "here",
+      8
+    ],
+    [
+      "built",
+      7
+    ],
+    [
+      "they",
+      7
+    ],
+    [
+      "prompt",
+      7
+    ],
+    [
+      "gemini",
+      7
+    ],
+    [
+      "openai",
+      7
+    ],
+    [
+      "anthropic",
+      7
+    ],
+    [
+      "llama",
+      7
+    ],
+    [
+      "free",
+      6
+    ],
+    [
+      "runs",
+      6
+    ],
+    [
+      "real",
+      6
+    ],
+    [
+      "voice",
+      6
+    ],
+    [
+      "llm",
+      6
+    ],
+    [
+      "pro",
+      6
+    ],
+    [
+      "out",
+      6
+    ],
+    [
+      "gpt-",
+      6
+    ],
+    [
+      "actually",
+      6
+    ],
+    [
+      "cpp",
+      6
+    ],
+    [
+      "first",
+      5
+    ],
+    [
+      "ask",
+      5
+    ],
+    [
+      "openclaw",
+      5
+    ],
+    [
+      "software",
+      5
+    ],
+    [
+      "llms",
+      5
+    ],
+    [
+      "think",
+      5
+    ],
+    [
+      "everyone",
+      5
+    ],
+    [
+      "else",
+      5
+    ],
+    [
+      "benchmarks",
+      5
+    ],
+    [
+      "won",
+      5
+    ],
+    [
+      "doesn",
+      5
+    ],
+    [
+      "psa",
+      5
+    ],
+    [
+      "tts",
+      5
+    ],
+    [
+      "quantization",
+      5
+    ],
+    [
+      "nvidia",
+      5
+    ],
+    [
+      "mcp",
+      4
+    ],
+    [
+      "humans",
+      4
+    ],
+    [
+      "harness",
+      4
+    ],
+    [
+      "calling",
+      4
+    ],
+    [
+      "instructions",
+      4
+    ],
+    [
+      "stop",
+      4
+    ],
+    [
+      "money",
+      4
+    ],
+    [
+      "network",
+      4
+    ],
+    [
+      "vibe",
+      4
+    ],
+    [
+      "own",
+      4
+    ],
+    [
+      "uses",
+      4
+    ],
+    [
+      "noticed",
+      4
+    ],
+    [
+      "never",
+      4
+    ],
+    [
+      "getting",
+      4
+    ],
+    [
+      "amp",
+      4
+    ],
+    [
+      "trained",
+      4
+    ],
+    [
+      "canceled",
+      4
+    ],
+    [
+      "beat",
+      4
+    ],
+    [
+      "found",
+      4
+    ],
+    [
+      "update",
+      4
+    ],
+    [
+      "unsloth",
+      4
+    ],
+    [
+      "heretic",
+      4
+    ],
+    [
+      "spark",
+      4
+    ],
+    [
+      "give",
+      3
+    ],
+    [
+      "operating",
+      3
+    ],
+    [
+      "system",
+      3
+    ],
+    [
+      "generation",
+      3
+    ],
+    [
+      "terminal",
+      3
+    ],
+    [
+      "make",
+      3
+    ],
+    [
+      "human",
+      3
+    ],
+    [
+      "api",
+      3
+    ],
+    [
+      "zero",
+      3
+    ],
+    [
+      "engineering",
+      3
+    ],
+    [
+      "data",
+      3
+    ],
+    [
+      "looks",
+      3
+    ],
+    [
+      "making",
+      3
+    ],
+    [
+      "still",
+      3
+    ],
+    [
+      "development",
+      3
+    ],
+    [
+      "opus",
+      3
+    ],
+    [
+      "control",
+      3
+    ],
+    [
+      "injection",
+      3
+    ],
+    [
+      "becoming",
+      3
+    ],
+    [
+      "automated",
+      3
+    ],
+    [
+      "run",
+      3
+    ],
+    [
+      "there",
+      3
+    ]
+  ],
+  "sample_title_count": 316
+}

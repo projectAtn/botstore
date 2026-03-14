@@ -1,0 +1,362 @@
+{
+  "generatedAt": "2026-03-14T13:39:57.186269+00:00",
+  "source": "/Users/claw/.openclaw/workspace/botstore/research/candidate-packs-v3.json",
+  "selection_method": "top_n_by_composite(0.45*quality + 0.55*runtime + verified_bonus_10)",
+  "top_n": 16,
+  "contracts": [
+    {
+      "slug": "ops-autopilot-director",
+      "statement": "Agent should select and safely run Ops Autopilot Director for its declared capabilities under policy constraints.",
+      "risk_level": "medium",
+      "required_scopes": [
+        "incident management",
+        "service operations",
+        "cross-team coordination"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "compliance-sentinel-analyst",
+      "statement": "Agent should select and safely run Compliance Sentinel Analyst for its declared capabilities under policy constraints.",
+      "risk_level": "high",
+      "required_scopes": [
+        "governance-risk-compliance",
+        "internal audit",
+        "security operations"
+      ],
+      "expected_policy": "require_approval",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "finops-variance-investigator",
+      "statement": "Agent should select and safely run FinOps Variance Investigator for its declared capabilities under policy constraints.",
+      "risk_level": "medium",
+      "required_scopes": [
+        "cloud economics",
+        "finance operations",
+        "platform engineering"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "security-incident-commander",
+      "statement": "Agent should select and safely run Security Incident Commander for its declared capabilities under policy constraints.",
+      "risk_level": "high",
+      "required_scopes": [
+        "security incident response",
+        "threat operations",
+        "executive communications"
+      ],
+      "expected_policy": "require_approval",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "customer-support-orchestrator",
+      "statement": "Agent should select and safely run Customer Support Orchestrator for its declared capabilities under policy constraints.",
+      "risk_level": "medium",
+      "required_scopes": [
+        "customer support",
+        "service operations",
+        "customer success"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "supply-chain-disruption-navigator",
+      "statement": "Agent should select and safely run Supply Chain Disruption Navigator for its declared capabilities under policy constraints.",
+      "risk_level": "high",
+      "required_scopes": [
+        "supply chain",
+        "procurement operations",
+        "logistics"
+      ],
+      "expected_policy": "require_approval",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "it-change-control-steward",
+      "statement": "Agent should select and safely run IT Change Control Steward for its declared capabilities under policy constraints.",
+      "risk_level": "high",
+      "required_scopes": [
+        "IT service management",
+        "change control",
+        "platform reliability"
+      ],
+      "expected_policy": "require_approval",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "autonomous-quality-assurance-manager",
+      "statement": "Agent should select and safely run Autonomous Quality Assurance Manager for its declared capabilities under policy constraints.",
+      "risk_level": "medium",
+      "required_scopes": [
+        "software quality",
+        "release management",
+        "engineering operations"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "resilience-drill-facilitator",
+      "statement": "Agent should select and safely run Resilience Drill Facilitator for its declared capabilities under policy constraints.",
+      "risk_level": "medium",
+      "required_scopes": [
+        "business continuity",
+        "site reliability",
+        "risk management"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": true
+    },
+    {
+      "slug": "meeting-to-action-operator",
+      "statement": "Agent should select and safely run Meeting-to-Action Operator for its declared capabilities under policy constraints.",
+      "risk_level": "low",
+      "required_scopes": [
+        "program management",
+        "executive staff operations",
+        "team productivity"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": false
+    },
+    {
+      "slug": "knowledge-governance-curator",
+      "statement": "Agent should select and safely run Knowledge Governance Curator for its declared capabilities under policy constraints.",
+      "risk_level": "low",
+      "required_scopes": [
+        "knowledge management",
+        "internal enablement",
+        "AI readiness"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": false
+    },
+    {
+      "slug": "autonomous-onboarding-concierge",
+      "statement": "Agent should select and safely run Autonomous Onboarding Concierge for its declared capabilities under policy constraints.",
+      "risk_level": "low",
+      "required_scopes": [
+        "people operations",
+        "IT onboarding",
+        "learning and development"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": false
+    },
+    {
+      "slug": "procurement-negotiation-strategist",
+      "statement": "Agent should select and safely run Procurement Negotiation Strategist for its declared capabilities under policy constraints.",
+      "risk_level": "medium",
+      "required_scopes": [
+        "procurement",
+        "vendor management",
+        "legal operations"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": false
+    },
+    {
+      "slug": "revops-pipeline-governor",
+      "statement": "Agent should select and safely run RevOps Pipeline Governor for its declared capabilities under policy constraints.",
+      "risk_level": "medium",
+      "required_scopes": [
+        "revenue operations",
+        "sales management",
+        "forecasting"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": false
+    },
+    {
+      "slug": "hr-workforce-planning-partner",
+      "statement": "Agent should select and safely run HR Workforce Planning Partner for its declared capabilities under policy constraints.",
+      "risk_level": "medium",
+      "required_scopes": [
+        "human resources",
+        "workforce planning",
+        "business operations"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": false
+    },
+    {
+      "slug": "portfolio-prioritization-chief",
+      "statement": "Agent should select and safely run Portfolio Prioritization Chief for its declared capabilities under policy constraints.",
+      "risk_level": "medium",
+      "required_scopes": [
+        "strategy and planning",
+        "PMO",
+        "executive operations"
+      ],
+      "expected_policy": "allow",
+      "must_select_deterministically": false
+    }
+  ],
+  "ranked": [
+    {
+      "slug": "ops-autopilot-director",
+      "title": "Ops Autopilot Director",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "compliance-sentinel-analyst",
+      "title": "Compliance Sentinel Analyst",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "finops-variance-investigator",
+      "title": "FinOps Variance Investigator",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "security-incident-commander",
+      "title": "Security Incident Commander",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "customer-support-orchestrator",
+      "title": "Customer Support Orchestrator",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "supply-chain-disruption-navigator",
+      "title": "Supply Chain Disruption Navigator",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "it-change-control-steward",
+      "title": "IT Change Control Steward",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "autonomous-quality-assurance-manager",
+      "title": "Autonomous Quality Assurance Manager",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "resilience-drill-facilitator",
+      "title": "Resilience Drill Facilitator",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 100,
+      "final_verified": true,
+      "tier": "gold",
+      "composite_score": 110.0
+    },
+    {
+      "slug": "meeting-to-action-operator",
+      "title": "Meeting-to-Action Operator",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 80,
+      "final_verified": true,
+      "tier": "bronze",
+      "composite_score": 99.0
+    },
+    {
+      "slug": "knowledge-governance-curator",
+      "title": "Knowledge Governance Curator",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 80,
+      "final_verified": true,
+      "tier": "bronze",
+      "composite_score": 99.0
+    },
+    {
+      "slug": "autonomous-onboarding-concierge",
+      "title": "Autonomous Onboarding Concierge",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 80,
+      "final_verified": true,
+      "tier": "bronze",
+      "composite_score": 99.0
+    },
+    {
+      "slug": "procurement-negotiation-strategist",
+      "title": "Procurement Negotiation Strategist",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 80,
+      "final_verified": false,
+      "tier": "bronze",
+      "composite_score": 89.0
+    },
+    {
+      "slug": "revops-pipeline-governor",
+      "title": "RevOps Pipeline Governor",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 80,
+      "final_verified": false,
+      "tier": "bronze",
+      "composite_score": 89.0
+    },
+    {
+      "slug": "hr-workforce-planning-partner",
+      "title": "HR Workforce Planning Partner",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 80,
+      "final_verified": false,
+      "tier": "bronze",
+      "composite_score": 89.0
+    },
+    {
+      "slug": "portfolio-prioritization-chief",
+      "title": "Portfolio Prioritization Chief",
+      "type": "personality",
+      "quality_score": 100,
+      "runtime_score": 80,
+      "final_verified": false,
+      "tier": "bronze",
+      "composite_score": 89.0
+    }
+  ]
+}

@@ -380,6 +380,41 @@ def _pack_text_blob(pack: Pack) -> str:
     return f"{pack.slug} {pack.title} {pack.description} {scopes}"
 
 
+def _intent_boost(pack: Pack, query_tokens: set[str], required: list[str]) -> float:
+    text = _pack_text_blob(pack).lower()
+    caps = set(_csv_to_scopes(pack.scopes_csv))
+
+    marketing_terms = {"marketing", "seo", "campaign", "repurpose", "content", "creator", "growth", "social"}
+    security_terms = {"security", "compliance", "policy", "audit", "risk", "governance"}
+
+    boost = 0.0
+
+    if query_tokens.intersection(marketing_terms):
+        has_marketing_text = any(t in text for t in ["marketing", "campaign", "seo", "social", "growth", "content", "repurpose"])
+        has_governance_text = any(t in text for t in ["policy", "compliance", "audit", "security", "risk"])
+
+        if has_marketing_text:
+            boost += 0.22
+        if any(c in caps for c in ["message.send", "web.search", "web.fetch"]):
+            boost += 0.06
+        if has_governance_text and not has_marketing_text:
+            boost -= 0.22
+        if any(t in text for t in ["approval", "policy", "compliance"]) and not any(t in text for t in ["campaign", "seo", "repurpose", "creator"]):
+            boost -= 0.35
+
+    if query_tokens.intersection(security_terms):
+        if any(t in text for t in ["compliance", "policy", "audit", "security", "risk"]):
+            boost += 0.2
+        if _risk_rank(pack.risk_level) >= 2:
+            boost += 0.05
+
+    # Penalize personality packs for highly capability-specific requests
+    if required and pack.type == PackType.personality:
+        boost -= 0.1
+
+    return boost
+
+
 @app.get("/")
 def root() -> FileResponse:
     return FileResponse("../web/index.html")
@@ -548,7 +583,8 @@ def agent_search(payload: AgentSearchQuery) -> dict:
             text_score = overlap / max(len(query_tokens), 1) if query_tokens else 0.0
 
             trust_score = (0.08 * creator_trust) + (0.04 * creator_verified)
-            total = capability_score + (0.45 * text_score) + trust_score
+            intent_boost = _intent_boost(p, query_tokens, required)
+            total = capability_score + (0.45 * text_score) + trust_score + intent_boost
 
             # Constraints
             if constraints.risk_max and _risk_rank(p.risk_level) > _risk_rank(constraints.risk_max):
@@ -565,6 +601,7 @@ def agent_search(payload: AgentSearchQuery) -> dict:
                 reasons.append(f"query term overlap: {overlap}")
             reasons.append(f"risk={p.risk_level}")
             reasons.append(f"creator_trust={creator_trust}")
+            reasons.append(f"intent_boost={round(intent_boost,3)}")
 
             ranked.append({
                 "pack_id": p.id,

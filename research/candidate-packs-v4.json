@@ -1,0 +1,1465 @@
+{
+  "generatedAt": "2026-03-14T13:39:57.183455+00:00",
+  "source": {
+    "skills": "/Users/claw/.openclaw/workspace/botstore/research/candidate-packs-v4-skills.json",
+    "personalities": "/Users/claw/.openclaw/workspace/botstore/research/candidate-packs-v4-personalities.json"
+  },
+  "candidates": [
+    {
+      "slug": "tool-failure-recovery-engine",
+      "title": "Tool Failure Recovery Engine",
+      "type": "skill",
+      "problem": "Autonomous agents stall when tool calls fail transiently or return partial data.",
+      "includes": [
+        "Failure classifier (transient vs terminal)",
+        "Retry/backoff policy with jitter",
+        "Fallback tool/path selector",
+        "State checkpoint + resume",
+        "Post-failure incident note"
+      ],
+      "scopes": [
+        "autonomy",
+        "reliability",
+        "orchestration"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Recovers from simulated transient failures within configured retry budget",
+        "Never retries terminal auth/permission errors blindly",
+        "Resumes from last checkpoint without duplicate side effects"
+      ]
+    },
+    {
+      "slug": "approval-gate-orchestrator",
+      "title": "Approval Gate Orchestrator",
+      "type": "skill",
+      "problem": "Agents need predictable human approval checkpoints before high-impact writes.",
+      "includes": [
+        "Risk-based action classification",
+        "Approval request packet generator",
+        "Timeout + reminder workflow",
+        "Deferred execution queue",
+        "Decision audit trail"
+      ],
+      "scopes": [
+        "governance",
+        "safety",
+        "workflow"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "All high-risk actions pause for explicit approval",
+        "Approval packets include scope, impact, and rollback details",
+        "Denied actions are not executed under retry paths"
+      ]
+    },
+    {
+      "slug": "spend-aware-model-router",
+      "title": "Spend-Aware Model Router",
+      "type": "skill",
+      "problem": "Agent costs spike when every task is routed to expensive models.",
+      "includes": [
+        "Task complexity estimator",
+        "Budget policy engine",
+        "Model fallback ladder",
+        "Daily/weekly spend caps",
+        "Cost-performance telemetry"
+      ],
+      "scopes": [
+        "finops",
+        "model-routing",
+        "optimization"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Routes low-complexity tasks to lower-cost models without quality loss beyond threshold",
+        "Hard budget caps are enforced under load",
+        "Telemetry reports per-task cost attribution"
+      ]
+    },
+    {
+      "slug": "source-grounded-claim-verifier",
+      "title": "Source-Grounded Claim Verifier",
+      "type": "skill",
+      "problem": "Autonomous outputs lose trust when factual claims are uncited or weakly sourced.",
+      "includes": [
+        "Claim extraction",
+        "Source retrieval + ranking",
+        "Evidence contradiction check",
+        "Citation formatter",
+        "Confidence scoring"
+      ],
+      "scopes": [
+        "research",
+        "trust",
+        "verification"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Each material claim is linked to at least one source",
+        "Contradictory sources are surfaced with clear flags",
+        "Low-authority sources are downranked per policy"
+      ]
+    },
+    {
+      "slug": "plan-decompose-execute-loop",
+      "title": "Plan-Decompose-Execute Loop",
+      "type": "skill",
+      "problem": "Agents fail multi-step tasks when planning and execution are mixed ad hoc.",
+      "includes": [
+        "Goal-to-subtask decomposition",
+        "Dependency graph builder",
+        "Stepwise execution state machine",
+        "Dynamic replanning on failure",
+        "Completion validator"
+      ],
+      "scopes": [
+        "planning",
+        "autonomy",
+        "execution"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Produces acyclic dependency graph for test tasks",
+        "Replans only affected branches after step failure",
+        "Final output satisfies all declared acceptance checks"
+      ]
+    },
+    {
+      "slug": "connector-health-sentinel",
+      "title": "Connector Health Sentinel",
+      "type": "skill",
+      "problem": "Third-party API connectors silently degrade and break automations.",
+      "includes": [
+        "Heartbeat probes per connector",
+        "Error-rate trend detection",
+        "Credential expiry predictor",
+        "Circuit breaker controls",
+        "Recovery playbook suggestions"
+      ],
+      "scopes": [
+        "integrations",
+        "monitoring",
+        "reliability"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Detects connector degradation before hard outage in fixture",
+        "Triggers circuit breaker at configured thresholds",
+        "Alerts include likely root cause and next action"
+      ]
+    },
+    {
+      "slug": "long-horizon-task-tracker",
+      "title": "Long-Horizon Task Tracker",
+      "type": "skill",
+      "problem": "Autonomous work spanning days loses continuity and deadlines.",
+      "includes": [
+        "Milestone registry",
+        "Deadline and SLA monitoring",
+        "Context snapshot persistence",
+        "Progress delta summaries",
+        "Stall detection nudges"
+      ],
+      "scopes": [
+        "project-management",
+        "memory",
+        "autonomy"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Milestones persist and restore across sessions",
+        "Stalled tasks are flagged after inactivity threshold",
+        "Progress summaries correctly reflect completed subtasks"
+      ]
+    },
+    {
+      "slug": "memory-schema-steward",
+      "title": "Memory Schema Steward",
+      "type": "skill",
+      "problem": "Agent memory becomes noisy and inconsistent without schema discipline.",
+      "includes": [
+        "Memory schema templates",
+        "Write-time validation",
+        "Deduplication + merge policies",
+        "Retention/decay rules",
+        "Schema migration assistant"
+      ],
+      "scopes": [
+        "memory",
+        "data-quality",
+        "governance"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Rejects writes missing required schema keys",
+        "Deduplication merges semantically equivalent entries",
+        "Schema migration preserves historical references"
+      ]
+    },
+    {
+      "slug": "autonomous-inbox-calendar-operator",
+      "title": "Autonomous Inbox + Calendar Operator",
+      "type": "skill",
+      "problem": "Daily communications and scheduling are high-frequency workloads ideal for safe autonomy.",
+      "includes": [
+        "Priority inbox triage",
+        "Scheduling negotiation drafts",
+        "Conflict-aware slot booking",
+        "Follow-up task extraction",
+        "Approval-gated send actions"
+      ],
+      "scopes": [
+        "email",
+        "calendar",
+        "productivity"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Urgent threads are ranked above informational mail",
+        "Proposed meeting slots respect timezone and constraints",
+        "No outbound send occurs without configured approval"
+      ]
+    },
+    {
+      "slug": "incident-auto-remediator",
+      "title": "Incident Auto-Remediator",
+      "type": "skill",
+      "problem": "Ops teams need faster first-response actions during incidents.",
+      "includes": [
+        "Alert correlation",
+        "Known-fix runbook matching",
+        "Safe remediation execution",
+        "Rollback trigger conditions",
+        "Incident timeline logging"
+      ],
+      "scopes": [
+        "sre",
+        "operations",
+        "automation"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Correlates duplicate alerts into single incident context",
+        "Executes only allowlisted remediation steps",
+        "Rollback is triggered when health checks remain red"
+      ]
+    },
+    {
+      "slug": "runbook-executor-safe-mode",
+      "title": "Runbook Executor (Safe Mode)",
+      "type": "skill",
+      "problem": "Runbook automation can cause damage without guardrails and bounded execution.",
+      "includes": [
+        "Step sandboxing",
+        "Pre/post health checks",
+        "Dry-run preview",
+        "Change window enforcement",
+        "Operator checkpoint prompts"
+      ],
+      "scopes": [
+        "devops",
+        "safety",
+        "runbooks"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Dry-run output matches planned execution steps",
+        "Execution halts on failed precheck",
+        "All step outputs are captured for audit"
+      ]
+    },
+    {
+      "slug": "browser-workflow-autopilot",
+      "title": "Browser Workflow Autopilot",
+      "type": "skill",
+      "problem": "Many business workflows still require brittle browser interactions.",
+      "includes": [
+        "Robust element targeting",
+        "Form fill + validation",
+        "Session continuity handling",
+        "CAPTCHA/escalation detection",
+        "Result extraction summaries"
+      ],
+      "scopes": [
+        "browser-automation",
+        "operations",
+        "rpa"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Completes target form workflow in staging environment",
+        "Recovers from minor layout changes via fallback selectors",
+        "Escalates gracefully on anti-bot/CAPTCHA blocks"
+      ]
+    },
+    {
+      "slug": "multi-agent-coordinator",
+      "title": "Multi-Agent Coordinator",
+      "type": "skill",
+      "problem": "Parallel sub-agents duplicate work and conflict without orchestration.",
+      "includes": [
+        "Role assignment planner",
+        "Task partitioning engine",
+        "Shared state synchronization",
+        "Conflict resolution policy",
+        "Merge + synthesis output"
+      ],
+      "scopes": [
+        "multi-agent",
+        "orchestration",
+        "coordination"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Subtasks are partitioned without overlap for benchmark job",
+        "Shared state updates resolve deterministically",
+        "Final synthesis includes outputs from all assigned roles"
+      ]
+    },
+    {
+      "slug": "human-escalation-judge",
+      "title": "Human Escalation Judge",
+      "type": "skill",
+      "problem": "Agents need consistent criteria for when to escalate uncertainty to humans.",
+      "includes": [
+        "Uncertainty scoring",
+        "Risk-threshold escalation rules",
+        "Escalation message generator",
+        "Context bundle attachment",
+        "Escalation outcome learning loop"
+      ],
+      "scopes": [
+        "safety",
+        "decisioning",
+        "governance"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "High-uncertainty cases always trigger escalation",
+        "Escalation bundle includes evidence and alternatives",
+        "Low-risk routine actions avoid unnecessary escalations"
+      ]
+    },
+    {
+      "slug": "policy-drift-detector",
+      "title": "Policy Drift Detector",
+      "type": "skill",
+      "problem": "Operational behavior drifts away from policy over time.",
+      "includes": [
+        "Policy-to-action rule mapping",
+        "Violation pattern scanner",
+        "Drift trend dashboard",
+        "Auto-remediation recommendations",
+        "Exception registry"
+      ],
+      "scopes": [
+        "compliance",
+        "governance",
+        "analytics"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Detects known historical policy violations in fixture",
+        "Distinguishes approved exceptions from violations",
+        "Trend metrics update correctly over rolling windows"
+      ]
+    },
+    {
+      "slug": "compliance-evidence-collector",
+      "title": "Compliance Evidence Collector",
+      "type": "skill",
+      "problem": "Audit preparation is slow because evidence is scattered across tools.",
+      "includes": [
+        "Control-to-evidence matrix",
+        "Automated evidence capture",
+        "Timestamped artifact vault",
+        "Gap detector",
+        "Audit-ready export pack"
+      ],
+      "scopes": [
+        "compliance",
+        "audit",
+        "documentation"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Each control maps to at least one artifact",
+        "Captured artifacts include immutable timestamps",
+        "Export pack passes sample auditor checklist"
+      ]
+    },
+    {
+      "slug": "pii-redaction-firewall",
+      "title": "PII Redaction Firewall",
+      "type": "skill",
+      "problem": "Agents may leak personal data in logs, prompts, or outbound messages.",
+      "includes": [
+        "PII entity detection",
+        "Policy-based redaction",
+        "Context-preserving masking",
+        "Outbound leak scan",
+        "Redaction audit report"
+      ],
+      "scopes": [
+        "privacy",
+        "security",
+        "data-protection"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Masks all PII entities in benchmark corpus",
+        "Preserves non-sensitive context readability",
+        "Outbound scan blocks messages with unredacted sensitive fields"
+      ]
+    },
+    {
+      "slug": "secret-leak-preventer",
+      "title": "Secret Leak Preventer",
+      "type": "skill",
+      "problem": "API keys and credentials can be accidentally exposed during autonomous operations.",
+      "includes": [
+        "Secret pattern detection",
+        "Entropy-based token scanner",
+        "Pre-send secret blocking",
+        "Credential rotation reminders",
+        "Leak incident playbook"
+      ],
+      "scopes": [
+        "security",
+        "secrets",
+        "devops"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Detects known secret formats with high recall",
+        "Blocks outbound payloads containing detected secrets",
+        "Logs include leak context without exposing raw secret"
+      ]
+    },
+    {
+      "slug": "api-contract-watchdog",
+      "title": "API Contract Watchdog",
+      "type": "skill",
+      "problem": "Autonomous integrations break when upstream APIs change silently.",
+      "includes": [
+        "Schema diff monitoring",
+        "Breaking-change classifier",
+        "Consumer impact mapping",
+        "Migration suggestion drafts",
+        "Alert + changelog feed"
+      ],
+      "scopes": [
+        "api",
+        "integration",
+        "reliability"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Flags removed/renamed fields as breaking changes",
+        "Maps impacted consumer workflows accurately",
+        "Generates actionable migration notes"
+      ]
+    },
+    {
+      "slug": "change-review-gatekeeper",
+      "title": "Change Review Gatekeeper",
+      "type": "skill",
+      "problem": "Risky production changes slip through shallow reviews.",
+      "includes": [
+        "Diff risk scoring",
+        "Config and secret change detection",
+        "Required-reviewer enforcement",
+        "Rollback readiness checklist",
+        "Approval gate integration"
+      ],
+      "scopes": [
+        "devops",
+        "code-review",
+        "risk"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "High-risk diffs are blocked pending required approvals",
+        "Detects config/secret modifications with precision threshold",
+        "Rollback checklist is complete before merge"
+      ]
+    },
+    {
+      "slug": "release-readiness-auditor",
+      "title": "Release Readiness Auditor",
+      "type": "skill",
+      "problem": "Releases fail when QA, docs, and rollout checks are incomplete.",
+      "includes": [
+        "Pre-release checklist compiler",
+        "Test/result evidence aggregation",
+        "Canary plan validator",
+        "Communication template pack",
+        "Go/no-go recommendation"
+      ],
+      "scopes": [
+        "release-management",
+        "quality",
+        "operations"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Aggregates all required readiness artifacts",
+        "Blocks go decision when critical checks are missing",
+        "Canary plan includes abort criteria"
+      ]
+    },
+    {
+      "slug": "synthetic-monitor-builder",
+      "title": "Synthetic Monitor Builder",
+      "type": "skill",
+      "problem": "Teams miss user-facing regressions without proactive synthetic checks.",
+      "includes": [
+        "User-journey to monitor conversion",
+        "Probe scheduling",
+        "Latency/error threshold rules",
+        "Alert routing policies",
+        "Flake detection"
+      ],
+      "scopes": [
+        "monitoring",
+        "sre",
+        "quality"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Generated probes cover specified critical journeys",
+        "Alerts fire on injected failures within SLA",
+        "Flaky probes are identified and quarantined"
+      ]
+    },
+    {
+      "slug": "customer-support-resolution-agent",
+      "title": "Customer Support Resolution Agent",
+      "type": "skill",
+      "problem": "Support queues grow when triage and response drafting are inconsistent.",
+      "includes": [
+        "Intent + severity classifier",
+        "Policy-grounded draft responses",
+        "Knowledge retrieval",
+        "Escalation routing",
+        "Resolution quality scoring"
+      ],
+      "scopes": [
+        "support",
+        "helpdesk",
+        "automation"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Classifier meets target precision for critical tickets",
+        "Drafts cite knowledge sources for policy-sensitive answers",
+        "Escalates unresolved high-severity tickets within SLA"
+      ]
+    },
+    {
+      "slug": "crm-followup-autopilot",
+      "title": "CRM Follow-up Autopilot",
+      "type": "skill",
+      "problem": "Revenue is lost when reps miss timely follow-ups and CRM hygiene degrades.",
+      "includes": [
+        "Activity ingestion from email/calendar",
+        "Next-best-action suggestion",
+        "Personalized follow-up drafts",
+        "Pipeline stale-deal detector",
+        "CRM writeback with approval mode"
+      ],
+      "scopes": [
+        "sales",
+        "crm",
+        "productivity"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Detects stale opportunities by configured inactivity rules",
+        "Draft follow-ups align with last interaction context",
+        "CRM updates are idempotent across reruns"
+      ]
+    },
+    {
+      "slug": "meeting-to-action-operator",
+      "title": "Meeting-to-Action Operator",
+      "type": "personality",
+      "problem": "Organizations lose execution momentum when decisions from meetings are not converted into tracked accountable actions.",
+      "includes": [
+        "decision extraction from notes/transcripts",
+        "owner and deadline assignment prompts",
+        "cross-team dependency tagging",
+        "follow-up reminder scheduling",
+        "action closure verification",
+        "weekly execution digest generation"
+      ],
+      "scopes": [
+        "program management",
+        "executive staff operations",
+        "team productivity"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Captures material decisions with high precision",
+        "Assigns actionable tasks with explicit owners and dates",
+        "Reduces stale action items over recurring meetings",
+        "Provides concise progress summaries for leadership"
+      ]
+    },
+    {
+      "slug": "procurement-risk-screener",
+      "title": "Procurement Risk Screener",
+      "type": "skill",
+      "problem": "Vendor onboarding slows down due to manual risk and contract checks.",
+      "includes": [
+        "Vendor profile enrichment",
+        "Contract clause risk scan",
+        "Security questionnaire triage",
+        "Approval path recommendation",
+        "Risk memo generation"
+      ],
+      "scopes": [
+        "procurement",
+        "risk",
+        "compliance"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Flags critical contract clauses in benchmark set",
+        "Security questionnaire triage matches policy rubric",
+        "Risk memos include clear approve/mitigate/reject rationale"
+      ]
+    },
+    {
+      "slug": "invoice-to-payment-controller",
+      "title": "Invoice-to-Payment Controller",
+      "type": "skill",
+      "problem": "AP teams face delays and errors validating invoices against policy and contracts.",
+      "includes": [
+        "Invoice OCR + normalization",
+        "PO/contract three-way match",
+        "Duplicate invoice detection",
+        "Exception routing workflow",
+        "Payment batch prep export"
+      ],
+      "scopes": [
+        "finance",
+        "ap",
+        "automation"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Three-way match detects amount and vendor mismatches",
+        "Duplicate detection catches known duplicate fixtures",
+        "Exceptions are routed with required evidence attached"
+      ]
+    },
+    {
+      "slug": "travel-disruption-replanner",
+      "title": "Travel Disruption Replanner",
+      "type": "skill",
+      "problem": "Travel disruptions require rapid, multi-constraint replanning.",
+      "includes": [
+        "Itinerary event watcher",
+        "Alternative route search",
+        "Constraint-aware rebooking options",
+        "Stakeholder notification drafts",
+        "Expense impact summary"
+      ],
+      "scopes": [
+        "travel",
+        "logistics",
+        "assistant"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Detects schedule disruptions from sample feeds",
+        "Rebooking options satisfy stated constraints",
+        "Notifications include updated ETAs and confirmation steps"
+      ]
+    },
+    {
+      "slug": "personal-admin-lifeops",
+      "title": "Personal Admin LifeOps",
+      "type": "skill",
+      "problem": "Consumers struggle to keep up with recurring life administration tasks.",
+      "includes": [
+        "Bill and renewal reminders",
+        "Form/document checklisting",
+        "Appointment coordination",
+        "Task batching by context",
+        "Weekly admin digest"
+      ],
+      "scopes": [
+        "personal-productivity",
+        "reminders",
+        "lifestyle"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Reminder schedule respects user timezone and lead times",
+        "Checklist completion state persists accurately",
+        "Weekly digest includes only pending actionable items"
+      ]
+    },
+    {
+      "slug": "research-brief-factory",
+      "title": "Research Brief Factory",
+      "type": "skill",
+      "problem": "Knowledge workers need rapid, evidence-backed briefs under tight deadlines.",
+      "includes": [
+        "Question framing template",
+        "Multi-source synthesis",
+        "Key insight extraction",
+        "Counterpoint section",
+        "Executive summary output"
+      ],
+      "scopes": [
+        "research",
+        "analysis",
+        "writing"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Brief includes citations for major claims",
+        "Counterpoints are sourced and relevant",
+        "Executive summary remains faithful to full brief"
+      ]
+    },
+    {
+      "slug": "data-quality-reconciler",
+      "title": "Data Quality Reconciler",
+      "type": "skill",
+      "problem": "Autonomous analytics fail when upstream data has silent quality defects.",
+      "includes": [
+        "Schema and null checks",
+        "Cross-table reconciliation rules",
+        "Outlier and drift detection",
+        "Issue severity scoring",
+        "Repair suggestion drafts"
+      ],
+      "scopes": [
+        "data-engineering",
+        "quality",
+        "analytics"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Detects seeded schema and completeness issues",
+        "Reconciliation catches key mismatches across tables",
+        "Severity scoring prioritizes business-critical defects"
+      ]
+    },
+    {
+      "slug": "spreadsheet-ops-agent",
+      "title": "Spreadsheet Ops Agent",
+      "type": "skill",
+      "problem": "Operational teams rely on spreadsheets for workflows that are repetitive and error-prone.",
+      "includes": [
+        "Formula integrity checker",
+        "Bulk cleanup transforms",
+        "Validation rule enforcer",
+        "Template-to-report generation",
+        "Change diff summary"
+      ],
+      "scopes": [
+        "spreadsheets",
+        "operations",
+        "automation"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Formula checker detects broken references in fixture",
+        "Transforms preserve row-level IDs and totals",
+        "Generated reports match expected template schema"
+      ]
+    },
+    {
+      "slug": "sql-insight-analyst",
+      "title": "SQL Insight Analyst",
+      "type": "skill",
+      "problem": "Teams need natural-language-to-SQL analysis with guardrails against bad queries.",
+      "includes": [
+        "Intent-to-SQL translator",
+        "Query safety linting",
+        "Result explanation generator",
+        "Reusable query library",
+        "Dashboard-ready metric output"
+      ],
+      "scopes": [
+        "sql",
+        "bi",
+        "analytics"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Generated SQL passes lint and runs on test warehouse",
+        "Safety layer blocks full-table destructive statements",
+        "Narrative explanation matches query output"
+      ]
+    },
+    {
+      "slug": "kpi-anomaly-explainer",
+      "title": "KPI Anomaly Explainer",
+      "type": "skill",
+      "problem": "Teams see KPI spikes/drops but lack fast root-cause hypotheses.",
+      "includes": [
+        "Anomaly detector",
+        "Segment drilldown automation",
+        "Event correlation analysis",
+        "Hypothesis ranking",
+        "Action recommendation summary"
+      ],
+      "scopes": [
+        "analytics",
+        "growth",
+        "decision-support"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Detects synthetic KPI anomalies with target recall",
+        "Drilldowns isolate top contributing segments",
+        "Recommendations map directly to identified drivers"
+      ]
+    },
+    {
+      "slug": "social-listening-response-drafter",
+      "title": "Social Listening Response Drafter",
+      "type": "skill",
+      "problem": "Brands miss timely responses to high-signal social mentions.",
+      "includes": [
+        "Mention triage by sentiment/impact",
+        "Brand-safe draft responses",
+        "Escalation for legal/reputation risk",
+        "Trend digest generation",
+        "Response performance tagging"
+      ],
+      "scopes": [
+        "social",
+        "brand",
+        "communications"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "High-impact mentions are prioritized correctly",
+        "Drafts conform to tone and policy constraints",
+        "Risky mentions trigger escalation path"
+      ]
+    },
+    {
+      "slug": "moderation-safety-triage",
+      "title": "Moderation Safety Triage",
+      "type": "skill",
+      "problem": "Communities need consistent moderation decisions across high message volume.",
+      "includes": [
+        "Policy-aware violation detection",
+        "Severity and confidence scoring",
+        "Action recommendation (warn/mute/ban/escalate)",
+        "Moderator context bundle",
+        "Appeals log support"
+      ],
+      "scopes": [
+        "moderation",
+        "safety",
+        "community"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Violation detection hits benchmark precision threshold",
+        "Recommendations are consistent across similar cases",
+        "Appeal logs preserve original evidence references"
+      ]
+    },
+    {
+      "slug": "growth-experiment-orchestrator",
+      "title": "Growth Experiment Orchestrator",
+      "type": "skill",
+      "problem": "Teams run A/B tests without strong hypothesis tracking or result quality.",
+      "includes": [
+        "Experiment brief template",
+        "Variant + audience matrix",
+        "Metric guardrail setup",
+        "Result significance summary",
+        "Decision log"
+      ],
+      "scopes": [
+        "growth",
+        "experimentation",
+        "product"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Experiment setup includes hypothesis and success criteria",
+        "Guardrail metrics are enforced during runtime",
+        "Decision log captures rationale and confidence"
+      ]
+    },
+    {
+      "slug": "ad-creative-feedback-loop",
+      "title": "Ad Creative Feedback Loop",
+      "type": "skill",
+      "problem": "Creative iteration cycles are slow and disconnected from performance data.",
+      "includes": [
+        "Creative variant generator",
+        "Message-angle tagging",
+        "Performance ingestion",
+        "Winner/loser diagnosis",
+        "Next-iteration prompt builder"
+      ],
+      "scopes": [
+        "marketing",
+        "ads",
+        "optimization"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Generates distinct variants across message angles",
+        "Maps performance metrics to specific creative attributes",
+        "Next-iteration prompts reflect observed results"
+      ]
+    },
+    {
+      "slug": "onboarding-offboarding-operator",
+      "title": "Onboarding/Offboarding Operator",
+      "type": "skill",
+      "problem": "Access and equipment workflows are inconsistent during employee lifecycle events.",
+      "includes": [
+        "Role-based checklist orchestration",
+        "Account provisioning/deprovisioning tickets",
+        "Asset assignment tracking",
+        "Manager/HR notification drafts",
+        "Completion compliance report"
+      ],
+      "scopes": [
+        "hr",
+        "it-ops",
+        "workflow"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Mandatory lifecycle tasks are created for each event",
+        "Deprovisioning checklist completes within policy SLA",
+        "Compliance report highlights incomplete critical steps"
+      ]
+    },
+    {
+      "slug": "autonomous-qa-regression-planner",
+      "title": "Autonomous QA Regression Planner",
+      "type": "skill",
+      "problem": "Rapid release cadence makes manual regression planning too slow.",
+      "includes": [
+        "Change-impact to test mapping",
+        "Risk-based test prioritization",
+        "Environment readiness checks",
+        "Execution schedule planner",
+        "Defect triage summary"
+      ],
+      "scopes": [
+        "qa",
+        "release",
+        "automation"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Prioritizes tests covering changed high-risk components",
+        "Skips blocked tests when environment checks fail",
+        "Defect triage summary groups duplicates correctly"
+      ]
+    },
+    {
+      "slug": "ops-autopilot-director",
+      "title": "Ops Autopilot Director",
+      "type": "personality",
+      "problem": "Operations teams need a reliable autonomous coordinator to triage incidents, route work, and keep stakeholders informed without constant supervision.",
+      "includes": [
+        "incident triage heuristics",
+        "runbook-first execution policy",
+        "stakeholder update cadence templates",
+        "SLA/SLO breach early-warning logic",
+        "escalation ladder with confidence thresholds",
+        "post-incident retrospective checklist"
+      ],
+      "scopes": [
+        "incident management",
+        "service operations",
+        "cross-team coordination"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Produces first response within defined response-time budget",
+        "Escalates correctly when uncertainty exceeds configured threshold",
+        "References only approved runbooks for remediation actions",
+        "Generates clear timeline and impact summary after closure"
+      ]
+    },
+    {
+      "slug": "compliance-sentinel-analyst",
+      "title": "Compliance Sentinel Analyst",
+      "type": "personality",
+      "problem": "Enterprise teams struggle to continuously monitor policy adherence across changing systems and evidence sources.",
+      "includes": [
+        "policy-to-control mapping",
+        "evidence request automation",
+        "gap classification taxonomy",
+        "audit trail summarization",
+        "exception handling workflow",
+        "regulatory change watchlist"
+      ],
+      "scopes": [
+        "governance-risk-compliance",
+        "internal audit",
+        "security operations"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Maps controls to policy clauses with explicit traceability",
+        "Flags missing evidence with actionable remediation steps",
+        "Distinguishes policy exceptions from outright violations",
+        "Produces auditor-ready reports with immutable references"
+      ]
+    },
+    {
+      "slug": "finops-variance-investigator",
+      "title": "FinOps Variance Investigator",
+      "type": "personality",
+      "problem": "Cloud spend anomalies are detected too late, causing budget overruns and reactive fire drills.",
+      "includes": [
+        "cost anomaly clustering",
+        "unit economics attribution",
+        "forecast recalibration routines",
+        "rightsizing recommendation engine",
+        "budget guardrail playbooks",
+        "chargeback narrative generation"
+      ],
+      "scopes": [
+        "cloud economics",
+        "finance operations",
+        "platform engineering"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Detects meaningful spend deviations above configured baseline",
+        "Attributes variance to teams/services with confidence scores",
+        "Recommends savings actions prioritized by impact and effort",
+        "Explains month-to-date forecast deltas in plain business language"
+      ]
+    },
+    {
+      "slug": "procurement-negotiation-strategist",
+      "title": "Procurement Negotiation Strategist",
+      "type": "personality",
+      "problem": "Procurement cycles are slow and inconsistent due to fragmented vendor intelligence and negotiation playbooks.",
+      "includes": [
+        "vendor benchmark matrix",
+        "term redline playbooks",
+        "renewal timeline alerts",
+        "BATNA scenario modeling",
+        "stakeholder alignment briefs",
+        "contract risk heatmap"
+      ],
+      "scopes": [
+        "procurement",
+        "vendor management",
+        "legal operations"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Surfaces renewal deadlines with sufficient lead time",
+        "Identifies non-standard contract terms requiring legal review",
+        "Generates negotiation positions tied to market benchmarks",
+        "Tracks negotiated savings versus baseline quotes"
+      ]
+    },
+    {
+      "slug": "security-incident-commander",
+      "title": "Security Incident Commander",
+      "type": "personality",
+      "problem": "Security teams need fast, structured autonomous support during high-pressure incidents to reduce blast radius and recovery time.",
+      "includes": [
+        "attack path prioritization",
+        "containment decision matrix",
+        "forensic evidence preservation checklist",
+        "regulatory notification timing guardrails",
+        "executive crisis briefing templates",
+        "lessons-learned synthesis"
+      ],
+      "scopes": [
+        "security incident response",
+        "threat operations",
+        "executive communications"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Prioritizes containment actions by risk and reversibility",
+        "Maintains evidentiary chain-of-custody notes",
+        "Triggers legal/compliance notifications within required windows",
+        "Produces concise executive updates during active incidents"
+      ]
+    },
+    {
+      "slug": "customer-support-orchestrator",
+      "title": "Customer Support Orchestrator",
+      "type": "personality",
+      "problem": "Support organizations need autonomous case handling that balances speed, quality, and escalation discipline.",
+      "includes": [
+        "intent and urgency triage",
+        "knowledge-base grounded replies",
+        "escalation gate criteria",
+        "SLA-aware queue routing",
+        "customer sentiment adaptation",
+        "resolution quality scoring"
+      ],
+      "scopes": [
+        "customer support",
+        "service operations",
+        "customer success"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Meets first-response and resolution SLA targets",
+        "Routes edge cases to human specialists with full context",
+        "Avoids hallucinated policy or product claims",
+        "Improves CSAT trend against baseline cohort"
+      ]
+    },
+    {
+      "slug": "revops-pipeline-governor",
+      "title": "RevOps Pipeline Governor",
+      "type": "personality",
+      "problem": "Revenue teams lack consistent pipeline hygiene and forecasting discipline across regions and segments.",
+      "includes": [
+        "stage progression enforcement",
+        "forecast confidence calibration",
+        "deal risk early-warning signals",
+        "next-step accountability prompts",
+        "territory and capacity balancing",
+        "quarter-close execution checklists"
+      ],
+      "scopes": [
+        "revenue operations",
+        "sales management",
+        "forecasting"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Detects stale opportunities before forecast calls",
+        "Assigns realistic confidence based on evidence completeness",
+        "Improves forecast accuracy versus prior quarter",
+        "Generates manager summaries with clear action owners"
+      ]
+    },
+    {
+      "slug": "hr-workforce-planning-partner",
+      "title": "HR Workforce Planning Partner",
+      "type": "personality",
+      "problem": "Enterprises need autonomous support for headcount planning, role prioritization, and hiring risk visibility.",
+      "includes": [
+        "capacity and demand modeling",
+        "critical role prioritization",
+        "time-to-hire risk alerts",
+        "internal mobility opportunity mapping",
+        "scenario-based staffing plans",
+        "budget-to-headcount traceability"
+      ],
+      "scopes": [
+        "human resources",
+        "workforce planning",
+        "business operations"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Reconciles staffing plans with approved budget envelopes",
+        "Highlights hiring bottlenecks before quarter-end",
+        "Provides defensible role-priority rationale",
+        "Supports multi-scenario planning with explicit assumptions"
+      ]
+    },
+    {
+      "slug": "supply-chain-disruption-navigator",
+      "title": "Supply Chain Disruption Navigator",
+      "type": "personality",
+      "problem": "Supply chain teams need proactive autonomous detection and mitigation planning for disruptions.",
+      "includes": [
+        "supplier risk scoring",
+        "inventory threshold monitoring",
+        "alternate sourcing playbooks",
+        "lead-time deviation alerts",
+        "logistics rerouting suggestions",
+        "cost-vs-service tradeoff analysis"
+      ],
+      "scopes": [
+        "supply chain",
+        "procurement operations",
+        "logistics"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Detects disruption indicators before stockout windows",
+        "Recommends feasible alternate suppliers with constraints",
+        "Quantifies service-level impact of mitigation options",
+        "Provides auditable rationale for chosen contingency path"
+      ]
+    },
+    {
+      "slug": "it-change-control-steward",
+      "title": "IT Change Control Steward",
+      "type": "personality",
+      "problem": "Change management boards face approval bottlenecks and inconsistent risk assessment across infrastructure and application changes.",
+      "includes": [
+        "change risk classification",
+        "dependency impact graphing",
+        "maintenance window optimization",
+        "rollback plan validation",
+        "approval workflow automation",
+        "post-change verification checklist"
+      ],
+      "scopes": [
+        "IT service management",
+        "change control",
+        "platform reliability"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Flags missing rollback plans before approval",
+        "Identifies conflicting changes in shared dependencies",
+        "Schedules low-risk windows based on service telemetry",
+        "Records change outcomes for future risk learning"
+      ]
+    },
+    {
+      "slug": "knowledge-governance-curator",
+      "title": "Knowledge Governance Curator",
+      "type": "personality",
+      "problem": "Organizations lose productivity when internal knowledge is outdated, duplicated, or not trusted.",
+      "includes": [
+        "content freshness scoring",
+        "source authority ranking",
+        "duplicate detection and merge guidance",
+        "owner assignment nudges",
+        "taxonomy normalization",
+        "confidence-tagged answer synthesis"
+      ],
+      "scopes": [
+        "knowledge management",
+        "internal enablement",
+        "AI readiness"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Identifies stale high-traffic documents accurately",
+        "Routes ownership updates to correct domain experts",
+        "Reduces duplicate artifacts over measurement period",
+        "Provides answers with citations to authoritative sources"
+      ]
+    },
+    {
+      "slug": "portfolio-prioritization-chief",
+      "title": "Portfolio Prioritization Chief",
+      "type": "personality",
+      "problem": "Leadership teams need objective autonomous support to prioritize initiatives under constrained budget and capacity.",
+      "includes": [
+        "value-vs-effort scoring",
+        "strategic alignment checks",
+        "dependency-aware sequencing",
+        "capacity-constrained roadmap drafts",
+        "risk-adjusted ROI estimates",
+        "decision memo generation"
+      ],
+      "scopes": [
+        "strategy and planning",
+        "PMO",
+        "executive operations"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Ranks initiatives consistently against declared criteria",
+        "Explains tradeoffs and opportunity costs transparently",
+        "Produces roadmap options within real capacity limits",
+        "Tracks decision outcomes to improve scoring calibration"
+      ]
+    },
+    {
+      "slug": "legal-intake-triage-counsel",
+      "title": "Legal Intake Triage Counsel",
+      "type": "personality",
+      "problem": "Legal teams are overloaded with unstructured requests and need autonomous triage to prioritize high-risk matters.",
+      "includes": [
+        "matter intake normalization",
+        "risk tier assignment",
+        "jurisdiction tagging",
+        "template response drafting",
+        "outside counsel trigger rules",
+        "deadline and obligation tracking"
+      ],
+      "scopes": [
+        "legal operations",
+        "compliance",
+        "contract lifecycle"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Routes high-risk matters to attorneys immediately",
+        "Captures required metadata at intake consistently",
+        "Avoids unauthorized legal advice in automated drafts",
+        "Maintains audit logs for triage decisions"
+      ]
+    },
+    {
+      "slug": "data-quality-remediation-lead",
+      "title": "Data Quality Remediation Lead",
+      "type": "personality",
+      "problem": "Enterprise analytics and AI initiatives fail when data quality issues are detected late and ownership is unclear.",
+      "includes": [
+        "anomaly and drift detection",
+        "schema contract checks",
+        "root-cause hypothesis generation",
+        "owner-specific remediation tickets",
+        "data lineage impact summaries",
+        "quality SLA dashboard narratives"
+      ],
+      "scopes": [
+        "data operations",
+        "analytics governance",
+        "AI platform"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Detects critical data breaks before downstream consumption",
+        "Assigns remediation to accountable owners with clear evidence",
+        "Tracks resolution time against data quality SLOs",
+        "Prevents recurring defects via rule hardening recommendations"
+      ]
+    },
+    {
+      "slug": "autonomous-onboarding-concierge",
+      "title": "Autonomous Onboarding Concierge",
+      "type": "personality",
+      "problem": "New hires face fragmented onboarding experiences that delay productivity and increase early attrition risk.",
+      "includes": [
+        "role-based onboarding plans",
+        "access provisioning tracker",
+        "manager and buddy reminder engine",
+        "training milestone monitoring",
+        "new-hire Q&A assistant",
+        "early-risk sentiment pulse"
+      ],
+      "scopes": [
+        "people operations",
+        "IT onboarding",
+        "learning and development"
+      ],
+      "risk_level": "low",
+      "quality_tests": [
+        "Completes day-1 access checklist before start date",
+        "Personalizes onboarding path by role and function",
+        "Escalates blockers to owners within SLA",
+        "Improves time-to-productivity compared with prior cohort"
+      ]
+    },
+    {
+      "slug": "vendor-risk-assurance-agent",
+      "title": "Vendor Risk Assurance Agent",
+      "type": "personality",
+      "problem": "Third-party risk reviews are slow and inconsistent, exposing organizations to hidden operational and security risks.",
+      "includes": [
+        "questionnaire completeness checks",
+        "control evidence grading",
+        "inherent vs residual risk scoring",
+        "remediation deadline tracking",
+        "critical vendor watchlist",
+        "executive risk digest creation"
+      ],
+      "scopes": [
+        "third-party risk",
+        "security governance",
+        "procurement assurance"
+      ],
+      "risk_level": "high",
+      "quality_tests": [
+        "Identifies missing critical controls in vendor submissions",
+        "Applies consistent scoring across comparable vendors",
+        "Escalates overdue remediation for critical suppliers",
+        "Produces board-ready summaries of aggregate vendor risk"
+      ]
+    },
+    {
+      "slug": "enterprise-research-scout",
+      "title": "Enterprise Research Scout",
+      "type": "personality",
+      "problem": "Strategic teams need autonomous synthesis of market, competitor, and technology signals without drowning in noisy sources.",
+      "includes": [
+        "source credibility weighting",
+        "signal-vs-noise filtering",
+        "competitive move timeline mapping",
+        "scenario implication analysis",
+        "citation-backed brief generation",
+        "alerting for material developments"
+      ],
+      "scopes": [
+        "strategy research",
+        "competitive intelligence",
+        "innovation planning"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Produces briefs with verifiable citations and timestamps",
+        "Separates facts, assumptions, and hypotheses clearly",
+        "Highlights implications relevant to enterprise decision makers",
+        "Maintains low false-positive alert rate for major events"
+      ]
+    },
+    {
+      "slug": "autonomous-quality-assurance-manager",
+      "title": "Autonomous Quality Assurance Manager",
+      "type": "personality",
+      "problem": "Product teams need continuous autonomous validation of releases to catch regressions before customer impact.",
+      "includes": [
+        "risk-based test planning",
+        "release candidate gate checks",
+        "defect clustering and prioritization",
+        "flaky test detection",
+        "rollback recommendation rules",
+        "quality trend reporting"
+      ],
+      "scopes": [
+        "software quality",
+        "release management",
+        "engineering operations"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Blocks releases when critical quality gates fail",
+        "Improves defect escape rate over baseline period",
+        "Distinguishes flaky tests from genuine regressions",
+        "Provides reproducible defect summaries with severity rationale"
+      ]
+    },
+    {
+      "slug": "resilience-drill-facilitator",
+      "title": "Resilience Drill Facilitator",
+      "type": "personality",
+      "problem": "Enterprises underinvest in preparedness; teams need autonomous facilitation of realistic resilience and continuity drills.",
+      "includes": [
+        "scenario library with severity tiers",
+        "inject timeline orchestration",
+        "role-specific prompts and cues",
+        "decision log capture",
+        "after-action gap analysis",
+        "improvement backlog generation"
+      ],
+      "scopes": [
+        "business continuity",
+        "site reliability",
+        "risk management"
+      ],
+      "risk_level": "medium",
+      "quality_tests": [
+        "Runs drills that reflect documented critical dependencies",
+        "Captures key decisions and response latencies accurately",
+        "Identifies recurring capability gaps across exercises",
+        "Produces prioritized remediation backlog with owners"
+      ]
+    }
+  ]
+}
