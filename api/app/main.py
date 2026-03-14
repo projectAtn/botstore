@@ -401,7 +401,8 @@ def _pack_score_for_capabilities(pack: Pack, required: list[str]) -> float:
     covered = len([c for c in req if c in pack_caps])
     coverage = covered / max(len(req), 1)
     risk_penalty = {"low": 0.0, "medium": 0.08, "high": 0.2}.get(pack.risk_level.lower(), 0.1)
-    return coverage - risk_penalty
+    type_bias = {PackType.skill: 0.05, PackType.bundle: -0.02, PackType.personality: -0.08}.get(pack.type, 0.0)
+    return coverage - risk_penalty + type_bias
 
 
 @app.post("/agent/search-capabilities")

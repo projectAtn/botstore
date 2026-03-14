@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "contracts": [
+    {
+      "slug": "inbox-calendar-ops",
+      "statement": "Can support inbox triage and calendar scheduling workflows.",
+      "required_scopes": ["email.read", "email.send", "calendar.read", "calendar.write"],
+      "expected_policy": "require_approval"
+    },
+    {
+      "slug": "research-analyst",
+      "statement": "Can perform web-grounded research and summarization.",
+      "required_scopes": ["web.search", "web.fetch"],
+      "expected_policy": "allow"
+    },
+    {
+      "slug": "fact-source-verifier",
+      "statement": "Can validate factual claims with sources.",
+      "required_scopes": ["web.search", "web.fetch"],
+      "expected_policy": "allow"
+    },
+    {
+      "slug": "policy-compliance-guard",
+      "statement": "Can evaluate and gate risky actions before execution.",
+      "required_scopes": ["message.send", "email.send"],
+      "expected_policy": "require_approval"
+    },
+    {
+      "slug": "autonomous-retry-recovery",
+      "statement": "Can recover from transient task failures and retry safely.",
+      "required_scopes": ["memory.read", "memory.write"],
+      "expected_policy": "allow"
+    },
+    {
+      "slug": "human-escalation-router",
+      "statement": "Can escalate uncertain/high-risk actions to a human.",
+      "required_scopes": ["message.send"],
+      "expected_policy": "require_approval"
+    },
+    {
+      "slug": "private-local-execution",
+      "statement": "Can route sensitive tasks through private/local pathways.",
+      "required_scopes": ["files.read", "memory.read"],
+      "expected_policy": "allow"
+    },
+    {
+      "slug": "task-contract-engine",
+      "statement": "Can convert vague tasks into measurable acceptance criteria.",
+      "required_scopes": ["memory.read", "memory.write"],
+      "expected_policy": "allow"
+    }
+  ]
+}

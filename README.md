@@ -55,6 +55,7 @@ Then open: `http://localhost:8787/docs`
 - Auto delist enforcement: `scripts/enforce_delist.py`
 - Verification policy: `docs/verification-tiers.md`
 - Pack test runner: `scripts/pack_test_runner.py` + `research/pack-test-report.md` + `research/pack-test-result.json`
+- Statement-based contract runner: `research/pack-performance-contracts.json` + `scripts/contract_task_runner.py` + `research/contract-task-report.md` + `research/contract-task-result.json`
 - Reddit/X demand scan notes: `research/reddit-x-skill-demand-2026-03-14.md`
 
 ## Next milestones

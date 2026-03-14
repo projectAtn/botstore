@@ -1,0 +1,249 @@
+{
+  "summary": {
+    "total": 8,
+    "pass": 8,
+    "avg_score": 81.2
+  },
+  "results": [
+    {
+      "slug": "inbox-calendar-ops",
+      "statement": "Can support inbox triage and calendar scheduling workflows.",
+      "pack_id": 2,
+      "pass": true,
+      "score": 100,
+      "checks": [
+        {
+          "name": "scope_coverage",
+          "pass": true,
+          "details": "required=['calendar.read', 'calendar.write', 'email.read', 'email.send'], pack=['calendar.read', 'calendar.write', 'email.read', 'email.send']"
+        },
+        {
+          "name": "policy_expectation",
+          "pass": true,
+          "details": "expected=require_approval, got=require_approval"
+        },
+        {
+          "name": "discoverable_by_required_capabilities",
+          "pass": true,
+          "details": "top_results=['inbox-calendar-ops', 'service-ops-verticals', 'founder-command-bundle', 'universal-connector-auth', 'human-escalation-router']"
+        },
+        {
+          "name": "install_by_capability_selects_pack",
+          "pass": true,
+          "details": "installed=['inbox-calendar-ops']"
+        }
+      ],
+      "latency_ms": 11.0
+    },
+    {
+      "slug": "research-analyst",
+      "statement": "Can perform web-grounded research and summarization.",
+      "pack_id": 3,
+      "pass": true,
+      "score": 100,
+      "checks": [
+        {
+          "name": "scope_coverage",
+          "pass": true,
+          "details": "required=['web.fetch', 'web.search'], pack=['files.read', 'web.fetch', 'web.search']"
+        },
+        {
+          "name": "policy_expectation",
+          "pass": true,
+          "details": "expected=allow, got=allow"
+        },
+        {
+          "name": "discoverable_by_required_capabilities",
+          "pass": true,
+          "details": "top_results=['research-analyst', 'quality-eval-gate', 'fact-source-verifier', 'browser-operator-pro', 'research-scholar-persona']"
+        },
+        {
+          "name": "install_by_capability_selects_pack",
+          "pass": true,
+          "details": "installed=['research-analyst']"
+        }
+      ],
+      "latency_ms": 5.7
+    },
+    {
+      "slug": "fact-source-verifier",
+      "statement": "Can validate factual claims with sources.",
+      "pack_id": 17,
+      "pass": true,
+      "score": 75,
+      "checks": [
+        {
+          "name": "scope_coverage",
+          "pass": true,
+          "details": "required=['web.fetch', 'web.search'], pack=['files.read', 'web.fetch', 'web.search']"
+        },
+        {
+          "name": "policy_expectation",
+          "pass": true,
+          "details": "expected=allow, got=allow"
+        },
+        {
+          "name": "discoverable_by_required_capabilities",
+          "pass": true,
+          "details": "top_results=['research-analyst', 'quality-eval-gate', 'fact-source-verifier', 'browser-operator-pro', 'research-scholar-persona']"
+        },
+        {
+          "name": "install_by_capability_selects_pack",
+          "pass": false,
+          "details": "installed=['research-analyst']"
+        }
+      ],
+      "latency_ms": 5.5
+    },
+    {
+      "slug": "policy-compliance-guard",
+      "statement": "Can evaluate and gate risky actions before execution.",
+      "pack_id": 19,
+      "pass": true,
+      "score": 75,
+      "checks": [
+        {
+          "name": "scope_coverage",
+          "pass": true,
+          "details": "required=['email.send', 'message.send'], pack=['email.send', 'files.read', 'files.write', 'message.send']"
+        },
+        {
+          "name": "policy_expectation",
+          "pass": true,
+          "details": "expected=require_approval, got=require_approval"
+        },
+        {
+          "name": "discoverable_by_required_capabilities",
+          "pass": true,
+          "details": "top_results=['human-escalation-router', 'policy-compliance-guard', 'inbox-calendar-ops', 'multi-agent-orchestrator', 'service-ops-verticals']"
+        },
+        {
+          "name": "install_by_capability_selects_pack",
+          "pass": false,
+          "details": "installed=['human-escalation-router']"
+        }
+      ],
+      "latency_ms": 6.6
+    },
+    {
+      "slug": "autonomous-retry-recovery",
+      "statement": "Can recover from transient task failures and retry safely.",
+      "pack_id": 21,
+      "pass": true,
+      "score": 75,
+      "checks": [
+        {
+          "name": "scope_coverage",
+          "pass": true,
+          "details": "required=['memory.read', 'memory.write'], pack=['files.write', 'memory.read', 'memory.write']"
+        },
+        {
+          "name": "policy_expectation",
+          "pass": true,
+          "details": "expected=allow, got=allow"
+        },
+        {
+          "name": "discoverable_by_required_capabilities",
+          "pass": true,
+          "details": "top_results=['capability-discovery-engine', 'memory-architect', 'task-decomposer', 'model-switchboard', 'cost-governor']"
+        },
+        {
+          "name": "install_by_capability_selects_pack",
+          "pass": false,
+          "details": "installed=['capability-discovery-engine']"
+        }
+      ],
+      "latency_ms": 5.4
+    },
+    {
+      "slug": "human-escalation-router",
+      "statement": "Can escalate uncertain/high-risk actions to a human.",
+      "pack_id": 22,
+      "pass": true,
+      "score": 75,
+      "checks": [
+        {
+          "name": "scope_coverage",
+          "pass": true,
+          "details": "required=['message.send'], pack=['email.send', 'memory.read', 'message.send']"
+        },
+        {
+          "name": "policy_expectation",
+          "pass": true,
+          "details": "expected=require_approval, got=require_approval"
+        },
+        {
+          "name": "discoverable_by_required_capabilities",
+          "pass": true,
+          "details": "top_results=['multi-agent-orchestrator', 'human-escalation-router', 'approval-policy-brain', 'policy-compliance-guard', 'research-analyst']"
+        },
+        {
+          "name": "install_by_capability_selects_pack",
+          "pass": false,
+          "details": "installed=['multi-agent-orchestrator']"
+        }
+      ],
+      "latency_ms": 6.5
+    },
+    {
+      "slug": "private-local-execution",
+      "statement": "Can route sensitive tasks through private/local pathways.",
+      "pack_id": 24,
+      "pass": true,
+      "score": 75,
+      "checks": [
+        {
+          "name": "scope_coverage",
+          "pass": true,
+          "details": "required=['files.read', 'memory.read'], pack=['files.read', 'files.write', 'memory.read']"
+        },
+        {
+          "name": "policy_expectation",
+          "pass": true,
+          "details": "expected=allow, got=allow"
+        },
+        {
+          "name": "discoverable_by_required_capabilities",
+          "pass": true,
+          "details": "top_results=['memory-architect', 'private-local-execution', 'research-analyst', 'capability-discovery-engine', 'task-decomposer']"
+        },
+        {
+          "name": "install_by_capability_selects_pack",
+          "pass": false,
+          "details": "installed=['memory-architect']"
+        }
+      ],
+      "latency_ms": 5.3
+    },
+    {
+      "slug": "task-contract-engine",
+      "statement": "Can convert vague tasks into measurable acceptance criteria.",
+      "pack_id": 26,
+      "pass": true,
+      "score": 75,
+      "checks": [
+        {
+          "name": "scope_coverage",
+          "pass": true,
+          "details": "required=['memory.read', 'memory.write'], pack=['memory.read', 'memory.write']"
+        },
+        {
+          "name": "policy_expectation",
+          "pass": true,
+          "details": "expected=allow, got=allow"
+        },
+        {
+          "name": "discoverable_by_required_capabilities",
+          "pass": true,
+          "details": "top_results=['capability-discovery-engine', 'memory-architect', 'task-decomposer', 'model-switchboard', 'cost-governor']"
+        },
+        {
+          "name": "install_by_capability_selects_pack",
+          "pass": false,
+          "details": "installed=['capability-discovery-engine']"
+        }
+      ],
+      "latency_ms": 5.8
+    }
+  ]
+}
