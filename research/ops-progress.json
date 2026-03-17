@@ -1,6 +1,6 @@
 {
   "phase": "execution",
-  "percent": 100,
-  "current_task": "runtime-target linking + conversational install UX implemented",
-  "next_task": "continuous v5 demand and pack pipeline"
+  "percent": 98,
+  "current_task": "post-patch r5 focused rechecks (alpha+charlie)",
+  "next_task": "final consolidated QA closure report"
 }

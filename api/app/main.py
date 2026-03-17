@@ -191,8 +191,8 @@ class AgentSearchConstraints(SQLModel):
 
 
 class AgentSearchQuery(SQLModel):
-    user_id: str
-    runtime: str
+    user_id: str = "anonymous"
+    runtime: str = "openclaw"
     runtime_version: Optional[str] = None
     query: str = ""
     missing_capabilities: list[str] = []
@@ -1126,22 +1126,46 @@ def bot_command(payload: BotCommandRequest, x_botstore_key: Optional[str] = Head
                 query=text,
                 missing_capabilities=[],
                 constraints=AgentSearchConstraints(risk_max="medium"),
-                limit=3,
+                limit=8,
             )
         )
-        results = suggestion.get("results", [])
+        raw_results = suggestion.get("results", [])
+        # Favor actionable installs for humans: skill/bundle only and query overlap > 0 when possible.
+        results = [
+            r
+            for r in raw_results
+            if not (r.get("type") == PackType.personality or str(r.get("type")).endswith("personality"))
+        ]
+        overlapped = [
+            r
+            for r in results
+            if any(("query term overlap:" in w) and (w.strip() != "query term overlap: 0") for w in r.get("why", []))
+        ]
+        if overlapped:
+            results = overlapped
+        results = results[:3]
+
         if not results:
             return BotCommandResponse(
-                message="I couldn't find a good match yet. Try rephrasing with what you want to do (e.g. 'schedule meetings and followups').",
+                message="I couldn't find a confident install match yet. Try wording your goal like: 'triage inbox and schedule meetings' or 'SEO and campaign orchestration'.",
                 action="assist_search",
             )
+
+        has_target = False
+        with Session(engine) as session:
+            has_target = _resolve_binding(session, payload.user_id) is not None
+
         lines = ["I found these packs for your request:"]
         buttons = []
         for r in results:
             lines.append(f"- {r['title']} ({r['slug']})")
             cb = f"bundle:{r['slug']}" if r.get("type") == PackType.bundle or str(r.get("type")).endswith("bundle") else f"install:{r['slug']}"
             buttons.append([{"text": f"Install {r['title']}", "callback_data": cb, "style": "primary"}])
+
+        if not has_target:
+            lines.append("\nBefore installing for live use, link your bot target: /link <runtime_id> <agent_id>")
         lines.append("Use /where to see exactly where installs are activated.")
+
         return BotCommandResponse(message="\n".join(lines), action="assist_search", data={"buttons": buttons})
 
     return BotCommandResponse(ok=False, message="Unknown command. Use /store, /install <slug>, /bundle <slug>, /approvals, /approve <id>, /reject <id>, /installs, /where, /link", action="help")
@@ -1371,6 +1395,15 @@ def install_pack(payload: InstallCreate) -> InstallResult:
         return _create_install(session, payload.user_id, pack, runtime_id=payload.runtime_id, agent_id=payload.agent_id)
 
 
+@app.post("/installs/by-slug/{slug}", response_model=InstallResult)
+def install_pack_by_slug(slug: str, user_id: str, runtime_id: Optional[str] = None, agent_id: Optional[str] = None) -> InstallResult:
+    with Session(engine) as session:
+        pack = _pack_by_slug(session, slug)
+        if not pack:
+            raise HTTPException(status_code=404, detail="pack slug not found")
+        return _create_install(session, user_id, pack, runtime_id=runtime_id, agent_id=agent_id)
+
+
 @app.post("/one-click-install/{pack_id}", response_model=InstallResult)
 def one_click_install(pack_id: int, user_id: str = "demo-user") -> InstallResult:
     with Session(engine) as session:
@@ -1515,5 +1548,16 @@ def decide_approval(approval_id: int, payload: ApprovalDecision) -> Approval:
         session.add(approval)
         session.add(install)
         session.commit()
+
+        # Refresh activation status after approval decision.
+        binding = _resolve_binding(session, install.user_id)
+        _upsert_install_activation(
+            session,
+            install,
+            install.user_id,
+            binding.runtime_id if binding else None,
+            binding.agent_id if binding else None,
+        )
+
         session.refresh(approval)
         return approval
