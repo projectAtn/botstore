@@ -50,10 +50,13 @@ Then open: `http://localhost:8787/docs`
 
 ## Agent-native endpoints (autonomous mode)
 - `POST /agent/search-capabilities`
+- `POST /agent/search`
 - `POST /agent/install-by-capability`
 - `POST /agent/policy-evaluate`
 - `POST /agent/outcome`
 - `GET /agent/compatibility/{pack_id}?runtime=<name>&version=<opt>`
+- Discovery endpoints: `GET /.well-known/botstore.json`, `GET /agent/capabilities-manifest`, `GET /llms.txt`
+- Bot discovery pack notes: `docs/bot-discovery-pack.md`
 - Autonomous-agent vision + architecture: `docs/botstore-v1-autonomous-agents.md`
 - Content system starter: `docs/content-strategy-v1.md`
 - Candidate pack quality gate: `research/candidate-packs-v1.json` + `scripts/quality_check_candidates.py` + `research/candidate-packs-quality-report.md`

@@ -7,7 +7,7 @@ from typing import Optional
 from fastapi import FastAPI, Header, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 from sqlmodel import Field, SQLModel, Session, create_engine, select
 
@@ -523,6 +523,99 @@ def set_ops_progress(payload: OpsProgressUpdate) -> OpsProgress:
         current_task=payload.current_task,
         next_task=payload.next_task,
     )
+
+
+@app.get("/.well-known/botstore.json")
+def botstore_well_known() -> dict:
+    return {
+        "name": "BotStore",
+        "description": "App store for autonomous agents: skills, personalities, trust gates, and safe installs.",
+        "version": app.version,
+        "discovery": {
+            "capabilities_manifest": "/agent/capabilities-manifest",
+            "openapi": "/openapi.json",
+            "llms": "/llms.txt",
+        },
+        "agent_endpoints": {
+            "search": "/agent/search",
+            "search_capabilities": "/agent/search-capabilities",
+            "install_by_capability": "/agent/install-by-capability",
+            "policy_evaluate": "/agent/policy-evaluate",
+            "compatibility": "/agent/compatibility/{pack_id}",
+            "outcome": "/agent/outcome",
+        },
+        "bot_endpoints": {
+            "command": "/bot/command",
+            "callback": "/bot/callback",
+            "where": "/where",
+            "bind_target": "/targets/bind",
+        },
+        "auth": {
+            "bot_endpoints_header": "X-Botstore-Key",
+            "agent_endpoints": "public-by-default (can be gateway-protected)",
+        },
+    }
+
+
+@app.get("/agent/capabilities-manifest")
+def agent_capabilities_manifest() -> dict:
+    canonical_caps = [
+        "memory.read",
+        "memory.write",
+        "files.read",
+        "files.write",
+        "files.delete",
+        "calendar.read",
+        "calendar.write",
+        "email.read",
+        "email.send",
+        "message.send",
+        "social.post",
+        "payment.charge",
+        "web.search",
+        "web.fetch",
+        "code.exec",
+        "policy.enforce",
+        "risk.evaluate",
+        "audit.log.read",
+        "audit.log.write",
+        "marketing.seo",
+        "marketing.content_repurpose",
+        "marketing.campaign_orchestration",
+        "marketing.analytics",
+    ]
+    return {
+        "manifest_version": "1.0",
+        "runtime": "botstore",
+        "capabilities": canonical_caps,
+        "aliases": CAPABILITY_ALIASES,
+        "risk_notes": {
+            "sensitive_scopes": sorted(SENSITIVE_SCOPES),
+            "approval_rule": "high risk or sensitive scopes require approval",
+        },
+    }
+
+
+@app.get("/llms.txt", response_class=PlainTextResponse)
+def llms_txt() -> str:
+    return """# BotStore
+BotStore is the app store for autonomous agents.
+
+## For agents
+Use these endpoints:
+- GET /.well-known/botstore.json
+- GET /agent/capabilities-manifest
+- POST /agent/search
+- POST /agent/install-by-capability
+- POST /agent/policy-evaluate
+- GET /agent/compatibility/{pack_id}
+- POST /agent/outcome
+
+## Notes
+- Use structured capabilities and constraints where possible.
+- For user-facing bot integrations use /bot/command and /bot/callback.
+- Use /where and /targets/bind for explicit runtime-target install visibility.
+"""
 
 
 @app.post("/creators", response_model=Creator)
