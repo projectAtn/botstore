@@ -45,6 +45,8 @@ Then open: `http://localhost:8787/docs`
 - See `docs/bot-commands.md` for Telegram-ready mapping details
 - Run `integrations/telegram_bridge.py` (or `integrations/run_telegram_bridge.sh`) for direct Telegram chat integration (see `docs/telegram-bridge.md`)
 - Integrate into existing bots with plugin adapter: `plugin/python/botstore_plugin.py` (see `docs/botstore-plugin.md`)
+- Adapter PoC roadmap (CopilotKit/Activepieces/E2B): `docs/plugin-adapters-roadmap-v1.md`
+- GitHub integration scoring shortlist: `research/github-integration-matrix-v1.md`
 
 ## Agent-native endpoints (autonomous mode)
 - `POST /agent/search-capabilities`
