@@ -321,7 +321,10 @@ app.mount("/web", StaticFiles(directory="../web", html=True), name="web")
 def _enforce_bot_auth(x_botstore_key: Optional[str]) -> None:
     required = os.getenv("BOTSTORE_BOT_KEY", "").strip()
     if required and x_botstore_key != required:
-        raise HTTPException(status_code=401, detail="unauthorized bot key")
+        raise HTTPException(
+            status_code=401,
+            detail="unauthorized bot key (set X-Botstore-Key header to the configured BOTSTORE_BOT_KEY)",
+        )
 
 
 def _scopes_to_csv(scopes: list[str]) -> str:
@@ -1136,7 +1139,8 @@ def bot_command(payload: BotCommandRequest, x_botstore_key: Optional[str] = Head
         buttons = []
         for r in results:
             lines.append(f"- {r['title']} ({r['slug']})")
-            buttons.append([{"text": f"Install {r['title']}", "callback_data": f"install:{r['slug']}", "style": "primary"}])
+            cb = f"bundle:{r['slug']}" if r.get("type") == PackType.bundle or str(r.get("type")).endswith("bundle") else f"install:{r['slug']}"
+            buttons.append([{"text": f"Install {r['title']}", "callback_data": cb, "style": "primary"}])
         lines.append("Use /where to see exactly where installs are activated.")
         return BotCommandResponse(message="\n".join(lines), action="assist_search", data={"buttons": buttons})
 
@@ -1197,8 +1201,17 @@ def _upsert_install_activation(
     if runtime_id and agent_id:
         row.runtime_id = runtime_id
         row.agent_id = agent_id
-        row.status = "activated"
-        row.message = f"Activated in runtime '{runtime_id}' for agent '{agent_id}'."
+        if install.status == InstallStatus.installed:
+            row.status = "activated"
+            row.message = f"Activated in runtime '{runtime_id}' for agent '{agent_id}'."
+        elif install.status == InstallStatus.pending_approval:
+            row.status = "pending_approval"
+            row.message = (
+                f"Target linked ({runtime_id}/{agent_id}) but activation is waiting for approval."
+            )
+        else:
+            row.status = "installed_registry"
+            row.message = f"Linked target ({runtime_id}/{agent_id}); install status is {install.status}."
     else:
         row.status = "installed_registry"
         row.message = "Installed in registry only (no runtime target linked)."
@@ -1218,24 +1231,44 @@ def _create_install(
 ) -> InstallResult:
     needs_approval = _requires_approval(pack)
     status = InstallStatus.pending_approval if needs_approval else InstallStatus.installed
-    install = Install(
-        user_id=user_id,
-        pack_id=pack.id or 0,
-        version=pack.version,
-        status=status,
-        approval_required=needs_approval,
-    )
-    session.add(install)
-    session.commit()
-    session.refresh(install)
+    existing = session.exec(
+        select(Install).where(
+            Install.user_id == user_id,
+            Install.pack_id == (pack.id or 0),
+            Install.status.in_([InstallStatus.installed, InstallStatus.pending_approval]),
+        )
+    ).first()
 
     approval_id = None
-    if needs_approval:
-        approval = Approval(install_id=install.id or 0, user_id=user_id, pack_id=pack.id or 0)
-        session.add(approval)
+    if existing:
+        install = existing
+        if install.status == InstallStatus.pending_approval:
+            pending = session.exec(
+                select(Approval).where(
+                    Approval.install_id == (install.id or 0),
+                    Approval.status == ApprovalStatus.pending,
+                )
+            ).first()
+            if pending:
+                approval_id = pending.id
+    else:
+        install = Install(
+            user_id=user_id,
+            pack_id=pack.id or 0,
+            version=pack.version,
+            status=status,
+            approval_required=needs_approval,
+        )
+        session.add(install)
         session.commit()
-        session.refresh(approval)
-        approval_id = approval.id
+        session.refresh(install)
+
+        if needs_approval:
+            approval = Approval(install_id=install.id or 0, user_id=user_id, pack_id=pack.id or 0)
+            session.add(approval)
+            session.commit()
+            session.refresh(approval)
+            approval_id = approval.id
 
     if not (runtime_id and agent_id):
         binding = _resolve_binding(session, user_id)
@@ -1291,6 +1324,12 @@ def bind_target(payload: UserRuntimeBindingCreate) -> UserRuntimeBinding:
         session.add(row)
         session.commit()
         session.refresh(row)
+
+        # Backfill activation visibility for existing installs of this user.
+        installs = list(session.exec(select(Install).where(Install.user_id == payload.user_id)).all())
+        for ins in installs:
+            _upsert_install_activation(session, ins, payload.user_id, row.runtime_id, row.agent_id)
+
         return row
 
 
@@ -1410,6 +1449,9 @@ def get_install_activation(install_id: int) -> InstallActivation:
 @app.get("/installs/{install_id}/setup", response_model=InstallSetup)
 def get_install_setup(install_id: int) -> InstallSetup:
     with Session(engine) as session:
+        install = session.get(Install, install_id)
+        if not install:
+            raise HTTPException(status_code=404, detail="install not found")
         setup = session.exec(select(InstallSetup).where(InstallSetup.install_id == install_id)).first()
         if setup:
             return setup
