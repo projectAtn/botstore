@@ -1,8 +1,12 @@
 from dataclasses import dataclass
 from typing import Any, Dict
 
-from ..botstore_plugin import BotStorePlugin
-from .base import AdapterResult
+try:
+    from ..botstore_plugin import BotStorePlugin
+    from .base import AdapterResult
+except Exception:  # pragma: no cover
+    from botstore_plugin import BotStorePlugin
+    from adapters.base import AdapterResult
 
 
 @dataclass

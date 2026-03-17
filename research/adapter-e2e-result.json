@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-03-17T07:51:55.949195+00:00",
+  "api": "http://127.0.0.1:8787",
+  "user_id": "telegram:botstore_demo:1001",
+  "bind": {
+    "id": 3,
+    "agent_id": "demo-agent",
+    "is_default": true,
+    "channel": "telegram",
+    "user_id": "telegram:botstore_demo:1001",
+    "runtime_id": "openclaw-main"
+  },
+  "top_result_slug": "service-ops-verticals",
+  "install": {
+    "ok": true,
+    "message": "Install pending approval #25",
+    "action": "approval_pending",
+    "data": {
+      "approval_id": 25
+    }
+  },
+  "where": {
+    "ok": true,
+    "message": "Where packs are installed:\n- service-ops-verticals: activated \u2192 openclaw-main/demo-agent\n- service-ops-verticals: activated \u2192 openclaw-main/demo-agent",
+    "action": "where",
+    "data": {
+      "count": 2
+    }
+  }
+}
