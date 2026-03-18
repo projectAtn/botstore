@@ -1,0 +1,28 @@
+{
+  "next10": [
+    "rag-index-maintainer",
+    "knowledge-base-curator",
+    "citation-verifier",
+    "cloud-cost-analyzer",
+    "github-pr-review-assistant",
+    "incident-triage-commander",
+    "telegram-community-manager",
+    "discord-community-manager",
+    "whatsapp-support-copilot",
+    "podcast-to-clips"
+  ],
+  "created": [
+    "rag-index-maintainer",
+    "knowledge-base-curator",
+    "citation-verifier",
+    "cloud-cost-analyzer",
+    "github-pr-review-assistant",
+    "incident-triage-commander",
+    "telegram-community-manager",
+    "discord-community-manager",
+    "whatsapp-support-copilot",
+    "podcast-to-clips"
+  ],
+  "skipped": [],
+  "failed": []
+}

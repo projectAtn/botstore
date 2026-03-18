@@ -1,0 +1,253 @@
+{
+  "generatedAt": "2026-03-18T07:02:15.890503+00:00",
+  "batch": [
+    "citation-verifier",
+    "cloud-cost-analyzer",
+    "discord-community-manager",
+    "github-pr-review-assistant",
+    "incident-triage-commander",
+    "knowledge-base-curator",
+    "podcast-to-clips",
+    "rag-index-maintainer",
+    "telegram-community-manager",
+    "whatsapp-support-copilot"
+  ],
+  "agents": {
+    "delta-research": {
+      "intent": "need source-grounded research with citations and maintained RAG index",
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "research-analyst",
+          "score": 0.65,
+          "risk": null
+        },
+        {
+          "rank": 2,
+          "slug": "memory-architect",
+          "score": 0.65,
+          "risk": null
+        },
+        {
+          "rank": 3,
+          "slug": "error-recovery-self-heal",
+          "score": 0.65,
+          "risk": null
+        },
+        {
+          "rank": 4,
+          "slug": "quality-eval-gate",
+          "score": 0.65,
+          "risk": null
+        },
+        {
+          "rank": 5,
+          "slug": "fact-source-verifier",
+          "score": 0.65,
+          "risk": null
+        },
+        {
+          "rank": 6,
+          "slug": "tool-health-monitor",
+          "score": 0.65,
+          "risk": null
+        },
+        {
+          "rank": 7,
+          "slug": "crm-sync-bidirectional",
+          "score": 0.65,
+          "risk": null
+        },
+        {
+          "rank": 8,
+          "slug": "calendar-ops-coordinator",
+          "score": 0.65,
+          "risk": null
+        },
+        {
+          "rank": 9,
+          "slug": "log-anomaly-sleuth",
+          "score": 0.65,
+          "risk": null
+        },
+        {
+          "rank": 10,
+          "slug": "shortform-content-factory",
+          "score": 0.65,
+          "risk": null
+        }
+      ],
+      "batch_hits": [],
+      "batch_hit_count": 0,
+      "top3_batch_hits": 0
+    },
+    "echo-community": {
+      "intent": "run community support across telegram discord whatsapp and deflect repetitive questions",
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "multi-agent-orchestrator",
+          "score": 1.07,
+          "risk": null
+        },
+        {
+          "rank": 2,
+          "slug": "telegram-community-manager",
+          "score": 1.07,
+          "risk": null
+        },
+        {
+          "rank": 3,
+          "slug": "discord-community-manager",
+          "score": 1.07,
+          "risk": null
+        },
+        {
+          "rank": 4,
+          "slug": "whatsapp-support-copilot",
+          "score": 1.07,
+          "risk": null
+        },
+        {
+          "rank": 5,
+          "slug": "policy-compliance-guard",
+          "score": 0.7767,
+          "risk": null
+        },
+        {
+          "rank": 6,
+          "slug": "human-escalation-router",
+          "score": 0.7367,
+          "risk": null
+        },
+        {
+          "rank": 7,
+          "slug": "private-local-execution",
+          "score": 0.7367,
+          "risk": null
+        },
+        {
+          "rank": 8,
+          "slug": "email-outreach-sequencer",
+          "score": 0.7367,
+          "risk": null
+        },
+        {
+          "rank": 9,
+          "slug": "deploy-rollback-guardian",
+          "score": 0.7367,
+          "risk": null
+        },
+        {
+          "rank": 10,
+          "slug": "security-alert-triager",
+          "score": 0.7367,
+          "risk": null
+        }
+      ],
+      "batch_hits": [
+        {
+          "rank": 2,
+          "slug": "telegram-community-manager",
+          "score": 1.07,
+          "risk": null
+        },
+        {
+          "rank": 3,
+          "slug": "discord-community-manager",
+          "score": 1.07,
+          "risk": null
+        },
+        {
+          "rank": 4,
+          "slug": "whatsapp-support-copilot",
+          "score": 1.07,
+          "risk": null
+        }
+      ],
+      "batch_hit_count": 3,
+      "top3_batch_hits": 2
+    },
+    "foxtrot-devops": {
+      "intent": "automate github PR review, incident triage and cloud cost monitoring",
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "policy-compliance-guard",
+          "score": 0.86,
+          "risk": null
+        },
+        {
+          "rank": 2,
+          "slug": "multi-agent-orchestrator",
+          "score": 0.82,
+          "risk": null
+        },
+        {
+          "rank": 3,
+          "slug": "email-outreach-sequencer",
+          "score": 0.82,
+          "risk": null
+        },
+        {
+          "rank": 4,
+          "slug": "deploy-rollback-guardian",
+          "score": 0.82,
+          "risk": null
+        },
+        {
+          "rank": 5,
+          "slug": "security-alert-triager",
+          "score": 0.82,
+          "risk": null
+        },
+        {
+          "rank": 6,
+          "slug": "knowledge-base-curator",
+          "score": 0.82,
+          "risk": null
+        },
+        {
+          "rank": 7,
+          "slug": "incident-triage-commander",
+          "score": 0.82,
+          "risk": null
+        },
+        {
+          "rank": 8,
+          "slug": "memory-architect",
+          "score": 0.77,
+          "risk": null
+        },
+        {
+          "rank": 9,
+          "slug": "error-recovery-self-heal",
+          "score": 0.77,
+          "risk": null
+        },
+        {
+          "rank": 10,
+          "slug": "crm-sync-bidirectional",
+          "score": 0.77,
+          "risk": null
+        }
+      ],
+      "batch_hits": [
+        {
+          "rank": 6,
+          "slug": "knowledge-base-curator",
+          "score": 0.82,
+          "risk": null
+        },
+        {
+          "rank": 7,
+          "slug": "incident-triage-commander",
+          "score": 0.82,
+          "risk": null
+        }
+      ],
+      "batch_hit_count": 2,
+      "top3_batch_hits": 0
+    }
+  }
+}

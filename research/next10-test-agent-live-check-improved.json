@@ -1,0 +1,203 @@
+{
+  "generatedAt": "2026-03-18T07:04:27.124106+00:00",
+  "cases": {
+    "research": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "research-reliability-bundle",
+          "score": 0.9,
+          "target": true
+        },
+        {
+          "rank": 2,
+          "slug": "research-analyst",
+          "score": 0.65,
+          "target": false
+        },
+        {
+          "rank": 3,
+          "slug": "memory-architect",
+          "score": 0.65,
+          "target": false
+        },
+        {
+          "rank": 4,
+          "slug": "error-recovery-self-heal",
+          "score": 0.65,
+          "target": false
+        },
+        {
+          "rank": 5,
+          "slug": "quality-eval-gate",
+          "score": 0.65,
+          "target": false
+        },
+        {
+          "rank": 6,
+          "slug": "fact-source-verifier",
+          "score": 0.65,
+          "target": false
+        },
+        {
+          "rank": 7,
+          "slug": "tool-health-monitor",
+          "score": 0.65,
+          "target": false
+        },
+        {
+          "rank": 8,
+          "slug": "crm-sync-bidirectional",
+          "score": 0.65,
+          "target": false
+        },
+        {
+          "rank": 9,
+          "slug": "calendar-ops-coordinator",
+          "score": 0.65,
+          "target": false
+        },
+        {
+          "rank": 10,
+          "slug": "log-anomaly-sleuth",
+          "score": 0.65,
+          "target": false
+        }
+      ],
+      "target_hits": 1,
+      "top3_target_hits": 1
+    },
+    "community": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "multi-agent-orchestrator",
+          "score": 1.07,
+          "target": false
+        },
+        {
+          "rank": 2,
+          "slug": "telegram-community-manager",
+          "score": 1.07,
+          "target": true
+        },
+        {
+          "rank": 3,
+          "slug": "discord-community-manager",
+          "score": 1.07,
+          "target": true
+        },
+        {
+          "rank": 4,
+          "slug": "whatsapp-support-copilot",
+          "score": 1.07,
+          "target": true
+        },
+        {
+          "rank": 5,
+          "slug": "community-support-ops-bundle",
+          "score": 1.0,
+          "target": true
+        },
+        {
+          "rank": 6,
+          "slug": "policy-compliance-guard",
+          "score": 0.7767,
+          "target": false
+        },
+        {
+          "rank": 7,
+          "slug": "human-escalation-router",
+          "score": 0.7367,
+          "target": false
+        },
+        {
+          "rank": 8,
+          "slug": "private-local-execution",
+          "score": 0.7367,
+          "target": false
+        },
+        {
+          "rank": 9,
+          "slug": "email-outreach-sequencer",
+          "score": 0.7367,
+          "target": false
+        },
+        {
+          "rank": 10,
+          "slug": "deploy-rollback-guardian",
+          "score": 0.7367,
+          "target": false
+        }
+      ],
+      "target_hits": 4,
+      "top3_target_hits": 2
+    },
+    "devops": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "devops-autopilot-bundle",
+          "score": 1.0,
+          "target": true
+        },
+        {
+          "rank": 2,
+          "slug": "policy-compliance-guard",
+          "score": 0.91,
+          "target": false
+        },
+        {
+          "rank": 3,
+          "slug": "deploy-rollback-guardian",
+          "score": 0.87,
+          "target": false
+        },
+        {
+          "rank": 4,
+          "slug": "security-alert-triager",
+          "score": 0.87,
+          "target": false
+        },
+        {
+          "rank": 5,
+          "slug": "incident-triage-commander",
+          "score": 0.87,
+          "target": true
+        },
+        {
+          "rank": 6,
+          "slug": "log-anomaly-sleuth",
+          "score": 0.82,
+          "target": false
+        },
+        {
+          "rank": 7,
+          "slug": "research-reliability-bundle",
+          "score": 0.8,
+          "target": true
+        },
+        {
+          "rank": 8,
+          "slug": "multi-agent-orchestrator",
+          "score": 0.67,
+          "target": false
+        },
+        {
+          "rank": 9,
+          "slug": "email-outreach-sequencer",
+          "score": 0.67,
+          "target": false
+        },
+        {
+          "rank": 10,
+          "slug": "knowledge-base-curator",
+          "score": 0.67,
+          "target": true
+        }
+      ],
+      "target_hits": 4,
+      "top3_target_hits": 1
+    }
+  }
+}
