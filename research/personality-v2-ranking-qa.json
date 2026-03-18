@@ -1,0 +1,466 @@
+{
+  "generatedAt": "2026-03-18T07:55:44.396768+00:00",
+  "cases": {
+    "conversion-closer-persona": {
+      "query": "need an ethical conversion closer personality with objection handling and strong CTA framing",
+      "target_rank": 1,
+      "top5": [
+        {
+          "rank": 1,
+          "slug": "conversion-closer-persona",
+          "type": "personality",
+          "score": 0.2875
+        },
+        {
+          "rank": 2,
+          "slug": "product-strategist-persona",
+          "type": "personality",
+          "score": 0.2182
+        },
+        {
+          "rank": 3,
+          "slug": "strict-compliance-officer-persona",
+          "type": "personality",
+          "score": 0.1836
+        },
+        {
+          "rank": 4,
+          "slug": "safety-analyst-persona",
+          "type": "personality",
+          "score": 0.1836
+        },
+        {
+          "rank": 5,
+          "slug": "research-librarian-persona",
+          "type": "personality",
+          "score": 0.1836
+        }
+      ],
+      "pass_target_top5": true,
+      "pass_target_top3": true
+    },
+    "empathetic-support-ally-persona": {
+      "query": "I need a warm empathetic support tone for frustrated users with de-escalation language",
+      "target_rank": 1,
+      "top5": [
+        {
+          "rank": 1,
+          "slug": "empathetic-support-ally-persona",
+          "type": "personality",
+          "score": 0.3244
+        },
+        {
+          "rank": 2,
+          "slug": "whatsapp-support-copilot",
+          "type": "skill",
+          "score": 0.2912
+        },
+        {
+          "rank": 3,
+          "slug": "community-support-ops-bundle",
+          "type": "bundle",
+          "score": 0.2612
+        },
+        {
+          "rank": 4,
+          "slug": "discord-community-manager",
+          "type": "skill",
+          "score": 0.2312
+        },
+        {
+          "rank": 5,
+          "slug": "research-citation-packager",
+          "type": "skill",
+          "score": 0.2012
+        }
+      ],
+      "pass_target_top5": true,
+      "pass_target_top3": true
+    },
+    "grumpy-sre-persona": {
+      "query": "need a blunt SRE personality for incident updates and reliability triage",
+      "target_rank": 3,
+      "top5": [
+        {
+          "rank": 1,
+          "slug": "research-librarian-persona",
+          "type": "personality",
+          "score": 0.2494
+        },
+        {
+          "rank": 2,
+          "slug": "playful-creator-persona",
+          "type": "personality",
+          "score": 0.2494
+        },
+        {
+          "rank": 3,
+          "slug": "grumpy-sre-persona",
+          "type": "personality",
+          "score": 0.2494
+        },
+        {
+          "rank": 4,
+          "slug": "service-ops-verticals",
+          "type": "skill",
+          "score": 0.2462
+        },
+        {
+          "rank": 5,
+          "slug": "incident-triage-commander",
+          "type": "skill",
+          "score": 0.2462
+        }
+      ],
+      "pass_target_top5": true,
+      "pass_target_top3": true
+    },
+    "forensic-analyst-persona": {
+      "query": "need forensic evidence-first analyst voice for security investigation reports",
+      "target_rank": 1,
+      "top5": [
+        {
+          "rank": 1,
+          "slug": "forensic-analyst-persona",
+          "type": "personality",
+          "score": 0.4944
+        },
+        {
+          "rank": 2,
+          "slug": "security-alert-triager",
+          "type": "skill",
+          "score": 0.4512
+        },
+        {
+          "rank": 3,
+          "slug": "security-maintenance-bundle",
+          "type": "bundle",
+          "score": 0.4512
+        },
+        {
+          "rank": 4,
+          "slug": "safety-analyst-persona",
+          "type": "personality",
+          "score": 0.4494
+        },
+        {
+          "rank": 5,
+          "slug": "strict-compliance-officer-persona",
+          "type": "personality",
+          "score": 0.4094
+        }
+      ],
+      "pass_target_top5": true,
+      "pass_target_top3": true
+    },
+    "growth-hacker-persona": {
+      "query": "need growth hacker style for fast experiments KPI-focused messaging",
+      "target_rank": 1,
+      "top5": [
+        {
+          "rank": 1,
+          "slug": "growth-hacker-persona",
+          "type": "personality",
+          "score": 0.4694
+        },
+        {
+          "rank": 2,
+          "slug": "community-hype-manager-persona",
+          "type": "personality",
+          "score": 0.4394
+        },
+        {
+          "rank": 3,
+          "slug": "email-outreach-sequencer",
+          "type": "skill",
+          "score": 0.4362
+        },
+        {
+          "rank": 4,
+          "slug": "market-intel-signal-bundle",
+          "type": "bundle",
+          "score": 0.4362
+        },
+        {
+          "rank": 5,
+          "slug": "seo-brief-builder",
+          "type": "skill",
+          "score": 0.3912
+        }
+      ],
+      "pass_target_top5": true,
+      "pass_target_top3": true
+    },
+    "calm-chief-of-staff-persona": {
+      "query": "need a calm chief of staff personality for executive summaries and coordination",
+      "target_rank": 1,
+      "top5": [
+        {
+          "rank": 1,
+          "slug": "calm-chief-of-staff-persona",
+          "type": "personality",
+          "score": 0.3189
+        },
+        {
+          "rank": 2,
+          "slug": "research-librarian-persona",
+          "type": "personality",
+          "score": 0.2371
+        },
+        {
+          "rank": 3,
+          "slug": "playful-creator-persona",
+          "type": "personality",
+          "score": 0.2371
+        },
+        {
+          "rank": 4,
+          "slug": "founder-command-bundle",
+          "type": "bundle",
+          "score": 0.2339
+        },
+        {
+          "rank": 5,
+          "slug": "web-action-proof-logger",
+          "type": "skill",
+          "score": 0.2339
+        }
+      ],
+      "pass_target_top5": true,
+      "pass_target_top3": true
+    },
+    "playful-creator-persona": {
+      "query": "need playful creator personality for brainstorming and creative ideation",
+      "target_rank": 1,
+      "top5": [
+        {
+          "rank": 1,
+          "slug": "playful-creator-persona",
+          "type": "personality",
+          "score": 0.5298
+        },
+        {
+          "rank": 2,
+          "slug": "market-intel-signal-bundle",
+          "type": "bundle",
+          "score": 0.495
+        },
+        {
+          "rank": 3,
+          "slug": "seo-brief-builder",
+          "type": "skill",
+          "score": 0.4604
+        },
+        {
+          "rank": 4,
+          "slug": "podcast-to-clips",
+          "type": "skill",
+          "score": 0.435
+        },
+        {
+          "rank": 5,
+          "slug": "ad-creative-variant-lab",
+          "type": "skill",
+          "score": 0.435
+        }
+      ],
+      "pass_target_top5": true,
+      "pass_target_top3": true
+    },
+    "strict-compliance-officer-persona": {
+      "query": "need strict compliance officer voice to enforce policy and block risky actions",
+      "target_rank": 1,
+      "top5": [
+        {
+          "rank": 1,
+          "slug": "strict-compliance-officer-persona",
+          "type": "personality",
+          "score": 0.6944
+        },
+        {
+          "rank": 2,
+          "slug": "policy-sop-generator",
+          "type": "skill",
+          "score": 0.5712
+        },
+        {
+          "rank": 3,
+          "slug": "security-alert-triager",
+          "type": "skill",
+          "score": 0.5112
+        },
+        {
+          "rank": 4,
+          "slug": "deploy-rollback-guardian",
+          "type": "skill",
+          "score": 0.5112
+        },
+        {
+          "rank": 5,
+          "slug": "incident-triage-commander",
+          "type": "skill",
+          "score": 0.4512
+        }
+      ],
+      "pass_target_top5": true,
+      "pass_target_top3": true
+    },
+    "local-first-privacy-guardian-persona": {
+      "query": "need local-first privacy guardian tone focused on data minimization",
+      "target_rank": 1,
+      "top5": [
+        {
+          "rank": 1,
+          "slug": "local-first-privacy-guardian-persona",
+          "type": "personality",
+          "score": 0.3394
+        },
+        {
+          "rank": 2,
+          "slug": "safety-analyst-persona",
+          "type": "personality",
+          "score": 0.2044
+        },
+        {
+          "rank": 3,
+          "slug": "ops-chief-persona",
+          "type": "personality",
+          "score": 0.2044
+        },
+        {
+          "rank": 4,
+          "slug": "growth-hacker-persona",
+          "type": "personality",
+          "score": 0.2044
+        },
+        {
+          "rank": 5,
+          "slug": "conversion-closer-persona",
+          "type": "personality",
+          "score": 0.2044
+        }
+      ],
+      "pass_target_top5": true,
+      "pass_target_top3": true
+    },
+    "product-strategist-persona": {
+      "query": "need product strategist personality to frame roadmap tradeoffs and user pain",
+      "target_rank": 1,
+      "top5": [
+        {
+          "rank": 1,
+          "slug": "product-strategist-persona",
+          "type": "personality",
+          "score": 0.4417
+        },
+        {
+          "rank": 2,
+          "slug": "playful-creator-persona",
+          "type": "personality",
+          "score": 0.2371
+        },
+        {
+          "rank": 3,
+          "slug": "conversion-closer-persona",
+          "type": "personality",
+          "score": 0.2371
+        },
+        {
+          "rank": 4,
+          "slug": "reddit-scout-pro",
+          "type": "skill",
+          "score": 0.2339
+        },
+        {
+          "rank": 5,
+          "slug": "github-issue-radar",
+          "type": "skill",
+          "score": 0.2339
+        }
+      ],
+      "pass_target_top5": true,
+      "pass_target_top3": true
+    },
+    "community-hype-manager-persona": {
+      "query": "need community hype manager voice for engagement while avoiding spam",
+      "target_rank": 1,
+      "top5": [
+        {
+          "rank": 1,
+          "slug": "community-hype-manager-persona",
+          "type": "personality",
+          "score": 0.2944
+        },
+        {
+          "rank": 2,
+          "slug": "telegram-community-manager",
+          "type": "skill",
+          "score": 0.2462
+        },
+        {
+          "rank": 3,
+          "slug": "research-librarian-persona",
+          "type": "personality",
+          "score": 0.2044
+        },
+        {
+          "rank": 4,
+          "slug": "email-outreach-sequencer",
+          "type": "skill",
+          "score": 0.2012
+        },
+        {
+          "rank": 5,
+          "slug": "discord-community-manager",
+          "type": "skill",
+          "score": 0.2012
+        }
+      ],
+      "pass_target_top5": true,
+      "pass_target_top3": true
+    },
+    "research-librarian-persona": {
+      "query": "need research librarian style with citations and uncertainty notes",
+      "target_rank": 1,
+      "top5": [
+        {
+          "rank": 1,
+          "slug": "research-librarian-persona",
+          "type": "personality",
+          "score": 0.4358
+        },
+        {
+          "rank": 2,
+          "slug": "research-briefing-bundle",
+          "type": "bundle",
+          "score": 0.3683
+        },
+        {
+          "rank": 3,
+          "slug": "research-citation-packager",
+          "type": "skill",
+          "score": 0.3683
+        },
+        {
+          "rank": 4,
+          "slug": "paper-to-notes",
+          "type": "skill",
+          "score": 0.3683
+        },
+        {
+          "rank": 5,
+          "slug": "research-scholar-persona",
+          "type": "personality",
+          "score": 0.3394
+        }
+      ],
+      "pass_target_top5": true,
+      "pass_target_top3": true
+    }
+  },
+  "summary": {
+    "total": 12,
+    "target_top5": 12,
+    "target_top3": 12
+  }
+}

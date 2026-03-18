@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-03-18T07:56:03.616032+00:00",
+  "promotion": {
+    "total_candidates": 12,
+    "created": [
+      "conversion-closer-persona",
+      "empathetic-support-ally-persona",
+      "grumpy-sre-persona",
+      "forensic-analyst-persona",
+      "growth-hacker-persona",
+      "calm-chief-of-staff-persona",
+      "playful-creator-persona",
+      "strict-compliance-officer-persona",
+      "local-first-privacy-guardian-persona",
+      "product-strategist-persona",
+      "community-hype-manager-persona",
+      "research-librarian-persona"
+    ],
+    "skipped": [],
+    "failed": []
+  },
+  "ranking_qa_summary": {
+    "total": 12,
+    "target_top5": 12,
+    "target_top3": 12
+  },
+  "note": "Playful Creator description was tuned for stronger creative-intent retrieval; all 12 now rank top-3 on mapped intent prompts."
+}
