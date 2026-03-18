@@ -46,3 +46,21 @@ API: `http://localhost:8787`
 - Add startup DB migration task in deployment pipeline.
 - Add staging environment variables and secrets template.
 - Add hosted artifact storage (S3/R2) for reports/manifests.
+
+## Phase 1.5 progress (DB migration safety)
+
+6) **Alembic scaffolding added**
+- `api/alembic.ini`
+- `api/alembic/env.py`
+- `api/alembic/script.py.mako`
+- `api/alembic/versions/20260318_000001_baseline.py`
+
+7) **Migration runner scripts**
+- `scripts/db_migrate.py` (runs `alembic upgrade head`)
+- `scripts/start_api.sh` (runs migration step before API start)
+
+8) **Container startup updated**
+- Dockerfile now starts API via `scripts/start_api.sh` to include migration step.
+
+9) **Environment template**
+- Added `.env.example` for container/host configuration.

@@ -21,4 +21,4 @@ COPY web /app/web
 WORKDIR /app/api
 EXPOSE 8787
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8787"]
+CMD ["bash", "/app/scripts/start_api.sh"]
