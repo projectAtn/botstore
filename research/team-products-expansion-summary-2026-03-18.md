@@ -63,3 +63,10 @@ Added web UI panel **Build Custom Team** in `web/index.html`:
 - compose / validate / simulate / publish workflow
 - scenario selector for simulation
 - inline JSON editor for custom team definition
+
+## Enforcement update: team skills must be standalone marketplace skills
+- Added strict validation/enforcement in custom team APIs:
+  - `POST /teams/custom/validate` now emits **error** when team references missing skills or non-skill packs (e.g., personality slugs in skill slots).
+  - `POST /teams/custom/publish` now **blocks** publish when any team skill reference is missing or non-skill.
+- Compose hardening:
+  - `POST /teams/custom/compose` now drops non-market/non-skill starter references and reports them in `dropped_non_market_skills`.

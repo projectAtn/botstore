@@ -457,6 +457,31 @@ def _team_skill_slugs(team: dict[str, Any]) -> list[str]:
     return sorted(set(slugs))
 
 
+def _team_skill_integrity(team: dict[str, Any]) -> dict:
+    requested = _team_skill_slugs(team)
+    valid_skill_slugs: list[str] = []
+    missing_skills: list[str] = []
+    non_skill_refs: list[dict[str, str]] = []
+
+    with Session(engine) as session:
+        for slug in requested:
+            p = session.exec(select(Pack).where(Pack.slug == slug)).first()
+            if not p:
+                missing_skills.append(slug)
+                continue
+            if p.type != PackType.skill:
+                non_skill_refs.append({"slug": slug, "type": str(p.type)})
+                continue
+            valid_skill_slugs.append(slug)
+
+    return {
+        "requested": requested,
+        "valid_skill_slugs": sorted(set(valid_skill_slugs)),
+        "missing_skills": sorted(set(missing_skills)),
+        "non_skill_refs": non_skill_refs,
+    }
+
+
 def _team_eval(team: dict[str, Any], req_caps: list[str], req_roles: list[str], req_artifacts: list[str]) -> dict:
     req_caps_set = {c.strip() for c in req_caps if c.strip()}
     req_roles_set = {_norm_token(r) for r in req_roles if r}
@@ -468,9 +493,11 @@ def _team_eval(team: dict[str, Any], req_caps: list[str], req_roles: list[str], 
         for d in (r.get("deliverables", []) or []):
             artifacts.add(_norm_token(str(d)))
 
+    integrity = _team_skill_integrity(team)
+
     with Session(engine) as session:
         caps = set()
-        for slug in _team_skill_slugs(team):
+        for slug in integrity["valid_skill_slugs"]:
             p = session.exec(select(Pack).where(Pack.slug == slug)).first()
             if p:
                 caps.update(_csv_to_scopes(p.scopes_csv))
@@ -489,6 +516,7 @@ def _team_eval(team: dict[str, Any], req_caps: list[str], req_roles: list[str], 
         "missing_roles": sorted(req_roles_set - role_names),
         "missing_artifacts": sorted(req_art_set - artifacts),
         "pass": score >= 0.8,
+        "integrity": integrity,
     }
 
 
@@ -994,10 +1022,21 @@ def teams_custom_compose(payload: TeamComposeRequest) -> dict:
         "risk_level": payload.risk_level,
     }
 
+    integrity = _team_skill_integrity(team)
+    valid = set(integrity.get("valid_skill_slugs", []))
+
+    team["shared_skills"] = [s for s in team.get("shared_skills", []) if s in valid]
+    for role in team.get("roles", []) or []:
+        role["owned_skills"] = [s for s in (role.get("owned_skills", []) or []) if s in valid]
+
     return {
         "ok": True,
         "team": team,
         "missing_role_slugs": missing_role_slugs,
+        "dropped_non_market_skills": {
+            "missing": integrity.get("missing_skills", []),
+            "non_skill_refs": integrity.get("non_skill_refs", []),
+        },
     }
 
 
@@ -1025,6 +1064,27 @@ def teams_custom_validate(payload: TeamValidateRequest) -> dict:
             )
 
     evalr = _team_eval(team, payload.required_capabilities, payload.required_roles, payload.expected_artifacts)
+    integrity = evalr.get("integrity", {})
+
+    if integrity.get("missing_skills"):
+        issues.append(
+            {
+                "severity": "error",
+                "code": "team.skills_missing_from_marketplace",
+                "message": "Team references skills not present as standalone marketplace skills",
+                "details": {"missing_skills": integrity.get("missing_skills", [])},
+            }
+        )
+    if integrity.get("non_skill_refs"):
+        issues.append(
+            {
+                "severity": "error",
+                "code": "team.non_skill_refs",
+                "message": "Team references non-skill packs; team sub-agent capabilities must map to standalone skill packs",
+                "details": {"non_skill_refs": integrity.get("non_skill_refs", [])},
+            }
+        )
+
     if not evalr.get("pass"):
         issues.append(
             {
@@ -1039,10 +1099,13 @@ def teams_custom_validate(payload: TeamValidateRequest) -> dict:
             }
         )
 
+    has_errors = any(i.get("severity") == "error" for i in issues)
+    final_pass = bool(evalr.get("pass")) and not has_errors
+
     return {
-        "ok": True,
+        "ok": not has_errors,
         "score": evalr.get("score"),
-        "pass": evalr.get("pass"),
+        "pass": final_pass,
         "coverage": {
             "capability": evalr.get("capability_coverage"),
             "role": evalr.get("role_coverage"),
@@ -1052,6 +1115,11 @@ def teams_custom_validate(payload: TeamValidateRequest) -> dict:
             "capabilities": evalr.get("missing_capabilities", []),
             "roles": evalr.get("missing_roles", []),
             "artifacts": evalr.get("missing_artifacts", []),
+            "skills": integrity.get("missing_skills", []),
+        },
+        "integrity": {
+            "valid_skill_slugs": integrity.get("valid_skill_slugs", []),
+            "non_skill_refs": integrity.get("non_skill_refs", []),
         },
         "issues": issues,
     }
@@ -1112,15 +1180,23 @@ def teams_custom_publish(payload: TeamPublishRequest) -> dict:
         if existing:
             raise HTTPException(status_code=409, detail="slug already exists")
 
-        skill_slugs = _team_skill_slugs(team)
+        integrity = _team_skill_integrity(team)
+        if integrity.get("missing_skills") or integrity.get("non_skill_refs"):
+            raise HTTPException(
+                status_code=400,
+                detail={
+                    "message": "Team publish blocked: all team capabilities must map to standalone marketplace skills",
+                    "missing_skills": integrity.get("missing_skills", []),
+                    "non_skill_refs": integrity.get("non_skill_refs", []),
+                },
+            )
+
+        skill_slugs = integrity.get("valid_skill_slugs", [])
         child_ids = []
-        missing_skills = []
         for s in skill_slugs:
             p = session.exec(select(Pack).where(Pack.slug == s)).first()
             if p:
                 child_ids.append(p.id)
-            else:
-                missing_skills.append(s)
 
         pack = Pack(
             slug=slug,
@@ -1145,7 +1221,11 @@ def teams_custom_publish(payload: TeamPublishRequest) -> dict:
             "slug": slug,
             "title": title,
             "team": team,
-            "missing_skills": missing_skills,
+            "skill_integrity": {
+                "valid_skill_slugs": skill_slugs,
+                "missing_skills": [],
+                "non_skill_refs": [],
+            },
         }
         with TEAM_PUBLISHED_PATH.open("a", encoding="utf-8") as f:
             f.write(json.dumps(event) + "\n")
@@ -1155,7 +1235,8 @@ def teams_custom_publish(payload: TeamPublishRequest) -> dict:
             "pack_id": pack.id,
             "slug": pack.slug,
             "bundle_child_count": len(child_ids),
-            "missing_skills": missing_skills,
+            "missing_skills": [],
+            "non_skill_refs": [],
         }
 
 
