@@ -1,0 +1,280 @@
+{
+  "generatedAt": "2026-03-18T07:38:18.677136+00:00",
+  "batch": [
+    "backup-drill-coordinator",
+    "ecommerce-listing-optimizer",
+    "inventory-demand-forecaster",
+    "keyword-cluster-mapper",
+    "paper-to-notes",
+    "secret-rotation-reminder",
+    "self-host-healthcheck",
+    "thumbnail-brief-generator",
+    "transcript-to-action-items"
+  ],
+  "cases": {
+    "research-notes": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "policy-compliance-guard",
+          "score": 0.86,
+          "batch": false
+        },
+        {
+          "rank": 2,
+          "slug": "email-outreach-sequencer",
+          "score": 0.82,
+          "batch": false
+        },
+        {
+          "rank": 3,
+          "slug": "deploy-rollback-guardian",
+          "score": 0.82,
+          "batch": false
+        },
+        {
+          "rank": 4,
+          "slug": "security-alert-triager",
+          "score": 0.82,
+          "batch": false
+        },
+        {
+          "rank": 5,
+          "slug": "knowledge-base-curator",
+          "score": 0.82,
+          "batch": false
+        },
+        {
+          "rank": 6,
+          "slug": "incident-triage-commander",
+          "score": 0.82,
+          "batch": false
+        },
+        {
+          "rank": 7,
+          "slug": "waitlist-converter",
+          "score": 0.82,
+          "batch": false
+        },
+        {
+          "rank": 8,
+          "slug": "churn-early-warning",
+          "score": 0.82,
+          "batch": false
+        },
+        {
+          "rank": 9,
+          "slug": "transcript-to-action-items",
+          "score": 0.82,
+          "batch": true
+        },
+        {
+          "rank": 10,
+          "slug": "secret-rotation-reminder",
+          "score": 0.82,
+          "batch": true
+        }
+      ],
+      "batch_hits": 2,
+      "top3_batch_hits": 0
+    },
+    "content-seo": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "keyword-cluster-mapper",
+          "score": 1.05,
+          "batch": true
+        },
+        {
+          "rank": 2,
+          "slug": "shortform-content-factory",
+          "score": 0.8,
+          "batch": false
+        },
+        {
+          "rank": 3,
+          "slug": "seo-brief-builder",
+          "score": 0.8,
+          "batch": false
+        },
+        {
+          "rank": 4,
+          "slug": "ad-creative-variant-lab",
+          "score": 0.8,
+          "batch": false
+        },
+        {
+          "rank": 5,
+          "slug": "landing-page-ab-orchestrator",
+          "score": 0.8,
+          "batch": false
+        },
+        {
+          "rank": 6,
+          "slug": "memory-architect",
+          "score": 0.55,
+          "batch": false
+        },
+        {
+          "rank": 7,
+          "slug": "error-recovery-self-heal",
+          "score": 0.55,
+          "batch": false
+        },
+        {
+          "rank": 8,
+          "slug": "workflow-version-pinning",
+          "score": 0.55,
+          "batch": false
+        },
+        {
+          "rank": 9,
+          "slug": "tool-health-monitor",
+          "score": 0.55,
+          "batch": false
+        },
+        {
+          "rank": 10,
+          "slug": "crm-sync-bidirectional",
+          "score": 0.55,
+          "batch": false
+        }
+      ],
+      "batch_hits": 1,
+      "top3_batch_hits": 1
+    },
+    "commerce": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "shortform-content-factory",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 2,
+          "slug": "ad-creative-variant-lab",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 3,
+          "slug": "landing-page-ab-orchestrator",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 4,
+          "slug": "keyword-cluster-mapper",
+          "score": 1.05,
+          "batch": true
+        },
+        {
+          "rank": 5,
+          "slug": "memory-architect",
+          "score": 0.7167,
+          "batch": false
+        },
+        {
+          "rank": 6,
+          "slug": "error-recovery-self-heal",
+          "score": 0.7167,
+          "batch": false
+        },
+        {
+          "rank": 7,
+          "slug": "workflow-version-pinning",
+          "score": 0.7167,
+          "batch": false
+        },
+        {
+          "rank": 8,
+          "slug": "tool-health-monitor",
+          "score": 0.7167,
+          "batch": false
+        },
+        {
+          "rank": 9,
+          "slug": "crm-sync-bidirectional",
+          "score": 0.7167,
+          "batch": false
+        },
+        {
+          "rank": 10,
+          "slug": "calendar-ops-coordinator",
+          "score": 0.7167,
+          "batch": false
+        }
+      ],
+      "batch_hits": 1,
+      "top3_batch_hits": 0
+    },
+    "security-health": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "log-anomaly-sleuth",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 2,
+          "slug": "deploy-rollback-guardian",
+          "score": 0.97,
+          "batch": false
+        },
+        {
+          "rank": 3,
+          "slug": "security-alert-triager",
+          "score": 0.97,
+          "batch": false
+        },
+        {
+          "rank": 4,
+          "slug": "incident-triage-commander",
+          "score": 0.97,
+          "batch": false
+        },
+        {
+          "rank": 5,
+          "slug": "secret-rotation-reminder",
+          "score": 0.97,
+          "batch": true
+        },
+        {
+          "rank": 6,
+          "slug": "backup-drill-coordinator",
+          "score": 0.97,
+          "batch": true
+        },
+        {
+          "rank": 7,
+          "slug": "devops-autopilot-bundle",
+          "score": 0.9,
+          "batch": false
+        },
+        {
+          "rank": 8,
+          "slug": "policy-compliance-guard",
+          "score": 0.85,
+          "batch": false
+        },
+        {
+          "rank": 9,
+          "slug": "memory-architect",
+          "score": 0.45,
+          "batch": false
+        },
+        {
+          "rank": 10,
+          "slug": "error-recovery-self-heal",
+          "score": 0.45,
+          "batch": false
+        }
+      ],
+      "batch_hits": 2,
+      "top3_batch_hits": 0
+    }
+  }
+}

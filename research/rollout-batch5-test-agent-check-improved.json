@@ -1,0 +1,270 @@
+{
+  "generatedAt": "2026-03-18T07:39:23.096651+00:00",
+  "note": "Commerce/security checks use explicit domain capabilities added in tuning pass.",
+  "cases": {
+    "research-notes": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "research-briefing-bundle",
+          "score": 1.0,
+          "target": true
+        },
+        {
+          "rank": 2,
+          "slug": "policy-compliance-guard",
+          "score": 0.86,
+          "target": false
+        },
+        {
+          "rank": 3,
+          "slug": "email-outreach-sequencer",
+          "score": 0.82,
+          "target": false
+        },
+        {
+          "rank": 4,
+          "slug": "deploy-rollback-guardian",
+          "score": 0.82,
+          "target": false
+        },
+        {
+          "rank": 5,
+          "slug": "security-alert-triager",
+          "score": 0.82,
+          "target": false
+        },
+        {
+          "rank": 6,
+          "slug": "knowledge-base-curator",
+          "score": 0.82,
+          "target": false
+        },
+        {
+          "rank": 7,
+          "slug": "incident-triage-commander",
+          "score": 0.82,
+          "target": false
+        },
+        {
+          "rank": 8,
+          "slug": "waitlist-converter",
+          "score": 0.82,
+          "target": false
+        },
+        {
+          "rank": 9,
+          "slug": "churn-early-warning",
+          "score": 0.82,
+          "target": false
+        },
+        {
+          "rank": 10,
+          "slug": "transcript-to-action-items",
+          "score": 0.82,
+          "target": true
+        }
+      ],
+      "target_hits": 2,
+      "top3_target_hits": 1
+    },
+    "content-seo": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "keyword-cluster-mapper",
+          "score": 1.05,
+          "target": true
+        },
+        {
+          "rank": 2,
+          "slug": "shortform-content-factory",
+          "score": 0.8,
+          "target": false
+        },
+        {
+          "rank": 3,
+          "slug": "seo-brief-builder",
+          "score": 0.8,
+          "target": false
+        },
+        {
+          "rank": 4,
+          "slug": "ad-creative-variant-lab",
+          "score": 0.8,
+          "target": false
+        },
+        {
+          "rank": 5,
+          "slug": "landing-page-ab-orchestrator",
+          "score": 0.8,
+          "target": false
+        },
+        {
+          "rank": 6,
+          "slug": "ecommerce-listing-optimizer",
+          "score": 0.8,
+          "target": true
+        },
+        {
+          "rank": 7,
+          "slug": "inventory-demand-forecaster",
+          "score": 0.8,
+          "target": true
+        },
+        {
+          "rank": 8,
+          "slug": "commerce-optimization-bundle",
+          "score": 0.65,
+          "target": true
+        },
+        {
+          "rank": 9,
+          "slug": "memory-architect",
+          "score": 0.55,
+          "target": false
+        },
+        {
+          "rank": 10,
+          "slug": "error-recovery-self-heal",
+          "score": 0.55,
+          "target": false
+        }
+      ],
+      "target_hits": 4,
+      "top3_target_hits": 1
+    },
+    "commerce": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "commerce-optimization-bundle",
+          "score": 0.9,
+          "target": true
+        },
+        {
+          "rank": 2,
+          "slug": "ecommerce-listing-optimizer",
+          "score": 0.7167,
+          "target": true
+        },
+        {
+          "rank": 3,
+          "slug": "inventory-demand-forecaster",
+          "score": 0.7167,
+          "target": true
+        },
+        {
+          "rank": 4,
+          "slug": "shortform-content-factory",
+          "score": 0.3833,
+          "target": false
+        },
+        {
+          "rank": 5,
+          "slug": "seo-brief-builder",
+          "score": 0.3833,
+          "target": false
+        },
+        {
+          "rank": 6,
+          "slug": "ad-creative-variant-lab",
+          "score": 0.3833,
+          "target": false
+        },
+        {
+          "rank": 7,
+          "slug": "landing-page-ab-orchestrator",
+          "score": 0.3833,
+          "target": false
+        },
+        {
+          "rank": 8,
+          "slug": "keyword-cluster-mapper",
+          "score": 0.3833,
+          "target": true
+        },
+        {
+          "rank": 9,
+          "slug": "policy-drift-detector",
+          "score": 0.1833,
+          "target": false
+        },
+        {
+          "rank": 10,
+          "slug": "research-analyst",
+          "score": 0.05,
+          "target": false
+        }
+      ],
+      "target_hits": 4,
+      "top3_target_hits": 3
+    },
+    "security-health": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "security-maintenance-bundle",
+          "score": 0.9,
+          "target": true
+        },
+        {
+          "rank": 2,
+          "slug": "self-host-healthcheck",
+          "score": 0.55,
+          "target": true
+        },
+        {
+          "rank": 3,
+          "slug": "secret-rotation-reminder",
+          "score": 0.47,
+          "target": true
+        },
+        {
+          "rank": 4,
+          "slug": "backup-drill-coordinator",
+          "score": 0.47,
+          "target": true
+        },
+        {
+          "rank": 5,
+          "slug": "log-anomaly-sleuth",
+          "score": 0.3,
+          "target": false
+        },
+        {
+          "rank": 6,
+          "slug": "deploy-rollback-guardian",
+          "score": 0.22,
+          "target": false
+        },
+        {
+          "rank": 7,
+          "slug": "security-alert-triager",
+          "score": 0.22,
+          "target": false
+        },
+        {
+          "rank": 8,
+          "slug": "incident-triage-commander",
+          "score": 0.22,
+          "target": false
+        },
+        {
+          "rank": 9,
+          "slug": "devops-autopilot-bundle",
+          "score": 0.15,
+          "target": false
+        },
+        {
+          "rank": 10,
+          "slug": "approval-policy-brain",
+          "score": 0.1,
+          "target": false
+        }
+      ],
+      "target_hits": 4,
+      "top3_target_hits": 3
+    }
+  }
+}
