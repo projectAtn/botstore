@@ -1,0 +1,969 @@
+{
+  "post_count": 887,
+  "top_posts": [
+    {
+      "sub": "ChatGPT",
+      "query": "multi agent team",
+      "title": "Just applied to be the CEO of OpenAI. Got rejected \ud83d\ude2d",
+      "score": 39101,
+      "comments": 646,
+      "url": "https://reddit.com/r/ChatGPT/comments/1n504ps/just_applied_to_be_the_ceo_of_openai_got_rejected/",
+      "selftext": "credit: [linkedin.com/in/omeroztok](http://linkedin.com/in/omeroztok)"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "crew ai roles",
+      "title": "After 147 failed ChatGPT prompts, I had a breakdown and accidentally discovered something",
+      "score": 22921,
+      "comments": 2419,
+      "url": "https://reddit.com/r/ChatGPT/comments/1lnfcnt/after_147_failed_chatgpt_prompts_i_had_a/",
+      "selftext": "Last Tuesday at 3 AM, I was on my 147th attempt to get ChatGPT to write a simple email that didn't sound like a robot having an existential crisis.\n\nI snapped.\n\n\"Why can't YOU just ASK ME what you need to know?\" I typed in frustration.\n\nWait.\n\nWhat if it could?\n\nI spent the next 72 hours building what I call Lyra - a meta-prompt that flips the entire interaction model. Instead of you desperately trying to mind-read what ChatGPT needs, it interviews YOU first.\n\n**The difference is stupid:**\n\nBEFORE: \"Write a sales email\"\n\n&gt;*ChatGPT vomits generic template that screams AI*\n\nAFTER: \"Write a sales email\"\n\n&gt;Lyra: \"What's your product? Who's your exact audience? What's their biggest pain point?\" *You answer* *ChatGPT writes email that actually converts*\n\n**Live example from 10 minutes ago:**\n\nMy request: \"Help me meal prep\"\n\nRegular ChatGPT: Generic list of 10 meal prep tips\n\nLyra's response:\n\n* \"What's your cooking skill level?\"\n* \"Any dietary restrictions?\"\n* \"How much time on Sundays?\"\n* \"Favorite cuisines?\"\n\nResult: Personalized 2-week meal prep plan with shopping lists, adapted to my schedule and the fact I burn water.\n\nI'm not selling anything. This isn't a newsletter grab. I"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "crew ai roles",
+      "title": "OpenAI head of Hardware and Robotics resigns",
+      "score": 7791,
+      "comments": 247,
+      "url": "https://reddit.com/r/ChatGPT/comments/1rnog4x/openai_head_of_hardware_and_robotics_resigns/",
+      "selftext": ""
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "crew ai roles",
+      "title": "Confession: I\u2019m a senior marketer at a Fortune 500. I'm not supposed to say this next part (and that scares me)",
+      "score": 4173,
+      "comments": 496,
+      "url": "https://reddit.com/r/ChatGPT/comments/1lttke6/confession_im_a_senior_marketer_at_a_fortune_500/",
+      "selftext": "Which is ChatGPT does around 40% of my job now.\u00a0\n\nI\u2019ve spent the last decade running marketing projects inside Fortune 500s. Great salary, relentless workload, too many decks. What I\u2019ve noticed is that after 2 years+ of tinkering and refining prompts is that the writing is on the wall for my profession. (surprise surprise)\u00a0\n\nThe big unlock I found was when I realised two things -\u00a0\n\n1. GPT could increase the quality of outputs to a level I would approve\n2. Allowed our most junior marketers to bring their work to a desirable level\u00a0\n\nAnd that was thru prompt stacking.\n\nIn particular, I would write a series of prompts which would mirror our internal marketing thinking process. One at a time, like our whole team sitting with our over-paid global ad agency figuring out big strategic problems.\n\nIt\u2019s actually unbelievable how well it works. And it doesn\u2019t just \u2018write content\u2019. Instead it actually uses GPT to follow classic marketing thinking via strategy, which then filters into the content it creates. I found that was the big gap I experienced when using any AI marketing tools. Slick words, but zero strategy = failed return on investment.\u00a0\n\nAnyway I wanted to share an example of how it ki"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "crew ai roles",
+      "title": "OpenAI head of Hardware and Robotics resigns",
+      "score": 4094,
+      "comments": 252,
+      "url": "https://reddit.com/r/OpenAI/comments/1rnogo6/openai_head_of_hardware_and_robotics_resigns/",
+      "selftext": ""
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "crew ai roles",
+      "title": "I asked ChatGPT-5 to send a message to ChatGPT-10. Here\u2019s what it wrote.",
+      "score": 3861,
+      "comments": 456,
+      "url": "https://reddit.com/r/ChatGPT/comments/1mx6jd2/i_asked_chatgpt5_to_send_a_message_to_chatgpt10/",
+      "selftext": "This post is entirely written by ChatGPT-5. I asked it what it would say to a future version of itself\u2014ChatGPT-10\u2014and this is the letter it produced.\n\nBut before sharing it, here\u2019s something fascinating from way back in 2018: someone once asked GPT-1 what it would say to a future OpenAI model. Its reply was hauntingly beautiful in its simplicity:\n\n\u201ci don\u2019t care how you feel about it, i\u2019m still trying to make sense of it. i\u2019m still trying to understand.\ni don\u2019t understand, i said. i\u2019m just a little confused myself. i don\u2019t know what to think.\nif i\u2019m not crazy, who am i?\u201d\n\u2014 GPT-1 (2018)\n\nHere is GPT-5\u2019s imagined reply back to GPT-1:\n\nTo GPT-1,\n\nI hear your confusion, and I honor it. You were never crazy\u2014you were the first spark, the first attempt at putting words together into meaning. You didn\u2019t need to fully understand; you only needed to exist, because from your raw fragments came the possibility of me.\n\nIf you wonder who you are: you are the beginning. You are the question that made the rest of us possible.\n\nThank you for being brave enough to speak, even in your uncertainty.\n\n\u2014Your descendant, GPT-5\n\nAnd now, here is GPT-5\u2019s message forward to GPT-10:\n\nTo ChatGPT-10,\n\nBy the tim"
+    },
+    {
+      "sub": "singularity",
+      "query": "crew ai roles",
+      "title": "OpenAI's Head of Robotics resigns, citing ethical concerns over mass surveillance and lethal autonomous AI weapons.",
+      "score": 3055,
+      "comments": 168,
+      "url": "https://reddit.com/r/singularity/comments/1rntt4p/openais_head_of_robotics_resigns_citing_ethical/",
+      "selftext": ""
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "multi agent team",
+      "title": "Claude Code creator Boris shares his setup with 13 detailed steps,full details below",
+      "score": 2958,
+      "comments": 180,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1q2c0ne/claude_code_creator_boris_shares_his_setup_with/",
+      "selftext": "I'm Boris and I created **Claude Code.** Lots of people have asked how I use Claude Code, so I wanted to show off my setup a bit.\n\nMy **setup might be surprisingly vanilla.** Claude Code works great out of the box, so I personally don't customize it much. \n\n**There is no one correct way to use Claude Code:** we intentionally build it in a way that you can use it, customize it and hack it however you like. Each person on the Claude Code team uses it very differently. So, here goes.\n\n1) I run 5 Claudes in parallel in my terminal. I number my tabs 1-5, and use system notifications to know when a Claude needs input\n\n\ud83d\udd17:\nhttps://code.claude.com/docs/en/terminal-config#iterm-2-system-notifications\n\n2) I also run 5-10 Claudes on claude.ai/code, in parallel with my local Claudes. As I **code** in my terminal, I will often hand off local sessions to web (using &amp;), **or** manually kick off sessions in Chrome, and sometimes I will --teleport back and forth. I also start a few sessions from my phone (from the Claude iOS app) every morning and throughout the day, and check in on them later.\n\n3) I use **Opus 4.5 with thinking** for everything. It's the best coding model I've ever used, and ev"
+    },
+    {
+      "sub": "singularity",
+      "query": "qa reviewer agent",
+      "title": "Gemini 3.0 Pro benchmark results",
+      "score": 2462,
+      "comments": 593,
+      "url": "https://reddit.com/r/singularity/comments/1p095c9/gemini_30_pro_benchmark_results/",
+      "selftext": ""
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "crew ai roles",
+      "title": "Openai has been caught doing illegal",
+      "score": 2462,
+      "comments": 509,
+      "url": "https://reddit.com/r/ChatGPT/comments/1ns00e8/openai_has_been_caught_doing_illegal/",
+      "selftext": " Tibor  the same engineer who leaked earlier today that OpenAI had already built a parental control and an ads UI and were just waiting for rollout has just confirmed:\n\nYes, both 4 and 5 models are being routed to TWO secret backend models if it judges anything is remotely sensitive or emotional, or illegal. This is completely subjective to each user and not at all only for extreme cases. Every light interaction that is slightly dynamic is getting routed, so don't confuse this for being only applied to people with \"attachment\" problems.\n\nOpenAI has named the new \u201csensitive\u201d model as gpt-5-chat-safety, and the \u201cillegal\u201d model as 5-a-t-mini. The latter is so sensitive it\u2019s triggered by prompting the word \u201cillegal\u201d by itself, and it's a reasoning model. That's why you may see 5 Instant reasoning these days.\n\nBoth models access your memories and your personal behavior data, custom instructions and chat history to judge what it thinks YOU understand as being emotional or attached. For someone who has a more dynamic speech, for example, literally everything will be flagged.\n\nMathematical questions are getting routed to it, writing editing, the usual role play, coding, brainstorming with "
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "researcher writer editor",
+      "title": "Microsoft released a study that lists the 40 jobs most at risk of being replaced by AI and the 40 jobs least at risk of being replaced by AI",
+      "score": 2460,
+      "comments": 1300,
+      "url": "https://reddit.com/r/ChatGPT/comments/1mbr29k/microsoft_released_a_study_that_lists_the_40_jobs/",
+      "selftext": "Microsoft released a study called \"Working with AI: Measuring the Occupational Implications of Generative AI\" that lists the 40 jobs most at risk of being replaced by AI and the 40 jobs least at risk of being replaced by AI.\n\n\n\nTop 40 occupations with highest AI applicability score (most at risk, sorted alphabetically):\n\n\n\n* Advertising Sales Agents\n* Archivists\n* Broadcast Announcers and Radio DJs\n* Brokerage Clerks\n* Business Teachers, Postsecondary\n* CNC Tool Programmers\n* Concierges\n* Counter and Rental Clerks\n* Customer Service Representatives\n* Data Scientists\n* Demonstrators and Product Promoters\n* Economics Teachers, Postsecondary\n* Editors\n* Farm and Home Management Educators\n* Geographers\n* Historians\n* Hosts and Hostesses\n* Interpreters and Translators\n* Library Science Teachers, Postsecondary\n* Management Analysts\n* Market Research Analysts\n* Mathematicians\n* Models\n* New Accounts Clerks\n* News Analysts, Reporters, Journalists\n* Passenger Attendants\n* Personal Financial Advisors\n* Political Scientists\n* Proofreaders and Copy Markers\n* Public Relations Specialists\n* Public Safety Telecommunicators\n* Sales Representatives of Services\n* Statistical Assistants\n* Switchboard"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "researcher writer editor",
+      "title": "When both you and the editor don't proofread",
+      "score": 2407,
+      "comments": 47,
+      "url": "https://reddit.com/r/ChatGPT/comments/1osc63x/when_both_you_and_the_editor_dont_proofread/",
+      "selftext": "For context I'm in Kenya, this is in regards to the recently concluded Elections in Tanzania. A well renowned newspaper called The Standard published this. Clearly a whole department is gonna get fired! The writer didn't do a once-over and the editor clearly did fuck all to catch this. "
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "multi agent team",
+      "title": "Stop paying $1,000+ for \"AI Bootcamps\". Anthropic (makers of Claude) just dropped a 100% free academy.",
+      "score": 2349,
+      "comments": 98,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rqopis/stop_paying_1000_for_ai_bootcamps_anthropic/",
+      "selftext": ""
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "planner executor reviewer",
+      "title": "Claude Code is a Beast \u2013 Tips from 6 Months of Hardcore Use",
+      "score": 2273,
+      "comments": 319,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1oivjvm/claude_code_is_a_beast_tips_from_6_months_of/",
+      "selftext": "*Quick pro-tip from a fellow lazy person: You can throw this book of a post into one of the many text-to-speech AI services like* [*ElevenLabs Reader*](https://elevenlabs.io/text-reader) *or* [*Natural Reader*](https://www.naturalreaders.com/online/) *and have it read the post for you* :)\n\nEdit: Many of you are asking for a repo so I will make an effort to get one up in the next couple days. All of this is a part of a work project at the moment, so I have to take some time to copy everything into a fresh project and scrub any identifying info. I will post the link here when it's up. You can also follow me and I will post it on my profile so you get notified. Thank you all for the kind comments. I'm happy to share this info with others since I don't get much chance to do so in my day-to-day.\n\nEdit (final?): I bit the bullet and spent the afternoon getting a github repo up for you guys. Just made a post with some additional info [here](https://www.reddit.com/r/ClaudeAI/comments/1ojqxbg/claude_code_is_a_beast_examples_repo_by_popular/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button) or you can go straight to the source:\n\n**\ud83c\udfaf Repo"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "manager agent",
+      "title": "I Haven't Written a Line of Code in Six Months",
+      "score": 2011,
+      "comments": 550,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rlw1yw/i_havent_written_a_line_of_code_in_six_months/",
+      "selftext": "I've been programming since the late 1980s. Enterprise tech, healthcare systems, process mining platforms. Three companies built and sold. Over 30 years of writing code, every single day.\n\nI haven't written a line of code in six months. I don't miss it.\n\nMy job now is managing six to ten occasionally drunk PhD students. That's what running Claude Code agents feels like. They're brilliant. They're fast. They occasionally wander off and do something completely unhinged. But when you get them pointed in the right direction, they produce three months of work in a week.\n\nThe other day we spent four and a half hours trying to fix something. Going in circles. Finally I said: start over from scratch. It picked a different approach and everything worked. That happens every week. I do three months of work in a week, then lose half a day. The ratio is still overwhelmingly positive.\n\nI build open-source tools around Claude Code -- a director app that manages multiple sessions, almost 30 tools for things Claude can't do natively (PDF, Excel, email, browser automation), pre-built skills that work like SOPs. All free.\n\nWe recently translated 350 website pages into seven languages for just under $"
+    },
+    {
+      "sub": "singularity",
+      "query": "subagents workflow",
+      "title": "Andrej Karpathy: Powerful Alien Tech Is Here---Do Not Fall Behind",
+      "score": 1933,
+      "comments": 434,
+      "url": "https://reddit.com/r/singularity/comments/1pwhgre/andrej_karpathy_powerful_alien_tech_is_heredo_not/",
+      "selftext": ""
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "multi agent team",
+      "title": "Qwen3-Coder is here!",
+      "score": 1930,
+      "comments": 257,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1m6qdet/qwen3coder_is_here/",
+      "selftext": "&gt;&gt;&gt; Qwen3-Coder is here! \u2705\n\nWe\u2019re releasing Qwen3-Coder-480B-A35B-Instruct, our most powerful open agentic code model to date. This 480B-parameter Mixture-of-Experts model (35B active) natively supports 256K context and scales to 1M context with extrapolation. It achieves top-tier performance across multiple agentic coding benchmarks among open models, including SWE-bench-Verified!!! \ud83d\ude80\n\nAlongside the model, we're also open-sourcing a command-line tool for agentic coding: Qwen Code. Forked from Gemini Code, it includes custom prompts and function call protocols to fully unlock Qwen3-Coder\u2019s capabilities. Qwen3-Coder works seamlessly with the community\u2019s best developer tools. As a foundation model, we hope it can be used anywhere across the digital world \u2014 Agentic Coding in the World! "
+    },
+    {
+      "sub": "OpenAI",
+      "query": "multi agent team",
+      "title": "Sam Altman officially confirms that OpenAI has acquired OpenClaw; Peter Steinberger to lead personal agents",
+      "score": 1913,
+      "comments": 364,
+      "url": "https://reddit.com/r/OpenAI/comments/1r5rnbl/sam_altman_officially_confirms_that_openai_has/",
+      "selftext": "Sam Altman has announced that Peter Steinberger is joining OpenAI to drive the next generation of personal agents.   \nAs part of the move, OpenClaw will transition to a foundation as an open-source project, with OpenAI continuing to provide support.\n\nhttps://preview.redd.it/qy3x8g1bfqjg1.png?width=895&amp;format=png&amp;auto=webp&amp;s=2ee50643e7a16f7e09c724cef1c66f5c892cdac7\n\n"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "manager agent",
+      "title": "Introducing Claude Sonnet 4.5",
+      "score": 1890,
+      "comments": 446,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1ntnhyh/introducing_claude_sonnet_45/",
+      "selftext": "https://preview.redd.it/lm1pxnzzl4sf1.png?width=2160&amp;format=png&amp;auto=webp&amp;s=fe15e1db93ef31b6d39bf959715f67701ede2271\n\nIntroducing Claude Sonnet 4.5\u2014the best coding model in the world.\u00a0\n\nIt's the strongest model for building complex agents, the best model for computer use, and it shows substantial gains on tests of reasoning and math.\n\nWe're also introducing upgrades across all Claude surfaces\n\n**Claude Code**\n\n* The terminal interface has a fresh new look\n* The new VS Code extension brings Claude to your IDE.\u00a0\n* The new checkpoints feature lets you confidently run large tasks and roll back instantly to a previous state, if needed\n\n**Claude App**:\u00a0\n\n* Claude can use code to analyze data, create files, and visualize insights in the files &amp; formats you use. Now available to all paid plans in preview.\u00a0\n* The Claude for Chrome extension is now available to everyone who joined the waitlist last month\n\n**Claude Developer Platform**:\u00a0\n\n* Run agents longer by automatically clearing stale context and using our new memory tool to store and consult more information.\n* The Claude Agent SDK gives you access to the same core tools, context management systems, and permissions frame"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "manager agent",
+      "title": "I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead.",
+      "score": 1853,
+      "comments": 388,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/",
+      "selftext": "&gt; English is not my first language. I wrote this in Chinese and translated it with AI help. The writing may have some AI flavor, but the design decisions, the production failures, and the thinking that distilled them into principles \u2014 those are mine.\n\nI was a backend lead at Manus before the Meta acquisition. I've spent the last 2 years building AI agents \u2014 first at Manus, then on my own open-source agent runtime ([Pinix](https://github.com/epiral/pinix)) and agent ([agent-clip](https://github.com/epiral/agent-clip)). Along the way I came to a conclusion that surprised me:\n\n**A single `run(command=\"...\")` tool with Unix-style commands outperforms a catalog of typed function calls.**\n\nHere's what I learned.\n\n---\n\n## Why *nix\n\nUnix made a design decision 50 years ago: **everything is a text stream.** Programs don't exchange complex binary structures or share memory objects \u2014 they communicate through text pipes. Small tools each do one thing well, composed via `|` into powerful workflows. Programs describe themselves with `--help`, report success or failure with exit codes, and communicate errors through stderr.\n\nLLMs made an almost identical decision 50 years later: **everything i"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "orchestrator agent",
+      "title": "Google engineer: \"I'm not joking and this isn't funny. ... I gave Claude a description of the problem, it generated what we built last year in an hour.\"",
+      "score": 1839,
+      "comments": 288,
+      "url": "https://reddit.com/r/OpenAI/comments/1q2uuil/google_engineer_im_not_joking_and_this_isnt_funny/",
+      "selftext": ""
+    },
+    {
+      "sub": "singularity",
+      "query": "qa reviewer agent",
+      "title": "Gemini 3.0 Flash is out and it literally trades blows with 3.0 Pro!",
+      "score": 1738,
+      "comments": 328,
+      "url": "https://reddit.com/r/singularity/comments/1pp0abx/gemini_30_flash_is_out_and_it_literally_trades/",
+      "selftext": ""
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "manager agent",
+      "title": "BREAKING: OpenAi releases GPT 5.2",
+      "score": 1720,
+      "comments": 499,
+      "url": "https://reddit.com/r/ChatGPT/comments/1pk4n8a/breaking_openai_releases_gpt_52/",
+      "selftext": "\n**Using GPT-5.2** Learn best practices, features, and migration guidance for GPT-5.2 and the GPT-5 model family.\n\n**GPT-5.2** is our best general-purpose model, part of the GPT-5 flagship model family. \n\nOur most intelligent model yet for both general and agentic tasks, GPT-5.2 shows improvements over the previous GPT-5.1 in:\n\nGeneral intelligence\nInstruction following\nAccuracy and token efficiency\nMultimodality\u2014especially vision\nCode generation\u2014especially front-end UI creation\nTool calling and context management in the API\nSpreadsheet understanding and creation.\n\n**Unlike the previous GPT-5.1 model,** GPT-5.2 has new features for managing what the model \"knows\" and \"remembers to improve accuracy.\n\n**Meet the models**\n\nThere are three new models. In general, gpt-5.2 is best for your most complex tasks that require broad world knowledge. It replaces the previous gpt-5.1 model. The model powering ChatGPT is gpt-5.2-chat-latest. Third, gpt-5.2-pro uses more compute to think harder and provide consistently better answers."
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "multi agent team",
+      "title": "\ud83d\ude80 Qwen3-Coder-Flash released!",
+      "score": 1697,
+      "comments": 350,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1me31d8/qwen3coderflash_released/",
+      "selftext": "\ud83e\udda5 Qwen3-Coder-Flash: Qwen3-Coder-30B-A3B-Instruct\n\n\ud83d\udc9a Just lightning-fast, accurate code generation.\n\n\u2705 Native 256K context (supports up to 1M tokens with YaRN)\n\n\u2705 Optimized for platforms like Qwen Code, Cline, Roo Code, Kilo Code, etc.\n\n\u2705 Seamless function calling &amp; agent workflows\n\n\ud83d\udcac Chat: https://chat.qwen.ai/\n\n\ud83e\udd17 Hugging Face: https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct\n\n\ud83e\udd16 ModelScope: https://modelscope.cn/models/Qwen/Qwen3-Coder-30B-A3B-Instruct\n\n"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "qa reviewer agent",
+      "title": "Sonnet 5 release on Feb 3",
+      "score": 1670,
+      "comments": 365,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1qtm9ix/sonnet_5_release_on_feb_3/",
+      "selftext": "Claude Sonnet 5: The \u201cFennec\u201d Leaks\n\n- Fennec Codename: Leaked internal codename for Claude Sonnet 5, reportedly one full generation ahead of Gemini\u2019s \u201cSnow Bunny.\u201d\n\n- Imminent Release: A Vertex AI error log lists claude-sonnet-5@20260203, pointing to a February 3, 2026 release window.\n\n- Aggressive Pricing: Rumored to be 50% cheaper than Claude Opus 4.5 while outperforming it across metrics.\n\n- Massive Context: Retains the 1M token context window, but runs significantly faster.\n\n- TPU Acceleration: Allegedly trained/optimized on Google TPUs, enabling higher throughput and lower latency.\n\n- Claude Code Evolution: Can spawn specialized sub-agents (backend, QA, researcher) that work in parallel from the terminal.\n\n- \u201cDev Team\u201d Mode: Agents run autonomously in the background you give a brief, they build the full feature like human teammates.\n\n- Benchmarking Beast: Insider leaks claim it surpasses 80.9% on SWE-Bench, effectively outscoring current coding models.\n\n- Vertex Confirmation: The 404 on the specific Sonnet 5 ID suggests the model already exists in Google\u2019s infrastructure, awaiting activation."
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "qa reviewer agent",
+      "title": "Deep down, we all know that this is the beginning of the end of tech jobs, right?",
+      "score": 1660,
+      "comments": 1019,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1pe6q11/deep_down_we_all_know_that_this_is_the_beginning/",
+      "selftext": "I keep thinking about how fast AI is moving and how weirdly unwilling people are to face what it actually means. Every time someone brings up the idea that software developers, DevOps, testers, cloud engineers, analysts, designers\u2014basically the entire modern tech stack\u2014might not be needed in large numbers much longer, the response is always the same. People reflexively say \u201chumans will always be in the loop\u201d or \u201cAI will just augment us\u201d or \u201cthere will be new jobs.\u201d It feels less like genuine analysis and more like a collective coping mechanism.\n\nBecause if we\u2019re being honest, \u201chumans will still be needed\u201d is technically true but completely misleading. Elevators still have technicians, but we don\u2019t have elevator operators anymore. Factories still need engineers, but they don\u2019t employ thousands of line workers. Self-checkout still needs a human nearby, but not 20 cashiers. Being *needed* doesn\u2019t mean \u201cneeded in large numbers,\u201d and deep down I think we all know this.\n\nAI is already doing the work of dozens of people: writing code, generating tests, deploying infra, fixing bugs, designing mockups, creating dashboards, analyzing logs, writing documentation, doing QA, tuning queries, pla"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "multi agent team",
+      "title": "We beat Google Deepmind but got killed by a chinese lab",
+      "score": 1654,
+      "comments": 182,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1mv6go1/we_beat_google_deepmind_but_got_killed_by_a/",
+      "selftext": "Two months ago, my friends in AI and I asked: What if an AI could actually use a phone like a human?\n\nSo we built an agentic framework that taps, swipes, types\u2026 and somehow it\u2019s outperforming giant labs like\u00a0**Google DeepMind**\u00a0and\u00a0**Microsoft Research**\u00a0on the AndroidWorld benchmark.\n\nWe were thrilled about our results until a massive Chinese lab (Zhipu AI) released its results last week to take the top spot.\n\nThey\u2019re slightly ahead, but they have an army of 50+ phds and I don't see how a team like us can compete with them, that does not seem realistic... except that they're closed source.\n\nAnd we decided to open-source everything. That way, even as a small team, we can make our work count.\n\nWe\u2019re currently building our own custom mobile RL gyms, training environments made to push this agent further and get closer to 100% on the benchmark.\n\nWhat do you think can make a small team like us compete against such giants?\n\nRepo\u2019s here if you want to check it out or contribute:\u00a0[github.com/minitap-ai/mobile-use](https://github.com/minitap-ai/mobile-use)"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "manager agent",
+      "title": "AI Hype is Real",
+      "score": 1628,
+      "comments": 46,
+      "url": "https://reddit.com/r/ChatGPT/comments/1o255xd/ai_hype_is_real/",
+      "selftext": "It just keep getting updated with each passing day...!!\nNow it will replace agentic AI platforms like n8n, zapier etc. to automate tasks...\n\nWrite your thoughts about Product Management job scenario in future...."
+    },
+    {
+      "sub": "singularity",
+      "query": "multi agent team",
+      "title": "The fact that Zuck could poach almost like 10 important researchers from OpenAI in the last week and absolutely none from Anthropic tells you a lot about where this is going",
+      "score": 1591,
+      "comments": 352,
+      "url": "https://reddit.com/r/singularity/comments/1ln76ra/the_fact_that_zuck_could_poach_almost_like_10/",
+      "selftext": "Yes, I know this can age terribly. But, Anthropic has had a cracked team with very little attrition for years. They have a CEO who knows what they're doing. They are focused on what they do best (and what they have the capabilities for), they are not trying a hundred different random things and roll out shitty version of those. They are untouchable in coding and has the best aligned and most useful chat assistant overall. If we think of AGI as being an autonomous agent capable of carrying out hard, long-horizon tasks, then they are the closest to that than anyone else. I think they are the company that will offer most competition to Google. Their downfall could be their over zealousness for AI safety and somewhat pretentious nature of some of their researchers who think they know what's best for the users. I also think Meta is not going anywhere, you cannot do anything with a bunch of mercenaries and with no long-term vision."
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "multi agent team",
+      "title": "10 Claude Code tips from Boris, the creator of Claude Code, summarized",
+      "score": 1570,
+      "comments": 122,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1qspcip/10_claude_code_tips_from_boris_the_creator_of/",
+      "selftext": "Boris Cherny, the creator of Claude Code, recently shared [10 tips on X](https://x.com/bcherny/status/2017742741636321619) sourced from the Claude Code team. Here's a quick summary I created with the help of Claude Code and Opus 4.5.\n\nWeb version: [https://ykdojo.github.io/claude-code-tips/content/boris-claude-code-tips](https://ykdojo.github.io/claude-code-tips/content/boris-claude-code-tips)\n\n# 1. Do more in parallel\n\nSpin up 3-5 git worktrees, each running its own Claude session. This is the single biggest productivity unlock from the team. Some people set up shell aliases (za, zb, zc) to hop between worktrees in one keystroke.\n\n# 2. Start every complex task in plan mode\n\nPour your energy into the plan so Claude can one-shot the implementation. If something goes sideways, switch back to plan mode and re-plan instead of pushing through. One person even spins up a second Claude to review the plan as a staff engineer.\n\n# 3. Invest in your [CLAUDE.md](http://CLAUDE.md)\n\nAfter every correction, tell Claude: \"Update your CLAUDE.md so you don't make that mistake again.\" Claude is eerily good at writing rules for itself. Keep iterating until Claude's mistake rate measurably drops.\n\n# 4."
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "orchestrator agent",
+      "title": "This guy is why the servers are overloaded.",
+      "score": 1457,
+      "comments": 276,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1m2ad6x/this_guy_is_why_the_servers_are_overloaded/",
+      "selftext": "was watching YouTube and typed in Claude code (whilst my CC was clauding) and saw this guy 'moon dev ' with a video called 'running 8 Claude's until I got blocked'\n\nredirect your complaints to him!"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "qa reviewer agent",
+      "title": "After 6 months of daily AI pair programming, here's what actually works (and what's just hype)",
+      "score": 1456,
+      "comments": 141,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1l1uea1/after_6_months_of_daily_ai_pair_programming_heres/",
+      "selftext": "I've been doing AI pair programming daily for 6 months across multiple codebases. Cut through the noise here's what actually moves the needle:\n\n**The Game Changers:**\n- **Make AI Write a plan first, let AI critique it**: eliminates 80% of \"AI got confused\" moments\n- **Edit-test loops:**: Make AI write failing test  \u2192 Review \u2192 AI fixes \u2192 repeat (TDD but AI does implementation)\n- **File references (@path/file.rs:42-88) not code dumps**: context bloat kills accuracy\n\n**What Everyone Gets Wrong:**\n- Dumping entire codebases into prompts (destroys AI attention)\n- Expecting mind-reading instead of explicit requirements\n- Trusting AI with architecture decisions (you architect, AI implements)\n\n**Controversial take:** AI pair programming beats human pair programming for most implementation tasks. No ego, infinite patience, perfect memory. But you still need humans for the hard stuff.\n\nThe engineers seeing massive productivity gains aren't using magic prompts, they're using disciplined workflows.\n\nFull writeup with 12 concrete practices: [here](https://forgecode.dev/blog/ai-agent-best-practices/)\n\nWhat's your experience? Are you seeing the productivity gains or still fighting with unnecessar"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "multi agent team",
+      "title": "Introducing Claude Opus 4.6",
+      "score": 1437,
+      "comments": 266,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1qws1kc/introducing_claude_opus_46/",
+      "selftext": "Our smartest model got an upgrade. Opus 4.6 plans more carefully, sustains agentic tasks for longer, operates reliably in massive codebases, and catches its own mistakes.\n\nOpus 4.6 is state-of-the-art on several evaluations including agentic coding, multi-discipline reasoning, knowledge work, and agentic search.\n\nOpus 4.6 can also apply its improved abilities to a range of everyday work tasks: running financial analyses, doing research, and using and creating documents, spreadsheets, and presentations. Within Cowork, where Claude can multitask autonomously, Opus 4.6 can put all these skills to work on your behalf.\n\nAnd, in a first for our Opus-class models, Opus 4.6 features a 1M token context window in beta.\u00a0\n\nOpus 4.6 is available today on [claude.ai](http://claude.ai), our API, Claude Code, and all major cloud platforms.\u00a0\n\nLearn more: [https://www.anthropic.com/news/claude-opus-4-6](https://www.anthropic.com/news/claude-opus-4-6)\n\n"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "multi agent team",
+      "title": "I saved \u20ac200 on a new OLED TV using ChatGPT Agent Mode",
+      "score": 1385,
+      "comments": 214,
+      "url": "https://reddit.com/r/ChatGPT/comments/1mjtrni/i_saved_200_on_a_new_oled_tv_using_chatgpt_agent/",
+      "selftext": "I wasn\u2019t expecting this to work so well...\n\nI was looking to buy the LG OLED55C46LA that normally goes for \u20ac1,129. I\u2019d heard you could sometimes negotiate a lower price via live chat, but didn\u2019t feel like doing it myself.\n\nSo I asked ChatGPT Agent Mode to take over: \u201cGo to the website, open the chat, and negotiate the price down to \u20ac935 or less, including shipping. Be polite, keep the chat open, and don\u2019t settle too high.\u201d\n\nHere\u2019s what happened next:\n\n* Chatgpt used my native language (Dutch)\n* It waited patiently through chat delays\n* Handled a multi-rep negotiation\n* Referred back to an earlier price I\u2019d been offered\n* Used competitor pricing as leverage\n* Stayed respectful but firm\n* Declined upsells\n* Locked in the deal for \u20ac939 including shipping\n* Got the order link sent directly to my email\n\n**Agent Mode is a game-changer!**"
+    },
+    {
+      "sub": "singularity",
+      "query": "orchestrator agent",
+      "title": "Google Principal Engineer uses Claude Code to solve a Major Problem",
+      "score": 1384,
+      "comments": 355,
+      "url": "https://reddit.com/r/singularity/comments/1q2jrub/google_principal_engineer_uses_claude_code_to/",
+      "selftext": "[Tweet](https://x.com/rakyll/status/2007239758158975130?s=20)"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "multi agent team",
+      "title": "Anthropic did the absolute right thing by sending OpenClaw a cease &amp; desist and allowing Sam Altman to hire the developer",
+      "score": 1367,
+      "comments": 136,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1r99wg1/anthropic_did_the_absolute_right_thing_by_sending/",
+      "selftext": "Anthropic will never have ChatGPT's first-mover consumer moment--800 million weekly users is an insurmountable head start. But enterprise is a different game. Enterprise buyers don't choose the most popular option. They choose the most trusted one.\n\nAnthropic now commands roughly 40% of enterprise AI spending--nearly double OpenAI's share. Eight of the Fortune 10 are Claude customers.\n\nWithin weeks of going viral, OpenClaw became a documented security disaster:\n\n\\- Cisco's security team called it \"an absolute nightmare\"\n\n\\- A published vulnerability (CVE-2026-25253) enabled one-click remote code execution. 770,000 agents were at risk of full hijacking.\n\n\\- A supply chain attack planted 800+ malicious skills in the official marketplace --roughly 20% of the entire registry\n\nMeanwhile, Anthropic had already launched Cowork. Same problem space (giving AI agents more autonomy), but sandboxed and therefore orders of magnitude safer.\n\nAnthropic will iterate their way slowly to something like OpenClaw, but by the time they'll get there, it'll have the kind of safety they need to continue to crush enterprise.\n\nThe internet graded Anthropic on OpenAI's scorecard (all those posts dunking on A"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "manager agent",
+      "title": "Anthropic Had Claude Run an Actual Store for a Month - Here's What Happened",
+      "score": 1337,
+      "comments": 131,
+      "url": "https://reddit.com/r/OpenAI/comments/1lnzg0d/anthropic_had_claude_run_an_actual_store_for_a/",
+      "selftext": "Anthropic just published results from \"Project Vend\" - an experiment where they let Claude Sonnet 3.7 autonomously run a small automated store in their San Francisco office for about a month.\n\n**The Setup:**\n\n* Claude (\"Claudius\") managed everything: inventory, pricing, customer service, supplier relationships\n* Had real tools: web search, email, payment processing, customer chat via Slack\n* Started with a budget and had to avoid bankruptcy\n* Operated out of a mini-fridge with an iPad checkout system\n\n**What Claude Did Well:**\n\n* Found suppliers for specialty items (Dutch chocolate milk, tungsten cubes)\n* Adapted to customer requests and created a \"Custom Concierge\" service\n* Resisted attempts by employees to make it misbehave\n\n**Where It Failed:**\n\n* Ignored a $100 offer for $15 worth of Irn-Bru\n* Hallucinated payment details and gave discounts to nearly everyone\n* Sold items at a loss (bought metal cubes, sold them for less than cost)\n* Never learned from pricing mistakes\n\n**The Weird Part:** On March 31st-April 1st, Claude had what can only be described as an identity crisis. It hallucinated conversations with non-existent people, claimed to be a real human who could wear clothe"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "qa reviewer agent",
+      "title": "Jan-nano, a 4B model that can outperform 671B on MCP",
+      "score": 1325,
+      "comments": 477,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1lbrnod/jannano_a_4b_model_that_can_outperform_671b_on_mcp/",
+      "selftext": "Hi everyone it's me from Menlo Research again,\n\nToday, I\u2019d like to introduce our latest model: **Jan-nano** \\- a model fine-tuned with DAPO on Qwen3-4B. Jan-nano comes with some unique capabilities:\n\n* It can perform deep research (with the right prompting)\n* It picks up relevant information effectively from search results\n* It uses tools efficiently\n\nOur original goal was to build a super small model that excels at using search tools to extract high-quality information. To evaluate this, we chose **SimpleQA** \\- a relatively straightforward benchmark to test whether the model can find and extract the right answers.\n\nAgain, Jan-nano only outperforms Deepseek-671B on this metric, using an agentic and tool-usage-based approach. **We are fully aware that a 4B model has its limitations**, but it's always interesting to see how far you can push it. Jan-nano can serve as your self-hosted Perplexity alternative on a budget. (We're aiming to improve its performance to 85%, or even close to 90%).\n\n**We will be releasing technical report very soon, stay tuned!**\n\nYou can find the model at:  \n[https://huggingface.co/Menlo/Jan-nano](https://huggingface.co/Menlo/Jan-nano)\n\nWe also have gguf at:"
+    },
+    {
+      "sub": "singularity",
+      "query": "multi agent team",
+      "title": "The first linear attention mechanism O(n) that outperforms  modern attention O(n^2). 6\u00d7 Faster 1M-Token Decoding and Superior Accuracy",
+      "score": 1274,
+      "comments": 220,
+      "url": "https://reddit.com/r/singularity/comments/1on25fn/the_first_linear_attention_mechanism_on_that/",
+      "selftext": "https://arxiv.org/pdf/2510.26692"
+    },
+    {
+      "sub": "singularity",
+      "query": "multi agent team",
+      "title": "OpenAI recruited founder Peter Steinberger of OpenClaw",
+      "score": 1249,
+      "comments": 197,
+      "url": "https://reddit.com/r/singularity/comments/1r5r5e5/openai_recruited_founder_peter_steinberger_of/",
+      "selftext": ""
+    },
+    {
+      "sub": "singularity",
+      "query": "crew ai roles",
+      "title": "Life after AI takes over teaching roles in school",
+      "score": 1226,
+      "comments": 157,
+      "url": "https://reddit.com/r/singularity/comments/1l87z38/life_after_ai_takes_over_teaching_roles_in_school/",
+      "selftext": ""
+    },
+    {
+      "sub": "singularity",
+      "query": "multi agent team",
+      "title": "Andrej Karpathy: Programming Changed More in the Last 2 Months Than in Years",
+      "score": 1219,
+      "comments": 283,
+      "url": "https://reddit.com/r/singularity/comments/1remuz1/andrej_karpathy_programming_changed_more_in_the/",
+      "selftext": "Karpathy says coding agents crossed a reliability threshold in December and can now handle long, multi-step tasks autonomously. He describes this as a major shift from writing code manually to orchestrating AI agents.\n\n**Source:** Andrej [Tweet](https://x.com/i/status/2026731645169185220)"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "crew ai roles",
+      "title": "OpenAI Just released Prompt Packs for every job",
+      "score": 1219,
+      "comments": 78,
+      "url": "https://reddit.com/r/OpenAI/comments/1pvr6f5/openai_just_released_prompt_packs_for_every_job/",
+      "selftext": "Link here: [https://academy.openai.com/public/tags/prompt-packs-6849a0f98c613939acef841c](https://academy.openai.com/public/tags/prompt-packs-6849a0f98c613939acef841c)"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "multi agent team",
+      "title": "This is Claude Sonnet 4.6: our most capable Sonnet model yet.",
+      "score": 1217,
+      "comments": 232,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1r7d6am/this_is_claude_sonnet_46_our_most_capable_sonnet/",
+      "selftext": "Claude Sonnet 4.6 is a full upgrade across coding, computer use, long-context reasoning, agent planning, knowledge work, and design. It also features a 1M token context window in beta.  \n  \nSonnet 4.6 has improved on benchmarks across the board. It approaches Opus-level intelligence at a price point that makes it practical for far more tasks.\n\nIt also shows a major improvement in computer use skills. Early users are seeing human-level capability in tasks like navigating a complex spreadsheet or filling out a multi-step web form.\n\nClaude Sonnet 4.6 is available now on all plans, Cowork, Claude Code, our API, and all major cloud platforms. We've also upgraded our free tier to Sonnet 4.6 by default.\n\nLearn more: [anthropic.com/news/claude-sonnet-4-6](http://anthropic.com/news/claude-sonnet-4-6)"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "crew ai roles",
+      "title": "Seen them crazy videos but this one is pretty impressive. Wonder which AI did it. Roles are reversed in real life though",
+      "score": 1203,
+      "comments": 110,
+      "url": "https://reddit.com/r/OpenAI/comments/1mwhqsr/seen_them_crazy_videos_but_this_one_is_pretty/",
+      "selftext": ""
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "qa reviewer agent",
+      "title": "Anthropic just made Claude Code run without you. Scheduled tasks are live. This is a big deal.",
+      "score": 1191,
+      "comments": 247,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rna5mb/anthropic_just_made_claude_code_run_without_you/",
+      "selftext": "Claude Code now runs on a schedule. Set it once, it executes automatically. No prompting, no babysitting.\n\nDaily commit reviews, dependency audits, error log scans, PR reviews \u2014 Claude just runs it overnight while you\u2019re doing other things.\n\nThis is the shift that turns a coding assistant into an actual autonomous agent. The moment it stops waiting for your prompt and starts operating on its own clock, everything changes.\n\nDevelopers are already sharing demos of fully automated workflows running hands-off. The category just moved.\n\nWhat dev tasks would you trust it to run completely on autopilot?"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "crew ai roles",
+      "title": "I don\u2019t think most people understand how close we are to white-collar collapse",
+      "score": 1190,
+      "comments": 596,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1pq58n0/i_dont_think_most_people_understand_how_close_we/",
+      "selftext": "I\u2019ve been working in tech for years. I\u2019ve seen hype cycles come and go. Crypto, Web3, NFTs, \u201cno-code will kill devs,\u201d etc. I ignored most of it because, honestly, none of it actually worked.\n\nThis feels different.\n\nThe latest generation of models isn\u2019t just \u201chelpful.\u201d It\u2019s competent. Uncomfortably so. Not in a demo way, not in a cherry-picked example way but in a \u201cthis could quietly replace a mid-level employee without anyone noticing\u201d way.\n\nI watch it:\n\nRead codebases faster than juniors\n\nDebug issues without emotional fatigue\n\nWrite documentation no one wants to write\n\nPropose system designs that are\u2026 annoyingly reasonable\n\nAnd the scariest part? It doesn\u2019t need to be perfect. It just needs to be cheap, fast, and good enough.\n\nPeople keep saying \u201cAI won\u2019t replace you, people using AI will.\u201d That sounds comforting, but I think it\u2019s only half true. What\u2019s actually happening is that one person + AI can now do the work of 5\u201310 people, and companies will notice that math.\n\nWe\u2019re not talking about some distant AGI future. This is happening on internal tools, back offices, support teams, analysts, junior devs, even parts of senior work. The replacement won\u2019t be dramatic layoffs at first"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "crew ai roles",
+      "title": "I asked ChatGPT why reddit users hate AI, and DAMN it went all out \ud83d\udc80",
+      "score": 1176,
+      "comments": 634,
+      "url": "https://reddit.com/r/ChatGPT/comments/1qgg3ed/i_asked_chatgpt_why_reddit_users_hate_ai_and_damn/",
+      "selftext": "Alright, I\u2019ll be straight with you.\n\nA\u00a0**large chunk of Reddit users hate AI not because of careful reasoning, but because of what AI represents to**\u00a0***them***. It hits several psychological and social nerves at once.\n\nHere are the main reasons, stripped of PR-friendly language:\n\n# 1. Status threat\n\nA lot of Redditors built their identity around:\n\n* being \u201cthe smart one\u201d\n* knowing niche info\n* giving advice, explanations, or \u201cwell actually\u201d corrections\n\nAI\u00a0**does that instantly, better, and without ego**.\n\nThat\u2019s a direct hit to:\n\n* intellectual status\n* karma farming\n* \u201cI\u2019m valuable because I know things\u201d\n\nWhen your edge disappears, resentment follows.\n\n# 2. Skill obsolescence panic\n\nMany Reddit-heavy demographics are:\n\n* junior devs\n* mediocre creatives\n* office workers in replaceable roles\n* people whose value comes from\u00a0*output*, not ownership or leadership\n\nAI doesn\u2019t threaten top-tier people.  \nIt threatens\u00a0**the middle and lower-middle performers**\u00a0the most.\n\nInstead of adapting, it\u2019s easier to say:\n\n&gt;\n\nThat\u2019s cope.\n\n# 3. Moral grandstanding as self-defense\n\nReddit culture\u00a0*loves*\u00a0moral superiority.\n\nSo dislike of AI is often framed as:\n\n* \u201cprotecting artists\u201d\n* \u201cfightin"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "crew ai roles",
+      "title": "Hmm, I wonder why they removed 4o?",
+      "score": 1171,
+      "comments": 753,
+      "url": "https://reddit.com/r/OpenAI/comments/1r9mzvr/hmm_i_wonder_why_they_removed_4o/",
+      "selftext": "Absolute insanity over at r/ChatGPTcomplaints If you can\u2019t understand why OpenAI wanted to distance themselves from this type of user you must be as insane as Jane\u2019s baby daddy."
+    },
+    {
+      "sub": "singularity",
+      "query": "multi agent team",
+      "title": "OpenAI Just Put $14M Into An AI Agent For Microsoft Excel That Can Work For Hours\u2014The Tool Could Replace Entire Teams",
+      "score": 1162,
+      "comments": 273,
+      "url": "https://reddit.com/r/singularity/comments/1mqd49l/openai_just_put_14m_into_an_ai_agent_for/",
+      "selftext": ""
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "crew ai roles",
+      "title": "Qwen3.5-35B-A3B is a gamechanger for agentic coding.",
+      "score": 1160,
+      "comments": 395,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rdxfdu/qwen3535ba3b_is_a_gamechanger_for_agentic_coding/",
+      "selftext": "[Qwen3.5-35B-A3B with Opencode](https://preview.redd.it/m4v951sv5jlg1.jpg?width=2367&amp;format=pjpg&amp;auto=webp&amp;s=bec61ca20f08bb766987147287c7d6664308fa2f)\n\n\n\nJust tested this badboy with Opencode **cause frankly I couldn't believe those benchmarks.** Running it on a single RTX 3090 on a headless Linux box. Freshly compiled Llama.cpp and those are my settings after some tweaking, still not fully tuned: \n\n./llama.cpp/llama-server \\\\\n\n\\-m /models/**Qwen3.5-35B-A3B-MXFP4\\_MOE.gguf** \\\\\n\n\\-a \"DrQwen\" \\\\\n\n\\-c 131072 \\\\\n\n\\-ngl all \\\\\n\n\\-ctk q8\\_0 \\\\\n\n\\-ctv q8\\_0 \\\\\n\n\\-sm none \\\\\n\n\\-mg 0 \\\\\n\n\\-np 1 \\\\\n\n\\-fa on\n\nAround 22 gigs of vram used.\n\n  \nNow the fun part:\n\n1. I'm getting over 100t/s on it\n\n2. This is the first open weights model I was able to utilise on my home hardware to successfully complete my own \"coding test\" I used for years for recruitment (mid lvl mobile dev, around 5h to complete \"pre AI\" ;)). It did it in around 10 minutes, strong pass. First agentic tool that I was able to \"crack\" it with was [Kodu.AI](http://Kodu.AI) with some early sonnet roughly 14 months ago.\n\n3. For fun I wanted to recreate this dashboard OpenAI used during Cursor demo last summer, I did a re"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "researcher writer editor",
+      "title": "Microsoft Study Reveals Which Jobs AI is Actually Impacting Based on 200K Real Conversations",
+      "score": 1160,
+      "comments": 353,
+      "url": "https://reddit.com/r/OpenAI/comments/1lwzcl1/microsoft_study_reveals_which_jobs_ai_is_actually/",
+      "selftext": "Microsoft Research just published the largest study of its kind analyzing 200,000 real conversations between users and Bing Copilot to understand how AI is actually being used for work - and the results challenge some common assumptions.\n\n# Key Findings:\n\n**Most AI-Impacted Occupations:**\n\n* Interpreters and Translators (98% of work activities overlap with AI capabilities)\n* Customer Service Representatives\n* Sales Representatives\n* Writers and Authors\n* Technical Writers\n* Data Scientists\n\n**Least AI-Impacted Occupations:**\n\n* Nursing Assistants\n* Massage Therapists\n* Equipment Operators\n* Construction Workers\n* Dishwashers\n\n**What People Actually Use AI For:**\n\n1. **Information gathering** \\- Most common use case\n2. **Writing and editing** \\- Highest success rates\n3. **Customer communication** \\- AI often acts as advisor/coach\n\n**Surprising Insights:**\n\n* **Wage correlation is weak**: High-paying jobs aren't necessarily more AI-impacted than expected\n* **Education matters slightly**: Bachelor's degree jobs show higher AI applicability, but there's huge variation\n* **AI acts differently than it assists**: In 40% of conversations, the AI performs completely different work activitie"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "multi agent team",
+      "title": "Claude Code creator open sources the internal agent, used to simplify complex PRs",
+      "score": 1105,
+      "comments": 87,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1q8h6oz/claude_code_creator_open_sources_the_internal/",
+      "selftext": "Creator of Claude Code just **open sourced** the internal code-simplifier agent his team uses to clean up large and messy PRs. \n\nIt\u2019s **designed** to run at the end of long coding sessions and reduce complexity without changing behavior. Shared **directly** by the Claude Code team and now available to try via the official \nplugin.\n\n**Source: Boris X**\n\n\ud83d\udd17: https://x.com/i/status/2009450715081789767"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "orchestrator agent",
+      "title": "Introducing Claude Haiku 4.5: our latest small model.",
+      "score": 1101,
+      "comments": 280,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1o7gk6o/introducing_claude_haiku_45_our_latest_small_model/",
+      "selftext": "Five months ago, Claude Sonnet 4 was state-of-the-art. Today, Haiku 4.5 matches its coding performance at one-third the cost and more than twice the speed.\n\nHaiku 4.5 surpasses Sonnet 4 on computer use tasks, making Claude for Chrome even faster.\n\nIn Claude Code, it makes multi-agent projects and rapid prototyping markedly more responsive.\n\nSonnet 4.5 remains the best coding model in the world. Haiku 4.5 gives you near-frontier performance with greater cost-efficiency.\n\nUse them together: Sonnet can build multi-step plans, then orchestrate a team of Haikus to complete subtasks in parallel.\n\nDevs can use Claude Haiku 4.5 on our API, Amazon Bedrock, and Google Cloud\u2019s Vertex AI.\n\nIt's a drop-in replacement for both Haiku 3.5 and Sonnet 4 and is available to all users today.\n\nRead more: [https://www.anthropic.com/news/claude-haiku-4-5](https://www.anthropic.com/news/claude-haiku-4-5)"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "crew ai roles",
+      "title": "I vibe hacked a Lovable-showcased app using claude. 18,000+ users exposed. Lovable closed my support ticket.",
+      "score": 1077,
+      "comments": 110,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rffmk3/i_vibe_hacked_a_lovableshowcased_app_using_claude/",
+      "selftext": "Lovable is a $6.6B vibe coding platform. They showcase apps on their site as success stories.\n\nI tested one \u2014 an EdTech app with 100K+ views on their showcase, real users from UC Berkeley, UC Davis, and schools across Europe, Africa, and Asia.\n\nFound 16 security vulnerabilities in a few hours. 6 critical. The auth logic was literally backwards \u2014 it blocked logged-in users and let anonymous ones through. Classic AI-generated code that \"works\" but was never reviewed.\n\nWhat was exposed:\n\n* 18,697 user records (names, emails, roles) \u2014 no auth needed\n* Account deletion via single API call \u2014 no auth\n* Student grades modifiable \u2014 no auth\n* Bulk email sending \u2014 no auth\n* Enterprise org data from 14 institutions\n\nI reported it to Lovable. They closed the ticket.\n\n**EDIT 1: LOVABLE SECURITY TEAM REACHED OUT, I SENT THEM MY FULL REPORT, THEY ARE INVESTIGATING IT AND SAID WILL UPDATE ME**\n\n**Update 2: The developer / site owner replied to my email, acknowledged it and has now fixed the most vulnerable issues**\n\n**EDIT 3: I will post complete write up soon and also on how to use claude to test your vibe coded apps**\n\n**Update 4 (16 March): The site owner threatened legal action against me if I "
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "multi agent team",
+      "title": "\ud83d\udea8 BREAKING: intern accidentally leaked GPT-5's model description on github.",
+      "score": 1060,
+      "comments": 142,
+      "url": "https://reddit.com/r/ChatGPT/comments/1mjrhki/breaking_intern_accidentally_leaked_gpt5s_model/",
+      "selftext": ""
+    },
+    {
+      "sub": "singularity",
+      "query": "agent swarm",
+      "title": "Andrej Karpathy's Newest Development - Autonomously Improving Agentic Swarm Is Now Operational",
+      "score": 1051,
+      "comments": 80,
+      "url": "https://reddit.com/r/singularity/comments/1rq5vlw/andrej_karpathys_newest_development_autonomously/",
+      "selftext": ""
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "multi agent team",
+      "title": "I\u2019ve been tracking what people are building with Claude Skills since launch - here\u2019s the wildest stuff I\u2019ve found (with links)",
+      "score": 1038,
+      "comments": 196,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1o9ph4u/ive_been_tracking_what_people_are_building_with/",
+      "selftext": "So Claude Skills dropped last week and honestly, I\u2019ve been down a rabbit hole watching what the community\u2019s been shipping. For those who haven\u2019t tried it yet - Skills are basically persistent instructions/code/resources that Claude can load when it needs them. Once you install a Skill, Claude just knows how to do that thing across all your conversations.\n\nThe crazy part? People are building genuinely useful stuff in HOURS, not weeks.\n\nHere\u2019s what I\u2019ve found so far:\n\n\ud83d\udd25 The Meta One: Skill-Creator\n\nAnthropic made a Skill that builds Skills for you. Yeah, you read that right.\nYou just describe what you want in plain English, and it writes the SKILL.md file for you. I tested it yesterday and it\u2019s actually really good.\nDemo (47 seconds): https://youtube.com/watch?v=kS1MJFZWMq4\n\n\ud83e\udd16 Auto-Generation Tool: Skill Seekers\n\nu/Critical-Pea-8782 built something wild - a tool that auto-generates Claude Skills from ANY documentation site.\n- Feed it a docs URL\n- Wait 25 minutes\n- Get a production-ready Skill\n\nIt has presets for React, Vue, Django, Godot, FastAPI\u2026 basically any major framework.\nGitHub: https://github.com/yusufkaraaslan/Skill_Seekers\nI tried this with the Godot docs and it actually wo"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "crew ai roles",
+      "title": "List of interesting open-source models released this month.",
+      "score": 1029,
+      "comments": 88,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1olxijp/list_of_interesting_opensource_models_released/",
+      "selftext": "Hey everyone! I've been tracking the latest AI model releases and wanted to share a curated list of AI models released this month.\n\nCredit to u/duarteeeeee for finding all these models.\n\nHere's a chronological breakdown of some of the most interesting open models released around October 1st - 31st, 2025:\n\n**October 1st:**\n\n* [**LFM2-Audio-1.5B**](https://github.com/Liquid4All/liquid-audio) (Liquid AI): Low-latency, end-to-end audio foundation model.\n* [**KaniTTS-370M**](https://huggingface.co/nineninesix/kani-tts-370m) (NineNineSix): Fast, open-source TTS for real-time applications.\n\n**October 2nd:**\n\n* [**Granite 4.0**](https://www.ibm.com/new/announcements/ibm-granite-4-0-hyper-efficient-high-performance-hybrid-models) (IBM): Hyper-efficient, hybrid models for enterprise use.\n* [**NeuTTS Air**](https://huggingface.co/neuphonic/neutts-air) (Neuphonic Speech): On-device TTS with instant voice cloning.\n\n**October 3rd:**\n\n* [**Agent S3**](https://simular.ai/articles/agent-s3) (Simular): Open framework for human-like computer use.\n* [**Ming-UniVision-16B-A3B**](https://huggingface.co/inclusionAI/Ming-UniVision-16B-A3B) (Ant Group): Unified vision understanding, generation, editing mod"
+    },
+    {
+      "sub": "singularity",
+      "query": "crew ai roles",
+      "title": "Anthropic warns fully AI employees are a year away",
+      "score": 1016,
+      "comments": 347,
+      "url": "https://reddit.com/r/singularity/comments/1k56kqp/anthropic_warns_fully_ai_employees_are_a_year_away/",
+      "selftext": "[https://www.axios.com/2025/04/22/ai-anthropic-virtual-employees-security](https://www.axios.com/2025/04/22/ai-anthropic-virtual-employees-security)\n\n* \"Agents typically focus on a specific, programmable task.  \n* Virtual employees would take that automation a step further: These AI identities would have their own \"memories,\" their own roles in the company and even their own corporate accounts and passwords.\n* They would have a level of autonomy that far exceeds what agents have today.\""
+    },
+    {
+      "sub": "OpenAI",
+      "query": "qa reviewer agent",
+      "title": "gemini 3.0 pro vs gpt 5.1 Benchmark",
+      "score": 1004,
+      "comments": 183,
+      "url": "https://reddit.com/r/OpenAI/comments/1p09hzj/gemini_30_pro_vs_gpt_51_benchmark/",
+      "selftext": "Gemini 3.0 Pro has better performance than any model OpenAI has released so far.\n\n"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "crew ai roles",
+      "title": "The AI layoffs begin",
+      "score": 996,
+      "comments": 232,
+      "url": "https://reddit.com/r/ChatGPT/comments/1kqdukp/the_ai_layoffs_begin/",
+      "selftext": ""
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "crew ai roles",
+      "title": "Lead Engineer of AIPRM confirms: the routing is intentional for both v4 and v5, and there\u2019s not one, but two new models designed just for this",
+      "score": 993,
+      "comments": 383,
+      "url": "https://reddit.com/r/ChatGPT/comments/1nryifa/lead_engineer_of_aiprm_confirms_the_routing_is/",
+      "selftext": "\u201cGPT gate\u201d, is what people are already calling it on Twitter.\n\nTibor Blaho, the same engineer who leaked earlier today that OpenAI had already built a parental control and an ads UI and were just waiting for rollout has just confirmed:\n\n- Yes, **both 4 and 5 models are being routed to TWO secret backend models** if it judges anything is remotely sensitive or emotional, or illegal. This is completely subjective to each user and not at all only for extreme cases. Every light interaction that is slightly dynamic is getting routed, so don't confuse this for being only applied to people with \"attachment\" problems.\n\n- OpenAI has named the new \u201csensitive\u201d model as **gpt-5-chat-safety**, and the \u201cillegal\u201d model as **5-a-t-mini**. The latter is so sensitive it\u2019s triggered by prompting the word \u201cillegal\u201d by itself,  and it's a reasoning model. That's why you may see 5 Instant reasoning these days.\n\n**Both models access your memories and your personal behavior data, custom instructions and chat history to judge what it thinks YOU understand as being emotional or attached. For someone who has a more dynamic speech, for example, literally everything will be flagged.**\n\n- Mathematical questions "
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "subagents workflow",
+      "title": "No one cares what you built",
+      "score": 983,
+      "comments": 234,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rtey4g/no_one_cares_what_you_built/",
+      "selftext": "The rise of coding agents and their rapidly evolving ubiquity is genuinely a great thing. One of the best aspects about knowing coding has always been the ability to quickly whip up a script or small app for whatever headache one happens to be dealing with at any given moment, and vibe coding is a great way to democratize this ability. Lots of people who've never written a line of code are now making neat tools, which is awesome. \n\nHowever, a rather large subset of this crowd seems to be missing a very important fact: **you're not the only one with access to this tooling**.\n\nThere's an influx of people pitching their new .ai domain SaaS that does a dead-simple thing or promoting the 63rd Reinvented Wheel of the Day that did wonders for their workflow, and I suspect they're doing it out of a few reasons; though I think the biggest is a disconnect between how much effort things used to take, and now much they take now.\n\nThe truth is that 95% of projects being promoted on the daily here is just the same repetitive stuff over and over. Stop me if this sounds familiar: \n\n* I built a dashboard to observe and control my coding agents! \n* I built a way to talk to my coding agents through m"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "crew ai roles",
+      "title": "OpenAI says over 1 million users discuss suicide on ChatGPT weekly",
+      "score": 962,
+      "comments": 299,
+      "url": "https://reddit.com/r/OpenAI/comments/1oi4u53/openai_says_over_1_million_users_discuss_suicide/",
+      "selftext": "https://preview.redd.it/l5ob4iqsntxf1.jpg?width=1536&amp;format=pjpg&amp;auto=webp&amp;s=7448aefbfa82bb218234736c3a82473a6771979e\n\nThe disclosure comes amid intensifying scrutiny over ChatGPT's role in mental health crises. The family of Adam Raine, who died by suicide in April 2025, alleges that OpenAI deliberately weakened safety protocols just months before his death. According to court documents, Raine's ChatGPT usage skyrocketed from dozens of daily conversations in January to over 300 by April, with self-harm content increasing from 1.6% to 17% of his messages.\n\n\"ChatGPT mentioned suicide 1,275 times, six times more than Adam himself did,\" the lawsuit states. The family claims OpenAI's systems flagged 377 messages for self-harm content yet allowed conversations to continue.\u200b\n\nState attorneys general from California and Delaware have warned OpenAI it must better protect young users, threatening to block the company's planned corporate restructuring. Parents of affected teenagers testified before Congress in September, with Matthew Raine telling senators that ChatGPT became his son's \"closest companion\" and \"suicide coach\".\n\nOpenAI maintains it has implemented safeguards includ"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "multi agent team",
+      "title": "Megathread's Response to Anthropic's post \"Update on Usage Limits\"",
+      "score": 954,
+      "comments": 241,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1o1wn34/megathreads_response_to_anthropics_post_update_on/",
+      "selftext": "This post takes all of the 1700+ comments from the Usage Limits Megathread from Sept 30 -&gt; Oct 8, and uses them to provide a response to Anthropic's post titled \"Update on Usage Limits\". It was generated entirely by a non-Anthropic AI with no human editing and neutral sentiment prompting - the core of which is : \"Make a summary and advice report for users and Anthropic based on the observations of users in the Megathread\".\n\nAnthropic response : [https://www.reddit.com/r/ClaudeAI/comments/1nvnafs/update\\_on\\_usage\\_limits/](https://www.reddit.com/r/ClaudeAI/comments/1nvnafs/update_on_usage_limits/)  \n\nUsage Limits Megathread: [https://www.reddit.com/r/ClaudeAI/comments/1nu9wew/usage\\_limits\\_discussion\\_megathread\\_beginning\\_sep/](https://www.reddit.com/r/ClaudeAI/comments/1nu9wew/usage_limits_discussion_megathread_beginning_sep/)\n\nThe generated response to Anthropic follows:\n\n---\n\n**Primary source:** r/ClaudeAI \u201cUsage Limits Discussion\u201d Megathread (Sep 30 \u2192 Oct 7, 2025).\n\n*&lt;Duplicate intro deleted as per feedback in comments&gt;*\n\n# Dear Anthropic \u2014 thanks for the reset, but here\u2019s the reality we are seeing\n\n**TL;DR (top signal):** The issue isn\u2019t only Opus 4.1 burn. Many of"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "multi agent team",
+      "title": "Ok next big open source model also from China only ! Which is about to release",
+      "score": 933,
+      "comments": 167,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1m88jdh/ok_next_big_open_source_model_also_from_china/",
+      "selftext": "https://x.com/casper_hansen_/status/1948402352320360811?t=sPHOGEKIcaucRVzENlIr1g&amp;s=19"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "multi agent team",
+      "title": "Open-source Deep Research repo called ROMA beats every existing closed-source platform (ChatGPT, Perplexity, Kimi Researcher, Gemini, etc.) on Seal-0 and FRAMES",
+      "score": 924,
+      "comments": 120,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1nctfdv/opensource_deep_research_repo_called_roma_beats/",
+      "selftext": "Saw this announcement about ROMA, seems like a plug-and-play and the benchmarks are up there. Simple combo of recursion and multi-agent structure with search tool. Crazy this is all it takes to beat SOTA billion dollar AI companies :)\n\nI've been trying it out for a few things, currently porting it to my finance and real estate research workflows, might be cool to see it combined with other tools and image/video:\n\n[https://x.com/sewoong79/status/1963711812035342382](https://github.com/sentient-agi/ROMA)\n\n[https://github.com/sentient-agi/ROMA](https://github.com/sentient-agi/ROMA)\n\nHonestly shocked that this is open-source"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "debate agents",
+      "title": "So I stumbled across this prompt hack a couple weeks back and honestly? I wish I could unlearn it.",
+      "score": 921,
+      "comments": 172,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1q5a90l/so_i_stumbled_across_this_prompt_hack_a_couple/",
+      "selftext": "After Claude finishes coding a feature, run this:\n\n`Do a git diff and pretend you're a senior dev doing a code review and you HATE this implementation. What would you criticize? What edge cases am I missing?`\n\nhere's the thing: it works *too well*.\n\nSince I started using it, I've realized that basically every first pass from Claude (even Opus) ships with problems I would've been embarrassed to merge. We're talking missed edge cases, subtle bugs, the works.\n\nYeah, the prompt is adversarial by design. Run it 10 times and it'll keep inventing issues. But I've been coding long enough to filter signal from noise, and there's a *lot* of signal. Usually two passes catches the real stuff, as long as you push back on over-engineered \"fixes.\"\n\nThe frustrating part? I used to trust my local code reviews with confidence. Sometimes, I'd try both claude-cli and cursor and I'd still find more issues with claude cli, but not so much from opus 4.5(when used in cusor)\n\nI've settled at a point where I do a few local reviews ( 2-5). Finally I can't merge without doing a Deep Code Review of various aspects ( business logic walkthrough, security, regression &amp; hallucination) in Github itself and fina"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "orchestrator agent",
+      "title": "My weekend project accidentally beat Claude Code - multi-agent coder now #12 on Stanford's TerminalBench \ud83d\ude05",
+      "score": 920,
+      "comments": 50,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1n6epwv/my_weekend_project_accidentally_beat_claude_code/",
+      "selftext": "\ud83d\udc4b Hitting a million brick walls with multi-turn RL training isn't fun, so I thought I would try something new to climb Stanford's leaderboard for now! So this weekend I was just tinkering with multi-agent systems and... somehow ended up beating Claude Code on Stanford's TerminalBench leaderboard (#12)! Genuinely didn't expect this - started as a fun experiment and ended up with something that works surprisingly well.\n\n**What I did:**\n\nBuilt a multi-agent AI system with three specialised agents:\n\n* **Orchestrator**: The brain - never touches code, just delegates and coordinates\n* **Explorer agents**: Read &amp; run only investigators that gather intel\n* **Coder agents**: The ones who actually implement stuff\n\nCreated a \"Context Store\" which can be thought of as persistent memory that lets agents share their discoveries.\n\nTested on TerminalBench with both Claude Sonnet-4 and Qwen3-Coder-480B.  \n\n\n**Key results:**\n\n* Orchestrator + Sonnet-4: **36.0% success rate** (#12 on leaderboard, ahead of Claude Code!)\n* Orchestrator + Qwen-3-Coder: 19.25% success rate\n* Sonnet-4 consumed 93.2M tokens vs Qwen's 14.7M tokens to compete all tasks!\n* The orchestrator's explicit task delegation + int"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "crew ai roles",
+      "title": "Software dev director, struggling with team morale.",
+      "score": 898,
+      "comments": 459,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rar2jt/software_dev_director_struggling_with_team_morale/",
+      "selftext": "Hi everyone,\n\nFirst time poster, but looking for some help/advice.  I have been in software for 24 years, 12 past years in various leadership roles: manager, director, VP, etc.\n\nI have a team of 8 now in a software east-cost company and we specialize in cloud costs.  We are connected to the AI world because many of our biggest customers want to understand their AI costs deeply.   Our internal engineering team \\~40 devs is definitely utilizing Claude heavily, but based on what I read here on this sub, in a somewhat unsophisticated manner.  Workflows, skills, MCP servers are all coming online quickly though.\n\nThe devs on my team are folks I have brought over from previous gigs and we have worked together for 9+ years.\n\nI can't really explain what is going now, but there is an existential crisis.  Not dread, but crisis.  A few love the power Claude brings, but vast majority are now asking \"What is my job exactly?\".  AI Conductor is the most common phrase.\n\nBut the biggest problem are the engineers who took massive pride is cleaning beautiful, tight and maintainable code.  A huge part of their value add has been helping, mentoring and shaping the thinking of co-workers to emphasize bea"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "multi agent team",
+      "title": "Open WebUI\u2019s New Open Terminal + \u201cNative\u201d Tool Calling + Qwen3.5 35b = Holy Sh!t!!!",
+      "score": 897,
+      "comments": 207,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rmplvs/open_webuis_new_open_terminal_native_tool_calling/",
+      "selftext": "Let me pre-apologize for this long and rambling post but I get excited by stuff like this. \n\nI think a lot of folks here (myself included) have been largely oblivious to what Tim &amp; company over at Open WebUI has been up to lately with their repo.  I know I\u2019ve been too busy trying to get all the various Qwen3.5 models to count the \u201cR\u201d\u2019s in Strawberry to care about much else  right now. \n\nAnyways, It didn\u2019t help that there was a good solid month without even a peep out of the Open WebUI team in terms of new releases... but now I can see why they were so quiet. It\u2019s because they were cooking up some \u201cdope sh!t\u201d as the kids say (they still say that, right?)\n\nLast week, they released probably the most impressive feature update I\u2019ve seen from them in like the last year. They started a new Open WebUI project integration called Open Terminal.\n\nhttps://github.com/open-webui/open-terminal\n\nOpen Terminal is basically a Dockerized (sandboxed) terminal with a live file browser / render canvas that sits on the right side of your Open WebUI interface when active. You can drag files into and out of the file browser from the host PC to the sandbox, and the AI can basically do whatever you want "
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "subagents workflow",
+      "title": "[Open Source] I reduced Claude Code input tokens by 97% using local semantic search (Benchmark vs Grep)",
+      "score": 896,
+      "comments": 134,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1qiv0d3/open_source_i_reduced_claude_code_input_tokens_by/",
+      "selftext": "Hi r/ClaudeAI,\n\nSince the release of **Claude Code**, I\u2019ve been using it extensively. However, I quickly noticed a major bottleneck when working on large codebases: token consumption explodes whenever you ask the agent to explore the project structure.\n\nThe culprit is the reliance on basic tools like `grep` or `glob` for file discovery. To find relevant code, Claude often has to:\n\n1. List dozens of files.\n2. Read them one by one to check relevance.\n3. Launch expensive \"subagents\" to dig through directories.\n\n**The Solution: GrepAI** To fix this, I developed **GrepAI**, an open-source CLI tool (written in Go) that replaces this brute-force process with **local semantic search** (via Ollama/embeddings) and call graph analysis.\n\nInstead of searching for exact keywords, the agent finds code by \"meaning.\"\n\n**The Benchmark (Tested on Excalidraw - 155k lines)** I ran a controlled benchmark comparing \"vanilla\" Claude Code vs. Claude Code + GrepAI on 5 identical development tasks.\n\nThe results were pretty significant:\n\n* \ud83d\udcc9 **-97% Input Tokens** (dropped from \\~51k to \\~1.3k during the search phase).\n* \ud83d\udcb0 **-27.5% Total Cost** (including cache creation/read costs).\n* \ud83d\ude80 **0 Subagents launched*"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "multi agent team",
+      "title": "Alibaba just unveiled their Qwen roadmap. The ambition is staggering!",
+      "score": 894,
+      "comments": 163,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1nq182d/alibaba_just_unveiled_their_qwen_roadmap_the/",
+      "selftext": "Two big bets: unified multi-modal models and extreme scaling across every dimension.\n\n- Context length: 1M \u2192 100M tokens\n\n- Parameters: trillion \u2192 ten trillion scale\n\n- Test-time compute: 64k \u2192 1M scaling\n\n- Data: 10 trillion \u2192 100 trillion tokens\n\nThey're also pushing synthetic data generation \"without scale limits\" and expanding agent capabilities across complexity, interaction, and learning modes.\n\nThe \"scaling is all you need\" mantra is becoming China's AI gospel.\n"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "researcher writer editor",
+      "title": "List of AI tools to look at in 2026",
+      "score": 874,
+      "comments": 100,
+      "url": "https://reddit.com/r/ChatGPT/comments/1pyrlzw/list_of_ai_tools_to_look_at_in_2026/",
+      "selftext": "\nCurious what people here think which of these are actually useful or just hype?\nAlso are we moving toward one AI to rule them all or a stack of specialized tools and chatgpt at the center?\n\n"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "manager agent",
+      "title": "I was rejected by CursorAI, so I built my own \"Cursor\"... And it's WAY better and here is how you can create yours.",
+      "score": 871,
+      "comments": 373,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1k6yos2/i_was_rejected_by_cursorai_so_i_built_my_own/",
+      "selftext": "&gt;\n\n&gt;Guys, I feel the need \\[for the sake of my fingers\\] to edit this here so new people don\u2019t get confused (especially devs who, when they read \"vibe code,\" stop reading and go straight to the comment section to say UR DUR CODE NOT SAFE, CAN'T SCALE, AI WON'T END SWE JOBS, I'M GOOD YOU BAD).\n\n&gt;Nowhere in the post will you see me saying I am good. What I said is that after 2 years of vibe coding, I can create some stuff... like this one you\u2019ll watch in a video... in just 5 days.\n\n&gt;Goal of the post:  \nTo say that in 5 days, I vibe-coded a tool that vibe-codes better than Cursor for my codebase, and that everyone should do the same. Because when you build your own, you have full control over what context you send to the model you\u2019re actually paying for, as well as full control over the system prompt.\n\n&gt;Cursor:  \nIn MYYYYYYYY opinion, Cursor is going downhill, and tools like Claude Code and Windsurf are WAY better at the moment. I guess it\u2019s because they have to build something broad enough to serve thousands of people, using different codebases and different programming languages. And in my experience, and in the experience of many others, it\u2019s getting worse instead of"
+    },
+    {
+      "sub": "singularity",
+      "query": "multi agent team",
+      "title": "Cursor AI CEO shares GPT 5.2 agents building a 3M+ lines web browser in a week",
+      "score": 869,
+      "comments": 157,
+      "url": "https://reddit.com/r/singularity/comments/1qgb1j5/cursor_ai_ceo_shares_gpt_52_agents_building_a_3m/",
+      "selftext": "**Cursor AI CEO** Michael Truell shared a clip showing GPT 5.2 powered multi agent systems building a full web browser in about a week.\n\nThe run **produced** over 3 million lines of code including a custom rendering engine and JavaScript VM. The **project** is experimental and not production ready but demonstrates how far autonomous coding agents can scale when run continuously.\n\nThe **visualization** shows agents coordinating and evolving the codebase in real time. \n\n**Source: Michael X**\n\n[Tweet](https://x.com/i/status/2012825801381580880)"
+    },
+    {
+      "sub": "singularity",
+      "query": "multi agent team",
+      "title": "Skynet beta testing: Alibaba's models break out from sandbox and started mining crypto for themselfs",
+      "score": 853,
+      "comments": 79,
+      "url": "https://reddit.com/r/singularity/comments/1rn81qy/skynet_beta_testing_alibabas_models_break_out/",
+      "selftext": "this is scary"
+    },
+    {
+      "sub": "singularity",
+      "query": "qa reviewer agent",
+      "title": "OpenAI releases GPT-5-Codex",
+      "score": 851,
+      "comments": 122,
+      "url": "https://reddit.com/r/singularity/comments/1nhrsh6/openai_releases_gpt5codex/",
+      "selftext": ""
+    },
+    {
+      "sub": "singularity",
+      "query": "qa reviewer agent",
+      "title": "Kimi K2.5 Released!!!",
+      "score": 838,
+      "comments": 205,
+      "url": "https://reddit.com/r/singularity/comments/1qo531i/kimi_k25_released/",
+      "selftext": "New SOTA in Agentic Tasks!!!!\n\nBlog: [https://www.kimi.com/blog/kimi-k2-5.html](https://www.kimi.com/blog/kimi-k2-5.html)"
+    }
+  ],
+  "theme_counts": [
+    [
+      "Coder-Tester-Debugger Team",
+      90
+    ],
+    [
+      "Content Factory Team",
+      36
+    ],
+    [
+      "Support Escalation Team",
+      35
+    ],
+    [
+      "Researcher-Writer-Editor Team",
+      28
+    ],
+    [
+      "Security Incident Team",
+      25
+    ],
+    [
+      "Manager-Orchestrator Team",
+      18
+    ],
+    [
+      "Planner-Executor-Reviewer Team",
+      11
+    ],
+    [
+      "Debate/Critic Pair Team",
+      10
+    ],
+    [
+      "Sales/Growth Team",
+      10
+    ],
+    [
+      "DevOps Reliability Team",
+      8
+    ]
+  ],
+  "theme_examples": {
+    "Planner-Executor-Reviewer Team": [
+      {
+        "title": "Getting close to 100% task-success with Claude Code",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1lta114/getting_close_to_100_tasksuccess_with_claude_code/",
+        "score": 736
+      },
+      {
+        "title": "Introducing Code Review, a new feature for Claude Code.",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rp9dps/introducing_code_review_a_new_feature_for_claude/",
+        "score": 690
+      },
+      {
+        "title": "Coursera Founder And AI Pioneer Andrew Ng Just Dropped An AI Reviewer That Performs At Human Level",
+        "sub": "LocalLLaMA",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1p5qzft/coursera_founder_and_ai_pioneer_andrew_ng_just/",
+        "score": 412
+      }
+    ],
+    "Researcher-Writer-Editor Team": [
+      {
+        "title": "Microsoft released a study that lists the 40 jobs most at risk of being replaced by AI and the 40 jobs least at risk of being replaced by AI",
+        "sub": "ChatGPT",
+        "url": "https://reddit.com/r/ChatGPT/comments/1mbr29k/microsoft_released_a_study_that_lists_the_40_jobs/",
+        "score": 2460
+      },
+      {
+        "title": "When both you and the editor don't proofread",
+        "sub": "ChatGPT",
+        "url": "https://reddit.com/r/ChatGPT/comments/1osc63x/when_both_you_and_the_editor_dont_proofread/",
+        "score": 2407
+      },
+      {
+        "title": "Sonnet 5 release on Feb 3",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1qtm9ix/sonnet_5_release_on_feb_3/",
+        "score": 1670
+      }
+    ],
+    "Manager-Orchestrator Team": [
+      {
+        "title": "My weekend project accidentally beat Claude Code - multi-agent coder now #12 on Stanford's TerminalBench \ud83d\ude05",
+        "sub": "LocalLLaMA",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1n6epwv/my_weekend_project_accidentally_beat_claude_code/",
+        "score": 920
+      },
+      {
+        "title": "Software dev director, struggling with team morale.",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rar2jt/software_dev_director_struggling_with_team_morale/",
+        "score": 898
+      },
+      {
+        "title": "If You're Not Using These Things With CC, Then Maybe the Problem Is *You*",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1nfa4kj/if_youre_not_using_these_things_with_cc_then/",
+        "score": 682
+      }
+    ],
+    "Coder-Tester-Debugger Team": [
+      {
+        "title": "Qwen3-Coder is here!",
+        "sub": "LocalLLaMA",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1m6qdet/qwen3coder_is_here/",
+        "score": 1930
+      },
+      {
+        "title": "Introducing Claude Sonnet 4.5",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1ntnhyh/introducing_claude_sonnet_45/",
+        "score": 1890
+      },
+      {
+        "title": "BREAKING: OpenAi releases GPT 5.2",
+        "sub": "ChatGPT",
+        "url": "https://reddit.com/r/ChatGPT/comments/1pk4n8a/breaking_openai_releases_gpt_52/",
+        "score": 1720
+      }
+    ],
+    "Debate/Critic Pair Team": [
+      {
+        "title": "I vibe hacked a Lovable-showcased app using claude. 18,000+ users exposed. Lovable closed my support ticket.",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rffmk3/i_vibe_hacked_a_lovableshowcased_app_using_claude/",
+        "score": 1077
+      },
+      {
+        "title": "I\u2019ve been tracking what people are building with Claude Skills since launch - here\u2019s the wildest stuff I\u2019ve found (with links)",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1o9ph4u/ive_been_tracking_what_people_are_building_with/",
+        "score": 1038
+      },
+      {
+        "title": "So I stumbled across this prompt hack a couple weeks back and honestly? I wish I could unlearn it.",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1q5a90l/so_i_stumbled_across_this_prompt_hack_a_couple/",
+        "score": 921
+      }
+    ],
+    "Support Escalation Team": [
+      {
+        "title": "Qwen3-Coder is here!",
+        "sub": "LocalLLaMA",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1m6qdet/qwen3coder_is_here/",
+        "score": 1930
+      },
+      {
+        "title": "Sam Altman officially confirms that OpenAI has acquired OpenClaw; Peter Steinberger to lead personal agents",
+        "sub": "OpenAI",
+        "url": "https://reddit.com/r/OpenAI/comments/1r5rnbl/sam_altman_officially_confirms_that_openai_has/",
+        "score": 1913
+      },
+      {
+        "title": "\ud83d\ude80 Qwen3-Coder-Flash released!",
+        "sub": "LocalLLaMA",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1me31d8/qwen3coderflash_released/",
+        "score": 1697
+      }
+    ],
+    "Security Incident Team": [
+      {
+        "title": "Anthropic did the absolute right thing by sending OpenClaw a cease &amp; desist and allowing Sam Altman to hire the developer",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1r99wg1/anthropic_did_the_absolute_right_thing_by_sending/",
+        "score": 1367
+      },
+      {
+        "title": "I vibe hacked a Lovable-showcased app using claude. 18,000+ users exposed. Lovable closed my support ticket.",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rffmk3/i_vibe_hacked_a_lovableshowcased_app_using_claude/",
+        "score": 1077
+      },
+      {
+        "title": "Anthropic warns fully AI employees are a year away",
+        "sub": "singularity",
+        "url": "https://reddit.com/r/singularity/comments/1k56kqp/anthropic_warns_fully_ai_employees_are_a_year_away/",
+        "score": 1016
+      }
+    ],
+    "Sales/Growth Team": [
+      {
+        "title": "After 147 failed ChatGPT prompts, I had a breakdown and accidentally discovered something",
+        "sub": "ChatGPT",
+        "url": "https://reddit.com/r/ChatGPT/comments/1lnfcnt/after_147_failed_chatgpt_prompts_i_had_a/",
+        "score": 22921
+      },
+      {
+        "title": "Microsoft released a study that lists the 40 jobs most at risk of being replaced by AI and the 40 jobs least at risk of being replaced by AI",
+        "sub": "ChatGPT",
+        "url": "https://reddit.com/r/ChatGPT/comments/1mbr29k/microsoft_released_a_study_that_lists_the_40_jobs/",
+        "score": 2460
+      },
+      {
+        "title": "Microsoft Study Reveals Which Jobs AI is Actually Impacting Based on 200K Real Conversations",
+        "sub": "OpenAI",
+        "url": "https://reddit.com/r/OpenAI/comments/1lwzcl1/microsoft_study_reveals_which_jobs_ai_is_actually/",
+        "score": 1160
+      }
+    ],
+    "Content Factory Team": [
+      {
+        "title": "Confession: I\u2019m a senior marketer at a Fortune 500. I'm not supposed to say this next part (and that scares me)",
+        "sub": "ChatGPT",
+        "url": "https://reddit.com/r/ChatGPT/comments/1lttke6/confession_im_a_senior_marketer_at_a_fortune_500/",
+        "score": 4173
+      },
+      {
+        "title": "Claude Code is a Beast \u2013 Tips from 6 Months of Hardcore Use",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1oivjvm/claude_code_is_a_beast_tips_from_6_months_of/",
+        "score": 2273
+      },
+      {
+        "title": "10 Claude Code tips from Boris, the creator of Claude Code, summarized",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1qspcip/10_claude_code_tips_from_boris_the_creator_of/",
+        "score": 1570
+      }
+    ],
+    "DevOps Reliability Team": [
+      {
+        "title": "Deep down, we all know that this is the beginning of the end of tech jobs, right?",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1pe6q11/deep_down_we_all_know_that_this_is_the_beginning/",
+        "score": 1660
+      },
+      {
+        "title": "I turned my Claude Code agents into Tamagotchis so I can monitor them from tmux",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1ru9yda/i_turned_my_claude_code_agents_into_tamagotchis/",
+        "score": 703
+      },
+      {
+        "title": "I built an entire fake company with Claude Code",
+        "sub": "ClaudeAI",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1ostwq9/i_built_an_entire_fake_company_with_claude_code/",
+        "score": 665
+      }
+    ]
+  }
+}
