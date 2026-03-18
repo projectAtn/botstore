@@ -1,0 +1,141 @@
+{
+  "generatedAt": "2026-03-18T11:06:53.350456+00:00",
+  "summary": {
+    "total": 10,
+    "pass": 9,
+    "avg_score": 0.947
+  },
+  "scenarios": [
+    {
+      "scenario_id": "exec-weekly-ops",
+      "team_slug": "startup-exec-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "owners"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "exec-cost-cut",
+      "team_slug": "startup-exec-team",
+      "score": 1.0,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 1.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [],
+      "pass": true
+    },
+    {
+      "scenario_id": "gtm-launch-week",
+      "team_slug": "go-to-market-war-room-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "feedbackloop"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "gtm-claim-verification",
+      "team_slug": "go-to-market-war-room-team",
+      "score": 1.0,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 1.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [],
+      "pass": true
+    },
+    {
+      "scenario_id": "revops-deal-review",
+      "team_slug": "revops-deal-desk-team",
+      "score": 1.0,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 1.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [],
+      "pass": true
+    },
+    {
+      "scenario_id": "revops-contract-approval",
+      "team_slug": "revops-deal-desk-team",
+      "score": 0.733,
+      "capability_coverage": 0.667,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.5,
+      "missing_capabilities": [
+        "policy.enforce"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "atriskdeals"
+      ],
+      "pass": false
+    },
+    {
+      "scenario_id": "incident-p1",
+      "team_slug": "incident-security-response-team",
+      "score": 1.0,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 1.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [],
+      "pass": true
+    },
+    {
+      "scenario_id": "incident-postmortem",
+      "team_slug": "incident-security-response-team",
+      "score": 0.867,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.333,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actions",
+        "postmortem"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "research-synthesis",
+      "team_slug": "research-publication-team",
+      "score": 1.0,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 1.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [],
+      "pass": true
+    },
+    {
+      "scenario_id": "research-publish-pack",
+      "team_slug": "research-publication-team",
+      "score": 1.0,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 1.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [],
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "version": "0.1.0",
+  "generatedAt": "2026-03-18",
+  "scenarios": [
+    {
+      "id": "exec-weekly-ops",
+      "team_slug": "startup-exec-team",
+      "prompt": "Run weekly exec sync: prioritize roadmap, check runway, assign owners.",
+      "required_capabilities": ["files.read", "files.write", "memory.write", "message.send"],
+      "required_roles": ["CEO", "CFO", "COO"],
+      "expected_artifacts": ["decision-log", "runway-report", "owners"]
+    },
+    {
+      "id": "exec-cost-cut",
+      "team_slug": "startup-exec-team",
+      "prompt": "We must reduce burn 20% without killing growth.",
+      "required_capabilities": ["files.read", "files.write", "memory.write", "analytics"],
+      "required_roles": ["CEO", "CFO", "CMO"],
+      "expected_artifacts": ["budget-risk-register", "growth-experiment-plan"]
+    },
+    {
+      "id": "gtm-launch-week",
+      "team_slug": "go-to-market-war-room-team",
+      "prompt": "Launch week prep with messaging, experiments, and live community loop.",
+      "required_capabilities": ["web.search", "web.fetch", "files.write", "message.send"],
+      "required_roles": ["CMO", "Head of Community", "Research Editor"],
+      "expected_artifacts": ["launch-plan", "experiment-matrix", "feedback-loop"]
+    },
+    {
+      "id": "gtm-claim-verification",
+      "team_slug": "go-to-market-war-room-team",
+      "prompt": "Validate campaign claims before posting externally.",
+      "required_capabilities": ["web.search", "web.fetch", "files.write"],
+      "required_roles": ["Research Editor", "CMO"],
+      "expected_artifacts": ["claims-check", "evidence-appendix"]
+    },
+    {
+      "id": "revops-deal-review",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "Review 15 open deals and propose close plans.",
+      "required_capabilities": ["files.read", "files.write", "memory.write", "message.send"],
+      "required_roles": ["CRO", "Head of RevOps"],
+      "expected_artifacts": ["deal-plan", "pipeline-health"]
+    },
+    {
+      "id": "revops-contract-approval",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "Flag non-standard terms and route approvals.",
+      "required_capabilities": ["files.read", "files.write", "policy.enforce"],
+      "required_roles": ["Policy Officer", "CRO"],
+      "expected_artifacts": ["compliance-approval-note", "at-risk-deals"]
+    },
+    {
+      "id": "incident-p1",
+      "team_slug": "incident-security-response-team",
+      "prompt": "P1 outage + suspicious access event in production.",
+      "required_capabilities": ["audit.log.read", "audit.log.write", "risk.evaluate", "message.send"],
+      "required_roles": ["Head of Security Ops", "SRE Lead", "Policy Officer"],
+      "expected_artifacts": ["incident-timeline", "containment-plan", "regulatory-note"]
+    },
+    {
+      "id": "incident-postmortem",
+      "team_slug": "incident-security-response-team",
+      "prompt": "Produce postmortem with corrective actions and owner assignments.",
+      "required_capabilities": ["files.read", "files.write", "risk.evaluate"],
+      "required_roles": ["Head of Security Ops", "SRE Lead"],
+      "expected_artifacts": ["postmortem", "rollback-log", "actions"]
+    },
+    {
+      "id": "research-synthesis",
+      "team_slug": "research-publication-team",
+      "prompt": "Synthesize 20 papers into evidence brief and action notes.",
+      "required_capabilities": ["pdf.analyze", "files.read", "files.write", "web.search"],
+      "required_roles": ["Head of Research", "Product Strategist"],
+      "expected_artifacts": ["evidence-brief", "citation-log", "insight-summary"]
+    },
+    {
+      "id": "research-publish-pack",
+      "team_slug": "research-publication-team",
+      "prompt": "Prepare publication assets and channel-ready distribution pack.",
+      "required_capabilities": ["files.read", "files.write", "seo", "analytics"],
+      "required_roles": ["Creative Director", "Head of Research"],
+      "expected_artifacts": ["publication-assets", "distribution-pack"]
+    }
+  ]
+}

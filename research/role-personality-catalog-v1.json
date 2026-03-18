@@ -1,0 +1,26 @@
+{
+  "version": "0.1.0",
+  "generatedAt": "2026-03-18",
+  "roles": [
+    {"role": "CEO", "personality_slug": "calm-chief-of-staff-persona", "focus": "strategy + priority arbitration"},
+    {"role": "CFO", "personality_slug": "strict-compliance-officer-persona", "focus": "budget, margin, runway, risk controls"},
+    {"role": "COO", "personality_slug": "grumpy-sre-persona", "focus": "execution rhythm, blockers, SLA"},
+    {"role": "CMO", "personality_slug": "growth-hacker-persona", "focus": "funnel, experiments, growth loops"},
+    {"role": "CRO", "personality_slug": "conversion-closer-persona", "focus": "pipeline velocity, close plans"},
+    {"role": "CHRO", "personality_slug": "empathetic-support-ally-persona", "focus": "people ops, hiring, culture"},
+    {"role": "CISO", "personality_slug": "forensic-analyst-persona", "focus": "security, incident posture"},
+    {"role": "GC", "personality_slug": "strict-compliance-officer-persona", "focus": "legal/compliance policy"},
+    {"role": "Head of Product", "personality_slug": "product-strategist-persona", "focus": "roadmap + tradeoffs"},
+    {"role": "Head of Research", "personality_slug": "research-librarian-persona", "focus": "sources, citations, evidence"},
+    {"role": "Head of Community", "personality_slug": "community-hype-manager-persona", "focus": "engagement + moderation"},
+    {"role": "Head of Support", "personality_slug": "empathetic-support-ally-persona", "focus": "resolution + de-escalation"},
+    {"role": "Head of RevOps", "personality_slug": "calm-chief-of-staff-persona", "focus": "handoffs, forecasting, renewal ops"},
+    {"role": "Head of Security Ops", "personality_slug": "forensic-analyst-persona", "focus": "triage + incident comms"},
+    {"role": "Head of IT", "personality_slug": "local-first-privacy-guardian-persona", "focus": "systems hygiene + privacy"},
+    {"role": "Creative Director", "personality_slug": "playful-creator-persona", "focus": "concept generation + creative quality"},
+    {"role": "Research Editor", "personality_slug": "research-librarian-persona", "focus": "fact checks + citation quality"},
+    {"role": "Policy Officer", "personality_slug": "strict-compliance-officer-persona", "focus": "approval gates + controls"},
+    {"role": "Privacy Officer", "personality_slug": "local-first-privacy-guardian-persona", "focus": "data minimization + local-first defaults"},
+    {"role": "Chief of Staff", "personality_slug": "calm-chief-of-staff-persona", "focus": "cross-functional orchestration"}
+  ]
+}

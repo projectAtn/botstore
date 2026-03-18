@@ -1,0 +1,82 @@
+{
+  "version": "0.1.0",
+  "generatedAt": "2026-03-18",
+  "team_packs": [
+    {
+      "slug": "startup-exec-team",
+      "title": "Startup Exec Team",
+      "purpose": "Weekly strategic operating rhythm for founder-led teams.",
+      "team_type": "executive",
+      "shared_skills": ["crm-sync-bidirectional", "calendar-ops-coordinator", "proposal-generator"],
+      "roles": [
+        {"role": "CEO", "personality_slug": "calm-chief-of-staff-persona", "owned_skills": ["product-strategist-persona"], "deliverables": ["strategy-memo", "decision-log"]},
+        {"role": "CFO", "personality_slug": "strict-compliance-officer-persona", "owned_skills": ["invoice-reconciliation", "expense-policy-auditor"], "deliverables": ["runway-report", "budget-risk-register"]},
+        {"role": "CMO", "personality_slug": "growth-hacker-persona", "owned_skills": ["seo-brief-builder", "shortform-content-factory"], "deliverables": ["growth-experiment-plan", "campaign-report"]},
+        {"role": "COO", "personality_slug": "grumpy-sre-persona", "owned_skills": ["incident-triage-commander"], "deliverables": ["execution-review", "blocker-log"]}
+      ],
+      "orchestration": {"cadence": "weekly", "handoff_order": ["CEO", "CFO", "CMO", "COO"], "conflict_policy": "CFO can veto if budget risk high; CEO final", "approval_gates": ["budget", "policy"]},
+      "output_contract": {"format": "markdown", "sections": ["Summary", "Decisions", "Actions", "Risks", "Owners"]},
+      "risk_level": "medium"
+    },
+    {
+      "slug": "go-to-market-war-room-team",
+      "title": "Go-To-Market War Room Team",
+      "purpose": "Rapid launch planning and feedback loops across channels.",
+      "team_type": "go-to-market",
+      "shared_skills": ["launch-feedback-summarizer", "persona-signal-miner", "prompt-market-researcher"],
+      "roles": [
+        {"role": "CMO", "personality_slug": "growth-hacker-persona", "owned_skills": ["ad-creative-variant-lab", "landing-page-ab-orchestrator"], "deliverables": ["launch-plan", "experiment-matrix"]},
+        {"role": "Head of Community", "personality_slug": "community-hype-manager-persona", "owned_skills": ["telegram-community-manager", "discord-community-manager", "whatsapp-support-copilot"], "deliverables": ["community-ops-plan", "engagement-report"]},
+        {"role": "Research Editor", "personality_slug": "research-librarian-persona", "owned_skills": ["citation-verifier"], "deliverables": ["evidence-appendix", "claims-check"]}
+      ],
+      "orchestration": {"cadence": "daily during launch", "handoff_order": ["Research Editor", "CMO", "Head of Community"], "conflict_policy": "Evidence gate before major launch claims", "approval_gates": ["brand", "evidence"]},
+      "output_contract": {"format": "markdown", "sections": ["Launch Brief", "Audience", "Messaging", "Experiments", "Feedback Loop"]},
+      "risk_level": "medium"
+    },
+    {
+      "slug": "revops-deal-desk-team",
+      "title": "RevOps Deal Desk Team",
+      "purpose": "Pipeline acceleration and cleaner handoff from sales to renewals.",
+      "team_type": "revenue",
+      "shared_skills": ["sales-call-prep-kit", "proposal-generator", "contract-risk-highlighter", "renewal-expansion-coach"],
+      "roles": [
+        {"role": "CRO", "personality_slug": "conversion-closer-persona", "owned_skills": ["waitlist-converter", "lead-enrichment-finder"], "deliverables": ["deal-plan", "close-forecast"]},
+        {"role": "Head of RevOps", "personality_slug": "calm-chief-of-staff-persona", "owned_skills": ["crm-sync-bidirectional", "churn-early-warning"], "deliverables": ["pipeline-health", "handoff-checklist"]},
+        {"role": "Policy Officer", "personality_slug": "strict-compliance-officer-persona", "owned_skills": ["contract-risk-highlighter"], "deliverables": ["compliance-approval-note"]}
+      ],
+      "orchestration": {"cadence": "weekly", "handoff_order": ["CRO", "Head of RevOps", "Policy Officer"], "conflict_policy": "Policy Officer blocks non-compliant terms", "approval_gates": ["legal", "discount-policy"]},
+      "output_contract": {"format": "markdown", "sections": ["Pipeline", "At-Risk Deals", "Actions", "Approvals"]},
+      "risk_level": "medium"
+    },
+    {
+      "slug": "incident-security-response-team",
+      "title": "Incident Security Response Team",
+      "purpose": "Incident triage, containment, communications, and postmortem quality.",
+      "team_type": "security-ops",
+      "shared_skills": ["security-alert-triager", "deploy-rollback-guardian", "log-anomaly-sleuth", "secret-rotation-reminder", "backup-drill-coordinator"],
+      "roles": [
+        {"role": "Head of Security Ops", "personality_slug": "forensic-analyst-persona", "owned_skills": ["incident-triage-commander", "security-alert-triager"], "deliverables": ["incident-timeline", "containment-plan"]},
+        {"role": "SRE Lead", "personality_slug": "grumpy-sre-persona", "owned_skills": ["deploy-rollback-guardian", "self-host-healthcheck"], "deliverables": ["service-status", "rollback-log"]},
+        {"role": "Policy Officer", "personality_slug": "strict-compliance-officer-persona", "owned_skills": ["policy-compliance-guard"], "deliverables": ["regulatory-note", "approval-record"]}
+      ],
+      "orchestration": {"cadence": "incident-driven", "handoff_order": ["Head of Security Ops", "SRE Lead", "Policy Officer"], "conflict_policy": "Contain first; compliance signoff before closure", "approval_gates": ["security", "compliance"]},
+      "output_contract": {"format": "markdown", "sections": ["Incident Summary", "Impact", "Actions", "Evidence", "Postmortem"]},
+      "risk_level": "high"
+    },
+    {
+      "slug": "research-publication-team",
+      "title": "Research Publication Team",
+      "purpose": "Source-grounded research pipeline from papers/transcripts to publish-ready outputs.",
+      "team_type": "research",
+      "shared_skills": ["paper-to-notes", "transcript-to-action-items", "rag-index-maintainer", "citation-verifier"],
+      "roles": [
+        {"role": "Head of Research", "personality_slug": "research-librarian-persona", "owned_skills": ["paper-to-notes", "citation-verifier"], "deliverables": ["evidence-brief", "citation-log"]},
+        {"role": "Product Strategist", "personality_slug": "product-strategist-persona", "owned_skills": ["keyword-cluster-mapper"], "deliverables": ["insight-summary", "decision-notes"]},
+        {"role": "Creative Director", "personality_slug": "playful-creator-persona", "owned_skills": ["thumbnail-brief-generator", "shortform-content-factory"], "deliverables": ["publication-assets", "distribution-pack"]}
+      ],
+      "orchestration": {"cadence": "per study", "handoff_order": ["Head of Research", "Product Strategist", "Creative Director"], "conflict_policy": "Source quality > speed", "approval_gates": ["evidence", "editorial"]},
+      "output_contract": {"format": "markdown", "sections": ["Question", "Evidence", "Findings", "Limitations", "Actions"]},
+      "risk_level": "low"
+    }
+  ]
+}
