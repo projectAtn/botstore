@@ -69,3 +69,22 @@
 - QA report upsert for `inbox-zero-pilot`: success.
 - Promotion after QA pass: success.
 - Catalog payload includes QA fields and values for promoted pack.
+
+## Additional execution progress (Sprint 1 continued)
+
+### Implemented now
+7. **Regression CI smoke harness (`BS-REL-001` executable slice)**
+   - Added script: `scripts/regression_ci.py`
+   - Covers health, catalog presence, interop import/export smoke, featured-create block, QA upsert, promote-after-QA, QA metadata in catalog.
+
+8. **QA artifact automation per test run (`BS-OPS-001` continued)**
+   - Upgraded `scripts/pack_test_runner.py`:
+     - now pushes per-pack QA status to `POST /qa/report`
+     - suite label: `pack-smoke-v1`
+     - report path links to `research/pack-test-report.md`
+
+### Live verification run
+- Regression CI harness: **PASS** (`scripts/regression_ci.py`).
+- Pack test runner completed and published QA statuses:
+  - Published QA artifacts: **125**
+  - Failed QA artifact writes: **0**

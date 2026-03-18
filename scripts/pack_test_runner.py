@@ -7,6 +7,7 @@ from pathlib import Path
 BASE = "http://127.0.0.1:8787"
 OUT = Path(__file__).resolve().parents[1] / "research" / "pack-test-report.md"
 JSON_OUT = Path(__file__).resolve().parents[1] / "research" / "pack-test-result.json"
+SUITE = "pack-smoke-v1"
 
 
 def http_json(path: str, method: str = "GET", payload=None):
@@ -87,6 +88,30 @@ def run() -> tuple[list[dict], dict]:
     return results, summary
 
 
+def publish_qa_artifacts(results: list[dict]):
+    report_path = str(OUT.relative_to(Path(__file__).resolve().parents[1]))
+    published = 0
+    failed = 0
+
+    for r in results:
+        status = "pass" if r["pass"] else "fail"
+        summary = f"score={r['score']}; latency_ms={r['latency_ms']}"
+        payload = {
+            "pack_id": r["pack_id"],
+            "status": status,
+            "suite": SUITE,
+            "report_path": report_path,
+            "summary": summary,
+        }
+        try:
+            http_json("/qa/report", "POST", payload)
+            published += 1
+        except Exception:
+            failed += 1
+
+    return {"published": published, "failed": failed}
+
+
 def main():
     results, summary = run()
     JSON_OUT.write_text(json.dumps({"summary": summary, "results": results}, indent=2))
@@ -94,6 +119,7 @@ def main():
     lines = [
         "# Pack Test Runner Report",
         "",
+        f"Suite: {SUITE}",
         f"Total packs: {summary['total']}",
         f"Pass: {summary['pass']}",
         f"Average score: {summary['avg_score']}",
@@ -105,8 +131,11 @@ def main():
         lines.append(f"| `{r['slug']}` | {r['type']} | {r['score']} | {r['latency_ms']} | {'✅' if r['pass'] else '❌'} |")
 
     OUT.write_text("\n".join(lines) + "\n")
+
+    qa_push = publish_qa_artifacts(results)
     print(f"Wrote {OUT}")
     print(f"Wrote {JSON_OUT}")
+    print(f"QA artifact push: published={qa_push['published']} failed={qa_push['failed']}")
 
 
 if __name__ == "__main__":

@@ -1,8 +1,8 @@
 {
   "summary": {
-    "total": 30,
-    "pass": 30,
-    "avg_score": 94.2
+    "total": 125,
+    "pass": 125,
+    "avg_score": 100.0
   },
   "results": [
     {
@@ -10,7 +10,7 @@
       "slug": "gilgamesh-king",
       "type": "personality",
       "score": 100,
-      "latency_ms": 20.3,
+      "latency_ms": 15.1,
       "checks": [
         {
           "name": "compatibility",
@@ -35,8 +35,8 @@
       "pack_id": 2,
       "slug": "inbox-calendar-ops",
       "type": "skill",
-      "score": 75,
-      "latency_ms": 11.6,
+      "score": 100,
+      "latency_ms": 9.4,
       "checks": [
         {
           "name": "compatibility",
@@ -48,7 +48,7 @@
         },
         {
           "name": "install",
-          "pass": false
+          "pass": true
         },
         {
           "name": "outcome_log",
@@ -62,7 +62,7 @@
       "slug": "research-analyst",
       "type": "skill",
       "score": 100,
-      "latency_ms": 8.2,
+      "latency_ms": 7.6,
       "checks": [
         {
           "name": "compatibility",
@@ -87,8 +87,8 @@
       "pack_id": 4,
       "slug": "founder-command-bundle",
       "type": "bundle",
-      "score": 75,
-      "latency_ms": 9.4,
+      "score": 100,
+      "latency_ms": 7.6,
       "checks": [
         {
           "name": "compatibility",
@@ -100,7 +100,7 @@
         },
         {
           "name": "install",
-          "pass": false
+          "pass": true
         },
         {
           "name": "outcome_log",
@@ -114,7 +114,7 @@
       "slug": "capability-discovery-engine",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.9,
+      "latency_ms": 11.2,
       "checks": [
         {
           "name": "compatibility",
@@ -140,7 +140,7 @@
       "slug": "universal-connector-auth",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.8,
+      "latency_ms": 9.5,
       "checks": [
         {
           "name": "compatibility",
@@ -166,7 +166,7 @@
       "slug": "browser-operator-pro",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.8,
+      "latency_ms": 6.5,
       "checks": [
         {
           "name": "compatibility",
@@ -192,7 +192,7 @@
       "slug": "memory-architect",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.8,
+      "latency_ms": 7.2,
       "checks": [
         {
           "name": "compatibility",
@@ -217,8 +217,8 @@
       "pack_id": 9,
       "slug": "approval-policy-brain",
       "type": "skill",
-      "score": 75,
-      "latency_ms": 9.0,
+      "score": 100,
+      "latency_ms": 10.3,
       "checks": [
         {
           "name": "compatibility",
@@ -230,7 +230,7 @@
         },
         {
           "name": "install",
-          "pass": false
+          "pass": true
         },
         {
           "name": "outcome_log",
@@ -244,7 +244,7 @@
       "slug": "task-decomposer",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.5,
+      "latency_ms": 8.2,
       "checks": [
         {
           "name": "compatibility",
@@ -270,7 +270,7 @@
       "slug": "error-recovery-self-heal",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.5,
+      "latency_ms": 6.6,
       "checks": [
         {
           "name": "compatibility",
@@ -296,7 +296,7 @@
       "slug": "quality-eval-gate",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.5,
+      "latency_ms": 7.0,
       "checks": [
         {
           "name": "compatibility",
@@ -321,8 +321,8 @@
       "pack_id": 13,
       "slug": "multi-agent-orchestrator",
       "type": "skill",
-      "score": 75,
-      "latency_ms": 8.6,
+      "score": 100,
+      "latency_ms": 7.6,
       "checks": [
         {
           "name": "compatibility",
@@ -334,7 +334,7 @@
         },
         {
           "name": "install",
-          "pass": false
+          "pass": true
         },
         {
           "name": "outcome_log",
@@ -347,8 +347,8 @@
       "pack_id": 14,
       "slug": "service-ops-verticals",
       "type": "skill",
-      "score": 75,
-      "latency_ms": 8.3,
+      "score": 100,
+      "latency_ms": 6.9,
       "checks": [
         {
           "name": "compatibility",
@@ -360,7 +360,7 @@
         },
         {
           "name": "install",
-          "pass": false
+          "pass": true
         },
         {
           "name": "outcome_log",
@@ -374,7 +374,7 @@
       "slug": "model-switchboard",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.2,
+      "latency_ms": 7.0,
       "checks": [
         {
           "name": "compatibility",
@@ -400,7 +400,7 @@
       "slug": "workflow-version-pinning",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.7,
+      "latency_ms": 7.0,
       "checks": [
         {
           "name": "compatibility",
@@ -426,7 +426,7 @@
       "slug": "fact-source-verifier",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.3,
+      "latency_ms": 6.7,
       "checks": [
         {
           "name": "compatibility",
@@ -452,7 +452,7 @@
       "slug": "synthetic-media-checker",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.2,
+      "latency_ms": 6.7,
       "checks": [
         {
           "name": "compatibility",
@@ -477,8 +477,8 @@
       "pack_id": 19,
       "slug": "policy-compliance-guard",
       "type": "skill",
-      "score": 75,
-      "latency_ms": 8.5,
+      "score": 100,
+      "latency_ms": 6.7,
       "checks": [
         {
           "name": "compatibility",
@@ -490,7 +490,7 @@
         },
         {
           "name": "install",
-          "pass": false
+          "pass": true
         },
         {
           "name": "outcome_log",
@@ -530,7 +530,7 @@
       "slug": "autonomous-retry-recovery",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.0,
+      "latency_ms": 6.5,
       "checks": [
         {
           "name": "compatibility",
@@ -555,8 +555,8 @@
       "pack_id": 22,
       "slug": "human-escalation-router",
       "type": "skill",
-      "score": 75,
-      "latency_ms": 8.0,
+      "score": 100,
+      "latency_ms": 6.7,
       "checks": [
         {
           "name": "compatibility",
@@ -568,7 +568,7 @@
         },
         {
           "name": "install",
-          "pass": false
+          "pass": true
         },
         {
           "name": "outcome_log",
@@ -582,7 +582,7 @@
       "slug": "tool-health-monitor",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.0,
+      "latency_ms": 6.3,
       "checks": [
         {
           "name": "compatibility",
@@ -608,7 +608,7 @@
       "slug": "private-local-execution",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.1,
+      "latency_ms": 7.6,
       "checks": [
         {
           "name": "compatibility",
@@ -634,7 +634,7 @@
       "slug": "web-action-proof-logger",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.2,
+      "latency_ms": 7.0,
       "checks": [
         {
           "name": "compatibility",
@@ -660,7 +660,7 @@
       "slug": "task-contract-engine",
       "type": "skill",
       "score": 100,
-      "latency_ms": 7.1,
+      "latency_ms": 6.0,
       "checks": [
         {
           "name": "compatibility",
@@ -686,7 +686,7 @@
       "slug": "ops-chief-persona",
       "type": "personality",
       "score": 100,
-      "latency_ms": 7.2,
+      "latency_ms": 7.3,
       "checks": [
         {
           "name": "compatibility",
@@ -712,7 +712,7 @@
       "slug": "safety-analyst-persona",
       "type": "personality",
       "score": 100,
-      "latency_ms": 7.2,
+      "latency_ms": 7.0,
       "checks": [
         {
           "name": "compatibility",
@@ -738,7 +738,7 @@
       "slug": "research-scholar-persona",
       "type": "personality",
       "score": 100,
-      "latency_ms": 7.3,
+      "latency_ms": 6.8,
       "checks": [
         {
           "name": "compatibility",
@@ -764,7 +764,2477 @@
       "slug": "cfo-assistant-persona",
       "type": "personality",
       "score": 100,
-      "latency_ms": 6.9,
+      "latency_ms": 6.3,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 31,
+      "slug": "calendar-conflict-resolver",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 32,
+      "slug": "codebase-onboarding-guide",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.6,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 33,
+      "slug": "contract-redline-assistant",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 9.4,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 34,
+      "slug": "expense-receipt-organizer",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.0,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 35,
+      "slug": "inbox-triage-pro",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 36,
+      "slug": "incident-postmortem-writer",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 6.4,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 37,
+      "slug": "job-application-accelerator",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 38,
+      "slug": "meeting-brief-builder",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 39,
+      "slug": "policy-sop-generator",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 9.6,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 40,
+      "slug": "pr-review-summarizer",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 41,
+      "slug": "research-citation-packager",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.9,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 42,
+      "slug": "travel-itinerary-concierge",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.4,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 43,
+      "slug": "social-listening-response-drafter",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.0,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 44,
+      "slug": "crm-followup-autopilot",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.6,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 45,
+      "slug": "pii-redaction-firewall",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.4,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 46,
+      "slug": "policy-drift-detector",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.8,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 47,
+      "slug": "growth-experiment-orchestrator",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 48,
+      "slug": "ad-creative-feedback-loop",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 49,
+      "slug": "secret-leak-preventer",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 9.3,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 50,
+      "slug": "crm-sync-bidirectional",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 11.8,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 51,
+      "slug": "calendar-ops-coordinator",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 52,
+      "slug": "email-outreach-sequencer",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 53,
+      "slug": "deploy-rollback-guardian",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.9,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 54,
+      "slug": "security-alert-triager",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 15.4,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 55,
+      "slug": "log-anomaly-sleuth",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 56,
+      "slug": "shortform-content-factory",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 9.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 57,
+      "slug": "seo-brief-builder",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.6,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 58,
+      "slug": "ad-creative-variant-lab",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 9.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 59,
+      "slug": "landing-page-ab-orchestrator",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 60,
+      "slug": "rag-index-maintainer",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.4,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 61,
+      "slug": "knowledge-base-curator",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 62,
+      "slug": "citation-verifier",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.4,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 63,
+      "slug": "cloud-cost-analyzer",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 9.3,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 64,
+      "slug": "github-pr-review-assistant",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 65,
+      "slug": "incident-triage-commander",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.6,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 66,
+      "slug": "telegram-community-manager",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 9.0,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 67,
+      "slug": "discord-community-manager",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 9.0,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 68,
+      "slug": "whatsapp-support-copilot",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 69,
+      "slug": "podcast-to-clips",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 9.3,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 70,
+      "slug": "research-reliability-bundle",
+      "type": "bundle",
+      "score": 100,
+      "latency_ms": 9.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 71,
+      "slug": "community-support-ops-bundle",
+      "type": "bundle",
+      "score": 100,
+      "latency_ms": 11.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 72,
+      "slug": "devops-autopilot-bundle",
+      "type": "bundle",
+      "score": 100,
+      "latency_ms": 8.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 73,
+      "slug": "reddit-scout-pro",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 74,
+      "slug": "x-trend-harvester",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 75,
+      "slug": "github-issue-radar",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.8,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 76,
+      "slug": "tool-release-watcher",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 12.6,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 77,
+      "slug": "competitor-feature-tracker",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.9,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 78,
+      "slug": "user-painpoint-clusterer",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 79,
+      "slug": "waitlist-converter",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 80,
+      "slug": "lead-enrichment-finder",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.5,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 81,
+      "slug": "churn-early-warning",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.9,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 82,
+      "slug": "price-change-sentinel",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 10.3,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 83,
+      "slug": "market-intel-signal-bundle",
+      "type": "bundle",
+      "score": 100,
+      "latency_ms": 13.4,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 84,
+      "slug": "opensource-repo-scout",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 85,
+      "slug": "prompt-market-researcher",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.9,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 86,
+      "slug": "persona-signal-miner",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 87,
+      "slug": "launch-feedback-summarizer",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.9,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 88,
+      "slug": "sales-call-prep-kit",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.4,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 89,
+      "slug": "proposal-generator",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.5,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 90,
+      "slug": "contract-risk-highlighter",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 9.4,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 91,
+      "slug": "onboarding-journey-optimizer",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.6,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 92,
+      "slug": "renewal-expansion-coach",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.0,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 93,
+      "slug": "invoice-reconciliation",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.4,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 94,
+      "slug": "expense-policy-auditor",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.6,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 95,
+      "slug": "go-to-market-intelligence-bundle",
+      "type": "bundle",
+      "score": 100,
+      "latency_ms": 8.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 96,
+      "slug": "revenue-deal-desk-bundle",
+      "type": "bundle",
+      "score": 100,
+      "latency_ms": 31.5,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 97,
+      "slug": "customer-lifecycle-expansion-bundle",
+      "type": "bundle",
+      "score": 100,
+      "latency_ms": 9.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 98,
+      "slug": "finance-control-bundle",
+      "type": "bundle",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 99,
+      "slug": "invoice-expense-audit-bundle",
+      "type": "bundle",
+      "score": 100,
+      "latency_ms": 7.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 100,
+      "slug": "paper-to-notes",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 101,
+      "slug": "transcript-to-action-items",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 102,
+      "slug": "thumbnail-brief-generator",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 11.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 103,
+      "slug": "keyword-cluster-mapper",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.5,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 104,
+      "slug": "ecommerce-listing-optimizer",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.8,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 105,
+      "slug": "inventory-demand-forecaster",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.5,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 106,
+      "slug": "secret-rotation-reminder",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 107,
+      "slug": "backup-drill-coordinator",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 7.8,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 108,
+      "slug": "self-host-healthcheck",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.0,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 109,
+      "slug": "research-briefing-bundle",
+      "type": "bundle",
+      "score": 100,
+      "latency_ms": 9.0,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 110,
+      "slug": "commerce-optimization-bundle",
+      "type": "bundle",
+      "score": 100,
+      "latency_ms": 8.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 111,
+      "slug": "security-maintenance-bundle",
+      "type": "bundle",
+      "score": 100,
+      "latency_ms": 7.9,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 112,
+      "slug": "conversion-closer-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 8.2,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 113,
+      "slug": "empathetic-support-ally-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 8.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 114,
+      "slug": "grumpy-sre-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 115,
+      "slug": "forensic-analyst-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 7.7,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 116,
+      "slug": "growth-hacker-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 7.3,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 117,
+      "slug": "calm-chief-of-staff-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 7.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 118,
+      "slug": "playful-creator-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 7.6,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 119,
+      "slug": "strict-compliance-officer-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 8.1,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 120,
+      "slug": "local-first-privacy-guardian-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 8.0,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 121,
+      "slug": "product-strategist-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 8.0,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 122,
+      "slug": "community-hype-manager-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 9.0,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 123,
+      "slug": "research-librarian-persona",
+      "type": "personality",
+      "score": 100,
+      "latency_ms": 7.9,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 124,
+      "slug": "inbox-zero-pilot",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.9,
+      "checks": [
+        {
+          "name": "compatibility",
+          "pass": true
+        },
+        {
+          "name": "policy_evaluate",
+          "pass": true
+        },
+        {
+          "name": "install",
+          "pass": true
+        },
+        {
+          "name": "outcome_log",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pack_id": 125,
+      "slug": "regression-skill",
+      "type": "skill",
+      "score": 100,
+      "latency_ms": 8.1,
       "checks": [
         {
           "name": "compatibility",
