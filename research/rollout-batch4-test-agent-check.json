@@ -1,0 +1,281 @@
+{
+  "generatedAt": "2026-03-18T07:34:42.741013+00:00",
+  "batch": [
+    "contract-risk-highlighter",
+    "invoice-reconciliation",
+    "launch-feedback-summarizer",
+    "onboarding-journey-optimizer",
+    "opensource-repo-scout",
+    "persona-signal-miner",
+    "prompt-market-researcher",
+    "proposal-generator",
+    "renewal-expansion-coach",
+    "sales-call-prep-kit"
+  ],
+  "cases": {
+    "go-to-market": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "research-reliability-bundle",
+          "score": 0.9,
+          "batch": false
+        },
+        {
+          "rank": 2,
+          "slug": "market-intel-signal-bundle",
+          "score": 0.9,
+          "batch": false
+        },
+        {
+          "rank": 3,
+          "slug": "seo-brief-builder",
+          "score": 0.8,
+          "batch": false
+        },
+        {
+          "rank": 4,
+          "slug": "citation-verifier",
+          "score": 0.8,
+          "batch": false
+        },
+        {
+          "rank": 5,
+          "slug": "reddit-scout-pro",
+          "score": 0.8,
+          "batch": false
+        },
+        {
+          "rank": 6,
+          "slug": "x-trend-harvester",
+          "score": 0.8,
+          "batch": false
+        },
+        {
+          "rank": 7,
+          "slug": "github-issue-radar",
+          "score": 0.8,
+          "batch": false
+        },
+        {
+          "rank": 8,
+          "slug": "competitor-feature-tracker",
+          "score": 0.8,
+          "batch": false
+        },
+        {
+          "rank": 9,
+          "slug": "lead-enrichment-finder",
+          "score": 0.8,
+          "batch": false
+        },
+        {
+          "rank": 10,
+          "slug": "opensource-repo-scout",
+          "score": 0.8,
+          "batch": true
+        }
+      ],
+      "batch_hits": 1,
+      "top3_batch_hits": 0
+    },
+    "sales-legal": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "memory-architect",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 2,
+          "slug": "error-recovery-self-heal",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 3,
+          "slug": "crm-sync-bidirectional",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 4,
+          "slug": "calendar-ops-coordinator",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 5,
+          "slug": "log-anomaly-sleuth",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 6,
+          "slug": "shortform-content-factory",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 7,
+          "slug": "ad-creative-variant-lab",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 8,
+          "slug": "landing-page-ab-orchestrator",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 9,
+          "slug": "rag-index-maintainer",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 10,
+          "slug": "cloud-cost-analyzer",
+          "score": 1.05,
+          "batch": false
+        }
+      ],
+      "batch_hits": 0,
+      "top3_batch_hits": 0
+    },
+    "customer-success": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "research-reliability-bundle",
+          "score": 1.0,
+          "batch": false
+        },
+        {
+          "rank": 2,
+          "slug": "devops-autopilot-bundle",
+          "score": 1.0,
+          "batch": false
+        },
+        {
+          "rank": 3,
+          "slug": "policy-compliance-guard",
+          "score": 0.86,
+          "batch": false
+        },
+        {
+          "rank": 4,
+          "slug": "multi-agent-orchestrator",
+          "score": 0.82,
+          "batch": false
+        },
+        {
+          "rank": 5,
+          "slug": "email-outreach-sequencer",
+          "score": 0.82,
+          "batch": false
+        },
+        {
+          "rank": 6,
+          "slug": "deploy-rollback-guardian",
+          "score": 0.82,
+          "batch": false
+        },
+        {
+          "rank": 7,
+          "slug": "security-alert-triager",
+          "score": 0.82,
+          "batch": false
+        },
+        {
+          "rank": 8,
+          "slug": "knowledge-base-curator",
+          "score": 0.82,
+          "batch": false
+        },
+        {
+          "rank": 9,
+          "slug": "incident-triage-commander",
+          "score": 0.82,
+          "batch": false
+        },
+        {
+          "rank": 10,
+          "slug": "waitlist-converter",
+          "score": 0.82,
+          "batch": false
+        }
+      ],
+      "batch_hits": 0,
+      "top3_batch_hits": 0
+    },
+    "finance-ops": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "memory-architect",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 2,
+          "slug": "error-recovery-self-heal",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 3,
+          "slug": "crm-sync-bidirectional",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 4,
+          "slug": "calendar-ops-coordinator",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 5,
+          "slug": "log-anomaly-sleuth",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 6,
+          "slug": "shortform-content-factory",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 7,
+          "slug": "ad-creative-variant-lab",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 8,
+          "slug": "landing-page-ab-orchestrator",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 9,
+          "slug": "rag-index-maintainer",
+          "score": 1.05,
+          "batch": false
+        },
+        {
+          "rank": 10,
+          "slug": "cloud-cost-analyzer",
+          "score": 1.05,
+          "batch": false
+        }
+      ],
+      "batch_hits": 0,
+      "top3_batch_hits": 0
+    }
+  }
+}
