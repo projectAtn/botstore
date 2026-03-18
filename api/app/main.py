@@ -1,6 +1,7 @@
 import json
 import os
 import re
+from datetime import datetime, timezone
 from pathlib import Path
 from enum import Enum
 from typing import Optional
@@ -113,6 +114,28 @@ class CatalogPack(SQLModel):
     creator_name: Optional[str] = None
     creator_verification: Optional[VerificationStatus] = None
     creator_trust_score: Optional[float] = None
+    qa_status: Optional[str] = None
+    qa_suite: Optional[str] = None
+    qa_updated_at: Optional[str] = None
+    qa_report_path: Optional[str] = None
+
+
+class PackQAReport(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    pack_id: int = Field(foreign_key="pack.id", index=True, unique=True)
+    status: str = "pending"
+    suite: str = "default"
+    report_path: Optional[str] = None
+    summary: Optional[str] = None
+    updated_at: str = ""
+
+
+class PackQAUpdate(SQLModel):
+    pack_id: int
+    status: str
+    suite: str = "default"
+    report_path: Optional[str] = None
+    summary: Optional[str] = None
 
 
 class Install(SQLModel, table=True):
@@ -703,6 +726,11 @@ def create_pack(payload: PackCreate) -> Pack:
                 child = session.get(Pack, child_id)
                 if not child:
                     raise HTTPException(status_code=404, detail=f"bundle child pack not found: {child_id}")
+        if payload.is_featured:
+            raise HTTPException(
+                status_code=400,
+                detail="Featured publish must go through promotion gate (/packs/{id}/promote) after QA pass",
+            )
         pack = Pack(
             slug=payload.slug,
             title=payload.title,
@@ -814,6 +842,83 @@ def interop_export_skill(payload: SkillExportRequest) -> dict:
         }
 
 
+@app.post("/qa/report")
+def upsert_qa_report(payload: PackQAUpdate) -> dict:
+    status = (payload.status or "").strip().lower()
+    if status not in {"pending", "pass", "fail"}:
+        raise HTTPException(status_code=400, detail="status must be one of: pending, pass, fail")
+
+    with Session(engine) as session:
+        pack = session.get(Pack, payload.pack_id)
+        if not pack:
+            raise HTTPException(status_code=404, detail="pack not found")
+
+        row = session.exec(select(PackQAReport).where(PackQAReport.pack_id == payload.pack_id)).first()
+        now = datetime.now(timezone.utc).isoformat()
+        if row:
+            row.status = status
+            row.suite = payload.suite or row.suite or "default"
+            row.report_path = payload.report_path
+            row.summary = payload.summary
+            row.updated_at = now
+        else:
+            row = PackQAReport(
+                pack_id=payload.pack_id,
+                status=status,
+                suite=payload.suite or "default",
+                report_path=payload.report_path,
+                summary=payload.summary,
+                updated_at=now,
+            )
+            session.add(row)
+
+        session.commit()
+        session.refresh(row)
+        return {
+            "ok": True,
+            "pack_id": row.pack_id,
+            "status": row.status,
+            "suite": row.suite,
+            "updated_at": row.updated_at,
+            "report_path": row.report_path,
+        }
+
+
+@app.get("/qa/report/{pack_id}")
+def get_qa_report(pack_id: int) -> dict:
+    with Session(engine) as session:
+        row = session.exec(select(PackQAReport).where(PackQAReport.pack_id == pack_id)).first()
+        if not row:
+            return {"pack_id": pack_id, "status": "missing"}
+        return {
+            "pack_id": row.pack_id,
+            "status": row.status,
+            "suite": row.suite,
+            "report_path": row.report_path,
+            "summary": row.summary,
+            "updated_at": row.updated_at,
+        }
+
+
+@app.put("/packs/{pack_id}/promote", response_model=Pack)
+def promote_pack(pack_id: int, featured: bool = True) -> Pack:
+    with Session(engine) as session:
+        pack = session.get(Pack, pack_id)
+        if not pack:
+            raise HTTPException(status_code=404, detail="pack not found")
+
+        if featured:
+            qa = session.exec(select(PackQAReport).where(PackQAReport.pack_id == pack_id)).first()
+            if not qa or qa.status != "pass":
+                raise HTTPException(status_code=400, detail="QA pass required before promotion")
+
+        pack.is_featured = featured
+        session.add(pack)
+        session.commit()
+        session.refresh(pack)
+        return pack
+
+
 @app.get("/packs", response_model=list[Pack])
 def list_packs(type: Optional[PackType] = None) -> list[Pack]:
     with Session(engine) as session:
@@ -832,9 +937,13 @@ def catalog(type: Optional[PackType] = None, featured_only: bool = False) -> lis
         if featured_only:
             query = query.where(Pack.is_featured == True)
         packs = list(session.exec(query).all())
+        qa_rows = list(session.exec(select(PackQAReport)).all())
+        qa_by_pack = {q.pack_id: q for q in qa_rows}
+
         out: list[CatalogPack] = []
         for p in packs:
             creator = session.get(Creator, p.creator_id) if p.creator_id else None
+            qa = qa_by_pack.get(p.id or -1)
             out.append(
                 CatalogPack(
                     id=p.id or 0,
@@ -852,6 +961,10 @@ def catalog(type: Optional[PackType] = None, featured_only: bool = False) -> lis
                     creator_name=creator.name if creator else None,
                     creator_verification=creator.verification if creator else None,
                     creator_trust_score=creator.trust_score if creator else None,
+                    qa_status=qa.status if qa else None,
+                    qa_suite=qa.suite if qa else None,
+                    qa_updated_at=qa.updated_at if qa else None,
+                    qa_report_path=qa.report_path if qa else None,
                 )
             )
         return out

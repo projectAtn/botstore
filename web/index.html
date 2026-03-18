@@ -411,13 +411,16 @@ async function loadPacks(){
     el.className='pack';
     const creator = p.creator_name ? `${p.creator_name} • ${p.creator_verification} • trust ${p.creator_trust_score}` : 'No creator';
     const scopes = p.scopes.length ? p.scopes.map(s=>`<span class='pill'>${s}</span>`).join('') : '<span class="muted">no scopes</span>';
+    const qaStatus = p.qa_status ? `<span class='pill'>qa:${p.qa_status}</span>` : "<span class='pill'>qa:missing</span>";
+    const qaMeta = p.qa_updated_at ? `<p class='muted'>QA: ${p.qa_status || 'unknown'} • suite ${p.qa_suite || 'default'} • ${p.qa_updated_at}</p>` : "<p class='muted'>QA: no report yet</p>";
     const checked = selectedCatalogPackIds.has(p.id) ? 'checked' : '';
     el.innerHTML = `
       <label class='muted'><input type='checkbox' ${checked} onchange='toggleCatalogPack(${p.id}, this.checked)'/> Select</label>
       <h3>${p.title}</h3>
-      <div><span class='pill'>${p.type}</span><span class='pill'>risk:${p.risk_level}</span>${p.requires_approval?"<span class='pill'>approval required</span>":""}</div>
+      <div><span class='pill'>${p.type}</span><span class='pill'>risk:${p.risk_level}</span>${qaStatus}${p.requires_approval?"<span class='pill'>approval required</span>":""}</div>
       <p class='muted'>${p.description}</p>
       <p class='muted'>Creator: ${creator}</p>
+      ${qaMeta}
       <div>${scopes}</div>
       <br/>
       <button onclick='installPack(${p.id})'>Install</button>

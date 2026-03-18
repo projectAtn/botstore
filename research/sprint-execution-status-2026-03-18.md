@@ -47,3 +47,25 @@
 
 ## Notes
 - API was restarted after code changes so new interop endpoints are live on `127.0.0.1:8787`.
+
+## Additional execution progress (Sprint 1 follow-up)
+
+### Implemented now
+4. **Promotion QA gate (`BS-QA-001` executable slice)**
+   - New rule: creating packs as featured via `POST /packs` is blocked.
+   - Promotion now requires explicit gate path: `PUT /packs/{id}/promote?featured=true`.
+   - Promotion gate enforces QA status = `pass`.
+
+5. **QA artifact endpoints (`BS-OPS-001` executable slice)**
+   - `POST /qa/report` upserts pack QA status (`pending|pass|fail`) + suite + report path.
+   - `GET /qa/report/{pack_id}` returns latest QA artifact record.
+
+6. **Catalog QA badge wiring (`BS-UI-001` partial)**
+   - `/catalog` now returns QA metadata fields (`qa_status`, `qa_suite`, `qa_updated_at`, `qa_report_path`).
+   - Web catalog cards now show QA badge/status metadata.
+
+### Live verification run
+- Promotion without QA pass: correctly blocked (`400`).
+- QA report upsert for `inbox-zero-pilot`: success.
+- Promotion after QA pass: success.
+- Catalog payload includes QA fields and values for promoted pack.
