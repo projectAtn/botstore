@@ -1,0 +1,173 @@
+{
+  "generatedAt": "2026-03-18T08:26:43.169501+00:00",
+  "summary": {
+    "total": 8,
+    "hit_top3": 8,
+    "hit_top5": 8,
+    "top3_rate": 1.0,
+    "top5_rate": 1.0
+  },
+  "cases": [
+    {
+      "id": "ops-calendar-crm",
+      "query": "triage inbox schedule meetings and keep CRM synced",
+      "expected": [
+        "crm-sync-bidirectional",
+        "calendar-ops-coordinator",
+        "email-outreach-sequencer"
+      ],
+      "best_match_slug": "crm-sync-bidirectional",
+      "best_rank": 1,
+      "hit_top3": true,
+      "hit_top5": true,
+      "top5": [
+        "crm-sync-bidirectional",
+        "service-ops-verticals",
+        "inbox-calendar-ops",
+        "universal-connector-auth",
+        "meeting-brief-builder"
+      ]
+    },
+    {
+      "id": "security-governance",
+      "query": "prioritize security alerts enforce policy and maintain audit trail",
+      "expected": [
+        "security-alert-triager",
+        "deploy-rollback-guardian",
+        "incident-triage-commander"
+      ],
+      "best_match_slug": "security-alert-triager",
+      "best_rank": 1,
+      "hit_top3": true,
+      "hit_top5": true,
+      "top5": [
+        "security-alert-triager",
+        "strict-compliance-officer-persona",
+        "deploy-rollback-guardian",
+        "incident-triage-commander",
+        "security-maintenance-bundle"
+      ]
+    },
+    {
+      "id": "content-growth",
+      "query": "repurpose content into short posts and SEO briefs",
+      "expected": [
+        "shortform-content-factory",
+        "seo-brief-builder",
+        "keyword-cluster-mapper"
+      ],
+      "best_match_slug": "seo-brief-builder",
+      "best_rank": 2,
+      "hit_top3": true,
+      "hit_top5": true,
+      "top5": [
+        "ad-creative-feedback-loop",
+        "seo-brief-builder",
+        "shortform-content-factory",
+        "keyword-cluster-mapper",
+        "social-listening-response-drafter"
+      ]
+    },
+    {
+      "id": "community-support",
+      "query": "manage support across telegram discord whatsapp",
+      "expected": [
+        "telegram-community-manager",
+        "discord-community-manager",
+        "whatsapp-support-copilot"
+      ],
+      "best_match_slug": "whatsapp-support-copilot",
+      "best_rank": 2,
+      "hit_top3": true,
+      "hit_top5": true,
+      "top5": [
+        "community-support-ops-bundle",
+        "whatsapp-support-copilot",
+        "discord-community-manager",
+        "empathetic-support-ally-persona",
+        "telegram-community-manager"
+      ]
+    },
+    {
+      "id": "research-citations",
+      "query": "research mode with citations and source confidence",
+      "expected": [
+        "research-librarian-persona",
+        "citation-verifier",
+        "research-reliability-bundle"
+      ],
+      "best_match_slug": "research-librarian-persona",
+      "best_rank": 1,
+      "hit_top3": true,
+      "hit_top5": true,
+      "top5": [
+        "research-librarian-persona",
+        "service-ops-verticals",
+        "research-briefing-bundle",
+        "research-citation-packager",
+        "paper-to-notes"
+      ]
+    },
+    {
+      "id": "finance-controls",
+      "query": "reconcile invoices and audit expense policy exceptions",
+      "expected": [
+        "finance-control-bundle",
+        "invoice-expense-audit-bundle",
+        "invoice-reconciliation"
+      ],
+      "best_match_slug": "invoice-expense-audit-bundle",
+      "best_rank": 1,
+      "hit_top3": true,
+      "hit_top5": true,
+      "top5": [
+        "invoice-expense-audit-bundle",
+        "finance-control-bundle",
+        "expense-policy-auditor",
+        "strict-compliance-officer-persona",
+        "security-alert-triager"
+      ]
+    },
+    {
+      "id": "market-intel",
+      "query": "monitor reddit x and github for user pain points and competitor moves",
+      "expected": [
+        "market-intel-signal-bundle",
+        "reddit-scout-pro",
+        "github-issue-radar"
+      ],
+      "best_match_slug": "reddit-scout-pro",
+      "best_rank": 1,
+      "hit_top3": true,
+      "hit_top5": true,
+      "top5": [
+        "reddit-scout-pro",
+        "product-strategist-persona",
+        "price-change-sentinel",
+        "self-host-healthcheck",
+        "onboarding-journey-optimizer"
+      ]
+    },
+    {
+      "id": "personality-compliance",
+      "query": "strict compliance officer personality that blocks risky requests",
+      "expected": [
+        "strict-compliance-officer-persona"
+      ],
+      "best_match_slug": "strict-compliance-officer-persona",
+      "best_rank": 1,
+      "hit_top3": true,
+      "hit_top5": true,
+      "top5": [
+        "strict-compliance-officer-persona",
+        "policy-sop-generator",
+        "security-alert-triager",
+        "deploy-rollback-guardian",
+        "incident-triage-commander"
+      ]
+    }
+  ],
+  "drift": {
+    "has_previous": false
+  }
+}

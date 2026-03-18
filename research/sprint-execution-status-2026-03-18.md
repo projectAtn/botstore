@@ -111,3 +111,21 @@
 ### Live verification run
 - Validated community bundle candidates via `/bundles/validate`.
 - Expected warning returned for risk mismatch when proposed risk < child risk.
+
+## Additional execution progress (Ranking eval harness)
+
+### Implemented now
+11. **Ranking eval CI harness (`BS-QA-002` executable slice)**
+   - Added script: `scripts/ranking_eval_ci.py`
+   - Evaluates golden intent queries against `/agent/search`.
+   - Tracks top-3/top-5 hit rates and per-case best rank.
+   - Produces drift report versus previous baseline if available.
+
+### Artifacts generated
+- `research/ranking-eval-current.json`
+- `research/ranking-eval-last.json`
+- `research/ranking-eval-report.md`
+
+### Live run result
+- Top-3 hit: **8/8**
+- Top-5 hit: **8/8**
