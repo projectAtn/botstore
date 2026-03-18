@@ -1,0 +1,203 @@
+{
+  "generatedAt": "2026-03-18T07:10:36.496305+00:00",
+  "cases": {
+    "market-intel": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "research-reliability-bundle",
+          "score": 0.9,
+          "batch": false
+        },
+        {
+          "rank": 2,
+          "slug": "market-intel-signal-bundle",
+          "score": 0.9,
+          "batch": true
+        },
+        {
+          "rank": 3,
+          "slug": "seo-brief-builder",
+          "score": 0.8,
+          "batch": false
+        },
+        {
+          "rank": 4,
+          "slug": "citation-verifier",
+          "score": 0.8,
+          "batch": false
+        },
+        {
+          "rank": 5,
+          "slug": "reddit-scout-pro",
+          "score": 0.8,
+          "batch": true
+        },
+        {
+          "rank": 6,
+          "slug": "x-trend-harvester",
+          "score": 0.8,
+          "batch": true
+        },
+        {
+          "rank": 7,
+          "slug": "github-issue-radar",
+          "score": 0.8,
+          "batch": true
+        },
+        {
+          "rank": 8,
+          "slug": "competitor-feature-tracker",
+          "score": 0.8,
+          "batch": true
+        },
+        {
+          "rank": 9,
+          "slug": "lead-enrichment-finder",
+          "score": 0.8,
+          "batch": true
+        },
+        {
+          "rank": 10,
+          "slug": "browser-operator-pro",
+          "score": 0.72,
+          "batch": false
+        }
+      ],
+      "batch_hits": 6,
+      "top3_batch_hits": 1
+    },
+    "growth-pipeline": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "email-outreach-sequencer",
+          "score": 1.07,
+          "batch": false
+        },
+        {
+          "rank": 2,
+          "slug": "waitlist-converter",
+          "score": 1.07,
+          "batch": true
+        },
+        {
+          "rank": 3,
+          "slug": "policy-compliance-guard",
+          "score": 0.91,
+          "batch": false
+        },
+        {
+          "rank": 4,
+          "slug": "crm-sync-bidirectional",
+          "score": 0.82,
+          "batch": false
+        },
+        {
+          "rank": 5,
+          "slug": "service-ops-verticals",
+          "score": 0.67,
+          "batch": false
+        },
+        {
+          "rank": 6,
+          "slug": "deploy-rollback-guardian",
+          "score": 0.67,
+          "batch": false
+        },
+        {
+          "rank": 7,
+          "slug": "security-alert-triager",
+          "score": 0.67,
+          "batch": false
+        },
+        {
+          "rank": 8,
+          "slug": "knowledge-base-curator",
+          "score": 0.67,
+          "batch": false
+        },
+        {
+          "rank": 9,
+          "slug": "incident-triage-commander",
+          "score": 0.67,
+          "batch": false
+        },
+        {
+          "rank": 10,
+          "slug": "churn-early-warning",
+          "score": 0.67,
+          "batch": true
+        }
+      ],
+      "batch_hits": 2,
+      "top3_batch_hits": 1
+    },
+    "pricing-watch": {
+      "top10": [
+        {
+          "rank": 1,
+          "slug": "tool-release-watcher",
+          "score": 1.07,
+          "batch": true
+        },
+        {
+          "rank": 2,
+          "slug": "price-change-sentinel",
+          "score": 1.07,
+          "batch": true
+        },
+        {
+          "rank": 3,
+          "slug": "research-reliability-bundle",
+          "score": 1.0,
+          "batch": false
+        },
+        {
+          "rank": 4,
+          "slug": "policy-compliance-guard",
+          "score": 0.7767,
+          "batch": false
+        },
+        {
+          "rank": 5,
+          "slug": "browser-operator-pro",
+          "score": 0.7367,
+          "batch": false
+        },
+        {
+          "rank": 6,
+          "slug": "multi-agent-orchestrator",
+          "score": 0.7367,
+          "batch": false
+        },
+        {
+          "rank": 7,
+          "slug": "email-outreach-sequencer",
+          "score": 0.7367,
+          "batch": false
+        },
+        {
+          "rank": 8,
+          "slug": "deploy-rollback-guardian",
+          "score": 0.7367,
+          "batch": false
+        },
+        {
+          "rank": 9,
+          "slug": "security-alert-triager",
+          "score": 0.7367,
+          "batch": false
+        },
+        {
+          "rank": 10,
+          "slug": "knowledge-base-curator",
+          "score": 0.7367,
+          "batch": false
+        }
+      ],
+      "batch_hits": 2,
+      "top3_batch_hits": 2
+    }
+  }
+}
