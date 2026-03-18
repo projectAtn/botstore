@@ -39,3 +39,16 @@
 ## Notes
 - Team QA validates capability/role/artifact coverage per scenario.
 - Autofix path is available and generated a patched team set even though all scenarios already passed.
+
+## API implementation (custom team builder endpoints)
+Implemented in `api/app/main.py`:
+- `POST /teams/custom/compose`
+- `POST /teams/custom/validate`
+- `POST /teams/custom/simulate`
+- `POST /teams/custom/publish`
+
+### Live smoke test
+- Compose: success (`Custom Revenue Tiger Team`)
+- Validate: pass (`score=0.8`)
+- Simulate: ran 2 scenarios (`pass=1`, `avg_score=0.725`)
+- Publish: created bundle pack `custom-revenue-tiger-team` (`pack_id=126`)

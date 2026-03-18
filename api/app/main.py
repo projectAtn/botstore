@@ -4,7 +4,7 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 from enum import Enum
-from typing import Optional
+from typing import Optional, Any
 
 from fastapi import FastAPI, Header, HTTPException
 from pydantic import BaseModel
@@ -69,6 +69,38 @@ class SkillImportRequest(BaseModel):
 class SkillExportRequest(BaseModel):
     slug: str
     out_dir: str
+
+
+class TeamRoleInput(BaseModel):
+    role: str
+    personality_slug: str
+    owned_skills: list[str] = []
+    deliverables: list[str] = []
+
+
+class TeamComposeRequest(BaseModel):
+    name: str
+    objective: str
+    role_slugs: list[str]
+    risk_level: str = "medium"
+    additional_shared_skills: list[str] = []
+
+
+class TeamValidateRequest(BaseModel):
+    team: dict[str, Any]
+    required_capabilities: list[str] = []
+    required_roles: list[str] = []
+    expected_artifacts: list[str] = []
+
+
+class TeamSimulateRequest(BaseModel):
+    team: dict[str, Any]
+    scenario_ids: list[str] = []
+
+
+class TeamPublishRequest(BaseModel):
+    team: dict[str, Any]
+    creator_id: Optional[int] = None
 
 
 class Pack(SQLModel, table=True):
@@ -341,6 +373,9 @@ class OpsProgressUpdate(BaseModel):
 sqlite_file_name = "./botstore.db"
 engine = create_engine(f"sqlite:///{sqlite_file_name}", echo=False)
 OPS_PROGRESS_PATH = Path("../research/ops-progress.json")
+ROLE_AGENT_CATALOG_PATH = Path("../research/singular-role-agent-offerings-v1.json")
+TEAM_SCENARIOS_PATH = Path("../research/team-pack-qa-scenarios-v2.json")
+TEAM_PUBLISHED_PATH = Path("../research/team-published.jsonl")
 
 app = FastAPI(title="BotStore API", version="0.2.0")
 app.add_middleware(
@@ -395,6 +430,66 @@ def _csv_to_ints(values_csv: str) -> list[int]:
 def _ints_to_csv(values: list[int]) -> str:
     uniq = sorted({int(v) for v in values if int(v) > 0})
     return ",".join(str(v) for v in uniq)
+
+
+def _norm_token(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", (text or "").lower())
+
+
+def _load_json(path: Path) -> Optional[dict]:
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
+def _team_skill_slugs(team: dict[str, Any]) -> list[str]:
+    slugs: list[str] = []
+    for s in team.get("shared_skills", []) or []:
+        if isinstance(s, str) and s.strip():
+            slugs.append(s.strip())
+    for role in team.get("roles", []) or []:
+        for s in role.get("owned_skills", []) or []:
+            if isinstance(s, str) and s.strip():
+                slugs.append(s.strip())
+    return sorted(set(slugs))
+
+
+def _team_eval(team: dict[str, Any], req_caps: list[str], req_roles: list[str], req_artifacts: list[str]) -> dict:
+    req_caps_set = {c.strip() for c in req_caps if c.strip()}
+    req_roles_set = {_norm_token(r) for r in req_roles if r}
+    req_art_set = {_norm_token(a) for a in req_artifacts if a}
+
+    role_names = {_norm_token((r or {}).get("role", "")) for r in (team.get("roles", []) or [])}
+    artifacts = set()
+    for r in team.get("roles", []) or []:
+        for d in (r.get("deliverables", []) or []):
+            artifacts.add(_norm_token(str(d)))
+
+    with Session(engine) as session:
+        caps = set()
+        for slug in _team_skill_slugs(team):
+            p = session.exec(select(Pack).where(Pack.slug == slug)).first()
+            if p:
+                caps.update(_csv_to_scopes(p.scopes_csv))
+
+    cap_cov = len(caps.intersection(req_caps_set)) / max(len(req_caps_set), 1) if req_caps_set else 1.0
+    role_cov = len(role_names.intersection(req_roles_set)) / max(len(req_roles_set), 1) if req_roles_set else 1.0
+    art_cov = len(artifacts.intersection(req_art_set)) / max(len(req_art_set), 1) if req_art_set else 1.0
+    score = round((0.5 * cap_cov) + (0.3 * role_cov) + (0.2 * art_cov), 3)
+
+    return {
+        "score": score,
+        "capability_coverage": round(cap_cov, 3),
+        "role_coverage": round(role_cov, 3),
+        "artifact_coverage": round(art_cov, 3),
+        "missing_capabilities": sorted(req_caps_set - caps),
+        "missing_roles": sorted(req_roles_set - role_names),
+        "missing_artifacts": sorted(req_art_set - artifacts),
+        "pass": score >= 0.8,
+    }
 
 
 def _requires_approval(pack: Pack) -> bool:
@@ -846,6 +941,207 @@ def interop_export_skill(payload: SkillExportRequest) -> dict:
             "slug": pack.slug,
             "path": str(target_dir),
             "files": ["SKILL.md", "botstore-export.json"],
+        }
+
+
+@app.post("/teams/custom/compose")
+def teams_custom_compose(payload: TeamComposeRequest) -> dict:
+    role_catalog = _load_json(ROLE_AGENT_CATALOG_PATH) or {}
+    roles = role_catalog.get("agents", []) if isinstance(role_catalog, dict) else []
+    by_slug = {r.get("slug"): r for r in roles}
+
+    selected_roles = []
+    missing_role_slugs = []
+    shared_skills = set(payload.additional_shared_skills or [])
+
+    for rs in payload.role_slugs:
+        r = by_slug.get(rs)
+        if not r:
+            missing_role_slugs.append(rs)
+            continue
+        selected_roles.append(
+            {
+                "role": r.get("role"),
+                "personality_slug": r.get("personality_slug"),
+                "owned_skills": r.get("starter_skills", []),
+                "deliverables": ["status-report", "action-items"],
+            }
+        )
+        for sk in r.get("suggested_shared_skills", []) or []:
+            shared_skills.add(sk)
+
+    team = {
+        "slug": _slugify(payload.name),
+        "title": payload.name,
+        "purpose": payload.objective,
+        "team_type": "custom",
+        "shared_skills": sorted(s for s in shared_skills if isinstance(s, str) and s.strip()),
+        "roles": selected_roles,
+        "risk_level": payload.risk_level,
+    }
+
+    return {
+        "ok": True,
+        "team": team,
+        "missing_role_slugs": missing_role_slugs,
+    }
+
+
+@app.post("/teams/custom/validate")
+def teams_custom_validate(payload: TeamValidateRequest) -> dict:
+    team = payload.team or {}
+    issues: list[dict] = []
+
+    if len(team.get("roles", []) or []) < 2:
+        issues.append({"severity": "warning", "code": "team.low_role_count", "message": "Team should include at least 2 roles"})
+
+    risk = (team.get("risk_level") or "low").lower()
+    if risk in {"medium", "high"}:
+        has_governance = any(
+            any(k in (str(r.get("personality_slug") or "").lower()) for k in ["compliance", "privacy", "forensic"])
+            for r in (team.get("roles", []) or [])
+        )
+        if not has_governance:
+            issues.append(
+                {
+                    "severity": "warning",
+                    "code": "team.governance_missing",
+                    "message": "Medium/high risk teams should include governance/privacy/security personality",
+                }
+            )
+
+    evalr = _team_eval(team, payload.required_capabilities, payload.required_roles, payload.expected_artifacts)
+    if not evalr.get("pass"):
+        issues.append(
+            {
+                "severity": "warning",
+                "code": "team.coverage_gap",
+                "message": "Team coverage below pass threshold",
+                "details": {
+                    "missing_capabilities": evalr.get("missing_capabilities", []),
+                    "missing_roles": evalr.get("missing_roles", []),
+                    "missing_artifacts": evalr.get("missing_artifacts", []),
+                },
+            }
+        )
+
+    return {
+        "ok": True,
+        "score": evalr.get("score"),
+        "pass": evalr.get("pass"),
+        "coverage": {
+            "capability": evalr.get("capability_coverage"),
+            "role": evalr.get("role_coverage"),
+            "artifact": evalr.get("artifact_coverage"),
+        },
+        "missing": {
+            "capabilities": evalr.get("missing_capabilities", []),
+            "roles": evalr.get("missing_roles", []),
+            "artifacts": evalr.get("missing_artifacts", []),
+        },
+        "issues": issues,
+    }
+
+
+@app.post("/teams/custom/simulate")
+def teams_custom_simulate(payload: TeamSimulateRequest) -> dict:
+    scenarios_doc = _load_json(TEAM_SCENARIOS_PATH) or {}
+    scenarios = scenarios_doc.get("scenarios", []) if isinstance(scenarios_doc, dict) else []
+
+    picked = scenarios
+    if payload.scenario_ids:
+        allow = set(payload.scenario_ids)
+        picked = [s for s in scenarios if s.get("id") in allow]
+
+    rows = []
+    for scen in picked:
+        evalr = _team_eval(
+            payload.team or {},
+            scen.get("required_capabilities", []),
+            scen.get("required_roles", []),
+            scen.get("expected_artifacts", []),
+        )
+        rows.append(
+            {
+                "scenario_id": scen.get("id"),
+                "score": evalr.get("score"),
+                "pass": evalr.get("pass"),
+                "missing_capabilities": evalr.get("missing_capabilities", []),
+                "missing_roles": evalr.get("missing_roles", []),
+                "missing_artifacts": evalr.get("missing_artifacts", []),
+            }
+        )
+
+    total = len(rows)
+    passed = sum(1 for r in rows if r.get("pass"))
+    avg = round(sum(float(r.get("score") or 0) for r in rows) / max(total, 1), 3)
+    return {
+        "ok": True,
+        "summary": {"total": total, "pass": passed, "avg_score": avg},
+        "scenarios": rows,
+    }
+
+
+@app.post("/teams/custom/publish")
+def teams_custom_publish(payload: TeamPublishRequest) -> dict:
+    team = payload.team or {}
+    slug = str(team.get("slug") or _slugify(team.get("title") or "custom-team"))
+    title = str(team.get("title") or slug)
+    purpose = str(team.get("purpose") or "Custom team pack")
+    risk = str(team.get("risk_level") or "medium").lower()
+
+    with Session(engine) as session:
+        if payload.creator_id and not session.get(Creator, payload.creator_id):
+            raise HTTPException(status_code=404, detail="creator not found")
+
+        existing = session.exec(select(Pack).where(Pack.slug == slug)).first()
+        if existing:
+            raise HTTPException(status_code=409, detail="slug already exists")
+
+        skill_slugs = _team_skill_slugs(team)
+        child_ids = []
+        missing_skills = []
+        for s in skill_slugs:
+            p = session.exec(select(Pack).where(Pack.slug == s)).first()
+            if p:
+                child_ids.append(p.id)
+            else:
+                missing_skills.append(s)
+
+        pack = Pack(
+            slug=slug,
+            title=title,
+            type=PackType.bundle,
+            version="0.1.0",
+            description=f"Team Pack: {purpose}",
+            risk_level=risk if risk in {"low", "medium", "high"} else "medium",
+            scopes_csv="",
+            bundle_pack_ids_csv=_ints_to_csv([int(x) for x in child_ids if x]),
+            is_featured=False,
+            creator_id=payload.creator_id,
+        )
+        session.add(pack)
+        session.commit()
+        session.refresh(pack)
+
+        TEAM_PUBLISHED_PATH.parent.mkdir(parents=True, exist_ok=True)
+        event = {
+            "published_at": datetime.now(timezone.utc).isoformat(),
+            "pack_id": pack.id,
+            "slug": slug,
+            "title": title,
+            "team": team,
+            "missing_skills": missing_skills,
+        }
+        with TEAM_PUBLISHED_PATH.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(event) + "\n")
+
+        return {
+            "ok": True,
+            "pack_id": pack.id,
+            "slug": pack.slug,
+            "bundle_child_count": len(child_ids),
+            "missing_skills": missing_skills,
         }
 
 
