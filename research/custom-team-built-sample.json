@@ -1,0 +1,81 @@
+{
+  "team": {
+    "slug": "custom-launch-cell",
+    "title": "Custom Launch Cell",
+    "purpose": "Launch product with revenue + compliance guardrails",
+    "team_type": "custom",
+    "shared_skills": [
+      "approval-policy-brain",
+      "calendar-ops-coordinator",
+      "cloud-cost-analyzer",
+      "contract-risk-highlighter",
+      "crm-sync-bidirectional",
+      "deploy-rollback-guardian",
+      "expense-policy-auditor",
+      "invoice-reconciliation",
+      "log-anomaly-sleuth",
+      "policy-compliance-guard",
+      "policy-drift-detector",
+      "proposal-generator",
+      "sales-call-prep-kit",
+      "security-alert-triager"
+    ],
+    "roles": [
+      {
+        "role": "CEO",
+        "personality_slug": "calm-chief-of-staff-persona",
+        "owned_skills": [
+          "product-strategist-persona"
+        ],
+        "deliverables": [
+          "status-report",
+          "action-items"
+        ]
+      },
+      {
+        "role": "CFO",
+        "personality_slug": "strict-compliance-officer-persona",
+        "owned_skills": [
+          "expense-policy-auditor",
+          "invoice-reconciliation"
+        ],
+        "deliverables": [
+          "status-report",
+          "action-items"
+        ]
+      },
+      {
+        "role": "CRO",
+        "personality_slug": "conversion-closer-persona",
+        "owned_skills": [
+          "lead-enrichment-finder",
+          "waitlist-converter"
+        ],
+        "deliverables": [
+          "status-report",
+          "action-items"
+        ]
+      },
+      {
+        "role": "Policy Officer",
+        "personality_slug": "strict-compliance-officer-persona",
+        "owned_skills": [
+          "contract-risk-highlighter",
+          "policy-compliance-guard"
+        ],
+        "deliverables": [
+          "status-report",
+          "action-items"
+        ]
+      }
+    ],
+    "risk_level": "medium"
+  },
+  "validation": {
+    "ok": true,
+    "warnings": [],
+    "capability_count": 25,
+    "skill_count": 17,
+    "role_count": 4
+  }
+}

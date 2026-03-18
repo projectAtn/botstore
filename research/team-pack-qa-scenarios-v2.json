@@ -1,0 +1,374 @@
+{
+  "version": "0.2.0",
+  "generatedAt": "2026-03-18",
+  "scenarios": [
+    {
+      "id": "exec-weekly",
+      "team_slug": "startup-exec-team",
+      "prompt": "Weekly sync, priorities, owners",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO",
+        "COO"
+      ],
+      "expected_artifacts": [
+        "decision-log",
+        "runway-report",
+        "owner-plan"
+      ]
+    },
+    {
+      "id": "exec-burn",
+      "team_slug": "startup-exec-team",
+      "prompt": "Cut burn 20% safely",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "analytics"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO",
+        "CMO"
+      ],
+      "expected_artifacts": [
+        "budget-risk-register",
+        "growth-plan"
+      ]
+    },
+    {
+      "id": "lean-founder",
+      "team_slug": "founder-lean-team",
+      "prompt": "Founder weekly command center",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Founder",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "weekly-plan",
+        "ops-checklist"
+      ]
+    },
+    {
+      "id": "finance-close",
+      "team_slug": "finance-control-team",
+      "prompt": "Month-end close and variance",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CFO",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "runway-report",
+        "approval-log"
+      ]
+    },
+    {
+      "id": "gtm-launch",
+      "team_slug": "go-to-market-war-room-team",
+      "prompt": "Launch week planning",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "message.send"
+      ],
+      "required_roles": [
+        "CMO",
+        "Head of Community"
+      ],
+      "expected_artifacts": [
+        "launch-plan",
+        "engagement-report"
+      ]
+    },
+    {
+      "id": "gtm-claims",
+      "team_slug": "go-to-market-war-room-team",
+      "prompt": "Verify launch claims",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write"
+      ],
+      "required_roles": [
+        "Research Editor",
+        "CMO"
+      ],
+      "expected_artifacts": [
+        "claims-check",
+        "evidence-appendix"
+      ]
+    },
+    {
+      "id": "community-scale",
+      "team_slug": "community-growth-team",
+      "prompt": "Scale community support",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.read"
+      ],
+      "required_roles": [
+        "Community Lead",
+        "Support Lead"
+      ],
+      "expected_artifacts": [
+        "engagement-plan",
+        "escalation-log"
+      ]
+    },
+    {
+      "id": "support-escalation",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "Handle critical customer issue",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "resolution-log",
+        "escalation-plan"
+      ]
+    },
+    {
+      "id": "deal-review",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "Review 15 deals",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps"
+      ],
+      "expected_artifacts": [
+        "deal-plan",
+        "pipeline-health"
+      ]
+    },
+    {
+      "id": "contract-approval",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "Flag risky terms",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "Policy Officer",
+        "CRO"
+      ],
+      "expected_artifacts": [
+        "compliance-approval-note"
+      ]
+    },
+    {
+      "id": "incident-p1",
+      "team_slug": "incident-security-response-team",
+      "prompt": "P1 outage + suspicious access",
+      "required_capabilities": [
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate",
+        "message.send"
+      ],
+      "required_roles": [
+        "Head of Security Ops",
+        "SRE Lead"
+      ],
+      "expected_artifacts": [
+        "incident-timeline",
+        "containment-plan"
+      ]
+    },
+    {
+      "id": "incident-postmortem",
+      "team_slug": "incident-security-response-team",
+      "prompt": "Postmortem and actions",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Head of Security Ops",
+        "SRE Lead"
+      ],
+      "expected_artifacts": [
+        "postmortem",
+        "rollback-log"
+      ]
+    },
+    {
+      "id": "reliability-weekly",
+      "team_slug": "devops-reliability-team",
+      "prompt": "Weekly reliability review",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "uptime-report",
+        "platform-checklist"
+      ]
+    },
+    {
+      "id": "product-discovery",
+      "team_slug": "product-strategy-discovery-team",
+      "prompt": "Painpoints to roadmap",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write"
+      ],
+      "required_roles": [
+        "Head of Product",
+        "Research Analyst"
+      ],
+      "expected_artifacts": [
+        "roadmap-memo",
+        "evidence-log"
+      ]
+    },
+    {
+      "id": "research-synthesis",
+      "team_slug": "research-publication-team",
+      "prompt": "Synthesize papers",
+      "required_capabilities": [
+        "pdf.analyze",
+        "files.read",
+        "files.write",
+        "web.search"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist"
+      ],
+      "expected_artifacts": [
+        "evidence-brief",
+        "citation-log"
+      ]
+    },
+    {
+      "id": "research-publish",
+      "team_slug": "research-publication-team",
+      "prompt": "Prepare publication assets",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "seo",
+        "analytics"
+      ],
+      "required_roles": [
+        "Creative Director",
+        "Head of Research"
+      ],
+      "expected_artifacts": [
+        "publication-assets",
+        "distribution-pack"
+      ]
+    },
+    {
+      "id": "commerce-plan",
+      "team_slug": "ecommerce-ops-team",
+      "prompt": "Optimize listings + stock plan",
+      "required_capabilities": [
+        "listing.optimize",
+        "inventory.forecast",
+        "analytics"
+      ],
+      "required_roles": [
+        "Commerce Lead",
+        "Ops Planner"
+      ],
+      "expected_artifacts": [
+        "conversion-report",
+        "stock-plan"
+      ]
+    },
+    {
+      "id": "hiring-pipeline",
+      "team_slug": "hiring-people-ops-team",
+      "prompt": "Build hiring pipeline",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "message.send"
+      ],
+      "required_roles": [
+        "CHRO",
+        "Recruiting Ops"
+      ],
+      "expected_artifacts": [
+        "hiring-plan",
+        "candidate-pipeline"
+      ]
+    },
+    {
+      "id": "governance-audit",
+      "team_slug": "compliance-governance-team",
+      "prompt": "Policy audit and approvals",
+      "required_capabilities": [
+        "policy.enforce",
+        "risk.evaluate",
+        "files.write"
+      ],
+      "required_roles": [
+        "Policy Officer",
+        "Privacy Officer"
+      ],
+      "expected_artifacts": [
+        "policy-decision-log",
+        "privacy-risk-note"
+      ]
+    },
+    {
+      "id": "content-production",
+      "team_slug": "content-studio-team",
+      "prompt": "Build content asset batch",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "seo",
+        "analytics"
+      ],
+      "required_roles": [
+        "Creative Director",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "content-brief",
+        "asset-batch"
+      ]
+    }
+  ]
+}
