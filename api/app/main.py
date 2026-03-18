@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from pathlib import Path
 from enum import Enum
 from typing import Optional
@@ -56,6 +57,17 @@ class CreatorCreate(SQLModel):
     name: str
     verification: VerificationStatus = VerificationStatus.unverified
     trust_score: float = 0.5
+
+
+class SkillImportRequest(BaseModel):
+    skill_path: str
+    creator_id: Optional[int] = None
+    pack_type: PackType = PackType.skill
+
+
+class SkillExportRequest(BaseModel):
+    slug: str
+    out_dir: str
 
 
 class Pack(SQLModel, table=True):
@@ -621,6 +633,47 @@ Use these endpoints:
 """
 
 
+def _slugify(text: str) -> str:
+    base = re.sub(r"[^a-z0-9]+", "-", (text or "").strip().lower()).strip("-")
+    return base or "imported-skill"
+
+
+def _parse_skill_markdown(skill_md_path: Path) -> dict:
+    raw = skill_md_path.read_text(encoding="utf-8")
+    lines = [ln.rstrip() for ln in raw.splitlines()]
+
+    title = None
+    description = None
+    for ln in lines:
+        s = ln.strip()
+        if not s:
+            continue
+        if s.startswith("#") and title is None:
+            title = s.lstrip("#").strip()
+            continue
+        if not s.startswith("#") and description is None:
+            description = s
+            break
+
+    scope_matches = re.findall(r"`([a-z]+(?:\.[a-z0-9_]+)+)`", raw.lower())
+    scopes = sorted(set(scope_matches))
+
+    inferred_risk = "high" if any(s in {"payment.charge", "files.delete"} for s in scopes) else "medium" if any(
+        s in {"email.send", "message.send", "social.post"} for s in scopes
+    ) else "low"
+
+    title = title or skill_md_path.parent.name
+    description = description or "Imported from OpenClaw skill folder"
+
+    return {
+        "title": title,
+        "slug": _slugify(title),
+        "description": description,
+        "scopes": scopes,
+        "risk_level": inferred_risk,
+    }
+
+
 @app.post("/creators", response_model=Creator)
 def create_creator(payload: CreatorCreate) -> Creator:
     with Session(engine) as session:
@@ -666,6 +719,99 @@ def create_pack(payload: PackCreate) -> Pack:
         session.commit()
         session.refresh(pack)
         return pack
+
+
+@app.post("/interop/import-skill-folder")
+def interop_import_skill_folder(payload: SkillImportRequest) -> dict:
+    skill_path = Path(payload.skill_path).expanduser().resolve()
+    if not skill_path.exists() or not skill_path.is_dir():
+        raise HTTPException(status_code=404, detail="skill folder not found")
+
+    skill_md = skill_path / "SKILL.md"
+    if not skill_md.exists():
+        raise HTTPException(status_code=400, detail="SKILL.md not found in folder")
+
+    parsed = _parse_skill_markdown(skill_md)
+    warnings: list[str] = []
+    if not parsed["scopes"]:
+        warnings.append("No tool scopes detected from SKILL.md backticks")
+
+    with Session(engine) as session:
+        creator_id = payload.creator_id
+        if creator_id and not session.get(Creator, creator_id):
+            raise HTTPException(status_code=404, detail="creator not found")
+
+        existing = session.exec(select(Pack).where(Pack.slug == parsed["slug"])).first()
+        if existing:
+            return {
+                "created": False,
+                "reason": "slug already exists",
+                "pack_id": existing.id,
+                "slug": existing.slug,
+                "warnings": warnings,
+            }
+
+        pack = Pack(
+            slug=parsed["slug"],
+            title=parsed["title"],
+            type=payload.pack_type,
+            version="0.1.0",
+            description=parsed["description"],
+            risk_level=parsed["risk_level"],
+            scopes_csv=_scopes_to_csv(parsed["scopes"]),
+            bundle_pack_ids_csv="",
+            is_featured=False,
+            creator_id=creator_id,
+        )
+        session.add(pack)
+        session.commit()
+        session.refresh(pack)
+
+        return {
+            "created": True,
+            "pack_id": pack.id,
+            "slug": pack.slug,
+            "title": pack.title,
+            "pack_type": str(pack.type),
+            "scopes": parsed["scopes"],
+            "warnings": warnings,
+        }
+
+
+@app.post("/interop/export-skill")
+def interop_export_skill(payload: SkillExportRequest) -> dict:
+    with Session(engine) as session:
+        pack = session.exec(select(Pack).where(Pack.slug == payload.slug)).first()
+        if not pack:
+            raise HTTPException(status_code=404, detail="pack not found")
+
+        out_root = Path(payload.out_dir).expanduser().resolve()
+        target_dir = out_root / pack.slug
+        target_dir.mkdir(parents=True, exist_ok=True)
+
+        scopes = _csv_to_scopes(pack.scopes_csv)
+        scope_block = "\n".join([f"- `{s}`" for s in scopes]) if scopes else "- (none declared)"
+        skill_md = f"""# {pack.title}\n\n{pack.description}\n\n## Exported from BotStore\n- slug: `{pack.slug}`\n- type: `{pack.type}`\n- version: `{pack.version}`\n- risk_level: `{pack.risk_level}`\n\n## Declared scopes\n{scope_block}\n"""
+        (target_dir / "SKILL.md").write_text(skill_md, encoding="utf-8")
+
+        manifest = {
+            "slug": pack.slug,
+            "title": pack.title,
+            "type": str(pack.type),
+            "version": pack.version,
+            "description": pack.description,
+            "risk_level": pack.risk_level,
+            "scopes": scopes,
+            "exported_from": "botstore",
+        }
+        (target_dir / "botstore-export.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+
+        return {
+            "ok": True,
+            "slug": pack.slug,
+            "path": str(target_dir),
+            "files": ["SKILL.md", "botstore-export.json"],
+        }
 
 
 @app.get("/packs", response_model=list[Pack])
