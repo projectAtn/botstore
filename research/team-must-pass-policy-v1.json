@@ -1,0 +1,247 @@
+{
+  "version": "0.1.0",
+  "generatedAt": "2026-03-18",
+  "policy": "Each team must pass all 10 must-pass scenarios before production promotion.",
+  "teams": [
+    {
+      "team_slug": "community-growth-team",
+      "must_pass_scenarios": [
+        "community-growth-team-board-pressure",
+        "community-growth-team-budget-shock",
+        "community-growth-team-compliance-audit",
+        "community-growth-team-data-quality-break",
+        "community-growth-team-deadline-compression",
+        "community-growth-team-handoff-failure",
+        "community-growth-team-priority-conflict",
+        "community-growth-team-reputation-crisis",
+        "community-growth-team-scale-spike",
+        "community-growth-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    },
+    {
+      "team_slug": "compliance-governance-team",
+      "must_pass_scenarios": [
+        "compliance-governance-team-board-pressure",
+        "compliance-governance-team-budget-shock",
+        "compliance-governance-team-compliance-audit",
+        "compliance-governance-team-data-quality-break",
+        "compliance-governance-team-deadline-compression",
+        "compliance-governance-team-handoff-failure",
+        "compliance-governance-team-priority-conflict",
+        "compliance-governance-team-reputation-crisis",
+        "compliance-governance-team-scale-spike",
+        "compliance-governance-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    },
+    {
+      "team_slug": "content-studio-team",
+      "must_pass_scenarios": [
+        "content-studio-team-board-pressure",
+        "content-studio-team-budget-shock",
+        "content-studio-team-compliance-audit",
+        "content-studio-team-data-quality-break",
+        "content-studio-team-deadline-compression",
+        "content-studio-team-handoff-failure",
+        "content-studio-team-priority-conflict",
+        "content-studio-team-reputation-crisis",
+        "content-studio-team-scale-spike",
+        "content-studio-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    },
+    {
+      "team_slug": "customer-support-escalation-team",
+      "must_pass_scenarios": [
+        "customer-support-escalation-team-board-pressure",
+        "customer-support-escalation-team-budget-shock",
+        "customer-support-escalation-team-compliance-audit",
+        "customer-support-escalation-team-data-quality-break",
+        "customer-support-escalation-team-deadline-compression",
+        "customer-support-escalation-team-handoff-failure",
+        "customer-support-escalation-team-priority-conflict",
+        "customer-support-escalation-team-reputation-crisis",
+        "customer-support-escalation-team-scale-spike",
+        "customer-support-escalation-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    },
+    {
+      "team_slug": "devops-reliability-team",
+      "must_pass_scenarios": [
+        "devops-reliability-team-board-pressure",
+        "devops-reliability-team-budget-shock",
+        "devops-reliability-team-compliance-audit",
+        "devops-reliability-team-data-quality-break",
+        "devops-reliability-team-deadline-compression",
+        "devops-reliability-team-handoff-failure",
+        "devops-reliability-team-priority-conflict",
+        "devops-reliability-team-reputation-crisis",
+        "devops-reliability-team-scale-spike",
+        "devops-reliability-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    },
+    {
+      "team_slug": "ecommerce-ops-team",
+      "must_pass_scenarios": [
+        "ecommerce-ops-team-board-pressure",
+        "ecommerce-ops-team-budget-shock",
+        "ecommerce-ops-team-compliance-audit",
+        "ecommerce-ops-team-data-quality-break",
+        "ecommerce-ops-team-deadline-compression",
+        "ecommerce-ops-team-handoff-failure",
+        "ecommerce-ops-team-priority-conflict",
+        "ecommerce-ops-team-reputation-crisis",
+        "ecommerce-ops-team-scale-spike",
+        "ecommerce-ops-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    },
+    {
+      "team_slug": "finance-control-team",
+      "must_pass_scenarios": [
+        "finance-control-team-board-pressure",
+        "finance-control-team-budget-shock",
+        "finance-control-team-compliance-audit",
+        "finance-control-team-data-quality-break",
+        "finance-control-team-deadline-compression",
+        "finance-control-team-handoff-failure",
+        "finance-control-team-priority-conflict",
+        "finance-control-team-reputation-crisis",
+        "finance-control-team-scale-spike",
+        "finance-control-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    },
+    {
+      "team_slug": "founder-lean-team",
+      "must_pass_scenarios": [
+        "founder-lean-team-board-pressure",
+        "founder-lean-team-budget-shock",
+        "founder-lean-team-compliance-audit",
+        "founder-lean-team-data-quality-break",
+        "founder-lean-team-deadline-compression",
+        "founder-lean-team-handoff-failure",
+        "founder-lean-team-priority-conflict",
+        "founder-lean-team-reputation-crisis",
+        "founder-lean-team-scale-spike",
+        "founder-lean-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    },
+    {
+      "team_slug": "go-to-market-war-room-team",
+      "must_pass_scenarios": [
+        "go-to-market-war-room-team-board-pressure",
+        "go-to-market-war-room-team-budget-shock",
+        "go-to-market-war-room-team-compliance-audit",
+        "go-to-market-war-room-team-data-quality-break",
+        "go-to-market-war-room-team-deadline-compression",
+        "go-to-market-war-room-team-handoff-failure",
+        "go-to-market-war-room-team-priority-conflict",
+        "go-to-market-war-room-team-reputation-crisis",
+        "go-to-market-war-room-team-scale-spike",
+        "go-to-market-war-room-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    },
+    {
+      "team_slug": "hiring-people-ops-team",
+      "must_pass_scenarios": [
+        "hiring-people-ops-team-board-pressure",
+        "hiring-people-ops-team-budget-shock",
+        "hiring-people-ops-team-compliance-audit",
+        "hiring-people-ops-team-data-quality-break",
+        "hiring-people-ops-team-deadline-compression",
+        "hiring-people-ops-team-handoff-failure",
+        "hiring-people-ops-team-priority-conflict",
+        "hiring-people-ops-team-reputation-crisis",
+        "hiring-people-ops-team-scale-spike",
+        "hiring-people-ops-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    },
+    {
+      "team_slug": "incident-security-response-team",
+      "must_pass_scenarios": [
+        "incident-security-response-team-board-pressure",
+        "incident-security-response-team-budget-shock",
+        "incident-security-response-team-compliance-audit",
+        "incident-security-response-team-data-quality-break",
+        "incident-security-response-team-deadline-compression",
+        "incident-security-response-team-handoff-failure",
+        "incident-security-response-team-priority-conflict",
+        "incident-security-response-team-reputation-crisis",
+        "incident-security-response-team-scale-spike",
+        "incident-security-response-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    },
+    {
+      "team_slug": "product-strategy-discovery-team",
+      "must_pass_scenarios": [
+        "product-strategy-discovery-team-board-pressure",
+        "product-strategy-discovery-team-budget-shock",
+        "product-strategy-discovery-team-compliance-audit",
+        "product-strategy-discovery-team-data-quality-break",
+        "product-strategy-discovery-team-deadline-compression",
+        "product-strategy-discovery-team-handoff-failure",
+        "product-strategy-discovery-team-priority-conflict",
+        "product-strategy-discovery-team-reputation-crisis",
+        "product-strategy-discovery-team-scale-spike",
+        "product-strategy-discovery-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    },
+    {
+      "team_slug": "research-publication-team",
+      "must_pass_scenarios": [
+        "research-publication-team-board-pressure",
+        "research-publication-team-budget-shock",
+        "research-publication-team-compliance-audit",
+        "research-publication-team-data-quality-break",
+        "research-publication-team-deadline-compression",
+        "research-publication-team-handoff-failure",
+        "research-publication-team-priority-conflict",
+        "research-publication-team-reputation-crisis",
+        "research-publication-team-scale-spike",
+        "research-publication-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    },
+    {
+      "team_slug": "revops-deal-desk-team",
+      "must_pass_scenarios": [
+        "revops-deal-desk-team-board-pressure",
+        "revops-deal-desk-team-budget-shock",
+        "revops-deal-desk-team-compliance-audit",
+        "revops-deal-desk-team-data-quality-break",
+        "revops-deal-desk-team-deadline-compression",
+        "revops-deal-desk-team-handoff-failure",
+        "revops-deal-desk-team-priority-conflict",
+        "revops-deal-desk-team-reputation-crisis",
+        "revops-deal-desk-team-scale-spike",
+        "revops-deal-desk-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    },
+    {
+      "team_slug": "startup-exec-team",
+      "must_pass_scenarios": [
+        "startup-exec-team-board-pressure",
+        "startup-exec-team-budget-shock",
+        "startup-exec-team-compliance-audit",
+        "startup-exec-team-data-quality-break",
+        "startup-exec-team-deadline-compression",
+        "startup-exec-team-handoff-failure",
+        "startup-exec-team-priority-conflict",
+        "startup-exec-team-reputation-crisis",
+        "startup-exec-team-scale-spike",
+        "startup-exec-team-vendor-failure"
+      ],
+      "required_pass_count": 10
+    }
+  ]
+}

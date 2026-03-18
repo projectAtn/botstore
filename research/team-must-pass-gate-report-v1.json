@@ -1,0 +1,147 @@
+{
+  "status": "pass",
+  "policy_file": "research/team-must-pass-policy-v1.json",
+  "qa_result_file": "research/team-pack-qa-result-v3-high-pressure.json",
+  "teams": [
+    {
+      "team_slug": "community-growth-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    },
+    {
+      "team_slug": "compliance-governance-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    },
+    {
+      "team_slug": "content-studio-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    },
+    {
+      "team_slug": "customer-support-escalation-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    },
+    {
+      "team_slug": "devops-reliability-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    },
+    {
+      "team_slug": "ecommerce-ops-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    },
+    {
+      "team_slug": "finance-control-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    },
+    {
+      "team_slug": "founder-lean-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    },
+    {
+      "team_slug": "go-to-market-war-room-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    },
+    {
+      "team_slug": "hiring-people-ops-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    },
+    {
+      "team_slug": "incident-security-response-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    },
+    {
+      "team_slug": "product-strategy-discovery-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    },
+    {
+      "team_slug": "research-publication-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    },
+    {
+      "team_slug": "revops-deal-desk-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    },
+    {
+      "team_slug": "startup-exec-team",
+      "required": 10,
+      "required_pass_count": 10,
+      "passed": 10,
+      "ok": true,
+      "failed_scenarios": [],
+      "missing_scenarios": []
+    }
+  ],
+  "summary": {
+    "total_teams": 15,
+    "passed_teams": 15,
+    "failed_teams": 0
+  }
+}
