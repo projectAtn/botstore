@@ -1,25 +1,69 @@
 # Candidate Pack Quality Report
 
-Total candidates: 18
-Pass (>=75): 18
+Total candidates: 62
+Pass (>=75): 62
 
 | slug | type | score | verdict | notes |
 |---|---:|---:|---|---|
-| `model-switchboard` | skill | 100 | **PASS** | OK |
-| `workflow-version-pinning` | skill | 100 | **PASS** | OK |
-| `fact-source-verifier` | skill | 100 | **PASS** | OK |
-| `synthetic-media-checker` | skill | 100 | **PASS** | OK |
-| `policy-compliance-guard` | skill | 100 | **PASS** | OK |
-| `cost-governor` | skill | 100 | **PASS** | OK |
-| `autonomous-retry-recovery` | skill | 100 | **PASS** | OK |
-| `human-escalation-router` | skill | 100 | **PASS** | OK |
-| `tool-health-monitor` | skill | 100 | **PASS** | OK |
-| `private-local-execution` | skill | 100 | **PASS** | OK |
-| `web-action-proof-logger` | skill | 100 | **PASS** | OK |
-| `task-contract-engine` | skill | 100 | **PASS** | OK |
-| `ops-chief-persona` | personality | 100 | **PASS** | OK |
-| `safety-analyst-persona` | personality | 100 | **PASS** | OK |
-| `research-scholar-persona` | personality | 100 | **PASS** | OK |
-| `cfo-assistant-persona` | personality | 100 | **PASS** | OK |
-| `autonomous-worker-persona` | personality | 100 | **PASS** | OK |
-| `enterprise-assistant-persona` | personality | 100 | **PASS** | OK |
+| `reddit-scout-pro` | skill | 100 | **PASS** | OK |
+| `x-trend-harvester` | skill | 100 | **PASS** | OK |
+| `github-issue-radar` | skill | 100 | **PASS** | OK |
+| `github-pr-review-assistant` | skill | 100 | **PASS** | OK |
+| `opensource-repo-scout` | skill | 100 | **PASS** | OK |
+| `tool-release-watcher` | skill | 100 | **PASS** | OK |
+| `prompt-market-researcher` | skill | 100 | **PASS** | OK |
+| `competitor-feature-tracker` | skill | 100 | **PASS** | OK |
+| `user-painpoint-clusterer` | skill | 100 | **PASS** | OK |
+| `persona-signal-miner` | skill | 100 | **PASS** | OK |
+| `launch-feedback-summarizer` | skill | 100 | **PASS** | OK |
+| `waitlist-converter` | skill | 100 | **PASS** | OK |
+| `telegram-community-manager` | skill | 100 | **PASS** | OK |
+| `discord-community-manager` | skill | 100 | **PASS** | OK |
+| `whatsapp-support-copilot` | skill | 100 | **PASS** | OK |
+| `email-outreach-sequencer` | skill | 100 | **PASS** | OK |
+| `calendar-ops-coordinator` | skill | 100 | **PASS** | OK |
+| `crm-sync-bidirectional` | skill | 100 | **PASS** | OK |
+| `lead-enrichment-finder` | skill | 100 | **PASS** | OK |
+| `sales-call-prep-kit` | skill | 100 | **PASS** | OK |
+| `proposal-generator` | skill | 100 | **PASS** | OK |
+| `contract-risk-highlighter` | skill | 100 | **PASS** | OK |
+| `onboarding-journey-optimizer` | skill | 100 | **PASS** | OK |
+| `churn-early-warning` | skill | 100 | **PASS** | OK |
+| `renewal-expansion-coach` | skill | 100 | **PASS** | OK |
+| `invoice-reconciliation` | skill | 100 | **PASS** | OK |
+| `expense-policy-auditor` | skill | 100 | **PASS** | OK |
+| `knowledge-base-curator` | skill | 100 | **PASS** | OK |
+| `rag-index-maintainer` | skill | 100 | **PASS** | OK |
+| `citation-verifier` | skill | 100 | **PASS** | OK |
+| `paper-to-notes` | skill | 100 | **PASS** | OK |
+| `transcript-to-action-items` | skill | 100 | **PASS** | OK |
+| `podcast-to-clips` | skill | 100 | **PASS** | OK |
+| `shortform-content-factory` | skill | 100 | **PASS** | OK |
+| `thumbnail-brief-generator` | skill | 100 | **PASS** | OK |
+| `seo-brief-builder` | skill | 100 | **PASS** | OK |
+| `keyword-cluster-mapper` | skill | 100 | **PASS** | OK |
+| `ad-creative-variant-lab` | skill | 100 | **PASS** | OK |
+| `landing-page-ab-orchestrator` | skill | 100 | **PASS** | OK |
+| `ecommerce-listing-optimizer` | skill | 100 | **PASS** | OK |
+| `price-change-sentinel` | skill | 100 | **PASS** | OK |
+| `inventory-demand-forecaster` | skill | 100 | **PASS** | OK |
+| `incident-triage-commander` | skill | 100 | **PASS** | OK |
+| `deploy-rollback-guardian` | skill | 100 | **PASS** | OK |
+| `log-anomaly-sleuth` | skill | 100 | **PASS** | OK |
+| `cloud-cost-analyzer` | skill | 100 | **PASS** | OK |
+| `security-alert-triager` | skill | 100 | **PASS** | OK |
+| `secret-rotation-reminder` | skill | 100 | **PASS** | OK |
+| `backup-drill-coordinator` | skill | 100 | **PASS** | OK |
+| `self-host-healthcheck` | skill | 100 | **PASS** | OK |
+| `conversion-closer-persona` | personality | 100 | **PASS** | OK |
+| `empathetic-support-ally-persona` | personality | 100 | **PASS** | OK |
+| `grumpy-sre-persona` | personality | 100 | **PASS** | OK |
+| `forensic-analyst-persona` | personality | 100 | **PASS** | OK |
+| `growth-hacker-persona` | personality | 100 | **PASS** | OK |
+| `calm-chief-of-staff-persona` | personality | 100 | **PASS** | OK |
+| `playful-creator-persona` | personality | 100 | **PASS** | OK |
+| `strict-compliance-officer-persona` | personality | 100 | **PASS** | OK |
+| `local-first-privacy-guardian-persona` | personality | 100 | **PASS** | OK |
+| `product-strategist-persona` | personality | 100 | **PASS** | OK |
+| `community-hype-manager-persona` | personality | 100 | **PASS** | OK |
+| `research-librarian-persona` | personality | 100 | **PASS** | OK |

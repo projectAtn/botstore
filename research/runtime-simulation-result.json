@@ -1,212 +1,8 @@
 {
   "results": [
     {
-      "slug": "model-switchboard",
-      "title": "Model Switchboard",
-      "type": "skill",
-      "risk_level": "low",
-      "score": 100,
-      "tier": "gold",
-      "verified": true,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=2"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": true,
-          "details": "includes fallback/retry/audit/log/escalation/rollback"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": true,
-          "details": "quality_tests=3"
-        }
-      ],
-      "required_score": 75,
-      "risk_gate_pass": true,
-      "final_verified": true
-    },
-    {
-      "slug": "workflow-version-pinning",
-      "title": "Workflow Version Pinning",
-      "type": "skill",
-      "risk_level": "low",
-      "score": 100,
-      "tier": "gold",
-      "verified": true,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=2"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": true,
-          "details": "includes fallback/retry/audit/log/escalation/rollback"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": true,
-          "details": "quality_tests=3"
-        }
-      ],
-      "required_score": 75,
-      "risk_gate_pass": true,
-      "final_verified": true
-    },
-    {
-      "slug": "fact-source-verifier",
-      "title": "Fact & Source Verifier",
-      "type": "skill",
-      "risk_level": "low",
-      "score": 75,
-      "tier": "bronze",
-      "verified": true,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": true,
-          "details": "quality_tests=3"
-        }
-      ],
-      "required_score": 75,
-      "risk_gate_pass": true,
-      "final_verified": true
-    },
-    {
-      "slug": "synthetic-media-checker",
-      "title": "Synthetic Media Checker",
-      "type": "skill",
-      "risk_level": "low",
-      "score": 100,
-      "tier": "gold",
-      "verified": true,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=1"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": true,
-          "details": "includes fallback/retry/audit/log/escalation/rollback"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": true,
-          "details": "quality_tests=3"
-        }
-      ],
-      "required_score": 75,
-      "risk_gate_pass": true,
-      "final_verified": true
-    },
-    {
-      "slug": "policy-compliance-guard",
-      "title": "Policy & Compliance Guard",
-      "type": "skill",
-      "risk_level": "high",
-      "score": 100,
-      "tier": "gold",
-      "verified": true,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=4"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=True, risk=high"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": true,
-          "details": "includes fallback/retry/audit/log/escalation/rollback"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": true,
-          "details": "quality_tests=3"
-        }
-      ],
-      "required_score": 95,
-      "risk_gate_pass": true,
-      "final_verified": true
-    },
-    {
-      "slug": "cost-governor",
-      "title": "Cost Governor",
-      "type": "skill",
-      "risk_level": "low",
-      "score": 75,
-      "tier": "bronze",
-      "verified": true,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=2"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": true,
-          "details": "quality_tests=3"
-        }
-      ],
-      "required_score": 75,
-      "risk_gate_pass": true,
-      "final_verified": true
-    },
-    {
-      "slug": "autonomous-retry-recovery",
-      "title": "Autonomous Retry & Recovery",
+      "slug": "reddit-scout-pro",
+      "title": "Reddit Scout Pro",
       "type": "skill",
       "risk_level": "low",
       "score": 100,
@@ -239,8 +35,144 @@
       "final_verified": true
     },
     {
-      "slug": "human-escalation-router",
-      "title": "Human Escalation Router",
+      "slug": "x-trend-harvester",
+      "title": "X Trend Harvester",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "github-issue-radar",
+      "title": "GitHub Issue Radar",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "github-pr-review-assistant",
+      "title": "GitHub PR Review Assistant",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "opensource-repo-scout",
+      "title": "Open-Source Repo Scout",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "tool-release-watcher",
+      "title": "Tool Release Watcher",
       "type": "skill",
       "risk_level": "medium",
       "score": 100,
@@ -273,12 +205,12 @@
       "final_verified": true
     },
     {
-      "slug": "tool-health-monitor",
-      "title": "Tool Health Monitor",
+      "slug": "prompt-market-researcher",
+      "title": "Prompt Market Researcher",
       "type": "skill",
       "risk_level": "low",
-      "score": 75,
-      "tier": "bronze",
+      "score": 100,
+      "tier": "gold",
       "verified": true,
       "tests": [
         {
@@ -293,7 +225,7 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback"
         },
         {
@@ -307,250 +239,114 @@
       "final_verified": true
     },
     {
-      "slug": "private-local-execution",
-      "title": "Private Local Execution",
+      "slug": "competitor-feature-tracker",
+      "title": "Competitor Feature Tracker",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "user-painpoint-clusterer",
+      "title": "User Painpoint Clusterer",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "persona-signal-miner",
+      "title": "Persona Signal Miner",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "launch-feedback-summarizer",
+      "title": "Launch Feedback Summarizer",
       "type": "skill",
       "risk_level": "medium",
       "score": 100,
       "tier": "gold",
-      "verified": true,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=medium"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": true,
-          "details": "includes fallback/retry/audit/log/escalation/rollback"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": true,
-          "details": "quality_tests=3"
-        }
-      ],
-      "required_score": 85,
-      "risk_gate_pass": true,
-      "final_verified": true
-    },
-    {
-      "slug": "web-action-proof-logger",
-      "title": "Web Action Proof Logger",
-      "type": "skill",
-      "risk_level": "low",
-      "score": 100,
-      "tier": "gold",
-      "verified": true,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=2"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": true,
-          "details": "includes fallback/retry/audit/log/escalation/rollback"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": true,
-          "details": "quality_tests=3"
-        }
-      ],
-      "required_score": 75,
-      "risk_gate_pass": true,
-      "final_verified": true
-    },
-    {
-      "slug": "task-contract-engine",
-      "title": "Task Contract Engine",
-      "type": "skill",
-      "risk_level": "low",
-      "score": 75,
-      "tier": "bronze",
-      "verified": true,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=2"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": true,
-          "details": "quality_tests=3"
-        }
-      ],
-      "required_score": 75,
-      "risk_gate_pass": true,
-      "final_verified": true
-    },
-    {
-      "slug": "ops-chief-persona",
-      "title": "No-BS Ops Chief",
-      "type": "personality",
-      "risk_level": "low",
-      "score": 75,
-      "tier": "bronze",
-      "verified": true,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=2"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": true,
-          "details": "quality_tests=3"
-        }
-      ],
-      "required_score": 75,
-      "risk_gate_pass": true,
-      "final_verified": true
-    },
-    {
-      "slug": "safety-analyst-persona",
-      "title": "Safety-First Analyst",
-      "type": "personality",
-      "risk_level": "low",
-      "score": 100,
-      "tier": "gold",
-      "verified": true,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=2"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": true,
-          "details": "includes fallback/retry/audit/log/escalation/rollback"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": true,
-          "details": "quality_tests=3"
-        }
-      ],
-      "required_score": 75,
-      "risk_gate_pass": true,
-      "final_verified": true
-    },
-    {
-      "slug": "research-scholar-persona",
-      "title": "Research Scholar",
-      "type": "personality",
-      "risk_level": "low",
-      "score": 75,
-      "tier": "bronze",
-      "verified": true,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=3"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": true,
-          "details": "quality_tests=3"
-        }
-      ],
-      "required_score": 75,
-      "risk_gate_pass": true,
-      "final_verified": true
-    },
-    {
-      "slug": "cfo-assistant-persona",
-      "title": "Cost-Conscious CFO Assistant",
-      "type": "personality",
-      "risk_level": "low",
-      "score": 75,
-      "tier": "bronze",
-      "verified": true,
-      "tests": [
-        {
-          "name": "declares_scopes",
-          "pass": true,
-          "details": "scope_count=2"
-        },
-        {
-          "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
-        },
-        {
-          "name": "has_recoverability_or_audit_signal",
-          "pass": false,
-          "details": "includes fallback/retry/audit/log/escalation/rollback"
-        },
-        {
-          "name": "has_min_quality_tests",
-          "pass": true,
-          "details": "quality_tests=3"
-        }
-      ],
-      "required_score": 75,
-      "risk_gate_pass": true,
-      "final_verified": true
-    },
-    {
-      "slug": "autonomous-worker-persona",
-      "title": "Autonomous Worker",
-      "type": "personality",
-      "risk_level": "medium",
-      "score": 75,
-      "tier": "bronze",
       "verified": true,
       "tests": [
         {
@@ -565,7 +361,7 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback"
         },
         {
@@ -575,16 +371,1580 @@
         }
       ],
       "required_score": 85,
-      "risk_gate_pass": false,
-      "final_verified": false
+      "risk_gate_pass": true,
+      "final_verified": true
     },
     {
-      "slug": "enterprise-assistant-persona",
-      "title": "Audit-Ready Enterprise Assistant",
+      "slug": "waitlist-converter",
+      "title": "Waitlist Converter",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "telegram-community-manager",
+      "title": "Telegram Community Manager",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "discord-community-manager",
+      "title": "Discord Community Manager",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "whatsapp-support-copilot",
+      "title": "WhatsApp Support Copilot",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "email-outreach-sequencer",
+      "title": "Email Outreach Sequencer",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "calendar-ops-coordinator",
+      "title": "Calendar Ops Coordinator",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "crm-sync-bidirectional",
+      "title": "CRM Sync Bidirectional",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "lead-enrichment-finder",
+      "title": "Lead Enrichment Finder",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "sales-call-prep-kit",
+      "title": "Sales Call Prep Kit",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "proposal-generator",
+      "title": "Proposal Generator",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "contract-risk-highlighter",
+      "title": "Contract Risk Highlighter",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "onboarding-journey-optimizer",
+      "title": "Onboarding Journey Optimizer",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "churn-early-warning",
+      "title": "Churn Early Warning",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "renewal-expansion-coach",
+      "title": "Renewal Expansion Coach",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "invoice-reconciliation",
+      "title": "Invoice Reconciliation",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "expense-policy-auditor",
+      "title": "Expense Policy Auditor",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "knowledge-base-curator",
+      "title": "Knowledge Base Curator",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "rag-index-maintainer",
+      "title": "RAG Index Maintainer",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "citation-verifier",
+      "title": "Citation Verifier",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "paper-to-notes",
+      "title": "Paper to Notes",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "transcript-to-action-items",
+      "title": "Transcript to Action Items",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "podcast-to-clips",
+      "title": "Podcast to Clips",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "shortform-content-factory",
+      "title": "Shortform Content Factory",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "thumbnail-brief-generator",
+      "title": "Thumbnail Brief Generator",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "seo-brief-builder",
+      "title": "SEO Brief Builder",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "keyword-cluster-mapper",
+      "title": "Keyword Cluster Mapper",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "ad-creative-variant-lab",
+      "title": "Ad Creative Variant Lab",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "landing-page-ab-orchestrator",
+      "title": "Landing Page A/B Orchestrator",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "ecommerce-listing-optimizer",
+      "title": "E-commerce Listing Optimizer",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "price-change-sentinel",
+      "title": "Price Change Sentinel",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "inventory-demand-forecaster",
+      "title": "Inventory Demand Forecaster",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "incident-triage-commander",
+      "title": "Incident Triage Commander",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "deploy-rollback-guardian",
+      "title": "Deploy Rollback Guardian",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "log-anomaly-sleuth",
+      "title": "Log Anomaly Sleuth",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "cloud-cost-analyzer",
+      "title": "Cloud Cost Analyzer",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "security-alert-triager",
+      "title": "Security Alert Triager",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "secret-rotation-reminder",
+      "title": "Secret Rotation Reminder",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "backup-drill-coordinator",
+      "title": "Backup Drill Coordinator",
+      "type": "skill",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "self-host-healthcheck",
+      "title": "Self-Host Healthcheck",
+      "type": "skill",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "conversion-closer-persona",
+      "title": "Conversion Closer",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=2"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "empathetic-support-ally-persona",
+      "title": "Empathetic Support Ally",
       "type": "personality",
       "risk_level": "medium",
-      "score": 75,
-      "tier": "bronze",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "grumpy-sre-persona",
+      "title": "Grumpy but Accurate SRE",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "forensic-analyst-persona",
+      "title": "Forensic Analyst",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "growth-hacker-persona",
+      "title": "Growth Hacker Operator",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=2"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "calm-chief-of-staff-persona",
+      "title": "Calm Chief of Staff",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "playful-creator-persona",
+      "title": "Playful Creator",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=2"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "strict-compliance-officer-persona",
+      "title": "Strict Compliance Officer",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
       "verified": true,
       "tests": [
         {
@@ -599,7 +1959,7 @@
         },
         {
           "name": "has_recoverability_or_audit_signal",
-          "pass": false,
+          "pass": true,
           "details": "includes fallback/retry/audit/log/escalation/rollback"
         },
         {
@@ -609,53 +1969,277 @@
         }
       ],
       "required_score": 85,
-      "risk_gate_pass": false,
-      "final_verified": false
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "local-first-privacy-guardian-persona",
+      "title": "Local-First Privacy Guardian",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "product-strategist-persona",
+      "title": "Product Strategist",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=2"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "community-hype-manager-persona",
+      "title": "Community Hype Manager",
+      "type": "personality",
+      "risk_level": "medium",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=True, risk=medium"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 85,
+      "risk_gate_pass": true,
+      "final_verified": true
+    },
+    {
+      "slug": "research-librarian-persona",
+      "title": "Research Librarian",
+      "type": "personality",
+      "risk_level": "low",
+      "score": 100,
+      "tier": "gold",
+      "verified": true,
+      "tests": [
+        {
+          "name": "declares_scopes",
+          "pass": true,
+          "details": "scope_count=3"
+        },
+        {
+          "name": "risk_matches_scope_sensitivity",
+          "pass": true,
+          "details": "has_sensitive=False, risk=low"
+        },
+        {
+          "name": "has_recoverability_or_audit_signal",
+          "pass": true,
+          "details": "includes fallback/retry/audit/log/escalation/rollback"
+        },
+        {
+          "name": "has_min_quality_tests",
+          "pass": true,
+          "details": "quality_tests=3"
+        }
+      ],
+      "required_score": 75,
+      "risk_gate_pass": true,
+      "final_verified": true
     }
   ],
   "verified_slugs": [
-    "model-switchboard",
-    "workflow-version-pinning",
-    "fact-source-verifier",
-    "synthetic-media-checker",
-    "policy-compliance-guard",
-    "cost-governor",
-    "autonomous-retry-recovery",
-    "human-escalation-router",
-    "tool-health-monitor",
-    "private-local-execution",
-    "web-action-proof-logger",
-    "task-contract-engine",
-    "ops-chief-persona",
-    "safety-analyst-persona",
-    "research-scholar-persona",
-    "cfo-assistant-persona"
+    "reddit-scout-pro",
+    "x-trend-harvester",
+    "github-issue-radar",
+    "github-pr-review-assistant",
+    "opensource-repo-scout",
+    "tool-release-watcher",
+    "prompt-market-researcher",
+    "competitor-feature-tracker",
+    "user-painpoint-clusterer",
+    "persona-signal-miner",
+    "launch-feedback-summarizer",
+    "waitlist-converter",
+    "telegram-community-manager",
+    "discord-community-manager",
+    "whatsapp-support-copilot",
+    "email-outreach-sequencer",
+    "calendar-ops-coordinator",
+    "crm-sync-bidirectional",
+    "lead-enrichment-finder",
+    "sales-call-prep-kit",
+    "proposal-generator",
+    "contract-risk-highlighter",
+    "onboarding-journey-optimizer",
+    "churn-early-warning",
+    "renewal-expansion-coach",
+    "invoice-reconciliation",
+    "expense-policy-auditor",
+    "knowledge-base-curator",
+    "rag-index-maintainer",
+    "citation-verifier",
+    "paper-to-notes",
+    "transcript-to-action-items",
+    "podcast-to-clips",
+    "shortform-content-factory",
+    "thumbnail-brief-generator",
+    "seo-brief-builder",
+    "keyword-cluster-mapper",
+    "ad-creative-variant-lab",
+    "landing-page-ab-orchestrator",
+    "ecommerce-listing-optimizer",
+    "price-change-sentinel",
+    "inventory-demand-forecaster",
+    "incident-triage-commander",
+    "deploy-rollback-guardian",
+    "log-anomaly-sleuth",
+    "cloud-cost-analyzer",
+    "security-alert-triager",
+    "secret-rotation-reminder",
+    "backup-drill-coordinator",
+    "self-host-healthcheck",
+    "conversion-closer-persona",
+    "empathetic-support-ally-persona",
+    "grumpy-sre-persona",
+    "forensic-analyst-persona",
+    "growth-hacker-persona",
+    "calm-chief-of-staff-persona",
+    "playful-creator-persona",
+    "strict-compliance-officer-persona",
+    "local-first-privacy-guardian-persona",
+    "product-strategist-persona",
+    "community-hype-manager-persona",
+    "research-librarian-persona"
   ],
-  "delisted_slugs": [
-    "autonomous-worker-persona",
-    "enterprise-assistant-persona"
-  ],
+  "delisted_slugs": [],
   "tiered_verified": {
     "gold": [
-      "model-switchboard",
-      "workflow-version-pinning",
-      "synthetic-media-checker",
-      "policy-compliance-guard",
-      "autonomous-retry-recovery",
-      "human-escalation-router",
-      "private-local-execution",
-      "web-action-proof-logger",
-      "safety-analyst-persona"
+      "reddit-scout-pro",
+      "x-trend-harvester",
+      "github-issue-radar",
+      "github-pr-review-assistant",
+      "opensource-repo-scout",
+      "tool-release-watcher",
+      "prompt-market-researcher",
+      "competitor-feature-tracker",
+      "user-painpoint-clusterer",
+      "persona-signal-miner",
+      "launch-feedback-summarizer",
+      "waitlist-converter",
+      "telegram-community-manager",
+      "discord-community-manager",
+      "whatsapp-support-copilot",
+      "email-outreach-sequencer",
+      "calendar-ops-coordinator",
+      "crm-sync-bidirectional",
+      "lead-enrichment-finder",
+      "sales-call-prep-kit",
+      "proposal-generator",
+      "contract-risk-highlighter",
+      "onboarding-journey-optimizer",
+      "churn-early-warning",
+      "renewal-expansion-coach",
+      "invoice-reconciliation",
+      "expense-policy-auditor",
+      "knowledge-base-curator",
+      "rag-index-maintainer",
+      "citation-verifier",
+      "paper-to-notes",
+      "transcript-to-action-items",
+      "podcast-to-clips",
+      "shortform-content-factory",
+      "thumbnail-brief-generator",
+      "seo-brief-builder",
+      "keyword-cluster-mapper",
+      "ad-creative-variant-lab",
+      "landing-page-ab-orchestrator",
+      "ecommerce-listing-optimizer",
+      "price-change-sentinel",
+      "inventory-demand-forecaster",
+      "incident-triage-commander",
+      "deploy-rollback-guardian",
+      "log-anomaly-sleuth",
+      "cloud-cost-analyzer",
+      "security-alert-triager",
+      "secret-rotation-reminder",
+      "backup-drill-coordinator",
+      "self-host-healthcheck",
+      "conversion-closer-persona",
+      "empathetic-support-ally-persona",
+      "grumpy-sre-persona",
+      "forensic-analyst-persona",
+      "growth-hacker-persona",
+      "calm-chief-of-staff-persona",
+      "playful-creator-persona",
+      "strict-compliance-officer-persona",
+      "local-first-privacy-guardian-persona",
+      "product-strategist-persona",
+      "community-hype-manager-persona",
+      "research-librarian-persona"
     ],
     "silver": [],
-    "bronze": [
-      "fact-source-verifier",
-      "cost-governor",
-      "tool-health-monitor",
-      "task-contract-engine",
-      "ops-chief-persona",
-      "research-scholar-persona",
-      "cfo-assistant-persona"
-    ]
+    "bronze": []
   }
 }
