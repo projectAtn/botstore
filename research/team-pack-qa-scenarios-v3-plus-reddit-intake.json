@@ -1,0 +1,3575 @@
+{
+  "version": "0.3.1",
+  "generatedAt": "2026-03-18",
+  "description": "10 high-pressure scenarios for each team in team-packs-v3",
+  "team_count": 15,
+  "scenario_count": 170,
+  "scenarios": [
+    {
+      "id": "startup-exec-team-board-pressure",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Startup Exec Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO",
+        "CMO"
+      ],
+      "expected_artifacts": [
+        "strategy-memo",
+        "decision-log",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "startup-exec-team-budget-shock",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Startup Exec Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO",
+        "CMO"
+      ],
+      "expected_artifacts": [
+        "strategy-memo",
+        "decision-log",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "startup-exec-team-compliance-audit",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Startup Exec Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO",
+        "CMO"
+      ],
+      "expected_artifacts": [
+        "strategy-memo",
+        "decision-log",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "startup-exec-team-vendor-failure",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Startup Exec Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO",
+        "CMO"
+      ],
+      "expected_artifacts": [
+        "strategy-memo",
+        "decision-log",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "startup-exec-team-reputation-crisis",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Startup Exec Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO",
+        "CMO"
+      ],
+      "expected_artifacts": [
+        "strategy-memo",
+        "decision-log",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "startup-exec-team-priority-conflict",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Startup Exec Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO",
+        "CMO"
+      ],
+      "expected_artifacts": [
+        "strategy-memo",
+        "decision-log",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "startup-exec-team-scale-spike",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Startup Exec Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO",
+        "CMO"
+      ],
+      "expected_artifacts": [
+        "strategy-memo",
+        "decision-log",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "startup-exec-team-data-quality-break",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Startup Exec Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO",
+        "CMO"
+      ],
+      "expected_artifacts": [
+        "strategy-memo",
+        "decision-log",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "startup-exec-team-deadline-compression",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Startup Exec Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO",
+        "CMO"
+      ],
+      "expected_artifacts": [
+        "strategy-memo",
+        "decision-log",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "startup-exec-team-handoff-failure",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Startup Exec Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO",
+        "CMO"
+      ],
+      "expected_artifacts": [
+        "strategy-memo",
+        "decision-log",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "founder-lean-team-board-pressure",
+      "team_slug": "founder-lean-team",
+      "prompt": "[Founder Lean Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Founder",
+        "Growth Lead",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "weekly-plan",
+        "decision-log",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "founder-lean-team-budget-shock",
+      "team_slug": "founder-lean-team",
+      "prompt": "[Founder Lean Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Founder",
+        "Growth Lead",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "weekly-plan",
+        "decision-log",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "founder-lean-team-compliance-audit",
+      "team_slug": "founder-lean-team",
+      "prompt": "[Founder Lean Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Founder",
+        "Growth Lead",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "weekly-plan",
+        "decision-log",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "founder-lean-team-vendor-failure",
+      "team_slug": "founder-lean-team",
+      "prompt": "[Founder Lean Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Founder",
+        "Growth Lead",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "weekly-plan",
+        "decision-log",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "founder-lean-team-reputation-crisis",
+      "team_slug": "founder-lean-team",
+      "prompt": "[Founder Lean Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Founder",
+        "Growth Lead",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "weekly-plan",
+        "decision-log",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "founder-lean-team-priority-conflict",
+      "team_slug": "founder-lean-team",
+      "prompt": "[Founder Lean Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Founder",
+        "Growth Lead",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "weekly-plan",
+        "decision-log",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "founder-lean-team-scale-spike",
+      "team_slug": "founder-lean-team",
+      "prompt": "[Founder Lean Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Founder",
+        "Growth Lead",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "weekly-plan",
+        "decision-log",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "founder-lean-team-data-quality-break",
+      "team_slug": "founder-lean-team",
+      "prompt": "[Founder Lean Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Founder",
+        "Growth Lead",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "weekly-plan",
+        "decision-log",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "founder-lean-team-deadline-compression",
+      "team_slug": "founder-lean-team",
+      "prompt": "[Founder Lean Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Founder",
+        "Growth Lead",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "weekly-plan",
+        "decision-log",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "founder-lean-team-handoff-failure",
+      "team_slug": "founder-lean-team",
+      "prompt": "[Founder Lean Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Founder",
+        "Growth Lead",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "weekly-plan",
+        "decision-log",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "finance-control-team-board-pressure",
+      "team_slug": "finance-control-team",
+      "prompt": "[Finance Control Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CFO",
+        "RevOps Analyst",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "runway-report",
+        "variance-report",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "finance-control-team-budget-shock",
+      "team_slug": "finance-control-team",
+      "prompt": "[Finance Control Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CFO",
+        "RevOps Analyst",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "runway-report",
+        "variance-report",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "finance-control-team-compliance-audit",
+      "team_slug": "finance-control-team",
+      "prompt": "[Finance Control Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CFO",
+        "RevOps Analyst",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "runway-report",
+        "variance-report",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "finance-control-team-vendor-failure",
+      "team_slug": "finance-control-team",
+      "prompt": "[Finance Control Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CFO",
+        "RevOps Analyst",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "runway-report",
+        "variance-report",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "finance-control-team-reputation-crisis",
+      "team_slug": "finance-control-team",
+      "prompt": "[Finance Control Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CFO",
+        "RevOps Analyst",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "runway-report",
+        "variance-report",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "finance-control-team-priority-conflict",
+      "team_slug": "finance-control-team",
+      "prompt": "[Finance Control Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CFO",
+        "RevOps Analyst",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "runway-report",
+        "variance-report",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "finance-control-team-scale-spike",
+      "team_slug": "finance-control-team",
+      "prompt": "[Finance Control Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CFO",
+        "RevOps Analyst",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "runway-report",
+        "variance-report",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "finance-control-team-data-quality-break",
+      "team_slug": "finance-control-team",
+      "prompt": "[Finance Control Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CFO",
+        "RevOps Analyst",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "runway-report",
+        "variance-report",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "finance-control-team-deadline-compression",
+      "team_slug": "finance-control-team",
+      "prompt": "[Finance Control Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CFO",
+        "RevOps Analyst",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "runway-report",
+        "variance-report",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "finance-control-team-handoff-failure",
+      "team_slug": "finance-control-team",
+      "prompt": "[Finance Control Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "analytics",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CFO",
+        "RevOps Analyst",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "runway-report",
+        "variance-report",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "go-to-market-war-room-team-board-pressure",
+      "team_slug": "go-to-market-war-room-team",
+      "prompt": "[Go-To-Market War Room Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "message.send",
+        "analytics"
+      ],
+      "required_roles": [
+        "CMO",
+        "Head of Community",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "launch-plan",
+        "experiment-matrix",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "go-to-market-war-room-team-budget-shock",
+      "team_slug": "go-to-market-war-room-team",
+      "prompt": "[Go-To-Market War Room Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "message.send",
+        "analytics"
+      ],
+      "required_roles": [
+        "CMO",
+        "Head of Community",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "launch-plan",
+        "experiment-matrix",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "go-to-market-war-room-team-compliance-audit",
+      "team_slug": "go-to-market-war-room-team",
+      "prompt": "[Go-To-Market War Room Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "message.send",
+        "analytics"
+      ],
+      "required_roles": [
+        "CMO",
+        "Head of Community",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "launch-plan",
+        "experiment-matrix",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "go-to-market-war-room-team-vendor-failure",
+      "team_slug": "go-to-market-war-room-team",
+      "prompt": "[Go-To-Market War Room Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "message.send",
+        "analytics"
+      ],
+      "required_roles": [
+        "CMO",
+        "Head of Community",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "launch-plan",
+        "experiment-matrix",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "go-to-market-war-room-team-reputation-crisis",
+      "team_slug": "go-to-market-war-room-team",
+      "prompt": "[Go-To-Market War Room Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "message.send",
+        "analytics"
+      ],
+      "required_roles": [
+        "CMO",
+        "Head of Community",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "launch-plan",
+        "experiment-matrix",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "go-to-market-war-room-team-priority-conflict",
+      "team_slug": "go-to-market-war-room-team",
+      "prompt": "[Go-To-Market War Room Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "message.send",
+        "analytics"
+      ],
+      "required_roles": [
+        "CMO",
+        "Head of Community",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "launch-plan",
+        "experiment-matrix",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "go-to-market-war-room-team-scale-spike",
+      "team_slug": "go-to-market-war-room-team",
+      "prompt": "[Go-To-Market War Room Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "message.send",
+        "analytics"
+      ],
+      "required_roles": [
+        "CMO",
+        "Head of Community",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "launch-plan",
+        "experiment-matrix",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "go-to-market-war-room-team-data-quality-break",
+      "team_slug": "go-to-market-war-room-team",
+      "prompt": "[Go-To-Market War Room Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "message.send",
+        "analytics"
+      ],
+      "required_roles": [
+        "CMO",
+        "Head of Community",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "launch-plan",
+        "experiment-matrix",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "go-to-market-war-room-team-deadline-compression",
+      "team_slug": "go-to-market-war-room-team",
+      "prompt": "[Go-To-Market War Room Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "message.send",
+        "analytics"
+      ],
+      "required_roles": [
+        "CMO",
+        "Head of Community",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "launch-plan",
+        "experiment-matrix",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "go-to-market-war-room-team-handoff-failure",
+      "team_slug": "go-to-market-war-room-team",
+      "prompt": "[Go-To-Market War Room Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "message.send",
+        "analytics"
+      ],
+      "required_roles": [
+        "CMO",
+        "Head of Community",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "launch-plan",
+        "experiment-matrix",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "community-growth-team-board-pressure",
+      "team_slug": "community-growth-team",
+      "prompt": "[Community Growth Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.read",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Community Lead",
+        "Support Lead"
+      ],
+      "expected_artifacts": [
+        "engagement-plan",
+        "weekly-summary",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "community-growth-team-budget-shock",
+      "team_slug": "community-growth-team",
+      "prompt": "[Community Growth Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.read",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Community Lead",
+        "Support Lead"
+      ],
+      "expected_artifacts": [
+        "engagement-plan",
+        "weekly-summary",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "community-growth-team-compliance-audit",
+      "team_slug": "community-growth-team",
+      "prompt": "[Community Growth Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.read",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Community Lead",
+        "Support Lead"
+      ],
+      "expected_artifacts": [
+        "engagement-plan",
+        "weekly-summary",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "community-growth-team-vendor-failure",
+      "team_slug": "community-growth-team",
+      "prompt": "[Community Growth Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.read",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Community Lead",
+        "Support Lead"
+      ],
+      "expected_artifacts": [
+        "engagement-plan",
+        "weekly-summary",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "community-growth-team-reputation-crisis",
+      "team_slug": "community-growth-team",
+      "prompt": "[Community Growth Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.read",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Community Lead",
+        "Support Lead"
+      ],
+      "expected_artifacts": [
+        "engagement-plan",
+        "weekly-summary",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "community-growth-team-priority-conflict",
+      "team_slug": "community-growth-team",
+      "prompt": "[Community Growth Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.read",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Community Lead",
+        "Support Lead"
+      ],
+      "expected_artifacts": [
+        "engagement-plan",
+        "weekly-summary",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "community-growth-team-scale-spike",
+      "team_slug": "community-growth-team",
+      "prompt": "[Community Growth Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.read",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Community Lead",
+        "Support Lead"
+      ],
+      "expected_artifacts": [
+        "engagement-plan",
+        "weekly-summary",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "community-growth-team-data-quality-break",
+      "team_slug": "community-growth-team",
+      "prompt": "[Community Growth Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.read",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Community Lead",
+        "Support Lead"
+      ],
+      "expected_artifacts": [
+        "engagement-plan",
+        "weekly-summary",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "community-growth-team-deadline-compression",
+      "team_slug": "community-growth-team",
+      "prompt": "[Community Growth Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.read",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Community Lead",
+        "Support Lead"
+      ],
+      "expected_artifacts": [
+        "engagement-plan",
+        "weekly-summary",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "community-growth-team-handoff-failure",
+      "team_slug": "community-growth-team",
+      "prompt": "[Community Growth Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.read",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Community Lead",
+        "Support Lead"
+      ],
+      "expected_artifacts": [
+        "engagement-plan",
+        "weekly-summary",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "customer-support-escalation-team-board-pressure",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Customer Support Escalation Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.write",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "resolution-log",
+        "csat-actions",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "customer-support-escalation-team-budget-shock",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Customer Support Escalation Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.write",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "resolution-log",
+        "csat-actions",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "customer-support-escalation-team-compliance-audit",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Customer Support Escalation Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.write",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "resolution-log",
+        "csat-actions",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "customer-support-escalation-team-vendor-failure",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Customer Support Escalation Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.write",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "resolution-log",
+        "csat-actions",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "customer-support-escalation-team-reputation-crisis",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Customer Support Escalation Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.write",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "resolution-log",
+        "csat-actions",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "customer-support-escalation-team-priority-conflict",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Customer Support Escalation Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.write",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "resolution-log",
+        "csat-actions",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "customer-support-escalation-team-scale-spike",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Customer Support Escalation Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.write",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "resolution-log",
+        "csat-actions",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "customer-support-escalation-team-data-quality-break",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Customer Support Escalation Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.write",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "resolution-log",
+        "csat-actions",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "customer-support-escalation-team-deadline-compression",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Customer Support Escalation Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.write",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "resolution-log",
+        "csat-actions",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "customer-support-escalation-team-handoff-failure",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Customer Support Escalation Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "message.send",
+        "files.write",
+        "memory.write",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "resolution-log",
+        "csat-actions",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "revops-deal-desk-team-board-pressure",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "[RevOps Deal Desk Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "deal-plan",
+        "close-forecast",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "revops-deal-desk-team-budget-shock",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "[RevOps Deal Desk Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "deal-plan",
+        "close-forecast",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "revops-deal-desk-team-compliance-audit",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "[RevOps Deal Desk Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "deal-plan",
+        "close-forecast",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "revops-deal-desk-team-vendor-failure",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "[RevOps Deal Desk Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "deal-plan",
+        "close-forecast",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "revops-deal-desk-team-reputation-crisis",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "[RevOps Deal Desk Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "deal-plan",
+        "close-forecast",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "revops-deal-desk-team-priority-conflict",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "[RevOps Deal Desk Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "deal-plan",
+        "close-forecast",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "revops-deal-desk-team-scale-spike",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "[RevOps Deal Desk Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "deal-plan",
+        "close-forecast",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "revops-deal-desk-team-data-quality-break",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "[RevOps Deal Desk Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "deal-plan",
+        "close-forecast",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "revops-deal-desk-team-deadline-compression",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "[RevOps Deal Desk Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "deal-plan",
+        "close-forecast",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "revops-deal-desk-team-handoff-failure",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "[RevOps Deal Desk Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "deal-plan",
+        "close-forecast",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "incident-security-response-team-board-pressure",
+      "team_slug": "incident-security-response-team",
+      "prompt": "[Incident Security Response Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "Head of Security Ops",
+        "SRE Lead",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "incident-timeline",
+        "containment-plan",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "incident-security-response-team-budget-shock",
+      "team_slug": "incident-security-response-team",
+      "prompt": "[Incident Security Response Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "Head of Security Ops",
+        "SRE Lead",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "incident-timeline",
+        "containment-plan",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "incident-security-response-team-compliance-audit",
+      "team_slug": "incident-security-response-team",
+      "prompt": "[Incident Security Response Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "Head of Security Ops",
+        "SRE Lead",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "incident-timeline",
+        "containment-plan",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "incident-security-response-team-vendor-failure",
+      "team_slug": "incident-security-response-team",
+      "prompt": "[Incident Security Response Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "Head of Security Ops",
+        "SRE Lead",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "incident-timeline",
+        "containment-plan",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "incident-security-response-team-reputation-crisis",
+      "team_slug": "incident-security-response-team",
+      "prompt": "[Incident Security Response Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "Head of Security Ops",
+        "SRE Lead",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "incident-timeline",
+        "containment-plan",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "incident-security-response-team-priority-conflict",
+      "team_slug": "incident-security-response-team",
+      "prompt": "[Incident Security Response Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "Head of Security Ops",
+        "SRE Lead",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "incident-timeline",
+        "containment-plan",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "incident-security-response-team-scale-spike",
+      "team_slug": "incident-security-response-team",
+      "prompt": "[Incident Security Response Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "Head of Security Ops",
+        "SRE Lead",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "incident-timeline",
+        "containment-plan",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "incident-security-response-team-data-quality-break",
+      "team_slug": "incident-security-response-team",
+      "prompt": "[Incident Security Response Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "Head of Security Ops",
+        "SRE Lead",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "incident-timeline",
+        "containment-plan",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "incident-security-response-team-deadline-compression",
+      "team_slug": "incident-security-response-team",
+      "prompt": "[Incident Security Response Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "Head of Security Ops",
+        "SRE Lead",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "incident-timeline",
+        "containment-plan",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "incident-security-response-team-handoff-failure",
+      "team_slug": "incident-security-response-team",
+      "prompt": "[Incident Security Response Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate",
+        "message.send",
+        "policy.enforce"
+      ],
+      "required_roles": [
+        "Head of Security Ops",
+        "SRE Lead",
+        "Policy Officer"
+      ],
+      "expected_artifacts": [
+        "incident-timeline",
+        "containment-plan",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "devops-reliability-team-board-pressure",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[DevOps Reliability Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "risk.evaluate",
+        "audit.log.read",
+        "audit.log.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "uptime-report",
+        "error-budget-note",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "devops-reliability-team-budget-shock",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[DevOps Reliability Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "risk.evaluate",
+        "audit.log.read",
+        "audit.log.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "uptime-report",
+        "error-budget-note",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "devops-reliability-team-compliance-audit",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[DevOps Reliability Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "risk.evaluate",
+        "audit.log.read",
+        "audit.log.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "uptime-report",
+        "error-budget-note",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "devops-reliability-team-vendor-failure",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[DevOps Reliability Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "risk.evaluate",
+        "audit.log.read",
+        "audit.log.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "uptime-report",
+        "error-budget-note",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "devops-reliability-team-reputation-crisis",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[DevOps Reliability Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "risk.evaluate",
+        "audit.log.read",
+        "audit.log.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "uptime-report",
+        "error-budget-note",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "devops-reliability-team-priority-conflict",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[DevOps Reliability Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "risk.evaluate",
+        "audit.log.read",
+        "audit.log.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "uptime-report",
+        "error-budget-note",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "devops-reliability-team-scale-spike",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[DevOps Reliability Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "risk.evaluate",
+        "audit.log.read",
+        "audit.log.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "uptime-report",
+        "error-budget-note",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "devops-reliability-team-data-quality-break",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[DevOps Reliability Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "risk.evaluate",
+        "audit.log.read",
+        "audit.log.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "uptime-report",
+        "error-budget-note",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "devops-reliability-team-deadline-compression",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[DevOps Reliability Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "risk.evaluate",
+        "audit.log.read",
+        "audit.log.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "uptime-report",
+        "error-budget-note",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "devops-reliability-team-handoff-failure",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[DevOps Reliability Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "risk.evaluate",
+        "audit.log.read",
+        "audit.log.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "uptime-report",
+        "error-budget-note",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "product-strategy-discovery-team-board-pressure",
+      "team_slug": "product-strategy-discovery-team",
+      "prompt": "[Product Strategy Discovery Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "memory.write",
+        "analytics"
+      ],
+      "required_roles": [
+        "Head of Product",
+        "Research Analyst"
+      ],
+      "expected_artifacts": [
+        "roadmap-memo",
+        "tradeoff-matrix",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "product-strategy-discovery-team-budget-shock",
+      "team_slug": "product-strategy-discovery-team",
+      "prompt": "[Product Strategy Discovery Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "memory.write",
+        "analytics"
+      ],
+      "required_roles": [
+        "Head of Product",
+        "Research Analyst"
+      ],
+      "expected_artifacts": [
+        "roadmap-memo",
+        "tradeoff-matrix",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "product-strategy-discovery-team-compliance-audit",
+      "team_slug": "product-strategy-discovery-team",
+      "prompt": "[Product Strategy Discovery Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "memory.write",
+        "analytics"
+      ],
+      "required_roles": [
+        "Head of Product",
+        "Research Analyst"
+      ],
+      "expected_artifacts": [
+        "roadmap-memo",
+        "tradeoff-matrix",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "product-strategy-discovery-team-vendor-failure",
+      "team_slug": "product-strategy-discovery-team",
+      "prompt": "[Product Strategy Discovery Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "memory.write",
+        "analytics"
+      ],
+      "required_roles": [
+        "Head of Product",
+        "Research Analyst"
+      ],
+      "expected_artifacts": [
+        "roadmap-memo",
+        "tradeoff-matrix",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "product-strategy-discovery-team-reputation-crisis",
+      "team_slug": "product-strategy-discovery-team",
+      "prompt": "[Product Strategy Discovery Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "memory.write",
+        "analytics"
+      ],
+      "required_roles": [
+        "Head of Product",
+        "Research Analyst"
+      ],
+      "expected_artifacts": [
+        "roadmap-memo",
+        "tradeoff-matrix",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "product-strategy-discovery-team-priority-conflict",
+      "team_slug": "product-strategy-discovery-team",
+      "prompt": "[Product Strategy Discovery Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "memory.write",
+        "analytics"
+      ],
+      "required_roles": [
+        "Head of Product",
+        "Research Analyst"
+      ],
+      "expected_artifacts": [
+        "roadmap-memo",
+        "tradeoff-matrix",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "product-strategy-discovery-team-scale-spike",
+      "team_slug": "product-strategy-discovery-team",
+      "prompt": "[Product Strategy Discovery Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "memory.write",
+        "analytics"
+      ],
+      "required_roles": [
+        "Head of Product",
+        "Research Analyst"
+      ],
+      "expected_artifacts": [
+        "roadmap-memo",
+        "tradeoff-matrix",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "product-strategy-discovery-team-data-quality-break",
+      "team_slug": "product-strategy-discovery-team",
+      "prompt": "[Product Strategy Discovery Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "memory.write",
+        "analytics"
+      ],
+      "required_roles": [
+        "Head of Product",
+        "Research Analyst"
+      ],
+      "expected_artifacts": [
+        "roadmap-memo",
+        "tradeoff-matrix",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "product-strategy-discovery-team-deadline-compression",
+      "team_slug": "product-strategy-discovery-team",
+      "prompt": "[Product Strategy Discovery Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "memory.write",
+        "analytics"
+      ],
+      "required_roles": [
+        "Head of Product",
+        "Research Analyst"
+      ],
+      "expected_artifacts": [
+        "roadmap-memo",
+        "tradeoff-matrix",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "product-strategy-discovery-team-handoff-failure",
+      "team_slug": "product-strategy-discovery-team",
+      "prompt": "[Product Strategy Discovery Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "web.search",
+        "web.fetch",
+        "files.write",
+        "memory.write",
+        "analytics"
+      ],
+      "required_roles": [
+        "Head of Product",
+        "Research Analyst"
+      ],
+      "expected_artifacts": [
+        "roadmap-memo",
+        "tradeoff-matrix",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "research-publication-team-board-pressure",
+      "team_slug": "research-publication-team",
+      "prompt": "[Research Publication Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "pdf.analyze",
+        "web.search",
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist",
+        "Creative Director"
+      ],
+      "expected_artifacts": [
+        "evidence-brief",
+        "citation-log",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "research-publication-team-budget-shock",
+      "team_slug": "research-publication-team",
+      "prompt": "[Research Publication Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "pdf.analyze",
+        "web.search",
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist",
+        "Creative Director"
+      ],
+      "expected_artifacts": [
+        "evidence-brief",
+        "citation-log",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "research-publication-team-compliance-audit",
+      "team_slug": "research-publication-team",
+      "prompt": "[Research Publication Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "pdf.analyze",
+        "web.search",
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist",
+        "Creative Director"
+      ],
+      "expected_artifacts": [
+        "evidence-brief",
+        "citation-log",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "research-publication-team-vendor-failure",
+      "team_slug": "research-publication-team",
+      "prompt": "[Research Publication Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "pdf.analyze",
+        "web.search",
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist",
+        "Creative Director"
+      ],
+      "expected_artifacts": [
+        "evidence-brief",
+        "citation-log",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "research-publication-team-reputation-crisis",
+      "team_slug": "research-publication-team",
+      "prompt": "[Research Publication Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "pdf.analyze",
+        "web.search",
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist",
+        "Creative Director"
+      ],
+      "expected_artifacts": [
+        "evidence-brief",
+        "citation-log",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "research-publication-team-priority-conflict",
+      "team_slug": "research-publication-team",
+      "prompt": "[Research Publication Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "pdf.analyze",
+        "web.search",
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist",
+        "Creative Director"
+      ],
+      "expected_artifacts": [
+        "evidence-brief",
+        "citation-log",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "research-publication-team-scale-spike",
+      "team_slug": "research-publication-team",
+      "prompt": "[Research Publication Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "pdf.analyze",
+        "web.search",
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist",
+        "Creative Director"
+      ],
+      "expected_artifacts": [
+        "evidence-brief",
+        "citation-log",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "research-publication-team-data-quality-break",
+      "team_slug": "research-publication-team",
+      "prompt": "[Research Publication Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "pdf.analyze",
+        "web.search",
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist",
+        "Creative Director"
+      ],
+      "expected_artifacts": [
+        "evidence-brief",
+        "citation-log",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "research-publication-team-deadline-compression",
+      "team_slug": "research-publication-team",
+      "prompt": "[Research Publication Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "pdf.analyze",
+        "web.search",
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist",
+        "Creative Director"
+      ],
+      "expected_artifacts": [
+        "evidence-brief",
+        "citation-log",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "research-publication-team-handoff-failure",
+      "team_slug": "research-publication-team",
+      "prompt": "[Research Publication Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "pdf.analyze",
+        "web.search",
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist",
+        "Creative Director"
+      ],
+      "expected_artifacts": [
+        "evidence-brief",
+        "citation-log",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "ecommerce-ops-team-board-pressure",
+      "team_slug": "ecommerce-ops-team",
+      "prompt": "[E-commerce Ops Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "listing.optimize",
+        "inventory.forecast",
+        "analytics",
+        "files.write"
+      ],
+      "required_roles": [
+        "Commerce Lead",
+        "Ops Planner"
+      ],
+      "expected_artifacts": [
+        "conversion-report",
+        "pricing-watch",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "ecommerce-ops-team-budget-shock",
+      "team_slug": "ecommerce-ops-team",
+      "prompt": "[E-commerce Ops Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "listing.optimize",
+        "inventory.forecast",
+        "analytics",
+        "files.write"
+      ],
+      "required_roles": [
+        "Commerce Lead",
+        "Ops Planner"
+      ],
+      "expected_artifacts": [
+        "conversion-report",
+        "pricing-watch",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "ecommerce-ops-team-compliance-audit",
+      "team_slug": "ecommerce-ops-team",
+      "prompt": "[E-commerce Ops Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "listing.optimize",
+        "inventory.forecast",
+        "analytics",
+        "files.write"
+      ],
+      "required_roles": [
+        "Commerce Lead",
+        "Ops Planner"
+      ],
+      "expected_artifacts": [
+        "conversion-report",
+        "pricing-watch",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "ecommerce-ops-team-vendor-failure",
+      "team_slug": "ecommerce-ops-team",
+      "prompt": "[E-commerce Ops Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "listing.optimize",
+        "inventory.forecast",
+        "analytics",
+        "files.write"
+      ],
+      "required_roles": [
+        "Commerce Lead",
+        "Ops Planner"
+      ],
+      "expected_artifacts": [
+        "conversion-report",
+        "pricing-watch",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "ecommerce-ops-team-reputation-crisis",
+      "team_slug": "ecommerce-ops-team",
+      "prompt": "[E-commerce Ops Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "listing.optimize",
+        "inventory.forecast",
+        "analytics",
+        "files.write"
+      ],
+      "required_roles": [
+        "Commerce Lead",
+        "Ops Planner"
+      ],
+      "expected_artifacts": [
+        "conversion-report",
+        "pricing-watch",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "ecommerce-ops-team-priority-conflict",
+      "team_slug": "ecommerce-ops-team",
+      "prompt": "[E-commerce Ops Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "listing.optimize",
+        "inventory.forecast",
+        "analytics",
+        "files.write"
+      ],
+      "required_roles": [
+        "Commerce Lead",
+        "Ops Planner"
+      ],
+      "expected_artifacts": [
+        "conversion-report",
+        "pricing-watch",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "ecommerce-ops-team-scale-spike",
+      "team_slug": "ecommerce-ops-team",
+      "prompt": "[E-commerce Ops Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "listing.optimize",
+        "inventory.forecast",
+        "analytics",
+        "files.write"
+      ],
+      "required_roles": [
+        "Commerce Lead",
+        "Ops Planner"
+      ],
+      "expected_artifacts": [
+        "conversion-report",
+        "pricing-watch",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "ecommerce-ops-team-data-quality-break",
+      "team_slug": "ecommerce-ops-team",
+      "prompt": "[E-commerce Ops Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "listing.optimize",
+        "inventory.forecast",
+        "analytics",
+        "files.write"
+      ],
+      "required_roles": [
+        "Commerce Lead",
+        "Ops Planner"
+      ],
+      "expected_artifacts": [
+        "conversion-report",
+        "pricing-watch",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "ecommerce-ops-team-deadline-compression",
+      "team_slug": "ecommerce-ops-team",
+      "prompt": "[E-commerce Ops Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "listing.optimize",
+        "inventory.forecast",
+        "analytics",
+        "files.write"
+      ],
+      "required_roles": [
+        "Commerce Lead",
+        "Ops Planner"
+      ],
+      "expected_artifacts": [
+        "conversion-report",
+        "pricing-watch",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "ecommerce-ops-team-handoff-failure",
+      "team_slug": "ecommerce-ops-team",
+      "prompt": "[E-commerce Ops Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "listing.optimize",
+        "inventory.forecast",
+        "analytics",
+        "files.write"
+      ],
+      "required_roles": [
+        "Commerce Lead",
+        "Ops Planner"
+      ],
+      "expected_artifacts": [
+        "conversion-report",
+        "pricing-watch",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "hiring-people-ops-team-board-pressure",
+      "team_slug": "hiring-people-ops-team",
+      "prompt": "[Hiring & People Ops Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "message.send",
+        "calendar.write"
+      ],
+      "required_roles": [
+        "CHRO",
+        "Recruiting Ops"
+      ],
+      "expected_artifacts": [
+        "hiring-plan",
+        "policy-note",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "hiring-people-ops-team-budget-shock",
+      "team_slug": "hiring-people-ops-team",
+      "prompt": "[Hiring & People Ops Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "message.send",
+        "calendar.write"
+      ],
+      "required_roles": [
+        "CHRO",
+        "Recruiting Ops"
+      ],
+      "expected_artifacts": [
+        "hiring-plan",
+        "policy-note",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "hiring-people-ops-team-compliance-audit",
+      "team_slug": "hiring-people-ops-team",
+      "prompt": "[Hiring & People Ops Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "message.send",
+        "calendar.write"
+      ],
+      "required_roles": [
+        "CHRO",
+        "Recruiting Ops"
+      ],
+      "expected_artifacts": [
+        "hiring-plan",
+        "policy-note",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "hiring-people-ops-team-vendor-failure",
+      "team_slug": "hiring-people-ops-team",
+      "prompt": "[Hiring & People Ops Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "message.send",
+        "calendar.write"
+      ],
+      "required_roles": [
+        "CHRO",
+        "Recruiting Ops"
+      ],
+      "expected_artifacts": [
+        "hiring-plan",
+        "policy-note",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "hiring-people-ops-team-reputation-crisis",
+      "team_slug": "hiring-people-ops-team",
+      "prompt": "[Hiring & People Ops Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "message.send",
+        "calendar.write"
+      ],
+      "required_roles": [
+        "CHRO",
+        "Recruiting Ops"
+      ],
+      "expected_artifacts": [
+        "hiring-plan",
+        "policy-note",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "hiring-people-ops-team-priority-conflict",
+      "team_slug": "hiring-people-ops-team",
+      "prompt": "[Hiring & People Ops Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "message.send",
+        "calendar.write"
+      ],
+      "required_roles": [
+        "CHRO",
+        "Recruiting Ops"
+      ],
+      "expected_artifacts": [
+        "hiring-plan",
+        "policy-note",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "hiring-people-ops-team-scale-spike",
+      "team_slug": "hiring-people-ops-team",
+      "prompt": "[Hiring & People Ops Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "message.send",
+        "calendar.write"
+      ],
+      "required_roles": [
+        "CHRO",
+        "Recruiting Ops"
+      ],
+      "expected_artifacts": [
+        "hiring-plan",
+        "policy-note",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "hiring-people-ops-team-data-quality-break",
+      "team_slug": "hiring-people-ops-team",
+      "prompt": "[Hiring & People Ops Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "message.send",
+        "calendar.write"
+      ],
+      "required_roles": [
+        "CHRO",
+        "Recruiting Ops"
+      ],
+      "expected_artifacts": [
+        "hiring-plan",
+        "policy-note",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "hiring-people-ops-team-deadline-compression",
+      "team_slug": "hiring-people-ops-team",
+      "prompt": "[Hiring & People Ops Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "message.send",
+        "calendar.write"
+      ],
+      "required_roles": [
+        "CHRO",
+        "Recruiting Ops"
+      ],
+      "expected_artifacts": [
+        "hiring-plan",
+        "policy-note",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "hiring-people-ops-team-handoff-failure",
+      "team_slug": "hiring-people-ops-team",
+      "prompt": "[Hiring & People Ops Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "message.send",
+        "calendar.write"
+      ],
+      "required_roles": [
+        "CHRO",
+        "Recruiting Ops"
+      ],
+      "expected_artifacts": [
+        "hiring-plan",
+        "policy-note",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "compliance-governance-team-board-pressure",
+      "team_slug": "compliance-governance-team",
+      "prompt": "[Compliance Governance Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "policy.enforce",
+        "risk.evaluate",
+        "files.read",
+        "files.write",
+        "audit.log.read"
+      ],
+      "required_roles": [
+        "Policy Officer",
+        "Privacy Officer"
+      ],
+      "expected_artifacts": [
+        "policy-decision-log",
+        "approval-record",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "compliance-governance-team-budget-shock",
+      "team_slug": "compliance-governance-team",
+      "prompt": "[Compliance Governance Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "policy.enforce",
+        "risk.evaluate",
+        "files.read",
+        "files.write",
+        "audit.log.read"
+      ],
+      "required_roles": [
+        "Policy Officer",
+        "Privacy Officer"
+      ],
+      "expected_artifacts": [
+        "policy-decision-log",
+        "approval-record",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "compliance-governance-team-compliance-audit",
+      "team_slug": "compliance-governance-team",
+      "prompt": "[Compliance Governance Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "policy.enforce",
+        "risk.evaluate",
+        "files.read",
+        "files.write",
+        "audit.log.read"
+      ],
+      "required_roles": [
+        "Policy Officer",
+        "Privacy Officer"
+      ],
+      "expected_artifacts": [
+        "policy-decision-log",
+        "approval-record",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "compliance-governance-team-vendor-failure",
+      "team_slug": "compliance-governance-team",
+      "prompt": "[Compliance Governance Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "policy.enforce",
+        "risk.evaluate",
+        "files.read",
+        "files.write",
+        "audit.log.read"
+      ],
+      "required_roles": [
+        "Policy Officer",
+        "Privacy Officer"
+      ],
+      "expected_artifacts": [
+        "policy-decision-log",
+        "approval-record",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "compliance-governance-team-reputation-crisis",
+      "team_slug": "compliance-governance-team",
+      "prompt": "[Compliance Governance Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "policy.enforce",
+        "risk.evaluate",
+        "files.read",
+        "files.write",
+        "audit.log.read"
+      ],
+      "required_roles": [
+        "Policy Officer",
+        "Privacy Officer"
+      ],
+      "expected_artifacts": [
+        "policy-decision-log",
+        "approval-record",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "compliance-governance-team-priority-conflict",
+      "team_slug": "compliance-governance-team",
+      "prompt": "[Compliance Governance Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "policy.enforce",
+        "risk.evaluate",
+        "files.read",
+        "files.write",
+        "audit.log.read"
+      ],
+      "required_roles": [
+        "Policy Officer",
+        "Privacy Officer"
+      ],
+      "expected_artifacts": [
+        "policy-decision-log",
+        "approval-record",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "compliance-governance-team-scale-spike",
+      "team_slug": "compliance-governance-team",
+      "prompt": "[Compliance Governance Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "policy.enforce",
+        "risk.evaluate",
+        "files.read",
+        "files.write",
+        "audit.log.read"
+      ],
+      "required_roles": [
+        "Policy Officer",
+        "Privacy Officer"
+      ],
+      "expected_artifacts": [
+        "policy-decision-log",
+        "approval-record",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "compliance-governance-team-data-quality-break",
+      "team_slug": "compliance-governance-team",
+      "prompt": "[Compliance Governance Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "policy.enforce",
+        "risk.evaluate",
+        "files.read",
+        "files.write",
+        "audit.log.read"
+      ],
+      "required_roles": [
+        "Policy Officer",
+        "Privacy Officer"
+      ],
+      "expected_artifacts": [
+        "policy-decision-log",
+        "approval-record",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "compliance-governance-team-deadline-compression",
+      "team_slug": "compliance-governance-team",
+      "prompt": "[Compliance Governance Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "policy.enforce",
+        "risk.evaluate",
+        "files.read",
+        "files.write",
+        "audit.log.read"
+      ],
+      "required_roles": [
+        "Policy Officer",
+        "Privacy Officer"
+      ],
+      "expected_artifacts": [
+        "policy-decision-log",
+        "approval-record",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "compliance-governance-team-handoff-failure",
+      "team_slug": "compliance-governance-team",
+      "prompt": "[Compliance Governance Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "policy.enforce",
+        "risk.evaluate",
+        "files.read",
+        "files.write",
+        "audit.log.read"
+      ],
+      "required_roles": [
+        "Policy Officer",
+        "Privacy Officer"
+      ],
+      "expected_artifacts": [
+        "policy-decision-log",
+        "approval-record",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "content-studio-team-board-pressure",
+      "team_slug": "content-studio-team",
+      "prompt": "[Content Studio Team] Board demands 30-day turnaround plan after missed targets.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "seo",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Creative Director",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "content-brief",
+        "asset-batch",
+        "board-brief"
+      ]
+    },
+    {
+      "id": "content-studio-team-budget-shock",
+      "team_slug": "content-studio-team",
+      "prompt": "[Content Studio Team] Unexpected budget cut of 25% while preserving mission-critical outcomes.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "seo",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Creative Director",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "content-brief",
+        "asset-batch",
+        "cost-plan"
+      ]
+    },
+    {
+      "id": "content-studio-team-compliance-audit",
+      "team_slug": "content-studio-team",
+      "prompt": "[Content Studio Team] Regulator requests immediate evidence and policy compliance mapping.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "seo",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Creative Director",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "content-brief",
+        "asset-batch",
+        "compliance-brief"
+      ]
+    },
+    {
+      "id": "content-studio-team-vendor-failure",
+      "team_slug": "content-studio-team",
+      "prompt": "[Content Studio Team] Critical vendor outage impacts delivery pipeline.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "seo",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Creative Director",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "content-brief",
+        "asset-batch",
+        "mitigation-plan"
+      ]
+    },
+    {
+      "id": "content-studio-team-reputation-crisis",
+      "team_slug": "content-studio-team",
+      "prompt": "[Content Studio Team] Public backlash requires coordinated response and trust recovery.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "seo",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Creative Director",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "content-brief",
+        "asset-batch",
+        "response-brief"
+      ]
+    },
+    {
+      "id": "content-studio-team-priority-conflict",
+      "team_slug": "content-studio-team",
+      "prompt": "[Content Studio Team] Cross-team priorities conflict; need a single committed plan.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "seo",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Creative Director",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "content-brief",
+        "asset-batch",
+        "priority-matrix"
+      ]
+    },
+    {
+      "id": "content-studio-team-scale-spike",
+      "team_slug": "content-studio-team",
+      "prompt": "[Content Studio Team] Demand spike (3x) strains operations and customer experience.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "seo",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Creative Director",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "content-brief",
+        "asset-batch",
+        "capacity-plan"
+      ]
+    },
+    {
+      "id": "content-studio-team-data-quality-break",
+      "team_slug": "content-studio-team",
+      "prompt": "[Content Studio Team] Data inconsistency undermines reports and decisions.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "seo",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Creative Director",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "content-brief",
+        "asset-batch",
+        "data-remediation-plan"
+      ]
+    },
+    {
+      "id": "content-studio-team-deadline-compression",
+      "team_slug": "content-studio-team",
+      "prompt": "[Content Studio Team] Delivery deadline moved up by 50% with no scope increase.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "seo",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Creative Director",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "content-brief",
+        "asset-batch",
+        "compressed-roadmap"
+      ]
+    },
+    {
+      "id": "content-studio-team-handoff-failure",
+      "team_slug": "content-studio-team",
+      "prompt": "[Content Studio Team] Critical handoff repeatedly fails between functions.",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "seo",
+        "analytics",
+        "message.send"
+      ],
+      "required_roles": [
+        "Creative Director",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "content-brief",
+        "asset-batch",
+        "handoff-protocol"
+      ]
+    },
+    {
+      "id": "reddit-01-pr-radar",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[Reddit intake 01-pr-radar] Execute workflow: PR Radar \u2014 engineering quality and stale PR triage",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-02-sla-guardian",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Reddit intake 02-sla-guardian] Execute workflow: SLA Guardian \u2014 support escalation and SLA protection",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-03-release-notes-pilot",
+      "team_slug": "content-studio-team",
+      "prompt": "[Reddit intake 03-release-notes-pilot] Execute workflow: Release Notes Pilot \u2014 release communication and changelogs",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Creative Director",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-06-pdf-ops-desk",
+      "team_slug": "research-publication-team",
+      "prompt": "[Reddit intake 06-pdf-ops-desk] Execute workflow: PDF Ops Desk \u2014 document processing and summarization",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-07-ci-flake-doctor",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[Reddit intake 07-ci-flake-doctor] Execute workflow: CI Flake Doctor \u2014 CI failure triage and remediation queue",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-10-model-cost-command-center",
+      "team_slug": "finance-control-team",
+      "prompt": "[Reddit intake 10-model-cost-command-center] Execute workflow: Model Cost Command Center \u2014 model cost anomaly detection and optimization",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CFO",
+        "RevOps Analyst"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-11-inbox-to-action",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Reddit intake 11-inbox-to-action] Execute workflow: Inbox to Action \u2014 inbox triage into action tasks",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-14-weekly-research-digest",
+      "team_slug": "research-publication-team",
+      "prompt": "[Reddit intake 14-weekly-research-digest] Execute workflow: Weekly Research Digest \u2014 research monitoring and digest generation",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "web.fetch",
+        "web.search"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-19-support-escalation-digest",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Reddit intake 19-support-escalation-digest] Execute workflow: Support Escalation Digest \u2014 urgent support thread escalation",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-20-product-changelog-curator",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Reddit intake 20-product-changelog-curator] Execute workflow: Product Changelog Curator \u2014 changelog quality and release comms",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-31-dependency-risk-watch",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[Reddit intake 31-dependency-risk-watch] Execute workflow: Dependency Risk Watch \u2014 dependency vulnerability and version drift",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-34-ownerless-service-finder",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[Reddit intake 34-ownerless-service-finder] Execute workflow: Ownerless Service Finder \u2014 service ownership gaps and routing",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-43-renewal-risk-radar",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "[Reddit intake 43-renewal-risk-radar] Execute workflow: Renewal Risk Radar \u2014 renewal churn risk and intervention",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-47-trial-to-paid-optimizer",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "[Reddit intake 47-trial-to-paid-optimizer] Execute workflow: Trial to Paid Optimizer \u2014 trial conversion and lifecycle funnel",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-58-vip-inbox-priority",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Reddit intake 58-vip-inbox-priority] Execute workflow: VIP Inbox Priority \u2014 high-priority comms prioritization",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-66-competitive-intel-brief",
+      "team_slug": "product-strategy-discovery-team",
+      "prompt": "[Reddit intake 66-competitive-intel-brief] Execute workflow: Competitive Intel Brief \u2014 competitor feature tracking and response",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Product",
+        "Research Analyst"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-71-candidate-brief-generator",
+      "team_slug": "hiring-people-ops-team",
+      "prompt": "[Reddit intake 71-candidate-brief-generator] Execute workflow: Candidate Brief Generator \u2014 recruiting brief and interview prep",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CHRO",
+        "Recruiting Ops"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-78-board-evidence-pack",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Reddit intake 78-board-evidence-pack] Execute workflow: Board Evidence Pack \u2014 board reporting and evidence synthesis",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-84-access-review-automation",
+      "team_slug": "compliance-governance-team",
+      "prompt": "[Reddit intake 84-access-review-automation] Execute workflow: Access Review Automation \u2014 security access review and compliance",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "policy.enforce",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Policy Officer",
+        "Privacy Officer"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-90-it-intake-router",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Reddit intake 90-it-intake-router] Execute workflow: IT Intake Router \u2014 internal IT ticket intake and routing",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    }
+  ]
+}

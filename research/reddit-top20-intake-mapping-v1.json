@@ -1,0 +1,894 @@
+{
+  "generatedAt": "2026-03-18",
+  "source": "reddit awesome-openclaw-examples intake top20",
+  "examples_mapped": [
+    {
+      "example_id": "01-pr-radar",
+      "title": "PR Radar",
+      "focus": "engineering quality and stale PR triage",
+      "mapped_team": "devops-reliability-team",
+      "suggested_skills": [
+        "github-pr-review-assistant",
+        "pr-review-summarizer"
+      ],
+      "existing_skills": [
+        "github-pr-review-assistant",
+        "pr-review-summarizer"
+      ],
+      "missing_skill_candidates": []
+    },
+    {
+      "example_id": "02-sla-guardian",
+      "title": "SLA Guardian",
+      "focus": "support escalation and SLA protection",
+      "mapped_team": "customer-support-escalation-team",
+      "suggested_skills": [
+        "customer-sla-guardian",
+        "whatsapp-support-copilot",
+        "telegram-community-manager",
+        "support-escalation-summarizer",
+        "customer-support-escalation-team-skill"
+      ],
+      "existing_skills": [
+        "whatsapp-support-copilot",
+        "telegram-community-manager"
+      ],
+      "missing_skill_candidates": [
+        "customer-sla-guardian",
+        "support-escalation-summarizer",
+        "customer-support-escalation-team-skill"
+      ]
+    },
+    {
+      "example_id": "03-release-notes-pilot",
+      "title": "Release Notes Pilot",
+      "focus": "release communication and changelogs",
+      "mapped_team": "content-studio-team",
+      "suggested_skills": [
+        "release-notes-generator",
+        "launch-feedback-summarizer"
+      ],
+      "existing_skills": [
+        "launch-feedback-summarizer"
+      ],
+      "missing_skill_candidates": [
+        "release-notes-generator"
+      ]
+    },
+    {
+      "example_id": "06-pdf-ops-desk",
+      "title": "PDF Ops Desk",
+      "focus": "document processing and summarization",
+      "mapped_team": "research-publication-team",
+      "suggested_skills": [
+        "paper-to-notes",
+        "transcript-to-action-items"
+      ],
+      "existing_skills": [
+        "paper-to-notes",
+        "transcript-to-action-items"
+      ],
+      "missing_skill_candidates": []
+    },
+    {
+      "example_id": "07-ci-flake-doctor",
+      "title": "CI Flake Doctor",
+      "focus": "CI failure triage and remediation queue",
+      "mapped_team": "devops-reliability-team",
+      "suggested_skills": [
+        "ci-flake-doctor",
+        "incident-triage-commander"
+      ],
+      "existing_skills": [
+        "incident-triage-commander"
+      ],
+      "missing_skill_candidates": [
+        "ci-flake-doctor"
+      ]
+    },
+    {
+      "example_id": "10-model-cost-command-center",
+      "title": "Model Cost Command Center",
+      "focus": "model cost anomaly detection and optimization",
+      "mapped_team": "finance-control-team",
+      "suggested_skills": [
+        "cloud-cost-analyzer",
+        "model-cost-governor"
+      ],
+      "existing_skills": [
+        "cloud-cost-analyzer"
+      ],
+      "missing_skill_candidates": [
+        "model-cost-governor"
+      ]
+    },
+    {
+      "example_id": "11-inbox-to-action",
+      "title": "Inbox to Action",
+      "focus": "inbox triage into action tasks",
+      "mapped_team": "customer-support-escalation-team",
+      "suggested_skills": [
+        "inbox-triage-pro",
+        "calendar-ops-coordinator"
+      ],
+      "existing_skills": [
+        "inbox-triage-pro",
+        "calendar-ops-coordinator"
+      ],
+      "missing_skill_candidates": []
+    },
+    {
+      "example_id": "14-weekly-research-digest",
+      "title": "Weekly Research Digest",
+      "focus": "research monitoring and digest generation",
+      "mapped_team": "research-publication-team",
+      "suggested_skills": [
+        "research-digest-compiler",
+        "citation-verifier"
+      ],
+      "existing_skills": [
+        "citation-verifier"
+      ],
+      "missing_skill_candidates": [
+        "research-digest-compiler"
+      ]
+    },
+    {
+      "example_id": "19-support-escalation-digest",
+      "title": "Support Escalation Digest",
+      "focus": "urgent support thread escalation",
+      "mapped_team": "customer-support-escalation-team",
+      "suggested_skills": [
+        "support-escalation-summarizer",
+        "customer-support-escalation-team-skill"
+      ],
+      "existing_skills": [],
+      "missing_skill_candidates": [
+        "support-escalation-summarizer",
+        "customer-support-escalation-team-skill"
+      ]
+    },
+    {
+      "example_id": "20-product-changelog-curator",
+      "title": "Product Changelog Curator",
+      "focus": "changelog quality and release comms",
+      "mapped_team": "startup-exec-team",
+      "suggested_skills": [
+        "product-changelog-curator",
+        "shortform-content-factory"
+      ],
+      "existing_skills": [
+        "shortform-content-factory"
+      ],
+      "missing_skill_candidates": [
+        "product-changelog-curator"
+      ]
+    },
+    {
+      "example_id": "31-dependency-risk-watch",
+      "title": "Dependency Risk Watch",
+      "focus": "dependency vulnerability and version drift",
+      "mapped_team": "devops-reliability-team",
+      "suggested_skills": [
+        "dependency-risk-watcher",
+        "security-alert-triager"
+      ],
+      "existing_skills": [
+        "security-alert-triager"
+      ],
+      "missing_skill_candidates": [
+        "dependency-risk-watcher"
+      ]
+    },
+    {
+      "example_id": "34-ownerless-service-finder",
+      "title": "Ownerless Service Finder",
+      "focus": "service ownership gaps and routing",
+      "mapped_team": "devops-reliability-team",
+      "suggested_skills": [
+        "service-ownership-mapper",
+        "incident-triage-commander"
+      ],
+      "existing_skills": [
+        "incident-triage-commander"
+      ],
+      "missing_skill_candidates": [
+        "service-ownership-mapper"
+      ]
+    },
+    {
+      "example_id": "43-renewal-risk-radar",
+      "title": "Renewal Risk Radar",
+      "focus": "renewal churn risk and intervention",
+      "mapped_team": "revops-deal-desk-team",
+      "suggested_skills": [
+        "renewal-expansion-coach",
+        "churn-early-warning"
+      ],
+      "existing_skills": [
+        "renewal-expansion-coach",
+        "churn-early-warning"
+      ],
+      "missing_skill_candidates": []
+    },
+    {
+      "example_id": "47-trial-to-paid-optimizer",
+      "title": "Trial to Paid Optimizer",
+      "focus": "trial conversion and lifecycle funnel",
+      "mapped_team": "revops-deal-desk-team",
+      "suggested_skills": [
+        "trial-conversion-optimizer",
+        "waitlist-converter"
+      ],
+      "existing_skills": [
+        "waitlist-converter"
+      ],
+      "missing_skill_candidates": [
+        "trial-conversion-optimizer"
+      ]
+    },
+    {
+      "example_id": "58-vip-inbox-priority",
+      "title": "VIP Inbox Priority",
+      "focus": "high-priority comms prioritization",
+      "mapped_team": "startup-exec-team",
+      "suggested_skills": [
+        "vip-inbox-priority",
+        "inbox-triage-pro"
+      ],
+      "existing_skills": [
+        "inbox-triage-pro"
+      ],
+      "missing_skill_candidates": [
+        "vip-inbox-priority"
+      ]
+    },
+    {
+      "example_id": "66-competitive-intel-brief",
+      "title": "Competitive Intel Brief",
+      "focus": "competitor feature tracking and response",
+      "mapped_team": "product-strategy-discovery-team",
+      "suggested_skills": [
+        "competitor-feature-tracker",
+        "reddit-scout-pro"
+      ],
+      "existing_skills": [
+        "competitor-feature-tracker",
+        "reddit-scout-pro"
+      ],
+      "missing_skill_candidates": []
+    },
+    {
+      "example_id": "71-candidate-brief-generator",
+      "title": "Candidate Brief Generator",
+      "focus": "recruiting brief and interview prep",
+      "mapped_team": "hiring-people-ops-team",
+      "suggested_skills": [
+        "candidate-brief-generator",
+        "job-application-accelerator"
+      ],
+      "existing_skills": [
+        "job-application-accelerator"
+      ],
+      "missing_skill_candidates": [
+        "candidate-brief-generator"
+      ]
+    },
+    {
+      "example_id": "78-board-evidence-pack",
+      "title": "Board Evidence Pack",
+      "focus": "board reporting and evidence synthesis",
+      "mapped_team": "startup-exec-team",
+      "suggested_skills": [
+        "board-evidence-packager",
+        "proposal-generator"
+      ],
+      "existing_skills": [
+        "proposal-generator"
+      ],
+      "missing_skill_candidates": [
+        "board-evidence-packager"
+      ]
+    },
+    {
+      "example_id": "84-access-review-automation",
+      "title": "Access Review Automation",
+      "focus": "security access review and compliance",
+      "mapped_team": "compliance-governance-team",
+      "suggested_skills": [
+        "access-review-automation",
+        "policy-compliance-guard"
+      ],
+      "existing_skills": [
+        "policy-compliance-guard"
+      ],
+      "missing_skill_candidates": [
+        "access-review-automation"
+      ]
+    },
+    {
+      "example_id": "90-it-intake-router",
+      "title": "IT Intake Router",
+      "focus": "internal IT ticket intake and routing",
+      "mapped_team": "startup-exec-team",
+      "suggested_skills": [
+        "it-intake-router",
+        "human-escalation-router"
+      ],
+      "existing_skills": [
+        "human-escalation-router"
+      ],
+      "missing_skill_candidates": [
+        "it-intake-router"
+      ]
+    }
+  ],
+  "new_skill_build_queue": [
+    {
+      "slug": "customer-support-escalation-team-skill",
+      "reason": "reddit-example-gap",
+      "priority": "high",
+      "example_refs": [
+        "02-sla-guardian",
+        "19-support-escalation-digest"
+      ],
+      "mapped_teams": [
+        "customer-support-escalation-team"
+      ]
+    },
+    {
+      "slug": "support-escalation-summarizer",
+      "reason": "reddit-example-gap",
+      "priority": "high",
+      "example_refs": [
+        "02-sla-guardian",
+        "19-support-escalation-digest"
+      ],
+      "mapped_teams": [
+        "customer-support-escalation-team"
+      ]
+    },
+    {
+      "slug": "access-review-automation",
+      "reason": "reddit-example-gap",
+      "priority": "medium",
+      "example_refs": [
+        "84-access-review-automation"
+      ],
+      "mapped_teams": [
+        "compliance-governance-team"
+      ]
+    },
+    {
+      "slug": "board-evidence-packager",
+      "reason": "reddit-example-gap",
+      "priority": "medium",
+      "example_refs": [
+        "78-board-evidence-pack"
+      ],
+      "mapped_teams": [
+        "startup-exec-team"
+      ]
+    },
+    {
+      "slug": "candidate-brief-generator",
+      "reason": "reddit-example-gap",
+      "priority": "medium",
+      "example_refs": [
+        "71-candidate-brief-generator"
+      ],
+      "mapped_teams": [
+        "hiring-people-ops-team"
+      ]
+    },
+    {
+      "slug": "ci-flake-doctor",
+      "reason": "reddit-example-gap",
+      "priority": "medium",
+      "example_refs": [
+        "07-ci-flake-doctor"
+      ],
+      "mapped_teams": [
+        "devops-reliability-team"
+      ]
+    },
+    {
+      "slug": "customer-sla-guardian",
+      "reason": "reddit-example-gap",
+      "priority": "medium",
+      "example_refs": [
+        "02-sla-guardian"
+      ],
+      "mapped_teams": [
+        "customer-support-escalation-team"
+      ]
+    },
+    {
+      "slug": "dependency-risk-watcher",
+      "reason": "reddit-example-gap",
+      "priority": "medium",
+      "example_refs": [
+        "31-dependency-risk-watch"
+      ],
+      "mapped_teams": [
+        "devops-reliability-team"
+      ]
+    },
+    {
+      "slug": "it-intake-router",
+      "reason": "reddit-example-gap",
+      "priority": "medium",
+      "example_refs": [
+        "90-it-intake-router"
+      ],
+      "mapped_teams": [
+        "startup-exec-team"
+      ]
+    },
+    {
+      "slug": "model-cost-governor",
+      "reason": "reddit-example-gap",
+      "priority": "medium",
+      "example_refs": [
+        "10-model-cost-command-center"
+      ],
+      "mapped_teams": [
+        "finance-control-team"
+      ]
+    },
+    {
+      "slug": "product-changelog-curator",
+      "reason": "reddit-example-gap",
+      "priority": "medium",
+      "example_refs": [
+        "20-product-changelog-curator"
+      ],
+      "mapped_teams": [
+        "startup-exec-team"
+      ]
+    },
+    {
+      "slug": "release-notes-generator",
+      "reason": "reddit-example-gap",
+      "priority": "medium",
+      "example_refs": [
+        "03-release-notes-pilot"
+      ],
+      "mapped_teams": [
+        "content-studio-team"
+      ]
+    },
+    {
+      "slug": "research-digest-compiler",
+      "reason": "reddit-example-gap",
+      "priority": "medium",
+      "example_refs": [
+        "14-weekly-research-digest"
+      ],
+      "mapped_teams": [
+        "research-publication-team"
+      ]
+    },
+    {
+      "slug": "service-ownership-mapper",
+      "reason": "reddit-example-gap",
+      "priority": "medium",
+      "example_refs": [
+        "34-ownerless-service-finder"
+      ],
+      "mapped_teams": [
+        "devops-reliability-team"
+      ]
+    },
+    {
+      "slug": "trial-conversion-optimizer",
+      "reason": "reddit-example-gap",
+      "priority": "medium",
+      "example_refs": [
+        "47-trial-to-paid-optimizer"
+      ],
+      "mapped_teams": [
+        "revops-deal-desk-team"
+      ]
+    },
+    {
+      "slug": "vip-inbox-priority",
+      "reason": "reddit-example-gap",
+      "priority": "medium",
+      "example_refs": [
+        "58-vip-inbox-priority"
+      ],
+      "mapped_teams": [
+        "startup-exec-team"
+      ]
+    }
+  ],
+  "scenario_additions": [
+    {
+      "id": "reddit-01-pr-radar",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[Reddit intake 01-pr-radar] Execute workflow: PR Radar \u2014 engineering quality and stale PR triage",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-02-sla-guardian",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Reddit intake 02-sla-guardian] Execute workflow: SLA Guardian \u2014 support escalation and SLA protection",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-03-release-notes-pilot",
+      "team_slug": "content-studio-team",
+      "prompt": "[Reddit intake 03-release-notes-pilot] Execute workflow: Release Notes Pilot \u2014 release communication and changelogs",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Creative Director",
+        "Research Editor"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-06-pdf-ops-desk",
+      "team_slug": "research-publication-team",
+      "prompt": "[Reddit intake 06-pdf-ops-desk] Execute workflow: PDF Ops Desk \u2014 document processing and summarization",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-07-ci-flake-doctor",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[Reddit intake 07-ci-flake-doctor] Execute workflow: CI Flake Doctor \u2014 CI failure triage and remediation queue",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-10-model-cost-command-center",
+      "team_slug": "finance-control-team",
+      "prompt": "[Reddit intake 10-model-cost-command-center] Execute workflow: Model Cost Command Center \u2014 model cost anomaly detection and optimization",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CFO",
+        "RevOps Analyst"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-11-inbox-to-action",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Reddit intake 11-inbox-to-action] Execute workflow: Inbox to Action \u2014 inbox triage into action tasks",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-14-weekly-research-digest",
+      "team_slug": "research-publication-team",
+      "prompt": "[Reddit intake 14-weekly-research-digest] Execute workflow: Weekly Research Digest \u2014 research monitoring and digest generation",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "web.fetch",
+        "web.search"
+      ],
+      "required_roles": [
+        "Head of Research",
+        "Product Strategist"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-19-support-escalation-digest",
+      "team_slug": "customer-support-escalation-team",
+      "prompt": "[Reddit intake 19-support-escalation-digest] Execute workflow: Support Escalation Digest \u2014 urgent support thread escalation",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "message.send"
+      ],
+      "required_roles": [
+        "Head of Support",
+        "Ops Lead"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-20-product-changelog-curator",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Reddit intake 20-product-changelog-curator] Execute workflow: Product Changelog Curator \u2014 changelog quality and release comms",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-31-dependency-risk-watch",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[Reddit intake 31-dependency-risk-watch] Execute workflow: Dependency Risk Watch \u2014 dependency vulnerability and version drift",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-34-ownerless-service-finder",
+      "team_slug": "devops-reliability-team",
+      "prompt": "[Reddit intake 34-ownerless-service-finder] Execute workflow: Ownerless Service Finder \u2014 service ownership gaps and routing",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "SRE Lead",
+        "Platform Engineer"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-43-renewal-risk-radar",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "[Reddit intake 43-renewal-risk-radar] Execute workflow: Renewal Risk Radar \u2014 renewal churn risk and intervention",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-47-trial-to-paid-optimizer",
+      "team_slug": "revops-deal-desk-team",
+      "prompt": "[Reddit intake 47-trial-to-paid-optimizer] Execute workflow: Trial to Paid Optimizer \u2014 trial conversion and lifecycle funnel",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CRO",
+        "Head of RevOps"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-58-vip-inbox-priority",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Reddit intake 58-vip-inbox-priority] Execute workflow: VIP Inbox Priority \u2014 high-priority comms prioritization",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-66-competitive-intel-brief",
+      "team_slug": "product-strategy-discovery-team",
+      "prompt": "[Reddit intake 66-competitive-intel-brief] Execute workflow: Competitive Intel Brief \u2014 competitor feature tracking and response",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "Head of Product",
+        "Research Analyst"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-71-candidate-brief-generator",
+      "team_slug": "hiring-people-ops-team",
+      "prompt": "[Reddit intake 71-candidate-brief-generator] Execute workflow: Candidate Brief Generator \u2014 recruiting brief and interview prep",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CHRO",
+        "Recruiting Ops"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-78-board-evidence-pack",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Reddit intake 78-board-evidence-pack] Execute workflow: Board Evidence Pack \u2014 board reporting and evidence synthesis",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-84-access-review-automation",
+      "team_slug": "compliance-governance-team",
+      "prompt": "[Reddit intake 84-access-review-automation] Execute workflow: Access Review Automation \u2014 security access review and compliance",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write",
+        "policy.enforce",
+        "risk.evaluate"
+      ],
+      "required_roles": [
+        "Policy Officer",
+        "Privacy Officer"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    },
+    {
+      "id": "reddit-90-it-intake-router",
+      "team_slug": "startup-exec-team",
+      "prompt": "[Reddit intake 90-it-intake-router] Execute workflow: IT Intake Router \u2014 internal IT ticket intake and routing",
+      "required_capabilities": [
+        "files.read",
+        "files.write",
+        "memory.write"
+      ],
+      "required_roles": [
+        "CEO",
+        "CFO"
+      ],
+      "expected_artifacts": [
+        "status-report",
+        "action-items",
+        "decision-log"
+      ]
+    }
+  ]
+}

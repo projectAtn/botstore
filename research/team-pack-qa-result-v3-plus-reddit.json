@@ -1,0 +1,5065 @@
+{
+  "generatedAt": "2026-03-18T22:12:32.523351+00:00",
+  "summary": {
+    "total": 170,
+    "pass": 167,
+    "avg_score": 0.877
+  },
+  "scenarios": [
+    {
+      "scenario_id": "startup-exec-team-board-pressure",
+      "team_slug": "startup-exec-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "startup-exec-team-budget-shock",
+      "team_slug": "startup-exec-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "startup-exec-team-compliance-audit",
+      "team_slug": "startup-exec-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "startup-exec-team-vendor-failure",
+      "team_slug": "startup-exec-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "startup-exec-team-reputation-crisis",
+      "team_slug": "startup-exec-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "startup-exec-team-priority-conflict",
+      "team_slug": "startup-exec-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "startup-exec-team-scale-spike",
+      "team_slug": "startup-exec-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "startup-exec-team-data-quality-break",
+      "team_slug": "startup-exec-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "startup-exec-team-deadline-compression",
+      "team_slug": "startup-exec-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "startup-exec-team-handoff-failure",
+      "team_slug": "startup-exec-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "founder-lean-team-board-pressure",
+      "team_slug": "founder-lean-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "founder-lean-team-budget-shock",
+      "team_slug": "founder-lean-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "founder-lean-team-compliance-audit",
+      "team_slug": "founder-lean-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "founder-lean-team-vendor-failure",
+      "team_slug": "founder-lean-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "founder-lean-team-reputation-crisis",
+      "team_slug": "founder-lean-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "founder-lean-team-priority-conflict",
+      "team_slug": "founder-lean-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "founder-lean-team-scale-spike",
+      "team_slug": "founder-lean-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "founder-lean-team-data-quality-break",
+      "team_slug": "founder-lean-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "founder-lean-team-deadline-compression",
+      "team_slug": "founder-lean-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "founder-lean-team-handoff-failure",
+      "team_slug": "founder-lean-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "finance-control-team-board-pressure",
+      "team_slug": "finance-control-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "analytics"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "finance-control-team-budget-shock",
+      "team_slug": "finance-control-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "analytics"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "finance-control-team-compliance-audit",
+      "team_slug": "finance-control-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "analytics"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "finance-control-team-vendor-failure",
+      "team_slug": "finance-control-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "analytics"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "finance-control-team-reputation-crisis",
+      "team_slug": "finance-control-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "analytics"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "finance-control-team-priority-conflict",
+      "team_slug": "finance-control-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "analytics"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "finance-control-team-scale-spike",
+      "team_slug": "finance-control-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "analytics"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "finance-control-team-data-quality-break",
+      "team_slug": "finance-control-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "analytics"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "finance-control-team-deadline-compression",
+      "team_slug": "finance-control-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "analytics"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "finance-control-team-handoff-failure",
+      "team_slug": "finance-control-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "analytics"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "go-to-market-war-room-team-board-pressure",
+      "team_slug": "go-to-market-war-room-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "go-to-market-war-room-team-budget-shock",
+      "team_slug": "go-to-market-war-room-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "go-to-market-war-room-team-compliance-audit",
+      "team_slug": "go-to-market-war-room-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "go-to-market-war-room-team-vendor-failure",
+      "team_slug": "go-to-market-war-room-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "go-to-market-war-room-team-reputation-crisis",
+      "team_slug": "go-to-market-war-room-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "go-to-market-war-room-team-priority-conflict",
+      "team_slug": "go-to-market-war-room-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "go-to-market-war-room-team-scale-spike",
+      "team_slug": "go-to-market-war-room-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "go-to-market-war-room-team-data-quality-break",
+      "team_slug": "go-to-market-war-room-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "go-to-market-war-room-team-deadline-compression",
+      "team_slug": "go-to-market-war-room-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "go-to-market-war-room-team-handoff-failure",
+      "team_slug": "go-to-market-war-room-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "community-growth-team-board-pressure",
+      "team_slug": "community-growth-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "risk.evaluate"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "community-growth-team-budget-shock",
+      "team_slug": "community-growth-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "risk.evaluate"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "community-growth-team-compliance-audit",
+      "team_slug": "community-growth-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "risk.evaluate"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "community-growth-team-vendor-failure",
+      "team_slug": "community-growth-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "risk.evaluate"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "community-growth-team-reputation-crisis",
+      "team_slug": "community-growth-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "risk.evaluate"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "community-growth-team-priority-conflict",
+      "team_slug": "community-growth-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "risk.evaluate"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "community-growth-team-scale-spike",
+      "team_slug": "community-growth-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "risk.evaluate"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "community-growth-team-data-quality-break",
+      "team_slug": "community-growth-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "risk.evaluate"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "community-growth-team-deadline-compression",
+      "team_slug": "community-growth-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "risk.evaluate"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "community-growth-team-handoff-failure",
+      "team_slug": "community-growth-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "risk.evaluate"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "customer-support-escalation-team-board-pressure",
+      "team_slug": "customer-support-escalation-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "memory.write"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "customer-support-escalation-team-budget-shock",
+      "team_slug": "customer-support-escalation-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "memory.write"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "customer-support-escalation-team-compliance-audit",
+      "team_slug": "customer-support-escalation-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "memory.write"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "customer-support-escalation-team-vendor-failure",
+      "team_slug": "customer-support-escalation-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "memory.write"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "customer-support-escalation-team-reputation-crisis",
+      "team_slug": "customer-support-escalation-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "memory.write"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "customer-support-escalation-team-priority-conflict",
+      "team_slug": "customer-support-escalation-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "memory.write"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "customer-support-escalation-team-scale-spike",
+      "team_slug": "customer-support-escalation-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "memory.write"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "customer-support-escalation-team-data-quality-break",
+      "team_slug": "customer-support-escalation-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "memory.write"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "customer-support-escalation-team-deadline-compression",
+      "team_slug": "customer-support-escalation-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "memory.write"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "customer-support-escalation-team-handoff-failure",
+      "team_slug": "customer-support-escalation-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "memory.write"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "revops-deal-desk-team-board-pressure",
+      "team_slug": "revops-deal-desk-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "policy.enforce"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "revops-deal-desk-team-budget-shock",
+      "team_slug": "revops-deal-desk-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "policy.enforce"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "revops-deal-desk-team-compliance-audit",
+      "team_slug": "revops-deal-desk-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "policy.enforce"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "revops-deal-desk-team-vendor-failure",
+      "team_slug": "revops-deal-desk-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "policy.enforce"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "revops-deal-desk-team-reputation-crisis",
+      "team_slug": "revops-deal-desk-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "policy.enforce"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "revops-deal-desk-team-priority-conflict",
+      "team_slug": "revops-deal-desk-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "policy.enforce"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "revops-deal-desk-team-scale-spike",
+      "team_slug": "revops-deal-desk-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "policy.enforce"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "revops-deal-desk-team-data-quality-break",
+      "team_slug": "revops-deal-desk-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "policy.enforce"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "revops-deal-desk-team-deadline-compression",
+      "team_slug": "revops-deal-desk-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "policy.enforce"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "revops-deal-desk-team-handoff-failure",
+      "team_slug": "revops-deal-desk-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "policy.enforce"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "incident-security-response-team-board-pressure",
+      "team_slug": "incident-security-response-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "incident-security-response-team-budget-shock",
+      "team_slug": "incident-security-response-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "incident-security-response-team-compliance-audit",
+      "team_slug": "incident-security-response-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "incident-security-response-team-vendor-failure",
+      "team_slug": "incident-security-response-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "incident-security-response-team-reputation-crisis",
+      "team_slug": "incident-security-response-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "incident-security-response-team-priority-conflict",
+      "team_slug": "incident-security-response-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "incident-security-response-team-scale-spike",
+      "team_slug": "incident-security-response-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "incident-security-response-team-data-quality-break",
+      "team_slug": "incident-security-response-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "incident-security-response-team-deadline-compression",
+      "team_slug": "incident-security-response-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "incident-security-response-team-handoff-failure",
+      "team_slug": "incident-security-response-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "devops-reliability-team-board-pressure",
+      "team_slug": "devops-reliability-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "devops-reliability-team-budget-shock",
+      "team_slug": "devops-reliability-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "devops-reliability-team-compliance-audit",
+      "team_slug": "devops-reliability-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "devops-reliability-team-vendor-failure",
+      "team_slug": "devops-reliability-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "devops-reliability-team-reputation-crisis",
+      "team_slug": "devops-reliability-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "devops-reliability-team-priority-conflict",
+      "team_slug": "devops-reliability-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "devops-reliability-team-scale-spike",
+      "team_slug": "devops-reliability-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "devops-reliability-team-data-quality-break",
+      "team_slug": "devops-reliability-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "devops-reliability-team-deadline-compression",
+      "team_slug": "devops-reliability-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "devops-reliability-team-handoff-failure",
+      "team_slug": "devops-reliability-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "product-strategy-discovery-team-board-pressure",
+      "team_slug": "product-strategy-discovery-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "product-strategy-discovery-team-budget-shock",
+      "team_slug": "product-strategy-discovery-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "product-strategy-discovery-team-compliance-audit",
+      "team_slug": "product-strategy-discovery-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "product-strategy-discovery-team-vendor-failure",
+      "team_slug": "product-strategy-discovery-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "product-strategy-discovery-team-reputation-crisis",
+      "team_slug": "product-strategy-discovery-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "product-strategy-discovery-team-priority-conflict",
+      "team_slug": "product-strategy-discovery-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "product-strategy-discovery-team-scale-spike",
+      "team_slug": "product-strategy-discovery-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "product-strategy-discovery-team-data-quality-break",
+      "team_slug": "product-strategy-discovery-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "product-strategy-discovery-team-deadline-compression",
+      "team_slug": "product-strategy-discovery-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "product-strategy-discovery-team-handoff-failure",
+      "team_slug": "product-strategy-discovery-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "research-publication-team-board-pressure",
+      "team_slug": "research-publication-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "research-publication-team-budget-shock",
+      "team_slug": "research-publication-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "research-publication-team-compliance-audit",
+      "team_slug": "research-publication-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "research-publication-team-vendor-failure",
+      "team_slug": "research-publication-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "research-publication-team-reputation-crisis",
+      "team_slug": "research-publication-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "research-publication-team-priority-conflict",
+      "team_slug": "research-publication-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "research-publication-team-scale-spike",
+      "team_slug": "research-publication-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "research-publication-team-data-quality-break",
+      "team_slug": "research-publication-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "research-publication-team-deadline-compression",
+      "team_slug": "research-publication-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "research-publication-team-handoff-failure",
+      "team_slug": "research-publication-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "ecommerce-ops-team-board-pressure",
+      "team_slug": "ecommerce-ops-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "ecommerce-ops-team-budget-shock",
+      "team_slug": "ecommerce-ops-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "ecommerce-ops-team-compliance-audit",
+      "team_slug": "ecommerce-ops-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "ecommerce-ops-team-vendor-failure",
+      "team_slug": "ecommerce-ops-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "ecommerce-ops-team-reputation-crisis",
+      "team_slug": "ecommerce-ops-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "ecommerce-ops-team-priority-conflict",
+      "team_slug": "ecommerce-ops-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "ecommerce-ops-team-scale-spike",
+      "team_slug": "ecommerce-ops-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "ecommerce-ops-team-data-quality-break",
+      "team_slug": "ecommerce-ops-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "ecommerce-ops-team-deadline-compression",
+      "team_slug": "ecommerce-ops-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "ecommerce-ops-team-handoff-failure",
+      "team_slug": "ecommerce-ops-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "hiring-people-ops-team-board-pressure",
+      "team_slug": "hiring-people-ops-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "hiring-people-ops-team-budget-shock",
+      "team_slug": "hiring-people-ops-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "hiring-people-ops-team-compliance-audit",
+      "team_slug": "hiring-people-ops-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "hiring-people-ops-team-vendor-failure",
+      "team_slug": "hiring-people-ops-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "hiring-people-ops-team-reputation-crisis",
+      "team_slug": "hiring-people-ops-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "hiring-people-ops-team-priority-conflict",
+      "team_slug": "hiring-people-ops-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "hiring-people-ops-team-scale-spike",
+      "team_slug": "hiring-people-ops-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "hiring-people-ops-team-data-quality-break",
+      "team_slug": "hiring-people-ops-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "hiring-people-ops-team-deadline-compression",
+      "team_slug": "hiring-people-ops-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "hiring-people-ops-team-handoff-failure",
+      "team_slug": "hiring-people-ops-team",
+      "score": 0.808,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "compliance-governance-team-board-pressure",
+      "team_slug": "compliance-governance-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "compliance-governance-team-budget-shock",
+      "team_slug": "compliance-governance-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "compliance-governance-team-compliance-audit",
+      "team_slug": "compliance-governance-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "compliance-governance-team-vendor-failure",
+      "team_slug": "compliance-governance-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "compliance-governance-team-reputation-crisis",
+      "team_slug": "compliance-governance-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "compliance-governance-team-priority-conflict",
+      "team_slug": "compliance-governance-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "compliance-governance-team-scale-spike",
+      "team_slug": "compliance-governance-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "compliance-governance-team-data-quality-break",
+      "team_slug": "compliance-governance-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "compliance-governance-team-deadline-compression",
+      "team_slug": "compliance-governance-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "compliance-governance-team-handoff-failure",
+      "team_slug": "compliance-governance-team",
+      "score": 0.933,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "content-studio-team-board-pressure",
+      "team_slug": "content-studio-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "boardbrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "content-studio-team-budget-shock",
+      "team_slug": "content-studio-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "costplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "content-studio-team-compliance-audit",
+      "team_slug": "content-studio-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compliancebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "content-studio-team-vendor-failure",
+      "team_slug": "content-studio-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "mitigationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "content-studio-team-reputation-crisis",
+      "team_slug": "content-studio-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "responsebrief"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "content-studio-team-priority-conflict",
+      "team_slug": "content-studio-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "prioritymatrix"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "content-studio-team-scale-spike",
+      "team_slug": "content-studio-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "capacityplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "content-studio-team-data-quality-break",
+      "team_slug": "content-studio-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "dataremediationplan"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "content-studio-team-deadline-compression",
+      "team_slug": "content-studio-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "compressedroadmap"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "content-studio-team-handoff-failure",
+      "team_slug": "content-studio-team",
+      "score": 0.833,
+      "capability_coverage": 0.8,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.667,
+      "missing_capabilities": [
+        "message.send"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "handoffprotocol"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-01-pr-radar",
+      "team_slug": "devops-reliability-team",
+      "score": 0.8,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-02-sla-guardian",
+      "team_slug": "customer-support-escalation-team",
+      "score": 0.675,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [
+        "memory.write"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": false
+    },
+    {
+      "scenario_id": "reddit-03-release-notes-pilot",
+      "team_slug": "content-studio-team",
+      "score": 0.8,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-06-pdf-ops-desk",
+      "team_slug": "research-publication-team",
+      "score": 0.8,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-07-ci-flake-doctor",
+      "team_slug": "devops-reliability-team",
+      "score": 0.8,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-10-model-cost-command-center",
+      "team_slug": "finance-control-team",
+      "score": 0.8,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-11-inbox-to-action",
+      "team_slug": "customer-support-escalation-team",
+      "score": 0.633,
+      "capability_coverage": 0.667,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [
+        "memory.write"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": false
+    },
+    {
+      "scenario_id": "reddit-14-weekly-research-digest",
+      "team_slug": "research-publication-team",
+      "score": 0.8,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-19-support-escalation-digest",
+      "team_slug": "customer-support-escalation-team",
+      "score": 0.675,
+      "capability_coverage": 0.75,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [
+        "memory.write"
+      ],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": false
+    },
+    {
+      "scenario_id": "reddit-20-product-changelog-curator",
+      "team_slug": "startup-exec-team",
+      "score": 0.867,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.333,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-31-dependency-risk-watch",
+      "team_slug": "devops-reliability-team",
+      "score": 0.8,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-34-ownerless-service-finder",
+      "team_slug": "devops-reliability-team",
+      "score": 0.8,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-43-renewal-risk-radar",
+      "team_slug": "revops-deal-desk-team",
+      "score": 0.8,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-47-trial-to-paid-optimizer",
+      "team_slug": "revops-deal-desk-team",
+      "score": 0.8,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-58-vip-inbox-priority",
+      "team_slug": "startup-exec-team",
+      "score": 0.867,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.333,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-66-competitive-intel-brief",
+      "team_slug": "product-strategy-discovery-team",
+      "score": 0.8,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-71-candidate-brief-generator",
+      "team_slug": "hiring-people-ops-team",
+      "score": 0.8,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-78-board-evidence-pack",
+      "team_slug": "startup-exec-team",
+      "score": 0.867,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.333,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-84-access-review-automation",
+      "team_slug": "compliance-governance-team",
+      "score": 0.8,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.0,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "decisionlog",
+        "statusreport"
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "reddit-90-it-intake-router",
+      "team_slug": "startup-exec-team",
+      "score": 0.867,
+      "capability_coverage": 1.0,
+      "role_coverage": 1.0,
+      "artifact_coverage": 0.333,
+      "missing_capabilities": [],
+      "missing_roles": [],
+      "missing_artifacts": [
+        "actionitems",
+        "statusreport"
+      ],
+      "pass": true
+    }
+  ],
+  "patched": {
+    "summary": {
+      "total": 170,
+      "pass": 170,
+      "avg_score": 0.89
+    },
+    "scenarios": [
+      {
+        "scenario_id": "startup-exec-team-board-pressure",
+        "team_slug": "startup-exec-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "startup-exec-team-budget-shock",
+        "team_slug": "startup-exec-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "startup-exec-team-compliance-audit",
+        "team_slug": "startup-exec-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "startup-exec-team-vendor-failure",
+        "team_slug": "startup-exec-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "startup-exec-team-reputation-crisis",
+        "team_slug": "startup-exec-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "startup-exec-team-priority-conflict",
+        "team_slug": "startup-exec-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "startup-exec-team-scale-spike",
+        "team_slug": "startup-exec-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "startup-exec-team-data-quality-break",
+        "team_slug": "startup-exec-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "startup-exec-team-deadline-compression",
+        "team_slug": "startup-exec-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "startup-exec-team-handoff-failure",
+        "team_slug": "startup-exec-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "founder-lean-team-board-pressure",
+        "team_slug": "founder-lean-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "founder-lean-team-budget-shock",
+        "team_slug": "founder-lean-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "founder-lean-team-compliance-audit",
+        "team_slug": "founder-lean-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "founder-lean-team-vendor-failure",
+        "team_slug": "founder-lean-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "founder-lean-team-reputation-crisis",
+        "team_slug": "founder-lean-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "founder-lean-team-priority-conflict",
+        "team_slug": "founder-lean-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "founder-lean-team-scale-spike",
+        "team_slug": "founder-lean-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "founder-lean-team-data-quality-break",
+        "team_slug": "founder-lean-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "founder-lean-team-deadline-compression",
+        "team_slug": "founder-lean-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "founder-lean-team-handoff-failure",
+        "team_slug": "founder-lean-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "finance-control-team-board-pressure",
+        "team_slug": "finance-control-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "analytics"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "finance-control-team-budget-shock",
+        "team_slug": "finance-control-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "analytics"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "finance-control-team-compliance-audit",
+        "team_slug": "finance-control-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "analytics"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "finance-control-team-vendor-failure",
+        "team_slug": "finance-control-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "analytics"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "finance-control-team-reputation-crisis",
+        "team_slug": "finance-control-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "analytics"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "finance-control-team-priority-conflict",
+        "team_slug": "finance-control-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "analytics"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "finance-control-team-scale-spike",
+        "team_slug": "finance-control-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "analytics"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "finance-control-team-data-quality-break",
+        "team_slug": "finance-control-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "analytics"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "finance-control-team-deadline-compression",
+        "team_slug": "finance-control-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "analytics"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "finance-control-team-handoff-failure",
+        "team_slug": "finance-control-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "analytics"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "go-to-market-war-room-team-board-pressure",
+        "team_slug": "go-to-market-war-room-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "go-to-market-war-room-team-budget-shock",
+        "team_slug": "go-to-market-war-room-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "go-to-market-war-room-team-compliance-audit",
+        "team_slug": "go-to-market-war-room-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "go-to-market-war-room-team-vendor-failure",
+        "team_slug": "go-to-market-war-room-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "go-to-market-war-room-team-reputation-crisis",
+        "team_slug": "go-to-market-war-room-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "go-to-market-war-room-team-priority-conflict",
+        "team_slug": "go-to-market-war-room-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "go-to-market-war-room-team-scale-spike",
+        "team_slug": "go-to-market-war-room-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "go-to-market-war-room-team-data-quality-break",
+        "team_slug": "go-to-market-war-room-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "go-to-market-war-room-team-deadline-compression",
+        "team_slug": "go-to-market-war-room-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "go-to-market-war-room-team-handoff-failure",
+        "team_slug": "go-to-market-war-room-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "community-growth-team-board-pressure",
+        "team_slug": "community-growth-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "risk.evaluate"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "community-growth-team-budget-shock",
+        "team_slug": "community-growth-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "risk.evaluate"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "community-growth-team-compliance-audit",
+        "team_slug": "community-growth-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "risk.evaluate"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "community-growth-team-vendor-failure",
+        "team_slug": "community-growth-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "risk.evaluate"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "community-growth-team-reputation-crisis",
+        "team_slug": "community-growth-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "risk.evaluate"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "community-growth-team-priority-conflict",
+        "team_slug": "community-growth-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "risk.evaluate"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "community-growth-team-scale-spike",
+        "team_slug": "community-growth-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "risk.evaluate"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "community-growth-team-data-quality-break",
+        "team_slug": "community-growth-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "risk.evaluate"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "community-growth-team-deadline-compression",
+        "team_slug": "community-growth-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "risk.evaluate"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "community-growth-team-handoff-failure",
+        "team_slug": "community-growth-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "risk.evaluate"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "customer-support-escalation-team-board-pressure",
+        "team_slug": "customer-support-escalation-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "customer-support-escalation-team-budget-shock",
+        "team_slug": "customer-support-escalation-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "customer-support-escalation-team-compliance-audit",
+        "team_slug": "customer-support-escalation-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "customer-support-escalation-team-vendor-failure",
+        "team_slug": "customer-support-escalation-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "customer-support-escalation-team-reputation-crisis",
+        "team_slug": "customer-support-escalation-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "customer-support-escalation-team-priority-conflict",
+        "team_slug": "customer-support-escalation-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "customer-support-escalation-team-scale-spike",
+        "team_slug": "customer-support-escalation-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "customer-support-escalation-team-data-quality-break",
+        "team_slug": "customer-support-escalation-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "customer-support-escalation-team-deadline-compression",
+        "team_slug": "customer-support-escalation-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "customer-support-escalation-team-handoff-failure",
+        "team_slug": "customer-support-escalation-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "revops-deal-desk-team-board-pressure",
+        "team_slug": "revops-deal-desk-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "policy.enforce"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "revops-deal-desk-team-budget-shock",
+        "team_slug": "revops-deal-desk-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "policy.enforce"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "revops-deal-desk-team-compliance-audit",
+        "team_slug": "revops-deal-desk-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "policy.enforce"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "revops-deal-desk-team-vendor-failure",
+        "team_slug": "revops-deal-desk-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "policy.enforce"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "revops-deal-desk-team-reputation-crisis",
+        "team_slug": "revops-deal-desk-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "policy.enforce"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "revops-deal-desk-team-priority-conflict",
+        "team_slug": "revops-deal-desk-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "policy.enforce"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "revops-deal-desk-team-scale-spike",
+        "team_slug": "revops-deal-desk-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "policy.enforce"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "revops-deal-desk-team-data-quality-break",
+        "team_slug": "revops-deal-desk-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "policy.enforce"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "revops-deal-desk-team-deadline-compression",
+        "team_slug": "revops-deal-desk-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "policy.enforce"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "revops-deal-desk-team-handoff-failure",
+        "team_slug": "revops-deal-desk-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "policy.enforce"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "incident-security-response-team-board-pressure",
+        "team_slug": "incident-security-response-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "incident-security-response-team-budget-shock",
+        "team_slug": "incident-security-response-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "incident-security-response-team-compliance-audit",
+        "team_slug": "incident-security-response-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "incident-security-response-team-vendor-failure",
+        "team_slug": "incident-security-response-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "incident-security-response-team-reputation-crisis",
+        "team_slug": "incident-security-response-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "incident-security-response-team-priority-conflict",
+        "team_slug": "incident-security-response-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "incident-security-response-team-scale-spike",
+        "team_slug": "incident-security-response-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "incident-security-response-team-data-quality-break",
+        "team_slug": "incident-security-response-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "incident-security-response-team-deadline-compression",
+        "team_slug": "incident-security-response-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "incident-security-response-team-handoff-failure",
+        "team_slug": "incident-security-response-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "devops-reliability-team-board-pressure",
+        "team_slug": "devops-reliability-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "devops-reliability-team-budget-shock",
+        "team_slug": "devops-reliability-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "devops-reliability-team-compliance-audit",
+        "team_slug": "devops-reliability-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "devops-reliability-team-vendor-failure",
+        "team_slug": "devops-reliability-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "devops-reliability-team-reputation-crisis",
+        "team_slug": "devops-reliability-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "devops-reliability-team-priority-conflict",
+        "team_slug": "devops-reliability-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "devops-reliability-team-scale-spike",
+        "team_slug": "devops-reliability-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "devops-reliability-team-data-quality-break",
+        "team_slug": "devops-reliability-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "devops-reliability-team-deadline-compression",
+        "team_slug": "devops-reliability-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "devops-reliability-team-handoff-failure",
+        "team_slug": "devops-reliability-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "product-strategy-discovery-team-board-pressure",
+        "team_slug": "product-strategy-discovery-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "product-strategy-discovery-team-budget-shock",
+        "team_slug": "product-strategy-discovery-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "product-strategy-discovery-team-compliance-audit",
+        "team_slug": "product-strategy-discovery-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "product-strategy-discovery-team-vendor-failure",
+        "team_slug": "product-strategy-discovery-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "product-strategy-discovery-team-reputation-crisis",
+        "team_slug": "product-strategy-discovery-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "product-strategy-discovery-team-priority-conflict",
+        "team_slug": "product-strategy-discovery-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "product-strategy-discovery-team-scale-spike",
+        "team_slug": "product-strategy-discovery-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "product-strategy-discovery-team-data-quality-break",
+        "team_slug": "product-strategy-discovery-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "product-strategy-discovery-team-deadline-compression",
+        "team_slug": "product-strategy-discovery-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "product-strategy-discovery-team-handoff-failure",
+        "team_slug": "product-strategy-discovery-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "research-publication-team-board-pressure",
+        "team_slug": "research-publication-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "research-publication-team-budget-shock",
+        "team_slug": "research-publication-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "research-publication-team-compliance-audit",
+        "team_slug": "research-publication-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "research-publication-team-vendor-failure",
+        "team_slug": "research-publication-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "research-publication-team-reputation-crisis",
+        "team_slug": "research-publication-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "research-publication-team-priority-conflict",
+        "team_slug": "research-publication-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "research-publication-team-scale-spike",
+        "team_slug": "research-publication-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "research-publication-team-data-quality-break",
+        "team_slug": "research-publication-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "research-publication-team-deadline-compression",
+        "team_slug": "research-publication-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "research-publication-team-handoff-failure",
+        "team_slug": "research-publication-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "ecommerce-ops-team-board-pressure",
+        "team_slug": "ecommerce-ops-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "ecommerce-ops-team-budget-shock",
+        "team_slug": "ecommerce-ops-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "ecommerce-ops-team-compliance-audit",
+        "team_slug": "ecommerce-ops-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "ecommerce-ops-team-vendor-failure",
+        "team_slug": "ecommerce-ops-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "ecommerce-ops-team-reputation-crisis",
+        "team_slug": "ecommerce-ops-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "ecommerce-ops-team-priority-conflict",
+        "team_slug": "ecommerce-ops-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "ecommerce-ops-team-scale-spike",
+        "team_slug": "ecommerce-ops-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "ecommerce-ops-team-data-quality-break",
+        "team_slug": "ecommerce-ops-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "ecommerce-ops-team-deadline-compression",
+        "team_slug": "ecommerce-ops-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "ecommerce-ops-team-handoff-failure",
+        "team_slug": "ecommerce-ops-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "hiring-people-ops-team-board-pressure",
+        "team_slug": "hiring-people-ops-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "hiring-people-ops-team-budget-shock",
+        "team_slug": "hiring-people-ops-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "hiring-people-ops-team-compliance-audit",
+        "team_slug": "hiring-people-ops-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "hiring-people-ops-team-vendor-failure",
+        "team_slug": "hiring-people-ops-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "hiring-people-ops-team-reputation-crisis",
+        "team_slug": "hiring-people-ops-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "hiring-people-ops-team-priority-conflict",
+        "team_slug": "hiring-people-ops-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "hiring-people-ops-team-scale-spike",
+        "team_slug": "hiring-people-ops-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "hiring-people-ops-team-data-quality-break",
+        "team_slug": "hiring-people-ops-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "hiring-people-ops-team-deadline-compression",
+        "team_slug": "hiring-people-ops-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "hiring-people-ops-team-handoff-failure",
+        "team_slug": "hiring-people-ops-team",
+        "score": 0.808,
+        "capability_coverage": 0.75,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "compliance-governance-team-board-pressure",
+        "team_slug": "compliance-governance-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "compliance-governance-team-budget-shock",
+        "team_slug": "compliance-governance-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "compliance-governance-team-compliance-audit",
+        "team_slug": "compliance-governance-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "compliance-governance-team-vendor-failure",
+        "team_slug": "compliance-governance-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "compliance-governance-team-reputation-crisis",
+        "team_slug": "compliance-governance-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "compliance-governance-team-priority-conflict",
+        "team_slug": "compliance-governance-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "compliance-governance-team-scale-spike",
+        "team_slug": "compliance-governance-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "compliance-governance-team-data-quality-break",
+        "team_slug": "compliance-governance-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "compliance-governance-team-deadline-compression",
+        "team_slug": "compliance-governance-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "compliance-governance-team-handoff-failure",
+        "team_slug": "compliance-governance-team",
+        "score": 0.933,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "content-studio-team-board-pressure",
+        "team_slug": "content-studio-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "boardbrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "content-studio-team-budget-shock",
+        "team_slug": "content-studio-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "costplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "content-studio-team-compliance-audit",
+        "team_slug": "content-studio-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compliancebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "content-studio-team-vendor-failure",
+        "team_slug": "content-studio-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "mitigationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "content-studio-team-reputation-crisis",
+        "team_slug": "content-studio-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "responsebrief"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "content-studio-team-priority-conflict",
+        "team_slug": "content-studio-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "prioritymatrix"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "content-studio-team-scale-spike",
+        "team_slug": "content-studio-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "capacityplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "content-studio-team-data-quality-break",
+        "team_slug": "content-studio-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "dataremediationplan"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "content-studio-team-deadline-compression",
+        "team_slug": "content-studio-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "compressedroadmap"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "content-studio-team-handoff-failure",
+        "team_slug": "content-studio-team",
+        "score": 0.833,
+        "capability_coverage": 0.8,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.667,
+        "missing_capabilities": [
+          "message.send"
+        ],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "handoffprotocol"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-01-pr-radar",
+        "team_slug": "devops-reliability-team",
+        "score": 0.8,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-02-sla-guardian",
+        "team_slug": "customer-support-escalation-team",
+        "score": 1.0,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 1.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-03-release-notes-pilot",
+        "team_slug": "content-studio-team",
+        "score": 0.8,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-06-pdf-ops-desk",
+        "team_slug": "research-publication-team",
+        "score": 0.8,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-07-ci-flake-doctor",
+        "team_slug": "devops-reliability-team",
+        "score": 0.8,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-10-model-cost-command-center",
+        "team_slug": "finance-control-team",
+        "score": 0.8,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-11-inbox-to-action",
+        "team_slug": "customer-support-escalation-team",
+        "score": 1.0,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 1.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-14-weekly-research-digest",
+        "team_slug": "research-publication-team",
+        "score": 0.8,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-19-support-escalation-digest",
+        "team_slug": "customer-support-escalation-team",
+        "score": 1.0,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 1.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-20-product-changelog-curator",
+        "team_slug": "startup-exec-team",
+        "score": 0.867,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.333,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-31-dependency-risk-watch",
+        "team_slug": "devops-reliability-team",
+        "score": 0.8,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-34-ownerless-service-finder",
+        "team_slug": "devops-reliability-team",
+        "score": 0.8,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-43-renewal-risk-radar",
+        "team_slug": "revops-deal-desk-team",
+        "score": 0.8,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-47-trial-to-paid-optimizer",
+        "team_slug": "revops-deal-desk-team",
+        "score": 0.8,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-58-vip-inbox-priority",
+        "team_slug": "startup-exec-team",
+        "score": 0.867,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.333,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-66-competitive-intel-brief",
+        "team_slug": "product-strategy-discovery-team",
+        "score": 0.8,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-71-candidate-brief-generator",
+        "team_slug": "hiring-people-ops-team",
+        "score": 0.8,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-78-board-evidence-pack",
+        "team_slug": "startup-exec-team",
+        "score": 0.867,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.333,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-84-access-review-automation",
+        "team_slug": "compliance-governance-team",
+        "score": 0.8,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.0,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
+        "pass": true
+      },
+      {
+        "scenario_id": "reddit-90-it-intake-router",
+        "team_slug": "startup-exec-team",
+        "score": 0.867,
+        "capability_coverage": 1.0,
+        "role_coverage": 1.0,
+        "artifact_coverage": 0.333,
+        "missing_capabilities": [],
+        "missing_roles": [],
+        "missing_artifacts": [
+          "actionitems",
+          "statusreport"
+        ],
+        "pass": true
+      }
+    ]
+  }
+}

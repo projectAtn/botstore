@@ -1,0 +1,637 @@
+{
+  "version": "0.3.0",
+  "generatedAt": "2026-03-18",
+  "team_packs": [
+    {
+      "slug": "startup-exec-team",
+      "title": "Startup Exec Team",
+      "purpose": "Founder weekly operating rhythm.",
+      "team_type": "executive",
+      "shared_skills": [
+        "crm-sync-bidirectional",
+        "calendar-ops-coordinator",
+        "proposal-generator"
+      ],
+      "roles": [
+        {
+          "role": "CEO",
+          "personality_slug": "calm-chief-of-staff-persona",
+          "owned_skills": [
+            "product-strategy-operator"
+          ],
+          "deliverables": [
+            "strategy-memo",
+            "decision-log"
+          ]
+        },
+        {
+          "role": "CFO",
+          "personality_slug": "strict-compliance-officer-persona",
+          "owned_skills": [
+            "invoice-reconciliation",
+            "expense-policy-auditor"
+          ],
+          "deliverables": [
+            "runway-report",
+            "budget-risk-register"
+          ]
+        },
+        {
+          "role": "CMO",
+          "personality_slug": "growth-hacker-persona",
+          "owned_skills": [
+            "seo-brief-builder",
+            "shortform-content-factory"
+          ],
+          "deliverables": [
+            "growth-plan",
+            "campaign-report"
+          ]
+        },
+        {
+          "role": "COO",
+          "personality_slug": "grumpy-sre-persona",
+          "owned_skills": [
+            "incident-triage-commander"
+          ],
+          "deliverables": [
+            "execution-review",
+            "owner-plan"
+          ]
+        }
+      ],
+      "risk_level": "medium"
+    },
+    {
+      "slug": "founder-lean-team",
+      "title": "Founder Lean Team",
+      "purpose": "2-4 person startup command center.",
+      "team_type": "executive",
+      "shared_skills": [
+        "waitlist-converter",
+        "churn-early-warning"
+      ],
+      "roles": [
+        {
+          "role": "Founder",
+          "personality_slug": "calm-chief-of-staff-persona",
+          "owned_skills": [
+            "proposal-generator"
+          ],
+          "deliverables": [
+            "weekly-plan",
+            "decision-log"
+          ]
+        },
+        {
+          "role": "Growth Lead",
+          "personality_slug": "growth-hacker-persona",
+          "owned_skills": [
+            "ad-creative-variant-lab"
+          ],
+          "deliverables": [
+            "experiment-board"
+          ]
+        },
+        {
+          "role": "Ops Lead",
+          "personality_slug": "grumpy-sre-persona",
+          "owned_skills": [
+            "self-host-healthcheck"
+          ],
+          "deliverables": [
+            "ops-checklist"
+          ]
+        }
+      ],
+      "risk_level": "medium"
+    },
+    {
+      "slug": "finance-control-team",
+      "title": "Finance Control Team",
+      "purpose": "Cash discipline and financial hygiene.",
+      "team_type": "finance",
+      "shared_skills": [
+        "invoice-reconciliation",
+        "expense-policy-auditor",
+        "cloud-cost-analyzer"
+      ],
+      "roles": [
+        {
+          "role": "CFO",
+          "personality_slug": "strict-compliance-officer-persona",
+          "owned_skills": [
+            "invoice-reconciliation"
+          ],
+          "deliverables": [
+            "runway-report",
+            "variance-report"
+          ]
+        },
+        {
+          "role": "RevOps Analyst",
+          "personality_slug": "calm-chief-of-staff-persona",
+          "owned_skills": [
+            "crm-sync-bidirectional"
+          ],
+          "deliverables": [
+            "forecast-sheet"
+          ]
+        },
+        {
+          "role": "Policy Officer",
+          "personality_slug": "strict-compliance-officer-persona",
+          "owned_skills": [
+            "policy-compliance-guard"
+          ],
+          "deliverables": [
+            "approval-log"
+          ]
+        }
+      ],
+      "risk_level": "medium"
+    },
+    {
+      "slug": "go-to-market-war-room-team",
+      "title": "Go-To-Market War Room Team",
+      "purpose": "Launch planning and fast feedback loop.",
+      "team_type": "go-to-market",
+      "shared_skills": [
+        "launch-feedback-summarizer",
+        "persona-signal-miner",
+        "prompt-market-researcher"
+      ],
+      "roles": [
+        {
+          "role": "CMO",
+          "personality_slug": "growth-hacker-persona",
+          "owned_skills": [
+            "landing-page-ab-orchestrator",
+            "ad-creative-variant-lab"
+          ],
+          "deliverables": [
+            "launch-plan",
+            "experiment-matrix"
+          ]
+        },
+        {
+          "role": "Head of Community",
+          "personality_slug": "community-hype-manager-persona",
+          "owned_skills": [
+            "telegram-community-manager",
+            "discord-community-manager",
+            "whatsapp-support-copilot"
+          ],
+          "deliverables": [
+            "community-loop",
+            "engagement-report"
+          ]
+        },
+        {
+          "role": "Research Editor",
+          "personality_slug": "research-librarian-persona",
+          "owned_skills": [
+            "citation-verifier"
+          ],
+          "deliverables": [
+            "claims-check",
+            "evidence-appendix"
+          ]
+        }
+      ],
+      "risk_level": "medium"
+    },
+    {
+      "slug": "community-growth-team",
+      "title": "Community Growth Team",
+      "purpose": "Grow and moderate communities across channels.",
+      "team_type": "community",
+      "shared_skills": [
+        "telegram-community-manager",
+        "discord-community-manager",
+        "whatsapp-support-copilot"
+      ],
+      "roles": [
+        {
+          "role": "Community Lead",
+          "personality_slug": "community-hype-manager-persona",
+          "owned_skills": [
+            "reddit-scout-pro"
+          ],
+          "deliverables": [
+            "engagement-plan",
+            "weekly-summary"
+          ]
+        },
+        {
+          "role": "Support Lead",
+          "personality_slug": "empathetic-support-ally-persona",
+          "owned_skills": [
+            "knowledge-base-curator"
+          ],
+          "deliverables": [
+            "deflection-playbook",
+            "escalation-log"
+          ]
+        }
+      ],
+      "risk_level": "medium"
+    },
+    {
+      "slug": "customer-support-escalation-team",
+      "title": "Customer Support Escalation Team",
+      "purpose": "Fast issue resolution with high empathy and safe escalation.",
+      "team_type": "support",
+      "shared_skills": [
+        "transcript-to-action-items",
+        "knowledge-base-curator",
+        "gilgamesh-king"
+      ],
+      "roles": [
+        {
+          "role": "Head of Support",
+          "personality_slug": "empathetic-support-ally-persona",
+          "owned_skills": [
+            "whatsapp-support-copilot"
+          ],
+          "deliverables": [
+            "resolution-log",
+            "csat-actions",
+            "actionitems",
+            "decisionlog",
+            "statusreport"
+          ]
+        },
+        {
+          "role": "Ops Lead",
+          "personality_slug": "calm-chief-of-staff-persona",
+          "owned_skills": [
+            "incident-triage-commander"
+          ],
+          "deliverables": [
+            "escalation-plan"
+          ]
+        }
+      ],
+      "risk_level": "medium"
+    },
+    {
+      "slug": "revops-deal-desk-team",
+      "title": "RevOps Deal Desk Team",
+      "purpose": "Close faster, cleaner handoffs, lower deal risk.",
+      "team_type": "revenue",
+      "shared_skills": [
+        "sales-call-prep-kit",
+        "proposal-generator",
+        "contract-risk-highlighter",
+        "renewal-expansion-coach"
+      ],
+      "roles": [
+        {
+          "role": "CRO",
+          "personality_slug": "conversion-closer-persona",
+          "owned_skills": [
+            "lead-enrichment-finder",
+            "waitlist-converter"
+          ],
+          "deliverables": [
+            "deal-plan",
+            "close-forecast"
+          ]
+        },
+        {
+          "role": "Head of RevOps",
+          "personality_slug": "calm-chief-of-staff-persona",
+          "owned_skills": [
+            "crm-sync-bidirectional",
+            "churn-early-warning"
+          ],
+          "deliverables": [
+            "pipeline-health",
+            "handoff-checklist"
+          ]
+        },
+        {
+          "role": "Policy Officer",
+          "personality_slug": "strict-compliance-officer-persona",
+          "owned_skills": [
+            "contract-risk-highlighter"
+          ],
+          "deliverables": [
+            "compliance-approval-note"
+          ]
+        }
+      ],
+      "risk_level": "medium"
+    },
+    {
+      "slug": "incident-security-response-team",
+      "title": "Incident Security Response Team",
+      "purpose": "Contain incidents and communicate clearly under pressure.",
+      "team_type": "security-ops",
+      "shared_skills": [
+        "security-alert-triager",
+        "deploy-rollback-guardian",
+        "log-anomaly-sleuth",
+        "secret-rotation-reminder",
+        "backup-drill-coordinator"
+      ],
+      "roles": [
+        {
+          "role": "Head of Security Ops",
+          "personality_slug": "forensic-analyst-persona",
+          "owned_skills": [
+            "incident-triage-commander"
+          ],
+          "deliverables": [
+            "incident-timeline",
+            "containment-plan"
+          ]
+        },
+        {
+          "role": "SRE Lead",
+          "personality_slug": "grumpy-sre-persona",
+          "owned_skills": [
+            "self-host-healthcheck"
+          ],
+          "deliverables": [
+            "service-status",
+            "rollback-log"
+          ]
+        },
+        {
+          "role": "Policy Officer",
+          "personality_slug": "strict-compliance-officer-persona",
+          "owned_skills": [
+            "policy-compliance-guard"
+          ],
+          "deliverables": [
+            "regulatory-note",
+            "approval-record"
+          ]
+        }
+      ],
+      "risk_level": "high"
+    },
+    {
+      "slug": "devops-reliability-team",
+      "title": "DevOps Reliability Team",
+      "purpose": "Improve release safety and uptime consistency.",
+      "team_type": "devops",
+      "shared_skills": [
+        "deploy-rollback-guardian",
+        "incident-triage-commander",
+        "self-host-healthcheck"
+      ],
+      "roles": [
+        {
+          "role": "SRE Lead",
+          "personality_slug": "grumpy-sre-persona",
+          "owned_skills": [
+            "log-anomaly-sleuth"
+          ],
+          "deliverables": [
+            "uptime-report",
+            "error-budget-note"
+          ]
+        },
+        {
+          "role": "Platform Engineer",
+          "personality_slug": "forensic-analyst-persona",
+          "owned_skills": [
+            "tool-health-monitor"
+          ],
+          "deliverables": [
+            "platform-checklist"
+          ]
+        }
+      ],
+      "risk_level": "medium"
+    },
+    {
+      "slug": "product-strategy-discovery-team",
+      "title": "Product Strategy Discovery Team",
+      "purpose": "Tie user pain to roadmap decisions.",
+      "team_type": "product",
+      "shared_skills": [
+        "user-painpoint-clusterer",
+        "persona-signal-miner",
+        "competitor-feature-tracker"
+      ],
+      "roles": [
+        {
+          "role": "Head of Product",
+          "personality_slug": "product-strategist-persona",
+          "owned_skills": [
+            "keyword-cluster-mapper"
+          ],
+          "deliverables": [
+            "roadmap-memo",
+            "tradeoff-matrix"
+          ]
+        },
+        {
+          "role": "Research Analyst",
+          "personality_slug": "research-librarian-persona",
+          "owned_skills": [
+            "citation-verifier"
+          ],
+          "deliverables": [
+            "evidence-log"
+          ]
+        }
+      ],
+      "risk_level": "low"
+    },
+    {
+      "slug": "research-publication-team",
+      "title": "Research Publication Team",
+      "purpose": "Source-grounded research to publish-ready outputs.",
+      "team_type": "research",
+      "shared_skills": [
+        "paper-to-notes",
+        "transcript-to-action-items",
+        "rag-index-maintainer",
+        "citation-verifier"
+      ],
+      "roles": [
+        {
+          "role": "Head of Research",
+          "personality_slug": "research-librarian-persona",
+          "owned_skills": [
+            "paper-to-notes"
+          ],
+          "deliverables": [
+            "evidence-brief",
+            "citation-log"
+          ]
+        },
+        {
+          "role": "Product Strategist",
+          "personality_slug": "product-strategist-persona",
+          "owned_skills": [
+            "keyword-cluster-mapper"
+          ],
+          "deliverables": [
+            "insight-summary",
+            "decision-notes"
+          ]
+        },
+        {
+          "role": "Creative Director",
+          "personality_slug": "playful-creator-persona",
+          "owned_skills": [
+            "thumbnail-brief-generator",
+            "shortform-content-factory"
+          ],
+          "deliverables": [
+            "publication-assets",
+            "distribution-pack"
+          ]
+        }
+      ],
+      "risk_level": "low"
+    },
+    {
+      "slug": "ecommerce-ops-team",
+      "title": "E-commerce Ops Team",
+      "purpose": "Optimize catalog conversion and inventory planning.",
+      "team_type": "commerce",
+      "shared_skills": [
+        "ecommerce-listing-optimizer",
+        "inventory-demand-forecaster",
+        "price-change-sentinel"
+      ],
+      "roles": [
+        {
+          "role": "Commerce Lead",
+          "personality_slug": "growth-hacker-persona",
+          "owned_skills": [
+            "ad-creative-variant-lab"
+          ],
+          "deliverables": [
+            "conversion-report",
+            "pricing-watch"
+          ]
+        },
+        {
+          "role": "Ops Planner",
+          "personality_slug": "calm-chief-of-staff-persona",
+          "owned_skills": [
+            "inventory-demand-forecaster"
+          ],
+          "deliverables": [
+            "stock-plan"
+          ]
+        }
+      ],
+      "risk_level": "medium"
+    },
+    {
+      "slug": "hiring-people-ops-team",
+      "title": "Hiring & People Ops Team",
+      "purpose": "Build hiring pipeline and improve people operations.",
+      "team_type": "people",
+      "shared_skills": [
+        "job-application-accelerator",
+        "calendar-ops-coordinator"
+      ],
+      "roles": [
+        {
+          "role": "CHRO",
+          "personality_slug": "empathetic-support-ally-persona",
+          "owned_skills": [
+            "proposal-generator"
+          ],
+          "deliverables": [
+            "hiring-plan",
+            "policy-note"
+          ]
+        },
+        {
+          "role": "Recruiting Ops",
+          "personality_slug": "calm-chief-of-staff-persona",
+          "owned_skills": [
+            "inbox-triage-pro"
+          ],
+          "deliverables": [
+            "candidate-pipeline",
+            "interview-schedule"
+          ]
+        }
+      ],
+      "risk_level": "low"
+    },
+    {
+      "slug": "compliance-governance-team",
+      "title": "Compliance Governance Team",
+      "purpose": "Policy control, approvals, and risk governance.",
+      "team_type": "governance",
+      "shared_skills": [
+        "policy-compliance-guard",
+        "policy-drift-detector",
+        "approval-policy-brain"
+      ],
+      "roles": [
+        {
+          "role": "Policy Officer",
+          "personality_slug": "strict-compliance-officer-persona",
+          "owned_skills": [
+            "contract-risk-highlighter"
+          ],
+          "deliverables": [
+            "policy-decision-log",
+            "approval-record"
+          ]
+        },
+        {
+          "role": "Privacy Officer",
+          "personality_slug": "local-first-privacy-guardian-persona",
+          "owned_skills": [
+            "pii-redaction-firewall"
+          ],
+          "deliverables": [
+            "privacy-risk-note"
+          ]
+        }
+      ],
+      "risk_level": "high"
+    },
+    {
+      "slug": "content-studio-team",
+      "title": "Content Studio Team",
+      "purpose": "From research insight to multi-format content assets.",
+      "team_type": "content",
+      "shared_skills": [
+        "shortform-content-factory",
+        "thumbnail-brief-generator",
+        "podcast-to-clips",
+        "seo-brief-builder"
+      ],
+      "roles": [
+        {
+          "role": "Creative Director",
+          "personality_slug": "playful-creator-persona",
+          "owned_skills": [
+            "shortform-content-factory"
+          ],
+          "deliverables": [
+            "content-brief",
+            "asset-batch"
+          ]
+        },
+        {
+          "role": "Research Editor",
+          "personality_slug": "research-librarian-persona",
+          "owned_skills": [
+            "citation-verifier"
+          ],
+          "deliverables": [
+            "source-check"
+          ]
+        }
+      ],
+      "risk_level": "low"
+    }
+  ]
+}
