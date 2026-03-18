@@ -272,7 +272,9 @@
       "scopes": [
         "files.read",
         "files.write",
-        "message.send"
+        "message.send",
+        "followup.send",
+        "email.send"
       ],
       "risk_level": "medium",
       "quality_tests": [
@@ -364,7 +366,10 @@
       "scopes": [
         "files.read",
         "files.write",
-        "message.send"
+        "message.send",
+        "email.read",
+        "email.send",
+        "followup.send"
       ],
       "risk_level": "medium",
       "quality_tests": [
@@ -387,7 +392,10 @@
       "scopes": [
         "files.read",
         "files.write",
-        "memory.write"
+        "memory.write",
+        "calendar.read",
+        "calendar.write",
+        "followup.send"
       ],
       "risk_level": "low",
       "quality_tests": [
@@ -410,7 +418,12 @@
       "scopes": [
         "files.read",
         "files.write",
-        "memory.write"
+        "memory.write",
+        "email.read",
+        "email.send",
+        "calendar.read",
+        "calendar.write",
+        "followup.send"
       ],
       "risk_level": "low",
       "quality_tests": [
@@ -755,7 +768,9 @@
       "scopes": [
         "files.read",
         "files.write",
-        "memory.write"
+        "memory.write",
+        "writing",
+        "social.post"
       ],
       "risk_level": "low",
       "quality_tests": [
@@ -778,7 +793,11 @@
       "scopes": [
         "files.read",
         "files.write",
-        "memory.write"
+        "memory.write",
+        "writing",
+        "social.post",
+        "workflow",
+        "analytics"
       ],
       "risk_level": "low",
       "quality_tests": [
@@ -824,7 +843,10 @@
       "scopes": [
         "web.search",
         "web.fetch",
-        "files.write"
+        "files.write",
+        "writing",
+        "seo",
+        "analytics"
       ],
       "risk_level": "low",
       "quality_tests": [
@@ -847,7 +869,9 @@
       "scopes": [
         "files.read",
         "files.write",
-        "memory.write"
+        "memory.write",
+        "seo",
+        "analytics"
       ],
       "risk_level": "low",
       "quality_tests": [
@@ -870,7 +894,10 @@
       "scopes": [
         "files.read",
         "files.write",
-        "memory.write"
+        "memory.write",
+        "writing",
+        "social.post",
+        "analytics"
       ],
       "risk_level": "low",
       "quality_tests": [
@@ -893,7 +920,9 @@
       "scopes": [
         "files.read",
         "files.write",
-        "memory.write"
+        "memory.write",
+        "workflow",
+        "analytics"
       ],
       "risk_level": "low",
       "quality_tests": [
@@ -985,7 +1014,10 @@
       "scopes": [
         "files.read",
         "files.write",
-        "message.send"
+        "message.send",
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate"
       ],
       "risk_level": "medium",
       "quality_tests": [
@@ -1008,7 +1040,11 @@
       "scopes": [
         "files.read",
         "files.write",
-        "message.send"
+        "message.send",
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate",
+        "policy.enforce"
       ],
       "risk_level": "medium",
       "quality_tests": [
@@ -1031,7 +1067,10 @@
       "scopes": [
         "files.read",
         "files.write",
-        "memory.write"
+        "memory.write",
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate"
       ],
       "risk_level": "low",
       "quality_tests": [
@@ -1077,7 +1116,11 @@
       "scopes": [
         "files.read",
         "files.write",
-        "message.send"
+        "message.send",
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate",
+        "policy.enforce"
       ],
       "risk_level": "medium",
       "quality_tests": [
@@ -1100,7 +1143,10 @@
       "scopes": [
         "files.read",
         "files.write",
-        "message.send"
+        "message.send",
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate"
       ],
       "risk_level": "medium",
       "quality_tests": [
@@ -1123,7 +1169,10 @@
       "scopes": [
         "files.read",
         "files.write",
-        "message.send"
+        "message.send",
+        "audit.log.read",
+        "audit.log.write",
+        "risk.evaluate"
       ],
       "risk_level": "medium",
       "quality_tests": [

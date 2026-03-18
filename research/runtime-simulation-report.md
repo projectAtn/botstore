@@ -22,7 +22,7 @@ Final verified (tier+risk gate): 62
 | `whatsapp-support-copilot` | skill | medium | 100 | gold | ✅ | ✅ |
 | `email-outreach-sequencer` | skill | medium | 100 | gold | ✅ | ✅ |
 | `calendar-ops-coordinator` | skill | low | 100 | gold | ✅ | ✅ |
-| `crm-sync-bidirectional` | skill | low | 100 | gold | ✅ | ✅ |
+| `crm-sync-bidirectional` | skill | low | 75 | bronze | ✅ | ✅ |
 | `lead-enrichment-finder` | skill | low | 100 | gold | ✅ | ✅ |
 | `sales-call-prep-kit` | skill | low | 100 | gold | ✅ | ✅ |
 | `proposal-generator` | skill | low | 100 | gold | ✅ | ✅ |
@@ -37,12 +37,12 @@ Final verified (tier+risk gate): 62
 | `citation-verifier` | skill | low | 100 | gold | ✅ | ✅ |
 | `paper-to-notes` | skill | low | 100 | gold | ✅ | ✅ |
 | `transcript-to-action-items` | skill | medium | 100 | gold | ✅ | ✅ |
-| `podcast-to-clips` | skill | low | 100 | gold | ✅ | ✅ |
-| `shortform-content-factory` | skill | low | 100 | gold | ✅ | ✅ |
+| `podcast-to-clips` | skill | low | 75 | bronze | ✅ | ✅ |
+| `shortform-content-factory` | skill | low | 75 | bronze | ✅ | ✅ |
 | `thumbnail-brief-generator` | skill | low | 100 | gold | ✅ | ✅ |
 | `seo-brief-builder` | skill | low | 100 | gold | ✅ | ✅ |
 | `keyword-cluster-mapper` | skill | low | 100 | gold | ✅ | ✅ |
-| `ad-creative-variant-lab` | skill | low | 100 | gold | ✅ | ✅ |
+| `ad-creative-variant-lab` | skill | low | 75 | bronze | ✅ | ✅ |
 | `landing-page-ab-orchestrator` | skill | low | 100 | gold | ✅ | ✅ |
 | `ecommerce-listing-optimizer` | skill | low | 100 | gold | ✅ | ✅ |
 | `price-change-sentinel` | skill | medium | 100 | gold | ✅ | ✅ |
@@ -137,7 +137,7 @@ Final verified (tier+risk gate): 62
 - ✅ **has_min_quality_tests** — quality_tests=3
 
 ### Waitlist Converter (`waitlist-converter`) — tier: gold, required: 85, score: 100
-- ✅ **declares_scopes** — scope_count=3
+- ✅ **declares_scopes** — scope_count=5
 - ✅ **risk_matches_scope_sensitivity** — has_sensitive=True, risk=medium
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
@@ -161,20 +161,20 @@ Final verified (tier+risk gate): 62
 - ✅ **has_min_quality_tests** — quality_tests=3
 
 ### Email Outreach Sequencer (`email-outreach-sequencer`) — tier: gold, required: 85, score: 100
-- ✅ **declares_scopes** — scope_count=3
+- ✅ **declares_scopes** — scope_count=6
 - ✅ **risk_matches_scope_sensitivity** — has_sensitive=True, risk=medium
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
 
 ### Calendar Ops Coordinator (`calendar-ops-coordinator`) — tier: gold, required: 75, score: 100
-- ✅ **declares_scopes** — scope_count=3
+- ✅ **declares_scopes** — scope_count=6
 - ✅ **risk_matches_scope_sensitivity** — has_sensitive=False, risk=low
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
 
-### CRM Sync Bidirectional (`crm-sync-bidirectional`) — tier: gold, required: 75, score: 100
-- ✅ **declares_scopes** — scope_count=3
-- ✅ **risk_matches_scope_sensitivity** — has_sensitive=False, risk=low
+### CRM Sync Bidirectional (`crm-sync-bidirectional`) — tier: bronze, required: 75, score: 75
+- ✅ **declares_scopes** — scope_count=8
+- ❌ **risk_matches_scope_sensitivity** — has_sensitive=True, risk=low
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
 
@@ -262,15 +262,15 @@ Final verified (tier+risk gate): 62
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
 
-### Podcast to Clips (`podcast-to-clips`) — tier: gold, required: 75, score: 100
-- ✅ **declares_scopes** — scope_count=3
-- ✅ **risk_matches_scope_sensitivity** — has_sensitive=False, risk=low
+### Podcast to Clips (`podcast-to-clips`) — tier: bronze, required: 75, score: 75
+- ✅ **declares_scopes** — scope_count=5
+- ❌ **risk_matches_scope_sensitivity** — has_sensitive=True, risk=low
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
 
-### Shortform Content Factory (`shortform-content-factory`) — tier: gold, required: 75, score: 100
-- ✅ **declares_scopes** — scope_count=3
-- ✅ **risk_matches_scope_sensitivity** — has_sensitive=False, risk=low
+### Shortform Content Factory (`shortform-content-factory`) — tier: bronze, required: 75, score: 75
+- ✅ **declares_scopes** — scope_count=7
+- ❌ **risk_matches_scope_sensitivity** — has_sensitive=True, risk=low
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
 
@@ -281,25 +281,25 @@ Final verified (tier+risk gate): 62
 - ✅ **has_min_quality_tests** — quality_tests=3
 
 ### SEO Brief Builder (`seo-brief-builder`) — tier: gold, required: 75, score: 100
-- ✅ **declares_scopes** — scope_count=3
+- ✅ **declares_scopes** — scope_count=6
 - ✅ **risk_matches_scope_sensitivity** — has_sensitive=False, risk=low
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
 
 ### Keyword Cluster Mapper (`keyword-cluster-mapper`) — tier: gold, required: 75, score: 100
-- ✅ **declares_scopes** — scope_count=3
+- ✅ **declares_scopes** — scope_count=5
 - ✅ **risk_matches_scope_sensitivity** — has_sensitive=False, risk=low
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
 
-### Ad Creative Variant Lab (`ad-creative-variant-lab`) — tier: gold, required: 75, score: 100
-- ✅ **declares_scopes** — scope_count=3
-- ✅ **risk_matches_scope_sensitivity** — has_sensitive=False, risk=low
+### Ad Creative Variant Lab (`ad-creative-variant-lab`) — tier: bronze, required: 75, score: 75
+- ✅ **declares_scopes** — scope_count=6
+- ❌ **risk_matches_scope_sensitivity** — has_sensitive=True, risk=low
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
 
 ### Landing Page A/B Orchestrator (`landing-page-ab-orchestrator`) — tier: gold, required: 75, score: 100
-- ✅ **declares_scopes** — scope_count=3
+- ✅ **declares_scopes** — scope_count=5
 - ✅ **risk_matches_scope_sensitivity** — has_sensitive=False, risk=low
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
@@ -323,19 +323,19 @@ Final verified (tier+risk gate): 62
 - ✅ **has_min_quality_tests** — quality_tests=3
 
 ### Incident Triage Commander (`incident-triage-commander`) — tier: gold, required: 85, score: 100
-- ✅ **declares_scopes** — scope_count=3
+- ✅ **declares_scopes** — scope_count=6
 - ✅ **risk_matches_scope_sensitivity** — has_sensitive=True, risk=medium
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
 
 ### Deploy Rollback Guardian (`deploy-rollback-guardian`) — tier: gold, required: 85, score: 100
-- ✅ **declares_scopes** — scope_count=3
+- ✅ **declares_scopes** — scope_count=7
 - ✅ **risk_matches_scope_sensitivity** — has_sensitive=True, risk=medium
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
 
 ### Log Anomaly Sleuth (`log-anomaly-sleuth`) — tier: gold, required: 75, score: 100
-- ✅ **declares_scopes** — scope_count=3
+- ✅ **declares_scopes** — scope_count=6
 - ✅ **risk_matches_scope_sensitivity** — has_sensitive=False, risk=low
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
@@ -347,19 +347,19 @@ Final verified (tier+risk gate): 62
 - ✅ **has_min_quality_tests** — quality_tests=3
 
 ### Security Alert Triager (`security-alert-triager`) — tier: gold, required: 85, score: 100
-- ✅ **declares_scopes** — scope_count=3
+- ✅ **declares_scopes** — scope_count=7
 - ✅ **risk_matches_scope_sensitivity** — has_sensitive=True, risk=medium
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
 
 ### Secret Rotation Reminder (`secret-rotation-reminder`) — tier: gold, required: 85, score: 100
-- ✅ **declares_scopes** — scope_count=3
+- ✅ **declares_scopes** — scope_count=6
 - ✅ **risk_matches_scope_sensitivity** — has_sensitive=True, risk=medium
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3
 
 ### Backup Drill Coordinator (`backup-drill-coordinator`) — tier: gold, required: 85, score: 100
-- ✅ **declares_scopes** — scope_count=3
+- ✅ **declares_scopes** — scope_count=6
 - ✅ **risk_matches_scope_sensitivity** — has_sensitive=True, risk=medium
 - ✅ **has_recoverability_or_audit_signal** — includes fallback/retry/audit/log/escalation/rollback
 - ✅ **has_min_quality_tests** — quality_tests=3

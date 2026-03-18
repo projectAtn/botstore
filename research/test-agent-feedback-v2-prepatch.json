@@ -1,0 +1,244 @@
+{
+  "generatedAt": "2026-03-18T06:19:40.709734Z",
+  "agents": {
+    "agent-alpha-ops": {
+      "need": "triage inbox schedule meetings send followups",
+      "required_capabilities": [
+        "calendar.read",
+        "email.send",
+        "calendar.write",
+        "followup.send",
+        "email.read"
+      ],
+      "top": [
+        {
+          "slug": "telegram-community-manager",
+          "title": "Telegram Community Manager",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "discord-community-manager",
+          "title": "Discord Community Manager",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "calendar-ops-coordinator",
+          "title": "Calendar Ops Coordinator",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "rag-index-maintainer",
+          "title": "RAG Index Maintainer",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "incident-triage-commander",
+          "title": "Incident Triage Commander",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "security-alert-triager",
+          "title": "Security Alert Triager",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "backup-drill-coordinator",
+          "title": "Backup Drill Coordinator",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "reddit-scout-pro",
+          "title": "Reddit Scout Pro",
+          "score": 0.0,
+          "query_overlap": 0,
+          "cap_hit": 0,
+          "scope_count": 3
+        }
+      ],
+      "issues": [
+        "Top result has weak capability coverage for required capabilities",
+        "No strong capability-fit candidate in top-5"
+      ]
+    },
+    "agent-bravo-security": {
+      "need": "compliance guard audit logs policy enforcement for risky actions",
+      "required_capabilities": [
+        "policy.enforce",
+        "audit.log.read",
+        "risk.evaluate",
+        "audit.log.write"
+      ],
+      "top": [
+        {
+          "slug": "whatsapp-support-copilot",
+          "title": "WhatsApp Support Copilot",
+          "score": 0.24,
+          "query_overlap": 3,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "churn-early-warning",
+          "title": "Churn Early Warning",
+          "score": 0.24,
+          "query_overlap": 3,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "ecommerce-listing-optimizer",
+          "title": "E-commerce Listing Optimizer",
+          "score": 0.24,
+          "query_overlap": 3,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "log-anomaly-sleuth",
+          "title": "Log Anomaly Sleuth",
+          "score": 0.24,
+          "query_overlap": 3,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "x-trend-harvester",
+          "title": "X Trend Harvester",
+          "score": 0.16,
+          "query_overlap": 2,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "opensource-repo-scout",
+          "title": "Open-Source Repo Scout",
+          "score": 0.16,
+          "query_overlap": 2,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "prompt-market-researcher",
+          "title": "Prompt Market Researcher",
+          "score": 0.16,
+          "query_overlap": 2,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "competitor-feature-tracker",
+          "title": "Competitor Feature Tracker",
+          "score": 0.16,
+          "query_overlap": 2,
+          "cap_hit": 0,
+          "scope_count": 3
+        }
+      ],
+      "issues": [
+        "Top result has weak capability coverage for required capabilities",
+        "No strong capability-fit candidate in top-5"
+      ]
+    },
+    "agent-charlie-marketing": {
+      "need": "content repurposing SEO optimization campaign orchestration",
+      "required_capabilities": [
+        "analytics",
+        "workflow",
+        "seo",
+        "social.post",
+        "writing"
+      ],
+      "top": [
+        {
+          "slug": "email-outreach-sequencer",
+          "title": "Email Outreach Sequencer",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "shortform-content-factory",
+          "title": "Shortform Content Factory",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "seo-brief-builder",
+          "title": "SEO Brief Builder",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "keyword-cluster-mapper",
+          "title": "Keyword Cluster Mapper",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "cloud-cost-analyzer",
+          "title": "Cloud Cost Analyzer",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "reddit-scout-pro",
+          "title": "Reddit Scout Pro",
+          "score": 0.0,
+          "query_overlap": 0,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "x-trend-harvester",
+          "title": "X Trend Harvester",
+          "score": 0.0,
+          "query_overlap": 0,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "github-issue-radar",
+          "title": "GitHub Issue Radar",
+          "score": 0.0,
+          "query_overlap": 0,
+          "cap_hit": 0,
+          "scope_count": 3
+        }
+      ],
+      "issues": [
+        "Top result has weak capability coverage for required capabilities",
+        "No strong capability-fit candidate in top-5"
+      ]
+    }
+  }
+}

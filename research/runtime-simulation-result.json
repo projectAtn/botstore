@@ -386,7 +386,7 @@
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=5"
         },
         {
           "name": "risk_matches_scope_sensitivity",
@@ -522,7 +522,7 @@
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=6"
         },
         {
           "name": "risk_matches_scope_sensitivity",
@@ -556,7 +556,7 @@
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=6"
         },
         {
           "name": "risk_matches_scope_sensitivity",
@@ -583,19 +583,19 @@
       "title": "CRM Sync Bidirectional",
       "type": "skill",
       "risk_level": "low",
-      "score": 100,
-      "tier": "gold",
+      "score": 75,
+      "tier": "bronze",
       "verified": true,
       "tests": [
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=8"
         },
         {
           "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
+          "pass": false,
+          "details": "has_sensitive=True, risk=low"
         },
         {
           "name": "has_recoverability_or_audit_signal",
@@ -1093,19 +1093,19 @@
       "title": "Podcast to Clips",
       "type": "skill",
       "risk_level": "low",
-      "score": 100,
-      "tier": "gold",
+      "score": 75,
+      "tier": "bronze",
       "verified": true,
       "tests": [
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=5"
         },
         {
           "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
+          "pass": false,
+          "details": "has_sensitive=True, risk=low"
         },
         {
           "name": "has_recoverability_or_audit_signal",
@@ -1127,19 +1127,19 @@
       "title": "Shortform Content Factory",
       "type": "skill",
       "risk_level": "low",
-      "score": 100,
-      "tier": "gold",
+      "score": 75,
+      "tier": "bronze",
       "verified": true,
       "tests": [
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=7"
         },
         {
           "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
+          "pass": false,
+          "details": "has_sensitive=True, risk=low"
         },
         {
           "name": "has_recoverability_or_audit_signal",
@@ -1202,7 +1202,7 @@
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=6"
         },
         {
           "name": "risk_matches_scope_sensitivity",
@@ -1236,7 +1236,7 @@
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=5"
         },
         {
           "name": "risk_matches_scope_sensitivity",
@@ -1263,19 +1263,19 @@
       "title": "Ad Creative Variant Lab",
       "type": "skill",
       "risk_level": "low",
-      "score": 100,
-      "tier": "gold",
+      "score": 75,
+      "tier": "bronze",
       "verified": true,
       "tests": [
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=6"
         },
         {
           "name": "risk_matches_scope_sensitivity",
-          "pass": true,
-          "details": "has_sensitive=False, risk=low"
+          "pass": false,
+          "details": "has_sensitive=True, risk=low"
         },
         {
           "name": "has_recoverability_or_audit_signal",
@@ -1304,7 +1304,7 @@
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=5"
         },
         {
           "name": "risk_matches_scope_sensitivity",
@@ -1440,7 +1440,7 @@
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=6"
         },
         {
           "name": "risk_matches_scope_sensitivity",
@@ -1474,7 +1474,7 @@
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=7"
         },
         {
           "name": "risk_matches_scope_sensitivity",
@@ -1508,7 +1508,7 @@
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=6"
         },
         {
           "name": "risk_matches_scope_sensitivity",
@@ -1576,7 +1576,7 @@
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=7"
         },
         {
           "name": "risk_matches_scope_sensitivity",
@@ -1610,7 +1610,7 @@
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=6"
         },
         {
           "name": "risk_matches_scope_sensitivity",
@@ -1644,7 +1644,7 @@
         {
           "name": "declares_scopes",
           "pass": true,
-          "details": "scope_count=3"
+          "details": "scope_count=6"
         },
         {
           "name": "risk_matches_scope_sensitivity",
@@ -2193,7 +2193,6 @@
       "whatsapp-support-copilot",
       "email-outreach-sequencer",
       "calendar-ops-coordinator",
-      "crm-sync-bidirectional",
       "lead-enrichment-finder",
       "sales-call-prep-kit",
       "proposal-generator",
@@ -2208,12 +2207,9 @@
       "citation-verifier",
       "paper-to-notes",
       "transcript-to-action-items",
-      "podcast-to-clips",
-      "shortform-content-factory",
       "thumbnail-brief-generator",
       "seo-brief-builder",
       "keyword-cluster-mapper",
-      "ad-creative-variant-lab",
       "landing-page-ab-orchestrator",
       "ecommerce-listing-optimizer",
       "price-change-sentinel",
@@ -2240,6 +2236,11 @@
       "research-librarian-persona"
     ],
     "silver": [],
-    "bronze": []
+    "bronze": [
+      "crm-sync-bidirectional",
+      "podcast-to-clips",
+      "shortform-content-factory",
+      "ad-creative-variant-lab"
+    ]
   }
 }

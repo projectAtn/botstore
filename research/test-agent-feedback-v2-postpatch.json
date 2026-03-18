@@ -1,0 +1,235 @@
+{
+  "generatedAt": "2026-03-18T06:20:18.876985+00:00",
+  "agents": {
+    "agent-alpha-ops": {
+      "need": "triage inbox schedule meetings send followups",
+      "required_capabilities": [
+        "email.read",
+        "followup.send",
+        "email.send",
+        "calendar.write",
+        "calendar.read"
+      ],
+      "top": [
+        {
+          "slug": "crm-sync-bidirectional",
+          "title": "CRM Sync Bidirectional",
+          "score": 1.3,
+          "query_overlap": 0,
+          "cap_hit": 5,
+          "scope_count": 8
+        },
+        {
+          "slug": "calendar-ops-coordinator",
+          "title": "Calendar Ops Coordinator",
+          "score": 0.74,
+          "query_overlap": 1,
+          "cap_hit": 3,
+          "scope_count": 6
+        },
+        {
+          "slug": "email-outreach-sequencer",
+          "title": "Email Outreach Sequencer",
+          "score": 0.66,
+          "query_overlap": 0,
+          "cap_hit": 3,
+          "scope_count": 6
+        },
+        {
+          "slug": "waitlist-converter",
+          "title": "Waitlist Converter",
+          "score": 0.44,
+          "query_overlap": 0,
+          "cap_hit": 2,
+          "scope_count": 5
+        },
+        {
+          "slug": "telegram-community-manager",
+          "title": "Telegram Community Manager",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "discord-community-manager",
+          "title": "Discord Community Manager",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "rag-index-maintainer",
+          "title": "RAG Index Maintainer",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "incident-triage-commander",
+          "title": "Incident Triage Commander",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 6
+        }
+      ],
+      "issues": []
+    },
+    "agent-bravo-security": {
+      "need": "compliance guard audit logs policy enforcement for risky actions",
+      "required_capabilities": [
+        "audit.log.write",
+        "audit.log.read",
+        "risk.evaluate",
+        "policy.enforce"
+      ],
+      "top": [
+        {
+          "slug": "deploy-rollback-guardian",
+          "title": "Deploy Rollback Guardian",
+          "score": 1.24,
+          "query_overlap": 2,
+          "cap_hit": 4,
+          "scope_count": 7
+        },
+        {
+          "slug": "security-alert-triager",
+          "title": "Security Alert Triager",
+          "score": 1.16,
+          "query_overlap": 1,
+          "cap_hit": 4,
+          "scope_count": 7
+        },
+        {
+          "slug": "log-anomaly-sleuth",
+          "title": "Log Anomaly Sleuth",
+          "score": 0.9,
+          "query_overlap": 3,
+          "cap_hit": 3,
+          "scope_count": 6
+        },
+        {
+          "slug": "secret-rotation-reminder",
+          "title": "Secret Rotation Reminder",
+          "score": 0.82,
+          "query_overlap": 2,
+          "cap_hit": 3,
+          "scope_count": 6
+        },
+        {
+          "slug": "incident-triage-commander",
+          "title": "Incident Triage Commander",
+          "score": 0.74,
+          "query_overlap": 1,
+          "cap_hit": 3,
+          "scope_count": 6
+        },
+        {
+          "slug": "backup-drill-coordinator",
+          "title": "Backup Drill Coordinator",
+          "score": 0.74,
+          "query_overlap": 1,
+          "cap_hit": 3,
+          "scope_count": 6
+        },
+        {
+          "slug": "whatsapp-support-copilot",
+          "title": "WhatsApp Support Copilot",
+          "score": 0.24,
+          "query_overlap": 3,
+          "cap_hit": 0,
+          "scope_count": 3
+        },
+        {
+          "slug": "churn-early-warning",
+          "title": "Churn Early Warning",
+          "score": 0.24,
+          "query_overlap": 3,
+          "cap_hit": 0,
+          "scope_count": 3
+        }
+      ],
+      "issues": []
+    },
+    "agent-charlie-marketing": {
+      "need": "content repurposing SEO optimization campaign orchestration",
+      "required_capabilities": [
+        "analytics",
+        "seo",
+        "workflow",
+        "social.post",
+        "writing"
+      ],
+      "top": [
+        {
+          "slug": "shortform-content-factory",
+          "title": "Shortform Content Factory",
+          "score": 0.96,
+          "query_overlap": 1,
+          "cap_hit": 4,
+          "scope_count": 7
+        },
+        {
+          "slug": "seo-brief-builder",
+          "title": "SEO Brief Builder",
+          "score": 0.74,
+          "query_overlap": 1,
+          "cap_hit": 3,
+          "scope_count": 6
+        },
+        {
+          "slug": "ad-creative-variant-lab",
+          "title": "Ad Creative Variant Lab",
+          "score": 0.66,
+          "query_overlap": 0,
+          "cap_hit": 3,
+          "scope_count": 6
+        },
+        {
+          "slug": "keyword-cluster-mapper",
+          "title": "Keyword Cluster Mapper",
+          "score": 0.52,
+          "query_overlap": 1,
+          "cap_hit": 2,
+          "scope_count": 5
+        },
+        {
+          "slug": "podcast-to-clips",
+          "title": "Podcast to Clips",
+          "score": 0.44,
+          "query_overlap": 0,
+          "cap_hit": 2,
+          "scope_count": 5
+        },
+        {
+          "slug": "landing-page-ab-orchestrator",
+          "title": "Landing Page A/B Orchestrator",
+          "score": 0.44,
+          "query_overlap": 0,
+          "cap_hit": 2,
+          "scope_count": 5
+        },
+        {
+          "slug": "email-outreach-sequencer",
+          "title": "Email Outreach Sequencer",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 6
+        },
+        {
+          "slug": "cloud-cost-analyzer",
+          "title": "Cloud Cost Analyzer",
+          "score": 0.08,
+          "query_overlap": 1,
+          "cap_hit": 0,
+          "scope_count": 3
+        }
+      ],
+      "issues": []
+    }
+  }
+}

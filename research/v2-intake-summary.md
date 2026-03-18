@@ -1,6 +1,6 @@
 # V2 Intake Pipeline Summary
 
-Generated: 2026-03-18T06:17:39.883855+00:00
+Generated: 2026-03-18T06:20:25.070648+00:00
 
 ## 1) Merge
 - Merged output: `/Users/claw/.openclaw/workspace/botstore/research/candidate-packs-v2.json`
@@ -35,7 +35,7 @@ Generated: 2026-03-18T06:17:39.883855+00:00
 | `whatsapp-support-copilot` | medium | 100 | 85 | ✅ | **KEEP** |
 | `email-outreach-sequencer` | medium | 100 | 85 | ✅ | **KEEP** |
 | `calendar-ops-coordinator` | low | 100 | 75 | ✅ | **KEEP** |
-| `crm-sync-bidirectional` | low | 100 | 75 | ✅ | **KEEP** |
+| `crm-sync-bidirectional` | low | 75 | 75 | ✅ | **KEEP** |
 | `lead-enrichment-finder` | low | 100 | 75 | ✅ | **KEEP** |
 | `sales-call-prep-kit` | low | 100 | 75 | ✅ | **KEEP** |
 | `proposal-generator` | low | 100 | 75 | ✅ | **KEEP** |
@@ -50,12 +50,12 @@ Generated: 2026-03-18T06:17:39.883855+00:00
 | `citation-verifier` | low | 100 | 75 | ✅ | **KEEP** |
 | `paper-to-notes` | low | 100 | 75 | ✅ | **KEEP** |
 | `transcript-to-action-items` | medium | 100 | 85 | ✅ | **KEEP** |
-| `podcast-to-clips` | low | 100 | 75 | ✅ | **KEEP** |
-| `shortform-content-factory` | low | 100 | 75 | ✅ | **KEEP** |
+| `podcast-to-clips` | low | 75 | 75 | ✅ | **KEEP** |
+| `shortform-content-factory` | low | 75 | 75 | ✅ | **KEEP** |
 | `thumbnail-brief-generator` | low | 100 | 75 | ✅ | **KEEP** |
 | `seo-brief-builder` | low | 100 | 75 | ✅ | **KEEP** |
 | `keyword-cluster-mapper` | low | 100 | 75 | ✅ | **KEEP** |
-| `ad-creative-variant-lab` | low | 100 | 75 | ✅ | **KEEP** |
+| `ad-creative-variant-lab` | low | 75 | 75 | ✅ | **KEEP** |
 | `landing-page-ab-orchestrator` | low | 100 | 75 | ✅ | **KEEP** |
 | `ecommerce-listing-optimizer` | low | 100 | 75 | ✅ | **KEEP** |
 | `price-change-sentinel` | medium | 100 | 85 | ✅ | **KEEP** |
