@@ -129,3 +129,21 @@
 ### Live run result
 - Top-3 hit: **8/8**
 - Top-5 hit: **8/8**
+
+## Additional execution progress (CI gate orchestration)
+
+### Implemented now
+12. **Single-command CI gate runner**
+   - Added script: `scripts/ci_gate_run_all.py`
+   - Runs, in sequence:
+     1) `regression_ci.py`
+     2) `ranking_eval_ci.py`
+     3) `pack_test_runner.py`
+   - Writes aggregate report to `research/ci-gate-run-all-report.json`
+   - Exits non-zero if any required step fails.
+
+### Live run result
+- `regression_ci`: PASS
+- `ranking_eval_ci`: PASS
+- `pack_test_runner`: PASS
+- Overall CI gate: **PASS**

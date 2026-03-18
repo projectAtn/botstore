@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-03-18T08:29:20.460573+00:00",
+  "steps": [
+    {
+      "name": "regression_ci",
+      "required": true,
+      "started": "2026-03-18T08:29:19.026580+00:00",
+      "exit_code": 0,
+      "ok": true,
+      "stdout": "[1/7] health\n[2/7] catalog non-empty\n[3/7] interop import/export smoke\n[4/7] direct featured create should be blocked\n[5/7] QA report upsert\n[6/7] promote path should work after QA pass\n[7/7] catalog exposes QA metadata\n[PASS] Regression CI smoke succeeded\n",
+      "stderr": ""
+    },
+    {
+      "name": "ranking_eval_ci",
+      "required": true,
+      "started": "2026-03-18T08:29:19.181987+00:00",
+      "exit_code": 0,
+      "ok": true,
+      "stdout": "Wrote /Users/claw/.openclaw/workspace/botstore/research/ranking-eval-current.json\nWrote /Users/claw/.openclaw/workspace/botstore/research/ranking-eval-last.json\nWrote /Users/claw/.openclaw/workspace/botstore/research/ranking-eval-report.md\nTop3: 8/8 | Top5: 8/8\n",
+      "stderr": ""
+    },
+    {
+      "name": "pack_test_runner",
+      "required": true,
+      "started": "2026-03-18T08:29:19.293149+00:00",
+      "exit_code": 0,
+      "ok": true,
+      "stdout": "Wrote /Users/claw/.openclaw/workspace/botstore/research/pack-test-report.md\nWrote /Users/claw/.openclaw/workspace/botstore/research/pack-test-result.json\nQA artifact push: published=125 failed=0\n",
+      "stderr": ""
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "required_failed": 0,
+    "status": "pass"
+  }
+}
