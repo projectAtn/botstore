@@ -370,8 +370,14 @@ class OpsProgressUpdate(BaseModel):
     next_task: str = ""
 
 
-sqlite_file_name = "./botstore.db"
-engine = create_engine(f"sqlite:///{sqlite_file_name}", echo=False)
+DEFAULT_SQLITE_URL = "sqlite:///./botstore.db"
+DATABASE_URL = os.getenv("DATABASE_URL", DEFAULT_SQLITE_URL).strip() or DEFAULT_SQLITE_URL
+
+engine_kwargs = {"echo": False}
+if DATABASE_URL.startswith("sqlite"):
+    engine_kwargs["connect_args"] = {"check_same_thread": False}
+
+engine = create_engine(DATABASE_URL, **engine_kwargs)
 OPS_PROGRESS_PATH = Path("../research/ops-progress.json")
 ROLE_AGENT_CATALOG_PATH = Path("../research/singular-role-agent-offerings-v1.json")
 TEAM_SCENARIOS_PATH = Path("../research/team-pack-qa-scenarios-v2.json")
