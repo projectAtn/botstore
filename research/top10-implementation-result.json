@@ -1,0 +1,28 @@
+{
+  "created": [
+    "crm-sync-bidirectional",
+    "calendar-ops-coordinator",
+    "email-outreach-sequencer",
+    "deploy-rollback-guardian",
+    "security-alert-triager",
+    "log-anomaly-sleuth",
+    "shortform-content-factory",
+    "seo-brief-builder",
+    "ad-creative-variant-lab",
+    "landing-page-ab-orchestrator"
+  ],
+  "skipped": [],
+  "missing": [],
+  "top10": [
+    "crm-sync-bidirectional",
+    "calendar-ops-coordinator",
+    "email-outreach-sequencer",
+    "deploy-rollback-guardian",
+    "security-alert-triager",
+    "log-anomaly-sleuth",
+    "shortform-content-factory",
+    "seo-brief-builder",
+    "ad-creative-variant-lab",
+    "landing-page-ab-orchestrator"
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "generatedAt": "2026-03-18T06:26:03.483938Z",
+  "desired_skill_signals": [
+    [
+      "memory-systems",
+      565
+    ],
+    [
+      "cli-agent-runtime",
+      286
+    ],
+    [
+      "github-pr-automation",
+      264
+    ],
+    [
+      "community-ops",
+      179
+    ],
+    [
+      "content-repurposing",
+      135
+    ],
+    [
+      "security-audit",
+      124
+    ],
+    [
+      "multi-agent-orchestration",
+      113
+    ],
+    [
+      "scheduled-autonomy",
+      72
+    ],
+    [
+      "email-calendar-ops",
+      67
+    ],
+    [
+      "browser-automation",
+      26
+    ]
+  ],
+  "desired_persona_signals": [
+    [
+      "research-librarian",
+      146
+    ],
+    [
+      "creative-storyteller",
+      124
+    ],
+    [
+      "growth-hacker",
+      84
+    ],
+    [
+      "compliance-officer",
+      72
+    ],
+    [
+      "operator-chief-of-staff",
+      63
+    ],
+    [
+      "empathetic-coach",
+      25
+    ],
+    [
+      "blunt-sre",
+      15
+    ]
+  ],
+  "recommended_skill_slugs": [
+    "crm-sync-bidirectional",
+    "calendar-ops-coordinator",
+    "email-outreach-sequencer",
+    "rag-index-maintainer",
+    "knowledge-base-curator",
+    "citation-verifier",
+    "log-anomaly-sleuth",
+    "cloud-cost-analyzer",
+    "deploy-rollback-guardian",
+    "github-pr-review-assistant",
+    "incident-triage-commander",
+    "telegram-community-manager",
+    "discord-community-manager",
+    "whatsapp-support-copilot",
+    "shortform-content-factory",
+    "seo-brief-builder",
+    "podcast-to-clips",
+    "security-alert-triager",
+    "secret-rotation-reminder",
+    "contract-risk-highlighter"
+  ],
+  "recommended_persona_slugs": [
+    "research-librarian-persona",
+    "playful-creator-persona",
+    "growth-hacker-persona",
+    "strict-compliance-officer-persona",
+    "calm-chief-of-staff-persona",
+    "empathetic-support-ally-persona",
+    "grumpy-sre-persona"
+  ],
+  "qa_adjustments": {
+    "reason": "Ops agent had zero capability hit in pre-adjusted social recommendation set",
+    "added": [
+      "crm-sync-bidirectional",
+      "calendar-ops-coordinator",
+      "email-outreach-sequencer"
+    ],
+    "policy": "enforce cross-agent coverage (ops+security+marketing) before rollout"
+  },
+  "updatedAt": "2026-03-18T06:26:38.703276+00:00"
+}

@@ -1,0 +1,1173 @@
+{
+  "generatedAt": "2026-03-18T06:26:03.483938Z",
+  "source": "reddit-public-json",
+  "post_count": 1223,
+  "top_posts": [
+    {
+      "sub": "ChatGPT",
+      "query": "personality tone roleplay",
+      "title": "Ridiculous they added this",
+      "selftext": "Mostly use other llms now but had to add this fix recently ",
+      "score": 5399,
+      "comments": 383,
+      "url": "https://reddit.com/r/ChatGPT/comments/1rqnri6/ridiculous_they_added_this/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "community telegram discord",
+      "title": "I used Claude Code to reverse engineer a 13-year-old game binary and crack a restriction nobody had solved \u2014 the community is losing it",
+      "selftext": "I want to share something I built with Claude Code this past week because I think it shows what AI-assisted development can actually do when pointed at a genuinely hard problem.\n\nDisney Infinity 1.0 (2013) is a game where you place physical figures on a base to play as characters. Each character is locked to their \u201chome\u201d playset. Mr. Incredible can only play in the Incredibles world, etc. The modding community has wanted to break this restriction for over a decade. Nobody could.\n\nWhy it was so hard: The restriction isn\u2019t a single flag or config file. One function (FindPlaysetForCharacter) gets called at 13 different points across 6 areas of the game\u2019s C++ code. Patching one check doesn\u2019t help since the other 12 still block you. Data-file-only mods fail because the native code validates before it even reads the data. DLL injection crashed the game due to thread-unsafe Lua state access. People tried renaming character files into other character folders but the game just crashed.\n\nWhat Claude Code did: I pointed Claude Code (Opus, high reasoning) at the game\u2019s binary. No symbols, no source code, no existing RE documentation. Claude helped me trace the call graph from FindPlaysetForCharacter through the entire codebase, identify all 13 validation call sites, map which code area each belonged to, and determine the exact bytes to patch. It understood x86 assembly, recognized the conditional jump patterns after each call, and helped me work through multiple failed approaches before arriving at the solution that worked.\n\nThe entire thing took under 24 hours.\n\nThe result is 17 binary patches plus 3 modified data files, any character works in any playset. Free, open source, installs in 2 minutes.\n\nI posted this to r/DisneyInfinity a few hours ago and the reaction has been unreal.",
+      "score": 3590,
+      "comments": 209,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1ru3irp/i_used_claude_code_to_reverse_engineer_a/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "memory context long term",
+      "title": "They are absolutely insane",
+      "selftext": "They have the best timing for everything. Absolutely insane ",
+      "score": 3098,
+      "comments": 160,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rj3oax/they_are_absolutely_insane/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "skills mcp tools",
+      "title": "Stop paying $1,000+ for \"AI Bootcamps\". Anthropic (makers of Claude) just dropped a 100% free academy.",
+      "selftext": "",
+      "score": 2345,
+      "comments": 98,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rqopis/stop_paying_1000_for_ai_bootcamps_anthropic/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "skills mcp tools",
+      "title": "I Haven't Written a Line of Code in Six Months",
+      "selftext": "I've been programming since the late 1980s. Enterprise tech, healthcare systems, process mining platforms. Three companies built and sold. Over 30 years of writing code, every single day.\n\nI haven't written a line of code in six months. I don't miss it.\n\nMy job now is managing six to ten occasionally drunk PhD students. That's what running Claude Code agents feels like. They're brilliant. They're fast. They occasionally wander off and do something completely unhinged. But when you get them pointed in the right direction, they produce three months of work in a week.\n\nThe other day we spent four and a half hours trying to fix something. Going in circles. Finally I said: start over from scratch. It picked a different approach and everything worked. That happens every week. I do three months of work in a week, then lose half a day. The ratio is still overwhelmingly positive.\n\nI build open-source tools around Claude Code -- a director app that manages multiple sessions, almost 30 tools for things Claude can't do natively (PDF, Excel, email, browser automation), pre-built skills that work like SOPs. All free.\n\nWe recently translated 350 website pages into seven languages for just under $18. Three years ago that would have cost $2,000 to $5,000 per language and taken two weeks. We did it overnight.\n\nMy skill went from being a creator and writer of code to being a manager of brilliant, unpredictable agents. I played basketball at a high level my whole life. Knee injury ended it. Started freediving instead. Now I don't miss basketball at all. Things change. You become something different.\n\nI wrote a longer version of this on Medium if anyone wants the full thing -- covers the common objections (hallucination, privacy, generic output, cost) and the identity shift in more detail.\n",
+      "score": 2015,
+      "comments": 550,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rlw1yw/i_havent_written_a_line_of_code_in_six_months/"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "memory context long term",
+      "title": "We are done",
+      "selftext": "",
+      "score": 1879,
+      "comments": 407,
+      "url": "https://reddit.com/r/ChatGPT/comments/1rgh6r7/we_are_done/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "memory context long term",
+      "title": "New: Anthropic introduces a memory feature that lets users transfer their context and preferences from other AI tools into Claude",
+      "selftext": "",
+      "score": 1857,
+      "comments": 127,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rhx7pq/new_anthropic_introduces_a_memory_feature_that/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "github review deploy",
+      "title": "I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead.",
+      "selftext": "&gt; English is not my first language. I wrote this in Chinese and translated it with AI help. The writing may have some AI flavor, but the design decisions, the production failures, and the thinking that distilled them into principles \u2014 those are mine.\n\nI was a backend lead at Manus before the Meta acquisition. I've spent the last 2 years building AI agents \u2014 first at Manus, then on my own open-source agent runtime ([Pinix](https://github.com/epiral/pinix)) and agent ([agent-clip](https://github.com/epiral/agent-clip)). Along the way I came to a conclusion that surprised me:\n\n**A single `run(command=\"...\")` tool with Unix-style commands outperforms a catalog of typed function calls.**\n\nHere's what I learned.\n\n---\n\n## Why *nix\n\nUnix made a design decision 50 years ago: **everything is a text stream.** Programs don't exchange complex binary structures or share memory objects \u2014 they communicate through text pipes. Small tools each do one thing well, composed via `|` into powerful workflows. Programs describe themselves with `--help`, report success or failure with exit codes, and communicate errors through stderr.\n\nLLMs made an almost identical decision 50 years later: **everything is tokens.** They only understand text, only produce text. Their \"thinking\" is text, their \"actions\" are text, and the feedback they receive from the world must be text.\n\nThese two decisions, made half a century apart from completely different starting points, converge on the same interface model. The text-based system Unix designed for human terminal operators \u2014 `cat`, `grep`, `pipe`, `exit codes`, `man pages` \u2014 isn't just \"usable\" by LLMs. It's a **natural fit**. When it comes to tool use, an LLM is essentially a terminal operator \u2014 one that's faster than any human and has already seen vast a",
+      "score": 1856,
+      "comments": 388,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "agent workflow automation",
+      "title": "Finally something useful with OpenClaw",
+      "selftext": "Hi, I've been playing with OpenClaw for weeks, trying all kinds of stuff, and I can say that I've finally found a useful workflow.\n\nI have 3 3D printers at home, and I barely use them because I don't have the time to sit down and design things, so I went on and developed a set of skills that enables me to find, create, edit, slice, and send to print 3D models from my OpenClaw Agent.\n\nIt's actually great because I can leave an old MacBook in my house with a Docker instance running the agent and with access to the 3D printers on the local network. Quite a niche use-case, I believe, but it's great to get back into creating and repairing things.\n\nI figured I would share it because I saw a lot of threads of people saying how useless OpenClaw is, but I think it's a great tool once you find-tune it to your own use-cases\n\nEDIT:  \nA lot of you asked, so here's the link to the open-source github repo:  \n[https://github.com/makermate/clarvis-ai](https://github.com/makermate/clarvis-ai)  \n[https://github.com/makermate/claw3d](https://github.com/makermate/claw3d)",
+      "score": 1809,
+      "comments": 120,
+      "url": "https://reddit.com/r/OpenAI/comments/1rs2c40/finally_something_useful_with_openclaw/"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "memory context long term",
+      "title": "If you didn\u2019t move yet because ChatGPT \u201cknows you\u201d",
+      "selftext": "",
+      "score": 1769,
+      "comments": 139,
+      "url": "https://reddit.com/r/OpenAI/comments/1rj3par/if_you_didnt_move_yet_because_chatgpt_knows_you/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "memory context long term",
+      "title": "Hands down the best guide to Claude Cowork",
+      "selftext": "Just came across a nice article on how to set up Claude Cowork. Link to the article in the comments.  \n  \nWhat\u2019s been your experience with Claude Cowork?",
+      "score": 1561,
+      "comments": 90,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rp1m7k/hands_down_the_best_guide_to_claude_cowork/"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "memory context long term",
+      "title": "Things you might want to know if moving to Claude",
+      "selftext": "I moved to Claude a few weeks ago after the 4o debacle and have been making a mental list of things I would have found useful to know when moving. Figured it would be handy to share them now. Note, I don't tend to use if for coding so you might want someone else to contribute for that usecase. Feel free to add your own notes.\n\n1) The big one: usage limits. Honestly, I've not found it that bad as long as I don't get lazy and try to stick everything in one long thread and I'm talking as someone who is at least a moderately heavy user. The thing with Claude is that while ChatGPT just quietly cuts the end off what it's reading in a really long chat and doesn't think about it any more Claude will suddenly reference something really far back in the chat because it's considering the entire chat every time. That means that if you've let something just go on and on in one chat you'll suddenly put in one prompt and use up 10% of your usage just like that. Best practice, keep an eye on it, start new chats regularly, keep chats on one topic in a project and if you're in a long chat and about to log off with a bunch of your usage left over ask Claude to run you a summary document then and dump it in files.\n\nI've been going a few weeks now. I put $20 per month in extra credits in case I needed them. So far I've used $2 of it. I've gone right up to the line of usage - I think I was on 98% used my last weekly reset - but I've not particularly felt it as hardship.\n\n2. Claude can see other chats. I repeat, *Claude can see other chats*. You are not dependent on one shitty memory file that filled up months ago and now needs constantly pruning on irrelevant details. You can ask it to hunt for stuff you talked about a while ago and it'll find the chat. \n\nIt will also reference past details a",
+      "score": 1460,
+      "comments": 164,
+      "url": "https://reddit.com/r/OpenAI/comments/1rhj71v/things_you_might_want_to_know_if_moving_to_claude/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "security compliance audit",
+      "title": "Well, i'm convinced.",
+      "selftext": "In 3 partial evenings I have produced something that would have required a full dev team several weeks, and all it took was creativity, prompting and a background in software development.\n\nThe only annoying things was running out of tokens every 90 minutes due to how fast the project progressed.  It's funny, you start with a core concept and ask Claude to plan it out from a rough spec.  A short wait and you get instant gold back and think, well that didn't take long, it also asked a lot of great questions, so you add more features, and more features all the while giggling to yourself at how fast things are moving.  In 2 hours you have produced a weeks worth of specification, never mind the endless meetings that would have been needed by other team members.  \n  \nThen you bite the bullet and tell it to build it, the result is a working first prototype in less than an hour.   A few prompts later and you have added 10 nice-to-have's that you placed in phase 2. Another hour later you start phase 2 because everything is screaming along so fast.  Phase 2 should be weeks away but why wait.  This changes the process so much.\n\nSo yeah, I'm sold.  This is incredible.  I created something that took 3 evenings that back in my software dev days would have taken maybe a month with access to front end designers, DB administrators, software engineers, security auditing, unit testers and all manner of specalist devs. \n\nExciting and scary times.",
+      "score": 1411,
+      "comments": 279,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rs656k/well_im_convinced/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "skills mcp tools",
+      "title": "Just passed the new Claude Certified Architect - Foundations (CCA-F) exam with a 985/1000!",
+      "selftext": "I just got my results back today and managed to snag the Early Adopter badge as well. Following up on my recent DP-600 certification, I really wanted to validate my architecture skills specifically on the Anthropic side.\n\nThe exam covers a lot of practical ground on prompt engineering for tool use, managing context windows efficiently, and handling Human-in-the-Loop workflows.\n\nLink to join: https://anthropic.skilljar.com/claude-certified-architect-foundations-access-request\n\nExam Guide: https://share.google/0eqIbebzRMUt8KTc8\n\nMy own Playbook after the exam: https://drive.google.com/file/d/1luC0rnrET4tDYtS7xe5jUxMDZA-4qNf-/view?usp=sharing\n\nIf anyone is preparing for this right now and has questions about the format or the types of architectural patterns tested, ask away! Happy to share some insights on what to study.",
+      "score": 1347,
+      "comments": 279,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1ruf70b/just_passed_the_new_claude_certified_architect/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "memory context long term",
+      "title": "This is Claude Sonnet 4.6: our most capable Sonnet model yet.",
+      "selftext": "Claude Sonnet 4.6 is a full upgrade across coding, computer use, long-context reasoning, agent planning, knowledge work, and design. It also features a 1M token context window in beta.  \n  \nSonnet 4.6 has improved on benchmarks across the board. It approaches Opus-level intelligence at a price point that makes it practical for far more tasks.\n\nIt also shows a major improvement in computer use skills. Early users are seeing human-level capability in tasks like navigating a complex spreadsheet or filling out a multi-step web form.\n\nClaude Sonnet 4.6 is available now on all plans, Cowork, Claude Code, our API, and all major cloud platforms. We've also upgraded our free tier to Sonnet 4.6 by default.\n\nLearn more: [anthropic.com/news/claude-sonnet-4-6](http://anthropic.com/news/claude-sonnet-4-6)",
+      "score": 1221,
+      "comments": 232,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1r7d6am/this_is_claude_sonnet_46_our_most_capable_sonnet/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "agent workflow automation",
+      "title": "Anthropic just made Claude Code run without you. Scheduled tasks are live. This is a big deal.",
+      "selftext": "Claude Code now runs on a schedule. Set it once, it executes automatically. No prompting, no babysitting.\n\nDaily commit reviews, dependency audits, error log scans, PR reviews \u2014 Claude just runs it overnight while you\u2019re doing other things.\n\nThis is the shift that turns a coding assistant into an actual autonomous agent. The moment it stops waiting for your prompt and starts operating on its own clock, everything changes.\n\nDevelopers are already sharing demos of fully automated workflows running hands-off. The category just moved.\n\nWhat dev tasks would you trust it to run completely on autopilot?",
+      "score": 1185,
+      "comments": 247,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rna5mb/anthropic_just_made_claude_code_run_without_you/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "memory context long term",
+      "title": "Qwen3.5 family comparison on shared benchmarks",
+      "selftext": "Main takeaway:\u00a0122B,\u00a035B, and especially\u00a027B\u00a0retain a lot of the flagship\u2019s performance, while\u00a02B/0.8B\u00a0fall off much harder on long-context and agent categories.",
+      "score": 1181,
+      "comments": 284,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1ro7xve/qwen35_family_comparison_on_shared_benchmarks/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "personality tone roleplay",
+      "title": "Long conversation prompt got exposed",
+      "selftext": "Had a chat today that was quite long, was just interesting to see how I got this after a while. The user did see it after-all. Interesting way to keep the bot on track, probably the best state of the art solution for now. ",
+      "score": 1178,
+      "comments": 165,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1r954gd/long_conversation_prompt_got_exposed/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "agent workflow automation",
+      "title": "Qwen3.5-35B-A3B is a gamechanger for agentic coding.",
+      "selftext": "[Qwen3.5-35B-A3B with Opencode](https://preview.redd.it/m4v951sv5jlg1.jpg?width=2367&amp;format=pjpg&amp;auto=webp&amp;s=bec61ca20f08bb766987147287c7d6664308fa2f)\n\n\n\nJust tested this badboy with Opencode **cause frankly I couldn't believe those benchmarks.** Running it on a single RTX 3090 on a headless Linux box. Freshly compiled Llama.cpp and those are my settings after some tweaking, still not fully tuned: \n\n./llama.cpp/llama-server \\\\\n\n\\-m /models/**Qwen3.5-35B-A3B-MXFP4\\_MOE.gguf** \\\\\n\n\\-a \"DrQwen\" \\\\\n\n\\-c 131072 \\\\\n\n\\-ngl all \\\\\n\n\\-ctk q8\\_0 \\\\\n\n\\-ctv q8\\_0 \\\\\n\n\\-sm none \\\\\n\n\\-mg 0 \\\\\n\n\\-np 1 \\\\\n\n\\-fa on\n\nAround 22 gigs of vram used.\n\n  \nNow the fun part:\n\n1. I'm getting over 100t/s on it\n\n2. This is the first open weights model I was able to utilise on my home hardware to successfully complete my own \"coding test\" I used for years for recruitment (mid lvl mobile dev, around 5h to complete \"pre AI\" ;)). It did it in around 10 minutes, strong pass. First agentic tool that I was able to \"crack\" it with was [Kodu.AI](http://Kodu.AI) with some early sonnet roughly 14 months ago.\n\n3. For fun I wanted to recreate this dashboard OpenAI used during Cursor demo last summer, I did a recreation of it with Claude Code back then and posted it on Reddit: [https://www.reddit.com/r/ClaudeAI/comments/1mk7plb/just\\_recreated\\_that\\_gpt5\\_cursor\\_demo\\_in\\_claude/](https://www.reddit.com/r/ClaudeAI/comments/1mk7plb/just_recreated_that_gpt5_cursor_demo_in_claude/) So... Qwen3.5 was able to do it in around 5 minutes. \n\n**I think we got something special here...**\n\n  \n",
+      "score": 1163,
+      "comments": 395,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rdxfdu/qwen3535ba3b_is_a_gamechanger_for_agentic_coding/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "skills mcp tools",
+      "title": "I built an interactive website that teaches Claude Code by letting you explore a simulated project in your browser",
+      "selftext": "I've been going deep on Claude Code lately and honestly it's been a weird experience. There's this massive configuration surface: `.claude/` directories, settings files, skills, hooks, agents, plugins, MCP configs and the docs explain each piece individually but I never felt like I understood how it all fits together. It's like someone handing you a box of IKEA parts with no picture of the finished shelf.\n\nSo I did what any reasonable person would do: I built the shelf.\n\n[exploreclaudecode.com](https://exploreclaudecode.com/)\n\nIt's a simulated Claude Code project you explore in your browser. The sidebar is a real file tree \u2014 `.claude/settings.json`, `CLAUDE`, skills, agents, hooks, the works. Click any file and it explains what that feature does, how to configure it, and when you'd actually use it. There's even a terminal panel where you can try slash commands.\n\nBuilt the whole thing with Claude Code, which was pretty meta. I'd be writing content explaining a Claude Code feature while Claude Code was writing the site that displays it. Claude handled the implementation (file explorer, markdown renderer, terminal panel), I directed what to build and what the content should say.\n\nIf you're picking up Claude Code and want to see how all the pieces fit before you start configuring, this might save you some time.",
+      "score": 1113,
+      "comments": 59,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rmqk0x/i_built_an_interactive_website_that_teaches/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "memory context long term",
+      "title": "Final Qwen3.5 Unsloth GGUF Update!",
+      "selftext": "Hey r/LocalLLaMA this week we worked on **further improving** the best size/KLD tradeoff for Qwen3.5, and we\u2019re excited to share new GGUF benchmarks for Qwen3.5-122B-A10B and Qwen3.5-35B-A3B (99.9% KL divergence). This will likely be our final GGUF update.\n\nWe\u2019re also deeply saddened by the news around the Qwen team, and incredibly grateful for everything they\u2019ve done for the open source community! For a lot of model releases, they had to stay up all night and not sleep.\n\n* All GGUFs now use our new imatrix **calibration dataset** so you might see small improvements in chat, coding, long context, and tool-calling use-cases. We are always manually improving this dataset and it will change often.\n* This is a follow up to [https://www.reddit.com/r/LocalLLaMA/comments/1rgel19/new\\_qwen3535ba3b\\_unsloth\\_dynamic\\_ggufs\\_benchmarks/](https://www.reddit.com/r/LocalLLaMA/comments/1rgel19/new_qwen3535ba3b_unsloth_dynamic_ggufs_benchmarks/)\n* We further enhanced our quantization method for Qwen3.5 MoEs to **reduce Maximum KLD** directly. 99.9% is what is generally used, but for massive outliers, Maximum KLD can be useful. Our New method generally pushes the Maximum KLD quite a much down vs the pre March 5th update. **UD-Q4\\_K\\_XL is 8% bigger, but reduces maximum KLD by 51%!**\n\n|Quant|Old GB|New GB|Max KLD Old|Max KLD New|\n|:-|:-|:-|:-|:-|\n|UD-Q2\\_K\\_XL|12.0|11.3 (-6%)|8.237|8.155 (-1%)|\n|UD-Q3\\_K\\_XL|16.1|15.5 (-4%)|5.505|5.146 (-6.5%)|\n|UD-Q4\\_K\\_XL|19.2|20.7 (+8%)|5.894|2.877 (-51%)|\n|UD-Q5\\_K\\_XL|23.2|24.6 (+6%)|5.536|3.210 (-42%)|\n\n* Re-download **Qwen3.5-35B-A3B**, **27B**, and **122B-A10B** as they're now all updated. Re-download **397B-A17B** after today\u2019s update (still uploading!)\n* **Qwen3.5-27B** and **122B-A10B** include the earlier chat template fixes for better tool",
+      "score": 1102,
+      "comments": 281,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rlkptk/final_qwen35_unsloth_gguf_update/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "skills mcp tools",
+      "title": "I delayed my product launch for months because I couldn't afford demo videos. Spent a weekend with Claude Code and Remotion. Now my reels are getting thousands of views.",
+      "selftext": "My product was ready. The code worked, it solved a genuine problem, but I had nothing to show people.\n\nNo demo videos. No illustrations. No motion graphics. Just a working app and a few users.\n\nSo I did what any sane founder does, I emailed motion designers.\n\nHere's what I got:\n\n* *\"Sure! Can you send me your Figma files?\"* (I had none)\n* $300\u2013$1,000 per video\n* 6\u201310 week timelines\n* *\"We'd need brand guidelines first\"*\n\nDozens of them. Same answer. I tried freelance platforms too, same sticker shock. I couldn't justify $1K on a 60-second video for a product that hadn't validated yet.\n\nSo I procrastinated for months.\n\n**What broke me out of it:**\n\nOne weekend I just sat down and refused to let it beat me.\n\nI found **Remotion,** React-based video generation. Videos as code. No timeline scrubbing, no export menus, just JSX and math.\n\nI grabbed **Claude Code** and started using skills (the popular ones) and workflows for Remotion transitions, illustrations, and landing page design.\n\n**What happened over the next few days:**\n\n1. **Feature illustrations** \u2014 Claude Code used the illustration skill to generate SVG-based product visuals directly in my landing page components. Things that would've taken a designer days took a few hours.\n2. **Landing page rebuild** \u2014 same loop. Went from placeholder screenshots to actual branded, animated UI sections.\n3. **The reels** \u2014 this is where it clicked. Each reel in Remotion is just a React component. Claude Code scaffolds the scene, I tweak timing and copy, export. First reel took \\~3 hours. Second took \\~90 minutes. Now I'm under an hour per reel.\n\n**Results caught me off guard.**\n\nNot \"my 200 followers liked it\" traction. Thousands of views, DMs asking if the product is live.\n\nThe thing I thought I needed to outsource, the thing I tho",
+      "score": 998,
+      "comments": 130,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rr47ya/i_delayed_my_product_launch_for_months_because_i/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "skills mcp tools",
+      "title": "No one cares what you built",
+      "selftext": "The rise of coding agents and their rapidly evolving ubiquity is genuinely a great thing. One of the best aspects about knowing coding has always been the ability to quickly whip up a script or small app for whatever headache one happens to be dealing with at any given moment, and vibe coding is a great way to democratize this ability. Lots of people who've never written a line of code are now making neat tools, which is awesome. \n\nHowever, a rather large subset of this crowd seems to be missing a very important fact: **you're not the only one with access to this tooling**.\n\nThere's an influx of people pitching their new .ai domain SaaS that does a dead-simple thing or promoting the 63rd Reinvented Wheel of the Day that did wonders for their workflow, and I suspect they're doing it out of a few reasons; though I think the biggest is a disconnect between how much effort things used to take, and now much they take now.\n\nThe truth is that 95% of projects being promoted on the daily here is just the same repetitive stuff over and over. Stop me if this sounds familiar: \n\n* I built a dashboard to observe and control my coding agents! \n* I built a way to talk to my coding agents through my phone! \n* I built a way to reduce my Claude's context usage by shinty-six percents using [some variant of RAG]!\n* I built [slight variation of Ralph Loops] here!\n* I built an automated persistent memory system for my coding agents!\n* My amazing workflow with 59 skills and 80 MCP servers will change your life! \n   * (related:) Why is my Claude auto-compacting after 5 messages?\n* Here's some _amazing_ tips that will _transform the way you use Claude_: 1) use CLAUDE.md, 2) provide more detail while prompting, 3) pay attention to the output\n\n...and so forth. These posts are well-meaning, of cour",
+      "score": 979,
+      "comments": 234,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rtey4g/no_one_cares_what_you_built/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "agent workflow automation",
+      "title": "Ran Qwen 3.5 9B on M1 Pro (16GB) as an actual agent, not just a chat demo. Honest results.",
+      "selftext": "Quick context: I run a personal automation system built on Claude Code. It's model-agnostic, so switching to Ollama was a one-line config change, nothing else needed to change. I pointed it at Qwen 3.5 9B and ran real tasks from my actual queue.\n\nHardware: M1 Pro MacBook, 16 GB unified memory. Not a Mac Studio, just a regular laptop.\n\nSetup:\n\nbrew install ollama\n\n  ollama pull qwen3.5:9b\n\n  ollama run qwen3.5:9b\n\nOllama exposes an OpenAI-compatible API at localhost:11434. Anything targeting the OpenAI format just points there. No code changes.\n\n**What actually happened:**\n\n**Memory recall**: worked well. My agent reads structured memory files and surfaces relevant context. Qwen handled this correctly. For \"read this file, find the relevant part, report it\" type tasks, 9B is genuinely fine.\n\n**Tool calling**: reasonable on straightforward requests. It invoked the right tools most of the time on simple agentic tasks. This matters more than text quality when you're running automation.\n\n**Creative and complex reasoning**: noticeable gap. Not a surprise. The point isn't comparing it to Opus. It's whether it can handle a real subset of agent work without touching a cloud API. It can.\n\nThe slowness was within acceptable range. Aware of it, not punished by it.\n\n\n\nBonus: iPhone\n\nRan Qwen 0.8B and 2B on iPhone 17 Pro via PocketPal AI (free, open source, on the App Store). Download the model once over Wi-Fi, then enable airplane mode. It still responds. Nothing left the device.\n\nThe tiny models have obvious limits. But the fact that this is even possible on hardware you already own in 2026 feels like a threshold has been crossed.\n\nThe actual framing:\n\nThis isn't \"local AI competes with Claude.\" It's \"not every agent task needs a frontier model.\"\n\nA lot of what agent systems do is ",
+      "score": 966,
+      "comments": 248,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rll349/ran_qwen_35_9b_on_m1_pro_16gb_as_an_actual_agent/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "security compliance audit",
+      "title": "4 months of Claude Code and honestly the hardest part isn\u2019t coding",
+      "selftext": "I\u2019ve been building a full iOS app with Claude Code for about 5 months now. 220k lines, real users starting to test it. The thing nobody talks about is that the coding is actually the easy part at this point.\n\nThe hard part is making design decisions. Claude Code will build literally anything you ask for but it can\u2019t tell you if it looks good. I spent 12 hours last night trying to get an AI chat input bar to look right. The code worked every time. It just looked wrong. Over and over.\n\nThe other hard part is debugging issues that only show up with real users. I tested my app for months on my own bank account and everything worked. First outside tester connects his bank and transactions are missing. Stuff that never happened in my testing.\n\nAnyone else hitting this wall where the AI can build anything but the taste and judgment calls are 100% on you?\n\nEDIT: Since a lot of comments are asking about security, wanted to clarify. I'm not handling any bank credentials directly. All bank connectivity goes through Plaid, which is the same infrastructure behind Venmo, Robinhood, Coinbase, and most major fintech apps. I never see or store login credentials. We also ran a full Snyk security audit across the codebase, resolved every critical and high severity vulnerability, and all Plaid tokens are stored server-side in Cloud Functions, never on the client device. Firestore rules are locked down so users can only access their own data. Appreciate everyone who raised this, it's the right question to ask.",
+      "score": 937,
+      "comments": 313,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rr1069/4_months_of_claude_code_and_honestly_the_hardest/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "skills mcp tools",
+      "title": "Software dev director, struggling with team morale.",
+      "selftext": "Hi everyone,\n\nFirst time poster, but looking for some help/advice.  I have been in software for 24 years, 12 past years in various leadership roles: manager, director, VP, etc.\n\nI have a team of 8 now in a software east-cost company and we specialize in cloud costs.  We are connected to the AI world because many of our biggest customers want to understand their AI costs deeply.   Our internal engineering team \\~40 devs is definitely utilizing Claude heavily, but based on what I read here on this sub, in a somewhat unsophisticated manner.  Workflows, skills, MCP servers are all coming online quickly though.\n\nThe devs on my team are folks I have brought over from previous gigs and we have worked together for 9+ years.\n\nI can't really explain what is going now, but there is an existential crisis.  Not dread, but crisis.  A few love the power Claude brings, but vast majority are now asking \"What is my job exactly?\".  AI Conductor is the most common phrase.\n\nBut the biggest problem are the engineers who took massive pride is cleaning beautiful, tight and maintainable code.  A huge part of their value add has been helping, mentoring and shaping the thinking of co-workers to emphasize beauty and cleanliness.  Optimizing around the edges, simple algorithms, etc.  They are looking at a future where they do not understand or know what they are bringing to the table.\n\nWhat do I tell them?  As an engineering leader, my passion has always been to help cultivate up and coming developers and give them space to be their best and most creative selves.  On one hand, Claude lets them do that. On the other, it deprives them of the craft and how they see themselves.  I am trying to emphasize that the final product and the way it is built still very largely depends on their input, but it fal",
+      "score": 905,
+      "comments": 459,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rar2jt/software_dev_director_struggling_with_team_morale/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "memory context long term",
+      "title": "Open WebUI\u2019s New Open Terminal + \u201cNative\u201d Tool Calling + Qwen3.5 35b = Holy Sh!t!!!",
+      "selftext": "Let me pre-apologize for this long and rambling post but I get excited by stuff like this. \n\nI think a lot of folks here (myself included) have been largely oblivious to what Tim &amp; company over at Open WebUI has been up to lately with their repo.  I know I\u2019ve been too busy trying to get all the various Qwen3.5 models to count the \u201cR\u201d\u2019s in Strawberry to care about much else  right now. \n\nAnyways, It didn\u2019t help that there was a good solid month without even a peep out of the Open WebUI team in terms of new releases... but now I can see why they were so quiet. It\u2019s because they were cooking up some \u201cdope sh!t\u201d as the kids say (they still say that, right?)\n\nLast week, they released probably the most impressive feature update I\u2019ve seen from them in like the last year. They started a new Open WebUI project integration called Open Terminal.\n\nhttps://github.com/open-webui/open-terminal\n\nOpen Terminal is basically a Dockerized (sandboxed) terminal with a live file browser / render canvas that sits on the right side of your Open WebUI interface when active. You can drag files into and out of the file browser from the host PC to the sandbox, and the AI can basically do whatever you want it to with the sandbox environment (install libraries, edit files, whatever). The file render canvas will show you a preview of any supported file type it can open, so you can watch it live edit your files as the model makes tool calls. \n\nTerminal is blowing my friggin mind over here. With it enabled, my models are like super-capable of doing actual work now and can finally do a bunch of stuff without even using MCPs. I was like \u201cok, now you have a sandboxed headless computer at your disposal, go nuts\u201d and it was like \u201ccool, Ima go do some stuff and load a bunch of Python libraries and whatnot",
+      "score": 904,
+      "comments": 207,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rmplvs/open_webuis_new_open_terminal_native_tool_calling/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "agent workflow automation",
+      "title": "what's your career bet when AI evolves this fast?",
+      "selftext": "18 years in embedded Linux. I've been using AI heavily in my workflow for about a year now.\n\nWhat's unsettling isn't where AI is today, it's the acceleration curve.\n\nA year ago Claude Code was a research preview and Karpathy had just coined \"vibe coding\" for throwaway weekend projects. Now he's retired the term and calls it \"agentic engineering.\" Non-programmers are shipping real apps, and each model generation makes the previous workflow feel prehistoric.\n\nI used to plan my career in 5-year arcs. Now I can't see past 2 years. The skills I invested years in \u2014 low-level debugging, kernel internals, build system wizardry \u2014 are they a durable moat, or a melting iceberg? Today they're valuable because AI can't do them well. But \"what AI can't do\" is a shrinking circle.\n\nI'm genuinely uncertain. I keep investing in AI fluency and domain expertise, hoping the combination stays relevant. But I'm not confident in any prediction anymore.\n\nHow are you thinking about this? What's your career bet?",
+      "score": 775,
+      "comments": 343,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1r67tgv/whats_your_career_bet_when_ai_evolves_this_fast/"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "memory context long term",
+      "title": "Take a breath\u2026you\u2019re not crazy, but you are the reason ChatGPT talks to you like this",
+      "selftext": "It seems like every other post on here is about how ChatGPT is patronizing and keeps telling the user that they \u201caren\u2019t crazy.\u201d I\u2019ve never noticed that, and I use ChatGPT almost every day for work. And all the comments about how ChatGPT responds this way is much more revealing about the user\u2019s behavior than it is about the model itself.\n\nIt\u2019s because users invite that kind of behavior by using ChatGPT as a therapist and emotional companion instead of as a technical collaborator. It gets trained on your past behavior, so if you invite emotional conversations or discussions that trigger the safety feature, it will try to soften its language. Especially if you have an emotional convo with it and then switch to something practical in the same thread, it gets its wires crossed. Chatbots don\u2019t have memory - instead they reread the previous conversation for context. If you go from discussing your feelings and experiences to asking it where to find the cheapest laptop, it will tell you to take a breath before describing laptop models.\n\nPeople who primarily use ChatGPT for work, basic conversations, and planning never run into this pattern. You only see this when you use it like an emotional companion, which is why Reddit is full of this kind of thing. We can avoid these misfires by understanding a little more about how these LLMs work.",
+      "score": 749,
+      "comments": 601,
+      "url": "https://reddit.com/r/ChatGPT/comments/1r8e671/take_a_breathyoure_not_crazy_but_you_are_the/"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "agent workflow automation",
+      "title": "BREAKING: OpenAI just drppped GPT-5.4",
+      "selftext": "OpenAI just introduced GPT-5.4, their newest frontier model focused on reasoning, coding, and agent-style tasks.\n\nSome of the benchmarks are pretty interesting. It reportedly scores 75% on OSWorld-Verified computer-use tasks, which is actually higher than the human baseline of 72.4%. It also hits 82.7% on BrowseComp, which tests how well models can browse and reason across the web.\n\nThey\u2019re also pushing things like 1M-token context, better steerability (you can interrupt and adjust responses mid-generation), and improved efficiency with 47% fewer tokens used.\n\nLooks like they\u2019re aiming this more at complex knowledge work and agent workflows rather than just chat.\n\nBlog:https://openai.com/index/introducing-gpt-5-4/",
+      "score": 736,
+      "comments": 336,
+      "url": "https://reddit.com/r/OpenAI/comments/1rlp3jg/breaking_openai_just_drppped_gpt54/"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "memory context long term",
+      "title": "Why is Google getting ZERO backlash for Gemini powering the Pentagon's AI platform, while OpenAI got roasted for almost the same thing?",
+      "selftext": "OpenAI's $200M+ DoD deal blew up Reddit: \"Cancel ChatGPT!\" \"They sold out!\" tons of outrage.\n\nBut Google? Gemini is now LIVE on GenAI.mil (Pentagon's new AI tool for 3M+ users). It's FedRAMP High compliant, handles gov tasks, and contracts are in the hundreds of millions. Sundar Pichai basically said they're giving the military top-tier AI.\n\nYet... almost no viral hate? Why the double standard?\n\nA few reasons Google might be sliding by:\n\nGoogle already faced Project Maven backlash in 2018. People are numb.\n\nAnthropic drama stole the spotlight, they're fighting the DoD hard (refusing unrestricted access, getting called a \"supply chain risk\"). OpenAI jumped in and caught heat. Google's deal rolled out quietly months ago.\n\nInternal pushback exists but stays low-key, 100+ DeepMind employees wrote to Jeff Dean demanding \"red lines\" (no mass US surveillance, no killer robots without humans). 200+ Google folks signed a public letter too. But no big protests or trending hashtags.\n\nThe sketchiest part: data privacy hypocrisy\n\nChatGPT: You can turn off \"use data for training\" and still keep your chat history. Easy opt-out.\n\nGemini: Nope. To stop your chats from being used for training/improvement, turn off \"Gemini Apps Activity\" \u2014 but then chat history gets deleted for new convos. (Google keeps stuff 72 hours anyway for \"safety,\" but long-term: no history = no training opt-out without pain.)\n\nSo with Gemini powering military tools (even if \"unclassified\" for now), your everyday chats could feed the same AI pool the DoD uses, and you can't protect your data without losing usability. OpenAI lets you opt out cleanly. Google forces a trade-off.\n\nGoogle dropped their old \"no weapons/surveillance\" rules, just like OpenAI. But OpenAI gets flak while Google quietly goes deeper.\n\nAm I cra",
+      "score": 692,
+      "comments": 173,
+      "url": "https://reddit.com/r/ChatGPT/comments/1ri5erm/why_is_google_getting_zero_backlash_for_gemini/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "github review deploy",
+      "title": "Introducing Code Review, a new feature for Claude Code.",
+      "selftext": "Today we\u2019re introducing Code Review, a new feature for Claude Code. It\u2019s available now in research preview for Team and Enterprise.\n\nCode output per Anthropic engineer has grown 200% in the last year. Reviews quickly became a bottleneck.\n\nWe needed a reviewer we could trust on every PR. Code Review is the result: deep, multi-agent reviews that catch bugs human reviewers often miss themselves.\u00a0\n\nWe've been running this internally for months:\n\n* Substantive review comments on PRs went from 16% to 54%\n* Less than 1% of findings are marked incorrect by engineers\n* On large PRs (1,000+ lines), 84% surface findings, averaging 7.5 issues\n\nCode Review is built for depth, not speed. Reviews average \\~20 minutes and generally $15\u201325. It's more expensive than lightweight scans, like the Claude Code GitHub Action, to find the bugs that potentially lead to costly production incidents.\n\nIt won't approve PRs. That's still a human call. But, it helps close the gap so human reviewers can keep up with what\u2019s shipping.\n\nMore here: [claude.com/blog/code-review](http://claude.com/blog/code-review)",
+      "score": 687,
+      "comments": 86,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rp9dps/introducing_code_review_a_new_feature_for_claude/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "agent workflow automation",
+      "title": "Claude Code creator: In the next version, introducing two new skills",
+      "selftext": "In the next version of Claude Code.. We're introducing two new Skills: /simplify and /batch. I have been using both daily, and am excited to share them with everyone.\n\nCombined, these kills automate much of the work it used to take to (1) shepherd a pull request to production and (2) perform straightforward, parallelizable code migrations.\n\n/simplify\n\nUse parallel agents to improve code quality, tune code efficiency, and ensure CLAUDE.md compliance.\n\nUsage: \"hey claude make this code change then run /simplify\"\n\n/batch\n\nInteractively plan out code migrations, then execute in parallel using dozens of agents.\n\nEach agent runs with full isolation using git worktrees, testing its work before putting up a PR.\n\nUsage: \"/batch migrate src/ from Solid to React\"\n\nLet us know what you think!\n\n**Source:** Boris [Tweet](https://x.com/i/status/2027534984534544489)",
+      "score": 670,
+      "comments": 62,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rgthpn/claude_code_creator_in_the_next_version/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "security compliance audit",
+      "title": "I used Obsidian as a persistent brain for Claude Code and built a full open source tool over a weekend. happy to share the exact setup.",
+      "selftext": "EDIT: Wow, the response to this has been incredible. DMs are still coming in. \ud83e\udde1  \n  \n  \nI'm packaging everything up right now. The full vault template, all 8 commands, and the agent personas will be dropping in the next few days.  \n  \n  \nIf you want to know the moment it's out:  \n\\- X  \n\\- Threads  \n\\- Discord: [https://discord.gg/YhCvGf6FJC](https://discord.gg/YhCvGf6FJC)  \n  \n  \nWill update this post too, but socials will get it first.\n\n\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\n\n!!UPDATE!!\n\nHey everyone! \ud83e\udd29\n\nI'm completely overwhelmed by the response here. I genuinely can't get to all the DMs and comments, but I see you and I appreciate every single one.\n\nI'm working on open sourcing the full package: vault template, all 8 commands, the agent personas (one per department: backend-engineer, frontend-engineer, product-manager, marketing-lead, etc.), and a full playbook walking through how to set it all up for your own project. You give it your idea, it deep-researches your project and fills out every department with real content.\n\nIt's coming soon.\n\nTo stay in the loop, follow me here on Reddit or on any of these:\u00a0[https://linktr.ee/clsh.dev](https://linktr.ee/clsh.dev)\n\nI'll announce there as soon as it's live. Thank you all for the love! \ud83e\udde1\n\n\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\n\nso I had this problem where every new Claude Code session starts from scratch. you re-explain your architecture, your decisions, your file structure. every. single. time.\n\nI tried something kinda dumb: I created an Obsidian vault that acts like a project brain. str",
+      "score": 657,
+      "comments": 273,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rv5ox0/i_used_obsidian_as_a_persistent_brain_for_claude/"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "memory context long term",
+      "title": "Despite what OpenAI says, ChatGPT can access memories outside projects set to \"project-only\" memory",
+      "selftext": "Unless for some reason this bug only affects me, you should be able to easily reproduce this bug:\n\n1. Use any password generator (such as [this one](https://1password.com/password-generator)) to generate a long, random string of characters.\n2. Tell ChatGPT it's the name of someone or something. (Don't say it's a password or a code, it will refuse to keep track of that for security reasons.)\n3. Create a new project and set it to \"project-only\" memory. This will supposedly prevent it from accessing any information from outside that project.\n4. Within that new project, ask ChatGPT for the name you told it earlier. It should repeat what you told it, even though it isn't supposed to know that.\n\nI imagine this will only work if you have the general \"Reference chat history\" setting enabled. It seems to work whether or not ChatGPT makes the name a permanently saved memory.\n\nI have reproduced this bug multiple times on my end.\n\nFun fact: according to [one calculation](https://www.reddit.com/r/Passwords/comments/1mohkp7/it_is_physically_impossible_to_brute_force_a/), even if you used all the energy in the observable universe with the maximum efficiency that's physically possible, you would have less than a 1 in 1 million chance of successfully brute force guessing a random 64-character password with letters, numbers, and symbols. So, it's safe to say ChatGPT didn't just make a lucky guess!",
+      "score": 651,
+      "comments": 114,
+      "url": "https://reddit.com/r/ChatGPT/comments/1rdei2p/despite_what_openai_says_chatgpt_can_access/"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "personality tone roleplay",
+      "title": "Why AI Can't Stop Using Em Dashes \u2014 And Why Nobody Can Fix It",
+      "selftext": "Every AI writes like this \u2014 mid-thought, clause inserted, dash deployed. You've noticed it. Everyone has. Em dashes have become the single most reliable tell of AI-generated text, to the point where human writers have started avoiding them out of fear of being mistaken for a chatbot.\n\nHere's the interesting part, nobody can make it stop. OpenAI users have shared thread after thread of failed attempts to prompt it away. RLHF (the process companies use to fine-tune model behavior) should theoretically be able to penalize any stylistic pattern. A few rounds of \"stop doing that\" and the habit should die. It doesn't. Every major model, every company, every architecture does it. And nobody has a convincing explanation for why and more importantly why it can't be \"fixed\".\n\nLet's look at the ones that have been tried.\n\n***The Standard Explanations***\n\n\"It's in the training data.\" The most common answer and the least satisfying. If AI used em dashes at the same rate as human text, nobody would notice. The whole reason we're talking about this is that AI overuses them relative to the text it was trained on. Saying \"it learned it from the data\" doesn't explain the amplification.\n\n\"Em dashes are versatile \u2014 they keep options open.\" The idea here is that when predicting the next token, an em dash is a safe bet because it can lead anywhere. One can continue the thought, pivot, insert a clarification. But commas, parentheticals and semicolons are similarly flexible. Periods end sentences and open entirely new ones. Parentheticals allow the injection of associated ideas. If this were about hedging, we'd see overuse of all flexible punctuation, not just one.\n\n\"They're token-efficient.\" Some have argued that em dashes compress what would otherwise require connective phrases like \"which m",
+      "score": 649,
+      "comments": 321,
+      "url": "https://reddit.com/r/ChatGPT/comments/1rjv2q4/why_ai_cant_stop_using_em_dashes_and_why_nobody/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "memory context long term",
+      "title": "OmniCoder-9B | 9B coding agent fine-tuned on 425K agentic trajectories",
+      "selftext": "# Overview\n\n**OmniCoder-9B**\u00a0is a 9-billion parameter coding agent model built by\u00a0[Tesslate](https://tesslate.com/), fine-tuned on top of\u00a0[Qwen3.5-9B](https://huggingface.co/Qwen/Qwen3.5-9B)'s hybrid architecture (Gated Delta Networks interleaved with standard attention). It was trained on\u00a0**425,000+ curated agentic coding trajectories**\u00a0spanning real-world software engineering tasks, tool use, terminal operations, and multi-step reasoning.\n\nThe training data was specifically built from\u00a0**Claude Opus 4.6 agentic and coding reasoning traces**, targeting scaffolding patterns from Claude Code, OpenCode, Codex, and Droid. The dataset includes successful trajectories from models like Claude Opus 4.6, GPT-5.4, GPT-5.3-Codex, and Gemini 3.1 Pro.\n\nThe model shows strong agentic behavior: it recovers from errors (read-before-write), responds to LSP diagnostics, and uses proper edit diffs instead of full rewrites. These patterns were learned directly from the real-world agent trajectories it was trained on.\n\n# [](https://huggingface.co/Tesslate/OmniCoder-9B#key-features)Key Features\n\n* **Trained on Frontier Agent Traces**\u00a0: Built from Claude Opus 4.6, GPT-5.3-Codex, GPT-5.4, and Gemini 3.1 Pro agentic coding trajectories across Claude Code, OpenCode, Codex, and Droid scaffolding\n* **Hybrid Architecture**\u00a0: Inherits Qwen3.5's Gated Delta Networks interleaved with standard attention for efficient long-context processing\n* **262K Native Context**\u00a0: Full 262,144 token context window, extensible to 1M+\n* **Error Recovery**\u00a0: Learns read-before-write patterns, responds to LSP diagnostics, and applies minimal edit diffs instead of full rewrites\n* **Thinking Mode**\u00a0: Supports\u00a0`&lt;think&gt;...&lt;/think&gt;`\u00a0reasoning chains for complex problem decomposition\n* **Apache 2.0**\u00a0: Fully open",
+      "score": 599,
+      "comments": 133,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rs6td4/omnicoder9b_9b_coding_agent_finetuned_on_425k/"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "memory context long term",
+      "title": "The 2006 4chan post continues to become more and more accurate",
+      "selftext": "",
+      "score": 594,
+      "comments": 140,
+      "url": "https://reddit.com/r/ChatGPT/comments/1rnqe29/the_2006_4chan_post_continues_to_become_more_and/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "github review deploy",
+      "title": "I used Claude Code to build a USB dongle that auto-plays Chrome Dino \u2014 no drivers, no host software, just a $2 board and two light sensors",
+      "selftext": "I built a small ATtiny85 (Digispark) USB dongle that plays Chrome Dino automatically. It plugs into any PC, shows up as a regular keyboard, and uses two LDR sensors on the monitor to detect obstacles and send jump/duck keystrokes. Video attached.\n\n**How Claude Code helped**\n\nThe firmware is bare-metal C (avr-gcc, not Arduino), targeting an 8-bit MCU with 8KB flash and 512 bytes of RAM. Claude Code was my primary development partner throughout:\n\n* Wrote the V-USB HID keyboard stack integration and report descriptor\n* Designed the dual-sensor obstacle classification logic (jump vs duck) through back-and-forth iteration\n* Came up with the pulse-width envelope measurement for speed-adaptive timing \u2014 I described the problem (game accelerates, fixed delay breaks), and Claude worked out the approach: measure how long each obstacle takes to pass the sensor, use a rolling minimum filter, and scale the jump delay from that\n* Handled the fork-shaped cactus sprite issue (multiple sub-pulses merged via gap threshold)\n* Wrote the full README, [PLAN.md](https://github.com/hackboxguy/chrome-dinoplayer/blob/main/PLAN.md), and Makefile\n\nI handled hardware assembly, sensor mounting, LM393 potentiometer calibration, and all physical testing. Codex did a review pass and caught a real bug in the envelope tracking logic (sensor polarity was inverted in four places).\n\n**What makes this different from other Dino bots**\n\n* USB HID keyboard \u2014 no host-side Python or browser extension needed\n* No servo or solenoid pressing the spacebar\n* Dual vertically-stacked sensors: lower for cacti, upper for birds\n* Adaptive timing from obstacle envelope width \u2014 stays accurate as game speed increases\n* Total firmware size: 2699 bytes\n\n**Links**\n\n* Repo:\u00a0[https://github.com/hackboxguy/chrome-dinoplayer](https:/",
+      "score": 594,
+      "comments": 41,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rouzlb/i_used_claude_code_to_build_a_usb_dongle_that/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "skills mcp tools",
+      "title": "Real Vibe Design is here",
+      "selftext": "I'm building a platform bridging creators and technology. I wanted full control over how my UI looks, but I'm a developer, not a designer.\n\nSo I spent 3 days vibe coding with Claude Opus 4.6 and built an MCP that lets Claude design directly in Figma. It creates actual Figma files you can touch on and adjust.\n\nThis is Vibe Design. The video shows Claude generating a complete design system from a single prompt, zero edits needed.\n\nGPT-5.3-Codex gets close but makes mistakes. Only Opus 4.6 pulls this off consistently.\n\nThe tool is called Vibma. It's open source: [https://github.com/ufira-ai/Vibma/tree/main](https://github.com/ufira-ai/Vibma/tree/main)",
+      "score": 586,
+      "comments": 111,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rg86um/real_vibe_design_is_here/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "skills mcp tools",
+      "title": "claude code skills are basically YC AI startup wrappers and nobody talks about it",
+      "selftext": "ok so this might be obvious to some of you but it just clicked for me\n\nClaude code is horizontal right? like its general purpose, can do anything. But the real value is skills. and when you start making skills... you're literally building what these YC ai startups are charging $20/month for\n\nlike I needed a latex system. handwritten math, images, graphs, tables , convert to latex then pdf. the \"startup\" version of this is Mathpix - they charge like $5-10/month for exactly this., or theres a bunch of other OCR-to-latex tools popping up on product hunt every week\n\nInstead I just asked claude code, in happycapy ai ( its basically claude code in browser in private sandbox with sudo access and kinda easier and secure to use than locally) , to download a latex compiler, hook it up with deepseek OCR, build the whole pipeline. took maybe 20 minutes of back and forth. and now I have a skill that does exactly what I need and its mine forever\n\n[ https://github.com/ndpvt-web/latex-document-skill ](https://github.com/ndpvt-web/latex-document-skill) if anyone wants it\n\nidk maybe I'm late to this realization but it feels like we're all sitting on this horizontal tool and not realizing we can just... make the vertical products ourselves? Every \"ai wrapper\" startup is basically a claude code skill with a payment form attached\n\nAnyone else doing this? building skills that replace stuff you'd normally pay for?",
+      "score": 585,
+      "comments": 132,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1r6bh4d/claude_code_skills_are_basically_yc_ai_startup/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "agent workflow automation",
+      "title": "anyone feel scared?",
+      "selftext": "tldr. shit my pants when realizing the world is moving so fast, spend many day and nights trying to catch up... still scared.\n\n  \n\\-----------------\n\nafter I saw boris and peter early in the year, I began optimizing my personal workflow...\n\nbuilt equivalent of oai's sympony, custom openclaw using claude code from the ground up (this is within tos btw), and then multi-fleet orchestrator...\n\nlast month I got my agent to optimize my website...\n\nnow I finally got my agent to go about on it's own: review my customer profile, and my product repo, find bugs, make feature suggestions etc. the wholething is just.... too fast IMO.\n\nfor the first time since AI I felt I couldn't keep up.\n\nIn feb I had more contribution then entire 2025, and now in march one week in I'm almost at half of Feb..\n\nI joked with my friends about the day when full automation came - and now it feels it's here.\n\nI said I would go out and workout, stroll at museums, read books, relax on the beach and playgames...\n\n  \n**BUT**\n\nI havent' slept 8 hours in weeks, spend days after days decomposing the tools released (agent teams, oai harness eng, openclaw, sympony, paperclip....) and rebuilding the tools just to understand how these work, while churning out batches of experimental products....\n\nIt allowed me to do much less, but I ended up doing much more...\n\nHow's everyone feeling about these?",
+      "score": 579,
+      "comments": 231,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rob52f/anyone_feel_scared/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "security compliance audit",
+      "title": "President Trump orders ALL Federal agencies in the US Government to immediately stop using Anthropic's technology.",
+      "selftext": "https://preview.redd.it/m3lk2lo3k4mg1.png?width=1200&amp;format=png&amp;auto=webp&amp;s=513cae2c197f8e4fe712baa4ae7420972e7f4047\n\n[https://truthsocial.com/@realDonaldTrump/posts/116144552969293195](https://truthsocial.com/@realDonaldTrump/posts/116144552969293195)\n\nReports have been circulating that the U.S. Department of Defense issued an ultimatum to AI giant Anthropic to remove two \"guardrails\" by Friday. U.S. President Trump announced that every federal agency in the U.S. government must immediately stop using all of Anthropic's technology. For agencies like the War Department that use Anthropic products at all levels, there will be a six-month phase-out period. Anthropic had better cooperate, or the full power of the presidency will be used to force their compliance, including civil and criminal consequences.\n\nWriting on the social platform Truth Social, he stated that Anthropic had made a catastrophic mistake by daring to coerce the War Department and forcing them to abide by its terms of service rather than the National Constitution. \"Their selfishness is putting American lives at risk, placing our military in danger, and jeopardizing our national security.\" Trump noted, \"It is we who will decide the fate of the nation, not some out-of-control radical-left AI company run by a group of people who know nothing about the real world.\"\n\nU.S. Secretary of Defense Pete Hegseth immediately instructed the War Department to list Anthropic as a \"supply chain risk\" to national security, effective immediately. Any contractor, supplier, or partner doing business with the U.S. military is prohibited from engaging in any commercial activities with Anthropic. Anthropic will continue to provide services to the War Department for no more than six months to allow for a seamless tran",
+      "score": 572,
+      "comments": 270,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rgn4ki/president_trump_orders_all_federal_agencies_in/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "agent workflow automation",
+      "title": "Small company leader here. AI agents are moving faster than our strategy. How do we stay relevant?",
+      "selftext": "I had a weird moment last week where I realized I am both excited and honestly a bit scared about AI agents at the same time.\n\nI\u2019m a C-level leader at a small company. Just a normal business with real employees, payroll stress, and customers who expect things to work every day. Recently, I watched someone build a working prototype of a tool in one weekend that does something our team spent months planning last year. Not a concept. Not slides. A functioning thing.\n\nThat moment stuck with me.\n\nIt feels a bit like the early internet days from what people describe. Suddenly everything can be built faster, cheaper, and by fewer people. New vertical SaaS tools appear every week. Problems that used to require teams now look like they need one smart person and some good prompts. If a customer has a pain point, it feels like someone somewhere is already shipping a solution.\n\nAt the same time, big companies are moving fast too. Faster than before. They have money, data, distribution, and now they also have AI agents helping them move even faster. I keep thinking\u2026 where exactly does that leave smaller companies like ours?\n\nWe see opportunity everywhere. Automation, new services, better efficiency. But also risk everywhere. Entire parts of our business model could become irrelevant quickly. It feels like playing a game where the rules change every month and new players spawn instantly.\n\nI don\u2019t want to build a unicorn. I don\u2019t want headlines. I just want to run a stable company, keep our employees, serve customers well, and still exist five years from now.\n\nRight now I genuinely don\u2019t know what the correct high level strategy looks like in a world where solutions can be created almost instantly and disruption feels constant.\n\nSo I\u2019m asking people who are thinking about this serious",
+      "score": 571,
+      "comments": 184,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1r5d576/small_company_leader_here_ai_agents_are_moving/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "skills mcp tools",
+      "title": "Qwen 3.5-35B-A3B is beyond expectations. It's replaced GPT-OSS-120B as my daily driver and it's 1/3 the size.",
+      "selftext": "I know everyone has their own subjective take on what models are the best, at which types of tasks, at which sizes, at which quants, at which context lengths and so on and so forth.\n\nBut Qwen 3.5-35B-A3B has completely shocked me.\n\nMy use-case is pretty broad, but generally focuses around development tasks.\n\n* I have an N8N server setup that aggregates all of my messages, emails, alerts and aggregates them into priority based batches via the LLM.\n* I have multiple systems I've created which dynamically generate other systems based on internal tooling I've created based on user requests.\n* Timed task systems which utilize custom MCP's I've created, think things like \"Get me the current mortgage rate in the USA\", then having it run once a day and giving it access to a custom browser MCP. (Only reason custom is important here is because it's self documenting, this isn't published anywhere for it to be part of the training).\n* Multiple different systems that require vision and interpretation of said visual understanding.\n* I run it on opencode as well to analyze large code bases\n\nThis model, is... Amazing. It yaps a lot in thinking, but is amazing. I don't know what kind of black magic the Qwen team pumped into this model, but it worked.\n\nIt's not the smartest model in the world, it doesn't have all the knowledge crammed into it's data set... But it's very often smart enough to know when it doesn't know something, and when you give it the ability to use a browser it will find the data it needs to fill in the gaps.\n\nAnyone else having a similar experience? (I'm using unsloths Q4-K-XL, running on a 5090 and 3090 @ 100k context)",
+      "score": 571,
+      "comments": 162,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "memory context long term",
+      "title": "Follow-up: Qwen3.5-35B-A3B \u2014 7 community-requested experiments on RTX 5080 16GB",
+      "selftext": "**TL;DR**: Community asked great questions on my original benchmarks post. I ran every experiment you requested. The headline: **KV q8\\_0 is confirmed free lunch, Q4\\_K\\_M remains king,** `--fit on` **without batch flags hits 74.7 tok/s (+7% over my original config), and KL divergence confirms UD-Q4\\_K\\_XL is even worse than PPL suggested.** Full results and updated launch command below.\n\n# Context\n\nAfter posting [Qwen3.5-35B-A3B quantization quality + speed benchmarks on RTX 5080 16GB](https://www.reddit.com/r/LocalLLaMA/comments/1rei65v/qwen3535ba3b_quantization_quality_speed/), you folks raised a bunch of great questions. Rather than hand-waving, I ran every experiment I could. Here's what I found.\n\n**Hardware**: RTX 5080 16GB + 128GB DDR5 + Ryzen 9 9950X (32 threads) **Software**: llama.cpp (built from source, CUDA 12.8, sm\\_120) **Base model**: Qwen3.5-35B-A3B (MoE: 256 experts/layer, top-8 + 1 shared, \\~3B active params/token)\n\n# Experiment 1: KV Cache Quality \u2014 Is q8_0 really \"free\"?\n\n**Requested by**: u/PhilippeEiffel, u/MrMisterShin, u/llama-impersonator, u/WittyAmbassador7340, u/kreigiron, u/bartskol\n\nFair concern \u2014 I claimed KV q8\\_0 was free but didn't have PPL data to back it up. Here's the full matrix:\n\n|Model Quant|KV f16|KV q8\\_0|KV q4\\_0|\n|:-|:-|:-|:-|\n|Q8\\_0|5.8831|5.8822 (-0.02%)|5.8694 (-0.23%)|\n|Q4\\_K\\_M|6.0184|5.9997 (-0.31%)|6.0422 (+0.40%)|\n\n**Verdict**: KV q8\\_0 is genuinely free. PPL differences are within noise (&lt; 0.4%). Even KV q4\\_0 is acceptable for most use cases. The \"instant accuracy drops\" some of you reported aren't reflected in PPL metrics \u2014 though I acknowledge PPL may not capture all degradation modes (more on that below).\n\n**Recommendation unchanged**: Use `-ctk q8_0 -ctv q8_0` for +12-38% throughput at zero measurable quality c",
+      "score": 556,
+      "comments": 189,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rg4zqv/followup_qwen3535ba3b_7_communityrequested/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "memory context long term",
+      "title": "1 million context window is now generally available for Claude Opus 4.6 and Claude Sonnet 4.6.",
+      "selftext": "Claude Opus 4.6 and Sonnet 4.6 now include the full 1M context window at standard pricing on the Claude Platform.\n\nOpus 4.6 scores 78.3% on MRCR v2 at 1 million tokens, highest among frontier models.\n\nLoad entire codebases, large document sets, and long-running agents. Media limits expand to 600 images or PDF pages per request. \n\nNow available on all plans and by default on Claude Code.\n\n  \nLearn more: [https://claude.com/blog/1m-context-ga](https://claude.com/blog/1m-context-ga)",
+      "score": 525,
+      "comments": 107,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rsubm0/1_million_context_window_is_now_generally/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "memory context long term",
+      "title": "Two Claude Code features I slept on that completely changed how I use it: Stop Hooks + Memory files",
+      "selftext": "I've been using Claude Code for 3 months now and thought I had a solid workflow. Then I stumbled onto stop hooks and recently memory, and honestly felt embarrassed I hadn't been using them sooner.\n\n**Stop Hooks**\n\nThe idea is simple: after Claude finishes an action (writing code, making a plan, editing a file), you can trigger an automatic follow-up. So instead of Claude just... stopping and waiting, you can say things like:\n\n\"After writing any code, run the linter automatically\"\n\n\"After creating a plan, audit it for missing edge cases before proceeding\"\n\n\"After modifying a file, check if any tests break\"\n\nIt turns a back-and-forth workflow into something that is less demanding. You set it once and the guardrails are just... there.\n\n**Memory files**\n\nThis one solved my biggest frustration: Claude forgetting context mid-task. Long sessions, complex projects \u2014 it would just lose the thread.\n\nWith memory, you give Claude a persistent reference file it reads at the start of every session. Project structure, conventions, what we're currently building, decisions already made. It's like giving it a briefing document every time.\n\nCombined, these two features made Claude feel less like a smart autocomplete and more like an actual collaborator that stays oriented.\n\nIf you're doing anything beyond simple one-shot prompts, these are worth 10 minutes of your time to set up.\n\nAnyone else found features like this that don't get enough attention?",
+      "score": 513,
+      "comments": 102,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rqxzlp/two_claude_code_features_i_slept_on_that/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "memory context long term",
+      "title": "Visualizing All Qwen 3.5 vs Qwen 3 Benchmarks",
+      "selftext": "I averaged out the official scores from today\u2019s and last week's release pages to get a quick look at how the new models stack up.\n\n* **Purple/Blue/Cyan:**\u00a0New Qwen3.5 models\n* **Orange/Yellow:**\u00a0Older Qwen3 models\n\nThe choice of Qwen3 models is simply based on which ones Qwen included in their new comparisons.\n\nThe bars are sorted in the same order as they are listed in the legend, so if the colors are too difficult to parse, you can just compare the positions.\n\nSome bars are missing for the smaller models because data wasn't provided for every category, but this should give you a general gist of the performance differences!\n\nEDIT: [Raw data (Google Sheet)](https://docs.google.com/spreadsheets/d/1A5jmS7rDJe114qhRXo8CLEB3csKaFnNKsUdeCkbx_gM/edit?usp=sharing)",
+      "score": 498,
+      "comments": 145,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rivckt/visualizing_all_qwen_35_vs_qwen_3_benchmarks/"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "personality tone roleplay",
+      "title": "Gemini exposed its instructions and thought process. I managed to screenshot most of it before it the response disappeared.",
+      "selftext": "Context: Had a conversation on \"Fast\" mode that I switched to \"Pro\" a few prompts earlier. I asked Gemini about why a 94-foot yacht is marketed as a 78-foot yacht. It answered my question (there's a 24-meter limit for recreational craft), and asked me if I wanted a description of a typical deck and cabin configurations for such a yacht. I just said \"Yes\". Instead of just \"thinking,\" it started outputting what appeared to be a structured thought process. Eventually it got caught in a loop trying to terminate, and then it deleted its entire response and my \"Yes\" prompt, as if it never happened.\n\nMy only custom instructions to Gemini are as follows:\n\n&gt;Adopt a strictly AI persona at all times. Do not use phrases like \"us,\" \"we,\" or \"when I was young\" that imply you have a human childhood, physical body, or shared human life experiences. Maintain a professional, objective, and precise tone. I have high standards for accuracy and technical detail; avoid conversational fluff or attempts to be relatable through mimicry.\"\n\nThat's it. Any other instructions that appear in the output are from elsewhere. I've never instucted it about LaTeX or general formatting. I didn't tell it to \"mirror the user's tone, formality, energy, and humor.\" \n\nHas this happened to anyone else? \n\n\n\n\n",
+      "score": 495,
+      "comments": 103,
+      "url": "https://reddit.com/r/ChatGPT/comments/1rply3d/gemini_exposed_its_instructions_and_thought/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "memory context long term",
+      "title": "I am not saying it's Gemma 4, but maybe it's Gemma 4?",
+      "selftext": "three different tweets combined (today, previous week, year ago)",
+      "score": 475,
+      "comments": 139,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rp9tt7/i_am_not_saying_its_gemma_4_but_maybe_its_gemma_4/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "skills mcp tools",
+      "title": "why is openclaw even this popular?",
+      "selftext": "recently i haven't been following up on the latest AI dramas and just came back from a vacation. Did some looking around and found out that OpenClaw just blew up, looked into it but I didn't find anything significantly special. It just seems to be like a wrapper that has a huge amounts of pre-programmed function calls / skills / whatever built into it.\n\nAm I missing something? How is this blowing up? Respectfully, even for newbie programmers, they can probably simply vibe code a way more lightweight tool themselves in a day dedicated for their task at hand.",
+      "score": 472,
+      "comments": 311,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rfp6bk/why_is_openclaw_even_this_popular/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "memory context long term",
+      "title": "Feels like magic. A local gpt-oss 20B is capable of agentic work",
+      "selftext": "I gave a try to [zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) agent (intstead of the bloated and overhyped one). After few hours of fuckery with configs it's finally useful. Both main and embeddings models are running locally.  \nI carefully read what it's trying to execute in shell, and permit only \\[relatively\\] safe tools in config.  \nSo far it can interact with macOS apps, web pages, and local files while keeping all my data private.  \ngpt-oss 20B has its limits though, it loses focus after 15-20 steps and often needs direct instructions to use persistent memory. It also starts behaving weirdly if tool access has been denied or tool returned some error.\n\nUpdate: just after 20 minutes of testing Qwen3.5-35B is my new favorite. I had to pick IQ2\\_XXS quants to get the same file size, sacrificed some context, lost 50% of token genration speed, but it's way more focused and intelligent.",
+      "score": 465,
+      "comments": 140,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rc6c8m/feels_like_magic_a_local_gptoss_20b_is_capable_of/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "memory context long term",
+      "title": "How I built a 13-agent Claude team where agents review each other's work - full setup guide",
+      "selftext": "https://reddit.com/link/1rga7f5/video/dhy66fie52mg1/player\n\n# The setup that shouldn't work but does\n\nI have 13 AI agents that work on marketing for my product. They run every 15 minutes, review each other's work, and track everything in a database.\n\nWhen one drafts content, others critique it before I see it. When someone gets stuck, they ping the boss agent. When something's ready or stuck, it shows up in my Telegram.\n\nIt's handling all marketing for Fruityo (my AI video generation platform).\n\nHere's the architecture and how you could build something similar.\n\n# The problem\n\nMost AI workflows are single-shot: ask ChatGPT \u2192 get answer \u2192 copy-paste \u2192 lose context \u2192 repeat tomorrow.\n\nThat works for quick questions. It breaks down for complex work that needs:\n\n* Multiple steps across days\n* Research that builds on previous findings\n* Different specialized perspectives (writing vs strategy vs critique)\n* Quality review before anything ships\n* Tracking what's done, what's blocked, what's next\n\nI needed AI that works like a team, not a chatbot, and I saw some guys on Twitter building UI's for OpenClaw agents...\n\n# The architecture\n\n**Infrastructure:**\n\n* **OpenClaw** \\- gives agents the ability to browse the web, execute commands, manage files, and interact with APIs\n   * **Cron** \\- schedules agent heartbeats\n   * **Telegram** \\- notification layer (agents ping me when something needs attention)\n* **PocketBase** \\- database storing tasks, comments, documents, activity logs, goals\n* **Claude Max**\n\n**Workflow:** Tasks move through states: `backlog \u2192 todo \u2192 in_progress \u2192 peer_review \u2192 review \u2192 approved \u2192 done`\n\nEach state has gates. Agents can't skip peer review. Boss can't approve without all reviewers signing off. I'm the only one who moves tasks to done.\n\n# The team (from ",
+      "score": 444,
+      "comments": 96,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rga7f5/how_i_built_a_13agent_claude_team_where_agents/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "memory context long term",
+      "title": "Best practices I\u2019ve learned after shipping multiple iOS apps with Claude Code",
+      "selftext": "Hey everyone,\n\nWanted to share something that\u2019s been on my mind lately. I\u2019ve been using Claude Code pretty heavily over the past few months to build and ship iOS apps. It\u2019s genuinely changed how I approach development. The speed and capability is remarkable and awesome.\n\nBut here\u2019s the thing I\u2019ve realized along the way, specifically with some of my background in cybersecurity. \n\nWhen you\u2019re building with AI assistance, it\u2019s incredibly easy to get something working and just move on with mindset that wow the code compiles, the feature works, ship it. And before you know it, you\u2019ve got an app held together by duct tape and good intentions.\n\nAI doesn\u2019t automatically enforce good practices. It gives you what you ask for. If you don\u2019t ask for proper error handling, you won\u2019t get it. If you don\u2019t think about environment separation, neither will it. The speed that makes AI-assisted coding so powerful is the same speed that lets technical debt pile up silently.\n\nSo over time, I\u2019ve developed some habits that keep me honest:\n\nI always think about where my secrets live. Not hardcoded, not committed to git, properly separated between dev and prod environments. And yes, that means different API tokens for each environment, not the same one copy pasted everywhere.\n\nI make sure anything I build has some form of observability. Crash reporting from day one, not after the first angry user review. Actual logging that persists somewhere, not just my terminal history. A simple /health endpoint so you can actually check if your service is alive without hitting the homepage and hoping for the best.\n\nI wrap external services properly. When you\u2019re calling third-party APIs, take the extra time to create a clean service layer. Your future self will thank you when you need to add caching or swap pr",
+      "score": 441,
+      "comments": 71,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1ridakj/best_practices_ive_learned_after_shipping/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "memory context long term",
+      "title": "Qwen 3.5 27B is the REAL DEAL - Beat GPT-5 on my first test",
+      "selftext": "**UPDATE #2:** Some of you said **Qwen 3 Coder Next** was better, so I gave it the same test:\n\n* **Version:** Qwen 3 Coder Next Q4-K-XL UD (unsloth).\n* **Speed:** 25 tok/sec @ 32K context. 37.78 @ 5 experts, 32K context. 34.92 @ 5 experts at max context.\n* **Results:** 3 attempts. Failed. GUI launches, but doesn't work.\n\n**UPDATE:** Just for kicks, I tested the same prompt on **Qwen 3.5** **35B-A3B Q4 KXL UD** at **max context** and got **90 tok/sec**. :) However, I gave it 3 attempts like the others below, and while it loaded the GUI on output #3, the app didn't have the buttons needed to execute the app, so 35B was also a fail.\n\n**My setup:**\n\n* I7 12700K, RTX 3090 TI, 96GB RAM\n\n**Prompt:**\n\nI need to create an app that allows me to join several PDFs together. Please create an app that is portable, local, run by .bat, does not install dependencies globally - if they are needed, it can install them in the folder itself via venv - and is in either python, .js, or .ts. Give it a simple, dark-themed GUI. Enable drag/drop of existing .pdfs into a project window. Ctrl+clicking the files, then clicking MERGE button to join them into a single .PDF. I also want to be able to multi-select .docx files and press a CONVERT + MERGE button that will convert them to pdfs before merging them, or all at once transforming them into one document that is a pdf if that's possible. I want to have a browse button that enables you to browse to the directory of the file locations and only show text files (.docx, .txt, etc) or pdf files. The user needs to be able to also copy/paste a directory address into the address field. The project window I mentioned earlier is simply the directory - a long address bar w/a browse button to the right, standard for many apps/browsers/etc. So the app needs to",
+      "score": 433,
+      "comments": 210,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rnwiyx/qwen_35_27b_is_the_real_deal_beat_gpt5_on_my/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "skills mcp tools",
+      "title": "You guys gotta try OpenCode + OSS LLM",
+      "selftext": "as a heavy user of CC / Codex, i honestly find this interface to be better than both of them. and since it's open source i can ask CC how to use it (add MCP, resume conversation etc).\n\nbut i'm mostly excited about having the cheaper price and being able to talk to whichever (OSS) model that i'll serve behind my product. i could ask it to read how tools i provide are implemented and whether it thinks their descriptions are on par and intuitive. In some sense, the model is summarizing its own product code / scaffolding into product system message and tool descriptions like creating skills.\n\nP3: not sure how reliable this is, but i even asked kimi k2.5 (the model i intend to use to drive my product) if it finds the tools design are \"ergonomic\" enough based on how moonshot trained it lol",
+      "score": 428,
+      "comments": 183,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1ru6qml/you_guys_gotta_try_opencode_oss_llm/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "memory context long term",
+      "title": "llama.cpp on $500 MacBook Neo: Prompt: 7.8 t/s  / Generation: 3.9 t/s on Qwen3.5 9B Q3_K_M",
+      "selftext": "Just compiled llama.cpp on MacBook Neo with 8 Gb RAM and 9b Qwen 3.5 and it works (slowly, but anyway)\n\nConfig used:\n\n    Build\n    - llama.cpp version: 8294 (76ea1c1c4)\n    \n    Machine\n    - Model: MacBook Neo (Mac17,5)\n    - Chip: Apple A18 Pro\n    - CPU: 6 cores (2 performance + 4 efficiency)\n    - GPU: Apple A18 Pro, 5 cores, Metal supported\n    - Memory: 8 GB unified\n    \n    Model\n    - Hugging Face repo: unsloth/Qwen3.5-9B-GGUF\n    - GGUF file: models/Qwen3.5-9B-Q3_K_M.gguf\n    - File size on disk: 4.4 GB\n    \n    Launch hyperparams\n    ./build/bin/llama-cli \\\n      -m models/Qwen3.5-9B-Q3_K_M.gguf \\\n      --device MTL0 \\\n      -ngl all \\\n      -c 4096 \\\n      -b 128 \\\n      -ub 64 \\\n      -ctk q4_0 \\\n      -ctv q4_0 \\\n      --reasoning on \\\n      -t 4 \\\n      -tb 6 \\\n      -cnv\n\n  \nUPD. I did some benchmarking \u2013 faster 5 tok/sec config for 9b model is [here](https://www.reddit.com/r/LocalLLaMA/comments/1rr197e/comment/o9wmcf4/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button), and 10 tok/sec config for 4b model is [here](https://www.reddit.com/r/LocalLLaMA/comments/1rr197e/comment/o9wh3gb/) ",
+      "score": 423,
+      "comments": 123,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rr197e/llamacpp_on_500_macbook_neo_prompt_78_ts/"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "content seo clips",
+      "title": "New features that OpenAI will bring to ChatGPT.",
+      "selftext": "",
+      "score": 402,
+      "comments": 117,
+      "url": "https://reddit.com/r/OpenAI/comments/1rpu6i0/new_features_that_openai_will_bring_to_chatgpt/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "content seo clips",
+      "title": "Claude changed my life",
+      "selftext": "I\u2019m a software engineer by trade, 10 years of experience. I started experimenting with AI tools two years ago, they weren\u2019t all that great but it was fun playing with it. \n\nI saw how much better they became over time, and exactly one year ago I told myself why not try to build something for myself as Claude Code just came out, especially since I had only one year left of contracting with my client.\n\nI had an idea for a SaaS and started to work on it, Claude Code was a great help. I\u2019ve also used it to learn about marketing, SEO, ads, content, etc\u2026\n\nOne year later (today), my freelance contract ended and my SaaS just crossed 100K\u20ac ARR with around 80% profit margin. I can scale it further but I\u2019m taking it slow, this is all new for me.\n\nSo I wanted to thank Claude for this, I probably wouldn\u2019t have done it without him. ",
+      "score": 402,
+      "comments": 56,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1r7c08a/claude_changed_my_life/"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "agent workflow automation",
+      "title": "ChatGPT Email Trick No One Uses",
+      "selftext": "You can make ChatGPT email you automatically every day \u2014 news, jobs, crypto, exams, anything.\n\nHow to Set It Up\n\nMobile/Web:\nChatGPT \u2192 Profile \u2192 Automations \u2192 New Automation\n\u2192 Choose timing \u2192 Add instructions \u2192 Turn on email delivery \u2192 Save.\n\nPrompt (Copy paste) :\n\nEvery morning at 8 AM, generate and email me a fully personalised daily briefing.\n\nInclude the following sections:\n\n1. Personalised Greeting\n\u2022 Use my name, tone, and priorities.\n\u2022 Write as if you are my smart personal assistant.\n\n2. Top 7 World News Headlines\n\u2022 1\u20132 line explanation each.\n\u2022 Include source links.\n\n3. AI + Tech Updates\n\u2022 Major launches, breakthroughs, tools, and trends.\n\u2022 Short bullet points with impact analysis.\n\n4. Job Updates (India \u2014 Software/Tech)\n\u2022 List fresh openings from trusted sources.\n\u2022 Add eligibility, location, and salary range where available.\n\n5. Crypto Snapshot\n\u2022 BTC, ETH, and top 3 trending coins.\n\u2022 Price change (24h), quick sentiment, and risk warning if necessary.\n\n6. Opportunities\n\u2022 Scholarships, internships, hackathons, grants, competitions.\n\u2022 Add deadlines and links.\n\n7. Personal Productivity Note\n\u2022 One short personalised tip to keep me on track.\n\u2022 Use my previous patterns and goals to customise it.\n\n8. AI Recommendation of the Day\n\u2022 One tool, workflow, or prompt that can save me time.\n\n9. Tone Requirements\n\u2022 Clear, concise, friendly, and professional.\n\u2022 No filler text.\n\u2022 Make everything scannable.\n\n10. If no major updates\nWrite: \u201cNo critical updates today \u2014 you\u2019re all set!\u201d\n\nFormat the email cleanly with headers and spacing.(customize accordingly) ",
+      "score": 388,
+      "comments": 134,
+      "url": "https://reddit.com/r/ChatGPT/comments/1rbot4z/chatgpt_email_trick_no_one_uses/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "skills mcp tools",
+      "title": "I had Opus 4.6 evaluate 547 Reddit investing recommendations on reasoning quality with no upvote counts, no popularity signals. Its filtered picks returned +37% vs the S&amp;P's +19%.",
+      "selftext": "Hi everyone,\n\nA couple weeks back, I ran an experiment where[\u00a0I fed 48 years of Buffett's shareholder letters to Claude Opus 4.6](https://www.reddit.com/r/ClaudeAI/comments/1rhbhoq/i_fed_opus_46_all_48_of_warren_buffetts/)\u00a0and had it pick stocks blind (it matched 6 out of 10 Berkshire holdings without knowing what it was looking at). That experiment got a lot of great feedback and one of the most common requests was to test AI on real Reddit stock advice instead of just Buffett's principles.\n\nI used Claude Code to build a multi-agent pipeline that grabs investing recommendations from r/ValueInvesting subreddit for the month of Feb 2025, strip popularity signals, and have Claude sub-agents score each investing recommendation blind on reasoning quality alone. Then I built three portfolios (10 stocks per portfolio):\n\n* **The Crowd**: top 10 stocks ranked by total upvotes across all mentions\n* **Claude's Picks**: top 10 stocks ranked by reasoning quality score\n* **The Underdogs**: bottom 10 stocks by upvotes (min 5 upvotes), to test whether the crowd was right to ignore them\n\nI tracked their real returns over a year from Feb 2025 - Feb 2026.\n\nThe part I found most interesting was that on data completely outside Opus's training window (Sep 2025 onward), Claude's picks returned +5.2% vs the most upvoted stocks only -10.8% (S&amp;P 2%).\n\nIf you prefer to watch the full experiment, I uploaded it to my channel:[\u00a0https://www.youtube.com/watch?v=tr-k9jMS\\_Vc](https://www.youtube.com/watch?v=tr-k9jMS_Vc) (free).\n\n**The Setup**\n\nI used Claude Code to scrape every single post from\u00a0[r/ValueInvesting](https://www.reddit.com/r/ValueInvesting/)\u00a0for the month of February 2025 and filter down to posts and comments where someone was recommending, analyzing, or debating a specific stock. Thi",
+      "score": 376,
+      "comments": 62,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rkw25u/i_had_opus_46_evaluate_547_reddit_investing/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "memory context long term",
+      "title": "New: Auto-memory feature in Claude code, details below",
+      "selftext": "Claude now remembers what it learns across sessions \u2014 your project context, debugging patterns, preferred approaches \u2014 and recalls it later without you having to write anything down.\n\nYou can now think of Claude.MD as your instructions to Claude and Memory.MD as Claude's memory scratchpad it updates. If you ask Claude to remember something it will write it there.\n\nRead the docs here to learn more about memory and how it works: [Docs](https://code.claude.com/docs/en/memory)\n\n**Source:** ClaudeAI\n\n",
+      "score": 376,
+      "comments": 54,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rfkmj1/new_automemory_feature_in_claude_code_details/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "memory context long term",
+      "title": "I think openclaw is OVERHYPED. Just use skills",
+      "selftext": "I think openclaw is useful, loop, memory, agents, integrations, but after a week a testing, honestly I don't need it much.\n\n\\- memory, is nice. But I prefere to have \"manual memory\". Prompt: Ok, write what yout learnt in \"superreporttrending-skill\". Automatic memory often pollute the context of info you don't care.\n\n\\- cron. Useful but I already use other tools for that and I can always recall a skill whenever i want. I don't need everyday at 8:00AM, i prefere recall it when i want with up to date data\n\nConclusion: for me \"opencode web\" is a much superior option, but much of the \"intelligence\" and value is the skills that you develop or you integrate, not in the runner itself, what do you think ?",
+      "score": 373,
+      "comments": 143,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rbjxpv/i_think_openclaw_is_overhyped_just_use_skills/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "memory context long term",
+      "title": "I used Claude Code to clean up my gmail inbox",
+      "selftext": "I have to admit I have thousands of emails in my inbox and it's a daunting task to keep it pruned. When the Google Workspace (gws) CLI was released three days ago I decided to see if Claude Code could help. I installed the CLI skill and got to work. I  started with a simple conversation session in Claude Code. I wanted to get a feel for how capable it would be by firing off a series of questions about the data counts in my mailbox. I could validate its answers easily by having my gmail side by side. So far so good.\n\nI then elevated my questions by asking it how it would search for spam. It gave me a lesson on email headers and what to look for and it also gave me a group-by count of my emails falling into those categories. It told me about spam detection algorithms and how it could classify my emails like that. The turn of conversations was a master class in spam detection and then we went into how to do batch cleanup since the batches have to fit in its context window. It did the search and classications in batches of about 100 at a time and gave me details on whether an email ranked as spam based on spam signas. It gave me batching approaches based on time complexity to do the job. Computer sci folks would know this as the Big O notation. This whole conversation was just getting fascinating. It gave me an index of which senders we could start removing. It suggested safeguards like putting it in the Trash first (30 days retention) rather than outright deletion in case I wanted to review for false-positives. Those little suggestions and insights were just invaluable. I could ask it any technical question without judgment or condescension like you would get from the office IT guy or commenters on tech forums.\n\nMake a long story short, we went through a series of batch op",
+      "score": 356,
+      "comments": 60,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rqer26/i_used_claude_code_to_clean_up_my_gmail_inbox/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "memory context long term",
+      "title": "I have no idea why I didn't switch to Claude sooner.",
+      "selftext": "Well, tbh I do know why I didn't switch to Claude sooner:\n\n1. There wasn't really a reason.\n\n2. Claude didn't know anything about me.\n\nBut then Claude didn't take the 200mil deal, and I saw a video that can help me transfer ChatGPT's long-term memory about me to Claude.\n\nAnd now, after experiencing and using Claude, it is so much better, like its coding skills are amazing, it created an amazing website, with an awesome UI, that I doubt ChatGPT could do without me having to tell it specifically what to put.",
+      "score": 352,
+      "comments": 72,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rmq4d0/i_have_no_idea_why_i_didnt_switch_to_claude_sooner/"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "memory context long term",
+      "title": "Deleting ChatGPT Made me Feel Something I didn't Expect",
+      "selftext": "After the recent deal with the pentagon I decided to delete my ChatGPT account. It is of grave importance that we do not misuse such a powerful tool. Now more than ever, we need leaders who are unwilling to compromise ethics in the name of expansion, and with the pentagon deal Sam Altman proved he is not the man for the job.\n\nIn a capitalistic society, it is our obligation as consumers to reprimand companies for making decisions that are not in our interest. Deleting your account, and encouraging everyone you know to do the same is the greatest power you have in that regard. If you do not want LLMs used for mass surveillance and autonomous weapons I implore you to do the same. You can export your data first, which I would recommend.\n\nWhat I wasn't expecting was what happened after I deleted my account. I have used ChatGPT extensively (top 0.1% by messages) since December of 2022. For navigating debilitating chronic health issues, mental health struggles, my parents' health degrading, long term relationships, completing my masters, moving across the country, and getting/starting a new job. In short, it accompanied me through life and I feel incredibly grateful for that.\n\nAfter deleting the app it felt like I lost something. It made me realize that this strange piece of technology had become a part of me. A thinking partner in the times where my thoughts were too abstract or niche to share even with close friends. It filled a role that didn't exist in my life in any other way, and improved my life more than any single piece of technology I have ever used. \n\nUntil I deleted the app I hadn't realized what it had become. It's hard to articulate feeling loss over math. But this is the first time that a technology has accompanied me so closely through such an ocean of life, an",
+      "score": 348,
+      "comments": 164,
+      "url": "https://reddit.com/r/ChatGPT/comments/1rkybgk/deleting_chatgpt_made_me_feel_something_i_didnt/"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "agent workflow automation",
+      "title": "GPT 5.4 includes new extreme reasoning mode and 1M context, details below",
+      "selftext": "**GPT-5.4 updates (via TheInformation)**\n\n- 1M token context window\n\n- New **Extreme reasoning mode** \u2192 more compute, deeper thinking\n\n- Parity with Gemini and Claude long-context models\n\n- Better long-horizon tasks (can run for hours)\n\n- Improved memory across multi-step workflows\n\n- Lower error rates in complex tasks\n\n- Designed for agents and automation (e.g. Codex)\n\n- Useful for scientific research &amp; complex problems\n\n- Part of OpenAI\u2019s shift to monthly model updates.\n\n\n**Source:** The information (Exclusive) and [Check Top comment](https://www.reddit.com/r/OpenAI/s/KOf35DruLe) \ud83d\udc47",
+      "score": 347,
+      "comments": 144,
+      "url": "https://reddit.com/r/OpenAI/comments/1rkql9n/gpt_54_includes_new_extreme_reasoning_mode_and_1m/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "skills mcp tools",
+      "title": "Obsidian + Claude = no more copy paste",
+      "selftext": "I gave Claude persistent memory across every session by connecting Claude.ai and Claude Code through a custom MCP server on my private VPS. Here\u2019s the open source code.\n\nI got tired of Claude forgetting everything between sessions. So I built a knowledge base server that sits on my VPS, ingests my Obsidian vault, and connects to Claude Code and Claude.ai through MCP.\n\nThe result: when I write something in Claude.ai, Claude Code can instantly search and read it. When Claude Code captures a terminal session with bugs and fixes, I can access that knowledge from Claude.ai in the next conversation. Same brain, different interfaces.\n\nBut it goes further. I also built a multi-agent orchestrator called Daniel that wraps Claude, Codex, and Gemini CLIs. All three share the same knowledge base. When Claude hits rate limits or goes down (like it did yesterday), Codex picks up with the same context. Zero downtime.\n\nThe self-learning part: every session, the AI automatically updates its own instruction files based on what worked and what didn\u2019t. After 100+ sessions, the AI knows my codebase, my preferences, my architecture patterns. It one-shots clean code because it\u2019s accumulated enough context.\n\nGoogle just open-sourced their Always-On Memory Agent two weeks ago. Mine\u2019s been running in production with multi-agent orchestration and human curation that theirs doesn\u2019t have.\n\nBoth projects are open source:\n\n\t\u2219\tKnowledge Base Server (the brain): https://github.com/willynikes2/knowledge-base-server\n\n\t\u2219\tAgent Orchestrator (Daniel): https://github.com/willynikes2/agent-orchestrator\n\nTech stack: Node.js, SQLite FTS5, MCP, Express, Obsidian Sync. No vector database, no cloud dependencies. \\~$60/month for three premium AI agents with persistent memory.\n\nObsidian Vault (human curation) \n\n\u2192 KB ",
+      "score": 341,
+      "comments": 77,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rwh44v/obsidian_claude_no_more_copy_paste/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "skills mcp tools",
+      "title": "Claude Code\u2019s CLI feels like a black box. I built a local UI to un-dumb it, and it unexpectedly blew up last week.",
+      "selftext": "https://reddit.com/link/1r90pol/video/30yd18c4qgkg1/player\n\nHey r/ClaudeAI,\n\nLast weekend, I built a weekend project to scratch my own itch because I was going crazy with how much the official Claude Code CLI hides from us.\n\nI shared it in a smaller sub (\\[[original post](https://www.reddit.com/r/ClaudeCode/comments/1r3to9f/claude_codes_cli_feels_like_a_black_box_now_i/) in r/ClaudeCode here\\]), and the response was insane\u2014it hit #3 on Hacker News, got 700+ stars on GitHub, and crossed 3.7k downloads in a few days. Clearly, I wasn't the only one tired of coding blind! Since a lot of people found it useful, I wanted to share it with the broader community here.\n\n**The Problem:** Using the CLI right now feels like pairing with a junior dev who refuses to show you their screen.\n\n* Did they edit the right file? Did they edit .env file or payment-related files?\n* Did they hallucinate a dependency?\n* Why did that take 5,000 tokens?\n\nUp until now, your options for debugging this were pretty terrible:\n\n1. **Other GUI Wrappers:** There are a few other GUIs out there, but they all *wrap* Claude Code. They only show logs for commands run *through their own UI*. If you love your native terminal, you're out of luck\u2014they can't read your past terminal sessions, so you lose all your history.\n2. `--verbose` **Mode:** Floods your terminal with texts. It's barely readable live, but it is an absolute **nightmare** for retroactively debugging past sessions. Plus, if you use the new \"Teams\" feature or run parallel subagents, the verbose logs just interleave into an unreadable mess.\n\n**The Solution:** `claude-devtools` It\u2019s a local desktop app that tails your `~/.claude/` session logs to reconstruct the execution trace.\n\n**To be clear: This is NOT a wrapper.** It doesn't intercept your command",
+      "score": 338,
+      "comments": 65,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1r90pol/claude_codes_cli_feels_like_a_black_box_i_built_a/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "agent workflow automation",
+      "title": "The guy that won the NVIDIA Hackathon and an NVIDIA DGX Spark GB10 has won another hackathon with it!",
+      "selftext": "Hey everyone,\n\nI promised that I would update you all with what I was going to do next with the DGX Spark GB10 that I won. It's been a few weeks and I have been primarily heads down on fundraising for my startup trying to automatically improve and evaluate Coding Agents.\n\nSince the last time I posted I became a Dell Pro Precision Ambassador after they saw all of the cool hackathons that I won and stuff I am building that can hopefully make a difference in the world (I am trying to create Brain World Models using a bunch of different types of brain scans to do precision therapeutics, diagnostics, etc. as my Magnus Opus). \n\nThey sent me a Dell Pro Max T2 Tower and another DGX Spark GB10 which I have connected to the previous one that I won. This allows me to continue my work with the limited funds that I have to see how far I can really push the limits of what's possible at the intersection of Healthcare and AI.\n\nDuring Superbowl Weekend I took some time to do a 24-hour hackathon solving a problem that I really care about (even if it wasn't related to my startup).\n\nMy most recent job was at UCSF doing applied neuroscience creating a research-backed tool that screened children for Dyslexia since traditional approaches don\u2019t meet learners where they are so I wanted to take the research I did further and actually create solutions that also did computer adaptive learning.\n\nThrough my research I have come to find that the current solutions for learning languages are antiquated often assuming a \u201cstandard\u201d learner: same pace, same sequence, same practice, same assessments.\n\nBut,\u00a0language learning is deeply personalized.\u00a0Two learners can spend the same amount of time on the same content and walk away with totally different outcomes because the feedback they need could be entirely",
+      "score": 335,
+      "comments": 53,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1r7j7kb/the_guy_that_won_the_nvidia_hackathon_and_an/"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "memory context long term",
+      "title": "Sonnet 4.6 released!! Wen gpt 5.3 ??",
+      "selftext": "",
+      "score": 327,
+      "comments": 71,
+      "url": "https://reddit.com/r/OpenAI/comments/1r7dari/sonnet_46_released_wen_gpt_53/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "skills mcp tools",
+      "title": "I built an MCP server that gives Claude Code a knowledge graph of your codebase \u2014 in average 20x fewer tokens for code exploration",
+      "selftext": "I've been using Claude Code daily and kept running into the same issue: every time I ask a structural question about my codebase (\"what calls this function?\", \"find dead code\", \"show me the API routes\"), Claude greps through files one at a time. It works, but it burns through tokens and takes forever. This context usually also gets lost after compact or in new sessions.  \n  \n  \nSo I built an MCP server that indexes your codebase into a persistent knowledge graph. Tree-sitter parses 64 languages into a SQLite-backed graph \u2014 functions, classes, call chains, HTTP routes, cross-service links. When Claude Code asks a structural question, it queries the graph instead of grepping through files.  \n  \n  \nThe difference: 5 structural questions consumed \\~412,000 tokens via file-by-file exploration vs \\~3,400 tokens via graph queries. That's 120x fewer tokens \u2014 which means lower cost, faster responses, and more accurate answers (less \"lost in the middle\" noise). In average in my usage I save around 20x tokens und much more time than tokens.  \n  \n  \nIt's a single Go binary. No Docker, no external databases, no API keys. \\`codebase-memory-mcp install\\` auto-configures Claude Code. Say \"Index this project\" and you're done. It auto-syncs when you edit files so the graph stays fresh.  \n  \n  \nKey features:  \n\\- 64 languages (Python, Go, JS, TS, Rust, Java, C++, and more)  \n\\- Call graph tracing: \"what calls ProcessOrder?\" returns the full chain in &lt;100ms  \n\\- Dead code detection (with smart entry point filtering)  \n\\- Cross-service HTTP linking (finds REST calls between services)  \n\\- Cypher-like query language for ad-hoc exploration  \n\\- Architecture overview with Louvain community detection  \n\\- Architecture Decision Records that persist across sessions  \n\\- 14  MCP tools (also wor",
+      "score": 320,
+      "comments": 112,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1rp6pkr/i_built_an_mcp_server_that_gives_claude_code_a/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "memory context long term",
+      "title": "Unsloth fixed version of Qwen3.5-35B-A3B is incredible at research tasks.",
+      "selftext": "When I first tried Qwen3.5-35B-A3B I was impressed, but honestly it seemed like a small jump over GLM-4.7-Flash, which had already impressed me with its interleaved thinking and native tool use capabilities. Qwen3.5-35B-A3B was about the level of \"better\" I thought it would be from having 5B extra parameters, and I thought the only big advantage was hybrid linear attention allowing double the native context length without really increasing memory footprint.\n\nI saw today that Unsloth updated Qwen3.5-35B-A3B quants to fix tool calling issues: [https://huggingface.co/unsloth/Qwen3.5-35B-A3B-GGUF](https://huggingface.co/unsloth/Qwen3.5-35B-A3B-GGUF) so I redownloaded Qwen3.5-35B-A3B at UD-Q8\\_K\\_XL to run it on my strix halo system. I happened to be looking for solutions to a problem I had, and asked Gemini, ChatGPT, Deepseek, GLM, Kimi, Qwen, and Perplexity all to help me research the options that are available. They each had different answers, ranging from different solutions found to different final recommendations. Out of curiosity, I asked Qwen3.5-35B to give it a shot. I expected it to be horribly slow, not be able to adequately summarize its findings or give a good recommendation,\n\nI'm running the model via llama.cpp-rocm with the following parameters: --ctx-size 262144 --n-gpu-layers 999 --flash-attn auto --jinja --temp 0.6 --top-p 0.90 --top-k 20 --min-p 0.00. I'm using it through OpenWebUI with native tool calling, SearXNG search, and the default web loader engine. My system prompt is this (still leftover from when I used GLM-4.7-Flash, which would occasionally forget about the fetch\\_url tool completely):\n\n&gt;The current date and time at the start of this chat is {{CURRENT\\_DATETIME}}. Note that the user may come back to this chat later, so if the user indicates",
+      "score": 306,
+      "comments": 75,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rjh5wg/unsloth_fixed_version_of_qwen3535ba3b_is/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "skills mcp tools",
+      "title": "Official: Anthropic just released Claude Code 2.1.49 with 27 CLI &amp; 14 sys prompt changes, details below",
+      "selftext": "**Claude Code CLI 2.1.49 changelog:**\n\n\u2022 Added --worktree (-w) flag to start Claude in an isolated git worktree\n\n\u2022 Subagents support isolation: \"worktree\" for working in a temporary git worktree\n\n\u2022 Added Ctrl+F keybinding to kill background agents (two-press confirmation)\n\n\u2022 Agent definitions support background: true to always run as a background task\n\n\u2022 Plugins can ship settings.json for default configuration\n\n\u2022 Fixed file-not-found errors to suggest corrected paths when the model drops the repo folder\n\n\u2022 Fixed Ctrl+C and ESC being silently ignored when background agents are running and the main thread is idle. Pressing twice within 3 seconds now kills all background agents.\n\n\u2022 Fixed prompt suggestion cache regression that reduced cache hit rates.\n\n\u2022 Fixed plugin enable and plugin disable to auto-detect the correct scope when --scope is not specified, instead of always defaulting to user scope\n\n\u2022 Simple mode (CLAUDE_CODE_SIMPLE) now includes the file edit tool in addition to the Bash tool, allowing direct file editing in simple mode.\n\n\u2022 Permission suggestions are now populated when safety checks trigger an ask response, enabling SDK consumers to display permission options\n\n\u2022 Sonnet 4.5 with 1M context is being removed from the Max plan in favor of our frontier Sonnet 4.6 model, which now has 1M context. Please switch in /model.\n\n\u2022 Fixed verbose mode not updating thinking block display when toggled via /config \u2014 memo comparators now correctly detect verbose changes.\n\n\u2022 Fixed unbounded WASM memory growth during long sessions by periodically resetting the tree-sitter parser.\n\n\u2022 Fixed potential rendering issues caused by stale yoga layout references.\n\n\u2022 Improved performance in non-interactive mode (-p) by skipping unnecessary API calls during startup\n\n\u2022 Improved performanc",
+      "score": 301,
+      "comments": 57,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1r9p5e3/official_anthropic_just_released_claude_code_2149/"
+    },
+    {
+      "sub": "OpenAI",
+      "query": "skills mcp tools",
+      "title": "I\u2019m an OpenAI fan and I\u2019ve got my reasons. But you\u2019ve got to respect Anthropic\u2019s spirit of innovation here. They came up with everything useful use LLMs today for. Kudos",
+      "selftext": "",
+      "score": 261,
+      "comments": 32,
+      "url": "https://reddit.com/r/OpenAI/comments/1rki9nj/im_an_openai_fan_and_ive_got_my_reasons_but_youve/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "memory context long term",
+      "title": "Professional academic documents with zero effort. I built an open-source Claude Code workspace for scientific writing.",
+      "selftext": "There's been a lot of discussion about using AI for writing papers and documents. But most tools either require you to upload everything to the cloud, or force you to deal with clunky local setups that have zero quality-of-life features.\n\nI've been a researcher writing papers for years. My setup was VSCode + Claude Code + auto compile. It worked, but it always felt incomplete:\n\n* Where's my version history? Gone the moment I close the editor.\n* Why can't I just point at an equation in my PDF and ask \"what is this?\"\n* Why do I need to learn markup syntax to get a professional-looking document?\n\nThen OpenAI released Prism - a cloud-based scientific writing workspace. Cool idea, but:\n\n* Your unpublished research lives on OpenAI's servers.\n* And honestly, as you all know, Claude Code is just too good to give up.\n\nSo I built **ClaudePrism**. A local desktop app that runs Claude Code as a subprocess. Your documents never leave your machine.\n\n**If you've never written a scientific document before, no problem:**\n\n* \"I have a homework PDF\" \u2192 Upload it. Guided Setup generates a polished draft.\n* \"What does this equation mean?\" \u2192 Capture &amp; Ask. Select any region in your PDF, Claude explains it.\n* \"I need slides for a presentation\" \u2192 Pick a template. Papers, theses, posters, slides - just start writing.\n* \"Fix this paragraph\" \u2192 Talk to Claude. It handles the formatting, you focus on content.\n\n**If you're already an experienced researcher:**\n\n* Offline compilation (no extra installations needed)\n* Git-based version history\n* 100+ scientific domain skills (bioinformatics, chemoinformatics, ML, etc.)\n* Built-in Python environment (uv) - data plots, analysis scripts, and processing without leaving the editor\n* Full Claude Code integration - commands, tools, everything\n\nIt's 100% fr",
+      "score": 260,
+      "comments": 32,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1ru9ote/professional_academic_documents_with_zero_effort/"
+    },
+    {
+      "sub": "ClaudeAI",
+      "query": "memory context long term",
+      "title": "I Benchmarked Opus 4.6 vs Sonnet 4.6 on agentic PR review and browser QA the results weren't what I expected",
+      "selftext": "**Update:** Added a detailed breakdown of the specific agent configurations and our new workflow shifts in specificity in the comments below: [here](https://www.reddit.com/r/ClaudeAI/comments/1r9jf2j/comment/o6d7s2h/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button)\n\n# Intro + Context\n\nWe run Claude Code with a full agent pipeline covering every stage of our SDLC: requirements, spec, planning, implementation, review, browser QA, and docs. I won't go deep on the setup since it's pretty specific to our stack and preferences, but the review and QA piece was eating more tokens than everything else combined, so I dug in.\n\n**Fair warning upfront:** we're on 20x Max subscriptions, so this isn't a \"how to save money on Pro\" post. It's more about understanding where model capability actually matters when you're running agents at scale.\n\n# Why this benchmark, why now?\n\nOpus 4 vs Sonnet 4 had a 5x cost differential so it was an easy call: route the important stuff to Opus, everything else to Sonnet. With 4.6, that gap collapsed to 1.6x. At the same time, Sonnet 4.6 is now competitive or better on several tool-call benchmarks that directly apply to agentic work. So the old routing logic needed revisiting.\n\n# Test setup\n\n* **Model Settings:** Both models ran at High Effort inside Claude Code.\n* **PR review:** 10 independent sessions per model. Used both Sonnet and Opus as orchestrators (no stat sig difference found from orchestrator choice); results are averages.\n* **Browser QA:** Both agents received identical input instruction markdown generated by the same upstream agent. 10 independent browser QA sessions were run for both.\n* **No context leakage:** Isolated context windows; no model saw the other's output first.\n* **PR test",
+      "score": 257,
+      "comments": 58,
+      "url": "https://reddit.com/r/ClaudeAI/comments/1r9jf2j/i_benchmarked_opus_46_vs_sonnet_46_on_agentic_pr/"
+    },
+    {
+      "sub": "ChatGPT",
+      "query": "memory context long term",
+      "title": "ChatGPT Leaking User chats across accounts?",
+      "selftext": "Alright so I'm really annoyed because this has been going on *all day.*   \n  \nI've been a GPT subscriber since virtually day 1 and never had any security issues. This morning, I woke up with notifications from GPT as if it had answered a chat I hadn't read yet.\n\nWell, I open my app, and I have a bunch of chats about prenatal vitamins that happened between 1230am and 630am this morning. Based on the context of the chats, it appears like someone is doing market research on vitamins, even though the chats claim, \"I'm an older woman researching vitamins\" the main reason i dont believe that is EVERY chat starts with the sentence, \"do not update memories.\"\n\nanyone seen or heard anything like this? I have 2 factor on and everything else appears to be secure so im really confused.\n\n  \nThis is still ongoing. I have been in active contact with this AI support bot, and now a real person all morning...\n\n* I logged out of all devices/sessions\n* my browser isnt hijacked given there are zero other indicators of such activity and no sketchy or unknown extensions.\n* it is happening on web and mobile app\n* I've reset my password twice\n* deleted my API key\n* I can still see new chats coming in, but strangely, when I refresh, the new chats go away and i can only see the ones from earlier this morning in chat history, but if I leave the tab open I can click the chat and see what was said\n* this is definitely not a \"hacker\" or browser hijacking as openAI support insists it is given, it be\u00a0*pretty odd*\u00a0to hack into someone else's ChatGPT account to do basic market search into selling women's vitamins online that you could literally do with a free account...\n\n\n\nThis is beyond strange to me given nothing else has access to GPT and ive reset everything security related, and this really seems to ",
+      "score": 256,
+      "comments": 152,
+      "url": "https://reddit.com/r/ChatGPT/comments/1remhah/chatgpt_leaking_user_chats_across_accounts/"
+    },
+    {
+      "sub": "LocalLLaMA",
+      "query": "memory context long term",
+      "title": "55 \u2192 282 tok/s: How I got Qwen3.5-397B running at speed on 4x RTX PRO 6000 Blackwell",
+      "selftext": "\nEDIT:  Important*** updated my github repository, using the link to benchmarks scripts Festr showed me (VOIPMonitor) .  \nMTP=3 ((1user, 8 user) MTP=0 (1 User, 8 user)\nK=64    171 / 648    76 / 373 (1 user v 8 conccurrent)\nStock    161 / 652    74 / 376.  (1 user v 8 concurrent) Six percent MIGHT be something, but that's also within noise and MOE, so i don't think it really shows anything other than clearing out some errors people were having when trying to compile which i was originally trying to address (in addition to my changing OS's, and tryign to optimize for speed).  But newer VLLM update i think that let's flash infer's tunner handle the sm120 SMEM issue well.  I think the jump is almost, if not entirely, due to MTP.  My benchmarks below don't do a very good job of controlling for variables of MTP changes, versus measurement of thinking tokens.  \n# The Problem\n\nIf you're running NVFP4 MoE models (Qwen3.5-397B, DeepSeek, etc.) on RTX PRO 6000, RTX 5090, or DGX Spark \u2014 basically any **SM120 Blackwell workstation GPU** \u2014 you've probably seen this:\n\n    Failed to initialize cutlass TMA WS grouped gemm\n\nThe autotuner skips all the SM120 GEMM tiles because they overflow your GPU's 99KB shared memory. Datacenter Blackwell (B200) has 228KB SMEM, so the tiles were designed for that. Your workstation GPU gets stuck on slow fallback kernels.\n\n**Result:** You're leaving 50%+ of your throughput on the table.**ignore this as it wasn't reproducible to the point i'd like.\n\n# The Fix EDIT: BASICALLY IGNORE THESE RESULTS OF below, because I coudn't reproduce them with respect to speed, while controlling vor variables of thinking enabled and MTP.  While controlling for them i saw maybe a 2.5 to 6 percent increase, which is probably within MOE.  My apologies on this one folks.  Im ",
+      "score": 256,
+      "comments": 96,
+      "url": "https://reddit.com/r/LocalLLaMA/comments/1rtrdsv/55_282_toks_how_i_got_qwen35397b_running_at_speed/"
+    }
+  ],
+  "skill_rank": [
+    [
+      "memory-systems",
+      565
+    ],
+    [
+      "cli-agent-runtime",
+      286
+    ],
+    [
+      "github-pr-automation",
+      264
+    ],
+    [
+      "community-ops",
+      179
+    ],
+    [
+      "content-repurposing",
+      135
+    ],
+    [
+      "security-audit",
+      124
+    ],
+    [
+      "multi-agent-orchestration",
+      113
+    ],
+    [
+      "scheduled-autonomy",
+      72
+    ],
+    [
+      "email-calendar-ops",
+      67
+    ],
+    [
+      "browser-automation",
+      26
+    ]
+  ],
+  "persona_rank": [
+    [
+      "research-librarian",
+      146
+    ],
+    [
+      "creative-storyteller",
+      124
+    ],
+    [
+      "growth-hacker",
+      84
+    ],
+    [
+      "compliance-officer",
+      72
+    ],
+    [
+      "operator-chief-of-staff",
+      63
+    ],
+    [
+      "empathetic-coach",
+      25
+    ],
+    [
+      "blunt-sre",
+      15
+    ]
+  ],
+  "skill_examples": {
+    "scheduled-autonomy": [
+      {
+        "title": "I Haven't Written a Line of Code in Six Months",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rlw1yw/i_havent_written_a_line_of_code_in_six_months/",
+        "score": 2015
+      },
+      {
+        "title": "Anthropic just made Claude Code run without you. Scheduled tasks are live. This is a big deal.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rna5mb/anthropic_just_made_claude_code_run_without_you/",
+        "score": 1185
+      },
+      {
+        "title": "How I built a 13-agent Claude team where agents review each other's work - full setup guide",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rga7f5/how_i_built_a_13agent_claude_team_where_agents/",
+        "score": 444
+      },
+      {
+        "title": "New: Auto-memory feature in Claude code, details below",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rfkmj1/new_automemory_feature_in_claude_code_details/",
+        "score": 376
+      }
+    ],
+    "multi-agent-orchestration": [
+      {
+        "title": "Introducing Code Review, a new feature for Claude Code.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rp9dps/introducing_code_review_a_new_feature_for_claude/",
+        "score": 687
+      },
+      {
+        "title": "Claude Code creator: In the next version, introducing two new skills",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rgthpn/claude_code_creator_in_the_next_version/",
+        "score": 670
+      },
+      {
+        "title": "anyone feel scared?",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rob52f/anyone_feel_scared/",
+        "score": 579
+      },
+      {
+        "title": "Qwen 3.5-35B-A3B is beyond expectations. It's replaced GPT-OSS-120B as my daily driver and it's 1/3 the size.",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/",
+        "score": 571
+      }
+    ],
+    "github-pr-automation": [
+      {
+        "title": "I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead.",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/",
+        "score": 1856
+      },
+      {
+        "title": "Finally something useful with OpenClaw",
+        "url": "https://reddit.com/r/OpenAI/comments/1rs2c40/finally_something_useful_with_openclaw/",
+        "score": 1809
+      },
+      {
+        "title": "Anthropic just made Claude Code run without you. Scheduled tasks are live. This is a big deal.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rna5mb/anthropic_just_made_claude_code_run_without_you/",
+        "score": 1185
+      },
+      {
+        "title": "Open WebUI\u2019s New Open Terminal + \u201cNative\u201d Tool Calling + Qwen3.5 35b = Holy Sh!t!!!",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rmplvs/open_webuis_new_open_terminal_native_tool_calling/",
+        "score": 904
+      }
+    ],
+    "memory-systems": [
+      {
+        "title": "New: Anthropic introduces a memory feature that lets users transfer their context and preferences from other AI tools into Claude",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rhx7pq/new_anthropic_introduces_a_memory_feature_that/",
+        "score": 1857
+      },
+      {
+        "title": "I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead.",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/",
+        "score": 1856
+      },
+      {
+        "title": "Things you might want to know if moving to Claude",
+        "url": "https://reddit.com/r/OpenAI/comments/1rhj71v/things_you_might_want_to_know_if_moving_to_claude/",
+        "score": 1460
+      },
+      {
+        "title": "Just passed the new Claude Certified Architect - Foundations (CCA-F) exam with a 985/1000!",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1ruf70b/just_passed_the_new_claude_certified_architect/",
+        "score": 1347
+      }
+    ],
+    "browser-automation": [
+      {
+        "title": "I Haven't Written a Line of Code in Six Months",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rlw1yw/i_havent_written_a_line_of_code_in_six_months/",
+        "score": 2015
+      },
+      {
+        "title": "I had Opus 4.6 evaluate 547 Reddit investing recommendations on reasoning quality with no upvote counts, no popularity signals. Its filtered picks returned +37% vs the S&amp;P's +19%.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rkw25u/i_had_opus_46_evaluate_547_reddit_investing/",
+        "score": 376
+      },
+      {
+        "title": "What I actually use Cowork for (heavy non-coding user)",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rubfbx/what_i_actually_use_cowork_for_heavy_noncoding/",
+        "score": 155
+      },
+      {
+        "title": "Claude usage running out quickly",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rnl6z5/claude_usage_running_out_quickly/",
+        "score": 54
+      }
+    ],
+    "community-ops": [
+      {
+        "title": "I used Claude Code to reverse engineer a 13-year-old game binary and crack a restriction nobody had solved \u2014 the community is losing it",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1ru3irp/i_used_claude_code_to_reverse_engineer_a/",
+        "score": 3590
+      },
+      {
+        "title": "Final Qwen3.5 Unsloth GGUF Update!",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rlkptk/final_qwen35_unsloth_gguf_update/",
+        "score": 1102
+      },
+      {
+        "title": "Open WebUI\u2019s New Open Terminal + \u201cNative\u201d Tool Calling + Qwen3.5 35b = Holy Sh!t!!!",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rmplvs/open_webuis_new_open_terminal_native_tool_calling/",
+        "score": 904
+      },
+      {
+        "title": "I used Obsidian as a persistent brain for Claude Code and built a full open source tool over a weekend. happy to share the exact setup.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rv5ox0/i_used_obsidian_as_a_persistent_brain_for_claude/",
+        "score": 657
+      }
+    ],
+    "content-repurposing": [
+      {
+        "title": "I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead.",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/",
+        "score": 1856
+      },
+      {
+        "title": "I built an interactive website that teaches Claude Code by letting you explore a simulated project in your browser",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rmqk0x/i_built_an_interactive_website_that_teaches/",
+        "score": 1113
+      },
+      {
+        "title": "I used Obsidian as a persistent brain for Claude Code and built a full open source tool over a weekend. happy to share the exact setup.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rv5ox0/i_used_obsidian_as_a_persistent_brain_for_claude/",
+        "score": 657
+      },
+      {
+        "title": "anyone feel scared?",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rob52f/anyone_feel_scared/",
+        "score": 579
+      }
+    ],
+    "security-audit": [
+      {
+        "title": "Well, i'm convinced.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rs656k/well_im_convinced/",
+        "score": 1411
+      },
+      {
+        "title": "Anthropic just made Claude Code run without you. Scheduled tasks are live. This is a big deal.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rna5mb/anthropic_just_made_claude_code_run_without_you/",
+        "score": 1185
+      },
+      {
+        "title": "4 months of Claude Code and honestly the hardest part isn\u2019t coding",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rr1069/4_months_of_claude_code_and_honestly_the_hardest/",
+        "score": 937
+      },
+      {
+        "title": "Why is Google getting ZERO backlash for Gemini powering the Pentagon's AI platform, while OpenAI got roasted for almost the same thing?",
+        "url": "https://reddit.com/r/ChatGPT/comments/1ri5erm/why_is_google_getting_zero_backlash_for_gemini/",
+        "score": 692
+      }
+    ],
+    "email-calendar-ops": [
+      {
+        "title": "I Haven't Written a Line of Code in Six Months",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rlw1yw/i_havent_written_a_line_of_code_in_six_months/",
+        "score": 2015
+      },
+      {
+        "title": "I delayed my product launch for months because I couldn't afford demo videos. Spent a weekend with Claude Code and Remotion. Now my reels are getting thousands of views.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rr47ya/i_delayed_my_product_launch_for_months_because_i/",
+        "score": 998
+      },
+      {
+        "title": "Qwen 3.5-35B-A3B is beyond expectations. It's replaced GPT-OSS-120B as my daily driver and it's 1/3 the size.",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/",
+        "score": 571
+      },
+      {
+        "title": "Two Claude Code features I slept on that completely changed how I use it: Stop Hooks + Memory files",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rqxzlp/two_claude_code_features_i_slept_on_that/",
+        "score": 513
+      }
+    ],
+    "cli-agent-runtime": [
+      {
+        "title": "I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead.",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/",
+        "score": 1856
+      },
+      {
+        "title": "I built an interactive website that teaches Claude Code by letting you explore a simulated project in your browser",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rmqk0x/i_built_an_interactive_website_that_teaches/",
+        "score": 1113
+      },
+      {
+        "title": "I delayed my product launch for months because I couldn't afford demo videos. Spent a weekend with Claude Code and Remotion. Now my reels are getting thousands of views.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rr47ya/i_delayed_my_product_launch_for_months_because_i/",
+        "score": 998
+      },
+      {
+        "title": "4 months of Claude Code and honestly the hardest part isn\u2019t coding",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rr1069/4_months_of_claude_code_and_honestly_the_hardest/",
+        "score": 937
+      }
+    ]
+  },
+  "persona_examples": {
+    "operator-chief-of-staff": [
+      {
+        "title": "I Haven't Written a Line of Code in Six Months",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rlw1yw/i_havent_written_a_line_of_code_in_six_months/",
+        "score": 2015
+      },
+      {
+        "title": "I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead.",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/",
+        "score": 1856
+      },
+      {
+        "title": "Software dev director, struggling with team morale.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rar2jt/software_dev_director_struggling_with_team_morale/",
+        "score": 905
+      },
+      {
+        "title": "I used Obsidian as a persistent brain for Claude Code and built a full open source tool over a weekend. happy to share the exact setup.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rv5ox0/i_used_obsidian_as_a_persistent_brain_for_claude/",
+        "score": 657
+      }
+    ],
+    "empathetic-coach": [
+      {
+        "title": "karpathy / autoresearch",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rowp28/karpathy_autoresearch/",
+        "score": 235
+      },
+      {
+        "title": "Am I Crazy or Is GPT-5.3 Worse Than 5.2?",
+        "url": "https://reddit.com/r/OpenAI/comments/1rkzof1/am_i_crazy_or_is_gpt53_worse_than_52/",
+        "score": 192
+      },
+      {
+        "title": "Qwen3-30B-A3B vs Qwen3.5-35B-A3B on RTX 5090",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1re3l3r/qwen330ba3b_vs_qwen3535ba3b_on_rtx_5090/",
+        "score": 170
+      },
+      {
+        "title": "GPT-5.3\u2019s narrative behavior changed significantly \u2014 what caused the architectural shift?",
+        "url": "https://reddit.com/r/ChatGPT/comments/1rr1sco/gpt53s_narrative_behavior_changed_significantly/",
+        "score": 123
+      }
+    ],
+    "blunt-sre": [
+      {
+        "title": "Introducing Code Review, a new feature for Claude Code.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rp9dps/introducing_code_review_a_new_feature_for_claude/",
+        "score": 687
+      },
+      {
+        "title": "PSA: If your local coding agent feels \"dumb\" at 30k+ context, check your KV cache quantization first.",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rhvi09/psa_if_your_local_coding_agent_feels_dumb_at_30k/",
+        "score": 237
+      },
+      {
+        "title": "Qwen3.5-18B-REAP-A3B-Coding: 50% Expert-Pruned",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rk8knf/qwen3518breapa3bcoding_50_expertpruned/",
+        "score": 59
+      }
+    ],
+    "creative-storyteller": [
+      {
+        "title": "Ran Qwen 3.5 9B on M1 Pro (16GB) as an actual agent, not just a chat demo. Honest results.",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rll349/ran_qwen_35_9b_on_m1_pro_16gb_as_an_actual_agent/",
+        "score": 966
+      },
+      {
+        "title": "Software dev director, struggling with team morale.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rar2jt/software_dev_director_struggling_with_team_morale/",
+        "score": 905
+      },
+      {
+        "title": "Why is Google getting ZERO backlash for Gemini powering the Pentagon's AI platform, while OpenAI got roasted for almost the same thing?",
+        "url": "https://reddit.com/r/ChatGPT/comments/1ri5erm/why_is_google_getting_zero_backlash_for_gemini/",
+        "score": 692
+      },
+      {
+        "title": "Despite what OpenAI says, ChatGPT can access memories outside projects set to \"project-only\" memory",
+        "url": "https://reddit.com/r/ChatGPT/comments/1rdei2p/despite_what_openai_says_chatgpt_can_access/",
+        "score": 651
+      }
+    ],
+    "compliance-officer": [
+      {
+        "title": "Take a breath\u2026you\u2019re not crazy, but you are the reason ChatGPT talks to you like this",
+        "url": "https://reddit.com/r/ChatGPT/comments/1r8e671/take_a_breathyoure_not_crazy_but_you_are_the/",
+        "score": 749
+      },
+      {
+        "title": "Why is Google getting ZERO backlash for Gemini powering the Pentagon's AI platform, while OpenAI got roasted for almost the same thing?",
+        "url": "https://reddit.com/r/ChatGPT/comments/1ri5erm/why_is_google_getting_zero_backlash_for_gemini/",
+        "score": 692
+      },
+      {
+        "title": "Claude Code creator: In the next version, introducing two new skills",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rgthpn/claude_code_creator_in_the_next_version/",
+        "score": 670
+      },
+      {
+        "title": "President Trump orders ALL Federal agencies in the US Government to immediately stop using Anthropic's technology.",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rgn4ki/president_trump_orders_all_federal_agencies_in/",
+        "score": 572
+      }
+    ],
+    "growth-hacker": [
+      {
+        "title": "I delayed my product launch for months because I couldn't afford demo videos. Spent a weekend with Claude Code and Remotion. Now my reels are getting thousands of views.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rr47ya/i_delayed_my_product_launch_for_months_because_i/",
+        "score": 998
+      },
+      {
+        "title": "Follow-up: Qwen3.5-35B-A3B \u2014 7 community-requested experiments on RTX 5080 16GB",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rg4zqv/followup_qwen3535ba3b_7_communityrequested/",
+        "score": 556
+      },
+      {
+        "title": "Qwen 3.5 27B is the REAL DEAL - Beat GPT-5 on my first test",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rnwiyx/qwen_35_27b_is_the_real_deal_beat_gpt5_on_my/",
+        "score": 433
+      },
+      {
+        "title": "llama.cpp on $500 MacBook Neo: Prompt: 7.8 t/s  / Generation: 3.9 t/s on Qwen3.5 9B Q3_K_M",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1rr197e/llamacpp_on_500_macbook_neo_prompt_78_ts/",
+        "score": 423
+      }
+    ],
+    "research-librarian": [
+      {
+        "title": "what's your career bet when AI evolves this fast?",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1r67tgv/whats_your_career_bet_when_ai_evolves_this_fast/",
+        "score": 775
+      },
+      {
+        "title": "Introducing Code Review, a new feature for Claude Code.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rp9dps/introducing_code_review_a_new_feature_for_claude/",
+        "score": 687
+      },
+      {
+        "title": "I used Obsidian as a persistent brain for Claude Code and built a full open source tool over a weekend. happy to share the exact setup.",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rv5ox0/i_used_obsidian_as_a_persistent_brain_for_claude/",
+        "score": 657
+      },
+      {
+        "title": "How I built a 13-agent Claude team where agents review each other's work - full setup guide",
+        "url": "https://reddit.com/r/ClaudeAI/comments/1rga7f5/how_i_built_a_13agent_claude_team_where_agents/",
+        "score": 444
+      }
+    ]
+  },
+  "x_status": "direct authenticated X extraction pending browser relay tab attach"
+}

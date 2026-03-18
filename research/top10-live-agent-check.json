@@ -1,0 +1,388 @@
+{
+  "ops": [
+    {
+      "pack_id": 50,
+      "slug": "crm-sync-bidirectional",
+      "title": "CRM Sync Bidirectional",
+      "type": "skill",
+      "score": 1.02,
+      "capabilities": [
+        "calendar.read",
+        "calendar.write",
+        "email.read",
+        "email.send",
+        "files.read",
+        "files.write",
+        "followup.send",
+        "memory.write"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 2,
+      "slug": "inbox-calendar-ops",
+      "title": "Inbox & Calendar Operator",
+      "type": "skill",
+      "score": 0.87,
+      "capabilities": [
+        "calendar.read",
+        "calendar.write",
+        "email.read",
+        "email.send"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 14,
+      "slug": "service-ops-verticals",
+      "title": "Service Ops Vertical Starter",
+      "type": "skill",
+      "score": 0.87,
+      "capabilities": [
+        "email.read",
+        "email.send",
+        "calendar.read",
+        "calendar.write",
+        "files.read",
+        "files.write"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 4,
+      "slug": "founder-command-bundle",
+      "title": "Founder Command Bundle",
+      "type": "bundle",
+      "score": 0.8,
+      "capabilities": [
+        "calendar.read",
+        "calendar.write",
+        "email.read",
+        "email.send",
+        "web.search",
+        "web.fetch"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 52,
+      "slug": "email-outreach-sequencer",
+      "title": "Email Outreach Sequencer",
+      "type": "skill",
+      "score": 0.67,
+      "capabilities": [
+        "email.read",
+        "email.send",
+        "files.read",
+        "files.write",
+        "followup.send",
+        "message.send"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 51,
+      "slug": "calendar-ops-coordinator",
+      "title": "Calendar Ops Coordinator",
+      "type": "skill",
+      "score": 0.62,
+      "capabilities": [
+        "calendar.read",
+        "calendar.write",
+        "files.read",
+        "files.write",
+        "followup.send",
+        "memory.write"
+      ],
+      "requires_approval": false
+    },
+    {
+      "pack_id": 6,
+      "slug": "universal-connector-auth",
+      "title": "Universal Connector Auth",
+      "type": "skill",
+      "score": 0.47,
+      "capabilities": [
+        "files.read",
+        "files.write",
+        "email.read",
+        "calendar.read"
+      ],
+      "requires_approval": false
+    },
+    {
+      "pack_id": 19,
+      "slug": "policy-compliance-guard",
+      "title": "Policy & Compliance Guard",
+      "type": "skill",
+      "score": 0.31,
+      "capabilities": [
+        "files.read",
+        "files.write",
+        "message.send",
+        "email.send",
+        "policy.enforce",
+        "risk.evaluate",
+        "audit.log.write",
+        "audit.log.read"
+      ],
+      "requires_approval": true
+    }
+  ],
+  "security": [
+    {
+      "pack_id": 53,
+      "slug": "deploy-rollback-guardian",
+      "title": "Deploy Rollback Guardian",
+      "type": "skill",
+      "score": 0.97,
+      "capabilities": [
+        "audit.log.read",
+        "audit.log.write",
+        "files.read",
+        "files.write",
+        "message.send",
+        "policy.enforce",
+        "risk.evaluate"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 54,
+      "slug": "security-alert-triager",
+      "title": "Security Alert Triager",
+      "type": "skill",
+      "score": 0.97,
+      "capabilities": [
+        "audit.log.read",
+        "audit.log.write",
+        "files.read",
+        "files.write",
+        "message.send",
+        "policy.enforce",
+        "risk.evaluate"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 19,
+      "slug": "policy-compliance-guard",
+      "title": "Policy & Compliance Guard",
+      "type": "skill",
+      "score": 0.85,
+      "capabilities": [
+        "files.read",
+        "files.write",
+        "message.send",
+        "email.send",
+        "policy.enforce",
+        "risk.evaluate",
+        "audit.log.write",
+        "audit.log.read"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 55,
+      "slug": "log-anomaly-sleuth",
+      "title": "Log Anomaly Sleuth",
+      "type": "skill",
+      "score": 0.8,
+      "capabilities": [
+        "audit.log.read",
+        "audit.log.write",
+        "files.read",
+        "files.write",
+        "memory.write",
+        "risk.evaluate"
+      ],
+      "requires_approval": false
+    },
+    {
+      "pack_id": 46,
+      "slug": "policy-drift-detector",
+      "title": "Policy Drift Detector",
+      "type": "skill",
+      "score": 0.6,
+      "capabilities": [
+        "compliance",
+        "governance",
+        "analytics",
+        "policy.enforce",
+        "risk.evaluate",
+        "audit.log.read"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 9,
+      "slug": "approval-policy-brain",
+      "title": "Approval & Policy Brain",
+      "type": "skill",
+      "score": 0.35,
+      "capabilities": [
+        "payment.charge",
+        "social.post",
+        "files.delete",
+        "message.send",
+        "policy.enforce",
+        "risk.evaluate"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 45,
+      "slug": "pii-redaction-firewall",
+      "title": "PII Redaction Firewall",
+      "type": "skill",
+      "score": 0.35,
+      "capabilities": [
+        "privacy",
+        "security",
+        "data-protection",
+        "risk.evaluate",
+        "audit.log.write"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 49,
+      "slug": "secret-leak-preventer",
+      "title": "Secret Leak Preventer",
+      "type": "skill",
+      "score": 0.35,
+      "capabilities": [
+        "security",
+        "secrets",
+        "devops",
+        "risk.evaluate",
+        "audit.log.write"
+      ],
+      "requires_approval": true
+    }
+  ],
+  "marketing": [
+    {
+      "pack_id": 56,
+      "slug": "shortform-content-factory",
+      "title": "Shortform Content Factory",
+      "type": "skill",
+      "score": 0.82,
+      "capabilities": [
+        "analytics",
+        "files.read",
+        "files.write",
+        "memory.write",
+        "social.post",
+        "workflow",
+        "writing"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 57,
+      "slug": "seo-brief-builder",
+      "title": "SEO Brief Builder",
+      "type": "skill",
+      "score": 0.62,
+      "capabilities": [
+        "analytics",
+        "files.write",
+        "seo",
+        "web.fetch",
+        "web.search",
+        "writing"
+      ],
+      "requires_approval": false
+    },
+    {
+      "pack_id": 58,
+      "slug": "ad-creative-variant-lab",
+      "title": "Ad Creative Variant Lab",
+      "type": "skill",
+      "score": 0.62,
+      "capabilities": [
+        "analytics",
+        "files.read",
+        "files.write",
+        "memory.write",
+        "social.post",
+        "writing"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 59,
+      "slug": "landing-page-ab-orchestrator",
+      "title": "Landing Page A/B Orchestrator",
+      "type": "skill",
+      "score": 0.42,
+      "capabilities": [
+        "analytics",
+        "files.read",
+        "files.write",
+        "memory.write",
+        "workflow"
+      ],
+      "requires_approval": false
+    },
+    {
+      "pack_id": 9,
+      "slug": "approval-policy-brain",
+      "title": "Approval & Policy Brain",
+      "type": "skill",
+      "score": 0.31,
+      "capabilities": [
+        "payment.charge",
+        "social.post",
+        "files.delete",
+        "message.send",
+        "policy.enforce",
+        "risk.evaluate"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 46,
+      "slug": "policy-drift-detector",
+      "title": "Policy Drift Detector",
+      "type": "skill",
+      "score": 0.31,
+      "capabilities": [
+        "compliance",
+        "governance",
+        "analytics",
+        "policy.enforce",
+        "risk.evaluate",
+        "audit.log.read"
+      ],
+      "requires_approval": true
+    },
+    {
+      "pack_id": 41,
+      "slug": "research-citation-packager",
+      "title": "Research Citation Packager",
+      "type": "skill",
+      "score": 0.27,
+      "capabilities": [
+        "web",
+        "research",
+        "writing"
+      ],
+      "requires_approval": false
+    },
+    {
+      "pack_id": 37,
+      "slug": "job-application-accelerator",
+      "title": "Job Application Accelerator",
+      "type": "skill",
+      "score": 0.22,
+      "capabilities": [
+        "career",
+        "writing",
+        "tracking"
+      ],
+      "requires_approval": false
+    }
+  ]
+}

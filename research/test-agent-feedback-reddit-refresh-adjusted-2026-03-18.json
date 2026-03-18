@@ -1,0 +1,210 @@
+{
+  "generatedAt": "2026-03-18T06:26:58.004005+00:00",
+  "recommended": [
+    "crm-sync-bidirectional",
+    "calendar-ops-coordinator",
+    "email-outreach-sequencer",
+    "rag-index-maintainer",
+    "knowledge-base-curator",
+    "citation-verifier",
+    "log-anomaly-sleuth",
+    "cloud-cost-analyzer",
+    "deploy-rollback-guardian",
+    "github-pr-review-assistant",
+    "incident-triage-commander",
+    "telegram-community-manager",
+    "discord-community-manager",
+    "whatsapp-support-copilot",
+    "shortform-content-factory",
+    "seo-brief-builder",
+    "podcast-to-clips",
+    "security-alert-triager",
+    "secret-rotation-reminder",
+    "contract-risk-highlighter"
+  ],
+  "agents": {
+    "agent-alpha-ops": {
+      "top": [
+        {
+          "slug": "crm-sync-bidirectional",
+          "score": 1.43,
+          "cap_hit": 5,
+          "overlap": 2,
+          "risk": "low"
+        },
+        {
+          "slug": "calendar-ops-coordinator",
+          "score": 0.93,
+          "cap_hit": 3,
+          "overlap": 2,
+          "risk": "low"
+        },
+        {
+          "slug": "email-outreach-sequencer",
+          "score": 0.75,
+          "cap_hit": 3,
+          "overlap": 0,
+          "risk": "medium"
+        },
+        {
+          "slug": "rag-index-maintainer",
+          "score": 0.27,
+          "cap_hit": 0,
+          "overlap": 3,
+          "risk": "low"
+        },
+        {
+          "slug": "discord-community-manager",
+          "score": 0.27,
+          "cap_hit": 0,
+          "overlap": 3,
+          "risk": "medium"
+        },
+        {
+          "slug": "incident-triage-commander",
+          "score": 0.18,
+          "cap_hit": 0,
+          "overlap": 2,
+          "risk": "medium"
+        },
+        {
+          "slug": "telegram-community-manager",
+          "score": 0.18,
+          "cap_hit": 0,
+          "overlap": 2,
+          "risk": "medium"
+        },
+        {
+          "slug": "security-alert-triager",
+          "score": 0.18,
+          "cap_hit": 0,
+          "overlap": 2,
+          "risk": "medium"
+        }
+      ],
+      "gaps": []
+    },
+    "agent-bravo-security": {
+      "top": [
+        {
+          "slug": "security-alert-triager",
+          "score": 1.36,
+          "cap_hit": 4,
+          "overlap": 4,
+          "risk": "medium"
+        },
+        {
+          "slug": "deploy-rollback-guardian",
+          "score": 1.18,
+          "cap_hit": 4,
+          "overlap": 2,
+          "risk": "medium"
+        },
+        {
+          "slug": "incident-triage-commander",
+          "score": 1.02,
+          "cap_hit": 3,
+          "overlap": 3,
+          "risk": "medium"
+        },
+        {
+          "slug": "log-anomaly-sleuth",
+          "score": 0.93,
+          "cap_hit": 3,
+          "overlap": 2,
+          "risk": "low"
+        },
+        {
+          "slug": "secret-rotation-reminder",
+          "score": 0.93,
+          "cap_hit": 3,
+          "overlap": 2,
+          "risk": "medium"
+        },
+        {
+          "slug": "knowledge-base-curator",
+          "score": 0.27,
+          "cap_hit": 0,
+          "overlap": 3,
+          "risk": "medium"
+        },
+        {
+          "slug": "discord-community-manager",
+          "score": 0.27,
+          "cap_hit": 0,
+          "overlap": 3,
+          "risk": "medium"
+        },
+        {
+          "slug": "whatsapp-support-copilot",
+          "score": 0.27,
+          "cap_hit": 0,
+          "overlap": 3,
+          "risk": "medium"
+        }
+      ],
+      "gaps": []
+    },
+    "agent-charlie-marketing": {
+      "top": [
+        {
+          "slug": "shortform-content-factory",
+          "score": 1.27,
+          "cap_hit": 4,
+          "overlap": 3,
+          "risk": "low"
+        },
+        {
+          "slug": "seo-brief-builder",
+          "score": 0.93,
+          "cap_hit": 3,
+          "overlap": 2,
+          "risk": "low"
+        },
+        {
+          "slug": "podcast-to-clips",
+          "score": 0.59,
+          "cap_hit": 2,
+          "overlap": 1,
+          "risk": "low"
+        },
+        {
+          "slug": "crm-sync-bidirectional",
+          "score": 0.09,
+          "cap_hit": 0,
+          "overlap": 1,
+          "risk": "low"
+        },
+        {
+          "slug": "calendar-ops-coordinator",
+          "score": 0.09,
+          "cap_hit": 0,
+          "overlap": 1,
+          "risk": "low"
+        },
+        {
+          "slug": "email-outreach-sequencer",
+          "score": 0.09,
+          "cap_hit": 0,
+          "overlap": 1,
+          "risk": "medium"
+        },
+        {
+          "slug": "rag-index-maintainer",
+          "score": 0.09,
+          "cap_hit": 0,
+          "overlap": 1,
+          "risk": "low"
+        },
+        {
+          "slug": "knowledge-base-curator",
+          "score": 0.09,
+          "cap_hit": 0,
+          "overlap": 1,
+          "risk": "medium"
+        }
+      ],
+      "gaps": []
+    }
+  }
+}

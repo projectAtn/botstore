@@ -1,0 +1,260 @@
+{
+  "generatedAt": "2026-03-18T06:26:25.447039+00:00",
+  "recommended": [
+    "rag-index-maintainer",
+    "knowledge-base-curator",
+    "citation-verifier",
+    "log-anomaly-sleuth",
+    "cloud-cost-analyzer",
+    "deploy-rollback-guardian",
+    "github-pr-review-assistant",
+    "incident-triage-commander",
+    "telegram-community-manager",
+    "discord-community-manager",
+    "whatsapp-support-copilot",
+    "shortform-content-factory",
+    "seo-brief-builder",
+    "podcast-to-clips",
+    "security-alert-triager",
+    "secret-rotation-reminder",
+    "contract-risk-highlighter",
+    "landing-page-ab-orchestrator",
+    "tool-release-watcher",
+    "backup-drill-coordinator"
+  ],
+  "agents": {
+    "agent-alpha-ops": {
+      "need": "triage inbox schedule meetings send followups and maintain CRM hygiene",
+      "required": [
+        "calendar.read",
+        "followup.send",
+        "calendar.write",
+        "email.read",
+        "email.send"
+      ],
+      "top": [
+        {
+          "slug": "rag-index-maintainer",
+          "title": "RAG Index Maintainer",
+          "score": 0.27,
+          "cap_hit": 0,
+          "overlap": 3,
+          "risk": "low"
+        },
+        {
+          "slug": "discord-community-manager",
+          "title": "Discord Community Manager",
+          "score": 0.27,
+          "cap_hit": 0,
+          "overlap": 3,
+          "risk": "medium"
+        },
+        {
+          "slug": "incident-triage-commander",
+          "title": "Incident Triage Commander",
+          "score": 0.18,
+          "cap_hit": 0,
+          "overlap": 2,
+          "risk": "medium"
+        },
+        {
+          "slug": "telegram-community-manager",
+          "title": "Telegram Community Manager",
+          "score": 0.18,
+          "cap_hit": 0,
+          "overlap": 2,
+          "risk": "medium"
+        },
+        {
+          "slug": "security-alert-triager",
+          "title": "Security Alert Triager",
+          "score": 0.18,
+          "cap_hit": 0,
+          "overlap": 2,
+          "risk": "medium"
+        },
+        {
+          "slug": "backup-drill-coordinator",
+          "title": "Backup Drill Coordinator",
+          "score": 0.18,
+          "cap_hit": 0,
+          "overlap": 2,
+          "risk": "medium"
+        },
+        {
+          "slug": "knowledge-base-curator",
+          "title": "Knowledge Base Curator",
+          "score": 0.09,
+          "cap_hit": 0,
+          "overlap": 1,
+          "risk": "medium"
+        },
+        {
+          "slug": "cloud-cost-analyzer",
+          "title": "Cloud Cost Analyzer",
+          "score": 0.09,
+          "cap_hit": 0,
+          "overlap": 1,
+          "risk": "low"
+        }
+      ],
+      "gaps": [
+        "Top recommendation has zero required-capability hit",
+        "No recommendation with cap_hit >=2 in top-5"
+      ]
+    },
+    "agent-bravo-security": {
+      "need": "prioritize security alerts enforce policy and keep audit trail",
+      "required": [
+        "risk.evaluate",
+        "audit.log.write",
+        "audit.log.read",
+        "policy.enforce"
+      ],
+      "top": [
+        {
+          "slug": "security-alert-triager",
+          "title": "Security Alert Triager",
+          "score": 1.36,
+          "cap_hit": 4,
+          "overlap": 4,
+          "risk": "medium"
+        },
+        {
+          "slug": "deploy-rollback-guardian",
+          "title": "Deploy Rollback Guardian",
+          "score": 1.18,
+          "cap_hit": 4,
+          "overlap": 2,
+          "risk": "medium"
+        },
+        {
+          "slug": "incident-triage-commander",
+          "title": "Incident Triage Commander",
+          "score": 1.02,
+          "cap_hit": 3,
+          "overlap": 3,
+          "risk": "medium"
+        },
+        {
+          "slug": "log-anomaly-sleuth",
+          "title": "Log Anomaly Sleuth",
+          "score": 0.93,
+          "cap_hit": 3,
+          "overlap": 2,
+          "risk": "low"
+        },
+        {
+          "slug": "secret-rotation-reminder",
+          "title": "Secret Rotation Reminder",
+          "score": 0.93,
+          "cap_hit": 3,
+          "overlap": 2,
+          "risk": "medium"
+        },
+        {
+          "slug": "backup-drill-coordinator",
+          "title": "Backup Drill Coordinator",
+          "score": 0.93,
+          "cap_hit": 3,
+          "overlap": 2,
+          "risk": "medium"
+        },
+        {
+          "slug": "knowledge-base-curator",
+          "title": "Knowledge Base Curator",
+          "score": 0.27,
+          "cap_hit": 0,
+          "overlap": 3,
+          "risk": "medium"
+        },
+        {
+          "slug": "discord-community-manager",
+          "title": "Discord Community Manager",
+          "score": 0.27,
+          "cap_hit": 0,
+          "overlap": 3,
+          "risk": "medium"
+        }
+      ],
+      "gaps": []
+    },
+    "agent-charlie-marketing": {
+      "need": "repurpose content produce SEO assets and orchestrate campaigns",
+      "required": [
+        "social.post",
+        "writing",
+        "workflow",
+        "seo",
+        "analytics"
+      ],
+      "top": [
+        {
+          "slug": "shortform-content-factory",
+          "title": "Shortform Content Factory",
+          "score": 1.27,
+          "cap_hit": 4,
+          "overlap": 3,
+          "risk": "low"
+        },
+        {
+          "slug": "seo-brief-builder",
+          "title": "SEO Brief Builder",
+          "score": 0.93,
+          "cap_hit": 3,
+          "overlap": 2,
+          "risk": "low"
+        },
+        {
+          "slug": "podcast-to-clips",
+          "title": "Podcast to Clips",
+          "score": 0.59,
+          "cap_hit": 2,
+          "overlap": 1,
+          "risk": "low"
+        },
+        {
+          "slug": "landing-page-ab-orchestrator",
+          "title": "Landing Page A/B Orchestrator",
+          "score": 0.59,
+          "cap_hit": 2,
+          "overlap": 1,
+          "risk": "low"
+        },
+        {
+          "slug": "rag-index-maintainer",
+          "title": "RAG Index Maintainer",
+          "score": 0.09,
+          "cap_hit": 0,
+          "overlap": 1,
+          "risk": "low"
+        },
+        {
+          "slug": "knowledge-base-curator",
+          "title": "Knowledge Base Curator",
+          "score": 0.09,
+          "cap_hit": 0,
+          "overlap": 1,
+          "risk": "medium"
+        },
+        {
+          "slug": "cloud-cost-analyzer",
+          "title": "Cloud Cost Analyzer",
+          "score": 0.09,
+          "cap_hit": 0,
+          "overlap": 1,
+          "risk": "low"
+        },
+        {
+          "slug": "deploy-rollback-guardian",
+          "title": "Deploy Rollback Guardian",
+          "score": 0.09,
+          "cap_hit": 0,
+          "overlap": 1,
+          "risk": "medium"
+        }
+      ],
+      "gaps": []
+    }
+  }
+}
