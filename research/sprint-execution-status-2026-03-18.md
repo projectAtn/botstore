@@ -88,3 +88,26 @@
 - Pack test runner completed and published QA statuses:
   - Published QA artifacts: **125**
   - Failed QA artifact writes: **0**
+
+## Additional execution progress (Sprint 2 item pulled forward)
+
+### Implemented now
+9. **Bundle composer validation API (`BS-BND-001` backend slice)**
+   - Added endpoint: `POST /bundles/validate`
+   - Validation checks:
+     - empty bundle
+     - duplicate child IDs
+     - missing child packs
+     - nested bundle warning
+     - risk mismatch warning (proposed risk lower than highest child risk)
+     - potential duplicate-problem target warning (high text overlap)
+     - capability redundancy warning (high scope overlap + moderate text overlap)
+
+10. **Bundle validation wiring in UI publish flow**
+   - `publishPack()` now calls `/bundles/validate` when `type=bundle`.
+   - Blocks publish on validation errors.
+   - Shows warnings and requires explicit user confirmation to proceed.
+
+### Live verification run
+- Validated community bundle candidates via `/bundles/validate`.
+- Expected warning returned for risk mismatch when proposed risk < child risk.

@@ -98,6 +98,13 @@ class PackCreate(SQLModel):
     creator_id: Optional[int] = None
 
 
+class BundleValidateRequest(SQLModel):
+    title: str = ""
+    description: str = ""
+    child_pack_ids: list[int] = []
+    proposed_risk_level: str = "medium"
+
+
 class CatalogPack(SQLModel):
     id: int
     slug: str
@@ -917,6 +924,117 @@ def promote_pack(pack_id: int, featured: bool = True) -> Pack:
         session.commit()
         session.refresh(pack)
         return pack
+
+
+@app.post("/bundles/validate")
+def validate_bundle(payload: BundleValidateRequest) -> dict:
+    issues: list[dict] = []
+
+    child_ids = [int(x) for x in payload.child_pack_ids if int(x) > 0]
+    if not child_ids:
+        return {
+            "ok": False,
+            "issues": [
+                {
+                    "severity": "error",
+                    "code": "bundle.empty",
+                    "message": "Bundle must include at least one child pack",
+                    "pack_ids": [],
+                }
+            ],
+            "summary": {"errors": 1, "warnings": 0},
+        }
+
+    if len(set(child_ids)) != len(child_ids):
+        dupes = sorted({x for x in child_ids if child_ids.count(x) > 1})
+        issues.append(
+            {
+                "severity": "error",
+                "code": "bundle.duplicate_child_ids",
+                "message": f"Duplicate child pack IDs detected: {dupes}",
+                "pack_ids": dupes,
+            }
+        )
+
+    with Session(engine) as session:
+        children: list[Pack] = []
+        for child_id in sorted(set(child_ids)):
+            c = session.get(Pack, child_id)
+            if not c:
+                issues.append(
+                    {
+                        "severity": "error",
+                        "code": "bundle.child_missing",
+                        "message": f"Child pack not found: {child_id}",
+                        "pack_ids": [child_id],
+                    }
+                )
+                continue
+            children.append(c)
+
+    for c in children:
+        if c.type == PackType.bundle:
+            issues.append(
+                {
+                    "severity": "warning",
+                    "code": "bundle.nested_bundle",
+                    "message": f"Nested bundle detected: {c.slug}",
+                    "pack_ids": [c.id],
+                }
+            )
+
+    # Risk-level consistency check
+    risk_rank = {"low": 1, "medium": 2, "high": 3}
+    highest_child_risk = max((risk_rank.get((c.risk_level or "low").lower(), 1) for c in children), default=1)
+    proposed = risk_rank.get((payload.proposed_risk_level or "medium").lower(), 2)
+    if proposed < highest_child_risk:
+        issues.append(
+            {
+                "severity": "warning",
+                "code": "bundle.risk_mismatch",
+                "message": "Proposed bundle risk is lower than highest child risk",
+                "pack_ids": [c.id for c in children if risk_rank.get((c.risk_level or "low").lower(), 1) == highest_child_risk],
+            }
+        )
+
+    # Duplicate-problem and redundancy checks
+    def _text_tokens(p: Pack) -> set[str]:
+        text = f"{p.title} {p.description}".lower()
+        return _tokenize(text)
+
+    for i in range(len(children)):
+        for j in range(i + 1, len(children)):
+            a = children[i]
+            b = children[j]
+            ta = _text_tokens(a)
+            tb = _text_tokens(b)
+            text_overlap = len(ta.intersection(tb)) / max(len(ta.union(tb)), 1)
+            sa = set(_csv_to_scopes(a.scopes_csv))
+            sb = set(_csv_to_scopes(b.scopes_csv))
+            scope_overlap = len(sa.intersection(sb)) / max(len(sa.union(sb)), 1)
+
+            if text_overlap >= 0.62:
+                issues.append(
+                    {
+                        "severity": "warning",
+                        "code": "bundle.problem_overlap",
+                        "message": f"Potential duplicate problem target: {a.slug} and {b.slug}",
+                        "pack_ids": [a.id, b.id],
+                    }
+                )
+            elif text_overlap >= 0.4 and scope_overlap >= 0.75:
+                issues.append(
+                    {
+                        "severity": "warning",
+                        "code": "bundle.capability_redundancy",
+                        "message": f"High capability redundancy: {a.slug} and {b.slug}",
+                        "pack_ids": [a.id, b.id],
+                    }
+                )
+
+    errors = sum(1 for x in issues if x["severity"] == "error")
+    warnings = sum(1 for x in issues if x["severity"] == "warning")
+    return {"ok": errors == 0, "issues": issues, "summary": {"errors": errors, "warnings": warnings}}
 
 
 @app.get("/packs", response_model=list[Pack])

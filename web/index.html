@@ -250,6 +250,34 @@ async function publishPack(){
   };
   const st = document.getElementById('publishStatus');
   try {
+    if(payload.type === 'bundle'){
+      const validation = await j('/bundles/validate', {
+        method:'POST',
+        body: JSON.stringify({
+          title: payload.title,
+          description: payload.description,
+          child_pack_ids: payload.bundle_pack_ids,
+          proposed_risk_level: payload.risk_level,
+        })
+      });
+      if(!validation.ok){
+        const errs = (validation.issues || []).filter(i=>i.severity==='error').map(i=>`- ${i.code}: ${i.message}`).join('\n');
+        st.className='err';
+        st.textContent = `Bundle validation failed.\n${errs}`;
+        return;
+      }
+      const warns = (validation.issues || []).filter(i=>i.severity==='warning');
+      if(warns.length){
+        const msg = warns.map(i=>`- ${i.code}: ${i.message}`).join('\n');
+        const proceed = confirm(`Bundle validation warnings:\n${msg}\n\nPublish anyway?`);
+        if(!proceed){
+          st.className='err';
+          st.textContent='Publish cancelled due to bundle warnings.';
+          return;
+        }
+      }
+    }
+
     await j('/packs',{method:'POST',body:JSON.stringify(payload)});
     st.className='ok'; st.textContent='Published.';
     loadPacks();
