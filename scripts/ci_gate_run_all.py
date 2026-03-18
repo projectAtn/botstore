@@ -24,6 +24,29 @@ STEPS = [
         "cmd": [sys.executable, str(ROOT / "scripts" / "pack_test_runner.py")],
         "required": True,
     },
+    {
+        "name": "team_pack_qa_high_pressure",
+        "cmd": [
+            sys.executable,
+            str(ROOT / "scripts" / "team_pack_qa_flexible.py"),
+            "--teams",
+            str(ROOT / "research" / "team-packs-v3.json"),
+            "--scenarios",
+            str(ROOT / "research" / "team-pack-qa-scenarios-v3-high-pressure.json"),
+            "--out-json",
+            str(ROOT / "research" / "team-pack-qa-result-v3-high-pressure.json"),
+            "--out-md",
+            str(ROOT / "research" / "team-pack-qa-report-v3-high-pressure.md"),
+            "--patched-out",
+            str(ROOT / "research" / "team-packs-v3-high-pressure-patched.json"),
+        ],
+        "required": True,
+    },
+    {
+        "name": "team_must_pass_gate",
+        "cmd": [sys.executable, str(ROOT / "scripts" / "team_must_pass_gate.py")],
+        "required": True,
+    },
 ]
 
 
