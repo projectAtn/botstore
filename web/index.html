@@ -73,6 +73,38 @@
   </div>
 
   <div class="card">
+    <h2>Build Custom Team</h2>
+    <div class="row">
+      <input id="teamName" placeholder="Team name (e.g. Revenue Tiger Team)" />
+      <select id="teamRisk"><option>low</option><option selected>medium</option><option>high</option></select>
+    </div>
+    <textarea id="teamObjective" rows="2" placeholder="Objective (what this team should achieve)"></textarea>
+    <label class="muted">Select role agents</label>
+    <input id="teamRoleSearch" placeholder="Search roles..." oninput="renderTeamRoleOptions()" />
+    <div class="row">
+      <button class="secondary" onclick="selectAllTeamRoles()" type="button">Select all shown</button>
+      <button class="secondary" onclick="clearAllTeamRoles()" type="button">Clear</button>
+    </div>
+    <div class="muted" id="teamRolesSelectedCount">Selected roles: 0</div>
+    <div id="teamRoles" class="pack" style="max-height:180px;overflow:auto"></div>
+    <input id="teamExtraSkills" placeholder="Additional shared skills CSV (optional)" />
+    <div class="row">
+      <button onclick="composeCustomTeam()">1) Compose</button>
+      <button class="secondary" onclick="validateCustomTeam()">2) Validate</button>
+    </div>
+    <div class="row">
+      <button class="secondary" onclick="simulateCustomTeam()">3) Simulate</button>
+      <button onclick="publishCustomTeam()">4) Publish</button>
+    </div>
+    <div id="teamBuilderStatus" class="muted"></div>
+    <textarea id="teamBuilderJson" rows="12" placeholder="Composed team JSON appears here..."></textarea>
+    <label class="muted">Scenarios to simulate (optional)</label>
+    <input id="teamScenarioSearch" placeholder="Search scenarios..." oninput="renderTeamScenarioOptions()" />
+    <div class="muted" id="teamScenariosSelectedCount">Selected scenarios: 0</div>
+    <div id="teamScenarios" class="pack" style="max-height:180px;overflow:auto"></div>
+  </div>
+
+  <div class="card">
     <h2>One-click featured features</h2>
     <p class="muted">Install curated features instantly. Sensitive packs still require approval.</p>
     <button class="secondary" onclick="oneClickStarterBundle()">One-click starter bundle (personality + 2 skills)</button>
@@ -169,6 +201,8 @@ async function loadCreators(){
 
 let bundlePackCatalog = [];
 const selectedCatalogPackIds = new Set();
+let teamRoleCatalog = [];
+let teamScenarioCatalog = [];
 
 function updateBundleSelectedCount(){
   const n = document.querySelectorAll('#bundleChecks input[type="checkbox"]:checked').length;
@@ -215,6 +249,138 @@ async function loadBundlePackOptions(){
   const catalog = await j('/catalog');
   bundlePackCatalog = catalog.filter(p => p.type !== 'bundle');
   renderBundleOptions(document.getElementById('bundleSearch').value || '');
+}
+
+function updateTeamRoleSelectedCount(){
+  const n = document.querySelectorAll('#teamRoles input[type="checkbox"]:checked').length;
+  document.getElementById('teamRolesSelectedCount').textContent = `Selected roles: ${n}`;
+}
+
+function updateTeamScenarioSelectedCount(){
+  const n = document.querySelectorAll('#teamScenarios input[type="checkbox"]:checked').length;
+  document.getElementById('teamScenariosSelectedCount').textContent = `Selected scenarios: ${n}`;
+}
+
+function renderTeamRoleOptions(){
+  const root = document.getElementById('teamRoles');
+  const q = (document.getElementById('teamRoleSearch').value || '').trim().toLowerCase();
+  const checked = new Set(Array.from(document.querySelectorAll('#teamRoles input[type="checkbox"]:checked')).map(i => i.value));
+  root.innerHTML = '';
+  teamRoleCatalog
+    .filter(r => !q || `${r.slug} ${r.role} ${r.personality_slug}`.toLowerCase().includes(q))
+    .forEach(r => {
+      const row = document.createElement('label');
+      row.className = 'muted';
+      row.style.display = 'block';
+      const isChecked = checked.has(String(r.slug));
+      row.innerHTML = `<input type='checkbox' value='${r.slug}' ${isChecked ? 'checked' : ''} onchange='updateTeamRoleSelectedCount()'/> ${r.role} (${r.slug})`;
+      root.appendChild(row);
+    });
+  updateTeamRoleSelectedCount();
+}
+
+function selectAllTeamRoles(){
+  document.querySelectorAll('#teamRoles input[type="checkbox"]').forEach(i => i.checked = true);
+  updateTeamRoleSelectedCount();
+}
+
+function clearAllTeamRoles(){
+  document.querySelectorAll('#teamRoles input[type="checkbox"]').forEach(i => i.checked = false);
+  updateTeamRoleSelectedCount();
+}
+
+function renderTeamScenarioOptions(){
+  const root = document.getElementById('teamScenarios');
+  const q = (document.getElementById('teamScenarioSearch').value || '').trim().toLowerCase();
+  const checked = new Set(Array.from(document.querySelectorAll('#teamScenarios input[type="checkbox"]:checked')).map(i => i.value));
+  root.innerHTML = '';
+  teamScenarioCatalog
+    .filter(s => !q || `${s.id} ${s.team_slug} ${s.prompt}`.toLowerCase().includes(q))
+    .forEach(s => {
+      const row = document.createElement('label');
+      row.className = 'muted';
+      row.style.display = 'block';
+      const isChecked = checked.has(String(s.id));
+      row.innerHTML = `<input type='checkbox' value='${s.id}' ${isChecked ? 'checked' : ''} onchange='updateTeamScenarioSelectedCount()'/> ${s.id} (${s.team_slug})`;
+      root.appendChild(row);
+    });
+  updateTeamScenarioSelectedCount();
+}
+
+async function loadTeamBuilderCatalogs(){
+  try{
+    const roles = await j('/teams/custom/roles');
+    teamRoleCatalog = roles.roles || [];
+    renderTeamRoleOptions();
+  }catch(e){
+    document.getElementById('teamBuilderStatus').textContent = `Role catalog unavailable: ${e.message}`;
+  }
+
+  try{
+    const scenarios = await j('/teams/custom/scenarios');
+    teamScenarioCatalog = scenarios.scenarios || [];
+    renderTeamScenarioOptions();
+  }catch(e){
+    // optional
+  }
+}
+
+function readTeamJson(){
+  const raw = (document.getElementById('teamBuilderJson').value || '').trim();
+  if(!raw) throw new Error('No team JSON loaded. Compose first.');
+  return JSON.parse(raw);
+}
+
+async function composeCustomTeam(){
+  const st = document.getElementById('teamBuilderStatus');
+  try{
+    const role_slugs = Array.from(document.querySelectorAll('#teamRoles input[type="checkbox"]:checked')).map(i => i.value);
+    const additional_shared_skills = (document.getElementById('teamExtraSkills').value || '').split(',').map(s=>s.trim()).filter(Boolean);
+    const payload = {
+      name: document.getElementById('teamName').value.trim() || 'Custom Team',
+      objective: document.getElementById('teamObjective').value.trim() || 'Custom objective',
+      role_slugs,
+      risk_level: document.getElementById('teamRisk').value,
+      additional_shared_skills,
+    };
+    const res = await j('/teams/custom/compose',{method:'POST', body: JSON.stringify(payload)});
+    document.getElementById('teamBuilderJson').value = JSON.stringify(res.team, null, 2);
+    st.className='ok';
+    st.textContent = `Composed team. Missing role slugs: ${(res.missing_role_slugs || []).join(', ') || 'none'}`;
+  }catch(e){ st.className='err'; st.textContent=e.message; }
+}
+
+async function validateCustomTeam(){
+  const st = document.getElementById('teamBuilderStatus');
+  try{
+    const team = readTeamJson();
+    const res = await j('/teams/custom/validate',{method:'POST', body: JSON.stringify({team})});
+    const warnCount = (res.issues || []).filter(i=>i.severity==='warning').length;
+    st.className = res.pass ? 'ok' : 'warn';
+    st.textContent = `Validate: ${res.pass ? 'PASS' : 'NEEDS FIX'} | score=${res.score} | warnings=${warnCount}`;
+  }catch(e){ st.className='err'; st.textContent=e.message; }
+}
+
+async function simulateCustomTeam(){
+  const st = document.getElementById('teamBuilderStatus');
+  try{
+    const team = readTeamJson();
+    const scenario_ids = Array.from(document.querySelectorAll('#teamScenarios input[type="checkbox"]:checked')).map(i => i.value);
+    const res = await j('/teams/custom/simulate',{method:'POST', body: JSON.stringify({team, scenario_ids})});
+    st.className = res.summary.pass === res.summary.total ? 'ok' : 'warn';
+    st.textContent = `Simulate: pass ${res.summary.pass}/${res.summary.total} | avg_score=${res.summary.avg_score}`;
+  }catch(e){ st.className='err'; st.textContent=e.message; }
+}
+
+async function publishCustomTeam(){
+  const st = document.getElementById('teamBuilderStatus');
+  try{
+    const team = readTeamJson();
+    const res = await j('/teams/custom/publish',{method:'POST', body: JSON.stringify({team})});
+    st.className='ok';
+    st.textContent = `Published team pack ${res.slug} (#${res.pack_id}) with ${res.bundle_child_count} child packs.`;
+    loadPacks();
+  }catch(e){ st.className='err'; st.textContent=e.message; }
 }
 
 async function createCreator(){
@@ -494,6 +660,7 @@ async function refreshAll(){
   await loadFeatured();
   await loadPacks();
   await loadBundlePackOptions();
+  await loadTeamBuilderCatalogs();
   await loadInstalls();
   await loadApprovals();
 }

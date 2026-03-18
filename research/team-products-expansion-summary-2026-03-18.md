@@ -52,3 +52,14 @@ Implemented in `api/app/main.py`:
 - Validate: pass (`score=0.8`)
 - Simulate: ran 2 scenarios (`pass=1`, `avg_score=0.725`)
 - Publish: created bundle pack `custom-revenue-tiger-team` (`pack_id=126`)
+
+## UI + API productization (custom team builder)
+Added API discovery endpoints:
+- `GET /teams/custom/roles` (returns singular role-agent catalog)
+- `GET /teams/custom/scenarios` (returns scenario catalog)
+
+Added web UI panel **Build Custom Team** in `web/index.html`:
+- role picker/search + bulk select
+- compose / validate / simulate / publish workflow
+- scenario selector for simulation
+- inline JSON editor for custom team definition

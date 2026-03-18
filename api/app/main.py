@@ -944,6 +944,20 @@ def interop_export_skill(payload: SkillExportRequest) -> dict:
         }
 
 
+@app.get("/teams/custom/roles")
+def teams_custom_roles() -> dict:
+    role_catalog = _load_json(ROLE_AGENT_CATALOG_PATH) or {}
+    roles = role_catalog.get("agents", []) if isinstance(role_catalog, dict) else []
+    return {"roles": roles, "count": len(roles)}
+
+
+@app.get("/teams/custom/scenarios")
+def teams_custom_scenarios() -> dict:
+    scenarios_doc = _load_json(TEAM_SCENARIOS_PATH) or {}
+    scenarios = scenarios_doc.get("scenarios", []) if isinstance(scenarios_doc, dict) else []
+    return {"scenarios": scenarios, "count": len(scenarios)}
+
+
 @app.post("/teams/custom/compose")
 def teams_custom_compose(payload: TeamComposeRequest) -> dict:
     role_catalog = _load_json(ROLE_AGENT_CATALOG_PATH) or {}
