@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-03-18T22:12:32.523351+00:00",
+  "generatedAt": "2026-03-19T08:03:08.051961+00:00",
   "summary": {
     "total": 170,
-    "pass": 167,
-    "avg_score": 0.877
+    "pass": 170,
+    "avg_score": 0.892
   },
   "scenarios": [
     {
@@ -289,13 +289,11 @@
     {
       "scenario_id": "finance-control-team-board-pressure",
       "team_slug": "finance-control-team",
-      "score": 0.833,
-      "capability_coverage": 0.8,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "analytics"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "boardbrief"
@@ -305,13 +303,11 @@
     {
       "scenario_id": "finance-control-team-budget-shock",
       "team_slug": "finance-control-team",
-      "score": 0.833,
-      "capability_coverage": 0.8,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "analytics"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "costplan"
@@ -321,13 +317,11 @@
     {
       "scenario_id": "finance-control-team-compliance-audit",
       "team_slug": "finance-control-team",
-      "score": 0.833,
-      "capability_coverage": 0.8,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "analytics"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "compliancebrief"
@@ -337,13 +331,11 @@
     {
       "scenario_id": "finance-control-team-vendor-failure",
       "team_slug": "finance-control-team",
-      "score": 0.833,
-      "capability_coverage": 0.8,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "analytics"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "mitigationplan"
@@ -353,13 +345,11 @@
     {
       "scenario_id": "finance-control-team-reputation-crisis",
       "team_slug": "finance-control-team",
-      "score": 0.833,
-      "capability_coverage": 0.8,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "analytics"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "responsebrief"
@@ -369,13 +359,11 @@
     {
       "scenario_id": "finance-control-team-priority-conflict",
       "team_slug": "finance-control-team",
-      "score": 0.833,
-      "capability_coverage": 0.8,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "analytics"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "prioritymatrix"
@@ -385,13 +373,11 @@
     {
       "scenario_id": "finance-control-team-scale-spike",
       "team_slug": "finance-control-team",
-      "score": 0.833,
-      "capability_coverage": 0.8,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "analytics"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "capacityplan"
@@ -401,13 +387,11 @@
     {
       "scenario_id": "finance-control-team-data-quality-break",
       "team_slug": "finance-control-team",
-      "score": 0.833,
-      "capability_coverage": 0.8,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "analytics"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "dataremediationplan"
@@ -417,13 +401,11 @@
     {
       "scenario_id": "finance-control-team-deadline-compression",
       "team_slug": "finance-control-team",
-      "score": 0.833,
-      "capability_coverage": 0.8,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "analytics"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "compressedroadmap"
@@ -433,13 +415,11 @@
     {
       "scenario_id": "finance-control-team-handoff-failure",
       "team_slug": "finance-control-team",
-      "score": 0.833,
-      "capability_coverage": 0.8,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "analytics"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "handoffprotocol"
@@ -749,13 +729,11 @@
     {
       "scenario_id": "customer-support-escalation-team-board-pressure",
       "team_slug": "customer-support-escalation-team",
-      "score": 0.808,
-      "capability_coverage": 0.75,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "memory.write"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "boardbrief"
@@ -765,13 +743,11 @@
     {
       "scenario_id": "customer-support-escalation-team-budget-shock",
       "team_slug": "customer-support-escalation-team",
-      "score": 0.808,
-      "capability_coverage": 0.75,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "memory.write"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "costplan"
@@ -781,13 +757,11 @@
     {
       "scenario_id": "customer-support-escalation-team-compliance-audit",
       "team_slug": "customer-support-escalation-team",
-      "score": 0.808,
-      "capability_coverage": 0.75,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "memory.write"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "compliancebrief"
@@ -797,13 +771,11 @@
     {
       "scenario_id": "customer-support-escalation-team-vendor-failure",
       "team_slug": "customer-support-escalation-team",
-      "score": 0.808,
-      "capability_coverage": 0.75,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "memory.write"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "mitigationplan"
@@ -813,13 +785,11 @@
     {
       "scenario_id": "customer-support-escalation-team-reputation-crisis",
       "team_slug": "customer-support-escalation-team",
-      "score": 0.808,
-      "capability_coverage": 0.75,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "memory.write"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "responsebrief"
@@ -829,13 +799,11 @@
     {
       "scenario_id": "customer-support-escalation-team-priority-conflict",
       "team_slug": "customer-support-escalation-team",
-      "score": 0.808,
-      "capability_coverage": 0.75,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "memory.write"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "prioritymatrix"
@@ -845,13 +813,11 @@
     {
       "scenario_id": "customer-support-escalation-team-scale-spike",
       "team_slug": "customer-support-escalation-team",
-      "score": 0.808,
-      "capability_coverage": 0.75,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "memory.write"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "capacityplan"
@@ -861,13 +827,11 @@
     {
       "scenario_id": "customer-support-escalation-team-data-quality-break",
       "team_slug": "customer-support-escalation-team",
-      "score": 0.808,
-      "capability_coverage": 0.75,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "memory.write"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "dataremediationplan"
@@ -877,13 +841,11 @@
     {
       "scenario_id": "customer-support-escalation-team-deadline-compression",
       "team_slug": "customer-support-escalation-team",
-      "score": 0.808,
-      "capability_coverage": 0.75,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "memory.write"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "compressedroadmap"
@@ -893,13 +855,11 @@
     {
       "scenario_id": "customer-support-escalation-team-handoff-failure",
       "team_slug": "customer-support-escalation-team",
-      "score": 0.808,
-      "capability_coverage": 0.75,
+      "score": 0.933,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.667,
-      "missing_capabilities": [
-        "memory.write"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "handoffprotocol"
@@ -2245,20 +2205,18 @@
     {
       "scenario_id": "reddit-02-sla-guardian",
       "team_slug": "customer-support-escalation-team",
-      "score": 0.675,
-      "capability_coverage": 0.75,
+      "score": 0.8,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.0,
-      "missing_capabilities": [
-        "memory.write"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "actionitems",
         "decisionlog",
         "statusreport"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "scenario_id": "reddit-03-release-notes-pilot",
@@ -2327,20 +2285,18 @@
     {
       "scenario_id": "reddit-11-inbox-to-action",
       "team_slug": "customer-support-escalation-team",
-      "score": 0.633,
-      "capability_coverage": 0.667,
+      "score": 0.8,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.0,
-      "missing_capabilities": [
-        "memory.write"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "actionitems",
         "decisionlog",
         "statusreport"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "scenario_id": "reddit-14-weekly-research-digest",
@@ -2361,20 +2317,18 @@
     {
       "scenario_id": "reddit-19-support-escalation-digest",
       "team_slug": "customer-support-escalation-team",
-      "score": 0.675,
-      "capability_coverage": 0.75,
+      "score": 0.8,
+      "capability_coverage": 1.0,
       "role_coverage": 1.0,
       "artifact_coverage": 0.0,
-      "missing_capabilities": [
-        "memory.write"
-      ],
+      "missing_capabilities": [],
       "missing_roles": [],
       "missing_artifacts": [
         "actionitems",
         "decisionlog",
         "statusreport"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "scenario_id": "reddit-20-product-changelog-curator",
@@ -2553,7 +2507,7 @@
     "summary": {
       "total": 170,
       "pass": 170,
-      "avg_score": 0.89
+      "avg_score": 0.892
     },
     "scenarios": [
       {
@@ -2839,13 +2793,11 @@
       {
         "scenario_id": "finance-control-team-board-pressure",
         "team_slug": "finance-control-team",
-        "score": 0.833,
-        "capability_coverage": 0.8,
+        "score": 0.933,
+        "capability_coverage": 1.0,
         "role_coverage": 1.0,
         "artifact_coverage": 0.667,
-        "missing_capabilities": [
-          "analytics"
-        ],
+        "missing_capabilities": [],
         "missing_roles": [],
         "missing_artifacts": [
           "boardbrief"
@@ -2855,13 +2807,11 @@
       {
         "scenario_id": "finance-control-team-budget-shock",
         "team_slug": "finance-control-team",
-        "score": 0.833,
-        "capability_coverage": 0.8,
+        "score": 0.933,
+        "capability_coverage": 1.0,
         "role_coverage": 1.0,
         "artifact_coverage": 0.667,
-        "missing_capabilities": [
-          "analytics"
-        ],
+        "missing_capabilities": [],
         "missing_roles": [],
         "missing_artifacts": [
           "costplan"
@@ -2871,13 +2821,11 @@
       {
         "scenario_id": "finance-control-team-compliance-audit",
         "team_slug": "finance-control-team",
-        "score": 0.833,
-        "capability_coverage": 0.8,
+        "score": 0.933,
+        "capability_coverage": 1.0,
         "role_coverage": 1.0,
         "artifact_coverage": 0.667,
-        "missing_capabilities": [
-          "analytics"
-        ],
+        "missing_capabilities": [],
         "missing_roles": [],
         "missing_artifacts": [
           "compliancebrief"
@@ -2887,13 +2835,11 @@
       {
         "scenario_id": "finance-control-team-vendor-failure",
         "team_slug": "finance-control-team",
-        "score": 0.833,
-        "capability_coverage": 0.8,
+        "score": 0.933,
+        "capability_coverage": 1.0,
         "role_coverage": 1.0,
         "artifact_coverage": 0.667,
-        "missing_capabilities": [
-          "analytics"
-        ],
+        "missing_capabilities": [],
         "missing_roles": [],
         "missing_artifacts": [
           "mitigationplan"
@@ -2903,13 +2849,11 @@
       {
         "scenario_id": "finance-control-team-reputation-crisis",
         "team_slug": "finance-control-team",
-        "score": 0.833,
-        "capability_coverage": 0.8,
+        "score": 0.933,
+        "capability_coverage": 1.0,
         "role_coverage": 1.0,
         "artifact_coverage": 0.667,
-        "missing_capabilities": [
-          "analytics"
-        ],
+        "missing_capabilities": [],
         "missing_roles": [],
         "missing_artifacts": [
           "responsebrief"
@@ -2919,13 +2863,11 @@
       {
         "scenario_id": "finance-control-team-priority-conflict",
         "team_slug": "finance-control-team",
-        "score": 0.833,
-        "capability_coverage": 0.8,
+        "score": 0.933,
+        "capability_coverage": 1.0,
         "role_coverage": 1.0,
         "artifact_coverage": 0.667,
-        "missing_capabilities": [
-          "analytics"
-        ],
+        "missing_capabilities": [],
         "missing_roles": [],
         "missing_artifacts": [
           "prioritymatrix"
@@ -2935,13 +2877,11 @@
       {
         "scenario_id": "finance-control-team-scale-spike",
         "team_slug": "finance-control-team",
-        "score": 0.833,
-        "capability_coverage": 0.8,
+        "score": 0.933,
+        "capability_coverage": 1.0,
         "role_coverage": 1.0,
         "artifact_coverage": 0.667,
-        "missing_capabilities": [
-          "analytics"
-        ],
+        "missing_capabilities": [],
         "missing_roles": [],
         "missing_artifacts": [
           "capacityplan"
@@ -2951,13 +2891,11 @@
       {
         "scenario_id": "finance-control-team-data-quality-break",
         "team_slug": "finance-control-team",
-        "score": 0.833,
-        "capability_coverage": 0.8,
+        "score": 0.933,
+        "capability_coverage": 1.0,
         "role_coverage": 1.0,
         "artifact_coverage": 0.667,
-        "missing_capabilities": [
-          "analytics"
-        ],
+        "missing_capabilities": [],
         "missing_roles": [],
         "missing_artifacts": [
           "dataremediationplan"
@@ -2967,13 +2905,11 @@
       {
         "scenario_id": "finance-control-team-deadline-compression",
         "team_slug": "finance-control-team",
-        "score": 0.833,
-        "capability_coverage": 0.8,
+        "score": 0.933,
+        "capability_coverage": 1.0,
         "role_coverage": 1.0,
         "artifact_coverage": 0.667,
-        "missing_capabilities": [
-          "analytics"
-        ],
+        "missing_capabilities": [],
         "missing_roles": [],
         "missing_artifacts": [
           "compressedroadmap"
@@ -2983,13 +2919,11 @@
       {
         "scenario_id": "finance-control-team-handoff-failure",
         "team_slug": "finance-control-team",
-        "score": 0.833,
-        "capability_coverage": 0.8,
+        "score": 0.933,
+        "capability_coverage": 1.0,
         "role_coverage": 1.0,
         "artifact_coverage": 0.667,
-        "missing_capabilities": [
-          "analytics"
-        ],
+        "missing_capabilities": [],
         "missing_roles": [],
         "missing_artifacts": [
           "handoffprotocol"
@@ -4775,13 +4709,17 @@
       {
         "scenario_id": "reddit-02-sla-guardian",
         "team_slug": "customer-support-escalation-team",
-        "score": 1.0,
+        "score": 0.8,
         "capability_coverage": 1.0,
         "role_coverage": 1.0,
-        "artifact_coverage": 1.0,
+        "artifact_coverage": 0.0,
         "missing_capabilities": [],
         "missing_roles": [],
-        "missing_artifacts": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
         "pass": true
       },
       {
@@ -4851,13 +4789,17 @@
       {
         "scenario_id": "reddit-11-inbox-to-action",
         "team_slug": "customer-support-escalation-team",
-        "score": 1.0,
+        "score": 0.8,
         "capability_coverage": 1.0,
         "role_coverage": 1.0,
-        "artifact_coverage": 1.0,
+        "artifact_coverage": 0.0,
         "missing_capabilities": [],
         "missing_roles": [],
-        "missing_artifacts": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
         "pass": true
       },
       {
@@ -4879,13 +4821,17 @@
       {
         "scenario_id": "reddit-19-support-escalation-digest",
         "team_slug": "customer-support-escalation-team",
-        "score": 1.0,
+        "score": 0.8,
         "capability_coverage": 1.0,
         "role_coverage": 1.0,
-        "artifact_coverage": 1.0,
+        "artifact_coverage": 0.0,
         "missing_capabilities": [],
         "missing_roles": [],
-        "missing_artifacts": [],
+        "missing_artifacts": [
+          "actionitems",
+          "decisionlog",
+          "statusreport"
+        ],
         "pass": true
       },
       {

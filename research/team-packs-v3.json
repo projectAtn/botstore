@@ -8,9 +8,13 @@
       "purpose": "Founder weekly operating rhythm.",
       "team_type": "executive",
       "shared_skills": [
-        "crm-sync-bidirectional",
+        "board-evidence-packager",
         "calendar-ops-coordinator",
-        "proposal-generator"
+        "crm-sync-bidirectional",
+        "it-intake-router",
+        "product-changelog-curator",
+        "proposal-generator",
+        "vip-inbox-priority"
       ],
       "roles": [
         {
@@ -68,8 +72,8 @@
       "purpose": "2-4 person startup command center.",
       "team_type": "executive",
       "shared_skills": [
-        "waitlist-converter",
-        "churn-early-warning"
+        "churn-early-warning",
+        "waitlist-converter"
       ],
       "roles": [
         {
@@ -112,9 +116,10 @@
       "purpose": "Cash discipline and financial hygiene.",
       "team_type": "finance",
       "shared_skills": [
-        "invoice-reconciliation",
+        "cloud-cost-analyzer",
         "expense-policy-auditor",
-        "cloud-cost-analyzer"
+        "invoice-reconciliation",
+        "model-cost-governor"
       ],
       "roles": [
         {
@@ -207,8 +212,8 @@
       "purpose": "Grow and moderate communities across channels.",
       "team_type": "community",
       "shared_skills": [
-        "telegram-community-manager",
         "discord-community-manager",
+        "telegram-community-manager",
         "whatsapp-support-copilot"
       ],
       "roles": [
@@ -243,8 +248,11 @@
       "purpose": "Fast issue resolution with high empathy and safe escalation.",
       "team_type": "support",
       "shared_skills": [
-        "transcript-to-action-items",
-        "knowledge-base-curator"
+        "customer-sla-guardian",
+        "customer-support-escalation-team-skill",
+        "knowledge-base-curator",
+        "support-escalation-summarizer",
+        "transcript-to-action-items"
       ],
       "roles": [
         {
@@ -277,10 +285,11 @@
       "purpose": "Close faster, cleaner handoffs, lower deal risk.",
       "team_type": "revenue",
       "shared_skills": [
-        "sales-call-prep-kit",
-        "proposal-generator",
         "contract-risk-highlighter",
-        "renewal-expansion-coach"
+        "proposal-generator",
+        "renewal-expansion-coach",
+        "sales-call-prep-kit",
+        "trial-conversion-optimizer"
       ],
       "roles": [
         {
@@ -326,11 +335,11 @@
       "purpose": "Contain incidents and communicate clearly under pressure.",
       "team_type": "security-ops",
       "shared_skills": [
-        "security-alert-triager",
+        "backup-drill-coordinator",
         "deploy-rollback-guardian",
         "log-anomaly-sleuth",
         "secret-rotation-reminder",
-        "backup-drill-coordinator"
+        "security-alert-triager"
       ],
       "roles": [
         {
@@ -375,9 +384,12 @@
       "purpose": "Improve release safety and uptime consistency.",
       "team_type": "devops",
       "shared_skills": [
+        "ci-flake-doctor",
+        "dependency-risk-watcher",
         "deploy-rollback-guardian",
         "incident-triage-commander",
-        "self-host-healthcheck"
+        "self-host-healthcheck",
+        "service-ownership-mapper"
       ],
       "roles": [
         {
@@ -410,9 +422,9 @@
       "purpose": "Tie user pain to roadmap decisions.",
       "team_type": "product",
       "shared_skills": [
-        "user-painpoint-clusterer",
+        "competitor-feature-tracker",
         "persona-signal-miner",
-        "competitor-feature-tracker"
+        "user-painpoint-clusterer"
       ],
       "roles": [
         {
@@ -445,10 +457,11 @@
       "purpose": "Source-grounded research to publish-ready outputs.",
       "team_type": "research",
       "shared_skills": [
+        "citation-verifier",
         "paper-to-notes",
-        "transcript-to-action-items",
         "rag-index-maintainer",
-        "citation-verifier"
+        "research-digest-compiler",
+        "transcript-to-action-items"
       ],
       "roles": [
         {
@@ -529,8 +542,9 @@
       "purpose": "Build hiring pipeline and improve people operations.",
       "team_type": "people",
       "shared_skills": [
-        "job-application-accelerator",
-        "calendar-ops-coordinator"
+        "calendar-ops-coordinator",
+        "candidate-brief-generator",
+        "job-application-accelerator"
       ],
       "roles": [
         {
@@ -564,9 +578,10 @@
       "purpose": "Policy control, approvals, and risk governance.",
       "team_type": "governance",
       "shared_skills": [
+        "access-review-automation",
+        "approval-policy-brain",
         "policy-compliance-guard",
-        "policy-drift-detector",
-        "approval-policy-brain"
+        "policy-drift-detector"
       ],
       "roles": [
         {
@@ -599,10 +614,11 @@
       "purpose": "From research insight to multi-format content assets.",
       "team_type": "content",
       "shared_skills": [
-        "shortform-content-factory",
-        "thumbnail-brief-generator",
         "podcast-to-clips",
-        "seo-brief-builder"
+        "release-notes-generator",
+        "seo-brief-builder",
+        "shortform-content-factory",
+        "thumbnail-brief-generator"
       ],
       "roles": [
         {

@@ -1,8 +1,8 @@
 # Team Pack QA Flexible Report
 
-Generated: 2026-03-18T22:12:32.523351+00:00
-Initial pass: **167/170** (avg 0.877)
-Patched pass: **170/170** (avg 0.89)
+Generated: 2026-03-19T08:03:08.051961+00:00
+Initial pass: **170/170** (avg 0.892)
+Patched pass: **170/170** (avg 0.892)
 
 | scenario | team | score | cap | role | art | pass |
 |---|---|---:|---:|---:|---:|---|
@@ -26,16 +26,16 @@ Patched pass: **170/170** (avg 0.89)
 | `founder-lean-team-data-quality-break` | `founder-lean-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
 | `founder-lean-team-deadline-compression` | `founder-lean-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
 | `founder-lean-team-handoff-failure` | `founder-lean-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
-| `finance-control-team-board-pressure` | `finance-control-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
-| `finance-control-team-budget-shock` | `finance-control-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
-| `finance-control-team-compliance-audit` | `finance-control-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
-| `finance-control-team-vendor-failure` | `finance-control-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
-| `finance-control-team-reputation-crisis` | `finance-control-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
-| `finance-control-team-priority-conflict` | `finance-control-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
-| `finance-control-team-scale-spike` | `finance-control-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
-| `finance-control-team-data-quality-break` | `finance-control-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
-| `finance-control-team-deadline-compression` | `finance-control-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
-| `finance-control-team-handoff-failure` | `finance-control-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
+| `finance-control-team-board-pressure` | `finance-control-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `finance-control-team-budget-shock` | `finance-control-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `finance-control-team-compliance-audit` | `finance-control-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `finance-control-team-vendor-failure` | `finance-control-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `finance-control-team-reputation-crisis` | `finance-control-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `finance-control-team-priority-conflict` | `finance-control-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `finance-control-team-scale-spike` | `finance-control-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `finance-control-team-data-quality-break` | `finance-control-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `finance-control-team-deadline-compression` | `finance-control-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `finance-control-team-handoff-failure` | `finance-control-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
 | `go-to-market-war-room-team-board-pressure` | `go-to-market-war-room-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
 | `go-to-market-war-room-team-budget-shock` | `go-to-market-war-room-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
 | `go-to-market-war-room-team-compliance-audit` | `go-to-market-war-room-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
@@ -56,16 +56,16 @@ Patched pass: **170/170** (avg 0.89)
 | `community-growth-team-data-quality-break` | `community-growth-team` | 0.808 | 0.75 | 1.0 | 0.667 | ✅ |
 | `community-growth-team-deadline-compression` | `community-growth-team` | 0.808 | 0.75 | 1.0 | 0.667 | ✅ |
 | `community-growth-team-handoff-failure` | `community-growth-team` | 0.808 | 0.75 | 1.0 | 0.667 | ✅ |
-| `customer-support-escalation-team-board-pressure` | `customer-support-escalation-team` | 0.808 | 0.75 | 1.0 | 0.667 | ✅ |
-| `customer-support-escalation-team-budget-shock` | `customer-support-escalation-team` | 0.808 | 0.75 | 1.0 | 0.667 | ✅ |
-| `customer-support-escalation-team-compliance-audit` | `customer-support-escalation-team` | 0.808 | 0.75 | 1.0 | 0.667 | ✅ |
-| `customer-support-escalation-team-vendor-failure` | `customer-support-escalation-team` | 0.808 | 0.75 | 1.0 | 0.667 | ✅ |
-| `customer-support-escalation-team-reputation-crisis` | `customer-support-escalation-team` | 0.808 | 0.75 | 1.0 | 0.667 | ✅ |
-| `customer-support-escalation-team-priority-conflict` | `customer-support-escalation-team` | 0.808 | 0.75 | 1.0 | 0.667 | ✅ |
-| `customer-support-escalation-team-scale-spike` | `customer-support-escalation-team` | 0.808 | 0.75 | 1.0 | 0.667 | ✅ |
-| `customer-support-escalation-team-data-quality-break` | `customer-support-escalation-team` | 0.808 | 0.75 | 1.0 | 0.667 | ✅ |
-| `customer-support-escalation-team-deadline-compression` | `customer-support-escalation-team` | 0.808 | 0.75 | 1.0 | 0.667 | ✅ |
-| `customer-support-escalation-team-handoff-failure` | `customer-support-escalation-team` | 0.808 | 0.75 | 1.0 | 0.667 | ✅ |
+| `customer-support-escalation-team-board-pressure` | `customer-support-escalation-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `customer-support-escalation-team-budget-shock` | `customer-support-escalation-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `customer-support-escalation-team-compliance-audit` | `customer-support-escalation-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `customer-support-escalation-team-vendor-failure` | `customer-support-escalation-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `customer-support-escalation-team-reputation-crisis` | `customer-support-escalation-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `customer-support-escalation-team-priority-conflict` | `customer-support-escalation-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `customer-support-escalation-team-scale-spike` | `customer-support-escalation-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `customer-support-escalation-team-data-quality-break` | `customer-support-escalation-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `customer-support-escalation-team-deadline-compression` | `customer-support-escalation-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
+| `customer-support-escalation-team-handoff-failure` | `customer-support-escalation-team` | 0.933 | 1.0 | 1.0 | 0.667 | ✅ |
 | `revops-deal-desk-team-board-pressure` | `revops-deal-desk-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
 | `revops-deal-desk-team-budget-shock` | `revops-deal-desk-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
 | `revops-deal-desk-team-compliance-audit` | `revops-deal-desk-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
@@ -157,14 +157,14 @@ Patched pass: **170/170** (avg 0.89)
 | `content-studio-team-deadline-compression` | `content-studio-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
 | `content-studio-team-handoff-failure` | `content-studio-team` | 0.833 | 0.8 | 1.0 | 0.667 | ✅ |
 | `reddit-01-pr-radar` | `devops-reliability-team` | 0.8 | 1.0 | 1.0 | 0.0 | ✅ |
-| `reddit-02-sla-guardian` | `customer-support-escalation-team` | 0.675 | 0.75 | 1.0 | 0.0 | ❌ |
+| `reddit-02-sla-guardian` | `customer-support-escalation-team` | 0.8 | 1.0 | 1.0 | 0.0 | ✅ |
 | `reddit-03-release-notes-pilot` | `content-studio-team` | 0.8 | 1.0 | 1.0 | 0.0 | ✅ |
 | `reddit-06-pdf-ops-desk` | `research-publication-team` | 0.8 | 1.0 | 1.0 | 0.0 | ✅ |
 | `reddit-07-ci-flake-doctor` | `devops-reliability-team` | 0.8 | 1.0 | 1.0 | 0.0 | ✅ |
 | `reddit-10-model-cost-command-center` | `finance-control-team` | 0.8 | 1.0 | 1.0 | 0.0 | ✅ |
-| `reddit-11-inbox-to-action` | `customer-support-escalation-team` | 0.633 | 0.667 | 1.0 | 0.0 | ❌ |
+| `reddit-11-inbox-to-action` | `customer-support-escalation-team` | 0.8 | 1.0 | 1.0 | 0.0 | ✅ |
 | `reddit-14-weekly-research-digest` | `research-publication-team` | 0.8 | 1.0 | 1.0 | 0.0 | ✅ |
-| `reddit-19-support-escalation-digest` | `customer-support-escalation-team` | 0.675 | 0.75 | 1.0 | 0.0 | ❌ |
+| `reddit-19-support-escalation-digest` | `customer-support-escalation-team` | 0.8 | 1.0 | 1.0 | 0.0 | ✅ |
 | `reddit-20-product-changelog-curator` | `startup-exec-team` | 0.867 | 1.0 | 1.0 | 0.333 | ✅ |
 | `reddit-31-dependency-risk-watch` | `devops-reliability-team` | 0.8 | 1.0 | 1.0 | 0.0 | ✅ |
 | `reddit-34-ownerless-service-finder` | `devops-reliability-team` | 0.8 | 1.0 | 1.0 | 0.0 | ✅ |
