@@ -64,3 +64,27 @@ API: `http://localhost:8787`
 
 9) **Environment template**
 - Added `.env.example` for container/host configuration.
+
+## Phase 2 progress (artifact storage + queue-backed worker)
+
+10) **Artifact storage API (local object-storage bridge)**
+- Added `POST /artifacts/publish`:
+  - copies files into `ARTIFACTS_DIR` (default `../research/artifacts`)
+  - returns artifact path + size
+- This creates a stable interface now; later can swap backend to S3/R2 behind same contract.
+
+11) **Queue-backed worker job APIs**
+- Added `POST /jobs/enqueue` with allowed job types:
+  - `ci_gate_run_all`
+  - `ranking_eval_ci`
+  - `team_qa_v3_plus_reddit`
+- Added `GET /jobs/{job_id}` and `GET /jobs`.
+- Queue persisted to `research/job-queue.jsonl`; status persisted to `research/job-status.json`.
+
+12) **Worker queue-consumer mode**
+- `scripts/worker_loop.py` now supports `WORKER_MODE=queue_consumer`.
+- Polls queue, executes job commands, and writes status transitions (`queued -> running -> succeeded/failed`).
+
+13) **Compose defaults moved to queue mode**
+- `docker-compose.yml` worker now defaults to queue consumer mode.
+- `.env.example` updated with queue and artifact path env vars.

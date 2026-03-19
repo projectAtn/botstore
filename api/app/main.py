@@ -1,6 +1,8 @@
 import json
 import os
 import re
+import shutil
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from enum import Enum
@@ -175,6 +177,16 @@ class PackQAUpdate(SQLModel):
     suite: str = "default"
     report_path: Optional[str] = None
     summary: Optional[str] = None
+
+
+class JobEnqueueRequest(BaseModel):
+    job_type: str
+    payload: dict[str, Any] = {}
+
+
+class ArtifactPublishRequest(BaseModel):
+    source_path: str
+    artifact_name: Optional[str] = None
 
 
 class Install(SQLModel, table=True):
@@ -382,6 +394,9 @@ OPS_PROGRESS_PATH = Path("../research/ops-progress.json")
 ROLE_AGENT_CATALOG_PATH = Path("../research/singular-role-agent-offerings-v1.json")
 TEAM_SCENARIOS_PATH = Path("../research/team-pack-qa-scenarios-v2.json")
 TEAM_PUBLISHED_PATH = Path("../research/team-published.jsonl")
+JOB_QUEUE_PATH = Path(os.getenv("JOB_QUEUE_PATH", "../research/job-queue.jsonl"))
+JOB_STATUS_PATH = Path(os.getenv("JOB_STATUS_PATH", "../research/job-status.json"))
+ARTIFACTS_DIR = Path(os.getenv("ARTIFACTS_DIR", "../research/artifacts"))
 
 app = FastAPI(title="BotStore API", version="0.2.0")
 app.add_middleware(
@@ -449,6 +464,22 @@ def _load_json(path: Path) -> Optional[dict]:
         return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
         return None
+
+
+def _load_job_status() -> dict[str, Any]:
+    data = _load_json(JOB_STATUS_PATH)
+    return data if isinstance(data, dict) else {}
+
+
+def _save_job_status(data: dict[str, Any]) -> None:
+    JOB_STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    JOB_STATUS_PATH.write_text(json.dumps(data, indent=2), encoding="utf-8")
+
+
+def _append_job_queue(entry: dict[str, Any]) -> None:
+    JOB_QUEUE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with JOB_QUEUE_PATH.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(entry) + "\n")
 
 
 def _team_skill_slugs(team: dict[str, Any]) -> list[str]:
@@ -1244,6 +1275,75 @@ def teams_custom_publish(payload: TeamPublishRequest) -> dict:
             "missing_skills": [],
             "non_skill_refs": [],
         }
+
+
+@app.post("/jobs/enqueue")
+def jobs_enqueue(payload: JobEnqueueRequest) -> dict:
+    allowed = {"ci_gate_run_all", "ranking_eval_ci", "team_qa_v3_plus_reddit"}
+    if payload.job_type not in allowed:
+        raise HTTPException(status_code=400, detail=f"unsupported job_type: {payload.job_type}")
+
+    job_id = f"job_{uuid.uuid4().hex[:12]}"
+    now = datetime.now(timezone.utc).isoformat()
+    entry = {
+        "job_id": job_id,
+        "job_type": payload.job_type,
+        "payload": payload.payload or {},
+        "created_at": now,
+    }
+    _append_job_queue(entry)
+
+    status = _load_job_status()
+    status[job_id] = {
+        "job_id": job_id,
+        "job_type": payload.job_type,
+        "status": "queued",
+        "created_at": now,
+        "updated_at": now,
+    }
+    _save_job_status(status)
+    return {"ok": True, "job_id": job_id, "status": "queued"}
+
+
+@app.get("/jobs/{job_id}")
+def jobs_status(job_id: str) -> dict:
+    status = _load_job_status()
+    row = status.get(job_id)
+    if not row:
+        raise HTTPException(status_code=404, detail="job not found")
+    return row
+
+
+@app.get("/jobs")
+def jobs_list(limit: int = 50) -> dict:
+    status = _load_job_status()
+    rows = list(status.values())
+    rows.sort(key=lambda x: x.get("updated_at", ""), reverse=True)
+    return {"count": len(rows[:limit]), "jobs": rows[:limit]}
+
+
+@app.post("/artifacts/publish")
+def artifacts_publish(payload: ArtifactPublishRequest) -> dict:
+    source = Path(payload.source_path).expanduser().resolve()
+    if not source.exists() or not source.is_file():
+        raise HTTPException(status_code=404, detail="source file not found")
+
+    ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
+    name = payload.artifact_name or source.name
+    safe_name = re.sub(r"[^a-zA-Z0-9._-]+", "-", name)
+    target = (ARTIFACTS_DIR / safe_name).resolve()
+
+    # Ensure target is within ARTIFACTS_DIR
+    if ARTIFACTS_DIR.resolve() not in target.parents and target != ARTIFACTS_DIR.resolve():
+        raise HTTPException(status_code=400, detail="invalid artifact_name")
+
+    shutil.copy2(source, target)
+    return {
+        "ok": True,
+        "artifact": safe_name,
+        "path": str(target),
+        "size_bytes": target.stat().st_size,
+    }
 
 
 @app.post("/qa/report")

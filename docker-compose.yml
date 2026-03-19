@@ -40,8 +40,8 @@ services:
     command: ["python", "/app/scripts/worker_loop.py"]
     environment:
       DATABASE_URL: postgresql+psycopg://botstore:botstore-dev-password@db:5432/botstore
-      WORKER_MODE: qa_scheduler
-      WORKER_INTERVAL_SECONDS: "900"
+      WORKER_MODE: queue_consumer
+      WORKER_INTERVAL_SECONDS: "30"
     depends_on:
       db:
         condition: service_healthy
