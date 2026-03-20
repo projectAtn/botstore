@@ -55,6 +55,7 @@ Then open: `http://localhost:8787/docs`
 - `POST /agent/install-by-capability-v2` (attempt transaction + digest pinning)
 - `POST /agent/action-authorize` (action-time authorization)
 - `POST /agent/policy-evaluate`
+- `POST /policy/bps/evaluate` (BotStore Policy Spec DSL evaluation)
 - `POST /agent/outcome` (legacy)
 - `POST /agent/outcome-v2` (attempt-bound outcomes + trust incidents/quarantine)
 - `GET /agent/compatibility/{pack_id}?runtime=<name>&version=<opt>`

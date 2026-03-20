@@ -498,6 +498,36 @@ class AgentPolicyEvaluateResponse(SQLModel):
     policy_hash: str = ""
 
 
+class BPSRule(SQLModel):
+    rule_id: str
+    action_in: list[str] = []
+    scope_intersects: list[str] = []
+    min_verification_tier: Optional[str] = None
+    runtime_band_max: Optional[RuntimeBand] = None
+    effect: str = "allow"
+    require_approval: bool = False
+    grant_ttl_minutes: Optional[int] = None
+
+
+class BPSPolicyEvaluateRequest(SQLModel):
+    subject: dict[str, Any] = {}
+    resource: dict[str, Any] = {}
+    action: str
+    context: dict[str, Any] = {}
+    rules: list[BPSRule] = []
+
+
+class BPSPolicyEvaluateResponse(SQLModel):
+    effect: str
+    policy_schema_version: str = "bps-0.1"
+    reason_codes: list[str] = []
+    blocking_conditions: list[str] = []
+    required_approvals: list[str] = []
+    minimum_verification_tier: Optional[str] = None
+    runtime_requirements: dict[str, Any] = {}
+    policy_hash: str = ""
+
+
 class AgentOutcomeRequest(SQLModel):
     user_id: str
     task_id: str
@@ -2106,6 +2136,77 @@ def agent_search(payload: AgentSearchQuery) -> dict:
         }
 
 
+def _evaluate_bps_rules(
+    action: str,
+    requested_scopes: list[str],
+    verification_tier: str,
+    runtime_band: RuntimeBand,
+    rules: list[BPSRule],
+) -> BPSPolicyEvaluateResponse:
+    reason_codes: list[str] = []
+    blocking: list[str] = []
+    required_approvals: list[str] = []
+    min_tier: Optional[str] = None
+    runtime_requirements: dict[str, Any] = {}
+    effect = "allow"
+
+    active_rules = rules or [
+        BPSRule(
+            rule_id="sensitive_send_requires_verified_runtime",
+            action_in=["install", "invoke"],
+            scope_intersects=["email.send", "message.send", "social.post"],
+            min_verification_tier="tier1_signed",
+            runtime_band_max=RuntimeBand.B,
+            effect="allow_with_approval",
+            require_approval=True,
+            grant_ttl_minutes=60,
+        )
+    ]
+
+    for rule in active_rules:
+        if rule.action_in and action not in rule.action_in:
+            continue
+        if rule.scope_intersects and not set(requested_scopes).intersection(set(rule.scope_intersects)):
+            continue
+        if rule.runtime_band_max and _runtime_band_rank(runtime_band) > _runtime_band_rank(rule.runtime_band_max):
+            effect = "deny"
+            reason_codes.append(POLICY_REASON_CODES["RUNTIME_BAND_TOO_WEAK"])
+            blocking.append(f"rule={rule.rule_id}: runtime band {runtime_band} exceeds max {rule.runtime_band_max}")
+            runtime_requirements["runtime_band_max"] = str(rule.runtime_band_max)
+        if rule.min_verification_tier and _verification_tier_rank(verification_tier) < _verification_tier_rank(rule.min_verification_tier):
+            effect = "deny"
+            reason_codes.append(POLICY_REASON_CODES["SENSITIVE_OR_LOW_VERIFICATION"])
+            blocking.append(f"rule={rule.rule_id}: verification tier {verification_tier} below {rule.min_verification_tier}")
+            min_tier = rule.min_verification_tier
+        if effect != "deny" and rule.require_approval:
+            effect = "allow_with_approval"
+            required_approvals.append("install")
+            min_tier = min_tier or rule.min_verification_tier
+            runtime_requirements["runtime_band_max"] = runtime_requirements.get("runtime_band_max") or (str(rule.runtime_band_max) if rule.runtime_band_max else None)
+            reason_codes.append(POLICY_REASON_CODES["SENSITIVE_OR_LOW_VERIFICATION"])
+
+    if not reason_codes:
+        reason_codes = [POLICY_REASON_CODES["LOW_RISK_CONTEXT"]]
+
+    payload = {
+        "action": action,
+        "requested_scopes": sorted(set(requested_scopes)),
+        "verification_tier": verification_tier,
+        "runtime_band": runtime_band,
+        "effect": effect,
+        "rules": [r.model_dump() for r in active_rules],
+    }
+    return BPSPolicyEvaluateResponse(
+        effect=effect,
+        reason_codes=sorted(set(reason_codes)),
+        blocking_conditions=blocking,
+        required_approvals=sorted(set(required_approvals)),
+        minimum_verification_tier=min_tier,
+        runtime_requirements={k: v for k, v in runtime_requirements.items() if v is not None},
+        policy_hash=_make_policy_hash(payload),
+    )
+
+
 def _policy_decide_for_version(
     pv: PackVersion,
     runtime_band: RuntimeBand,
@@ -2573,6 +2674,26 @@ def agent_action_authorize(payload: AgentActionAuthorizeRequest) -> AgentActionA
         )
         session.commit()
         return AgentActionAuthorizeResponse(decision="allow", reason="action permitted")
+
+
+@app.post("/policy/bps/evaluate", response_model=BPSPolicyEvaluateResponse)
+def policy_bps_evaluate(payload: BPSPolicyEvaluateRequest) -> BPSPolicyEvaluateResponse:
+    action = (payload.action or "install").strip().lower()
+    resource = payload.resource or {}
+    context = payload.context or {}
+
+    requested_scopes = [str(x).strip() for x in resource.get("scopes_requested", []) if str(x).strip()]
+    verification_tier = str(resource.get("verification_tier", "tier0_listed"))
+    runtime_band_raw = str(context.get("runtime_band", "D")).upper()
+    runtime_band = RuntimeBand(runtime_band_raw if runtime_band_raw in {"A", "B", "C", "D"} else "D")
+
+    return _evaluate_bps_rules(
+        action=action,
+        requested_scopes=requested_scopes,
+        verification_tier=verification_tier,
+        runtime_band=runtime_band,
+        rules=payload.rules,
+    )
 
 
 @app.post("/agent/policy-evaluate", response_model=AgentPolicyEvaluateResponse)

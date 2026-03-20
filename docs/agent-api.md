@@ -70,6 +70,9 @@ Response includes:
 ## 5) Evaluate policy before autonomous install/use
 `POST /agent/policy-evaluate`
 
+For native policy DSL evaluation, use:
+`POST /policy/bps/evaluate`
+
 Response includes structured policy explanation fields:
 - `policy_schema_version`
 - `reason_codes[]`
