@@ -71,6 +71,7 @@ Then open: `http://localhost:8787/docs`
 - Candidate pack quality gate: `research/candidate-packs-v1.json` + `scripts/quality_check_candidates.py` + `research/candidate-packs-quality-report.md`
 - Runtime simulation + tier gate: `scripts/runtime_simulation_verify.py` + `research/runtime-simulation-report.md` + `research/runtime-simulation-result.json`
 - Auto delist enforcement: `scripts/enforce_delist.py`
+- Hazard-based reverify scheduling: `scripts/reverify_scheduler.py`
 - Verification policy: `docs/verification-tiers.md`
 - Pack test runner: `scripts/pack_test_runner.py` + `research/pack-test-report.md` + `research/pack-test-result.json`
 - Statement-based contract runner: `research/pack-performance-contracts.json` + `scripts/contract_task_runner.py` + `research/contract-task-report.md` + `research/contract-task-result.json`
