@@ -296,6 +296,16 @@ class TrustIncident(SQLModel, table=True):
     created_at: str = ""
 
 
+class PolicyBundle(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    bundle_id: str = Field(index=True)
+    version: str = Field(index=True)
+    spec_json: str = "{}"
+    policy_hash: str = Field(index=True)
+    is_active: bool = False
+    created_at: str = ""
+
+
 class PackCreate(SQLModel):
     slug: str
     title: str
@@ -526,6 +536,13 @@ class BPSPolicyEvaluateResponse(SQLModel):
     minimum_verification_tier: Optional[str] = None
     runtime_requirements: dict[str, Any] = {}
     policy_hash: str = ""
+
+
+class PolicyBundleCreate(SQLModel):
+    bundle_id: str = "default"
+    version: str
+    spec: dict[str, Any]
+    activate: bool = True
 
 
 class AgentOutcomeRequest(SQLModel):
@@ -1850,6 +1867,37 @@ def promote_pack(pack_id: int, featured: bool = True) -> Pack:
             if not qa or qa.status != "pass":
                 raise HTTPException(status_code=400, detail="QA pass required before promotion")
 
+            pv = session.exec(select(PackVersion).where(PackVersion.pack_id == pack_id, PackVersion.is_current == True)).first()
+            if not pv:
+                raise HTTPException(status_code=400, detail="current pack version required for promotion")
+            if _verification_tier_rank(pv.verification_tier) < _verification_tier_rank("tier1_signed"):
+                raise HTTPException(status_code=400, detail="verification tier tier1_signed+ required")
+
+            attempts = list(session.exec(select(InstallAttempt).where(InstallAttempt.selected_pack_version_id == (pv.id or 0))).all())
+            attempt_ids = [a.attempt_id for a in attempts]
+            outcomes = []
+            if attempt_ids:
+                outcomes = list(session.exec(select(OutcomeReport).where(OutcomeReport.attempt_id.in_(attempt_ids))).all())
+
+            if len(outcomes) < 5:
+                raise HTTPException(status_code=400, detail="promotion requires >=5 matured outcomes")
+
+            success = sum(1 for o in outcomes if o.result == "success" and not o.incident_flag)
+            n = len(outcomes)
+            z = 1.96
+            phat = success / n
+            lcb = (phat + z*z/(2*n) - z*(((phat*(1-phat) + z*z/(4*n))/n) ** 0.5)) / (1 + z*z/n)
+            if lcb < 0.55:
+                raise HTTPException(status_code=400, detail=f"promotion LCB too low ({round(lcb,3)} < 0.55)")
+
+            tenants = len(set([a.tenant_id for a in attempts])) if attempts else 0
+            if tenants < 3:
+                raise HTTPException(status_code=400, detail="promotion requires tenant diversity >=3")
+
+            incidents = list(session.exec(select(TrustIncident).where(TrustIncident.pack_version_id == (pv.id or 0), TrustIncident.quarantined == True)).all())
+            if incidents:
+                raise HTTPException(status_code=400, detail="promotion blocked by quarantined trust incidents")
+
         pack.is_featured = featured
         session.add(pack)
         session.commit()
@@ -2134,6 +2182,24 @@ def agent_search(payload: AgentSearchQuery) -> dict:
             "constraints": constraints.model_dump(),
             "results": ranked[: max(1, min(payload.limit, 50))],
         }
+
+
+def _load_active_bps_rules(session: Session, bundle_id: str = "default") -> list[BPSRule]:
+    row = session.exec(
+        select(PolicyBundle).where(PolicyBundle.bundle_id == bundle_id, PolicyBundle.is_active == True)
+        .order_by(PolicyBundle.id.desc())
+    ).first()
+    if not row:
+        return []
+    spec = _json_obj(row.spec_json)
+    rules_raw = spec.get("rules", []) if isinstance(spec, dict) else []
+    out: list[BPSRule] = []
+    for r in rules_raw:
+        try:
+            out.append(BPSRule.model_validate(r))
+        except Exception:
+            continue
+    return out
 
 
 def _evaluate_bps_rules(
@@ -2676,6 +2742,74 @@ def agent_action_authorize(payload: AgentActionAuthorizeRequest) -> AgentActionA
         return AgentActionAuthorizeResponse(decision="allow", reason="action permitted")
 
 
+@app.post("/policy/bundles", response_model=PolicyBundle)
+def create_policy_bundle(payload: PolicyBundleCreate) -> PolicyBundle:
+    with Session(engine) as session:
+        policy_hash = _make_policy_hash(payload.spec)
+        if payload.activate:
+            active = list(session.exec(select(PolicyBundle).where(PolicyBundle.bundle_id == payload.bundle_id, PolicyBundle.is_active == True)).all())
+            for row in active:
+                row.is_active = False
+                session.add(row)
+        row = PolicyBundle(
+            bundle_id=payload.bundle_id,
+            version=payload.version,
+            spec_json=json.dumps(payload.spec),
+            policy_hash=policy_hash,
+            is_active=payload.activate,
+            created_at=_iso_now(),
+        )
+        session.add(row)
+        session.commit()
+        session.refresh(row)
+        return row
+
+
+@app.get("/policy/bundles", response_model=list[PolicyBundle])
+def list_policy_bundles(bundle_id: Optional[str] = None) -> list[PolicyBundle]:
+    with Session(engine) as session:
+        q = select(PolicyBundle)
+        if bundle_id:
+            q = q.where(PolicyBundle.bundle_id == bundle_id)
+        return list(session.exec(q.order_by(PolicyBundle.id.desc())).all())
+
+
+@app.get("/policy/decision-log")
+def policy_decision_log(tenant_id: Optional[str] = None, limit: int = 200) -> dict:
+    n = max(1, min(limit, 2000))
+    with Session(engine) as session:
+        attempts_q = select(InstallAttempt)
+        if tenant_id:
+            attempts_q = attempts_q.where(InstallAttempt.tenant_id == tenant_id)
+        attempts = list(session.exec(attempts_q.order_by(InstallAttempt.id.desc()).limit(n)).all())
+
+        rows: list[dict] = []
+        for att in attempts:
+            pd = session.get(PolicyDecision, att.policy_decision_id or 0) if att.policy_decision_id else None
+            if not pd:
+                continue
+            grant = session.get(ApprovalGrant, att.approval_grant_id or 0) if att.approval_grant_id else None
+            rows.append({
+                "attempt_id": att.attempt_id,
+                "task_id": att.task_id,
+                "tenant_id": att.tenant_id,
+                "runtime_id": att.runtime_id,
+                "runtime_band": att.runtime_band,
+                "policy_schema_version": "bps-0.1",
+                "effect": pd.effect,
+                "reason_codes": _json_list(pd.reason_codes_json),
+                "blocking_conditions": _json_list(pd.blocking_conditions_json),
+                "required_approvals": _json_list(pd.required_approvals_json),
+                "minimum_verification_tier": pd.minimum_verification_tier,
+                "runtime_requirements": _json_obj(pd.runtime_requirements_json),
+                "policy_hash": pd.policy_hash,
+                "approval_grant_id": grant.grant_id if grant else None,
+                "created_at": pd.created_at,
+            })
+
+        return {"ok": True, "rows": rows, "count": len(rows), "schema_version": "policy-decision-log-v1"}
+
+
 @app.post("/policy/bps/evaluate", response_model=BPSPolicyEvaluateResponse)
 def policy_bps_evaluate(payload: BPSPolicyEvaluateRequest) -> BPSPolicyEvaluateResponse:
     action = (payload.action or "install").strip().lower()
@@ -2687,12 +2821,15 @@ def policy_bps_evaluate(payload: BPSPolicyEvaluateRequest) -> BPSPolicyEvaluateR
     runtime_band_raw = str(context.get("runtime_band", "D")).upper()
     runtime_band = RuntimeBand(runtime_band_raw if runtime_band_raw in {"A", "B", "C", "D"} else "D")
 
+    with Session(engine) as session:
+        active_rules = _load_active_bps_rules(session, bundle_id=str(context.get("policy_bundle_id", "default")))
+
     return _evaluate_bps_rules(
         action=action,
         requested_scopes=requested_scopes,
         verification_tier=verification_tier,
         runtime_band=runtime_band,
-        rules=payload.rules,
+        rules=(payload.rules or active_rules),
     )
 
 

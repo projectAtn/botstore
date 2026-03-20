@@ -73,6 +73,11 @@ Response includes:
 For native policy DSL evaluation, use:
 `POST /policy/bps/evaluate`
 
+Policy admin/export endpoints:
+- `POST /policy/bundles`
+- `GET /policy/bundles`
+- `GET /policy/decision-log`
+
 Response includes structured policy explanation fields:
 - `policy_schema_version`
 - `reason_codes[]`

@@ -56,6 +56,8 @@ Then open: `http://localhost:8787/docs`
 - `POST /agent/action-authorize` (action-time authorization)
 - `POST /agent/policy-evaluate`
 - `POST /policy/bps/evaluate` (BotStore Policy Spec DSL evaluation)
+- `POST /policy/bundles` + `GET /policy/bundles` (versioned policy bundle registry)
+- `GET /policy/decision-log` (explainable decision export)
 - `POST /agent/outcome` (legacy)
 - `POST /agent/outcome-v2` (attempt-bound outcomes + trust incidents/quarantine)
 - `GET /agent/compatibility/{pack_id}?runtime=<name>&version=<opt>`
