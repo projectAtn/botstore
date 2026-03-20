@@ -13,7 +13,7 @@
 }
 ```
 
-## 2) Install by capability
+## 2) Install by capability (legacy)
 `POST /agent/install-by-capability`
 
 ```json
@@ -24,7 +24,46 @@
 }
 ```
 
-## 3) Evaluate policy before autonomous install/use
+## 3) Install by capability transaction (v2, digest-pinned)
+`POST /agent/install-by-capability-v2`
+
+```json
+{
+  "task_id": "task_abc123",
+  "tenant_id": "default",
+  "user_id": "telegram:8258812165",
+  "agent_id": "agent-42",
+  "runtime_id": "openclaw",
+  "runtime_version": "0.2.0",
+  "runtime_band": "B",
+  "required_capabilities": ["calendar.ops", "crm.sync"],
+  "limit": 10
+}
+```
+
+Response includes:
+- `attempt_id`
+- `candidate_snapshot_id`
+- selected `pack_version_id` + `artifact_digest`
+- policy decision/explanations
+- optional signed approval grant metadata
+
+## 4) Action-time authorization (proof-carrying approval)
+`POST /agent/action-authorize`
+
+```json
+{
+  "attempt_id": "att_...",
+  "pack_version_id": 12,
+  "artifact_digest": "sha256:...",
+  "requested_action": "message.send",
+  "requested_scope": "message.send",
+  "runtime_attestation": "optional",
+  "justification": "Send escalation notice"
+}
+```
+
+## 5) Evaluate policy before autonomous install/use
 `POST /agent/policy-evaluate`
 
 ```json
@@ -35,7 +74,7 @@
 }
 ```
 
-## 4) Submit outcome telemetry
+## 6) Submit outcome telemetry
 `POST /agent/outcome`
 
 ```json
@@ -49,7 +88,7 @@
 }
 ```
 
-## 5) Query compatibility quickly
+## 7) Query compatibility quickly
 `GET /agent/compatibility/{pack_id}?runtime=openclaw&version=0.1.0`
 
 ---

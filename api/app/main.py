@@ -1,9 +1,13 @@
+import base64
+import hashlib
+import hmac
 import json
 import os
 import re
+import secrets
 import shutil
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from enum import Enum
 from typing import Optional, Any
@@ -38,6 +42,28 @@ class ApprovalStatus(str, Enum):
     pending = "pending"
     approved = "approved"
     rejected = "rejected"
+
+
+class RuntimeBand(str, Enum):
+    A = "A"
+    B = "B"
+    C = "C"
+    D = "D"
+
+
+class InstallAttemptStatus(str, Enum):
+    gap_detected = "gap_detected"
+    candidate_set_ready = "candidate_set_ready"
+    policy_decided = "policy_decided"
+    approval_required = "approval_required"
+    approval_granted = "approval_granted"
+    artifact_verified = "artifact_verified"
+    installed = "installed"
+    activated = "activated"
+    rolled_back = "rolled_back"
+    outcome_reported = "outcome_reported"
+    denied = "denied"
+    failed = "failed"
 
 
 SENSITIVE_SCOPES = {
@@ -119,6 +145,81 @@ class Pack(SQLModel, table=True):
     creator_id: Optional[int] = Field(default=None, foreign_key="creator.id")
 
 
+class PackVersion(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    pack_id: int = Field(foreign_key="pack.id", index=True)
+    semver: str = Field(default="0.1.0", index=True)
+    manifest_version: str = "v2"
+    artifact_digest: str = Field(index=True)
+    verification_tier: str = "tier0_listed"
+    compatible_runtimes_json: str = "[]"
+    policy_requirements_json: str = "{}"
+    expected_approval_friction: float = 0.0
+    capabilities_declared_json: str = "[]"
+    scopes_requested_json: str = "[]"
+    actions_supported_json: str = "[]"
+    capabilities_verified_json: str = "[]"
+    scopes_observed_json: str = "[]"
+    is_current: bool = True
+    created_at: str = ""
+
+
+class InstallAttempt(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    attempt_id: str = Field(index=True, unique=True)
+    task_id: str = Field(index=True)
+    tenant_id: str = Field(index=True)
+    user_id: str = Field(index=True)
+    agent_id_hash: str = Field(index=True)
+    runtime_id: str = Field(index=True)
+    runtime_version: Optional[str] = None
+    runtime_band: RuntimeBand = RuntimeBand.D
+    missing_capabilities_json: str = "[]"
+    candidate_snapshot_id: str = Field(index=True)
+    candidate_snapshot_json: str = "[]"
+    selected_pack_version_id: Optional[int] = Field(default=None, foreign_key="packversion.id", index=True)
+    policy_decision_id: Optional[int] = Field(default=None, foreign_key="policydecision.id", index=True)
+    approval_grant_id: Optional[int] = Field(default=None, foreign_key="approvalgrant.id", index=True)
+    install_status: str = "pending"
+    activation_status: str = "pending"
+    rollback_status: str = "not_requested"
+    status: InstallAttemptStatus = InstallAttemptStatus.gap_detected
+    created_at: str = ""
+    updated_at: str = ""
+
+
+class PolicyDecision(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    attempt_id: str = Field(index=True)
+    effect: str
+    reason_codes_json: str = "[]"
+    blocking_conditions_json: str = "[]"
+    required_approvals_json: str = "[]"
+    minimum_verification_tier: Optional[str] = None
+    runtime_requirements_json: str = "{}"
+    policy_hash: str = ""
+    created_at: str = ""
+
+
+class ApprovalGrant(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    grant_id: str = Field(index=True, unique=True)
+    attempt_id: str = Field(index=True)
+    tenant_id: str = Field(index=True)
+    approver_id: str = "system"
+    artifact_digest: str = Field(index=True)
+    pack_version_id: int = Field(foreign_key="packversion.id", index=True)
+    allowed_scopes_json: str = "[]"
+    allowed_actions_json: str = "[]"
+    runtime_id: str = Field(index=True)
+    runtime_band: RuntimeBand = RuntimeBand.D
+    expires_at: str = ""
+    policy_hash: str = ""
+    justification: Optional[str] = None
+    signature: str
+    created_at: str = ""
+
+
 class PackCreate(SQLModel):
     slug: str
     title: str
@@ -130,6 +231,17 @@ class PackCreate(SQLModel):
     bundle_pack_ids: list[int] = []
     is_featured: bool = False
     creator_id: Optional[int] = None
+
+
+class PackVersionCreate(SQLModel):
+    semver: str = "0.1.0"
+    manifest_version: str = "v2"
+    capabilities_declared: list[str] = []
+    scopes_requested: list[str] = []
+    actions_supported: list[str] = []
+    compatible_runtimes: list[str] = ["openclaw"]
+    policy_requirements: dict[str, Any] = {}
+    verification_tier: str = "tier0_listed"
 
 
 class BundleValidateRequest(SQLModel):
@@ -313,6 +425,36 @@ class AgentOutcomeRequest(SQLModel):
     error_class: Optional[str] = None
 
 
+class AgentInstallByCapabilityV2Request(SQLModel):
+    task_id: str
+    tenant_id: str = "default"
+    user_id: str
+    agent_id: str
+    runtime_id: str
+    runtime_version: Optional[str] = None
+    runtime_band: RuntimeBand = RuntimeBand.D
+    required_capabilities: list[str] = []
+    limit: int = 10
+
+
+class AgentActionAuthorizeRequest(SQLModel):
+    attempt_id: str
+    pack_version_id: int
+    artifact_digest: str
+    requested_action: str
+    requested_scope: str
+    runtime_attestation: Optional[str] = None
+    justification: str = ""
+
+
+class AgentActionAuthorizeResponse(SQLModel):
+    decision: str
+    reason: str
+    grant_token: Optional[str] = None
+    grant_id: Optional[str] = None
+    expires_at: Optional[str] = None
+
+
 class InstallSetup(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     install_id: int = Field(foreign_key="install.id", unique=True, index=True)
@@ -446,6 +588,51 @@ def _csv_to_ints(values_csv: str) -> list[int]:
         if raw.isdigit():
             out.append(int(raw))
     return out
+
+
+def _json_list(value: Any) -> list:
+    if isinstance(value, list):
+        return value
+    if not value:
+        return []
+    try:
+        parsed = json.loads(value)
+        return parsed if isinstance(parsed, list) else []
+    except Exception:
+        return []
+
+
+def _json_obj(value: Any) -> dict:
+    if isinstance(value, dict):
+        return value
+    if not value:
+        return {}
+    try:
+        parsed = json.loads(value)
+        return parsed if isinstance(parsed, dict) else {}
+    except Exception:
+        return {}
+
+
+def _iso_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def _runtime_band_rank(band: RuntimeBand | str) -> int:
+    b = str(band)
+    return {"A": 1, "B": 2, "C": 3, "D": 4}.get(b, 4)
+
+
+def _policy_sign(payload: dict) -> str:
+    secret = os.getenv("BOTSTORE_POLICY_SIGNING_KEY", "dev-insecure-signing-key")
+    body = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    sig = hmac.new(secret.encode("utf-8"), body, hashlib.sha256).digest()
+    return base64.urlsafe_b64encode(sig).decode("utf-8").rstrip("=")
+
+
+def _make_policy_hash(payload: dict) -> str:
+    body = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(body).hexdigest()
 
 
 def _ints_to_csv(values: list[int]) -> str:
@@ -864,6 +1051,54 @@ def _parse_skill_markdown(skill_md_path: Path) -> dict:
     }
 
 
+def _ensure_pack_version(
+    session: Session,
+    pack: Pack,
+    capabilities_declared: Optional[list[str]] = None,
+    scopes_requested: Optional[list[str]] = None,
+    actions_supported: Optional[list[str]] = None,
+) -> PackVersion:
+    existing = session.exec(
+        select(PackVersion).where(
+            PackVersion.pack_id == (pack.id or 0),
+            PackVersion.semver == pack.version,
+            PackVersion.is_current == True,
+        )
+    ).first()
+    if existing:
+        return existing
+
+    capabilities = capabilities_declared if capabilities_declared is not None else _csv_to_scopes(pack.scopes_csv)
+    scopes = scopes_requested if scopes_requested is not None else _csv_to_scopes(pack.scopes_csv)
+    actions = actions_supported if actions_supported is not None else []
+    raw = {
+        "pack_id": pack.id,
+        "slug": pack.slug,
+        "version": pack.version,
+        "capabilities_declared": sorted(set(capabilities)),
+        "scopes_requested": sorted(set(scopes)),
+        "actions_supported": sorted(set(actions)),
+    }
+    digest = "sha256:" + hashlib.sha256(json.dumps(raw, sort_keys=True).encode("utf-8")).hexdigest()
+
+    pv = PackVersion(
+        pack_id=pack.id or 0,
+        semver=pack.version,
+        artifact_digest=digest,
+        verification_tier="tier0_listed",
+        compatible_runtimes_json=json.dumps(["openclaw"]),
+        policy_requirements_json=json.dumps({"runtime_band_max": "C"}),
+        capabilities_declared_json=json.dumps(sorted(set(capabilities))),
+        scopes_requested_json=json.dumps(sorted(set(scopes))),
+        actions_supported_json=json.dumps(sorted(set(actions))),
+        created_at=_iso_now(),
+    )
+    session.add(pv)
+    session.commit()
+    session.refresh(pv)
+    return pv
+
+
 @app.post("/creators", response_model=Creator)
 def create_creator(payload: CreatorCreate) -> Creator:
     with Session(engine) as session:
@@ -913,7 +1148,56 @@ def create_pack(payload: PackCreate) -> Pack:
         session.add(pack)
         session.commit()
         session.refresh(pack)
+        _ensure_pack_version(session, pack)
         return pack
+
+
+@app.post("/packs/{pack_id}/versions", response_model=PackVersion)
+def create_pack_version(pack_id: int, payload: PackVersionCreate) -> PackVersion:
+    with Session(engine) as session:
+        pack = session.get(Pack, pack_id)
+        if not pack:
+            raise HTTPException(status_code=404, detail="pack not found")
+
+        prior = session.exec(select(PackVersion).where(PackVersion.pack_id == pack_id, PackVersion.is_current == True)).all()
+        for row in prior:
+            row.is_current = False
+            session.add(row)
+
+        raw = {
+            "pack_id": pack_id,
+            "semver": payload.semver,
+            "manifest_version": payload.manifest_version,
+            "capabilities_declared": sorted(set(payload.capabilities_declared)),
+            "scopes_requested": sorted(set(payload.scopes_requested)),
+            "actions_supported": sorted(set(payload.actions_supported)),
+        }
+        digest = "sha256:" + hashlib.sha256(json.dumps(raw, sort_keys=True).encode("utf-8")).hexdigest()
+
+        pv = PackVersion(
+            pack_id=pack_id,
+            semver=payload.semver,
+            manifest_version=payload.manifest_version,
+            artifact_digest=digest,
+            verification_tier=payload.verification_tier,
+            compatible_runtimes_json=json.dumps(sorted(set(payload.compatible_runtimes))),
+            policy_requirements_json=json.dumps(payload.policy_requirements),
+            capabilities_declared_json=json.dumps(sorted(set(payload.capabilities_declared))),
+            scopes_requested_json=json.dumps(sorted(set(payload.scopes_requested))),
+            actions_supported_json=json.dumps(sorted(set(payload.actions_supported))),
+            created_at=_iso_now(),
+            is_current=True,
+        )
+        session.add(pv)
+        session.commit()
+        session.refresh(pv)
+        return pv
+
+
+@app.get("/packs/{pack_id}/versions", response_model=list[PackVersion])
+def list_pack_versions(pack_id: int) -> list[PackVersion]:
+    with Session(engine) as session:
+        return list(session.exec(select(PackVersion).where(PackVersion.pack_id == pack_id).order_by(PackVersion.id.desc())).all())
 
 
 @app.post("/interop/import-skill-folder")
@@ -961,6 +1245,7 @@ def interop_import_skill_folder(payload: SkillImportRequest) -> dict:
         session.add(pack)
         session.commit()
         session.refresh(pack)
+        _ensure_pack_version(session, pack, capabilities_declared=parsed["scopes"], scopes_requested=parsed["scopes"], actions_supported=[])
 
         return {
             "created": True,
@@ -1702,6 +1987,28 @@ def agent_search(payload: AgentSearchQuery) -> dict:
         }
 
 
+def _policy_decide_for_version(
+    pv: PackVersion,
+    runtime_band: RuntimeBand,
+    tenant_id: str,
+    requested_scope: Optional[str] = None,
+) -> tuple[str, list[str], list[str]]:
+    _ = tenant_id
+    scopes = set(_json_list(pv.scopes_requested_json))
+    if requested_scope:
+        scopes.add(requested_scope)
+    sensitive_hit = bool(scopes.intersection(SENSITIVE_SCOPES))
+
+    max_band = _json_obj(pv.policy_requirements_json).get("runtime_band_max", "C")
+    if _runtime_band_rank(runtime_band) > _runtime_band_rank(max_band):
+        return ("deny", ["runtime_band_too_weak"], [f"runtime band {runtime_band} exceeds max {max_band}"])
+
+    if sensitive_hit or pv.verification_tier in {"tier0_listed"}:
+        return ("allow_with_approval", ["sensitive_or_low_verification"], [])
+
+    return ("allow", ["low_risk_context"], [])
+
+
 @app.post("/agent/install-by-capability")
 def agent_install_by_capability(payload: AgentInstallByCapabilityRequest) -> dict:
     search = agent_search_capabilities(
@@ -1745,6 +2052,272 @@ def agent_install_by_capability(payload: AgentInstallByCapabilityRequest) -> dic
         "installed_count": len(installs),
         "installs": installs,
     }
+
+
+@app.post("/agent/install-by-capability-v2")
+def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -> dict:
+    attempt_id = f"att_{uuid.uuid4().hex[:16]}"
+    candidate_snapshot_id = f"cand_{uuid.uuid4().hex[:12]}"
+
+    with Session(engine) as session:
+        candidates: list[dict] = []
+        req = [c.strip() for c in payload.required_capabilities if c.strip()]
+        pvs = list(session.exec(select(PackVersion).where(PackVersion.is_current == True)).all())
+        for pv in pvs:
+            pack = session.get(Pack, pv.pack_id)
+            if not pack:
+                continue
+            compatible = set(_json_list(pv.compatible_runtimes_json))
+            if compatible and payload.runtime_id not in compatible and "*" not in compatible:
+                continue
+            caps = set(_json_list(pv.capabilities_declared_json))
+            coverage = len(caps.intersection(req)) / max(len(req), 1)
+            if coverage <= 0:
+                continue
+            effect, reasons, blocking = _policy_decide_for_version(pv, payload.runtime_band, payload.tenant_id)
+            if effect == "deny":
+                continue
+            risk_penalty = {"low": 0.02, "medium": 0.08, "high": 0.18}.get(pack.risk_level, 0.1)
+            approval_friction = 0.2 if effect == "allow_with_approval" else 0.0
+            score = round((coverage + 0.2) - risk_penalty - approval_friction, 4)
+            candidates.append({
+                "pack_id": pack.id,
+                "pack_slug": pack.slug,
+                "pack_version_id": pv.id,
+                "artifact_digest": pv.artifact_digest,
+                "verification_tier": pv.verification_tier,
+                "capabilities_declared": sorted(caps),
+                "scopes_requested": _json_list(pv.scopes_requested_json),
+                "actions_supported": _json_list(pv.actions_supported_json),
+                "policy_effect": effect,
+                "policy_reasons": reasons,
+                "policy_blocking": blocking,
+                "score": score,
+            })
+
+        candidates.sort(key=lambda x: x["score"], reverse=True)
+        candidates = candidates[: max(1, min(payload.limit, 50))]
+
+        attempt = InstallAttempt(
+            attempt_id=attempt_id,
+            task_id=payload.task_id,
+            tenant_id=payload.tenant_id,
+            user_id=payload.user_id,
+            agent_id_hash=hashlib.sha256(payload.agent_id.encode("utf-8")).hexdigest(),
+            runtime_id=payload.runtime_id,
+            runtime_version=payload.runtime_version,
+            runtime_band=payload.runtime_band,
+            missing_capabilities_json=json.dumps(req),
+            candidate_snapshot_id=candidate_snapshot_id,
+            candidate_snapshot_json=json.dumps(candidates),
+            install_status="pending",
+            activation_status="pending",
+            rollback_status="not_requested",
+            status=InstallAttemptStatus.candidate_set_ready,
+            created_at=_iso_now(),
+            updated_at=_iso_now(),
+        )
+        session.add(attempt)
+        session.commit()
+        session.refresh(attempt)
+
+        if not candidates:
+            attempt.status = InstallAttemptStatus.failed
+            attempt.install_status = "no_candidates"
+            attempt.updated_at = _iso_now()
+            session.add(attempt)
+            session.commit()
+            return {"ok": False, "attempt_id": attempt_id, "message": "no matching pack versions", "candidates": []}
+
+        winner = candidates[0]
+        pv = session.get(PackVersion, int(winner["pack_version_id"]))
+        if not pv:
+            raise HTTPException(status_code=500, detail="selected pack version missing")
+
+        policy_payload = {
+            "attempt_id": attempt_id,
+            "tenant_id": payload.tenant_id,
+            "runtime_band": payload.runtime_band,
+            "pack_version_id": pv.id,
+            "artifact_digest": pv.artifact_digest,
+            "required_capabilities": req,
+        }
+        effect, reasons, blocking = _policy_decide_for_version(pv, payload.runtime_band, payload.tenant_id)
+        policy_hash = _make_policy_hash(policy_payload)
+        pd = PolicyDecision(
+            attempt_id=attempt_id,
+            effect=effect,
+            reason_codes_json=json.dumps(reasons),
+            blocking_conditions_json=json.dumps(blocking),
+            required_approvals_json=json.dumps(["install"] if effect == "allow_with_approval" else []),
+            minimum_verification_tier="tier1_signed" if effect == "allow_with_approval" else "tier0_listed",
+            runtime_requirements_json=json.dumps({"runtime_band_max": _json_obj(pv.policy_requirements_json).get("runtime_band_max", "C")}),
+            policy_hash=policy_hash,
+            created_at=_iso_now(),
+        )
+        session.add(pd)
+        session.commit()
+        session.refresh(pd)
+
+        attempt.selected_pack_version_id = pv.id
+        attempt.policy_decision_id = pd.id
+        attempt.status = InstallAttemptStatus.policy_decided
+
+        grant: Optional[ApprovalGrant] = None
+        if effect == "allow_with_approval":
+            grant_id = f"gr_{uuid.uuid4().hex[:14]}"
+            expires_at = (datetime.now(timezone.utc) + timedelta(hours=1)).isoformat()
+            grant_payload = {
+                "grant_id": grant_id,
+                "attempt_id": attempt_id,
+                "tenant_id": payload.tenant_id,
+                "artifact_digest": pv.artifact_digest,
+                "pack_version_id": pv.id,
+                "allowed_scopes": _json_list(pv.scopes_requested_json),
+                "allowed_actions": _json_list(pv.actions_supported_json),
+                "runtime_id": payload.runtime_id,
+                "runtime_band": payload.runtime_band,
+                "expires_at": expires_at,
+                "policy_hash": policy_hash,
+            }
+            grant = ApprovalGrant(
+                grant_id=grant_id,
+                attempt_id=attempt_id,
+                tenant_id=payload.tenant_id,
+                approver_id="policy-engine",
+                artifact_digest=pv.artifact_digest,
+                pack_version_id=pv.id or 0,
+                allowed_scopes_json=json.dumps(grant_payload["allowed_scopes"]),
+                allowed_actions_json=json.dumps(grant_payload["allowed_actions"]),
+                runtime_id=payload.runtime_id,
+                runtime_band=payload.runtime_band,
+                expires_at=expires_at,
+                policy_hash=policy_hash,
+                justification="auto-generated approval requirement",
+                signature=_policy_sign(grant_payload),
+                created_at=_iso_now(),
+            )
+            session.add(grant)
+            session.commit()
+            session.refresh(grant)
+            attempt.approval_grant_id = grant.id
+            attempt.status = InstallAttemptStatus.approval_required
+            attempt.install_status = "pending_approval"
+        else:
+            attempt.install_status = "installed"
+            attempt.activation_status = "activated"
+            attempt.status = InstallAttemptStatus.activated
+
+        attempt.updated_at = _iso_now()
+        session.add(attempt)
+        session.commit()
+
+        return {
+            "ok": True,
+            "attempt_id": attempt_id,
+            "task_id": payload.task_id,
+            "tenant_id": payload.tenant_id,
+            "runtime": {
+                "runtime_id": payload.runtime_id,
+                "runtime_version": payload.runtime_version,
+                "runtime_band": payload.runtime_band,
+            },
+            "candidate_snapshot_id": candidate_snapshot_id,
+            "selected": winner,
+            "policy": {
+                "decision_id": pd.id,
+                "effect": pd.effect,
+                "reason_codes": _json_list(pd.reason_codes_json),
+                "blocking_conditions": _json_list(pd.blocking_conditions_json),
+                "policy_hash": pd.policy_hash,
+            },
+            "approval_grant": {
+                "grant_id": grant.grant_id,
+                "expires_at": grant.expires_at,
+                "signature": grant.signature,
+            } if grant else None,
+            "install_status": attempt.install_status,
+            "activation_status": attempt.activation_status,
+            "status": attempt.status,
+        }
+
+
+@app.post("/agent/action-authorize", response_model=AgentActionAuthorizeResponse)
+def agent_action_authorize(payload: AgentActionAuthorizeRequest) -> AgentActionAuthorizeResponse:
+    with Session(engine) as session:
+        attempt = session.exec(select(InstallAttempt).where(InstallAttempt.attempt_id == payload.attempt_id)).first()
+        if not attempt:
+            raise HTTPException(status_code=404, detail="attempt not found")
+        pv = session.get(PackVersion, payload.pack_version_id)
+        if not pv:
+            raise HTTPException(status_code=404, detail="pack version not found")
+        if pv.artifact_digest != payload.artifact_digest:
+            return AgentActionAuthorizeResponse(decision="deny", reason="artifact digest mismatch")
+
+        effect, reasons, blocking = _policy_decide_for_version(
+            pv,
+            attempt.runtime_band,
+            attempt.tenant_id,
+            requested_scope=payload.requested_scope,
+        )
+        if effect == "deny":
+            return AgentActionAuthorizeResponse(decision="deny", reason=",".join(reasons + blocking))
+
+        requires_approval = effect == "allow_with_approval" or payload.requested_scope in SENSITIVE_SCOPES
+        if requires_approval:
+            expires_at = (datetime.now(timezone.utc) + timedelta(minutes=60)).isoformat()
+            grant_id = f"gr_{uuid.uuid4().hex[:14]}"
+            grant_payload = {
+                "grant_id": grant_id,
+                "attempt_id": attempt.attempt_id,
+                "tenant_id": attempt.tenant_id,
+                "artifact_digest": pv.artifact_digest,
+                "pack_version_id": pv.id,
+                "allowed_scopes": [payload.requested_scope],
+                "allowed_actions": [payload.requested_action],
+                "runtime_id": attempt.runtime_id,
+                "runtime_band": attempt.runtime_band,
+                "expires_at": expires_at,
+                "policy_hash": _make_policy_hash({"attempt": attempt.attempt_id, "scope": payload.requested_scope, "action": payload.requested_action}),
+                "justification": payload.justification,
+            }
+            sig = _policy_sign(grant_payload)
+            grant = ApprovalGrant(
+                grant_id=grant_id,
+                attempt_id=attempt.attempt_id,
+                tenant_id=attempt.tenant_id,
+                approver_id="policy-engine",
+                artifact_digest=pv.artifact_digest,
+                pack_version_id=pv.id or 0,
+                allowed_scopes_json=json.dumps([payload.requested_scope]),
+                allowed_actions_json=json.dumps([payload.requested_action]),
+                runtime_id=attempt.runtime_id,
+                runtime_band=attempt.runtime_band,
+                expires_at=expires_at,
+                policy_hash=grant_payload["policy_hash"],
+                justification=payload.justification,
+                signature=sig,
+                created_at=_iso_now(),
+            )
+            session.add(grant)
+            session.commit()
+            session.refresh(grant)
+
+            attempt.approval_grant_id = grant.id
+            attempt.updated_at = _iso_now()
+            session.add(attempt)
+            session.commit()
+
+            grant_token = base64.urlsafe_b64encode(json.dumps({**grant_payload, "signature": sig}).encode("utf-8")).decode("utf-8")
+            return AgentActionAuthorizeResponse(
+                decision="allow_with_runtime_proof",
+                reason="approved with signed grant",
+                grant_token=grant_token,
+                grant_id=grant.grant_id,
+                expires_at=expires_at,
+            )
+
+        return AgentActionAuthorizeResponse(decision="allow", reason="action permitted")
 
 
 @app.post("/agent/policy-evaluate", response_model=AgentPolicyEvaluateResponse)

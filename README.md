@@ -51,10 +51,13 @@ Then open: `http://localhost:8787/docs`
 ## Agent-native endpoints (autonomous mode)
 - `POST /agent/search-capabilities`
 - `POST /agent/search`
-- `POST /agent/install-by-capability`
+- `POST /agent/install-by-capability` (legacy)
+- `POST /agent/install-by-capability-v2` (attempt transaction + digest pinning)
+- `POST /agent/action-authorize` (action-time authorization)
 - `POST /agent/policy-evaluate`
 - `POST /agent/outcome`
 - `GET /agent/compatibility/{pack_id}?runtime=<name>&version=<opt>`
+- `POST /packs/{pack_id}/versions` + `GET /packs/{pack_id}/versions` (capability/scope/action separated manifests)
 - Discovery endpoints: `GET /.well-known/botstore.json`, `GET /agent/capabilities-manifest`, `GET /llms.txt`
 - Bot discovery pack notes: `docs/bot-discovery-pack.md`
 - Autonomous-agent vision + architecture: `docs/botstore-v1-autonomous-agents.md`
