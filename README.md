@@ -64,6 +64,8 @@ Then open: `http://localhost:8787/docs`
 - Discovery endpoints: `GET /.well-known/botstore.json`, `GET /agent/capabilities-manifest`, `GET /llms.txt`
 - Bot discovery pack notes: `docs/bot-discovery-pack.md`
 - Autonomous-agent vision + architecture: `docs/botstore-v1-autonomous-agents.md`
+- Pack spec draft: `docs/pack-spec-v1.md`
+- Adapter contract draft: `docs/adapter-contract-v1.md`
 - Content system starter: `docs/content-strategy-v1.md`
 - Candidate pack quality gate: `research/candidate-packs-v1.json` + `scripts/quality_check_candidates.py` + `research/candidate-packs-quality-report.md`
 - Runtime simulation + tier gate: `scripts/runtime_simulation_verify.py` + `research/runtime-simulation-report.md` + `research/runtime-simulation-result.json`
