@@ -83,6 +83,7 @@ Then open: `http://localhost:8787/docs`
 - Hazard-based reverify scheduling: `scripts/reverify_scheduler.py`
 - End-to-end control-plane smoke test: `scripts/control_plane_smoke.sh`
 - OpenClaw adapter smoke test: `scripts/openclaw_adapter_smoke.sh`
+- OpenClaw conformance harness: `scripts/openclaw_conformance.sh`
 - Verification policy: `docs/verification-tiers.md`
 - Pack test runner: `scripts/pack_test_runner.py` + `research/pack-test-report.md` + `research/pack-test-result.json`
 - Statement-based contract runner: `research/pack-performance-contracts.json` + `scripts/contract_task_runner.py` + `research/contract-task-report.md` + `research/contract-task-result.json`

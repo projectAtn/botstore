@@ -57,3 +57,9 @@ Autonomous GA scope is intentionally narrow:
 
 ## Safety invariant
 Sensitive actions must route through typed tool metadata and per-call authorization. Raw shell/browser paths are never trusted for sensitive scopes.
+
+## Conformance execution
+Run:
+- `scripts/control_plane_smoke.sh`
+- `scripts/openclaw_adapter_smoke.sh`
+- `scripts/openclaw_conformance.sh`
