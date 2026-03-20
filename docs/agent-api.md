@@ -140,10 +140,15 @@ Response includes structured policy explanation fields:
 
 Safety enforcement: if `observed_scopes` is not a subset of allowed scopes, the attempt is quarantined and a trust incident is raised.
 
-## 9) Query compatibility quickly
+## 9) Rollback receipt
+`POST /agent/rollback`
+
+Use after failed activation or trust incident quarantine to produce deterministic rollback receipts.
+
+## 10) Query compatibility quickly
 `GET /agent/compatibility/{pack_id}?runtime=openclaw&version=0.1.0`
 
-## 10) Control-plane KPI status
+## 11) Control-plane KPI status
 `GET /status/control-plane?tenant_id=default&lookback_days=30`
 
 Returns:
@@ -152,12 +157,12 @@ Returns:
 - average approval latency
 - exploration regret proxy
 
-## 11) Shadow-ranker hook (offline comparison)
+## 12) Shadow-ranker hook (offline comparison)
 `GET /analytics/shadow-ranker-eval?tenant_id=default&limit=300`
 
 Returns baseline-vs-shadow agreement metrics and placeholder reward-delta diagnostics.
 
-## 12) Export replay dataset (for offline policy/ranker evaluation)
+## 13) Export replay dataset (for offline policy/ranker evaluation)
 `GET /analytics/replay-dataset?tenant_id=default&limit=500`
 
 Returns candidate-level rows with:

@@ -35,5 +35,5 @@ These methods align runtime execution to the control-plane lifecycle:
 
 ## Remaining contract work
 - expose activation mode override/negotiation in adapter API surface
-- rollback receipt and deterministic rollback status handling
 - install target policy profile enforcement matrix by tenant/runtime band
+- approval UX channel adapters (inline buttons + text fallback parity)

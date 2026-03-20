@@ -110,6 +110,8 @@ def main() -> int:
         latency_ms=300,
     )
 
+    rollback = adapter.rollback_attempt(attempt_id=attempt_id, tenant_id=tenant_id, reason="scope_violation_quarantine")
+
     status = plugin._get_json(f"/status/control-plane?tenant_id={tenant_id}&lookback_days=30")
     decisions = plugin._get_json(f"/policy/decision-log?tenant_id={tenant_id}&limit=20")
 
@@ -127,6 +129,7 @@ def main() -> int:
         "resume": (resume.data if resume else None),
         "outcome_success": out_ok.data,
         "outcome_violation": out_violation.data,
+        "rollback": rollback.data,
         "status": status,
         "decision_log_count": decisions.get("count"),
     }
@@ -168,6 +171,11 @@ def main() -> int:
                 "## Outcome violation",
                 "```json",
                 json.dumps(out_violation.data, indent=2),
+                "```",
+                "",
+                "## Rollback",
+                "```json",
+                json.dumps(rollback.data, indent=2),
                 "```",
                 "",
                 f"Decision log rows: {decisions.get('count')}",

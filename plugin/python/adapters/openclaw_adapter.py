@@ -132,6 +132,14 @@ class OpenClawAdapter:
         except Exception as e:
             return AdapterResult(ok=False, action="resume_after_approval", data={}, error=str(e))
 
+    def rollback_attempt(self, *, attempt_id: str, tenant_id: str, reason: str = "manual_recovery") -> AdapterResult:
+        try:
+            payload = {"attempt_id": attempt_id, "tenant_id": tenant_id, "reason": reason}
+            data = self.plugin._post_json("/agent/rollback", payload)
+            return AdapterResult(ok=bool(data.get("ok")), action="rollback_attempt", data=data)
+        except Exception as e:
+            return AdapterResult(ok=False, action="rollback_attempt", data={}, error=str(e))
+
     def report_outcome(
         self,
         *,

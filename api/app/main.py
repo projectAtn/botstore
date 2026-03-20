@@ -654,6 +654,12 @@ class AgentOutcomeV2Request(SQLModel):
     privacy_mode: str = "standard"
 
 
+class AgentRollbackRequest(SQLModel):
+    attempt_id: str
+    tenant_id: str = "default"
+    reason: str = "manual_recovery"
+
+
 class InstallSetup(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     install_id: int = Field(foreign_key="install.id", unique=True, index=True)
@@ -3422,6 +3428,48 @@ def analytics_replay_dataset(tenant_id: Optional[str] = None, limit: int = 500) 
                 "propensity is logged action probability for exploration-aware off-policy evaluation",
             ],
         }
+
+
+@app.post("/agent/rollback")
+def agent_rollback(payload: AgentRollbackRequest) -> dict:
+    with Session(engine) as session:
+        attempt = session.exec(select(InstallAttempt).where(InstallAttempt.attempt_id == payload.attempt_id)).first()
+        if not attempt:
+            raise HTTPException(status_code=404, detail="attempt not found")
+
+        attempt.rollback_status = "rolled_back"
+        attempt.install_status = "rolled_back"
+        attempt.activation_status = "deactivated"
+        attempt.status = InstallAttemptStatus.rolled_back
+        attempt.updated_at = _iso_now()
+        session.add(attempt)
+
+        receipt = {
+            "attempt_id": attempt.attempt_id,
+            "tenant_id": payload.tenant_id,
+            "rollback_status": attempt.rollback_status,
+            "reason": payload.reason,
+            "rolled_at": _iso_now(),
+            "runtime_id": attempt.runtime_id,
+            "install_target": attempt.install_target,
+            "activation_mode": attempt.activation_mode,
+        }
+
+        session.add(
+            TrustIncident(
+                attempt_id=attempt.attempt_id,
+                tenant_id=attempt.tenant_id,
+                pack_version_id=attempt.selected_pack_version_id,
+                severity="medium",
+                incident_type="rollback_executed",
+                details_json=json.dumps(receipt),
+                quarantined=False,
+                created_at=_iso_now(),
+            )
+        )
+        session.commit()
+
+        return {"ok": True, "rollback_receipt": receipt}
 
 
 @app.get("/agent/compatibility/{pack_id}")
