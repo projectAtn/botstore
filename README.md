@@ -55,7 +55,8 @@ Then open: `http://localhost:8787/docs`
 - `POST /agent/install-by-capability-v2` (attempt transaction + digest pinning)
 - `POST /agent/action-authorize` (action-time authorization)
 - `POST /agent/policy-evaluate`
-- `POST /agent/outcome`
+- `POST /agent/outcome` (legacy)
+- `POST /agent/outcome-v2` (attempt-bound outcomes + trust incidents/quarantine)
 - `GET /agent/compatibility/{pack_id}?runtime=<name>&version=<opt>`
 - `POST /packs/{pack_id}/versions` + `GET /packs/{pack_id}/versions` (capability/scope/action separated manifests)
 - Discovery endpoints: `GET /.well-known/botstore.json`, `GET /agent/capabilities-manifest`, `GET /llms.txt`

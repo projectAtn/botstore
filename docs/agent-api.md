@@ -74,7 +74,7 @@ Response includes:
 }
 ```
 
-## 6) Submit outcome telemetry
+## 6) Submit outcome telemetry (legacy)
 `POST /agent/outcome`
 
 ```json
@@ -88,7 +88,31 @@ Response includes:
 }
 ```
 
-## 7) Query compatibility quickly
+## 7) Submit outcome telemetry (v2, attempt-bound)
+`POST /agent/outcome-v2`
+
+```json
+{
+  "attempt_id": "att_...",
+  "task_id": "task_abc123",
+  "tenant_id": "default",
+  "task_class": "ops.devops",
+  "runtime_id": "openclaw",
+  "runtime_version": "0.2.0",
+  "result": "success",
+  "latency_ms": 1840,
+  "human_intervention": "none",
+  "task_completed_after_install": true,
+  "observed_scopes": ["log.read"],
+  "side_effect_counts": {"deploy": 0},
+  "incident_flag": false,
+  "privacy_mode": "standard"
+}
+```
+
+Safety enforcement: if `observed_scopes` is not a subset of allowed scopes, the attempt is quarantined and a trust incident is raised.
+
+## 8) Query compatibility quickly
 `GET /agent/compatibility/{pack_id}?runtime=openclaw&version=0.1.0`
 
 ---

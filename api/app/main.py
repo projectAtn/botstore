@@ -74,6 +74,13 @@ SENSITIVE_SCOPES = {
     "files.delete",
 }
 
+POLICY_REASON_CODES = {
+    "RUNTIME_BAND_TOO_WEAK": "runtime_band_too_weak",
+    "SENSITIVE_OR_LOW_VERIFICATION": "sensitive_or_low_verification",
+    "LOW_RISK_CONTEXT": "low_risk_context",
+    "APPROVAL_GRANT_ISSUED": "approval_grant_issued",
+}
+
 
 class Creator(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
@@ -217,6 +224,75 @@ class ApprovalGrant(SQLModel, table=True):
     policy_hash: str = ""
     justification: Optional[str] = None
     signature: str
+    created_at: str = ""
+
+
+class CandidateImpression(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    attempt_id: str = Field(index=True)
+    candidate_snapshot_id: str = Field(index=True)
+    rank: int
+    pack_id: int = Field(index=True)
+    pack_version_id: int = Field(index=True)
+    artifact_digest: str = Field(index=True)
+    score: float
+    selected: bool = False
+    policy_effect: str = "allow"
+    policy_reason_codes_json: str = "[]"
+    exploration_bucket: str = "none"
+    propensity: float = 1.0
+    features_json: str = "{}"
+    created_at: str = ""
+
+
+class ActionAuthorization(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    attempt_id: str = Field(index=True)
+    pack_version_id: int = Field(index=True)
+    artifact_digest: str = Field(index=True)
+    requested_action: str
+    requested_scope: str
+    decision: str
+    reason_codes_json: str = "[]"
+    grant_id: Optional[str] = None
+    justification: Optional[str] = None
+    runtime_attestation_hash: Optional[str] = None
+    created_at: str = ""
+
+
+class OutcomeReport(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    attempt_id: str = Field(index=True)
+    task_id: str = Field(index=True)
+    tenant_id: str = Field(index=True)
+    task_class: Optional[str] = None
+    selected_pack_version_id: Optional[int] = Field(default=None, index=True)
+    runtime_id: str = Field(index=True)
+    runtime_version: Optional[str] = None
+    result: str = "blocked"
+    error_code: Optional[str] = None
+    latency_ms: Optional[float] = None
+    human_intervention: str = "none"
+    task_completed_after_install: bool = False
+    observed_scopes_json: str = "[]"
+    side_effect_counts_json: str = "{}"
+    incident_flag: bool = False
+    recovery_action: Optional[str] = None
+    confidence: Optional[float] = None
+    privacy_mode: str = "standard"
+    reward: float = 0.0
+    created_at: str = ""
+
+
+class TrustIncident(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    attempt_id: str = Field(index=True)
+    tenant_id: str = Field(index=True)
+    pack_version_id: Optional[int] = Field(default=None, index=True)
+    severity: str = "high"
+    incident_type: str
+    details_json: str = "{}"
+    quarantined: bool = False
     created_at: str = ""
 
 
@@ -453,6 +529,26 @@ class AgentActionAuthorizeResponse(SQLModel):
     grant_token: Optional[str] = None
     grant_id: Optional[str] = None
     expires_at: Optional[str] = None
+
+
+class AgentOutcomeV2Request(SQLModel):
+    attempt_id: str
+    task_id: str
+    tenant_id: str = "default"
+    task_class: Optional[str] = None
+    runtime_id: str
+    runtime_version: Optional[str] = None
+    result: str = "blocked"
+    error_code: Optional[str] = None
+    latency_ms: Optional[float] = None
+    human_intervention: str = "none"
+    task_completed_after_install: bool = False
+    observed_scopes: list[str] = []
+    side_effect_counts: dict[str, int] = {}
+    incident_flag: bool = False
+    recovery_action: Optional[str] = None
+    confidence: Optional[float] = None
+    privacy_mode: str = "standard"
 
 
 class InstallSetup(SQLModel, table=True):
@@ -2001,12 +2097,16 @@ def _policy_decide_for_version(
 
     max_band = _json_obj(pv.policy_requirements_json).get("runtime_band_max", "C")
     if _runtime_band_rank(runtime_band) > _runtime_band_rank(max_band):
-        return ("deny", ["runtime_band_too_weak"], [f"runtime band {runtime_band} exceeds max {max_band}"])
+        return (
+            "deny",
+            [POLICY_REASON_CODES["RUNTIME_BAND_TOO_WEAK"]],
+            [f"runtime band {runtime_band} exceeds max {max_band}"],
+        )
 
     if sensitive_hit or pv.verification_tier in {"tier0_listed"}:
-        return ("allow_with_approval", ["sensitive_or_low_verification"], [])
+        return ("allow_with_approval", [POLICY_REASON_CODES["SENSITIVE_OR_LOW_VERIFICATION"]], [])
 
-    return ("allow", ["low_risk_context"], [])
+    return ("allow", [POLICY_REASON_CODES["LOW_RISK_CONTEXT"]], [])
 
 
 @app.post("/agent/install-by-capability")
@@ -2121,6 +2221,30 @@ def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -
         session.commit()
         session.refresh(attempt)
 
+        for idx, cand in enumerate(candidates, start=1):
+            session.add(
+                CandidateImpression(
+                    attempt_id=attempt_id,
+                    candidate_snapshot_id=candidate_snapshot_id,
+                    rank=idx,
+                    pack_id=int(cand["pack_id"]),
+                    pack_version_id=int(cand["pack_version_id"]),
+                    artifact_digest=cand["artifact_digest"],
+                    score=float(cand["score"]),
+                    selected=False,
+                    policy_effect=cand.get("policy_effect", "allow"),
+                    policy_reason_codes_json=json.dumps(cand.get("policy_reasons", [])),
+                    exploration_bucket="deterministic",
+                    propensity=1.0,
+                    features_json=json.dumps({
+                        "coverage": len(set(cand.get("capabilities_declared", [])).intersection(req)) / max(len(req), 1),
+                        "verification_tier": cand.get("verification_tier"),
+                    }),
+                    created_at=_iso_now(),
+                )
+            )
+        session.commit()
+
         if not candidates:
             attempt.status = InstallAttemptStatus.failed
             attempt.install_status = "no_candidates"
@@ -2162,6 +2286,17 @@ def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -
         attempt.selected_pack_version_id = pv.id
         attempt.policy_decision_id = pd.id
         attempt.status = InstallAttemptStatus.policy_decided
+
+        winner_impression = session.exec(
+            select(CandidateImpression).where(
+                CandidateImpression.attempt_id == attempt_id,
+                CandidateImpression.pack_version_id == (pv.id or 0),
+            )
+        ).first()
+        if winner_impression:
+            winner_impression.selected = True
+            session.add(winner_impression)
+            session.commit()
 
         grant: Optional[ApprovalGrant] = None
         if effect == "allow_with_approval":
@@ -2261,6 +2396,21 @@ def agent_action_authorize(payload: AgentActionAuthorizeRequest) -> AgentActionA
             requested_scope=payload.requested_scope,
         )
         if effect == "deny":
+            session.add(
+                ActionAuthorization(
+                    attempt_id=attempt.attempt_id,
+                    pack_version_id=payload.pack_version_id,
+                    artifact_digest=payload.artifact_digest,
+                    requested_action=payload.requested_action,
+                    requested_scope=payload.requested_scope,
+                    decision="deny",
+                    reason_codes_json=json.dumps(reasons + blocking),
+                    justification=payload.justification,
+                    runtime_attestation_hash=(hashlib.sha256((payload.runtime_attestation or "").encode("utf-8")).hexdigest() if payload.runtime_attestation else None),
+                    created_at=_iso_now(),
+                )
+            )
+            session.commit()
             return AgentActionAuthorizeResponse(decision="deny", reason=",".join(reasons + blocking))
 
         requires_approval = effect == "allow_with_approval" or payload.requested_scope in SENSITIVE_SCOPES
@@ -2308,6 +2458,23 @@ def agent_action_authorize(payload: AgentActionAuthorizeRequest) -> AgentActionA
             session.add(attempt)
             session.commit()
 
+            session.add(
+                ActionAuthorization(
+                    attempt_id=attempt.attempt_id,
+                    pack_version_id=payload.pack_version_id,
+                    artifact_digest=payload.artifact_digest,
+                    requested_action=payload.requested_action,
+                    requested_scope=payload.requested_scope,
+                    decision="allow_with_runtime_proof",
+                    reason_codes_json=json.dumps([POLICY_REASON_CODES["APPROVAL_GRANT_ISSUED"]]),
+                    grant_id=grant.grant_id,
+                    justification=payload.justification,
+                    runtime_attestation_hash=(hashlib.sha256((payload.runtime_attestation or "").encode("utf-8")).hexdigest() if payload.runtime_attestation else None),
+                    created_at=_iso_now(),
+                )
+            )
+            session.commit()
+
             grant_token = base64.urlsafe_b64encode(json.dumps({**grant_payload, "signature": sig}).encode("utf-8")).decode("utf-8")
             return AgentActionAuthorizeResponse(
                 decision="allow_with_runtime_proof",
@@ -2317,6 +2484,21 @@ def agent_action_authorize(payload: AgentActionAuthorizeRequest) -> AgentActionA
                 expires_at=expires_at,
             )
 
+        session.add(
+            ActionAuthorization(
+                attempt_id=attempt.attempt_id,
+                pack_version_id=payload.pack_version_id,
+                artifact_digest=payload.artifact_digest,
+                requested_action=payload.requested_action,
+                requested_scope=payload.requested_scope,
+                decision="allow",
+                reason_codes_json=json.dumps([POLICY_REASON_CODES["LOW_RISK_CONTEXT"]]),
+                justification=payload.justification,
+                runtime_attestation_hash=(hashlib.sha256((payload.runtime_attestation or "").encode("utf-8")).hexdigest() if payload.runtime_attestation else None),
+                created_at=_iso_now(),
+            )
+        )
+        session.commit()
         return AgentActionAuthorizeResponse(decision="allow", reason="action permitted")
 
 
@@ -2350,6 +2532,107 @@ def agent_outcome(payload: AgentOutcomeRequest) -> dict:
         session.commit()
         session.refresh(row)
         return {"ok": True, "outcome_id": row.id}
+
+
+@app.post("/agent/outcome-v2")
+def agent_outcome_v2(payload: AgentOutcomeV2Request) -> dict:
+    with Session(engine) as session:
+        attempt = session.exec(select(InstallAttempt).where(InstallAttempt.attempt_id == payload.attempt_id)).first()
+        if not attempt:
+            raise HTTPException(status_code=404, detail="attempt not found")
+
+        pv = session.get(PackVersion, attempt.selected_pack_version_id or 0) if attempt.selected_pack_version_id else None
+        allowed_scopes = set()
+        if attempt.approval_grant_id:
+            grant = session.get(ApprovalGrant, attempt.approval_grant_id)
+            if grant:
+                allowed_scopes = set(_json_list(grant.allowed_scopes_json))
+        if not allowed_scopes and pv:
+            allowed_scopes = set(_json_list(pv.scopes_requested_json))
+
+        observed = set(payload.observed_scopes)
+        undeclared = sorted(observed - allowed_scopes)
+        quarantine = len(undeclared) > 0
+
+        reward = 0.0
+        result = payload.result
+        if result == "success" and not quarantine and not payload.incident_flag:
+            reward = 1.0 if payload.human_intervention == "none" else 0.5
+        elif result in {"blocked", "no_improvement", "partial"}:
+            reward = 0.0
+        elif result == "fail":
+            reward = -0.5
+        if payload.incident_flag or quarantine:
+            reward = -1.0
+
+        out = OutcomeReport(
+            attempt_id=payload.attempt_id,
+            task_id=payload.task_id,
+            tenant_id=payload.tenant_id,
+            task_class=payload.task_class,
+            selected_pack_version_id=attempt.selected_pack_version_id,
+            runtime_id=payload.runtime_id,
+            runtime_version=payload.runtime_version,
+            result=result,
+            error_code=payload.error_code,
+            latency_ms=payload.latency_ms,
+            human_intervention=payload.human_intervention,
+            task_completed_after_install=payload.task_completed_after_install,
+            observed_scopes_json=json.dumps(sorted(observed)),
+            side_effect_counts_json=json.dumps(payload.side_effect_counts),
+            incident_flag=payload.incident_flag or quarantine,
+            recovery_action=payload.recovery_action,
+            confidence=payload.confidence,
+            privacy_mode=payload.privacy_mode,
+            reward=reward,
+            created_at=_iso_now(),
+        )
+        session.add(out)
+
+        attempt.status = InstallAttemptStatus.outcome_reported
+        if result == "fail":
+            attempt.install_status = "failed"
+        if quarantine:
+            attempt.status = InstallAttemptStatus.failed
+            attempt.install_status = "quarantined"
+            attempt.activation_status = "quarantined"
+            attempt.rollback_status = "requested"
+            session.add(
+                TrustIncident(
+                    attempt_id=attempt.attempt_id,
+                    tenant_id=attempt.tenant_id,
+                    pack_version_id=attempt.selected_pack_version_id,
+                    severity="critical",
+                    incident_type="observed_scope_not_subset_allowed",
+                    details_json=json.dumps({
+                        "allowed_scopes": sorted(allowed_scopes),
+                        "observed_scopes": sorted(observed),
+                        "undeclared_scopes": undeclared,
+                    }),
+                    quarantined=True,
+                    created_at=_iso_now(),
+                )
+            )
+        attempt.updated_at = _iso_now()
+        session.add(attempt)
+
+        # feed observed scopes back to pack version evidence
+        if pv and observed:
+            prior = set(_json_list(pv.scopes_observed_json))
+            pv.scopes_observed_json = json.dumps(sorted(prior.union(observed)))
+            session.add(pv)
+
+        session.commit()
+        session.refresh(out)
+
+        return {
+            "ok": True,
+            "outcome_report_id": out.id,
+            "attempt_id": payload.attempt_id,
+            "reward": reward,
+            "quarantined": quarantine,
+            "undeclared_scopes": undeclared,
+        }
 
 
 @app.get("/agent/compatibility/{pack_id}")
