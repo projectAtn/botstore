@@ -59,6 +59,7 @@ Then open: `http://localhost:8787/docs`
 - `POST /agent/policy-evaluate`
 - `POST /policy/bps/evaluate` (BotStore Policy Spec DSL evaluation)
 - `POST /policy/bundles` + `GET /policy/bundles` (versioned policy bundle registry)
+- `PUT /policy/tenant-profile` + `GET /policy/tenant-profile/{tenant_id}` (tenant policy profile matrix)
 - `GET /policy/decision-log` (explainable decision export)
 - `POST /agent/outcome` (legacy)
 - `POST /agent/outcome-v2` (attempt-bound outcomes + trust incidents/quarantine)
@@ -74,6 +75,7 @@ Then open: `http://localhost:8787/docs`
 - Adapter contract draft: `docs/adapter-contract-v1.md`
 - OpenClaw reference architecture: `docs/openclaw-reference-architecture-v1.md`
 - OpenClaw tool/scope/action mapping: `docs/openclaw-tool-scope-action-mapping-v1.md`
+- OpenClaw tenant policy matrix: `docs/openclaw-tenant-policy-matrix-v1.md`
 - Content system starter: `docs/content-strategy-v1.md`
 - Candidate pack quality gate: `research/candidate-packs-v1.json` + `scripts/quality_check_candidates.py` + `research/candidate-packs-quality-report.md`
 - Runtime simulation + tier gate: `scripts/runtime_simulation_verify.py` + `research/runtime-simulation-report.md` + `research/runtime-simulation-result.json`

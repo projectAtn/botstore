@@ -336,6 +336,18 @@ class PolicyBundle(SQLModel, table=True):
     created_at: str = ""
 
 
+class TenantPolicyProfile(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    tenant_id: str = Field(index=True, unique=True)
+    profile_name: str = "balanced"
+    runtime_band_max_autonomous: RuntimeBand = RuntimeBand.B
+    allow_install_targets_json: str = "[]"
+    allow_activation_modes_json: str = "[]"
+    allow_sensitive_scopes_autonomous: bool = False
+    created_at: str = ""
+    updated_at: str = ""
+
+
 class PackCreate(SQLModel):
     slug: str
     title: str
@@ -573,6 +585,15 @@ class PolicyBundleCreate(SQLModel):
     version: str
     spec: dict[str, Any]
     activate: bool = True
+
+
+class TenantPolicyProfileUpsert(SQLModel):
+    tenant_id: str
+    profile_name: str = "balanced"
+    runtime_band_max_autonomous: RuntimeBand = RuntimeBand.B
+    allow_install_targets: list[InstallTarget] = [InstallTarget.sandbox_workspace, InstallTarget.agent_workspace, InstallTarget.managed_skill_store]
+    allow_activation_modes: list[ActivationMode] = [ActivationMode.immediate_hot, ActivationMode.next_session]
+    allow_sensitive_scopes_autonomous: bool = False
 
 
 class AgentOutcomeRequest(SQLModel):
@@ -2335,6 +2356,30 @@ def _evaluate_bps_rules(
     )
 
 
+def _tenant_policy_profile(session: Session, tenant_id: str) -> TenantPolicyProfile:
+    row = session.exec(select(TenantPolicyProfile).where(TenantPolicyProfile.tenant_id == tenant_id)).first()
+    if row:
+        return row
+    # conservative default/balanced profile
+    return TenantPolicyProfile(
+        tenant_id=tenant_id,
+        profile_name="balanced",
+        runtime_band_max_autonomous=RuntimeBand.B,
+        allow_install_targets_json=json.dumps([
+            InstallTarget.sandbox_workspace,
+            InstallTarget.agent_workspace,
+            InstallTarget.managed_skill_store,
+        ]),
+        allow_activation_modes_json=json.dumps([
+            ActivationMode.immediate_hot,
+            ActivationMode.next_session,
+        ]),
+        allow_sensitive_scopes_autonomous=False,
+        created_at=_iso_now(),
+        updated_at=_iso_now(),
+    )
+
+
 def _derive_install_target_and_activation_mode(
     pack: Pack,
     pv: PackVersion,
@@ -2594,6 +2639,16 @@ def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -
         )
         attempt.install_target = install_target
         attempt.activation_mode = activation_mode
+
+        profile = _tenant_policy_profile(session, payload.tenant_id)
+        if _runtime_band_rank(payload.runtime_band) > _runtime_band_rank(profile.runtime_band_max_autonomous):
+            autonomy_block = f"runtime_band_exceeds_profile_max:{profile.runtime_band_max_autonomous}"
+        allowed_targets = set(_json_list(profile.allow_install_targets_json))
+        if str(install_target) not in allowed_targets:
+            autonomy_block = f"install_target_not_allowed:{install_target}"
+        allowed_modes = set(_json_list(profile.allow_activation_modes_json))
+        if str(activation_mode) not in allowed_modes:
+            autonomy_block = f"activation_mode_not_allowed:{activation_mode}"
 
         if autonomy_block:
             attempt.status = InstallAttemptStatus.denied
@@ -2899,6 +2954,36 @@ def list_policy_bundles(bundle_id: Optional[str] = None) -> list[PolicyBundle]:
         if bundle_id:
             q = q.where(PolicyBundle.bundle_id == bundle_id)
         return list(session.exec(q.order_by(PolicyBundle.id.desc())).all())
+
+
+@app.put("/policy/tenant-profile", response_model=TenantPolicyProfile)
+def policy_tenant_profile_upsert(payload: TenantPolicyProfileUpsert) -> TenantPolicyProfile:
+    with Session(engine) as session:
+        row = session.exec(select(TenantPolicyProfile).where(TenantPolicyProfile.tenant_id == payload.tenant_id)).first()
+        if not row:
+            row = TenantPolicyProfile(
+                tenant_id=payload.tenant_id,
+                created_at=_iso_now(),
+            )
+        row.profile_name = payload.profile_name
+        row.runtime_band_max_autonomous = payload.runtime_band_max_autonomous
+        row.allow_install_targets_json = json.dumps([str(x) for x in payload.allow_install_targets])
+        row.allow_activation_modes_json = json.dumps([str(x) for x in payload.allow_activation_modes])
+        row.allow_sensitive_scopes_autonomous = payload.allow_sensitive_scopes_autonomous
+        row.updated_at = _iso_now()
+        session.add(row)
+        session.commit()
+        session.refresh(row)
+        return row
+
+
+@app.get("/policy/tenant-profile/{tenant_id}", response_model=TenantPolicyProfile)
+def policy_tenant_profile_get(tenant_id: str) -> TenantPolicyProfile:
+    with Session(engine) as session:
+        row = session.exec(select(TenantPolicyProfile).where(TenantPolicyProfile.tenant_id == tenant_id)).first()
+        if row:
+            return row
+        return _tenant_policy_profile(session, tenant_id)
 
 
 @app.get("/policy/decision-log")

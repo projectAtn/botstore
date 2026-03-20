@@ -84,6 +84,8 @@ For native policy DSL evaluation, use:
 Policy admin/export endpoints:
 - `POST /policy/bundles`
 - `GET /policy/bundles`
+- `PUT /policy/tenant-profile`
+- `GET /policy/tenant-profile/{tenant_id}`
 - `GET /policy/decision-log`
 
 Response includes structured policy explanation fields:
