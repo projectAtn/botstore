@@ -45,6 +45,8 @@ def main() -> int:
         required_capabilities=["deploy.rollback"],
         enable_safe_exploration=True,
         exploration_rate=0.05,
+        install_target_preference="agent_workspace",
+        allow_gateway_plugin_store_autonomous=False,
     )
     if not resolve.ok:
         raise RuntimeError(resolve.error or "resolve_gap failed")
@@ -65,6 +67,20 @@ def main() -> int:
     if not auth.ok:
         # allow deny in strict policies, but preserve payload
         pass
+
+    pause = adapter.pause_for_approval(
+        attempt_id=attempt_id,
+        tenant_id=tenant_id,
+        session_key=f"session:{user_id}",
+        run_id=f"run-{ts}",
+        ttl_minutes=30,
+    )
+    resume = None
+    if pause.ok and pause.data.get("checkpoint_id"):
+        resume = adapter.resume_after_approval(
+            checkpoint_id=str(pause.data.get("checkpoint_id")),
+            approved=True,
+        )
 
     out_ok = adapter.report_outcome(
         attempt_id=attempt_id,
@@ -107,6 +123,8 @@ def main() -> int:
         "attempt_id": attempt_id,
         "resolve": resolve.data,
         "authorize": auth.data,
+        "pause": pause.data,
+        "resume": (resume.data if resume else None),
         "outcome_success": out_ok.data,
         "outcome_violation": out_violation.data,
         "status": status,
@@ -135,6 +153,16 @@ def main() -> int:
                 "## Authorize",
                 "```json",
                 json.dumps(auth.data, indent=2),
+                "```",
+                "",
+                "## Approval pause",
+                "```json",
+                json.dumps(pause.data, indent=2),
+                "```",
+                "",
+                "## Approval resume",
+                "```json",
+                json.dumps((resume.data if resume else {"ok": False, "reason": "pause failed"}), indent=2),
                 "```",
                 "",
                 "## Outcome violation",

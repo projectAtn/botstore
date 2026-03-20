@@ -8,9 +8,11 @@ Generic adapter interface supported:
 
 ## New OpenClaw reference adapter additions
 Implemented in `plugin/python/adapters/openclaw_adapter.py`:
-- `resolve_gap(...)`
+- `resolve_gap(...)` (with `install_target_preference`)
 - `install_status(...)`
 - `pre_action_authorize(...)`
+- `pause_for_approval(...)`
+- `resume_after_approval(...)`
 - `report_outcome(...)`
 - `action_scope_map(...)`
 
@@ -32,7 +34,6 @@ These methods align runtime execution to the control-plane lifecycle:
 - outcome pathway supports scope-mismatch quarantine handling from control plane
 
 ## Remaining contract work
-- install target selection as explicit enum in adapter API
-- activation mode as explicit enum in adapter API
+- expose activation mode override/negotiation in adapter API surface
 - rollback receipt and deterministic rollback status handling
-- explicit approval pause/resume checkpoint API
+- install target policy profile enforcement matrix by tenant/runtime band

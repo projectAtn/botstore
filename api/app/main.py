@@ -66,6 +66,19 @@ class InstallAttemptStatus(str, Enum):
     failed = "failed"
 
 
+class InstallTarget(str, Enum):
+    sandbox_workspace = "sandbox_workspace"
+    agent_workspace = "agent_workspace"
+    managed_skill_store = "managed_skill_store"
+    gateway_plugin_store = "gateway_plugin_store"
+
+
+class ActivationMode(str, Enum):
+    immediate_hot = "immediate_hot"
+    next_session = "next_session"
+    gateway_restart = "gateway_restart"
+
+
 SENSITIVE_SCOPES = {
     "email.send",
     "message.send",
@@ -181,6 +194,8 @@ class InstallAttempt(SQLModel, table=True):
     runtime_id: str = Field(index=True)
     runtime_version: Optional[str] = None
     runtime_band: RuntimeBand = RuntimeBand.D
+    install_target: InstallTarget = InstallTarget.agent_workspace
+    activation_mode: ActivationMode = ActivationMode.immediate_hot
     missing_capabilities_json: str = "[]"
     candidate_snapshot_id: str = Field(index=True)
     candidate_snapshot_json: str = "[]"
@@ -193,6 +208,21 @@ class InstallAttempt(SQLModel, table=True):
     status: InstallAttemptStatus = InstallAttemptStatus.gap_detected
     created_at: str = ""
     updated_at: str = ""
+
+
+class ApprovalCheckpoint(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    checkpoint_id: str = Field(index=True, unique=True)
+    attempt_id: str = Field(index=True)
+    tenant_id: str = Field(index=True)
+    session_key: str = Field(index=True)
+    run_id: str = Field(index=True)
+    status: str = "paused"
+    reason: str = "approval_required"
+    approval_mode: str = "once"
+    expires_at: str = ""
+    resumed_at: Optional[str] = None
+    created_at: str = ""
 
 
 class PolicyDecision(SQLModel, table=True):
@@ -567,6 +597,23 @@ class AgentInstallByCapabilityV2Request(SQLModel):
     limit: int = 10
     enable_safe_exploration: bool = False
     exploration_rate: float = 0.05
+    install_target_preference: Optional[InstallTarget] = None
+    allow_gateway_plugin_store_autonomous: bool = False
+
+
+class ApprovalCheckpointPauseRequest(SQLModel):
+    attempt_id: str
+    tenant_id: str = "default"
+    session_key: str
+    run_id: str
+    reason: str = "approval_required"
+    approval_mode: str = "once"
+    ttl_minutes: int = 60
+
+
+class ApprovalCheckpointResumeRequest(SQLModel):
+    checkpoint_id: str
+    approved: bool = True
 
 
 class AgentActionAuthorizeRequest(SQLModel):
@@ -2282,6 +2329,38 @@ def _evaluate_bps_rules(
     )
 
 
+def _derive_install_target_and_activation_mode(
+    pack: Pack,
+    pv: PackVersion,
+    preferred: Optional[InstallTarget],
+    allow_gateway_plugin_store_autonomous: bool,
+) -> tuple[InstallTarget, ActivationMode, Optional[str]]:
+    actions = set(_json_list(pv.actions_supported_json))
+    scopes = set(_json_list(pv.scopes_requested_json))
+    requires_gateway_plugin = (
+        "gateway.plugin.install" in actions
+        or "gateway.plugin.install" in scopes
+        or "native.plugin" in actions
+    )
+
+    if requires_gateway_plugin:
+        if not allow_gateway_plugin_store_autonomous:
+            return (InstallTarget.gateway_plugin_store, ActivationMode.gateway_restart, "gateway_plugin_store_manual_only")
+        return (InstallTarget.gateway_plugin_store, ActivationMode.gateway_restart, None)
+
+    if pack.type == PackType.personality:
+        target = preferred or InstallTarget.agent_workspace
+        if target == InstallTarget.gateway_plugin_store:
+            target = InstallTarget.agent_workspace
+        return (target, ActivationMode.next_session, None)
+
+    # skill/bundle default
+    target = preferred or InstallTarget.agent_workspace
+    if target == InstallTarget.gateway_plugin_store:
+        target = InstallTarget.agent_workspace
+    return (target, ActivationMode.immediate_hot, None)
+
+
 def _policy_decide_for_version(
     pv: PackVersion,
     runtime_band: RuntimeBand,
@@ -2497,6 +2576,37 @@ def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -
         pv = session.get(PackVersion, int(winner["pack_version_id"]))
         if not pv:
             raise HTTPException(status_code=500, detail="selected pack version missing")
+        pack = session.get(Pack, pv.pack_id)
+        if not pack:
+            raise HTTPException(status_code=500, detail="selected pack missing")
+
+        install_target, activation_mode, autonomy_block = _derive_install_target_and_activation_mode(
+            pack,
+            pv,
+            payload.install_target_preference,
+            payload.allow_gateway_plugin_store_autonomous,
+        )
+        attempt.install_target = install_target
+        attempt.activation_mode = activation_mode
+
+        if autonomy_block:
+            attempt.status = InstallAttemptStatus.denied
+            attempt.install_status = "manual_required"
+            attempt.activation_status = "not_activated"
+            attempt.updated_at = _iso_now()
+            session.add(attempt)
+            session.commit()
+            return {
+                "ok": False,
+                "attempt_id": attempt_id,
+                "task_id": payload.task_id,
+                "tenant_id": payload.tenant_id,
+                "reason": autonomy_block,
+                "install_target": install_target,
+                "activation_mode": activation_mode,
+                "selected": winner,
+                "status": attempt.status,
+            }
 
         policy_payload = {
             "attempt_id": attempt_id,
@@ -2598,6 +2708,8 @@ def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -
                 "runtime_band": payload.runtime_band,
             },
             "candidate_snapshot_id": candidate_snapshot_id,
+            "install_target": attempt.install_target,
+            "activation_mode": attempt.activation_mode,
             "selected": winner,
             "selection": {
                 "mode": exploration_mode,
@@ -2840,6 +2952,90 @@ def policy_bps_evaluate(payload: BPSPolicyEvaluateRequest) -> BPSPolicyEvaluateR
         runtime_band=runtime_band,
         rules=(payload.rules or active_rules),
     )
+
+
+@app.post("/agent/approval-checkpoint/pause")
+def agent_approval_checkpoint_pause(payload: ApprovalCheckpointPauseRequest) -> dict:
+    with Session(engine) as session:
+        attempt = session.exec(select(InstallAttempt).where(InstallAttempt.attempt_id == payload.attempt_id)).first()
+        if not attempt:
+            raise HTTPException(status_code=404, detail="attempt not found")
+
+        checkpoint_id = f"chk_{uuid.uuid4().hex[:16]}"
+        expires_at = (datetime.now(timezone.utc) + timedelta(minutes=max(1, min(payload.ttl_minutes, 240)))).isoformat()
+        row = ApprovalCheckpoint(
+            checkpoint_id=checkpoint_id,
+            attempt_id=payload.attempt_id,
+            tenant_id=payload.tenant_id,
+            session_key=payload.session_key,
+            run_id=payload.run_id,
+            status="paused",
+            reason=payload.reason,
+            approval_mode=payload.approval_mode,
+            expires_at=expires_at,
+            created_at=_iso_now(),
+        )
+        session.add(row)
+
+        attempt.status = InstallAttemptStatus.approval_required
+        attempt.install_status = "paused_for_approval"
+        attempt.updated_at = _iso_now()
+        session.add(attempt)
+        session.commit()
+
+        return {
+            "ok": True,
+            "checkpoint_id": checkpoint_id,
+            "attempt_id": payload.attempt_id,
+            "status": "paused",
+            "expires_at": expires_at,
+        }
+
+
+@app.post("/agent/approval-checkpoint/resume")
+def agent_approval_checkpoint_resume(payload: ApprovalCheckpointResumeRequest) -> dict:
+    with Session(engine) as session:
+        row = session.exec(select(ApprovalCheckpoint).where(ApprovalCheckpoint.checkpoint_id == payload.checkpoint_id)).first()
+        if not row:
+            raise HTTPException(status_code=404, detail="checkpoint not found")
+
+        now = datetime.now(timezone.utc)
+        exp = _parse_iso(row.expires_at)
+        if exp and now > exp:
+            row.status = "expired"
+            session.add(row)
+            session.commit()
+            return {"ok": False, "checkpoint_id": row.checkpoint_id, "status": "expired"}
+
+        attempt = session.exec(select(InstallAttempt).where(InstallAttempt.attempt_id == row.attempt_id)).first()
+        if not attempt:
+            raise HTTPException(status_code=404, detail="attempt not found")
+
+        if payload.approved:
+            row.status = "resumed"
+            row.resumed_at = _iso_now()
+            attempt.status = InstallAttemptStatus.approval_granted
+            attempt.install_status = "installed"
+            attempt.activation_status = "activated"
+        else:
+            row.status = "denied"
+            row.resumed_at = _iso_now()
+            attempt.status = InstallAttemptStatus.denied
+            attempt.install_status = "denied"
+            attempt.activation_status = "not_activated"
+        attempt.updated_at = _iso_now()
+
+        session.add(row)
+        session.add(attempt)
+        session.commit()
+
+        return {
+            "ok": True,
+            "checkpoint_id": row.checkpoint_id,
+            "attempt_id": row.attempt_id,
+            "status": row.status,
+            "attempt_status": attempt.status,
+        }
 
 
 @app.post("/agent/policy-evaluate", response_model=AgentPolicyEvaluateResponse)

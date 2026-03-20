@@ -38,6 +38,8 @@ class OpenClawAdapter:
         required_capabilities: list[str],
         enable_safe_exploration: bool = False,
         exploration_rate: float = 0.05,
+        install_target_preference: Optional[str] = None,
+        allow_gateway_plugin_store_autonomous: bool = False,
     ) -> AdapterResult:
         try:
             payload: Dict[str, Any] = {
@@ -51,6 +53,8 @@ class OpenClawAdapter:
                 "required_capabilities": required_capabilities,
                 "enable_safe_exploration": enable_safe_exploration,
                 "exploration_rate": exploration_rate,
+                "install_target_preference": install_target_preference,
+                "allow_gateway_plugin_store_autonomous": allow_gateway_plugin_store_autonomous,
             }
             data = self.plugin._post_json("/agent/install-by-capability-v2", payload)
             return AdapterResult(ok=bool(data.get("ok")), action="resolve_gap", data=data)
@@ -93,6 +97,40 @@ class OpenClawAdapter:
             return AdapterResult(ok=allowed, action="pre_action_authorize", data=data)
         except Exception as e:
             return AdapterResult(ok=False, action="pre_action_authorize", data={}, error=str(e))
+
+    def pause_for_approval(
+        self,
+        *,
+        attempt_id: str,
+        tenant_id: str,
+        session_key: str,
+        run_id: str,
+        reason: str = "approval_required",
+        approval_mode: str = "once",
+        ttl_minutes: int = 60,
+    ) -> AdapterResult:
+        try:
+            payload = {
+                "attempt_id": attempt_id,
+                "tenant_id": tenant_id,
+                "session_key": session_key,
+                "run_id": run_id,
+                "reason": reason,
+                "approval_mode": approval_mode,
+                "ttl_minutes": ttl_minutes,
+            }
+            data = self.plugin._post_json("/agent/approval-checkpoint/pause", payload)
+            return AdapterResult(ok=bool(data.get("ok")), action="pause_for_approval", data=data)
+        except Exception as e:
+            return AdapterResult(ok=False, action="pause_for_approval", data={}, error=str(e))
+
+    def resume_after_approval(self, *, checkpoint_id: str, approved: bool) -> AdapterResult:
+        try:
+            payload = {"checkpoint_id": checkpoint_id, "approved": approved}
+            data = self.plugin._post_json("/agent/approval-checkpoint/resume", payload)
+            return AdapterResult(ok=bool(data.get("ok")), action="resume_after_approval", data=data)
+        except Exception as e:
+            return AdapterResult(ok=False, action="resume_after_approval", data={}, error=str(e))
 
     def report_outcome(
         self,

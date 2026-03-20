@@ -39,7 +39,9 @@
   "required_capabilities": ["calendar.ops", "crm.sync"],
   "limit": 10,
   "enable_safe_exploration": true,
-  "exploration_rate": 0.05
+  "exploration_rate": 0.05,
+  "install_target_preference": "agent_workspace",
+  "allow_gateway_plugin_store_autonomous": false
 }
 ```
 
@@ -67,7 +69,13 @@ Response includes:
 }
 ```
 
-## 5) Evaluate policy before autonomous install/use
+## 5) Approval checkpoint pause/resume (session-native approvals)
+- `POST /agent/approval-checkpoint/pause`
+- `POST /agent/approval-checkpoint/resume`
+
+Use this when execution is paused awaiting human approval and must resume the same lane safely.
+
+## 6) Evaluate policy before autonomous install/use
 `POST /agent/policy-evaluate`
 
 For native policy DSL evaluation, use:
@@ -94,7 +102,7 @@ Response includes structured policy explanation fields:
 }
 ```
 
-## 6) Submit outcome telemetry (legacy)
+## 7) Submit outcome telemetry (legacy)
 `POST /agent/outcome`
 
 ```json
@@ -108,7 +116,7 @@ Response includes structured policy explanation fields:
 }
 ```
 
-## 7) Submit outcome telemetry (v2, attempt-bound)
+## 8) Submit outcome telemetry (v2, attempt-bound)
 `POST /agent/outcome-v2`
 
 ```json
@@ -132,10 +140,10 @@ Response includes structured policy explanation fields:
 
 Safety enforcement: if `observed_scopes` is not a subset of allowed scopes, the attempt is quarantined and a trust incident is raised.
 
-## 8) Query compatibility quickly
+## 9) Query compatibility quickly
 `GET /agent/compatibility/{pack_id}?runtime=openclaw&version=0.1.0`
 
-## 9) Control-plane KPI status
+## 10) Control-plane KPI status
 `GET /status/control-plane?tenant_id=default&lookback_days=30`
 
 Returns:
@@ -144,12 +152,12 @@ Returns:
 - average approval latency
 - exploration regret proxy
 
-## 10) Shadow-ranker hook (offline comparison)
+## 11) Shadow-ranker hook (offline comparison)
 `GET /analytics/shadow-ranker-eval?tenant_id=default&limit=300`
 
 Returns baseline-vs-shadow agreement metrics and placeholder reward-delta diagnostics.
 
-## 11) Export replay dataset (for offline policy/ranker evaluation)
+## 12) Export replay dataset (for offline policy/ranker evaluation)
 `GET /analytics/replay-dataset?tenant_id=default&limit=500`
 
 Returns candidate-level rows with:

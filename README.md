@@ -52,8 +52,9 @@ Then open: `http://localhost:8787/docs`
 - `POST /agent/search-capabilities`
 - `POST /agent/search`
 - `POST /agent/install-by-capability` (legacy)
-- `POST /agent/install-by-capability-v2` (attempt transaction + digest pinning)
+- `POST /agent/install-by-capability-v2` (attempt transaction + digest pinning + install target/activation mode)
 - `POST /agent/action-authorize` (action-time authorization)
+- `POST /agent/approval-checkpoint/pause` + `POST /agent/approval-checkpoint/resume`
 - `POST /agent/policy-evaluate`
 - `POST /policy/bps/evaluate` (BotStore Policy Spec DSL evaluation)
 - `POST /policy/bundles` + `GET /policy/bundles` (versioned policy bundle registry)

@@ -13,6 +13,8 @@ Input:
 - `artifact_digest`
 - `runtime_id`
 - `runtime_version`
+- `install_target` (`sandbox_workspace|agent_workspace|managed_skill_store|gateway_plugin_store`)
+- `activation_mode` (`immediate_hot|next_session|gateway_restart`)
 
 Output:
 - install result
@@ -54,7 +56,26 @@ Output:
 - allow / deny / allow_with_runtime_proof
 - grant token when required
 
-### 6) outcome_report
+### 6) approval_checkpoint_pause
+Input:
+- `attempt_id`
+- `session_key`
+- `run_id`
+- `ttl_minutes`
+
+Output:
+- `checkpoint_id`
+- pause status
+
+### 7) approval_checkpoint_resume
+Input:
+- `checkpoint_id`
+- `approved`
+
+Output:
+- resumed/denied status
+
+### 8) outcome_report
 Input:
 - `attempt_id`
 - task result fields
@@ -63,7 +84,7 @@ Input:
 Output:
 - ingestion ack
 
-### 7) compatibility_probe
+### 9) compatibility_probe
 Input:
 - `pack_version_id`
 - runtime metadata
