@@ -7,6 +7,7 @@ Make BotStore easy to embed into existing bot ecosystems without channel lock-in
 - `plugin/python/adapters/copilotkit_adapter.py`
 - `plugin/python/adapters/activepieces_adapter.py`
 - `plugin/python/adapters/e2b_adapter.py`
+- `plugin/python/adapters/openclaw_adapter.py` (reference runtime adapter)
 
 Each adapter supports a common core flow:
 1) search packs

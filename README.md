@@ -70,12 +70,15 @@ Then open: `http://localhost:8787/docs`
 - Autonomous-agent vision + architecture: `docs/botstore-v1-autonomous-agents.md`
 - Pack spec draft: `docs/pack-spec-v1.md`
 - Adapter contract draft: `docs/adapter-contract-v1.md`
+- OpenClaw reference architecture: `docs/openclaw-reference-architecture-v1.md`
+- OpenClaw tool/scope/action mapping: `docs/openclaw-tool-scope-action-mapping-v1.md`
 - Content system starter: `docs/content-strategy-v1.md`
 - Candidate pack quality gate: `research/candidate-packs-v1.json` + `scripts/quality_check_candidates.py` + `research/candidate-packs-quality-report.md`
 - Runtime simulation + tier gate: `scripts/runtime_simulation_verify.py` + `research/runtime-simulation-report.md` + `research/runtime-simulation-result.json`
 - Auto delist enforcement: `scripts/enforce_delist.py`
 - Hazard-based reverify scheduling: `scripts/reverify_scheduler.py`
 - End-to-end control-plane smoke test: `scripts/control_plane_smoke.sh`
+- OpenClaw adapter smoke test: `scripts/openclaw_adapter_smoke.sh`
 - Verification policy: `docs/verification-tiers.md`
 - Pack test runner: `scripts/pack_test_runner.py` + `research/pack-test-report.md` + `research/pack-test-result.json`
 - Statement-based contract runner: `research/pack-performance-contracts.json` + `scripts/contract_task_runner.py` + `research/contract-task-report.md` + `research/contract-task-result.json`
@@ -84,6 +87,8 @@ Then open: `http://localhost:8787/docs`
 - 90-day GTM execution scorecard: `docs/gtm-90-day-operator-scorecard.md`
 - Community launch kit (Reddit + X): `docs/community-launch-kit.md`
 - Control-plane migration report: `research/control-plane-migration-report-2026-03-20.md`
+- OpenClaw adapter contract diff (phase 1): `research/openclaw-adapter-contract-diff-phase1.md`
+- OpenClaw phase-1 risk register: `research/openclaw-phase1-risk-register.md`
 
 ## Next milestones
 1. Add auth + publisher namespaces
