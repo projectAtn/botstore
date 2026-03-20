@@ -770,6 +770,15 @@ def _iso_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def _parse_iso(ts: Optional[str]) -> Optional[datetime]:
+    if not ts:
+        return None
+    try:
+        return datetime.fromisoformat(ts.replace("Z", "+00:00"))
+    except Exception:
+        return None
+
+
 def _runtime_band_rank(band: RuntimeBand | str) -> int:
     b = str(band)
     return {"A": 1, "B": 2, "C": 3, "D": 4}.get(b, 4)
@@ -3010,6 +3019,100 @@ def agent_outcome_v2(payload: AgentOutcomeV2Request) -> dict:
             "reward": reward,
             "quarantined": quarantine,
             "undeclared_scopes": undeclared,
+        }
+
+
+@app.get("/status/control-plane")
+def status_control_plane(tenant_id: Optional[str] = None, lookback_days: int = 30) -> dict:
+    days = max(1, min(lookback_days, 365))
+    cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+
+    with Session(engine) as session:
+        attempts_q = select(InstallAttempt)
+        if tenant_id:
+            attempts_q = attempts_q.where(InstallAttempt.tenant_id == tenant_id)
+        attempts = list(session.exec(attempts_q).all())
+
+        outcomes_q = select(OutcomeReport)
+        if tenant_id:
+            outcomes_q = outcomes_q.where(OutcomeReport.tenant_id == tenant_id)
+        outcomes_all = list(session.exec(outcomes_q).all())
+
+        outcomes = [
+            o for o in outcomes_all
+            if (_parse_iso(o.created_at) or datetime.now(timezone.utc)) >= cutoff
+        ]
+
+        total_gap_events = len(attempts)
+        success_attempt_ids = {
+            o.attempt_id
+            for o in outcomes
+            if o.result == "success" and not o.incident_flag and o.task_completed_after_install
+        }
+        tcrr = (len(success_attempt_ids) / total_gap_events) if total_gap_events else 0.0
+
+        quarantined = [o for o in outcomes if o.incident_flag]
+        quarantine_rate = (len(quarantined) / len(outcomes)) if outcomes else 0.0
+
+        # approval latency (attempt create -> grant create)
+        attempt_by_id = {a.attempt_id: a for a in attempts}
+        grants = list(session.exec(select(ApprovalGrant)).all())
+        latencies_min: list[float] = []
+        for g in grants:
+            a = attempt_by_id.get(g.attempt_id)
+            if not a:
+                continue
+            t0 = _parse_iso(a.created_at)
+            t1 = _parse_iso(g.created_at)
+            if t0 and t1 and t1 >= t0:
+                latencies_min.append((t1 - t0).total_seconds() / 60.0)
+        approval_latency_min = (sum(latencies_min) / len(latencies_min)) if latencies_min else None
+
+        # bandit regret proxy for exploration attempts
+        imps = list(session.exec(select(CandidateImpression)).all())
+        by_attempt: dict[str, list[CandidateImpression]] = {}
+        for imp in imps:
+            by_attempt.setdefault(imp.attempt_id, []).append(imp)
+
+        regret_vals: list[float] = []
+        explored = 0
+        for att_id, rows in by_attempt.items():
+            if not rows:
+                continue
+            mode = rows[0].exploration_bucket or "deterministic"
+            if not mode.startswith("safe_bucket"):
+                continue
+            explored += 1
+            max_score = max(float(r.score) for r in rows)
+            sel = next((r for r in rows if r.selected), None)
+            if not sel:
+                continue
+            regret_vals.append(max(0.0, max_score - float(sel.score)))
+        bandit_regret_proxy = (sum(regret_vals) / len(regret_vals)) if regret_vals else 0.0
+
+        return {
+            "ok": True,
+            "schema_version": "control-plane-status-v1",
+            "window_days": days,
+            "tenant_id": tenant_id,
+            "north_star": {
+                "trusted_capability_resolution_rate": round(tcrr, 4),
+                "numerator_successful_resolutions": len(success_attempt_ids),
+                "denominator_gap_events": total_gap_events,
+            },
+            "safety": {
+                "quarantine_rate": round(quarantine_rate, 4),
+                "quarantined_outcomes": len(quarantined),
+                "total_outcomes": len(outcomes),
+            },
+            "latency": {
+                "approval_latency_minutes_avg": round(approval_latency_min, 3) if approval_latency_min is not None else None,
+                "samples": len(latencies_min),
+            },
+            "exploration": {
+                "exploration_attempts": explored,
+                "bandit_regret_proxy": round(bandit_regret_proxy, 6),
+            },
         }
 
 

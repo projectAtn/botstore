@@ -135,12 +135,21 @@ Safety enforcement: if `observed_scopes` is not a subset of allowed scopes, the 
 ## 8) Query compatibility quickly
 `GET /agent/compatibility/{pack_id}?runtime=openclaw&version=0.1.0`
 
-## 9) Shadow-ranker hook (offline comparison)
+## 9) Control-plane KPI status
+`GET /status/control-plane?tenant_id=default&lookback_days=30`
+
+Returns:
+- Trusted Capability Resolution Rate (TCRR)
+- quarantine rate
+- average approval latency
+- exploration regret proxy
+
+## 10) Shadow-ranker hook (offline comparison)
 `GET /analytics/shadow-ranker-eval?tenant_id=default&limit=300`
 
 Returns baseline-vs-shadow agreement metrics and placeholder reward-delta diagnostics.
 
-## 10) Export replay dataset (for offline policy/ranker evaluation)
+## 11) Export replay dataset (for offline policy/ranker evaluation)
 `GET /analytics/replay-dataset?tenant_id=default&limit=500`
 
 Returns candidate-level rows with:

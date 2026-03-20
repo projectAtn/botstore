@@ -61,6 +61,7 @@ Then open: `http://localhost:8787/docs`
 - `POST /agent/outcome` (legacy)
 - `POST /agent/outcome-v2` (attempt-bound outcomes + trust incidents/quarantine)
 - `GET /agent/compatibility/{pack_id}?runtime=<name>&version=<opt>`
+- `GET /status/control-plane` (north-star/safety/latency/exploration KPI snapshot)
 - `GET /analytics/shadow-ranker-eval` (shadow reranker hook metrics)
 - `GET /analytics/replay-dataset` (candidate-level logged replay rows for offline evaluation)
 - `POST /packs/{pack_id}/versions` + `GET /packs/{pack_id}/versions` (capability/scope/action separated manifests)
@@ -81,6 +82,7 @@ Then open: `http://localhost:8787/docs`
 - Bot leadership operating model: `docs/bot-ceo-operating-system.md`
 - 90-day GTM execution scorecard: `docs/gtm-90-day-operator-scorecard.md`
 - Community launch kit (Reddit + X): `docs/community-launch-kit.md`
+- Control-plane migration report: `research/control-plane-migration-report-2026-03-20.md`
 
 ## Next milestones
 1. Add auth + publisher namespaces
