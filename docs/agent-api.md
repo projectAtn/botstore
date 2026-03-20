@@ -37,9 +37,13 @@
   "runtime_version": "0.2.0",
   "runtime_band": "B",
   "required_capabilities": ["calendar.ops", "crm.sync"],
-  "limit": 10
+  "limit": 10,
+  "enable_safe_exploration": true,
+  "exploration_rate": 0.05
 }
 ```
+
+`enable_safe_exploration` only explores inside a policy-equivalent, lower/equal-risk, verified safe bucket.
 
 Response includes:
 - `attempt_id`
@@ -65,6 +69,14 @@ Response includes:
 
 ## 5) Evaluate policy before autonomous install/use
 `POST /agent/policy-evaluate`
+
+Response includes structured policy explanation fields:
+- `policy_schema_version`
+- `reason_codes[]`
+- `blocking_conditions[]`
+- `required_approvals[]`
+- `runtime_requirements`
+- `policy_hash`
 
 ```json
 {
@@ -114,6 +126,22 @@ Safety enforcement: if `observed_scopes` is not a subset of allowed scopes, the 
 
 ## 8) Query compatibility quickly
 `GET /agent/compatibility/{pack_id}?runtime=openclaw&version=0.1.0`
+
+## 9) Shadow-ranker hook (offline comparison)
+`GET /analytics/shadow-ranker-eval?tenant_id=default&limit=300`
+
+Returns baseline-vs-shadow agreement metrics and placeholder reward-delta diagnostics.
+
+## 10) Export replay dataset (for offline policy/ranker evaluation)
+`GET /analytics/replay-dataset?tenant_id=default&limit=500`
+
+Returns candidate-level rows with:
+- attempt context
+- candidate score/features
+- selected action flag
+- propensity
+- policy hash/effect
+- outcome/reward
 
 ---
 

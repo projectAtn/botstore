@@ -489,6 +489,13 @@ class AgentPolicyEvaluateRequest(SQLModel):
 class AgentPolicyEvaluateResponse(SQLModel):
     decision: str
     reason: str
+    policy_schema_version: str = "bps-0.1"
+    reason_codes: list[str] = []
+    blocking_conditions: list[str] = []
+    required_approvals: list[str] = []
+    minimum_verification_tier: Optional[str] = None
+    runtime_requirements: dict[str, Any] = {}
+    policy_hash: str = ""
 
 
 class AgentOutcomeRequest(SQLModel):
@@ -511,6 +518,8 @@ class AgentInstallByCapabilityV2Request(SQLModel):
     runtime_band: RuntimeBand = RuntimeBand.D
     required_capabilities: list[str] = []
     limit: int = 10
+    enable_safe_exploration: bool = False
+    exploration_rate: float = 0.05
 
 
 class AgentActionAuthorizeRequest(SQLModel):
@@ -717,6 +726,20 @@ def _iso_now() -> str:
 def _runtime_band_rank(band: RuntimeBand | str) -> int:
     b = str(band)
     return {"A": 1, "B": 2, "C": 3, "D": 4}.get(b, 4)
+
+
+def _verification_tier_rank(tier: str) -> int:
+    mapping = {
+        "tier0_listed": 0,
+        "tier1_signed": 1,
+        "tier2_verified": 2,
+        "tier3_conformant": 3,
+        "tier4_enterprise_trusted": 4,
+        "gold": 3,
+        "silver": 2,
+        "bronze": 1,
+    }
+    return mapping.get((tier or "").strip().lower(), 0)
 
 
 def _policy_sign(payload: dict) -> str:
@@ -2186,6 +2209,7 @@ def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -
                 "pack_version_id": pv.id,
                 "artifact_digest": pv.artifact_digest,
                 "verification_tier": pv.verification_tier,
+                "risk_level": pack.risk_level,
                 "capabilities_declared": sorted(caps),
                 "scopes_requested": _json_list(pv.scopes_requested_json),
                 "actions_supported": _json_list(pv.actions_supported_json),
@@ -2197,6 +2221,43 @@ def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -
 
         candidates.sort(key=lambda x: x["score"], reverse=True)
         candidates = candidates[: max(1, min(payload.limit, 50))]
+
+        selected_idx = 0
+        exploration_mode = "deterministic"
+        selected_propensity = 1.0
+        safe_bucket_indexes: list[int] = []
+        if candidates:
+            baseline = candidates[0]
+            baseline_risk_rank = {"low": 1, "medium": 2, "high": 3}.get((baseline.get("risk_level") or "medium").lower(), 2)
+            baseline_sensitive = len(set(baseline.get("scopes_requested", [])).intersection(SENSITIVE_SCOPES))
+            baseline_ver_rank = _verification_tier_rank(baseline.get("verification_tier", "tier0_listed"))
+
+            for idx, c in enumerate(candidates):
+                c_risk = {"low": 1, "medium": 2, "high": 3}.get((c.get("risk_level") or "medium").lower(), 2)
+                c_sensitive = len(set(c.get("scopes_requested", [])).intersection(SENSITIVE_SCOPES))
+                c_ver_rank = _verification_tier_rank(c.get("verification_tier", "tier0_listed"))
+                if (
+                    c.get("policy_effect") == baseline.get("policy_effect")
+                    and c_risk <= baseline_risk_rank
+                    and c_sensitive <= baseline_sensitive
+                    and c_ver_rank >= max(2, baseline_ver_rank)
+                ):
+                    safe_bucket_indexes.append(idx)
+
+            if payload.enable_safe_exploration and len(safe_bucket_indexes) > 1:
+                exp_rate = min(max(payload.exploration_rate, 0.0), 0.25)
+                roll_seed = int(hashlib.sha256(f"{attempt_id}:{payload.task_id}".encode("utf-8")).hexdigest()[:8], 16)
+                roll = (roll_seed % 10000) / 10000.0
+                if roll < exp_rate:
+                    alt = safe_bucket_indexes[1:]
+                    pick_seed = int(hashlib.sha256(f"{attempt_id}:pick".encode("utf-8")).hexdigest()[:8], 16)
+                    selected_idx = alt[pick_seed % len(alt)]
+                    exploration_mode = "safe_bucket_explore"
+                    selected_propensity = exp_rate / len(alt)
+                else:
+                    selected_idx = safe_bucket_indexes[0]
+                    exploration_mode = "safe_bucket_baseline"
+                    selected_propensity = 1.0 - exp_rate
 
         attempt = InstallAttempt(
             attempt_id=attempt_id,
@@ -2222,6 +2283,8 @@ def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -
         session.refresh(attempt)
 
         for idx, cand in enumerate(candidates, start=1):
+            is_selected = (idx - 1) == selected_idx
+            prop = selected_propensity if is_selected else 0.0
             session.add(
                 CandidateImpression(
                     attempt_id=attempt_id,
@@ -2231,14 +2294,15 @@ def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -
                     pack_version_id=int(cand["pack_version_id"]),
                     artifact_digest=cand["artifact_digest"],
                     score=float(cand["score"]),
-                    selected=False,
+                    selected=is_selected,
                     policy_effect=cand.get("policy_effect", "allow"),
                     policy_reason_codes_json=json.dumps(cand.get("policy_reasons", [])),
-                    exploration_bucket="deterministic",
-                    propensity=1.0,
+                    exploration_bucket=exploration_mode,
+                    propensity=prop,
                     features_json=json.dumps({
                         "coverage": len(set(cand.get("capabilities_declared", [])).intersection(req)) / max(len(req), 1),
                         "verification_tier": cand.get("verification_tier"),
+                        "risk_level": cand.get("risk_level"),
                     }),
                     created_at=_iso_now(),
                 )
@@ -2253,7 +2317,7 @@ def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -
             session.commit()
             return {"ok": False, "attempt_id": attempt_id, "message": "no matching pack versions", "candidates": []}
 
-        winner = candidates[0]
+        winner = candidates[selected_idx]
         pv = session.get(PackVersion, int(winner["pack_version_id"]))
         if not pv:
             raise HTTPException(status_code=500, detail="selected pack version missing")
@@ -2359,11 +2423,20 @@ def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -
             },
             "candidate_snapshot_id": candidate_snapshot_id,
             "selected": winner,
+            "selection": {
+                "mode": exploration_mode,
+                "propensity": selected_propensity,
+                "safe_bucket_size": len(safe_bucket_indexes),
+            },
             "policy": {
+                "schema_version": "bps-0.1",
                 "decision_id": pd.id,
                 "effect": pd.effect,
                 "reason_codes": _json_list(pd.reason_codes_json),
                 "blocking_conditions": _json_list(pd.blocking_conditions_json),
+                "required_approvals": _json_list(pd.required_approvals_json),
+                "minimum_verification_tier": pd.minimum_verification_tier,
+                "runtime_requirements": _json_obj(pd.runtime_requirements_json),
                 "policy_hash": pd.policy_hash,
             },
             "approval_grant": {
@@ -2508,9 +2581,56 @@ def agent_policy_evaluate(payload: AgentPolicyEvaluateRequest) -> AgentPolicyEva
         pack = session.get(Pack, payload.pack_id)
         if not pack:
             raise HTTPException(status_code=404, detail="pack not found")
-        if _requires_approval(pack):
-            return AgentPolicyEvaluateResponse(decision="require_approval", reason="risk/scopes require approval")
-        return AgentPolicyEvaluateResponse(decision="allow", reason="low-risk pack")
+
+        # Prefer current PackVersion if present for structured policy checks
+        pv = session.exec(
+            select(PackVersion).where(PackVersion.pack_id == payload.pack_id, PackVersion.is_current == True)
+        ).first()
+        runtime_band = RuntimeBand.C
+        if pv:
+            effect, reasons, blocking = _policy_decide_for_version(pv, runtime_band, tenant_id="default")
+            policy_payload = {
+                "runtime": payload.runtime,
+                "runtime_band": runtime_band,
+                "pack_version_id": pv.id,
+                "artifact_digest": pv.artifact_digest,
+                "decision": effect,
+            }
+            policy_hash = _make_policy_hash(policy_payload)
+            return AgentPolicyEvaluateResponse(
+                decision=("require_approval" if effect == "allow_with_approval" else effect),
+                reason=("risk/scopes require approval" if effect == "allow_with_approval" else "low-risk pack"),
+                reason_codes=reasons,
+                blocking_conditions=blocking,
+                required_approvals=([] if effect == "allow" else ["install"]),
+                minimum_verification_tier=("tier1_signed" if effect == "allow_with_approval" else "tier0_listed"),
+                runtime_requirements={"runtime_band_max": _json_obj(pv.policy_requirements_json).get("runtime_band_max", "C")},
+                policy_hash=policy_hash,
+            )
+
+        # Fallback to legacy pack-level policy
+        needs_approval = _requires_approval(pack)
+        reason_codes = [POLICY_REASON_CODES["SENSITIVE_OR_LOW_VERIFICATION"]] if needs_approval else [POLICY_REASON_CODES["LOW_RISK_CONTEXT"]]
+        policy_hash = _make_policy_hash({"pack_id": pack.id, "runtime": payload.runtime, "needs_approval": needs_approval})
+        if needs_approval:
+            return AgentPolicyEvaluateResponse(
+                decision="require_approval",
+                reason="risk/scopes require approval",
+                reason_codes=reason_codes,
+                required_approvals=["install"],
+                minimum_verification_tier="tier0_listed",
+                runtime_requirements={"runtime_band_max": "C"},
+                policy_hash=policy_hash,
+            )
+        return AgentPolicyEvaluateResponse(
+            decision="allow",
+            reason="low-risk pack",
+            reason_codes=reason_codes,
+            required_approvals=[],
+            minimum_verification_tier="tier0_listed",
+            runtime_requirements={"runtime_band_max": "C"},
+            policy_hash=policy_hash,
+        )
 
 
 @app.post("/agent/outcome")
@@ -2632,6 +2752,118 @@ def agent_outcome_v2(payload: AgentOutcomeV2Request) -> dict:
             "reward": reward,
             "quarantined": quarantine,
             "undeclared_scopes": undeclared,
+        }
+
+
+@app.get("/analytics/shadow-ranker-eval")
+def analytics_shadow_ranker_eval(tenant_id: Optional[str] = None, limit: int = 300) -> dict:
+    n = max(1, min(limit, 2000))
+    with Session(engine) as session:
+        attempts_q = select(InstallAttempt)
+        if tenant_id:
+            attempts_q = attempts_q.where(InstallAttempt.tenant_id == tenant_id)
+        attempts = list(session.exec(attempts_q.order_by(InstallAttempt.id.desc()).limit(n)).all())
+
+        compared = 0
+        same_winner = 0
+        with_outcome = 0
+        reward_deltas: list[float] = []
+
+        for att in attempts:
+            imps = list(session.exec(select(CandidateImpression).where(CandidateImpression.attempt_id == att.attempt_id)).all())
+            if not imps:
+                continue
+            compared += 1
+            chosen = next((x for x in imps if x.selected), None)
+            if not chosen:
+                continue
+
+            # shadow scoring hook (replace with trained reranker later)
+            def shadow_score(imp: CandidateImpression) -> float:
+                feat = _json_obj(imp.features_json)
+                ver_bonus = 0.04 * _verification_tier_rank(str(feat.get("verification_tier", "tier0_listed")))
+                risk_penalty = {"low": 0.0, "medium": 0.03, "high": 0.08}.get(str(feat.get("risk_level", "medium")).lower(), 0.03)
+                return float(imp.score) + ver_bonus - risk_penalty
+
+            shadow = sorted(imps, key=shadow_score, reverse=True)[0]
+            if shadow.id == chosen.id:
+                same_winner += 1
+
+            out = session.exec(select(OutcomeReport).where(OutcomeReport.attempt_id == att.attempt_id)).first()
+            if out:
+                with_outcome += 1
+                if shadow.id == chosen.id:
+                    reward_deltas.append(0.0)
+                else:
+                    # conservative placeholder until counterfactual estimates exist
+                    reward_deltas.append(-0.05)
+
+        return {
+            "ok": True,
+            "schema_version": "shadow-ranker-v1",
+            "attempts_compared": compared,
+            "same_winner_rate": (same_winner / compared) if compared else 0.0,
+            "attempts_with_outcome": with_outcome,
+            "estimated_mean_reward_delta": (sum(reward_deltas) / len(reward_deltas)) if reward_deltas else 0.0,
+            "notes": [
+                "shadow_score is a hook for offline reranker iteration",
+                "replace placeholder reward deltas with IPS/DR estimators once randomized propensities are sufficient",
+            ],
+        }
+
+
+@app.get("/analytics/replay-dataset")
+def analytics_replay_dataset(tenant_id: Optional[str] = None, limit: int = 500) -> dict:
+    n = max(1, min(limit, 5000))
+    with Session(engine) as session:
+        attempts_q = select(InstallAttempt)
+        if tenant_id:
+            attempts_q = attempts_q.where(InstallAttempt.tenant_id == tenant_id)
+        attempts = list(session.exec(attempts_q.order_by(InstallAttempt.id.desc()).limit(n)).all())
+
+        rows: list[dict] = []
+        for att in attempts:
+            imps = list(session.exec(select(CandidateImpression).where(CandidateImpression.attempt_id == att.attempt_id)).all())
+            out = session.exec(select(OutcomeReport).where(OutcomeReport.attempt_id == att.attempt_id)).first()
+            pd = session.get(PolicyDecision, att.policy_decision_id or 0) if att.policy_decision_id else None
+            for imp in imps:
+                rows.append(
+                    {
+                        "attempt_id": att.attempt_id,
+                        "task_id": att.task_id,
+                        "tenant_id": att.tenant_id,
+                        "runtime_id": att.runtime_id,
+                        "runtime_version": att.runtime_version,
+                        "runtime_band": att.runtime_band,
+                        "candidate_snapshot_id": imp.candidate_snapshot_id,
+                        "pack_id": imp.pack_id,
+                        "pack_version_id": imp.pack_version_id,
+                        "artifact_digest": imp.artifact_digest,
+                        "rank": imp.rank,
+                        "score": imp.score,
+                        "selected": imp.selected,
+                        "policy_effect": imp.policy_effect,
+                        "policy_reason_codes": _json_list(imp.policy_reason_codes_json),
+                        "exploration_bucket": imp.exploration_bucket,
+                        "propensity": imp.propensity,
+                        "features": _json_obj(imp.features_json),
+                        "policy_hash": pd.policy_hash if pd else "",
+                        "outcome_result": out.result if out else None,
+                        "reward": out.reward if out else None,
+                        "incident_flag": out.incident_flag if out else None,
+                        "created_at": imp.created_at,
+                    }
+                )
+
+        return {
+            "ok": True,
+            "rows": rows,
+            "count": len(rows),
+            "schema_version": "replay-v1",
+            "notes": [
+                "selected=true identifies chosen action",
+                "propensity is logged action probability for exploration-aware off-policy evaluation",
+            ],
         }
 
 

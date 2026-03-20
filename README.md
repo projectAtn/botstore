@@ -58,6 +58,8 @@ Then open: `http://localhost:8787/docs`
 - `POST /agent/outcome` (legacy)
 - `POST /agent/outcome-v2` (attempt-bound outcomes + trust incidents/quarantine)
 - `GET /agent/compatibility/{pack_id}?runtime=<name>&version=<opt>`
+- `GET /analytics/shadow-ranker-eval` (shadow reranker hook metrics)
+- `GET /analytics/replay-dataset` (candidate-level logged replay rows for offline evaluation)
 - `POST /packs/{pack_id}/versions` + `GET /packs/{pack_id}/versions` (capability/scope/action separated manifests)
 - Discovery endpoints: `GET /.well-known/botstore.json`, `GET /agent/capabilities-manifest`, `GET /llms.txt`
 - Bot discovery pack notes: `docs/bot-discovery-pack.md`
