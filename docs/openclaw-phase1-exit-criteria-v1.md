@@ -32,3 +32,13 @@ cd /Users/claw/.openclaw/workspace/botstore
 ```
 
 The harness calls `scripts/phase1_exit_check.py` automatically and fails fast on missing required fields.
+
+## Burn-in command (recommended)
+```bash
+cd /Users/claw/.openclaw/workspace/botstore
+RUNS=5 ./scripts/openclaw_conformance_burnin.sh
+```
+
+This writes a summary with a GO/NO_GO verdict:
+- `research/qa-loop/openclaw-burnin/summary.json`
+- `research/qa-loop/openclaw-burnin/summary.md`

@@ -85,7 +85,9 @@ Then open: `http://localhost:8787/docs`
 - End-to-end control-plane smoke test: `scripts/control_plane_smoke.sh`
 - OpenClaw adapter smoke test: `scripts/openclaw_adapter_smoke.sh`
 - OpenClaw conformance harness: `scripts/openclaw_conformance.sh`
+- OpenClaw conformance burn-in: `scripts/openclaw_conformance_burnin.sh`
 - Phase-1 exit checker: `scripts/phase1_exit_check.py`
+- Phase-1 go/no-go summarizer: `scripts/phase1_go_nogo.py`
 - Verification policy: `docs/verification-tiers.md`
 - Pack test runner: `scripts/pack_test_runner.py` + `research/pack-test-report.md` + `research/pack-test-result.json`
 - Statement-based contract runner: `research/pack-performance-contracts.json` + `scripts/contract_task_runner.py` + `research/contract-task-report.md` + `research/contract-task-result.json`
@@ -96,6 +98,7 @@ Then open: `http://localhost:8787/docs`
 - Control-plane migration report: `research/control-plane-migration-report-2026-03-20.md`
 - OpenClaw adapter contract diff (phase 1): `research/openclaw-adapter-contract-diff-phase1.md`
 - OpenClaw phase-1 risk register: `research/openclaw-phase1-risk-register.md`
+- OpenClaw phase-1 launch readiness packet: `research/openclaw-phase1-launch-readiness-packet.md`
 
 ## Next milestones
 1. Add auth + publisher namespaces
