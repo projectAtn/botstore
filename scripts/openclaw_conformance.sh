@@ -84,4 +84,7 @@ print(f"Wrote {out_json}")
 print(f"Wrote {out_md}")
 PY
 
+step "Validating phase-1 exit artifact"
+python3 "$ROOT/scripts/phase1_exit_check.py" --input "$OUT_JSON" > /tmp/openclaw_phase1_exit_check.json
+
 step "Conformance complete"
