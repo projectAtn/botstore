@@ -944,9 +944,22 @@ def _verify_packversion_trust_local(pv: PackVersion) -> tuple[bool, str]:
         return (False, "missing_signature_refs")
     if not pv.sbom_ref:
         return (False, "missing_sbom_ref")
-    attest = _json_list(pv.attestation_refs_json)
-    if len(attest) < 2:
+
+    attest = [str(x).lower() for x in _json_list(pv.attestation_refs_json)]
+    if not attest:
         return (False, "missing_attestation_refs")
+
+    required_predicates = {
+        "build": "missing_build_attestation",
+        "verify": "missing_verification_attestation",
+        "conformance": "missing_conformance_attestation",
+        "qa": "missing_qa_attestation",
+        "prov": "missing_provenance_attestation",
+    }
+    for token, error in required_predicates.items():
+        if not any(token in ref for ref in attest):
+            return (False, error)
+
     return (True, "verified")
 
 

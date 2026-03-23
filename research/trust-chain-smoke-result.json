@@ -1,47 +1,47 @@
 {
-  "generated_at": "2026-03-23T14:42:30.776173+00:00",
+  "generated_at": "2026-03-23T17:19:25.404820+00:00",
   "base_url": "http://127.0.0.1:8787",
-  "pack_id": 156,
-  "pack_version_id": 21,
+  "pack_id": 161,
+  "pack_version_id": 31,
   "negative_before_verify": {
     "ok": false,
-    "attempt_id": "att_60e9611e447f4c07",
+    "attempt_id": "att_d24e8a822fe94fa2",
     "message": "no matching pack versions",
     "candidates": []
   },
   "trust_upsert": {
     "ok": true,
-    "pack_version_id": 21,
+    "pack_version_id": 31,
     "verification_state": "unverified"
   },
   "verify_local": {
     "ok": true,
-    "pack_version_id": 21,
+    "pack_version_id": 31,
     "verification_state": "verified",
     "verification_error": null
   },
   "positive_after_verify": {
     "ok": true,
-    "attempt_id": "att_05cf155721314dd9",
-    "task_id": "trust-pos-1774276950679682000",
+    "attempt_id": "att_7554f46bd8fc465c",
+    "task_id": "trust-pos-1774286365349232000",
     "tenant_id": "default",
     "runtime": {
       "runtime_id": "openclaw",
       "runtime_version": "0.2.0",
       "runtime_band": "B"
     },
-    "candidate_snapshot_id": "cand_78a704a6a5f8",
+    "candidate_snapshot_id": "cand_b8d730073533",
     "install_target": "agent_workspace",
     "activation_mode": "immediate_hot",
     "selected": {
-      "pack_id": 156,
-      "pack_slug": "trust-smoke-1774276950679682000",
-      "pack_version_id": 21,
-      "artifact_digest": "sha256:6ed766a63e167355e6cd4fbc7339b1471fe8cb67478a3cb509e7f8880955a639",
+      "pack_id": 161,
+      "pack_slug": "trust-smoke-1774286365349232000",
+      "pack_version_id": 31,
+      "artifact_digest": "sha256:9135b2597fc1de4f118894f430af184c9ae3412af45fa8725d4d571d725b58cb",
       "verification_tier": "tier2_verified",
       "risk_level": "medium",
       "capabilities_declared": [
-        "deploy.rollback"
+        "deploy.rollback.1774286365349232000"
       ],
       "scopes_requested": [
         "log.read",
@@ -65,7 +65,7 @@
     },
     "policy": {
       "schema_version": "bps-0.1",
-      "decision_id": 12,
+      "decision_id": 17,
       "effect": "allow_with_approval",
       "reason_codes": [
         "sensitive_or_low_verification"
@@ -78,12 +78,12 @@
       "runtime_requirements": {
         "runtime_band_max": "B"
       },
-      "policy_hash": "c2472bb903cd4bc0f219fb527db9ea4aaf6f09912112e3d2e3b2c21299d01a61"
+      "policy_hash": "da81f01c5b9f0f225d79d588354ff725b86667a611238be5b1c860d304b697cd"
     },
     "approval_grant": {
-      "grant_id": "gr_f717ad2b758548",
-      "expires_at": "2026-03-23T15:42:30.769788+00:00",
-      "signature": "pZk3y36k9r9E_moCxhv1CZ44c8GxXwpom6YxBlCzoVw"
+      "grant_id": "gr_208f58beb3484d",
+      "expires_at": "2026-03-23T18:19:25.401486+00:00",
+      "signature": "-EhejlfIDIcYR5rCadvWij4e0nJr2nUITT8FIL41Zas"
     },
     "install_status": "pending_approval",
     "activation_status": "pending",

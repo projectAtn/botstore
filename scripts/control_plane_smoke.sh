@@ -108,7 +108,7 @@ trust_resp="$(api PUT "/packs/$pack_id/versions/$pack_version_id/trust" "$(cat <
   "artifact_uri":"oci://botstore/$PACK_SLUG:1.0.1",
   "signature_refs":["sig://local/$PACK_SLUG"],
   "sbom_ref":"sbom://local/$PACK_SLUG.spdx.json",
-  "attestation_refs":["att://build/$PACK_SLUG","att://qa/$PACK_SLUG","att://prov/$PACK_SLUG"]
+  "attestation_refs":["att://build/$PACK_SLUG","att://verify/$PACK_SLUG","att://conformance/$PACK_SLUG","att://qa/$PACK_SLUG","att://prov/$PACK_SLUG"]
 }
 JSON
 )")"

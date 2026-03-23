@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-03-23T17:19:25.494894+00:00",
+  "base_url": "http://127.0.0.1:8787",
+  "pack_id": 164,
+  "pack_version_id": 37,
+  "all_pass": true,
+  "results": [
+    {
+      "case": "missing_signature",
+      "expected_error": "missing_signature_refs",
+      "verify": {
+        "ok": false,
+        "pack_version_id": 33,
+        "verification_state": "failed",
+        "verification_error": "missing_signature_refs"
+      },
+      "pass": true
+    },
+    {
+      "case": "missing_sbom",
+      "expected_error": "missing_sbom_ref",
+      "verify": {
+        "ok": false,
+        "pack_version_id": 35,
+        "verification_state": "failed",
+        "verification_error": "missing_sbom_ref"
+      },
+      "pass": true
+    },
+    {
+      "case": "missing_conformance_attestation",
+      "expected_error": "missing_conformance_attestation",
+      "verify": {
+        "ok": false,
+        "pack_version_id": 37,
+        "verification_state": "failed",
+        "verification_error": "missing_conformance_attestation"
+      },
+      "pass": true
+    }
+  ]
+}

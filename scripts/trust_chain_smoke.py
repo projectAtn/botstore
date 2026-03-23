@@ -44,6 +44,7 @@ def must(cond: bool, msg: str) -> None:
 def main() -> int:
     ts = str(time.time_ns())
     slug = f"trust-smoke-{ts}"
+    unique_cap = f"deploy.rollback.{ts}".replace("-", "")
 
     creator = post("/creators", {"name": f"Trust Smoke {ts}", "verification": "verified", "trust_score": 0.9})
     pack = post(
@@ -64,7 +65,7 @@ def main() -> int:
         {
             "semver": "1.0.1",
             "manifest_version": "v2",
-            "capabilities_declared": ["deploy.rollback"],
+            "capabilities_declared": [unique_cap],
             "scopes_requested": ["log.read", "message.send"],
             "actions_supported": ["deploy.rollback", "message.send"],
             "compatible_runtimes": ["openclaw"],
@@ -83,7 +84,7 @@ def main() -> int:
             "runtime_id": "openclaw",
             "runtime_version": "0.2.0",
             "runtime_band": "B",
-            "required_capabilities": ["deploy.rollback"],
+            "required_capabilities": [unique_cap],
         },
     )
     must(negative.get("ok") is False, "negative trust gate should fail closed before verification")
@@ -94,7 +95,13 @@ def main() -> int:
             "artifact_uri": f"oci://botstore/{slug}:1.0.1",
             "signature_refs": [f"sig://local/{slug}"],
             "sbom_ref": f"sbom://local/{slug}.spdx.json",
-            "attestation_refs": [f"att://build/{slug}", f"att://qa/{slug}", f"att://prov/{slug}"],
+            "attestation_refs": [
+                f"att://build/{slug}",
+                f"att://verify/{slug}",
+                f"att://conformance/{slug}",
+                f"att://qa/{slug}",
+                f"att://prov/{slug}",
+            ],
         },
     )
     verify = post(f"/packs/{pack['id']}/versions/{version['id']}/trust/verify-local", {})
@@ -110,7 +117,7 @@ def main() -> int:
             "runtime_id": "openclaw",
             "runtime_version": "0.2.0",
             "runtime_band": "B",
-            "required_capabilities": ["deploy.rollback"],
+            "required_capabilities": [unique_cap],
         },
     )
     must(bool(positive.get("ok")), "positive install should pass after trust verification")

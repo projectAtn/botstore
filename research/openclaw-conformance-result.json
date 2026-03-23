@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-23T13:55:17Z",
+  "generated_at": "2026-03-23T17:19:25Z",
   "base_url": "http://127.0.0.1:8787",
   "tenant_id": "default",
   "checks": {
@@ -13,27 +13,211 @@
       "window_days": 30,
       "tenant_id": "default",
       "north_star": {
-        "trusted_capability_resolution_rate": 0.3125,
-        "numerator_successful_resolutions": 5,
-        "denominator_gap_events": 16
+        "trusted_capability_resolution_rate": 0.2593,
+        "numerator_successful_resolutions": 7,
+        "denominator_gap_events": 27
       },
       "safety": {
-        "quarantine_rate": 0.7727,
-        "quarantined_outcomes": 17,
-        "total_outcomes": 22
+        "quarantine_rate": 0.7667,
+        "quarantined_outcomes": 23,
+        "total_outcomes": 30
       },
       "latency": {
         "approval_latency_minutes_avg": 0.0,
-        "samples": 22
+        "samples": 34
       },
       "exploration": {
-        "exploration_attempts": 12,
+        "exploration_attempts": 14,
         "bandit_regret_proxy": 0.0
       }
     },
     "policy_decision_log": {
       "ok": true,
       "rows": [
+        {
+          "attempt_id": "att_06ab820bfddd4c58",
+          "task_id": "task-openclaw-smoke-1774286366",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "ea162443d5ccf8e8c5eb4d983e22810afb5621976b5519022913275577d8b0e1",
+          "approval_grant_id": "gr_953341f53bf843",
+          "created_at": "2026-03-23T17:19:26.395408+00:00"
+        },
+        {
+          "attempt_id": "att_3e864fbfab454107",
+          "task_id": "task-smoke-1774286365710723000",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "30f0973d7fa920912ce5cc6b7328b196920bc25c6780c14eb90306fecab117d0",
+          "approval_grant_id": "gr_ee0b5bcfabb44f",
+          "created_at": "2026-03-23T17:19:25.986273+00:00"
+        },
+        {
+          "attempt_id": "att_7554f46bd8fc465c",
+          "task_id": "trust-pos-1774286365349232000",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "da81f01c5b9f0f225d79d588354ff725b86667a611238be5b1c860d304b697cd",
+          "approval_grant_id": "gr_208f58beb3484d",
+          "created_at": "2026-03-23T17:19:25.398793+00:00"
+        },
+        {
+          "attempt_id": "att_211910f7ee874718",
+          "task_id": "trust-pos-1774286295019717000",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "4e74ce69e65f5af5fe47d4e0bfb003b038bd96465e98ae8dbf066265e65aed46",
+          "approval_grant_id": "gr_4e0ed3a9808c42",
+          "created_at": "2026-03-23T17:18:15.104912+00:00"
+        },
+        {
+          "attempt_id": "att_9cce1ab3862d4f36",
+          "task_id": "trust-neg-1774286212464345000",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "2da59973809cdba2657f9410edde66a6cc9252dfccf4bd4bd6351ade70674b04",
+          "approval_grant_id": "gr_2b306f0f683546",
+          "created_at": "2026-03-23T17:16:52.539575+00:00"
+        },
+        {
+          "attempt_id": "att_818b97e139a34e3a",
+          "task_id": "task-openclaw-smoke-1774276958",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "9e9030215251fb8e2de3ca9fc25041373e3f04cdbf4d1d00a00707dca5edf5e5",
+          "approval_grant_id": "gr_3a2e507e91d945",
+          "created_at": "2026-03-23T14:42:38.464612+00:00"
+        },
+        {
+          "attempt_id": "att_15905e2eb96c448f",
+          "task_id": "task-smoke-1774276957721413000",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "03f008f04b3a11ed911891a5a016268b50c27f53ac02d52189ff93b6e4c88c19",
+          "approval_grant_id": "gr_1d8759c63a3f43",
+          "created_at": "2026-03-23T14:42:38.039289+00:00"
+        },
+        {
+          "attempt_id": "att_05cf155721314dd9",
+          "task_id": "trust-pos-1774276950679682000",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "c2472bb903cd4bc0f219fb527db9ea4aaf6f09912112e3d2e3b2c21299d01a61",
+          "approval_grant_id": "gr_f717ad2b758548",
+          "created_at": "2026-03-23T14:42:30.765386+00:00"
+        },
         {
           "attempt_id": "att_7822b94791a144d9",
           "task_id": "task-openclaw-smoke-1774274117",
@@ -288,7 +472,7 @@
           "created_at": "2026-03-23T13:53:56.419924+00:00"
         }
       ],
-      "count": 11,
+      "count": 19,
       "schema_version": "policy-decision-log-v1"
     },
     "tenant_profile": {
@@ -298,8 +482,8 @@
       "allow_install_targets_json": "[\"sandbox_workspace\", \"agent_workspace\", \"managed_skill_store\"]",
       "allow_activation_modes_json": "[\"immediate_hot\", \"next_session\"]",
       "allow_sensitive_scopes_autonomous": false,
-      "created_at": "2026-03-23T13:55:17.738956+00:00",
-      "updated_at": "2026-03-23T13:55:17.738960+00:00",
+      "created_at": "2026-03-23T17:19:26.465220+00:00",
+      "updated_at": "2026-03-23T17:19:26.465227+00:00",
       "id": null
     }
   },
