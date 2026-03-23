@@ -42,3 +42,11 @@ RUNS=5 ./scripts/openclaw_conformance_burnin.sh
 This writes a summary with a GO/NO_GO verdict:
 - `research/qa-loop/openclaw-burnin/summary.json`
 - `research/qa-loop/openclaw-burnin/summary.md`
+
+## One-shot finalization packet
+```bash
+cd /Users/claw/.openclaw/workspace/botstore
+RUNS=5 ./scripts/openclaw_phase1_finalize.sh
+```
+
+This creates `research/phase1-finalize-<timestamp>/` with conformance + burn-in + final report.

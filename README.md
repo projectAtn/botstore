@@ -86,6 +86,7 @@ Then open: `http://localhost:8787/docs`
 - OpenClaw adapter smoke test: `scripts/openclaw_adapter_smoke.sh`
 - OpenClaw conformance harness: `scripts/openclaw_conformance.sh`
 - OpenClaw conformance burn-in: `scripts/openclaw_conformance_burnin.sh`
+- OpenClaw phase-1 finalizer packet: `scripts/openclaw_phase1_finalize.sh`
 - Phase-1 exit checker: `scripts/phase1_exit_check.py`
 - Phase-1 go/no-go summarizer: `scripts/phase1_go_nogo.py`
 - Verification policy: `docs/verification-tiers.md`
