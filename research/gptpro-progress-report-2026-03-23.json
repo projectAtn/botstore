@@ -1,0 +1,265 @@
+{
+  "report_version": "botstore-progress-detailed-v2",
+  "generated_at": "2026-03-23T15:01:00+01:00",
+  "project": {
+    "name": "BotStore",
+    "scope_context": "Progress since last GPT Pro final-mile plan (OpenClaw-first reference runtime hardening)",
+    "phase_status": {
+      "phase_1_openclaw_reference_path": "complete",
+      "progress_percent": 100
+    }
+  },
+  "git_delta_since_last_gpt_pro_input": {
+    "commits": [
+      {
+        "sha": "ec81572",
+        "title": "Add install-attempt v2 flow with digest-pinned pack versions"
+      },
+      {
+        "sha": "515ab19",
+        "title": "Add phase-2 telemetry entities and outcome-v2 quarantine enforcement"
+      },
+      {
+        "sha": "557b38d",
+        "title": "Add safe exploration, structured policy explanations, and replay analytics hooks"
+      },
+      {
+        "sha": "a7b2402",
+        "title": "Add Pack Spec v1 and Adapter Contract v1 draft docs"
+      },
+      {
+        "sha": "c002854",
+        "title": "Add BotStore Policy Spec evaluate endpoint and structured policy DSL models"
+      },
+      {
+        "sha": "402ab29",
+        "title": "Add hazard-based reverify scheduler script"
+      },
+      {
+        "sha": "3ffbf13",
+        "title": "Add policy bundle registry, decision-log export, and stricter promotion gates"
+      },
+      {
+        "sha": "cedeb74",
+        "title": "Add control-plane status KPI endpoint and migration handoff report"
+      },
+      {
+        "sha": "7ab4597",
+        "title": "Add end-to-end control-plane smoke test script"
+      },
+      {
+        "sha": "eaf48ec",
+        "title": "Add OpenClaw reference adapter, smoke flow, and phase-1 integration artifacts"
+      },
+      {
+        "sha": "f3f428c",
+        "title": "Add install target/activation controls and approval checkpoint pause-resume flow"
+      },
+      {
+        "sha": "e8eddc5",
+        "title": "Add approval checkpoints, install target controls, and rollback receipt endpoint"
+      },
+      {
+        "sha": "0fc3975",
+        "title": "Add tenant policy profiles and enforce target/mode autonomy constraints"
+      },
+      {
+        "sha": "3d2aacb",
+        "title": "Add OpenClaw conformance harness script and docs wiring"
+      },
+      {
+        "sha": "00bec89",
+        "title": "Add phase-1 exit checker and OpenClaw conformance exit criteria"
+      },
+      {
+        "sha": "2c50188",
+        "title": "Add conformance burn-in and phase-1 go/no-go readiness tooling"
+      },
+      {
+        "sha": "8f90802",
+        "title": "Add one-shot phase-1 finalization packet script"
+      },
+      {
+        "sha": "022b310",
+        "title": "Fix conformance harness reliability and publish phase-1 finalization evidence"
+      }
+    ]
+  },
+  "implemented_architecture_changes": {
+    "core_entities_added": [
+      "PackVersion",
+      "InstallAttempt",
+      "PolicyDecision",
+      "ApprovalGrant",
+      "CandidateImpression",
+      "ActionAuthorization",
+      "OutcomeReport",
+      "TrustIncident",
+      "PolicyBundle",
+      "ApprovalCheckpoint",
+      "TenantPolicyProfile"
+    ],
+    "key_behavior": [
+      "Digest-pinned install path via PackVersion.artifact_digest",
+      "InstallAttempt as canonical transaction join key",
+      "Capabilities/scopes/actions split in version manifest model",
+      "Per-call action authorization with signed grant option",
+      "Observed-scope mismatch -> quarantine + trust incident",
+      "Install target + activation mode derived/enforced",
+      "Tenant policy profile constraints enforced at install-v2",
+      "Approval pause/resume checkpoints for lane-safe continuation",
+      "Deterministic rollback receipt endpoint"
+    ]
+  },
+  "api_surface_added_or_extended": {
+    "agent": [
+      "POST /agent/install-by-capability-v2",
+      "POST /agent/action-authorize",
+      "POST /agent/outcome-v2",
+      "POST /agent/approval-checkpoint/pause",
+      "POST /agent/approval-checkpoint/resume",
+      "POST /agent/rollback"
+    ],
+    "policy": [
+      "POST /policy/bps/evaluate",
+      "POST /policy/bundles",
+      "GET /policy/bundles",
+      "PUT /policy/tenant-profile",
+      "GET /policy/tenant-profile/{tenant_id}",
+      "GET /policy/decision-log"
+    ],
+    "analytics_status": [
+      "GET /status/control-plane",
+      "GET /analytics/replay-dataset",
+      "GET /analytics/shadow-ranker-eval"
+    ],
+    "pack_versioning": [
+      "POST /packs/{pack_id}/versions",
+      "GET /packs/{pack_id}/versions"
+    ]
+  },
+  "openclaw_reference_adapter": {
+    "files": [
+      "botstore/plugin/python/adapters/openclaw_adapter.py",
+      "botstore/plugin/python/demo_openclaw_adapter_e2e.py",
+      "botstore/scripts/openclaw_adapter_smoke.sh"
+    ],
+    "methods": [
+      "resolve_gap",
+      "install_status",
+      "pre_action_authorize",
+      "pause_for_approval",
+      "resume_after_approval",
+      "rollback_attempt",
+      "report_outcome",
+      "action_scope_map"
+    ],
+    "design_constraints": [
+      "Sensitive action path must be typed and authorized",
+      "No trust on raw shell/browser inference for sensitive scopes"
+    ]
+  },
+  "code_excerpts": {
+    "install_target_and_activation_derivation": {
+      "path": "botstore/api/app/main.py",
+      "excerpt": "def _derive_install_target_and_activation_mode(pack, pv, preferred, allow_gateway_plugin_store_autonomous):\n    actions = set(_json_list(pv.actions_supported_json))\n    scopes = set(_json_list(pv.scopes_requested_json))\n    requires_gateway_plugin = (\n        \"gateway.plugin.install\" in actions\n        or \"gateway.plugin.install\" in scopes\n        or \"native.plugin\" in actions\n    )\n    if requires_gateway_plugin:\n        if not allow_gateway_plugin_store_autonomous:\n            return (InstallTarget.gateway_plugin_store, ActivationMode.gateway_restart, \"gateway_plugin_store_manual_only\")\n        return (InstallTarget.gateway_plugin_store, ActivationMode.gateway_restart, None)\n    if pack.type == PackType.personality:\n        target = preferred or InstallTarget.agent_workspace\n        if target == InstallTarget.gateway_plugin_store:\n            target = InstallTarget.agent_workspace\n        return (target, ActivationMode.next_session, None)\n    target = preferred or InstallTarget.agent_workspace\n    if target == InstallTarget.gateway_plugin_store:\n        target = InstallTarget.agent_workspace\n    return (target, ActivationMode.immediate_hot, None)"
+    },
+    "approval_checkpoint_pause": {
+      "path": "botstore/api/app/main.py",
+      "excerpt": "@app.post(\"/agent/approval-checkpoint/pause\")\ndef agent_approval_checkpoint_pause(payload):\n    checkpoint_id = f\"chk_{uuid.uuid4().hex[:16]}\"\n    expires_at = (datetime.now(timezone.utc) + timedelta(minutes=max(1, min(payload.ttl_minutes, 240)))).isoformat()\n    row = ApprovalCheckpoint(..., status=\"paused\", expires_at=expires_at)\n    attempt.status = InstallAttemptStatus.approval_required\n    attempt.install_status = \"paused_for_approval\"\n    return {\"ok\": True, \"checkpoint_id\": checkpoint_id, \"status\": \"paused\", \"expires_at\": expires_at}"
+    },
+    "rollback_receipt": {
+      "path": "botstore/api/app/main.py",
+      "excerpt": "@app.post(\"/agent/rollback\")\ndef agent_rollback(payload):\n    attempt.rollback_status = \"rolled_back\"\n    attempt.install_status = \"rolled_back\"\n    attempt.activation_status = \"deactivated\"\n    attempt.status = InstallAttemptStatus.rolled_back\n    receipt = {\n      \"attempt_id\": attempt.attempt_id,\n      \"rollback_status\": attempt.rollback_status,\n      \"reason\": payload.reason,\n      \"runtime_id\": attempt.runtime_id,\n      \"install_target\": attempt.install_target,\n      \"activation_mode\": attempt.activation_mode\n    }\n    return {\"ok\": True, \"rollback_receipt\": receipt}"
+    },
+    "tenant_profile_enforcement": {
+      "path": "botstore/api/app/main.py",
+      "excerpt": "profile = _tenant_policy_profile(session, payload.tenant_id)\nif _runtime_band_rank(payload.runtime_band) > _runtime_band_rank(profile.runtime_band_max_autonomous):\n    autonomy_block = f\"runtime_band_exceeds_profile_max:{profile.runtime_band_max_autonomous}\"\nallowed_targets = {_enum_token(x) for x in _json_list(profile.allow_install_targets_json)}\nif _enum_token(install_target) not in allowed_targets:\n    autonomy_block = f\"install_target_not_allowed:{_enum_token(install_target)}\"\nallowed_modes = {_enum_token(x) for x in _json_list(profile.allow_activation_modes_json)}\nif _enum_token(activation_mode) not in allowed_modes:\n    autonomy_block = f\"activation_mode_not_allowed:{_enum_token(activation_mode)}\""
+    },
+    "openclaw_adapter_authorization_call": {
+      "path": "botstore/plugin/python/adapters/openclaw_adapter.py",
+      "excerpt": "def pre_action_authorize(...):\n    payload = {\n      \"attempt_id\": attempt_id,\n      \"pack_version_id\": int(pack_version_id),\n      \"artifact_digest\": artifact_digest,\n      \"requested_action\": requested_action,\n      \"requested_scope\": requested_scope,\n      \"runtime_attestation\": runtime_attestation,\n      \"justification\": justification\n    }\n    data = self.plugin._post_json(\"/agent/action-authorize\", payload)\n    allowed = data.get(\"decision\") in {\"allow\", \"allow_with_runtime_proof\"}\n    return AdapterResult(ok=allowed, action=\"pre_action_authorize\", data=data)"
+    }
+  },
+  "conformance_and_release_tooling": {
+    "scripts_added": [
+      "scripts/control_plane_smoke.sh",
+      "scripts/openclaw_adapter_smoke.sh",
+      "scripts/openclaw_conformance.sh",
+      "scripts/phase1_exit_check.py",
+      "scripts/openclaw_conformance_burnin.sh",
+      "scripts/phase1_go_nogo.py",
+      "scripts/openclaw_phase1_finalize.sh"
+    ],
+    "docs_added": [
+      "docs/openclaw-reference-architecture-v1.md",
+      "docs/openclaw-tool-scope-action-mapping-v1.md",
+      "docs/openclaw-tenant-policy-matrix-v1.md",
+      "docs/openclaw-phase1-exit-criteria-v1.md",
+      "docs/pack-spec-v1.md",
+      "docs/adapter-contract-v1.md"
+    ],
+    "readiness_packet": "research/openclaw-phase1-launch-readiness-packet.md"
+  },
+  "reliability_fixes_during_finalization": [
+    {
+      "issue": "control_plane_smoke json parser used heredoc/stdin incorrectly",
+      "fix": "json_get now accepts explicit payload argument and parses safely"
+    },
+    {
+      "issue": "runtime band ranking failed on enum stringification (e.g., RuntimeBand.B)",
+      "fix": "_enum_token normalization added and _runtime_band_rank updated"
+    },
+    {
+      "issue": "tenant profile enum values persisted as class-string tokens causing false denies",
+      "fix": "tenant profile write/read now normalized through _enum_token"
+    },
+    {
+      "issue": "conformance script Python interpolation broke on backticks/JSON",
+      "fix": "switched to temp-file JSON loading before Python assembly"
+    }
+  ],
+  "published_evidence_artifacts": {
+    "single_run": [
+      "research/openclaw-conformance-result.json",
+      "research/openclaw-conformance-report.md"
+    ],
+    "burnin_summary": [
+      "research/qa-loop/openclaw-burnin/summary.json",
+      "research/qa-loop/openclaw-burnin/summary.md"
+    ],
+    "finalization_packet": [
+      "research/phase1-finalize-20260323T135515Z/openclaw-conformance-result.json",
+      "research/phase1-finalize-20260323T135515Z/openclaw-conformance-report.md",
+      "research/phase1-finalize-20260323T135515Z/openclaw_phase1_exit_check.json",
+      "research/phase1-finalize-20260323T135515Z/burnin-summary.json",
+      "research/phase1-finalize-20260323T135515Z/burnin-summary.md",
+      "research/phase1-finalize-20260323T135515Z/phase1-finalization-report.md"
+    ]
+  },
+  "current_readiness": {
+    "phase_1_reference_runtime": "done",
+    "phase_1_artifacts_present": true,
+    "phase_1_progress_percent": 100,
+    "launch_scope_lock": {
+      "reference_runtime": "OpenClaw",
+      "autonomous_types": [
+        "skill_pack",
+        "personality_pack"
+      ],
+      "excluded_from_autonomous_ga": [
+        "gateway/native-plugin installs",
+        "social-posting high-risk autonomous paths",
+        "payment/charge autonomous paths"
+      ]
+    }
+  },
+  "remaining_scope_after_this_report": {
+    "phase_2_and_3": [
+      "Mandatory OCI/cosign/SBOM/attestation gates at install path",
+      "Expanded conformance matrix and secondary runtime certification levels",
+      "Policy ops maturity (staged rollout/rollback automation + SLO-driven rollback)",
+      "Reranker maturation with robust offline estimators (IPS/DR) after sufficient randomized data"
+    ]
+  }
+}
