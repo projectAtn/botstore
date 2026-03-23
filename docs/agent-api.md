@@ -54,7 +54,13 @@ Response includes:
 - policy decision/explanations
 - optional signed approval grant metadata
 
-## 4) Action-time authorization (proof-carrying approval)
+Trust precondition: candidate pack versions must be trust-verified (`verification_state=verified`).
+
+## 4) Pack trust evidence + verification (required before autonomous install)
+- `PUT /packs/{pack_id}/versions/{version_id}/trust`
+- `POST /packs/{pack_id}/versions/{version_id}/trust/verify-local`
+
+## 5) Action-time authorization (proof-carrying approval)
 `POST /agent/action-authorize`
 
 ```json
@@ -69,13 +75,13 @@ Response includes:
 }
 ```
 
-## 5) Approval checkpoint pause/resume (session-native approvals)
+## 6) Approval checkpoint pause/resume (session-native approvals)
 - `POST /agent/approval-checkpoint/pause`
 - `POST /agent/approval-checkpoint/resume`
 
 Use this when execution is paused awaiting human approval and must resume the same lane safely.
 
-## 6) Evaluate policy before autonomous install/use
+## 7) Evaluate policy before autonomous install/use
 `POST /agent/policy-evaluate`
 
 For native policy DSL evaluation, use:
@@ -104,7 +110,7 @@ Response includes structured policy explanation fields:
 }
 ```
 
-## 7) Submit outcome telemetry (legacy)
+## 8) Submit outcome telemetry (legacy)
 `POST /agent/outcome`
 
 ```json
@@ -118,7 +124,7 @@ Response includes structured policy explanation fields:
 }
 ```
 
-## 8) Submit outcome telemetry (v2, attempt-bound)
+## 9) Submit outcome telemetry (v2, attempt-bound)
 `POST /agent/outcome-v2`
 
 ```json
@@ -142,15 +148,15 @@ Response includes structured policy explanation fields:
 
 Safety enforcement: if `observed_scopes` is not a subset of allowed scopes, the attempt is quarantined and a trust incident is raised.
 
-## 9) Rollback receipt
+## 10) Rollback receipt
 `POST /agent/rollback`
 
 Use after failed activation or trust incident quarantine to produce deterministic rollback receipts.
 
-## 10) Query compatibility quickly
+## 11) Query compatibility quickly
 `GET /agent/compatibility/{pack_id}?runtime=openclaw&version=0.1.0`
 
-## 11) Control-plane KPI status
+## 12) Control-plane KPI status
 `GET /status/control-plane?tenant_id=default&lookback_days=30`
 
 Returns:
@@ -159,12 +165,12 @@ Returns:
 - average approval latency
 - exploration regret proxy
 
-## 12) Shadow-ranker hook (offline comparison)
+## 13) Shadow-ranker hook (offline comparison)
 `GET /analytics/shadow-ranker-eval?tenant_id=default&limit=300`
 
 Returns baseline-vs-shadow agreement metrics and placeholder reward-delta diagnostics.
 
-## 13) Export replay dataset (for offline policy/ranker evaluation)
+## 14) Export replay dataset (for offline policy/ranker evaluation)
 `GET /analytics/replay-dataset?tenant_id=default&limit=500`
 
 Returns candidate-level rows with:

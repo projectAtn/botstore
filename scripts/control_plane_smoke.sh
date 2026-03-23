@@ -102,6 +102,25 @@ JSON
 pack_version_id="$(echo "$version_resp" | json_get 'id')"
 artifact_digest="$(echo "$version_resp" | json_get 'artifact_digest')"
 
+log "Upserting trust evidence + local verify"
+trust_resp="$(api PUT "/packs/$pack_id/versions/$pack_version_id/trust" "$(cat <<JSON
+{
+  "artifact_uri":"oci://botstore/$PACK_SLUG:1.0.1",
+  "signature_refs":["sig://local/$PACK_SLUG"],
+  "sbom_ref":"sbom://local/$PACK_SLUG.spdx.json",
+  "attestation_refs":["att://build/$PACK_SLUG","att://qa/$PACK_SLUG","att://prov/$PACK_SLUG"]
+}
+JSON
+)")"
+_="$(echo "$trust_resp" | json_get 'ok')"
+
+verify_resp="$(api POST "/packs/$pack_id/versions/$pack_version_id/trust/verify-local" '{}')"
+verify_ok="$(echo "$verify_resp" | json_get 'ok')"
+if [[ "$verify_ok" != "True" && "$verify_ok" != "true" ]]; then
+  echo "Expected trust verify ok=true, got: $verify_ok" >&2
+  exit 1
+fi
+
 log "Running install-by-capability-v2"
 install_resp="$(api POST '/agent/install-by-capability-v2' "$(cat <<JSON
 {

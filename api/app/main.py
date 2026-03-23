@@ -18,6 +18,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 from sqlmodel import Field, SQLModel, Session, create_engine, select
+from sqlalchemy import text
 
 
 class PackType(str, Enum):
@@ -171,6 +172,14 @@ class PackVersion(SQLModel, table=True):
     semver: str = Field(default="0.1.0", index=True)
     manifest_version: str = "v2"
     artifact_digest: str = Field(index=True)
+    artifact_uri: Optional[str] = None
+    signature_refs_json: str = "[]"
+    sbom_ref: Optional[str] = None
+    attestation_refs_json: str = "[]"
+    verification_state: str = "unverified"
+    verification_error: Optional[str] = None
+    verification_checked_at: Optional[str] = None
+    verification_verified_at: Optional[str] = None
     verification_tier: str = "tier0_listed"
     compatible_runtimes_json: str = "[]"
     policy_requirements_json: str = "{}"
@@ -370,6 +379,17 @@ class PackVersionCreate(SQLModel):
     compatible_runtimes: list[str] = ["openclaw"]
     policy_requirements: dict[str, Any] = {}
     verification_tier: str = "tier0_listed"
+    artifact_uri: Optional[str] = None
+    signature_refs: list[str] = []
+    sbom_ref: Optional[str] = None
+    attestation_refs: list[str] = []
+
+
+class PackVersionTrustUpsert(SQLModel):
+    artifact_uri: Optional[str] = None
+    signature_refs: list[str] = []
+    sbom_ref: Optional[str] = None
+    attestation_refs: list[str] = []
 
 
 class BundleValidateRequest(SQLModel):
@@ -776,9 +796,45 @@ app.add_middleware(
 )
 
 
+def _ensure_packversion_trust_columns() -> None:
+    needed = {
+        "artifact_uri": "TEXT",
+        "signature_refs_json": "TEXT DEFAULT '[]'",
+        "sbom_ref": "TEXT",
+        "attestation_refs_json": "TEXT DEFAULT '[]'",
+        "verification_state": "TEXT DEFAULT 'unverified'",
+        "verification_error": "TEXT",
+        "verification_checked_at": "TEXT",
+        "verification_verified_at": "TEXT",
+    }
+    with engine.begin() as conn:
+        cols = conn.execute(text("PRAGMA table_info(packversion)")).fetchall()
+        existing = {str(row[1]) for row in cols}
+        for col, decl in needed.items():
+            if col in existing:
+                continue
+            conn.execute(text(f"ALTER TABLE packversion ADD COLUMN {col} {decl}"))
+
+
+def _ensure_installattempt_columns() -> None:
+    needed = {
+        "install_target": "TEXT DEFAULT 'agent_workspace'",
+        "activation_mode": "TEXT DEFAULT 'immediate_hot'",
+    }
+    with engine.begin() as conn:
+        cols = conn.execute(text("PRAGMA table_info(installattempt)")).fetchall()
+        existing = {str(row[1]) for row in cols}
+        for col, decl in needed.items():
+            if col in existing:
+                continue
+            conn.execute(text(f"ALTER TABLE installattempt ADD COLUMN {col} {decl}"))
+
+
 @app.on_event("startup")
 def on_startup() -> None:
     SQLModel.metadata.create_all(engine)
+    _ensure_packversion_trust_columns()
+    _ensure_installattempt_columns()
 
 
 app.mount("/web", StaticFiles(directory="../web", html=True), name="web")
@@ -877,6 +933,26 @@ def _verification_tier_rank(tier: str) -> int:
         "bronze": 1,
     }
     return mapping.get((tier or "").strip().lower(), 0)
+
+
+def _verify_packversion_trust_local(pv: PackVersion) -> tuple[bool, str]:
+    if not (pv.artifact_digest or "").startswith("sha256:"):
+        return (False, "invalid_or_missing_artifact_digest")
+    if not pv.artifact_uri:
+        return (False, "missing_artifact_uri")
+    if not _json_list(pv.signature_refs_json):
+        return (False, "missing_signature_refs")
+    if not pv.sbom_ref:
+        return (False, "missing_sbom_ref")
+    attest = _json_list(pv.attestation_refs_json)
+    if len(attest) < 2:
+        return (False, "missing_attestation_refs")
+    return (True, "verified")
+
+
+def _is_packversion_trust_enforced_verified(pv: PackVersion) -> bool:
+    ok, _ = _verify_packversion_trust_local(pv)
+    return ok and pv.verification_state == "verified"
 
 
 def _policy_sign(payload: dict) -> str:
@@ -1341,6 +1417,12 @@ def _ensure_pack_version(
         pack_id=pack.id or 0,
         semver=pack.version,
         artifact_digest=digest,
+        artifact_uri=f"oci://botstore/{pack.slug}:{pack.version}",
+        signature_refs_json=json.dumps([]),
+        sbom_ref=None,
+        attestation_refs_json=json.dumps([]),
+        verification_state="unverified",
+        verification_error="missing_trust_evidence",
         verification_tier="tier0_listed",
         compatible_runtimes_json=json.dumps(["openclaw"]),
         policy_requirements_json=json.dumps({"runtime_band_max": "C"}),
@@ -1436,6 +1518,12 @@ def create_pack_version(pack_id: int, payload: PackVersionCreate) -> PackVersion
             semver=payload.semver,
             manifest_version=payload.manifest_version,
             artifact_digest=digest,
+            artifact_uri=payload.artifact_uri or f"oci://botstore/{pack.slug}:{payload.semver}",
+            signature_refs_json=json.dumps(sorted(set(payload.signature_refs))),
+            sbom_ref=payload.sbom_ref,
+            attestation_refs_json=json.dumps(sorted(set(payload.attestation_refs))),
+            verification_state="unverified",
+            verification_error="missing_trust_evidence",
             verification_tier=payload.verification_tier,
             compatible_runtimes_json=json.dumps(sorted(set(payload.compatible_runtimes))),
             policy_requirements_json=json.dumps(payload.policy_requirements),
@@ -1455,6 +1543,53 @@ def create_pack_version(pack_id: int, payload: PackVersionCreate) -> PackVersion
 def list_pack_versions(pack_id: int) -> list[PackVersion]:
     with Session(engine) as session:
         return list(session.exec(select(PackVersion).where(PackVersion.pack_id == pack_id).order_by(PackVersion.id.desc())).all())
+
+
+@app.put("/packs/{pack_id}/versions/{version_id}/trust")
+def upsert_pack_version_trust(pack_id: int, version_id: int, payload: PackVersionTrustUpsert) -> dict:
+    with Session(engine) as session:
+        pv = session.get(PackVersion, version_id)
+        if not pv or pv.pack_id != pack_id:
+            raise HTTPException(status_code=404, detail="pack version not found")
+
+        pv.artifact_uri = payload.artifact_uri or pv.artifact_uri
+        pv.signature_refs_json = json.dumps(sorted(set(payload.signature_refs))) if payload.signature_refs else pv.signature_refs_json
+        pv.sbom_ref = payload.sbom_ref or pv.sbom_ref
+        pv.attestation_refs_json = json.dumps(sorted(set(payload.attestation_refs))) if payload.attestation_refs else pv.attestation_refs_json
+        pv.verification_state = "unverified"
+        pv.verification_error = "pending_verification"
+        pv.verification_checked_at = _iso_now()
+        session.add(pv)
+        session.commit()
+        session.refresh(pv)
+        return {"ok": True, "pack_version_id": pv.id, "verification_state": pv.verification_state}
+
+
+@app.post("/packs/{pack_id}/versions/{version_id}/trust/verify-local")
+def verify_pack_version_trust_local(pack_id: int, version_id: int) -> dict:
+    with Session(engine) as session:
+        pv = session.get(PackVersion, version_id)
+        if not pv or pv.pack_id != pack_id:
+            raise HTTPException(status_code=404, detail="pack version not found")
+
+        ok, reason = _verify_packversion_trust_local(pv)
+        pv.verification_checked_at = _iso_now()
+        if ok:
+            pv.verification_state = "verified"
+            pv.verification_error = None
+            pv.verification_verified_at = _iso_now()
+        else:
+            pv.verification_state = "failed"
+            pv.verification_error = reason
+        session.add(pv)
+        session.commit()
+        session.refresh(pv)
+        return {
+            "ok": ok,
+            "pack_version_id": pv.id,
+            "verification_state": pv.verification_state,
+            "verification_error": pv.verification_error,
+        }
 
 
 @app.post("/interop/import-skill-folder")
@@ -1963,6 +2098,8 @@ def promote_pack(pack_id: int, featured: bool = True) -> Pack:
                 raise HTTPException(status_code=400, detail="current pack version required for promotion")
             if _verification_tier_rank(pv.verification_tier) < _verification_tier_rank("tier1_signed"):
                 raise HTTPException(status_code=400, detail="verification tier tier1_signed+ required")
+            if not _is_packversion_trust_enforced_verified(pv):
+                raise HTTPException(status_code=400, detail="trust verification required for promotion")
 
             attempts = list(session.exec(select(InstallAttempt).where(InstallAttempt.selected_pack_version_id == (pv.id or 0))).all())
             attempt_ids = [a.attempt_id for a in attempts]
@@ -2501,6 +2638,8 @@ def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -
         req = [c.strip() for c in payload.required_capabilities if c.strip()]
         pvs = list(session.exec(select(PackVersion).where(PackVersion.is_current == True)).all())
         for pv in pvs:
+            if not _is_packversion_trust_enforced_verified(pv):
+                continue
             pack = session.get(Pack, pv.pack_id)
             if not pack:
                 continue

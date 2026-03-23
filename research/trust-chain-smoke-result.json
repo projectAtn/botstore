@@ -1,0 +1,92 @@
+{
+  "generated_at": "2026-03-23T14:42:30.776173+00:00",
+  "base_url": "http://127.0.0.1:8787",
+  "pack_id": 156,
+  "pack_version_id": 21,
+  "negative_before_verify": {
+    "ok": false,
+    "attempt_id": "att_60e9611e447f4c07",
+    "message": "no matching pack versions",
+    "candidates": []
+  },
+  "trust_upsert": {
+    "ok": true,
+    "pack_version_id": 21,
+    "verification_state": "unverified"
+  },
+  "verify_local": {
+    "ok": true,
+    "pack_version_id": 21,
+    "verification_state": "verified",
+    "verification_error": null
+  },
+  "positive_after_verify": {
+    "ok": true,
+    "attempt_id": "att_05cf155721314dd9",
+    "task_id": "trust-pos-1774276950679682000",
+    "tenant_id": "default",
+    "runtime": {
+      "runtime_id": "openclaw",
+      "runtime_version": "0.2.0",
+      "runtime_band": "B"
+    },
+    "candidate_snapshot_id": "cand_78a704a6a5f8",
+    "install_target": "agent_workspace",
+    "activation_mode": "immediate_hot",
+    "selected": {
+      "pack_id": 156,
+      "pack_slug": "trust-smoke-1774276950679682000",
+      "pack_version_id": 21,
+      "artifact_digest": "sha256:6ed766a63e167355e6cd4fbc7339b1471fe8cb67478a3cb509e7f8880955a639",
+      "verification_tier": "tier2_verified",
+      "risk_level": "medium",
+      "capabilities_declared": [
+        "deploy.rollback"
+      ],
+      "scopes_requested": [
+        "log.read",
+        "message.send"
+      ],
+      "actions_supported": [
+        "deploy.rollback",
+        "message.send"
+      ],
+      "policy_effect": "allow_with_approval",
+      "policy_reasons": [
+        "sensitive_or_low_verification"
+      ],
+      "policy_blocking": [],
+      "score": 0.92
+    },
+    "selection": {
+      "mode": "deterministic",
+      "propensity": 1.0,
+      "safe_bucket_size": 1
+    },
+    "policy": {
+      "schema_version": "bps-0.1",
+      "decision_id": 12,
+      "effect": "allow_with_approval",
+      "reason_codes": [
+        "sensitive_or_low_verification"
+      ],
+      "blocking_conditions": [],
+      "required_approvals": [
+        "install"
+      ],
+      "minimum_verification_tier": "tier1_signed",
+      "runtime_requirements": {
+        "runtime_band_max": "B"
+      },
+      "policy_hash": "c2472bb903cd4bc0f219fb527db9ea4aaf6f09912112e3d2e3b2c21299d01a61"
+    },
+    "approval_grant": {
+      "grant_id": "gr_f717ad2b758548",
+      "expires_at": "2026-03-23T15:42:30.769788+00:00",
+      "signature": "pZk3y36k9r9E_moCxhv1CZ44c8GxXwpom6YxBlCzoVw"
+    },
+    "install_status": "pending_approval",
+    "activation_status": "pending",
+    "status": "approval_required"
+  }
+}

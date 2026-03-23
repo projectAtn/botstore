@@ -77,6 +77,7 @@ Then open: `http://localhost:8787/docs`
 - OpenClaw tool/scope/action mapping: `docs/openclaw-tool-scope-action-mapping-v1.md`
 - OpenClaw tenant policy matrix: `docs/openclaw-tenant-policy-matrix-v1.md`
 - OpenClaw phase-1 exit criteria: `docs/openclaw-phase1-exit-criteria-v1.md`
+- Trust chain design: `docs/trust-chain-design-v1.md`
 - Content system starter: `docs/content-strategy-v1.md`
 - Candidate pack quality gate: `research/candidate-packs-v1.json` + `scripts/quality_check_candidates.py` + `research/candidate-packs-quality-report.md`
 - Runtime simulation + tier gate: `scripts/runtime_simulation_verify.py` + `research/runtime-simulation-report.md` + `research/runtime-simulation-result.json`
@@ -89,6 +90,9 @@ Then open: `http://localhost:8787/docs`
 - OpenClaw phase-1 finalizer packet: `scripts/openclaw_phase1_finalize.sh`
 - Phase-1 exit checker: `scripts/phase1_exit_check.py`
 - Phase-1 go/no-go summarizer: `scripts/phase1_go_nogo.py`
+- Trust-chain smoke: `scripts/trust_chain_smoke.py`
+- Trust cosign wrappers: `scripts/trust_cosign_sign.sh`, `scripts/trust_cosign_verify.sh`
+- Trust SPDX generator: `scripts/trust_generate_spdx.sh`
 - Verification policy: `docs/verification-tiers.md`
 - Pack test runner: `scripts/pack_test_runner.py` + `research/pack-test-report.md` + `research/pack-test-result.json`
 - Statement-based contract runner: `research/pack-performance-contracts.json` + `scripts/contract_task_runner.py` + `research/contract-task-report.md` + `research/contract-task-result.json`
