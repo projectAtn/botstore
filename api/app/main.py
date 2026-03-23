@@ -853,8 +853,15 @@ def _parse_iso(ts: Optional[str]) -> Optional[datetime]:
         return None
 
 
+def _enum_token(value: Any) -> str:
+    if hasattr(value, "value"):
+        return str(getattr(value, "value"))
+    s = str(value)
+    return s.split(".")[-1] if "." in s else s
+
+
 def _runtime_band_rank(band: RuntimeBand | str) -> int:
-    b = str(band)
+    b = _enum_token(band)
     return {"A": 1, "B": 2, "C": 3, "D": 4}.get(b, 4)
 
 
@@ -1398,6 +1405,7 @@ def create_pack(payload: PackCreate) -> Pack:
         session.commit()
         session.refresh(pack)
         _ensure_pack_version(session, pack)
+        session.refresh(pack)
         return pack
 
 
@@ -2643,12 +2651,12 @@ def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -
         profile = _tenant_policy_profile(session, payload.tenant_id)
         if _runtime_band_rank(payload.runtime_band) > _runtime_band_rank(profile.runtime_band_max_autonomous):
             autonomy_block = f"runtime_band_exceeds_profile_max:{profile.runtime_band_max_autonomous}"
-        allowed_targets = set(_json_list(profile.allow_install_targets_json))
-        if str(install_target) not in allowed_targets:
-            autonomy_block = f"install_target_not_allowed:{install_target}"
-        allowed_modes = set(_json_list(profile.allow_activation_modes_json))
-        if str(activation_mode) not in allowed_modes:
-            autonomy_block = f"activation_mode_not_allowed:{activation_mode}"
+        allowed_targets = {_enum_token(x) for x in _json_list(profile.allow_install_targets_json)}
+        if _enum_token(install_target) not in allowed_targets:
+            autonomy_block = f"install_target_not_allowed:{_enum_token(install_target)}"
+        allowed_modes = {_enum_token(x) for x in _json_list(profile.allow_activation_modes_json)}
+        if _enum_token(activation_mode) not in allowed_modes:
+            autonomy_block = f"activation_mode_not_allowed:{_enum_token(activation_mode)}"
 
         if autonomy_block:
             attempt.status = InstallAttemptStatus.denied
@@ -2967,8 +2975,8 @@ def policy_tenant_profile_upsert(payload: TenantPolicyProfileUpsert) -> TenantPo
             )
         row.profile_name = payload.profile_name
         row.runtime_band_max_autonomous = payload.runtime_band_max_autonomous
-        row.allow_install_targets_json = json.dumps([str(x) for x in payload.allow_install_targets])
-        row.allow_activation_modes_json = json.dumps([str(x) for x in payload.allow_activation_modes])
+        row.allow_install_targets_json = json.dumps([_enum_token(x) for x in payload.allow_install_targets])
+        row.allow_activation_modes_json = json.dumps([_enum_token(x) for x in payload.allow_activation_modes])
         row.allow_sensitive_scopes_autonomous = payload.allow_sensitive_scopes_autonomous
         row.updated_at = _iso_now()
         session.add(row)

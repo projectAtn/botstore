@@ -1,0 +1,24 @@
+{
+  "runs": 2,
+  "all_health_and_policylog_ok": true,
+  "tcrr": {
+    "min": 0.2857,
+    "avg": 0.29910000000000003,
+    "max": 0.3125
+  },
+  "quarantine_rate": {
+    "min": 0.7727,
+    "avg": 0.77525,
+    "max": 0.7778
+  },
+  "approval_latency_minutes_avg": {
+    "samples": 2,
+    "avg": 0.0
+  },
+  "thresholds": {
+    "all_ok_required": true,
+    "quarantine_rate_max": 0.3,
+    "approval_latency_minutes_avg_max": 10.0
+  },
+  "go_nogo": "NO_GO"
+}

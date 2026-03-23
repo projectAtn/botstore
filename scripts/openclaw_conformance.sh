@@ -33,23 +33,33 @@ step "Running OpenClaw adapter smoke"
 )
 
 step "Collecting policy/profile/status evidence"
-STATUS="$(curl -fsS "$BASE_URL/status/control-plane?tenant_id=$TENANT_ID&lookback_days=30")"
-POLICY_LOG="$(curl -fsS "$BASE_URL/policy/decision-log?tenant_id=$TENANT_ID&limit=50")"
-TENANT_PROFILE="$(curl -fsS "$BASE_URL/policy/tenant-profile/$TENANT_ID")"
+STATUS_PATH="/tmp/openclaw_status_control_plane.json"
+POLICY_LOG_PATH="/tmp/openclaw_policy_decision_log.json"
+TENANT_PROFILE_PATH="/tmp/openclaw_tenant_profile.json"
+HEALTH_PATH="/tmp/openclaw_health.json"
+
+curl -fsS "$BASE_URL/status/control-plane?tenant_id=$TENANT_ID&lookback_days=30" > "$STATUS_PATH"
+curl -fsS "$BASE_URL/policy/decision-log?tenant_id=$TENANT_ID&limit=50" > "$POLICY_LOG_PATH"
+curl -fsS "$BASE_URL/policy/tenant-profile/$TENANT_ID" > "$TENANT_PROFILE_PATH"
+printf "%s" "$HEALTH" > "$HEALTH_PATH"
 
 python3 - <<PY
 import json, pathlib
 out_json = pathlib.Path("$OUT_JSON")
 out_md = pathlib.Path("$OUT_MD")
+health = json.loads(pathlib.Path("$HEALTH_PATH").read_text())
+status = json.loads(pathlib.Path("$STATUS_PATH").read_text())
+policy_log = json.loads(pathlib.Path("$POLICY_LOG_PATH").read_text())
+tenant_profile = json.loads(pathlib.Path("$TENANT_PROFILE_PATH").read_text())
 payload = {
   "generated_at": "$NOW",
   "base_url": "$BASE_URL",
   "tenant_id": "$TENANT_ID",
   "checks": {
-    "health": json.loads('''$HEALTH'''),
-    "status_control_plane": json.loads('''$STATUS'''),
-    "policy_decision_log": json.loads('''$POLICY_LOG'''),
-    "tenant_profile": json.loads('''$TENANT_PROFILE''')
+    "health": health,
+    "status_control_plane": status,
+    "policy_decision_log": policy_log,
+    "tenant_profile": tenant_profile
   },
   "logs": {
     "control_plane_smoke_log": "/tmp/control_plane_smoke.log",
@@ -74,7 +84,7 @@ md = [
   "- ✅ policy/tenant-profile",
   "",
   "## Artifacts",
-  f"- JSON: `{out_json}`",
+  "- JSON: " + str(out_json),
   "- Logs:",
   "  - /tmp/control_plane_smoke.log",
   "  - /tmp/openclaw_adapter_smoke.log",

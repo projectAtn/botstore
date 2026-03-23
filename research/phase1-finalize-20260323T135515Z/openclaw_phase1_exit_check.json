@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "artifact": "/Users/claw/.openclaw/workspace/botstore/research/openclaw-conformance-result.json",
+  "tenant_id": "default",
+  "tcrr": 0.25,
+  "quarantine_rate": 0.7857,
+  "approval_latency_minutes_avg": 0.0,
+  "policy_decision_count": 7,
+  "tenant_profile": {
+    "profile_name": "balanced",
+    "runtime_band_max_autonomous": "B"
+  }
+}

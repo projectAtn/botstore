@@ -5,7 +5,7 @@ BASE_URL="${BASE_URL:-http://127.0.0.1:8787}"
 TENANT_ID="${TENANT_ID:-default}"
 RUNTIME_ID="${RUNTIME_ID:-openclaw}"
 RUNTIME_BAND="${RUNTIME_BAND:-B}"
-TS="$(date +%s)"
+TS="$(date +%s%N)"
 
 log() {
   printf "\n[%s] %s\n" "$(date +%H:%M:%S)" "$*"
@@ -13,10 +13,14 @@ log() {
 
 json_get() {
   local path="$1"
-  python3 - "$path" <<'PY'
+  local payload="${2:-}"
+  if [[ -z "$payload" ]]; then
+    payload="$(cat)"
+  fi
+  python3 - "$path" "$payload" <<'PY'
 import json, sys
 path = sys.argv[1]
-obj = json.load(sys.stdin)
+obj = json.loads(sys.argv[2])
 cur = obj
 for part in path.split('.'):
     if part == '':
