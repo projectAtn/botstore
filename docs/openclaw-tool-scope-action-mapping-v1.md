@@ -22,6 +22,7 @@ Purpose: ensure sensitive actions are authorized with typed metadata before exec
 ## Policy requirement
 - `email.send`, `message.send`, `social.post`, `payment.charge`, `files.delete` are sensitive scopes.
 - Any attempt to execute a sensitive action must call `/agent/action-authorize` first.
+- Mapping completeness for required sensitive keys is validated by: `scripts/openclaw_typed_map_check.py`.
 
 ## Enforcement rules
 1. Resolve mapping before tool execution.

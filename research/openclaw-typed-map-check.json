@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-03-24T14:30:00.865387+00:00",
+  "all_pass": true,
+  "required_sensitive": [
+    "message.send",
+    "email.send",
+    "social.post",
+    "files.delete",
+    "payment.charge"
+  ],
+  "rows": [
+    {
+      "key": "message.send",
+      "mapping": {
+        "action_class": "message.send",
+        "requested_scope": "message.send",
+        "side_effect_level": "external_send"
+      },
+      "pass": true
+    },
+    {
+      "key": "email.send",
+      "mapping": {
+        "action_class": "email.send",
+        "requested_scope": "email.send",
+        "side_effect_level": "external_send"
+      },
+      "pass": true
+    },
+    {
+      "key": "social.post",
+      "mapping": {
+        "action_class": "social.post",
+        "requested_scope": "social.post",
+        "side_effect_level": "external_send"
+      },
+      "pass": true
+    },
+    {
+      "key": "files.delete",
+      "mapping": {
+        "action_class": "files.delete",
+        "requested_scope": "files.delete",
+        "side_effect_level": "delete"
+      },
+      "pass": true
+    },
+    {
+      "key": "payment.charge",
+      "mapping": {
+        "action_class": "payment.charge",
+        "requested_scope": "payment.charge",
+        "side_effect_level": "charge"
+      },
+      "pass": true
+    }
+  ]
+}

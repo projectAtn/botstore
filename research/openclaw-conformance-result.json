@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-24T06:10:26Z",
+  "generated_at": "2026-03-24T14:29:59Z",
   "base_url": "http://127.0.0.1:8787",
   "tenant_id": "default",
   "checks": {
@@ -13,27 +13,119 @@
       "window_days": 30,
       "tenant_id": "default",
       "north_star": {
-        "trusted_capability_resolution_rate": 0.2727,
-        "numerator_successful_resolutions": 9,
-        "denominator_gap_events": 33
+        "trusted_capability_resolution_rate": 0.3243,
+        "numerator_successful_resolutions": 12,
+        "denominator_gap_events": 37
       },
       "safety": {
-        "quarantine_rate": 0.7632,
-        "quarantined_outcomes": 29,
-        "total_outcomes": 38
+        "quarantine_rate": 0.7391,
+        "quarantined_outcomes": 34,
+        "total_outcomes": 46
       },
       "latency": {
         "approval_latency_minutes_avg": 0.0,
-        "samples": 43
+        "samples": 51
       },
       "exploration": {
-        "exploration_attempts": 18,
+        "exploration_attempts": 22,
         "bandit_regret_proxy": 0.0
       }
     },
     "policy_decision_log": {
       "ok": true,
       "rows": [
+        {
+          "attempt_id": "att_2dda4e705ffd409f",
+          "task_id": "task-openclaw-smoke-1774362600",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "badc5f147f99b9577204326c1b8a45783d9e2cc1810ce4106de0a94f443b8735",
+          "approval_grant_id": "gr_f79819a2feec45",
+          "created_at": "2026-03-24T14:30:00.780194+00:00"
+        },
+        {
+          "attempt_id": "att_47b2b827440340ee",
+          "task_id": "task-smoke-1774362600069305000",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "04f7d89aa31ad5a48f1d6c19bbf2a1683738bdfa1b5b0726b440a0e85aa2b64c",
+          "approval_grant_id": "gr_39f2c49b76c943",
+          "created_at": "2026-03-24T14:30:00.362399+00:00"
+        },
+        {
+          "attempt_id": "att_34334cdbbc3c45ab",
+          "task_id": "task-openclaw-smoke-1774362182",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "b57737771ff2eee6ac61a921b43e1941c3df9091d39308f77853837e465de92b",
+          "approval_grant_id": "gr_e96edeb56fea46",
+          "created_at": "2026-03-24T14:23:02.790323+00:00"
+        },
+        {
+          "attempt_id": "att_f35a62c607654a8b",
+          "task_id": "task-openclaw-smoke-1774352173",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "1f05bc584351340d9023a1f88b13d2372729eaa2ddc76f64ff178fd9ae87e21a",
+          "approval_grant_id": "gr_53e2bcecbc6e45",
+          "created_at": "2026-03-24T11:36:13.827653+00:00"
+        },
         {
           "attempt_id": "att_041966b6667c42d0",
           "task_id": "task-openclaw-smoke-1774332626",
@@ -587,7 +679,7 @@
           "created_at": "2026-03-23T13:53:56.419924+00:00"
         }
       ],
-      "count": 24,
+      "count": 28,
       "schema_version": "policy-decision-log-v1"
     },
     "tenant_profile": {
@@ -597,13 +689,72 @@
       "allow_install_targets_json": "[\"sandbox_workspace\", \"agent_workspace\", \"managed_skill_store\"]",
       "allow_activation_modes_json": "[\"immediate_hot\", \"next_session\"]",
       "allow_sensitive_scopes_autonomous": false,
-      "created_at": "2026-03-24T06:10:26.859895+00:00",
-      "updated_at": "2026-03-24T06:10:26.859900+00:00",
+      "created_at": "2026-03-24T14:30:00.904346+00:00",
+      "updated_at": "2026-03-24T14:30:00.904351+00:00",
       "id": null
+    },
+    "typed_action_map": {
+      "generated_at": "2026-03-24T14:30:00.865387+00:00",
+      "all_pass": true,
+      "required_sensitive": [
+        "message.send",
+        "email.send",
+        "social.post",
+        "files.delete",
+        "payment.charge"
+      ],
+      "rows": [
+        {
+          "key": "message.send",
+          "mapping": {
+            "action_class": "message.send",
+            "requested_scope": "message.send",
+            "side_effect_level": "external_send"
+          },
+          "pass": true
+        },
+        {
+          "key": "email.send",
+          "mapping": {
+            "action_class": "email.send",
+            "requested_scope": "email.send",
+            "side_effect_level": "external_send"
+          },
+          "pass": true
+        },
+        {
+          "key": "social.post",
+          "mapping": {
+            "action_class": "social.post",
+            "requested_scope": "social.post",
+            "side_effect_level": "external_send"
+          },
+          "pass": true
+        },
+        {
+          "key": "files.delete",
+          "mapping": {
+            "action_class": "files.delete",
+            "requested_scope": "files.delete",
+            "side_effect_level": "delete"
+          },
+          "pass": true
+        },
+        {
+          "key": "payment.charge",
+          "mapping": {
+            "action_class": "payment.charge",
+            "requested_scope": "payment.charge",
+            "side_effect_level": "charge"
+          },
+          "pass": true
+        }
+      ]
     }
   },
   "logs": {
     "control_plane_smoke_log": "/tmp/control_plane_smoke.log",
-    "openclaw_adapter_smoke_log": "/tmp/openclaw_adapter_smoke.log"
+    "openclaw_adapter_smoke_log": "/tmp/openclaw_adapter_smoke.log",
+    "openclaw_typed_map_check_log": "/tmp/openclaw_typed_map_check.log"
   }
 }

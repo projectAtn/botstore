@@ -1,6 +1,6 @@
 # OpenClaw Conformance Report
 
-- Generated: 2026-03-24T06:10:26Z
+- Generated: 2026-03-24T14:29:59Z
 - Base URL: http://127.0.0.1:8787
 - Tenant: default
 
@@ -8,6 +8,7 @@
 - ✅ health
 - ✅ control_plane_smoke.sh
 - ✅ openclaw_adapter_smoke.sh
+- ✅ openclaw_typed_map_check.py
 - ✅ status/control-plane
 - ✅ policy/decision-log
 - ✅ policy/tenant-profile
@@ -17,3 +18,4 @@
 - Logs:
   - /tmp/control_plane_smoke.log
   - /tmp/openclaw_adapter_smoke.log
+  - /tmp/openclaw_typed_map_check.log

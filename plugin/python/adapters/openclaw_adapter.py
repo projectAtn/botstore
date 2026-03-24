@@ -184,8 +184,15 @@ class OpenClawAdapter:
 
         key = f"{tool_name}:{operation}".strip(":")
         table = {
+            # Pilot sensitive classes (must remain explicit and typed)
             "message.send": {"action_class": "message.send", "requested_scope": "message.send", "side_effect_level": "external_send"},
             "message.send:send": {"action_class": "message.send", "requested_scope": "message.send", "side_effect_level": "external_send"},
+            "email.send": {"action_class": "email.send", "requested_scope": "email.send", "side_effect_level": "external_send"},
+            "social.post": {"action_class": "social.post", "requested_scope": "social.post", "side_effect_level": "external_send"},
+            "files.delete": {"action_class": "files.delete", "requested_scope": "files.delete", "side_effect_level": "delete"},
+            "payment.charge": {"action_class": "payment.charge", "requested_scope": "payment.charge", "side_effect_level": "charge"},
+
+            # Operational runtime actions
             "nodes.invoke": {"action_class": "device.invoke", "requested_scope": "device.invoke", "side_effect_level": "write"},
             "nodes.run": {"action_class": "device.command", "requested_scope": "device.command", "side_effect_level": "write"},
             "browser.act": {"action_class": "browser.act", "requested_scope": "browser.act", "side_effect_level": "write"},

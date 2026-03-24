@@ -53,6 +53,10 @@ def main() -> int:
     if not profile.get("tenant_id"):
         _fail("tenant policy profile missing tenant_id")
 
+    typed = checks.get("typed_action_map", {})
+    if typed.get("all_pass") is not True:
+        _fail("typed_action_map.all_pass is not true")
+
     summary = {
         "ok": True,
         "artifact": str(path),

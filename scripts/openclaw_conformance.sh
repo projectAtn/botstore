@@ -32,6 +32,12 @@ step "Running OpenClaw adapter smoke"
   BOTSTORE_API="$BASE_URL" TENANT_ID="$TENANT_ID" ./scripts/openclaw_adapter_smoke.sh >/tmp/openclaw_adapter_smoke.log 2>&1
 )
 
+step "Running typed action map check"
+(
+  cd "$ROOT"
+  python3 ./scripts/openclaw_typed_map_check.py >/tmp/openclaw_typed_map_check.log 2>&1
+)
+
 step "Collecting policy/profile/status evidence"
 STATUS_PATH="/tmp/openclaw_status_control_plane.json"
 POLICY_LOG_PATH="/tmp/openclaw_policy_decision_log.json"
@@ -51,6 +57,8 @@ health = json.loads(pathlib.Path("$HEALTH_PATH").read_text())
 status = json.loads(pathlib.Path("$STATUS_PATH").read_text())
 policy_log = json.loads(pathlib.Path("$POLICY_LOG_PATH").read_text())
 tenant_profile = json.loads(pathlib.Path("$TENANT_PROFILE_PATH").read_text())
+typed_map = json.loads(pathlib.Path("$ROOT/research/openclaw-typed-map-check.json").read_text())
+
 payload = {
   "generated_at": "$NOW",
   "base_url": "$BASE_URL",
@@ -59,11 +67,13 @@ payload = {
     "health": health,
     "status_control_plane": status,
     "policy_decision_log": policy_log,
-    "tenant_profile": tenant_profile
+    "tenant_profile": tenant_profile,
+    "typed_action_map": typed_map
   },
   "logs": {
     "control_plane_smoke_log": "/tmp/control_plane_smoke.log",
-    "openclaw_adapter_smoke_log": "/tmp/openclaw_adapter_smoke.log"
+    "openclaw_adapter_smoke_log": "/tmp/openclaw_adapter_smoke.log",
+    "openclaw_typed_map_check_log": "/tmp/openclaw_typed_map_check.log"
   }
 }
 out_json.write_text(json.dumps(payload, indent=2))
@@ -79,6 +89,7 @@ md = [
   "- ✅ health",
   "- ✅ control_plane_smoke.sh",
   "- ✅ openclaw_adapter_smoke.sh",
+  "- ✅ openclaw_typed_map_check.py",
   "- ✅ status/control-plane",
   "- ✅ policy/decision-log",
   "- ✅ policy/tenant-profile",
@@ -88,6 +99,7 @@ md = [
   "- Logs:",
   "  - /tmp/control_plane_smoke.log",
   "  - /tmp/openclaw_adapter_smoke.log",
+  "  - /tmp/openclaw_typed_map_check.log",
 ]
 out_md.write_text("\n".join(md) + "\n")
 print(f"Wrote {out_json}")
