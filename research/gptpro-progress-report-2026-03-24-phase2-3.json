@@ -1,0 +1,340 @@
+{
+  "report_version": "gptpro-progress-phase2-3-v1",
+  "generated_at": "2026-03-24T17:27:00+01:00",
+  "project": {
+    "name": "BotStore",
+    "reference_runtime": "OpenClaw",
+    "scope_lock": {
+      "autonomous_pack_types": [
+        "skill",
+        "personality"
+      ],
+      "manual_only": [
+        "gateway/native-plugin installs"
+      ],
+      "excluded_from_autonomous_ga": [
+        "payment/charge",
+        "autonomous social posting",
+        "sensitive decisions inferred from raw shell/browser text"
+      ]
+    }
+  },
+  "time_window": {
+    "since_user_posted_latest_gpt_pro_plan": true,
+    "anchor_description": "User-provided final-mile GPT Pro execution plan for phases 2A/2B/2C/2D/3",
+    "approx_window": "2026-03-23 15:44 -> 2026-03-24 17:24 Europe/Oslo"
+  },
+  "executive_summary": {
+    "status": "COMPLETED for scoped run",
+    "result": "GO",
+    "scorecard_pass_count": "7/7",
+    "latest_commit": "34b5273",
+    "completed_blocks": [
+      "Phase 2A trust-chain baseline enforcement",
+      "Phase 2B policy-ops lifecycle + replay + rollback",
+      "Phase 2C OpenClaw adapter hardening evidence",
+      "Phase 2D runtime2 (python host-bot) L2 certification",
+      "Phase 3 launch-hardening package"
+    ]
+  },
+  "commit_timeline": [
+    {
+      "sha": "4df4315",
+      "title": "Add phase-2A trust chain gates, APIs, and verification smoke artifacts",
+      "impact": [
+        "PackVersion trust fields + local verification gate",
+        "install-by-capability-v2 trust precondition",
+        "promotion trust precondition"
+      ]
+    },
+    {
+      "sha": "f5d6a4a",
+      "title": "Harden trust verifier predicates and add negative matrix coverage",
+      "impact": [
+        "required attestation predicates expanded (build/verify/conformance/qa/prov)",
+        "negative-matrix trust tests added"
+      ]
+    },
+    {
+      "sha": "6a0296a",
+      "title": "Add policy-ops lifecycle transitions, replay diff, and rollback tooling",
+      "impact": [
+        "bundle lifecycle states + transitions",
+        "replay diff endpoint",
+        "single-command rollback path"
+      ]
+    },
+    {
+      "sha": "ae71f91",
+      "title": "Make approval pause/resume idempotent and validate via OpenClaw smoke",
+      "impact": [
+        "pause/resume retry safety",
+        "checkpoint idempotency semantics"
+      ]
+    },
+    {
+      "sha": "b958624",
+      "title": "Add scope fidelity report and adapter hardening evidence artifacts",
+      "impact": [
+        "scope fidelity measurement artifacts",
+        "adapter hardening report"
+      ]
+    },
+    {
+      "sha": "cb12d50",
+      "title": "Add typed sensitive action-map completeness checks to OpenClaw conformance",
+      "impact": [
+        "required sensitive keys enforced in typed map check",
+        "conformance fails when typed map incomplete"
+      ]
+    },
+    {
+      "sha": "b98fb1a",
+      "title": "Add OpenClaw auth-bypass guard check and enforce it in conformance",
+      "impact": [
+        "explicit auth-bypass checks",
+        "exit checker extended with bypass guard"
+      ]
+    },
+    {
+      "sha": "191449d",
+      "title": "Add runtime2 (python host-bot) certification and compatibility matrix artifacts",
+      "impact": [
+        "runtime2 L2 certification flow",
+        "compatibility matrix published",
+        "no scope expansion"
+      ]
+    },
+    {
+      "sha": "34b5273",
+      "title": "Add launch scorecard, operator runbook, and go-no-go report",
+      "impact": [
+        "final launch-hardening pack",
+        "go/no-go decision artifact"
+      ]
+    }
+  ],
+  "phase_2a_trust_chain": {
+    "implemented": [
+      "PackVersion trust metadata fields",
+      "trust upsert endpoint",
+      "local trust verify endpoint",
+      "install fail-closed when trust not verified",
+      "promotion blocked without trust-verified pack version"
+    ],
+    "key_files": [
+      "api/app/main.py",
+      "scripts/trust_chain_smoke.py",
+      "scripts/trust_chain_negative_matrix.py",
+      "scripts/trust_cosign_sign.sh",
+      "scripts/trust_cosign_verify.sh",
+      "scripts/trust_generate_spdx.sh",
+      "docs/trust-chain-design-v1.md",
+      "research/trust-verification-report-2026-03-23.md",
+      "research/trust-negative-test-report-2026-03-23.md"
+    ],
+    "validation": {
+      "happy_path": "PASS",
+      "negative_matrix": "PASS",
+      "notes": [
+        "pre-verify install returns no trusted candidate",
+        "post-verify install succeeds"
+      ]
+    }
+  },
+  "phase_2b_policy_ops": {
+    "implemented": [
+      "lifecycle states on policy bundles (draft/tested/shadow/canary/active/retired)",
+      "bundle transition endpoint",
+      "replay-diff endpoint",
+      "rollback pointer + rollback endpoint",
+      "policy fixture set + fixture runner",
+      "policy ops runbook"
+    ],
+    "key_files": [
+      "api/app/main.py",
+      "scripts/policy_fixture_runner.py",
+      "scripts/policy_ops_demo.py",
+      "scripts/policy_bundle_rollback.sh",
+      "docs/policy-ops-runbook-v1.md",
+      "research/policy-fixture-report.json",
+      "research/policy-ops-demo-result.json"
+    ],
+    "validation": {
+      "fixtures": "PASS",
+      "demo_lifecycle": "PASS",
+      "replay_diff": "PASS",
+      "rollback_demo": "PASS"
+    }
+  },
+  "phase_2c_adapter_hardening": {
+    "implemented": [
+      "OpenClaw approval checkpoint pause/resume idempotency",
+      "typed sensitive action map completeness check",
+      "auth-bypass guard check",
+      "scope fidelity report",
+      "conformance harness now includes typed-map + bypass checks"
+    ],
+    "key_files": [
+      "plugin/python/adapters/openclaw_adapter.py",
+      "scripts/openclaw_typed_map_check.py",
+      "scripts/openclaw_auth_bypass_check.py",
+      "scripts/scope_fidelity_report.py",
+      "scripts/openclaw_conformance.sh",
+      "research/openclaw-typed-map-check.json",
+      "research/openclaw-auth-bypass-check.json",
+      "research/scope-fidelity-report.json",
+      "research/adapter-hardening-report-2026-03-24.md"
+    ],
+    "validation": {
+      "openclaw_adapter_smoke": "PASS",
+      "conformance": "PASS",
+      "typed_map": "PASS",
+      "auth_bypass": "PASS"
+    }
+  },
+  "phase_2d_runtime2_certification": {
+    "runtime2": "python-hostbot adapter",
+    "target_level": "L2",
+    "implemented": [
+      "runtime2 certification script",
+      "runtime compatibility matrix artifacts",
+      "runtime2 kept below OpenClaw trust level"
+    ],
+    "key_files": [
+      "scripts/runtime2_certify_python_hostbot.py",
+      "research/runtime2-certification-python-hostbot.json",
+      "research/runtime-compatibility-matrix-v1.json"
+    ],
+    "validation": {
+      "install": "PASS",
+      "activate": "PASS",
+      "outcome": "PASS",
+      "limited_auth": "PASS"
+    },
+    "scope_control": "No autonomous scope expansion introduced"
+  },
+  "phase_3_launch_hardening": {
+    "implemented": [
+      "launch scorecard generator",
+      "operator runbook",
+      "go/no-go report"
+    ],
+    "key_files": [
+      "scripts/launch_scorecard.py",
+      "docs/operator-runbook-v1.md",
+      "research/launch-scorecard-2026-03-24.json",
+      "research/go-no-go-report-2026-03-24.md"
+    ],
+    "final_result": {
+      "go_nogo": "GO",
+      "checks": {
+        "openclaw_conformance_ok": true,
+        "typed_action_map_ok": true,
+        "auth_bypass_check_ok": true,
+        "trust_smoke_happy_path_ok": true,
+        "trust_negative_matrix_ok": true,
+        "policy_fixtures_ok": true,
+        "runtime2_l2_ok": true
+      }
+    }
+  },
+  "problems_encountered_and_cleared": [
+    {
+      "id": "P-01",
+      "problem": "Trust verifier initially too permissive/minimal",
+      "fix": "Expanded required trust predicates and added negative matrix coverage",
+      "status": "cleared"
+    },
+    {
+      "id": "P-02",
+      "problem": "Pause/resume approval flow was not idempotent",
+      "fix": "Added idempotent behavior for repeated pause/resume requests",
+      "status": "cleared"
+    },
+    {
+      "id": "P-03",
+      "problem": "Potential auth-bypass confidence gap for typed mapping completeness",
+      "fix": "Added typed map completeness + explicit auth-bypass check, wired to conformance and exit checker",
+      "status": "cleared"
+    },
+    {
+      "id": "P-04",
+      "problem": "Runtime2 trust/cert path initially failed due method mismatch and runtime-band profile mismatch",
+      "fix": "Updated script to use proper HTTP methods (PUT for trust upsert) and aligned runtime band with tenant profile",
+      "status": "cleared"
+    },
+    {
+      "id": "P-05",
+      "problem": "Update cadence/process discipline failures (missed user-requested progress heartbeat)",
+      "fix": "Workspace postmortem + heartbeat enforcement + explicit breach handling",
+      "status": "partially cleared (technical fix applied; behavioral consistency still needs real-world proof)"
+    }
+  ],
+  "known_gaps_or_debt_to_clear_next": [
+    {
+      "id": "D-01",
+      "topic": "Production-grade cryptographic trust enforcement",
+      "detail": "Current install gate uses local evidence verification; full cryptographic cosign/in-toto/SLSA verification at install-time is still a follow-up hardening step",
+      "severity": "medium"
+    },
+    {
+      "id": "D-02",
+      "topic": "Policy rollback automation by SLO-trigger",
+      "detail": "Lifecycle + rollback command exists; fully automated SLO-triggered rollback loop is not fully productized",
+      "severity": "medium"
+    },
+    {
+      "id": "D-03",
+      "topic": "Operational cadence reliability",
+      "detail": "Process instrumentation exists, but human-visible cadence reliability still requires sustained adherence",
+      "severity": "medium"
+    }
+  ],
+  "artifact_index": {
+    "conformance": [
+      "research/openclaw-conformance-result.json",
+      "research/openclaw-conformance-report.md"
+    ],
+    "trust": [
+      "research/trust-chain-smoke-result.json",
+      "research/trust-chain-negative-matrix-result.json",
+      "research/trust-verification-report-2026-03-23.md",
+      "research/trust-negative-test-report-2026-03-23.md"
+    ],
+    "policy_ops": [
+      "research/policy-fixture-report.json",
+      "research/policy-ops-demo-result.json",
+      "docs/policy-ops-runbook-v1.md"
+    ],
+    "adapter": [
+      "research/openclaw-adapter-e2e-result.json",
+      "research/openclaw-typed-map-check.json",
+      "research/openclaw-auth-bypass-check.json",
+      "research/scope-fidelity-report.json"
+    ],
+    "runtime2": [
+      "research/runtime2-certification-python-hostbot.json",
+      "research/runtime-compatibility-matrix-v1.json"
+    ],
+    "launch": [
+      "research/launch-scorecard-2026-03-24.json",
+      "research/go-no-go-report-2026-03-24.md",
+      "docs/operator-runbook-v1.md"
+    ]
+  },
+  "recommendations_for_next_gpt_pro_cycle": {
+    "focus": [
+      "Convert local trust evidence checks into strict cryptographic verification gates",
+      "Implement policy SLO-triggered automatic rollback controller",
+      "Add explicit post-launch monitoring and alert envelope definitions",
+      "Audit and enforce progress-cadence reliability with measurable SLA"
+    ],
+    "do_not_change": [
+      "scope lock",
+      "manual-only plugin/native install path",
+      "pre-execution authorization boundary",
+      "quarantine-on-observed-scope-mismatch"
+    ]
+  }
+}
