@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-03-24T16:16:03.017444+00:00",
+  "checks": {
+    "openclaw_conformance_ok": true,
+    "typed_action_map_ok": true,
+    "auth_bypass_check_ok": true,
+    "trust_smoke_happy_path_ok": true,
+    "trust_negative_matrix_ok": true,
+    "policy_fixtures_ok": true,
+    "runtime2_l2_ok": true
+  },
+  "pass_count": 7,
+  "total": 7,
+  "go_nogo": "GO",
+  "notes": [
+    "Scope lock preserved: OpenClaw reference runtime primary; runtime2 at lower trust level.",
+    "No autonomous gateway/native-plugin install path introduced.",
+    "Sensitive action mapping + auth-bypass checks included in conformance."
+  ]
+}
