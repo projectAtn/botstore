@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-03-24T14:56:02.914198+00:00",
+  "base_url": "http://127.0.0.1:8787",
+  "runtime": {
+    "runtime_id": "python-hostbot",
+    "target_level": "L2",
+    "passes": {
+      "install_flow": true,
+      "outcome_flow": true,
+      "limited_auth_path": true
+    },
+    "all_pass": true
+  },
+  "pack_id": 173,
+  "pack_version_id": 55,
+  "plugin_bind": {
+    "channel": "hostbot",
+    "user_id": "hostbot:1774364162846087000",
+    "runtime_id": "python-hostbot",
+    "id": 17,
+    "agent_id": "agent-hostbot-1774364162846087000",
+    "is_default": true
+  },
+  "plugin_where": {
+    "user_id": "hostbot:1774364162846087000",
+    "installs": []
+  },
+  "install": {
+    "ok": true,
+    "attempt_id": "att_64f0ec7231f1421a",
+    "task_id": "r2-install-1774364162846087000",
+    "tenant_id": "default",
+    "runtime": {
+      "runtime_id": "python-hostbot",
+      "runtime_version": "0.1.0",
+      "runtime_band": "B"
+    },
+    "candidate_snapshot_id": "cand_349eacded8ec",
+    "install_target": "agent_workspace",
+    "activation_mode": "immediate_hot",
+    "selected": {
+      "pack_id": 173,
+      "pack_slug": "r2-hostbot-1774364162846087000",
+      "pack_version_id": 55,
+      "artifact_digest": "sha256:d74ff0e387acbe46610201ee454164bbd6c17070d87f61f5e46090acab69f1fd",
+      "verification_tier": "tier2_verified",
+      "risk_level": "low",
+      "capabilities_declared": [
+        "runtime2.hostbot.cap.1774364162846087000"
+      ],
+      "scopes_requested": [
+        "log.read"
+      ],
+      "actions_supported": [
+        "inspect.status"
+      ],
+      "policy_effect": "allow",
+      "policy_reasons": [
+        "low_risk_context"
+      ],
+      "policy_blocking": [],
+      "score": 1.18
+    },
+    "selection": {
+      "mode": "deterministic",
+      "propensity": 1.0,
+      "safe_bucket_size": 1
+    },
+    "policy": {
+      "schema_version": "bps-0.1",
+      "decision_id": 31,
+      "effect": "allow",
+      "reason_codes": [
+        "low_risk_context"
+      ],
+      "blocking_conditions": [],
+      "required_approvals": [],
+      "minimum_verification_tier": "tier0_listed",
+      "runtime_requirements": {
+        "runtime_band_max": "C"
+      },
+      "policy_hash": "4e91b20e0f3aa795fe4d8d186ffd2093168c413f9a560220f1427ac656f9b6e6"
+    },
+    "approval_grant": null,
+    "install_status": "installed",
+    "activation_status": "activated",
+    "status": "activated"
+  },
+  "auth": {
+    "decision": "allow",
+    "reason": "action permitted",
+    "grant_token": null,
+    "grant_id": null,
+    "expires_at": null
+  },
+  "outcome": {
+    "ok": true,
+    "outcome_report_id": 51,
+    "attempt_id": "att_64f0ec7231f1421a",
+    "reward": 1.0,
+    "quarantined": false,
+    "undeclared_scopes": []
+  }
+}

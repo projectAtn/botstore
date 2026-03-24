@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-03-24T15:55:00+01:00",
+  "runtimes": [
+    {
+      "runtime_id": "openclaw",
+      "cert_level": "L4-target",
+      "current_level": "L3+",
+      "capabilities": {
+        "install": true,
+        "activate": true,
+        "action_authorize": true,
+        "observed_scopes": "high_confidence",
+        "rollback": "deterministic",
+        "attestation": "in_progress"
+      },
+      "autonomous_scope": "primary reference runtime"
+    },
+    {
+      "runtime_id": "python-hostbot",
+      "cert_level": "L2",
+      "current_level": "L2",
+      "capabilities": {
+        "install": true,
+        "activate": true,
+        "action_authorize": "limited",
+        "observed_scopes": "basic",
+        "rollback": "best_effort",
+        "attestation": "none"
+      },
+      "autonomous_scope": "no risk-scope expansion; below OpenClaw trust level"
+    }
+  ],
+  "notes": [
+    "Runtime2 certification must not expand autonomous launch scope.",
+    "OpenClaw remains trust reference runtime."
+  ]
+}

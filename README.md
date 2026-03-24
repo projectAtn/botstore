@@ -110,6 +110,8 @@ Then open: `http://localhost:8787/docs`
 - OpenClaw adapter contract diff (phase 1): `research/openclaw-adapter-contract-diff-phase1.md`
 - OpenClaw phase-1 risk register: `research/openclaw-phase1-risk-register.md`
 - OpenClaw phase-1 launch readiness packet: `research/openclaw-phase1-launch-readiness-packet.md`
+- Runtime compatibility matrix: `research/runtime-compatibility-matrix-v1.json` + `research/runtime-compatibility-matrix-v1.md`
+- Runtime2 certification report (python host-bot): `research/runtime2-certification-python-hostbot.json` + `research/runtime2-certification-python-hostbot.md`
 
 ## Next milestones
 1. Add auth + publisher namespaces

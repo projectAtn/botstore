@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-24T14:51:27Z",
+  "generated_at": "2026-03-24T14:56:18Z",
   "base_url": "http://127.0.0.1:8787",
   "tenant_id": "default",
   "checks": {
@@ -13,27 +13,94 @@
       "window_days": 30,
       "tenant_id": "default",
       "north_star": {
-        "trusted_capability_resolution_rate": 0.3333,
-        "numerator_successful_resolutions": 13,
-        "denominator_gap_events": 39
+        "trusted_capability_resolution_rate": 0.3488,
+        "numerator_successful_resolutions": 15,
+        "denominator_gap_events": 43
       },
       "safety": {
-        "quarantine_rate": 0.74,
-        "quarantined_outcomes": 37,
-        "total_outcomes": 50
+        "quarantine_rate": 0.7273,
+        "quarantined_outcomes": 40,
+        "total_outcomes": 55
       },
       "latency": {
         "approval_latency_minutes_avg": 0.0,
-        "samples": 55
+        "samples": 59
       },
       "exploration": {
-        "exploration_attempts": 24,
+        "exploration_attempts": 26,
         "bandit_regret_proxy": 0.0
       }
     },
     "policy_decision_log": {
       "ok": true,
       "rows": [
+        {
+          "attempt_id": "att_5dee33626df344c5",
+          "task_id": "task-openclaw-smoke-1774364179",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "9abc06236f11054011e0fa43b93f6dc70a8baf54c23affb746878a52c8725d94",
+          "approval_grant_id": "gr_bfffffe47dc04b",
+          "created_at": "2026-03-24T14:56:19.275289+00:00"
+        },
+        {
+          "attempt_id": "att_ec4fe2de22934e5c",
+          "task_id": "task-smoke-1774364178579381000",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "779a91c6fd7205fb98c2eca122f62dc30694a4758ce5d5292ddb181e94ad9fb0",
+          "approval_grant_id": "gr_5701cc3110114c",
+          "created_at": "2026-03-24T14:56:18.849494+00:00"
+        },
+        {
+          "attempt_id": "att_64f0ec7231f1421a",
+          "task_id": "r2-install-1774364162846087000",
+          "tenant_id": "default",
+          "runtime_id": "python-hostbot",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow",
+          "reason_codes": [
+            "low_risk_context"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [],
+          "minimum_verification_tier": "tier0_listed",
+          "runtime_requirements": {
+            "runtime_band_max": "C"
+          },
+          "policy_hash": "4e91b20e0f3aa795fe4d8d186ffd2093168c413f9a560220f1427ac656f9b6e6",
+          "approval_grant_id": null,
+          "created_at": "2026-03-24T14:56:02.900962+00:00"
+        },
         {
           "attempt_id": "att_0c3d43978cc94b14",
           "task_id": "task-openclaw-smoke-1774363888",
@@ -725,7 +792,7 @@
           "created_at": "2026-03-23T13:53:56.419924+00:00"
         }
       ],
-      "count": 30,
+      "count": 33,
       "schema_version": "policy-decision-log-v1"
     },
     "tenant_profile": {
@@ -735,12 +802,12 @@
       "allow_install_targets_json": "[\"sandbox_workspace\", \"agent_workspace\", \"managed_skill_store\"]",
       "allow_activation_modes_json": "[\"immediate_hot\", \"next_session\"]",
       "allow_sensitive_scopes_autonomous": false,
-      "created_at": "2026-03-24T14:51:28.642070+00:00",
-      "updated_at": "2026-03-24T14:51:28.642077+00:00",
+      "created_at": "2026-03-24T14:56:19.453604+00:00",
+      "updated_at": "2026-03-24T14:56:19.453609+00:00",
       "id": null
     },
     "typed_action_map": {
-      "generated_at": "2026-03-24T14:51:28.549697+00:00",
+      "generated_at": "2026-03-24T14:56:19.362064+00:00",
       "all_pass": true,
       "required_sensitive": [
         "message.send",
@@ -798,7 +865,7 @@
       ]
     },
     "auth_bypass_check": {
-      "generated_at": "2026-03-24T14:51:28.602870+00:00",
+      "generated_at": "2026-03-24T14:56:19.414961+00:00",
       "all_pass": true,
       "rows": [
         {
