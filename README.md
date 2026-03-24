@@ -80,6 +80,7 @@ Then open: `http://localhost:8787/docs`
 - Trust chain design: `docs/trust-chain-design-v1.md`
 - Trust chain design v2 (cryptographic admission): `docs/trust-chain-design-v2.md`
 - Trust policy object: `research/trust_policy_v1.json`
+- Trust policy production template: `research/trust_policy_production_template.json`
 - Policy ops runbook: `docs/policy-ops-runbook-v1.md`
 - Policy ops runbook v2 (auto rollback): `docs/policy-ops-runbook-v2.md`
 - Operator runbook: `docs/operator-runbook-v1.md`

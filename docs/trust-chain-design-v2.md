@@ -4,8 +4,9 @@
 Upgrade trust admission from local evidence checks to cryptographic verification receipts for production mode.
 
 ## Trust policy object
-Source:
-- `research/trust_policy_v1.json`
+Sources:
+- `research/trust_policy_v1.json` (active baseline)
+- `research/trust_policy_production_template.json` (exact-identity production template)
 
 Fields:
 - `mode` (`dev|test|production`)
@@ -48,3 +49,10 @@ Model: `VerificationReceipt`
 
 ## Fail-closed policy
 In production mode, if cryptographic verification fails/missing/stale, candidate is rejected for autonomous install and promotion gates.
+
+## Production hardening defaults
+- Pin exact workflow `certificate_identity` (no wildcard identity matching).
+- Pin OIDC issuer (`https://token.actions.githubusercontent.com` unless enterprise custom issuer is explicitly configured).
+- Require Sigstore bundle/transparency proof at receipt time.
+- Require attestation verification to fail closed for all required predicates.
+- Require subject digest equality between selected pack digest and attested subject.

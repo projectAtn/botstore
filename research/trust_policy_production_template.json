@@ -1,0 +1,52 @@
+{
+  "mode": "production",
+  "bundle_required": true,
+  "transparency_proof_required": true,
+  "verification_receipt_ttl_hours": 24,
+  "promotion_receipt_max_age_hours": 24,
+  "authorities": [
+    {
+      "name": "release_workflow",
+      "type": "keyless_oidc",
+      "certificate_oidc_issuer": "https://token.actions.githubusercontent.com",
+      "certificate_identity": "https://github.com/<ORG>/<REPO>/.github/workflows/release-sign.yml@refs/heads/main",
+      "annotations_required": {
+        "botstore.repo": "<ORG>/<REPO>",
+        "botstore.env": "production",
+        "botstore.artifact.kind": "pack"
+      }
+    }
+  ],
+  "required_attestations": [
+    {
+      "predicate_type": "https://slsa.dev/provenance/v1",
+      "issuer": "https://token.actions.githubusercontent.com",
+      "identity": "https://github.com/<ORG>/<REPO>/.github/workflows/build-provenance.yml@refs/heads/main"
+    },
+    {
+      "predicate_type": "https://spdx.dev/Document",
+      "issuer": "https://token.actions.githubusercontent.com",
+      "identity": "https://github.com/<ORG>/<REPO>/.github/workflows/sbom.yml@refs/heads/main"
+    },
+    {
+      "predicate_type": "https://botstore.dev/attestations/verify/v1",
+      "issuer": "https://token.actions.githubusercontent.com",
+      "identity": "https://github.com/<ORG>/<REPO>/.github/workflows/verify.yml@refs/heads/main"
+    },
+    {
+      "predicate_type": "https://botstore.dev/attestations/conformance/v1",
+      "issuer": "https://token.actions.githubusercontent.com",
+      "identity": "https://github.com/<ORG>/<REPO>/.github/workflows/conformance.yml@refs/heads/main"
+    },
+    {
+      "predicate_type": "https://botstore.dev/attestations/qa/v1",
+      "issuer": "https://token.actions.githubusercontent.com",
+      "identity": "https://github.com/<ORG>/<REPO>/.github/workflows/qa.yml@refs/heads/main"
+    }
+  ],
+  "notes": [
+    "Replace <ORG>/<REPO> placeholders before activation.",
+    "Use exact workflow identity pinning (no org/repo wildcarding).",
+    "Fail closed if signature bundle or attestation verification is missing/invalid."
+  ]
+}
