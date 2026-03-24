@@ -980,9 +980,23 @@ def _verification_tier_rank(tier: str) -> int:
 def _default_trust_policy() -> dict:
     return {
         "mode": os.getenv("BOTSTORE_TRUST_MODE", "dev"),
-        "trusted_issuers": ["https://token.actions.githubusercontent.com"],
-        "trusted_identities": ["botstore-ci"],
-        "required_signature_annotations": ["botstore.pack", "botstore.version"],
+        "bundle_required": True,
+        "transparency_proof_required": True,
+        "verification_receipt_ttl_hours": 24,
+        "promotion_receipt_max_age_hours": 24,
+        "authorities": [
+            {
+                "name": "release_workflow",
+                "type": "keyless_oidc",
+                "certificate_oidc_issuer": "https://token.actions.githubusercontent.com",
+                "certificate_identity": "https://github.com/<ORG>/<REPO>/.github/workflows/release-sign.yml@refs/heads/main",
+                "annotations_required": {
+                    "botstore.repo": "<ORG>/<REPO>",
+                    "botstore.env": "production",
+                    "botstore.artifact.kind": "pack",
+                },
+            }
+        ],
         "required_attestation_predicates": ["build", "verify", "conformance", "qa", "prov"],
         "require_sbom": True,
         "freshness_ttl_hours": 24,
@@ -1035,18 +1049,26 @@ def _verify_packversion_trust_local(pv: PackVersion) -> tuple[bool, str]:
     return (True, "verified")
 
 
-def _cosign_verify_artifact(artifact_uri: str, trusted_issuers: list[str], trusted_identities: list[str]) -> tuple[bool, str]:
+def _cosign_verify_artifact(artifact_uri: str, authority: dict) -> tuple[bool, str]:
     if not shutil.which("cosign"):
         return (False, "cosign_not_installed")
     cmd = ["cosign", "verify", artifact_uri]
-    # conservative pinning: require at least one issuer/identity when configured
-    if trusted_issuers:
-        cmd += ["--certificate-oidc-issuer-regexp", "|".join(trusted_issuers)]
-    if trusted_identities:
-        cmd += ["--certificate-identity-regexp", "|".join(trusted_identities)]
+
+    issuer = str(authority.get("certificate_oidc_issuer", "")).strip()
+    identity = str(authority.get("certificate_identity", "")).strip()
+    if issuer:
+        cmd += ["--certificate-oidc-issuer", issuer]
+    if identity:
+        cmd += ["--certificate-identity", identity]
+
+    annotations = authority.get("annotations_required", {}) or {}
+    if isinstance(annotations, dict):
+        for k, v in annotations.items():
+            cmd += ["-a", f"{k}={v}"]
+
     res = subprocess.run(cmd, capture_output=True, text=True)
     if res.returncode != 0:
-        return (False, f"cosign_verify_failed:{(res.stderr or res.stdout).strip()[:200]}")
+        return (False, f"cosign_verify_failed:{(res.stderr or res.stdout).strip()[:240]}")
     return (True, "ok")
 
 
@@ -1072,14 +1094,29 @@ def _verify_packversion_trust_cryptographic(pv: PackVersion, policy: dict) -> tu
     if not local_ok:
         return (False, local_reason, checks)
 
-    ok_sig, reason_sig = _cosign_verify_artifact(
-        pv.artifact_uri or "",
-        [str(x) for x in policy.get("trusted_issuers", [])],
-        [str(x) for x in policy.get("trusted_identities", [])],
-    )
-    checks["cosign_verify"] = {"ok": ok_sig, "reason": reason_sig}
-    if not ok_sig:
-        return (False, reason_sig, checks)
+    if bool(policy.get("bundle_required", False)):
+        sigrefs = [str(x).lower() for x in _json_list(pv.signature_refs_json)]
+        bundle_ok = any("bundle" in s for s in sigrefs)
+        checks["bundle_required"] = {"ok": bundle_ok, "reason": ("ok" if bundle_ok else "missing_bundle_reference")}
+        if not bundle_ok:
+            return (False, "missing_bundle_reference", checks)
+
+    authorities = policy.get("authorities", []) or []
+    if not isinstance(authorities, list) or len(authorities) == 0:
+        checks["authority"] = {"ok": False, "reason": "missing_authority_pinning"}
+        return (False, "missing_authority_pinning", checks)
+
+    auth_ok = False
+    auth_reason = "no_authority_matched"
+    for idx, authority in enumerate(authorities, start=1):
+        ok_sig, reason_sig = _cosign_verify_artifact(pv.artifact_uri or "", authority if isinstance(authority, dict) else {})
+        checks[f"cosign_verify:authority_{idx}"] = {"ok": ok_sig, "reason": reason_sig}
+        if ok_sig:
+            auth_ok = True
+            auth_reason = "ok"
+            break
+    if not auth_ok:
+        return (False, auth_reason, checks)
 
     required = [str(x) for x in policy.get("required_attestation_predicates", [])]
     for pred in required:
@@ -1088,7 +1125,7 @@ def _verify_packversion_trust_cryptographic(pv: PackVersion, policy: dict) -> tu
         if not ok_att:
             return (False, reason_att, checks)
 
-    ttl_h = int(policy.get("freshness_ttl_hours", 24) or 24)
+    ttl_h = int(policy.get("verification_receipt_ttl_hours", policy.get("freshness_ttl_hours", 24)) or 24)
     vts = _parse_iso(pv.verification_verified_at) or _parse_iso(pv.verification_checked_at)
     if vts is None:
         checks["freshness"] = {"ok": False, "reason": "missing_verification_timestamp"}
@@ -1118,15 +1155,23 @@ def _is_packversion_trust_enforced_verified(session: Session, pv: PackVersion) -
         ok, _ = _verify_packversion_trust_local(pv)
         return ok and pv.verification_state == "verified"
 
-    # production admission requires cryptographic receipts
+    # production admission requires cryptographic receipts on exact digest
     receipt = _latest_verification_receipt(session, pv.id or 0)
     if not receipt:
         return False
-    return (
-        receipt.verifier_mode == "cryptographic"
-        and receipt.ok is True
-        and pv.verification_state == "verified"
-    )
+    if receipt.verifier_mode != "cryptographic" or receipt.ok is not True:
+        return False
+    if (receipt.artifact_digest or "") != (pv.artifact_digest or ""):
+        return False
+
+    ttl_h = int(policy.get("verification_receipt_ttl_hours", 24) or 24)
+    rts = _parse_iso(receipt.created_at)
+    if not rts:
+        return False
+    if datetime.now(timezone.utc) - rts > timedelta(hours=max(1, ttl_h)):
+        return False
+
+    return pv.verification_state == "verified"
 
 
 def _policy_sign(payload: dict) -> str:
