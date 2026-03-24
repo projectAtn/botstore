@@ -1,23 +1,23 @@
 # OpenClaw Adapter E2E
 
-- Time: 2026-03-24T11:36:13.865944+00:00
+- Time: 2026-03-24T14:23:02.827085+00:00
 - API: http://127.0.0.1:8787
-- Attempt: `att_f35a62c607654a8b`
+- Attempt: `att_34334cdbbc3c45ab`
 - Runtime: `openclaw` band `B`
 
 ## Resolve
 ```json
 {
   "ok": true,
-  "attempt_id": "att_f35a62c607654a8b",
-  "task_id": "task-openclaw-smoke-1774352173",
+  "attempt_id": "att_34334cdbbc3c45ab",
+  "task_id": "task-openclaw-smoke-1774362182",
   "tenant_id": "default",
   "runtime": {
     "runtime_id": "openclaw",
     "runtime_version": "0.2.0",
     "runtime_band": "B"
   },
-  "candidate_snapshot_id": "cand_e51027c1201a",
+  "candidate_snapshot_id": "cand_10812ce2fa33",
   "install_target": "agent_workspace",
   "activation_mode": "immediate_hot",
   "selected": {
@@ -53,7 +53,7 @@
   },
   "policy": {
     "schema_version": "bps-0.1",
-    "decision_id": 25,
+    "decision_id": 26,
     "effect": "allow_with_approval",
     "reason_codes": [
       "sensitive_or_low_verification"
@@ -66,12 +66,12 @@
     "runtime_requirements": {
       "runtime_band_max": "B"
     },
-    "policy_hash": "1f05bc584351340d9023a1f88b13d2372729eaa2ddc76f64ff178fd9ae87e21a"
+    "policy_hash": "b57737771ff2eee6ac61a921b43e1941c3df9091d39308f77853837e465de92b"
   },
   "approval_grant": {
-    "grant_id": "gr_51547703d9394b",
-    "expires_at": "2026-03-24T12:36:13.831324+00:00",
-    "signature": "OgdhP_TdKKK2TJnpAsIdqIYovpyAjrw0s8BE8bbJsQE"
+    "grant_id": "gr_dfc24f53220441",
+    "expires_at": "2026-03-24T15:23:02.793046+00:00",
+    "signature": "-n1vqZ9Fqu_WKBUJvRnaxh2cJyalogO4oadMNH7enRI"
   },
   "install_status": "pending_approval",
   "activation_status": "pending",
@@ -84,9 +84,9 @@
 {
   "decision": "allow_with_runtime_proof",
   "reason": "approved with signed grant",
-  "grant_token": "eyJncmFudF9pZCI6ICJncl81M2UyYmNlY2JjNmU0NSIsICJhdHRlbXB0X2lkIjogImF0dF9mMzVhNjJjNjA3NjU0YThiIiwgInRlbmFudF9pZCI6ICJkZWZhdWx0IiwgImFydGlmYWN0X2RpZ2VzdCI6ICJzaGEyNTY6ZWViNjM0MDIwMDBiMTk5MWRmODJhZDQ1NjQ3MTdiM2ZhMmRiY2JkM2ExODM2YjY3MThjNGNhZmJlMTQ2MGE5MSIsICJwYWNrX3ZlcnNpb25faWQiOiAzOSwgImFsbG93ZWRfc2NvcGVzIjogWyJtZXNzYWdlLnNlbmQiXSwgImFsbG93ZWRfYWN0aW9ucyI6IFsibWVzc2FnZS5zZW5kIl0sICJydW50aW1lX2lkIjogIm9wZW5jbGF3IiwgInJ1bnRpbWVfYmFuZCI6ICJCIiwgImV4cGlyZXNfYXQiOiAiMjAyNi0wMy0yNFQxMjozNjoxMy44MzY5MzkrMDA6MDAiLCAicG9saWN5X2hhc2giOiAiOGUwOGY1Y2YzNWU3YjMzOWE3YjZiN2E5YmM1MTNkMDlmZDI5ZWE3ZjE0MGM4ZTNkNjYzMWE5OTZiZjA3ZjQyMSIsICJqdXN0aWZpY2F0aW9uIjogIm9wZW5jbGF3IGFkYXB0ZXIgc21va2UiLCAic2lnbmF0dXJlIjogImdaeTlFSWpFT1R4YURUdXduSnV1ODN0TktGcnR0WW1iRTh2N3FyV0JxTmcifQ==",
-  "grant_id": "gr_53e2bcecbc6e45",
-  "expires_at": "2026-03-24T12:36:13.836939+00:00"
+  "grant_token": "eyJncmFudF9pZCI6ICJncl9lOTZlZGViNTZmZWE0NiIsICJhdHRlbXB0X2lkIjogImF0dF8zNDMzNGNkYmJjM2M0NWFiIiwgInRlbmFudF9pZCI6ICJkZWZhdWx0IiwgImFydGlmYWN0X2RpZ2VzdCI6ICJzaGEyNTY6ZWViNjM0MDIwMDBiMTk5MWRmODJhZDQ1NjQ3MTdiM2ZhMmRiY2JkM2ExODM2YjY3MThjNGNhZmJlMTQ2MGE5MSIsICJwYWNrX3ZlcnNpb25faWQiOiAzOSwgImFsbG93ZWRfc2NvcGVzIjogWyJtZXNzYWdlLnNlbmQiXSwgImFsbG93ZWRfYWN0aW9ucyI6IFsibWVzc2FnZS5zZW5kIl0sICJydW50aW1lX2lkIjogIm9wZW5jbGF3IiwgInJ1bnRpbWVfYmFuZCI6ICJCIiwgImV4cGlyZXNfYXQiOiAiMjAyNi0wMy0yNFQxNToyMzowMi44MDA4MzkrMDA6MDAiLCAicG9saWN5X2hhc2giOiAiNGU3YWZiYTc3NjQ2MjFkZDNiNThlZTIzMWQzMzhmMTI0NmNhNGMwNmZiMmFkZjFmNWI4MTNlNDg5MDEwMTk4YiIsICJqdXN0aWZpY2F0aW9uIjogIm9wZW5jbGF3IGFkYXB0ZXIgc21va2UiLCAic2lnbmF0dXJlIjogIk00SWE1NmxfMGVsNFZESk82dG00V0FjQ2E2b1Q0OGkxMW5lOC1DUmRUMVUifQ==",
+  "grant_id": "gr_e96edeb56fea46",
+  "expires_at": "2026-03-24T15:23:02.800839+00:00"
 }
 ```
 
@@ -94,10 +94,10 @@
 ```json
 {
   "ok": true,
-  "checkpoint_id": "chk_0396d32869ea485b",
-  "attempt_id": "att_f35a62c607654a8b",
+  "checkpoint_id": "chk_7552983fbfc342c0",
+  "attempt_id": "att_34334cdbbc3c45ab",
   "status": "paused",
-  "expires_at": "2026-03-24T12:06:13.843386+00:00"
+  "expires_at": "2026-03-24T14:53:02.804697+00:00"
 }
 ```
 
@@ -105,8 +105,8 @@
 ```json
 {
   "ok": true,
-  "checkpoint_id": "chk_0396d32869ea485b",
-  "attempt_id": "att_f35a62c607654a8b",
+  "checkpoint_id": "chk_7552983fbfc342c0",
+  "attempt_id": "att_34334cdbbc3c45ab",
   "status": "resumed",
   "attempt_status": "approval_granted"
 }
@@ -116,8 +116,8 @@
 ```json
 {
   "ok": true,
-  "outcome_report_id": 40,
-  "attempt_id": "att_f35a62c607654a8b",
+  "outcome_report_id": 42,
+  "attempt_id": "att_34334cdbbc3c45ab",
   "reward": -1.0,
   "quarantined": true,
   "undeclared_scopes": [
@@ -131,11 +131,11 @@
 {
   "ok": true,
   "rollback_receipt": {
-    "attempt_id": "att_f35a62c607654a8b",
+    "attempt_id": "att_34334cdbbc3c45ab",
     "tenant_id": "default",
     "rollback_status": "rolled_back",
     "reason": "scope_violation_quarantine",
-    "rolled_at": "2026-03-24T11:36:13.855029+00:00",
+    "rolled_at": "2026-03-24T14:23:02.817574+00:00",
     "runtime_id": "openclaw",
     "install_target": "agent_workspace",
     "activation_mode": "immediate_hot"

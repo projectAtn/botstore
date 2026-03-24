@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-03-24T14:23:02.646169+00:00",
+  "action_authorization": {
+    "total": 20,
+    "unknown_scope_count": 0,
+    "unknown_scope_rate": 0.0,
+    "denied_count": 0
+  },
+  "outcome_scope_fidelity": {
+    "total_outcomes": 40,
+    "observed_nonempty_count": 40,
+    "observed_nonempty_rate": 1.0,
+    "incident_with_observed_count": 30
+  },
+  "pilot_gate": {
+    "unknown_scope_rate_max": 0.0,
+    "observed_nonempty_rate_min": 0.95
+  }
+}
