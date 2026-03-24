@@ -57,6 +57,10 @@ def main() -> int:
     if typed.get("all_pass") is not True:
         _fail("typed_action_map.all_pass is not true")
 
+    bypass = checks.get("auth_bypass_check", {})
+    if bypass.get("all_pass") is not True:
+        _fail("auth_bypass_check.all_pass is not true")
+
     summary = {
         "ok": True,
         "artifact": str(path),

@@ -38,6 +38,12 @@ step "Running typed action map check"
   python3 ./scripts/openclaw_typed_map_check.py >/tmp/openclaw_typed_map_check.log 2>&1
 )
 
+step "Running auth bypass check"
+(
+  cd "$ROOT"
+  python3 ./scripts/openclaw_auth_bypass_check.py >/tmp/openclaw_auth_bypass_check.log 2>&1
+)
+
 step "Collecting policy/profile/status evidence"
 STATUS_PATH="/tmp/openclaw_status_control_plane.json"
 POLICY_LOG_PATH="/tmp/openclaw_policy_decision_log.json"
@@ -58,6 +64,7 @@ status = json.loads(pathlib.Path("$STATUS_PATH").read_text())
 policy_log = json.loads(pathlib.Path("$POLICY_LOG_PATH").read_text())
 tenant_profile = json.loads(pathlib.Path("$TENANT_PROFILE_PATH").read_text())
 typed_map = json.loads(pathlib.Path("$ROOT/research/openclaw-typed-map-check.json").read_text())
+auth_bypass = json.loads(pathlib.Path("$ROOT/research/openclaw-auth-bypass-check.json").read_text())
 
 payload = {
   "generated_at": "$NOW",
@@ -68,12 +75,14 @@ payload = {
     "status_control_plane": status,
     "policy_decision_log": policy_log,
     "tenant_profile": tenant_profile,
-    "typed_action_map": typed_map
+    "typed_action_map": typed_map,
+    "auth_bypass_check": auth_bypass
   },
   "logs": {
     "control_plane_smoke_log": "/tmp/control_plane_smoke.log",
     "openclaw_adapter_smoke_log": "/tmp/openclaw_adapter_smoke.log",
-    "openclaw_typed_map_check_log": "/tmp/openclaw_typed_map_check.log"
+    "openclaw_typed_map_check_log": "/tmp/openclaw_typed_map_check.log",
+    "openclaw_auth_bypass_check_log": "/tmp/openclaw_auth_bypass_check.log"
   }
 }
 out_json.write_text(json.dumps(payload, indent=2))
@@ -90,6 +99,7 @@ md = [
   "- ✅ control_plane_smoke.sh",
   "- ✅ openclaw_adapter_smoke.sh",
   "- ✅ openclaw_typed_map_check.py",
+  "- ✅ openclaw_auth_bypass_check.py",
   "- ✅ status/control-plane",
   "- ✅ policy/decision-log",
   "- ✅ policy/tenant-profile",
@@ -100,6 +110,7 @@ md = [
   "  - /tmp/control_plane_smoke.log",
   "  - /tmp/openclaw_adapter_smoke.log",
   "  - /tmp/openclaw_typed_map_check.log",
+  "  - /tmp/openclaw_auth_bypass_check.log",
 ]
 out_md.write_text("\n".join(md) + "\n")
 print(f"Wrote {out_json}")

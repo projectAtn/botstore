@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-03-24T14:51:28.602870+00:00",
+  "all_pass": true,
+  "rows": [
+    {
+      "check": "explicit_sensitive_map:message.send",
+      "pass": true,
+      "mapping": {
+        "action_class": "message.send",
+        "requested_scope": "message.send",
+        "side_effect_level": "external_send"
+      }
+    },
+    {
+      "check": "explicit_sensitive_map:email.send",
+      "pass": true,
+      "mapping": {
+        "action_class": "email.send",
+        "requested_scope": "email.send",
+        "side_effect_level": "external_send"
+      }
+    },
+    {
+      "check": "explicit_sensitive_map:social.post",
+      "pass": true,
+      "mapping": {
+        "action_class": "social.post",
+        "requested_scope": "social.post",
+        "side_effect_level": "external_send"
+      }
+    },
+    {
+      "check": "explicit_sensitive_map:files.delete",
+      "pass": true,
+      "mapping": {
+        "action_class": "files.delete",
+        "requested_scope": "files.delete",
+        "side_effect_level": "delete"
+      }
+    },
+    {
+      "check": "explicit_sensitive_map:payment.charge",
+      "pass": true,
+      "mapping": {
+        "action_class": "payment.charge",
+        "requested_scope": "payment.charge",
+        "side_effect_level": "charge"
+      }
+    },
+    {
+      "check": "no_sensitive_inference:exec",
+      "pass": true,
+      "mapping": {
+        "action_class": "shell.exec",
+        "requested_scope": "shell.exec",
+        "side_effect_level": "write"
+      }
+    },
+    {
+      "check": "no_sensitive_inference:browser.act",
+      "pass": true,
+      "mapping": {
+        "action_class": "browser.act",
+        "requested_scope": "browser.act",
+        "side_effect_level": "write"
+      }
+    },
+    {
+      "check": "unknown_tool_maps_unknown",
+      "pass": true,
+      "mapping": {
+        "action_class": "unknown",
+        "requested_scope": "unknown",
+        "side_effect_level": "write"
+      }
+    }
+  ]
+}
