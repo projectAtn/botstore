@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-03-24T20:56:59.758341+00:00",
+  "base_url": "http://127.0.0.1:8787",
+  "bundle_id": "rollback-demo-1774385819556986000",
+  "baseline_bundle_row_id": 7,
+  "candidate_bundle_row_id": 8,
+  "activated_bundle_row_id": 8,
+  "controller_report": {
+    "generated_at": "2026-03-24T20:56:59.688487+00:00",
+    "base_url": "http://127.0.0.1:8787",
+    "tenant_id": "default",
+    "bundle_id": "rollback-demo-1774385819556986000",
+    "dry_run": false,
+    "thresholds": {
+      "quarantine_rate_max": 0.3,
+      "approval_latency_max_min": 10.0,
+      "deny_rate_max": 0.7,
+      "activation_failure_rate_max": 0.2
+    },
+    "observed": {
+      "quarantine_rate": 0.7273,
+      "approval_latency_minutes_avg": 0.0,
+      "deny_rate": 0.0,
+      "activation_failure_rate_proxy": 0.7273,
+      "decision_samples": 33,
+      "total_outcomes": 55
+    },
+    "triggers": [
+      "quarantine_rate_spike:0.7273>0.3000",
+      "activation_failure_proxy_spike:0.7273>0.2000",
+      "force_trigger"
+    ],
+    "rollback_invoked": true,
+    "rollback_result_ok": true,
+    "rollback_response": {
+      "ok": true,
+      "bundle_id": "rollback-demo-1774385819556986000",
+      "rolled_back_from": 8,
+      "rolled_back_to": 7,
+      "active_version": "1.0.0"
+    }
+  },
+  "rollback_ok": true
+}

@@ -1,0 +1,62 @@
+{
+  "version": "dashboard-spec-v1",
+  "panels": [
+    {
+      "id": "trust_verify_failures",
+      "title": "Trust Verify Failures (15m)",
+      "source": "verificationreceipt",
+      "query_hint": "count where ok=false and created_at >= now-15m"
+    },
+    {
+      "id": "install_admission_denial_rate",
+      "title": "Install Admission Denial Rate (30m)",
+      "source": "installattempt",
+      "query_hint": "denied/total over last 30m"
+    },
+    {
+      "id": "action_authorize_latency_p95",
+      "title": "Action Authorize Latency p95",
+      "source": "status.control-plane + actionauthorization",
+      "query_hint": "p95 over 30m"
+    },
+    {
+      "id": "approval_wait_time_avg",
+      "title": "Approval Wait Time Avg",
+      "source": "approvalgrant",
+      "query_hint": "avg minutes from attempt create to grant create"
+    },
+    {
+      "id": "quarantine_rate",
+      "title": "Quarantine Rate",
+      "source": "outcomereport",
+      "query_hint": "incident_flag ratio"
+    },
+    {
+      "id": "outcome_completeness",
+      "title": "Outcome-v2 Completeness",
+      "source": "outcomereport",
+      "query_hint": "non-null outcome rows / attempts"
+    },
+    {
+      "id": "auth_bypass_sentinel",
+      "title": "Auth Bypass Sentinel",
+      "source": "research/openclaw-auth-bypass-check.json",
+      "query_hint": "all_pass"
+    },
+    {
+      "id": "typed_map_completeness",
+      "title": "Typed Map Completeness",
+      "source": "research/openclaw-typed-map-check.json",
+      "query_hint": "all_pass"
+    }
+  ],
+  "alerts": {
+    "trust_verify_failures_15m_gt_0": "CRITICAL",
+    "quarantine_rate_gt_0_30": "CRITICAL",
+    "outcome_completeness_lt_0_95": "CRITICAL",
+    "auth_bypass_sentinel_fail": "CRITICAL",
+    "typed_map_fail": "CRITICAL",
+    "action_authorize_p95_gt_0_2s": "WARN",
+    "approval_wait_avg_gt_10m": "WARN"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-03-24T20:56:59.918913+00:00",
+  "go_nogo": "GO",
+  "checks": {
+    "scorecard_present": true,
+    "conformance_present": true,
+    "crypto_smoke_present": true,
+    "crypto_negative_present": true,
+    "heartbeat_present": true
+  },
+  "latest_heartbeat_at": "2026-03-24T20:56:59.847882+00:00",
+  "all_pass": true
+}

@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-03-24T20:56:59.819716+00:00",
+  "all_pass": true,
+  "checks": {
+    "status_endpoint_available": true,
+    "quarantine_rate_present": true,
+    "approval_latency_present": true,
+    "typed_map_signal_present": true,
+    "auth_bypass_signal_present": true,
+    "conformance_report_present": true
+  }
+}
