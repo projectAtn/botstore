@@ -3388,6 +3388,25 @@ def agent_approval_checkpoint_pause(payload: ApprovalCheckpointPauseRequest) -> 
         if not attempt:
             raise HTTPException(status_code=404, detail="attempt not found")
 
+        existing = session.exec(
+            select(ApprovalCheckpoint).where(
+                ApprovalCheckpoint.attempt_id == payload.attempt_id,
+                ApprovalCheckpoint.session_key == payload.session_key,
+                ApprovalCheckpoint.run_id == payload.run_id,
+            ).order_by(ApprovalCheckpoint.id.desc())
+        ).first()
+        if existing and existing.status == "paused":
+            exp = _parse_iso(existing.expires_at)
+            if exp and exp > datetime.now(timezone.utc):
+                return {
+                    "ok": True,
+                    "checkpoint_id": existing.checkpoint_id,
+                    "attempt_id": payload.attempt_id,
+                    "status": existing.status,
+                    "expires_at": existing.expires_at,
+                    "idempotent": True,
+                }
+
         checkpoint_id = f"chk_{uuid.uuid4().hex[:16]}"
         expires_at = (datetime.now(timezone.utc) + timedelta(minutes=max(1, min(payload.ttl_minutes, 240)))).isoformat()
         row = ApprovalCheckpoint(
@@ -3416,6 +3435,7 @@ def agent_approval_checkpoint_pause(payload: ApprovalCheckpointPauseRequest) -> 
             "attempt_id": payload.attempt_id,
             "status": "paused",
             "expires_at": expires_at,
+            "idempotent": False,
         }
 
 
@@ -3426,13 +3446,24 @@ def agent_approval_checkpoint_resume(payload: ApprovalCheckpointResumeRequest) -
         if not row:
             raise HTTPException(status_code=404, detail="checkpoint not found")
 
+        if row.status in {"resumed", "denied"}:
+            attempt = session.exec(select(InstallAttempt).where(InstallAttempt.attempt_id == row.attempt_id)).first()
+            return {
+                "ok": True,
+                "checkpoint_id": row.checkpoint_id,
+                "attempt_id": row.attempt_id,
+                "status": row.status,
+                "attempt_status": (attempt.status if attempt else None),
+                "idempotent": True,
+            }
+
         now = datetime.now(timezone.utc)
         exp = _parse_iso(row.expires_at)
         if exp and now > exp:
             row.status = "expired"
             session.add(row)
             session.commit()
-            return {"ok": False, "checkpoint_id": row.checkpoint_id, "status": "expired"}
+            return {"ok": False, "checkpoint_id": row.checkpoint_id, "status": "expired", "idempotent": False}
 
         attempt = session.exec(select(InstallAttempt).where(InstallAttempt.attempt_id == row.attempt_id)).first()
         if not attempt:
@@ -3462,6 +3493,7 @@ def agent_approval_checkpoint_resume(payload: ApprovalCheckpointResumeRequest) -
             "attempt_id": row.attempt_id,
             "status": row.status,
             "attempt_status": attempt.status,
+            "idempotent": False,
         }
 
 

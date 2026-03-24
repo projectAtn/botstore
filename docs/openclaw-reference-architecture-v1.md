@@ -43,7 +43,7 @@ Autonomous GA scope is intentionally narrow:
 3. BotStore returns selected digest-pinned pack version + policy decision
 4. Adapter installs to approved target + activates with allowed mode
 5. Before sensitive execution, adapter calls `/agent/action-authorize`
-6. If approval is needed, adapter pauses lane via `/agent/approval-checkpoint/pause` and resumes via `/agent/approval-checkpoint/resume`
+6. If approval is needed, adapter pauses lane via `/agent/approval-checkpoint/pause` and resumes via `/agent/approval-checkpoint/resume` (both are idempotent for safe retries)
 7. Adapter reports observed scopes + outcome to `/agent/outcome-v2`
 8. On failure/quarantine, adapter emits `/agent/rollback` receipt
 9. BotStore updates trust/learning state, including quarantine if needed
