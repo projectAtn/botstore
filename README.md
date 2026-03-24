@@ -78,6 +78,8 @@ Then open: `http://localhost:8787/docs`
 - OpenClaw tenant policy matrix: `docs/openclaw-tenant-policy-matrix-v1.md`
 - OpenClaw phase-1 exit criteria: `docs/openclaw-phase1-exit-criteria-v1.md`
 - Trust chain design: `docs/trust-chain-design-v1.md`
+- Trust chain design v2 (cryptographic admission): `docs/trust-chain-design-v2.md`
+- Trust policy object: `research/trust_policy_v1.json`
 - Policy ops runbook: `docs/policy-ops-runbook-v1.md`
 - Operator runbook: `docs/operator-runbook-v1.md`
 - Content system starter: `docs/content-strategy-v1.md`
@@ -95,6 +97,8 @@ Then open: `http://localhost:8787/docs`
 - Phase-1 exit checker: `scripts/phase1_exit_check.py`
 - Phase-1 go/no-go summarizer: `scripts/phase1_go_nogo.py`
 - Trust-chain smoke: `scripts/trust_chain_smoke.py`
+- Cryptographic trust smoke: `scripts/trust_crypto_smoke.py`
+- Cryptographic trust negative matrix: `scripts/trust_crypto_negative_matrix.py`
 - Trust cosign wrappers: `scripts/trust_cosign_sign.sh`, `scripts/trust_cosign_verify.sh`
 - Trust SPDX generator: `scripts/trust_generate_spdx.sh`
 - Policy fixture runner: `scripts/policy_fixture_runner.py`

@@ -58,7 +58,9 @@ Trust precondition: candidate pack versions must be trust-verified (`verificatio
 
 ## 4) Pack trust evidence + verification (required before autonomous install)
 - `PUT /packs/{pack_id}/versions/{version_id}/trust`
-- `POST /packs/{pack_id}/versions/{version_id}/trust/verify-local`
+- `POST /packs/{pack_id}/versions/{version_id}/trust/verify-local` (dev/test mode)
+- `POST /packs/{pack_id}/versions/{version_id}/trust/verify-crypto` (production admission)
+- `GET /packs/{pack_id}/versions/{version_id}/trust/receipts`
 
 ## 5) Action-time authorization (proof-carrying approval)
 `POST /agent/action-authorize`

@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-03-24T18:12:42.576444+00:00",
+  "all_pass": true,
+  "results": [
+    {
+      "case": "missing_sig",
+      "verify_crypto": {
+        "ok": false,
+        "pack_version_id": 61,
+        "verification_state": "failed",
+        "verification_error": "missing_signature_refs",
+        "verifier_mode": "cryptographic",
+        "checks": {
+          "local_evidence": {
+            "ok": false,
+            "reason": "missing_signature_refs"
+          }
+        },
+        "policy_hash": "00e07e868a8ee894788b22b5f7965fc9d1991132ca1959a6c7b18b478b8c40af"
+      },
+      "pass": true
+    },
+    {
+      "case": "missing_att",
+      "verify_crypto": {
+        "ok": false,
+        "pack_version_id": 63,
+        "verification_state": "failed",
+        "verification_error": "missing_attestation_refs",
+        "verifier_mode": "cryptographic",
+        "checks": {
+          "local_evidence": {
+            "ok": false,
+            "reason": "missing_attestation_refs"
+          }
+        },
+        "policy_hash": "00e07e868a8ee894788b22b5f7965fc9d1991132ca1959a6c7b18b478b8c40af"
+      },
+      "pass": true
+    }
+  ]
+}

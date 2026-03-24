@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-03-24T18:12:42.489950+00:00",
+  "base_url": "http://127.0.0.1:8787",
+  "cosign_available": false,
+  "install_before": {
+    "ok": false,
+    "attempt_id": "att_d1e78114ee6b4dc3",
+    "message": "no matching pack versions",
+    "candidates": []
+  },
+  "verify_crypto": {
+    "ok": false,
+    "pack_version_id": 59,
+    "verification_state": "failed",
+    "verification_error": "cosign_not_installed",
+    "verifier_mode": "cryptographic",
+    "checks": {
+      "local_evidence": {
+        "ok": true,
+        "reason": "verified"
+      },
+      "cosign_verify": {
+        "ok": false,
+        "reason": "cosign_not_installed"
+      }
+    },
+    "policy_hash": "00e07e868a8ee894788b22b5f7965fc9d1991132ca1959a6c7b18b478b8c40af"
+  },
+  "install_after": {
+    "ok": false,
+    "attempt_id": "att_3d0b3ffb461e4202",
+    "message": "no matching pack versions",
+    "candidates": []
+  },
+  "notes": [
+    "In production mode, install admission should require successful cryptographic receipt.",
+    "When cosign is unavailable, verify-crypto is expected to fail closed."
+  ]
+}

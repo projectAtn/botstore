@@ -6,6 +6,7 @@ import os
 import re
 import secrets
 import shutil
+import subprocess
 import uuid
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -357,6 +358,18 @@ class TenantPolicyProfile(SQLModel, table=True):
     allow_sensitive_scopes_autonomous: bool = False
     created_at: str = ""
     updated_at: str = ""
+
+
+class VerificationReceipt(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    pack_version_id: int = Field(index=True)
+    artifact_digest: str = Field(index=True)
+    verifier_mode: str = "local"
+    ok: bool = False
+    checks_json: str = "{}"
+    error: Optional[str] = None
+    policy_hash: Optional[str] = None
+    created_at: str = ""
 
 
 class PackCreate(SQLModel):
@@ -964,6 +977,36 @@ def _verification_tier_rank(tier: str) -> int:
     return mapping.get((tier or "").strip().lower(), 0)
 
 
+def _default_trust_policy() -> dict:
+    return {
+        "mode": os.getenv("BOTSTORE_TRUST_MODE", "dev"),
+        "trusted_issuers": ["https://token.actions.githubusercontent.com"],
+        "trusted_identities": ["botstore-ci"],
+        "required_signature_annotations": ["botstore.pack", "botstore.version"],
+        "required_attestation_predicates": ["build", "verify", "conformance", "qa", "prov"],
+        "require_sbom": True,
+        "freshness_ttl_hours": 24,
+    }
+
+
+def _load_trust_policy() -> dict:
+    path = os.getenv(
+        "BOTSTORE_TRUST_POLICY_PATH",
+        "/Users/claw/.openclaw/workspace/botstore/research/trust_policy_v1.json",
+    )
+    try:
+        p = Path(path)
+        if p.exists():
+            data = json.loads(p.read_text())
+            if isinstance(data, dict):
+                merged = _default_trust_policy()
+                merged.update(data)
+                return merged
+    except Exception:
+        pass
+    return _default_trust_policy()
+
+
 def _verify_packversion_trust_local(pv: PackVersion) -> tuple[bool, str]:
     if not (pv.artifact_digest or "").startswith("sha256:"):
         return (False, "invalid_or_missing_artifact_digest")
@@ -992,9 +1035,98 @@ def _verify_packversion_trust_local(pv: PackVersion) -> tuple[bool, str]:
     return (True, "verified")
 
 
-def _is_packversion_trust_enforced_verified(pv: PackVersion) -> bool:
-    ok, _ = _verify_packversion_trust_local(pv)
-    return ok and pv.verification_state == "verified"
+def _cosign_verify_artifact(artifact_uri: str, trusted_issuers: list[str], trusted_identities: list[str]) -> tuple[bool, str]:
+    if not shutil.which("cosign"):
+        return (False, "cosign_not_installed")
+    cmd = ["cosign", "verify", artifact_uri]
+    # conservative pinning: require at least one issuer/identity when configured
+    if trusted_issuers:
+        cmd += ["--certificate-oidc-issuer-regexp", "|".join(trusted_issuers)]
+    if trusted_identities:
+        cmd += ["--certificate-identity-regexp", "|".join(trusted_identities)]
+    res = subprocess.run(cmd, capture_output=True, text=True)
+    if res.returncode != 0:
+        return (False, f"cosign_verify_failed:{(res.stderr or res.stdout).strip()[:200]}")
+    return (True, "ok")
+
+
+def _cosign_verify_attestation(artifact_uri: str, predicate_token: str) -> tuple[bool, str]:
+    if not shutil.which("cosign"):
+        return (False, "cosign_not_installed")
+    # pragmatic predicate check by searching output for token; fail-closed otherwise
+    cmd = ["cosign", "verify-attestation", artifact_uri]
+    res = subprocess.run(cmd, capture_output=True, text=True)
+    if res.returncode != 0:
+        return (False, f"cosign_verify_attestation_failed:{(res.stderr or res.stdout).strip()[:200]}")
+    out = (res.stdout or "").lower()
+    if predicate_token.lower() not in out:
+        return (False, f"missing_predicate:{predicate_token}")
+    return (True, "ok")
+
+
+def _verify_packversion_trust_cryptographic(pv: PackVersion, policy: dict) -> tuple[bool, str, dict]:
+    checks: dict[str, Any] = {}
+
+    local_ok, local_reason = _verify_packversion_trust_local(pv)
+    checks["local_evidence"] = {"ok": local_ok, "reason": local_reason}
+    if not local_ok:
+        return (False, local_reason, checks)
+
+    ok_sig, reason_sig = _cosign_verify_artifact(
+        pv.artifact_uri or "",
+        [str(x) for x in policy.get("trusted_issuers", [])],
+        [str(x) for x in policy.get("trusted_identities", [])],
+    )
+    checks["cosign_verify"] = {"ok": ok_sig, "reason": reason_sig}
+    if not ok_sig:
+        return (False, reason_sig, checks)
+
+    required = [str(x) for x in policy.get("required_attestation_predicates", [])]
+    for pred in required:
+        ok_att, reason_att = _cosign_verify_attestation(pv.artifact_uri or "", pred)
+        checks[f"attestation:{pred}"] = {"ok": ok_att, "reason": reason_att}
+        if not ok_att:
+            return (False, reason_att, checks)
+
+    ttl_h = int(policy.get("freshness_ttl_hours", 24) or 24)
+    vts = _parse_iso(pv.verification_verified_at) or _parse_iso(pv.verification_checked_at)
+    if vts is None:
+        checks["freshness"] = {"ok": False, "reason": "missing_verification_timestamp"}
+        return (False, "missing_verification_timestamp", checks)
+    age = datetime.now(timezone.utc) - vts
+    if age > timedelta(hours=max(1, ttl_h)):
+        checks["freshness"] = {"ok": False, "reason": "verification_stale"}
+        return (False, "verification_stale", checks)
+    checks["freshness"] = {"ok": True, "reason": "ok"}
+
+    return (True, "verified", checks)
+
+
+def _latest_verification_receipt(session: Session, pack_version_id: int) -> Optional[VerificationReceipt]:
+    return session.exec(
+        select(VerificationReceipt)
+        .where(VerificationReceipt.pack_version_id == pack_version_id)
+        .order_by(VerificationReceipt.id.desc())
+    ).first()
+
+
+def _is_packversion_trust_enforced_verified(session: Session, pv: PackVersion) -> bool:
+    policy = _load_trust_policy()
+    mode = str(policy.get("mode", "dev")).lower()
+
+    if mode in {"dev", "test", "local"}:
+        ok, _ = _verify_packversion_trust_local(pv)
+        return ok and pv.verification_state == "verified"
+
+    # production admission requires cryptographic receipts
+    receipt = _latest_verification_receipt(session, pv.id or 0)
+    if not receipt:
+        return False
+    return (
+        receipt.verifier_mode == "cryptographic"
+        and receipt.ok is True
+        and pv.verification_state == "verified"
+    )
 
 
 def _policy_sign(payload: dict) -> str:
@@ -1615,6 +1747,8 @@ def verify_pack_version_trust_local(pack_id: int, version_id: int) -> dict:
             raise HTTPException(status_code=404, detail="pack version not found")
 
         ok, reason = _verify_packversion_trust_local(pv)
+        policy = _load_trust_policy()
+        policy_hash = _make_policy_hash(policy)
         pv.verification_checked_at = _iso_now()
         if ok:
             pv.verification_state = "verified"
@@ -1624,6 +1758,18 @@ def verify_pack_version_trust_local(pack_id: int, version_id: int) -> dict:
             pv.verification_state = "failed"
             pv.verification_error = reason
         session.add(pv)
+        session.add(
+            VerificationReceipt(
+                pack_version_id=pv.id or 0,
+                artifact_digest=pv.artifact_digest,
+                verifier_mode="local",
+                ok=ok,
+                checks_json=json.dumps({"reason": reason}),
+                error=(None if ok else reason),
+                policy_hash=policy_hash,
+                created_at=_iso_now(),
+            )
+        )
         session.commit()
         session.refresh(pv)
         return {
@@ -1631,7 +1777,70 @@ def verify_pack_version_trust_local(pack_id: int, version_id: int) -> dict:
             "pack_version_id": pv.id,
             "verification_state": pv.verification_state,
             "verification_error": pv.verification_error,
+            "verifier_mode": "local",
         }
+
+
+@app.post("/packs/{pack_id}/versions/{version_id}/trust/verify-crypto")
+def verify_pack_version_trust_crypto(pack_id: int, version_id: int) -> dict:
+    with Session(engine) as session:
+        pv = session.get(PackVersion, version_id)
+        if not pv or pv.pack_id != pack_id:
+            raise HTTPException(status_code=404, detail="pack version not found")
+
+        policy = _load_trust_policy()
+        ok, reason, checks = _verify_packversion_trust_cryptographic(pv, policy)
+        policy_hash = _make_policy_hash(policy)
+
+        pv.verification_checked_at = _iso_now()
+        if ok:
+            pv.verification_state = "verified"
+            pv.verification_error = None
+            pv.verification_verified_at = _iso_now()
+        else:
+            pv.verification_state = "failed"
+            pv.verification_error = reason
+        session.add(pv)
+        session.add(
+            VerificationReceipt(
+                pack_version_id=pv.id or 0,
+                artifact_digest=pv.artifact_digest,
+                verifier_mode="cryptographic",
+                ok=ok,
+                checks_json=json.dumps(checks),
+                error=(None if ok else reason),
+                policy_hash=policy_hash,
+                created_at=_iso_now(),
+            )
+        )
+        session.commit()
+        session.refresh(pv)
+        return {
+            "ok": ok,
+            "pack_version_id": pv.id,
+            "verification_state": pv.verification_state,
+            "verification_error": pv.verification_error,
+            "verifier_mode": "cryptographic",
+            "checks": checks,
+            "policy_hash": policy_hash,
+        }
+
+
+@app.get("/packs/{pack_id}/versions/{version_id}/trust/receipts", response_model=list[VerificationReceipt])
+def list_pack_version_trust_receipts(pack_id: int, version_id: int, limit: int = 50) -> list[VerificationReceipt]:
+    n = max(1, min(limit, 500))
+    with Session(engine) as session:
+        pv = session.get(PackVersion, version_id)
+        if not pv or pv.pack_id != pack_id:
+            raise HTTPException(status_code=404, detail="pack version not found")
+        return list(
+            session.exec(
+                select(VerificationReceipt)
+                .where(VerificationReceipt.pack_version_id == version_id)
+                .order_by(VerificationReceipt.id.desc())
+                .limit(n)
+            ).all()
+        )
 
 
 @app.post("/interop/import-skill-folder")
@@ -2140,7 +2349,7 @@ def promote_pack(pack_id: int, featured: bool = True) -> Pack:
                 raise HTTPException(status_code=400, detail="current pack version required for promotion")
             if _verification_tier_rank(pv.verification_tier) < _verification_tier_rank("tier1_signed"):
                 raise HTTPException(status_code=400, detail="verification tier tier1_signed+ required")
-            if not _is_packversion_trust_enforced_verified(pv):
+            if not _is_packversion_trust_enforced_verified(session, pv):
                 raise HTTPException(status_code=400, detail="trust verification required for promotion")
 
             attempts = list(session.exec(select(InstallAttempt).where(InstallAttempt.selected_pack_version_id == (pv.id or 0))).all())
@@ -2684,7 +2893,7 @@ def agent_install_by_capability_v2(payload: AgentInstallByCapabilityV2Request) -
         req = [c.strip() for c in payload.required_capabilities if c.strip()]
         pvs = list(session.exec(select(PackVersion).where(PackVersion.is_current == True)).all())
         for pv in pvs:
-            if not _is_packversion_trust_enforced_verified(pv):
+            if not _is_packversion_trust_enforced_verified(session, pv):
                 continue
             pack = session.get(Pack, pv.pack_id)
             if not pack:

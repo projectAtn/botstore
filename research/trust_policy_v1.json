@@ -1,0 +1,26 @@
+{
+  "mode": "dev",
+  "trusted_issuers": [
+    "https://token.actions.githubusercontent.com"
+  ],
+  "trusted_identities": [
+    "botstore-ci"
+  ],
+  "required_signature_annotations": [
+    "botstore.pack",
+    "botstore.version"
+  ],
+  "required_attestation_predicates": [
+    "build",
+    "verify",
+    "conformance",
+    "qa",
+    "prov"
+  ],
+  "require_sbom": true,
+  "freshness_ttl_hours": 24,
+  "notes": [
+    "Set mode=production to enforce cryptographic admission receipts on install and promotion.",
+    "Local-evidence-only verification is intended for dev/test only."
+  ]
+}
