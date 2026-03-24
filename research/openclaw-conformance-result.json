@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-23T17:19:25Z",
+  "generated_at": "2026-03-24T06:10:26Z",
   "base_url": "http://127.0.0.1:8787",
   "tenant_id": "default",
   "checks": {
@@ -13,27 +13,142 @@
       "window_days": 30,
       "tenant_id": "default",
       "north_star": {
-        "trusted_capability_resolution_rate": 0.2593,
-        "numerator_successful_resolutions": 7,
-        "denominator_gap_events": 27
+        "trusted_capability_resolution_rate": 0.2727,
+        "numerator_successful_resolutions": 9,
+        "denominator_gap_events": 33
       },
       "safety": {
-        "quarantine_rate": 0.7667,
-        "quarantined_outcomes": 23,
-        "total_outcomes": 30
+        "quarantine_rate": 0.7632,
+        "quarantined_outcomes": 29,
+        "total_outcomes": 38
       },
       "latency": {
         "approval_latency_minutes_avg": 0.0,
-        "samples": 34
+        "samples": 43
       },
       "exploration": {
-        "exploration_attempts": 14,
+        "exploration_attempts": 18,
         "bandit_regret_proxy": 0.0
       }
     },
     "policy_decision_log": {
       "ok": true,
       "rows": [
+        {
+          "attempt_id": "att_041966b6667c42d0",
+          "task_id": "task-openclaw-smoke-1774332626",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "e1ac24c25c05684b186a9c309c1d62784f380cb3839e0a8d74eddf45beef8faf",
+          "approval_grant_id": "gr_83e11da6912047",
+          "created_at": "2026-03-24T06:10:26.792771+00:00"
+        },
+        {
+          "attempt_id": "att_6d207aedd9034c00",
+          "task_id": "task-smoke-1774332626163301000",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "6055dfd72d59f2796e1c1e1a91c8b1d5926fca0dd763a2310ba8e02ab49094bd",
+          "approval_grant_id": "gr_84dfc2b8b8e247",
+          "created_at": "2026-03-24T06:10:26.399557+00:00"
+        },
+        {
+          "attempt_id": "att_ea5e860cef1a473d",
+          "task_id": "task-openclaw-smoke-1774332476",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "2c4806c2f69de317405051d3df264152d96ffb2efbbe15d98462fb4690b66272",
+          "approval_grant_id": "gr_e499710a0a7144",
+          "created_at": "2026-03-24T06:07:56.380253+00:00"
+        },
+        {
+          "attempt_id": "att_d029361cf5ac433a",
+          "task_id": "task-smoke-1774332475724718000",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "26663753725560639d73c17fd07a938c9be1ebf3a418e3b92b490d040f0a1f9e",
+          "approval_grant_id": "gr_f29c7ac4c6094a",
+          "created_at": "2026-03-24T06:07:55.960057+00:00"
+        },
+        {
+          "attempt_id": "att_a6316ec505a2433d",
+          "task_id": "trust-pos-1774332475595392000",
+          "tenant_id": "default",
+          "runtime_id": "openclaw",
+          "runtime_band": "B",
+          "policy_schema_version": "bps-0.1",
+          "effect": "allow_with_approval",
+          "reason_codes": [
+            "sensitive_or_low_verification"
+          ],
+          "blocking_conditions": [],
+          "required_approvals": [
+            "install"
+          ],
+          "minimum_verification_tier": "tier1_signed",
+          "runtime_requirements": {
+            "runtime_band_max": "B"
+          },
+          "policy_hash": "a688481b55b90e37683fbd6eb70bc9d3eb93e3fa48c11370506de73754ff96c7",
+          "approval_grant_id": "gr_856908981c394c",
+          "created_at": "2026-03-24T06:07:55.655247+00:00"
+        },
         {
           "attempt_id": "att_06ab820bfddd4c58",
           "task_id": "task-openclaw-smoke-1774286366",
@@ -472,7 +587,7 @@
           "created_at": "2026-03-23T13:53:56.419924+00:00"
         }
       ],
-      "count": 19,
+      "count": 24,
       "schema_version": "policy-decision-log-v1"
     },
     "tenant_profile": {
@@ -482,8 +597,8 @@
       "allow_install_targets_json": "[\"sandbox_workspace\", \"agent_workspace\", \"managed_skill_store\"]",
       "allow_activation_modes_json": "[\"immediate_hot\", \"next_session\"]",
       "allow_sensitive_scopes_autonomous": false,
-      "created_at": "2026-03-23T17:19:26.465220+00:00",
-      "updated_at": "2026-03-23T17:19:26.465227+00:00",
+      "created_at": "2026-03-24T06:10:26.859895+00:00",
+      "updated_at": "2026-03-24T06:10:26.859900+00:00",
       "id": null
     }
   },

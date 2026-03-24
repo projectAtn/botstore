@@ -341,6 +341,8 @@ class PolicyBundle(SQLModel, table=True):
     version: str = Field(index=True)
     spec_json: str = "{}"
     policy_hash: str = Field(index=True)
+    lifecycle_state: str = "draft"
+    previous_active_bundle_id: Optional[int] = None
     is_active: bool = False
     created_at: str = ""
 
@@ -605,6 +607,18 @@ class PolicyBundleCreate(SQLModel):
     version: str
     spec: dict[str, Any]
     activate: bool = True
+    lifecycle_state: str = "draft"
+
+
+class PolicyBundleTransitionRequest(SQLModel):
+    to_state: str
+    activate: bool = False
+
+
+class PolicyReplayDiffRequest(SQLModel):
+    candidate_bundle_row_id: int
+    baseline_bundle_row_id: Optional[int] = None
+    sample_limit: int = 200
 
 
 class TenantPolicyProfileUpsert(SQLModel):
@@ -830,11 +844,26 @@ def _ensure_installattempt_columns() -> None:
             conn.execute(text(f"ALTER TABLE installattempt ADD COLUMN {col} {decl}"))
 
 
+def _ensure_policybundle_columns() -> None:
+    needed = {
+        "lifecycle_state": "TEXT DEFAULT 'draft'",
+        "previous_active_bundle_id": "INTEGER",
+    }
+    with engine.begin() as conn:
+        cols = conn.execute(text("PRAGMA table_info(policybundle)")).fetchall()
+        existing = {str(row[1]) for row in cols}
+        for col, decl in needed.items():
+            if col in existing:
+                continue
+            conn.execute(text(f"ALTER TABLE policybundle ADD COLUMN {col} {decl}"))
+
+
 @app.on_event("startup")
 def on_startup() -> None:
     SQLModel.metadata.create_all(engine)
     _ensure_packversion_trust_columns()
     _ensure_installattempt_columns()
+    _ensure_policybundle_columns()
 
 
 app.mount("/web", StaticFiles(directory="../web", html=True), name="web")
@@ -2425,11 +2454,7 @@ def agent_search(payload: AgentSearchQuery) -> dict:
         }
 
 
-def _load_active_bps_rules(session: Session, bundle_id: str = "default") -> list[BPSRule]:
-    row = session.exec(
-        select(PolicyBundle).where(PolicyBundle.bundle_id == bundle_id, PolicyBundle.is_active == True)
-        .order_by(PolicyBundle.id.desc())
-    ).first()
+def _rules_from_bundle(row: Optional[PolicyBundle]) -> list[BPSRule]:
     if not row:
         return []
     spec = _json_obj(row.spec_json)
@@ -2441,6 +2466,14 @@ def _load_active_bps_rules(session: Session, bundle_id: str = "default") -> list
         except Exception:
             continue
     return out
+
+
+def _load_active_bps_rules(session: Session, bundle_id: str = "default") -> list[BPSRule]:
+    row = session.exec(
+        select(PolicyBundle).where(PolicyBundle.bundle_id == bundle_id, PolicyBundle.is_active == True)
+        .order_by(PolicyBundle.id.desc())
+    ).first()
+    return _rules_from_bundle(row)
 
 
 def _evaluate_bps_rules(
@@ -3088,16 +3121,22 @@ def agent_action_authorize(payload: AgentActionAuthorizeRequest) -> AgentActionA
 def create_policy_bundle(payload: PolicyBundleCreate) -> PolicyBundle:
     with Session(engine) as session:
         policy_hash = _make_policy_hash(payload.spec)
+        prev_active_id: Optional[int] = None
         if payload.activate:
             active = list(session.exec(select(PolicyBundle).where(PolicyBundle.bundle_id == payload.bundle_id, PolicyBundle.is_active == True)).all())
             for row in active:
+                prev_active_id = row.id
                 row.is_active = False
+                if row.lifecycle_state != "retired":
+                    row.lifecycle_state = "retired"
                 session.add(row)
         row = PolicyBundle(
             bundle_id=payload.bundle_id,
             version=payload.version,
             spec_json=json.dumps(payload.spec),
             policy_hash=policy_hash,
+            lifecycle_state=("active" if payload.activate else payload.lifecycle_state),
+            previous_active_bundle_id=prev_active_id,
             is_active=payload.activate,
             created_at=_iso_now(),
         )
@@ -3114,6 +3153,143 @@ def list_policy_bundles(bundle_id: Optional[str] = None) -> list[PolicyBundle]:
         if bundle_id:
             q = q.where(PolicyBundle.bundle_id == bundle_id)
         return list(session.exec(q.order_by(PolicyBundle.id.desc())).all())
+
+
+@app.post("/policy/bundles/{bundle_row_id}/transition", response_model=PolicyBundle)
+def transition_policy_bundle(bundle_row_id: int, payload: PolicyBundleTransitionRequest) -> PolicyBundle:
+    allowed = {
+        "draft": {"tested", "shadow", "retired"},
+        "tested": {"shadow", "canary", "retired"},
+        "shadow": {"canary", "retired"},
+        "canary": {"active", "retired"},
+        "active": {"retired"},
+        "retired": set(),
+    }
+    to_state = (payload.to_state or "").strip().lower()
+    with Session(engine) as session:
+        row = session.get(PolicyBundle, bundle_row_id)
+        if not row:
+            raise HTTPException(status_code=404, detail="policy bundle not found")
+        cur = (row.lifecycle_state or "draft").strip().lower()
+        if to_state not in allowed.get(cur, set()):
+            raise HTTPException(status_code=400, detail=f"invalid transition {cur} -> {to_state}")
+
+        row.lifecycle_state = to_state
+        if to_state == "active" or payload.activate:
+            prev_active_id: Optional[int] = None
+            active = list(session.exec(select(PolicyBundle).where(PolicyBundle.bundle_id == row.bundle_id, PolicyBundle.is_active == True)).all())
+            for a in active:
+                if a.id == row.id:
+                    continue
+                prev_active_id = a.id
+                a.is_active = False
+                if a.lifecycle_state != "retired":
+                    a.lifecycle_state = "retired"
+                session.add(a)
+            row.previous_active_bundle_id = prev_active_id or row.previous_active_bundle_id
+            row.is_active = True
+            row.lifecycle_state = "active"
+        elif to_state == "retired":
+            row.is_active = False
+
+        session.add(row)
+        session.commit()
+        session.refresh(row)
+        return row
+
+
+@app.post("/policy/bundles/{bundle_id}/rollback")
+def rollback_policy_bundle(bundle_id: str) -> dict:
+    with Session(engine) as session:
+        active = session.exec(select(PolicyBundle).where(PolicyBundle.bundle_id == bundle_id, PolicyBundle.is_active == True).order_by(PolicyBundle.id.desc())).first()
+        if not active:
+            raise HTTPException(status_code=404, detail="active policy bundle not found")
+        prev_id = active.previous_active_bundle_id
+        if not prev_id:
+            raise HTTPException(status_code=400, detail="no previous active bundle pointer")
+        prev = session.get(PolicyBundle, prev_id)
+        if not prev:
+            raise HTTPException(status_code=404, detail="previous bundle not found")
+
+        active.is_active = False
+        active.lifecycle_state = "retired"
+        prev.is_active = True
+        prev.lifecycle_state = "active"
+        session.add(active)
+        session.add(prev)
+        session.commit()
+        return {
+            "ok": True,
+            "bundle_id": bundle_id,
+            "rolled_back_from": active.id,
+            "rolled_back_to": prev.id,
+            "active_version": prev.version,
+        }
+
+
+@app.post("/policy/replay-diff")
+def policy_replay_diff(payload: PolicyReplayDiffRequest) -> dict:
+    n = max(10, min(payload.sample_limit, 2000))
+    with Session(engine) as session:
+        cand = session.get(PolicyBundle, payload.candidate_bundle_row_id)
+        if not cand:
+            raise HTTPException(status_code=404, detail="candidate policy bundle not found")
+
+        if payload.baseline_bundle_row_id:
+            base = session.get(PolicyBundle, payload.baseline_bundle_row_id)
+            if not base:
+                raise HTTPException(status_code=404, detail="baseline policy bundle not found")
+        else:
+            base = session.exec(select(PolicyBundle).where(PolicyBundle.bundle_id == cand.bundle_id, PolicyBundle.is_active == True).order_by(PolicyBundle.id.desc())).first()
+            if not base:
+                raise HTTPException(status_code=400, detail="no active baseline bundle")
+
+        cand_rules = _rules_from_bundle(cand)
+        base_rules = _rules_from_bundle(base)
+
+        rows = list(session.exec(select(CandidateImpression).order_by(CandidateImpression.id.desc()).limit(n)).all())
+        comparisons: list[dict] = []
+        deltas = {"allow_to_deny": 0, "deny_to_allow": 0, "approval_to_allow": 0, "total_changed": 0}
+
+        for r in rows:
+            att = session.exec(select(InstallAttempt).where(InstallAttempt.attempt_id == r.attempt_id)).first()
+            runtime_band = att.runtime_band if att else RuntimeBand.D
+            feat = _json_obj(r.features_json)
+            requested_scopes = []
+            if r.pack_version_id:
+                pv = session.get(PackVersion, r.pack_version_id)
+                if pv:
+                    requested_scopes = _json_list(pv.scopes_requested_json)
+            ver_tier = str(feat.get("verification_tier", "tier0_listed"))
+
+            base_res = _evaluate_bps_rules("install", requested_scopes, ver_tier, runtime_band, base_rules)
+            cand_res = _evaluate_bps_rules("install", requested_scopes, ver_tier, runtime_band, cand_rules)
+
+            if base_res.effect != cand_res.effect:
+                deltas["total_changed"] += 1
+                if base_res.effect == "allow" and cand_res.effect == "deny":
+                    deltas["allow_to_deny"] += 1
+                if base_res.effect == "deny" and cand_res.effect == "allow":
+                    deltas["deny_to_allow"] += 1
+                if base_res.effect in {"allow_with_approval", "require_approval"} and cand_res.effect == "allow":
+                    deltas["approval_to_allow"] += 1
+
+            comparisons.append({
+                "attempt_id": r.attempt_id,
+                "pack_version_id": r.pack_version_id,
+                "baseline_effect": base_res.effect,
+                "candidate_effect": cand_res.effect,
+                "changed": base_res.effect != cand_res.effect,
+            })
+
+        return {
+            "ok": True,
+            "candidate_bundle_row_id": cand.id,
+            "baseline_bundle_row_id": base.id if base else None,
+            "sampled": len(rows),
+            "deltas": deltas,
+            "comparisons": comparisons,
+        }
 
 
 @app.put("/policy/tenant-profile", response_model=TenantPolicyProfile)

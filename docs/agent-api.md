@@ -90,6 +90,9 @@ For native policy DSL evaluation, use:
 Policy admin/export endpoints:
 - `POST /policy/bundles`
 - `GET /policy/bundles`
+- `POST /policy/bundles/{bundle_row_id}/transition`
+- `POST /policy/replay-diff`
+- `POST /policy/bundles/{bundle_id}/rollback`
 - `PUT /policy/tenant-profile`
 - `GET /policy/tenant-profile/{tenant_id}`
 - `GET /policy/decision-log`

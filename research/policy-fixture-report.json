@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-03-24T06:10:26.039935+00:00",
+  "base_url": "http://127.0.0.1:8787",
+  "all_pass": true,
+  "count": 3,
+  "rows": [
+    {
+      "name": "sensitive_message_send_requires_approval",
+      "expected_effect": "allow_with_approval",
+      "actual_effect": "allow_with_approval",
+      "pass": true,
+      "result": {
+        "effect": "allow_with_approval",
+        "policy_schema_version": "bps-0.1",
+        "reason_codes": [
+          "sensitive_or_low_verification"
+        ],
+        "blocking_conditions": [],
+        "required_approvals": [
+          "install"
+        ],
+        "minimum_verification_tier": null,
+        "runtime_requirements": {
+          "runtime_band_max": "RuntimeBand.B"
+        },
+        "policy_hash": "51914ffed1b4368b1201b79a8e7c4d0b2914fc0304d3fac259dc65319b6124f6"
+      }
+    },
+    {
+      "name": "runtime_band_too_weak_denied",
+      "expected_effect": "deny",
+      "actual_effect": "deny",
+      "pass": true,
+      "result": {
+        "effect": "deny",
+        "policy_schema_version": "bps-0.1",
+        "reason_codes": [
+          "runtime_band_too_weak"
+        ],
+        "blocking_conditions": [
+          "rule=r1: runtime band RuntimeBand.D exceeds max RuntimeBand.B"
+        ],
+        "required_approvals": [],
+        "minimum_verification_tier": null,
+        "runtime_requirements": {
+          "runtime_band_max": "RuntimeBand.B"
+        },
+        "policy_hash": "d1d4a732b17923be089a2b2427552dd896ebe2c31c236039438cff0457e62208"
+      }
+    },
+    {
+      "name": "low_risk_allow",
+      "expected_effect": "allow",
+      "actual_effect": "allow",
+      "pass": true,
+      "result": {
+        "effect": "allow",
+        "policy_schema_version": "bps-0.1",
+        "reason_codes": [
+          "low_risk_context"
+        ],
+        "blocking_conditions": [],
+        "required_approvals": [],
+        "minimum_verification_tier": null,
+        "runtime_requirements": {},
+        "policy_hash": "8056895264b62890da10df783d28f99bd16ff589aa44a4e03d1bd19da67cd81f"
+      }
+    }
+  ]
+}

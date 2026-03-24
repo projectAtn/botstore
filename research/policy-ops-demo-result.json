@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-03-24T06:10:26.132197+00:00",
+  "base_url": "http://127.0.0.1:8787",
+  "bundle_id": "ops-pilot-1774332626084115000",
+  "baseline": {
+    "bundle_id": "ops-pilot-1774332626084115000",
+    "policy_hash": "20bda2a15847c075ecc8400b6e05f34eb2663b17bcf299e6281319e30a9d4970",
+    "version": "1.0.0",
+    "previous_active_bundle_id": null,
+    "created_at": "2026-03-24T06:10:26.094877+00:00",
+    "spec_json": "{\"rules\": [{\"rule_id\": \"sensitive_send_requires_approval\", \"action_in\": [\"install\", \"invoke\"], \"scope_intersects\": [\"message.send\", \"email.send\"], \"min_verification_tier\": \"tier1_signed\", \"runtime_band_max\": \"B\", \"effect\": \"allow_with_approval\", \"require_approval\": true}]}",
+    "id": 5,
+    "lifecycle_state": "active",
+    "is_active": true
+  },
+  "candidate": {
+    "bundle_id": "ops-pilot-1774332626084115000",
+    "policy_hash": "7142e79fff51c05f1b1d3d8f142ffeb31a50f90d66621d18b2b6a6e5dbdcb92d",
+    "version": "1.1.0",
+    "previous_active_bundle_id": null,
+    "created_at": "2026-03-24T06:10:26.097462+00:00",
+    "spec_json": "{\"rules\": [{\"rule_id\": \"sensitive_send_requires_approval\", \"action_in\": [\"install\", \"invoke\"], \"scope_intersects\": [\"message.send\", \"email.send\"], \"min_verification_tier\": \"tier1_signed\", \"runtime_band_max\": \"B\", \"effect\": \"allow_with_approval\", \"require_approval\": true}, {\"rule_id\": \"dangerous_delete_denied\", \"action_in\": [\"install\", \"invoke\"], \"scope_intersects\": [\"files.delete\"], \"runtime_band_max\": \"B\", \"effect\": \"deny\", \"require_approval\": false}]}",
+    "id": 6,
+    "lifecycle_state": "draft",
+    "is_active": false
+  },
+  "transitions": {
+    "tested": {
+      "bundle_id": "ops-pilot-1774332626084115000",
+      "policy_hash": "7142e79fff51c05f1b1d3d8f142ffeb31a50f90d66621d18b2b6a6e5dbdcb92d",
+      "version": "1.1.0",
+      "previous_active_bundle_id": null,
+      "created_at": "2026-03-24T06:10:26.097462+00:00",
+      "spec_json": "{\"rules\": [{\"rule_id\": \"sensitive_send_requires_approval\", \"action_in\": [\"install\", \"invoke\"], \"scope_intersects\": [\"message.send\", \"email.send\"], \"min_verification_tier\": \"tier1_signed\", \"runtime_band_max\": \"B\", \"effect\": \"allow_with_approval\", \"require_approval\": true}, {\"rule_id\": \"dangerous_delete_denied\", \"action_in\": [\"install\", \"invoke\"], \"scope_intersects\": [\"files.delete\"], \"runtime_band_max\": \"B\", \"effect\": \"deny\", \"require_approval\": false}]}",
+      "id": 6,
+      "lifecycle_state": "tested",
+      "is_active": false
+    },
+    "shadow": {
+      "bundle_id": "ops-pilot-1774332626084115000",
+      "policy_hash": "7142e79fff51c05f1b1d3d8f142ffeb31a50f90d66621d18b2b6a6e5dbdcb92d",
+      "version": "1.1.0",
+      "previous_active_bundle_id": null,
+      "created_at": "2026-03-24T06:10:26.097462+00:00",
+      "spec_json": "{\"rules\": [{\"rule_id\": \"sensitive_send_requires_approval\", \"action_in\": [\"install\", \"invoke\"], \"scope_intersects\": [\"message.send\", \"email.send\"], \"min_verification_tier\": \"tier1_signed\", \"runtime_band_max\": \"B\", \"effect\": \"allow_with_approval\", \"require_approval\": true}, {\"rule_id\": \"dangerous_delete_denied\", \"action_in\": [\"install\", \"invoke\"], \"scope_intersects\": [\"files.delete\"], \"runtime_band_max\": \"B\", \"effect\": \"deny\", \"require_approval\": false}]}",
+      "id": 6,
+      "lifecycle_state": "shadow",
+      "is_active": false
+    },
+    "canary": {
+      "bundle_id": "ops-pilot-1774332626084115000",
+      "policy_hash": "7142e79fff51c05f1b1d3d8f142ffeb31a50f90d66621d18b2b6a6e5dbdcb92d",
+      "version": "1.1.0",
+      "previous_active_bundle_id": null,
+      "created_at": "2026-03-24T06:10:26.097462+00:00",
+      "spec_json": "{\"rules\": [{\"rule_id\": \"sensitive_send_requires_approval\", \"action_in\": [\"install\", \"invoke\"], \"scope_intersects\": [\"message.send\", \"email.send\"], \"min_verification_tier\": \"tier1_signed\", \"runtime_band_max\": \"B\", \"effect\": \"allow_with_approval\", \"require_approval\": true}, {\"rule_id\": \"dangerous_delete_denied\", \"action_in\": [\"install\", \"invoke\"], \"scope_intersects\": [\"files.delete\"], \"runtime_band_max\": \"B\", \"effect\": \"deny\", \"require_approval\": false}]}",
+      "id": 6,
+      "lifecycle_state": "canary",
+      "is_active": false
+    },
+    "activated": {
+      "bundle_id": "ops-pilot-1774332626084115000",
+      "policy_hash": "7142e79fff51c05f1b1d3d8f142ffeb31a50f90d66621d18b2b6a6e5dbdcb92d",
+      "version": "1.1.0",
+      "previous_active_bundle_id": 5,
+      "created_at": "2026-03-24T06:10:26.097462+00:00",
+      "spec_json": "{\"rules\": [{\"rule_id\": \"sensitive_send_requires_approval\", \"action_in\": [\"install\", \"invoke\"], \"scope_intersects\": [\"message.send\", \"email.send\"], \"min_verification_tier\": \"tier1_signed\", \"runtime_band_max\": \"B\", \"effect\": \"allow_with_approval\", \"require_approval\": true}, {\"rule_id\": \"dangerous_delete_denied\", \"action_in\": [\"install\", \"invoke\"], \"scope_intersects\": [\"files.delete\"], \"runtime_band_max\": \"B\", \"effect\": \"deny\", \"require_approval\": false}]}",
+      "id": 6,
+      "lifecycle_state": "active",
+      "is_active": true
+    }
+  },
+  "replay_diff": {
+    "sampled": 88,
+    "deltas": {
+      "allow_to_deny": 0,
+      "deny_to_allow": 0,
+      "approval_to_allow": 0,
+      "total_changed": 0
+    }
+  },
+  "rollback": {
+    "ok": true,
+    "bundle_id": "ops-pilot-1774332626084115000",
+    "rolled_back_from": 6,
+    "rolled_back_to": 5,
+    "active_version": "1.0.0"
+  }
+}

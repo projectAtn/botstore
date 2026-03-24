@@ -1,0 +1,28 @@
+{
+  "fixtures": [
+    {
+      "name": "sensitive_message_send_requires_approval",
+      "action": "install",
+      "requested_scopes": ["message.send"],
+      "verification_tier": "tier2_verified",
+      "runtime_band": "B",
+      "expected_effect": "allow_with_approval"
+    },
+    {
+      "name": "runtime_band_too_weak_denied",
+      "action": "install",
+      "requested_scopes": ["message.send"],
+      "verification_tier": "tier2_verified",
+      "runtime_band": "D",
+      "expected_effect": "deny"
+    },
+    {
+      "name": "low_risk_allow",
+      "action": "install",
+      "requested_scopes": ["log.read"],
+      "verification_tier": "tier3_conformant",
+      "runtime_band": "B",
+      "expected_effect": "allow"
+    }
+  ]
+}
