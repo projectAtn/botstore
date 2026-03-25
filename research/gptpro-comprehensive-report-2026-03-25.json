@@ -1,0 +1,138 @@
+{
+  "report_id": "gptpro-comprehensive-report-2026-03-25",
+  "generated_at": "2026-03-25T07:50:39Z",
+  "project": "BotStore",
+  "overall_status": "green",
+  "current_head_commit": "49ca16a",
+  "executive_summary": {
+    "infra": "Dockerized stack validated (api+db+worker) with Postgres",
+    "quality": "Full CI gate pass including team must-pass gate",
+    "catalog": "Large seeded catalog available and validated in containerized runtime",
+    "readiness": "Ready for next guidance / staging rollout hardening"
+  },
+  "completed_milestones": [
+    "50-skill v2 rollout completed and QA-validated",
+    "12-personality sweep completed with ranking QA",
+    "Team product line launched (15 teams, 29 singular role agents, custom team builder)",
+    "Must-pass policy enforced (10 scenarios per team)",
+    "Reddit top-20 intake mapped, new skills generated, scenarios expanded",
+    "Custom team API endpoints implemented (compose/validate/simulate/publish)",
+    "Promotion QA gate enforced + catalog QA metadata surfaced in UI",
+    "Interop endpoints implemented (import/export skill folders)",
+    "Docker + Postgres + worker migration baseline implemented and stabilized"
+  ],
+  "validation_snapshot": {
+    "ci_gate": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "required_failed": 0,
+      "status": "pass"
+    },
+    "ranking_eval_summary": {
+      "total": 8,
+      "hit_top3": 8,
+      "hit_top5": 8,
+      "top3_rate": 1.0,
+      "top5_rate": 1.0
+    },
+    "team_must_pass": {
+      "total_teams": 15,
+      "passed_teams": 15,
+      "failed_teams": 0
+    },
+    "reddit_expanded_team_qa": {
+      "total": 170,
+      "pass": 170,
+      "avg_score": 0.892
+    },
+    "bootstrap_postgres": {
+      "source_counts": {
+        "creators": 34,
+        "packs": 177
+      },
+      "created_packs": 0,
+      "skipped_packs": 177
+    }
+  },
+  "problems_encountered_and_resolved": [
+    {
+      "problem": "API outage caused CI failures",
+      "resolution": "Restarted API, re-ran gate, returned green",
+      "status": "resolved"
+    },
+    {
+      "problem": "Regression harness promotion expectation mismatched strict production gate behavior",
+      "resolution": "Updated regression check to accept valid gate-blocking responses",
+      "status": "resolved"
+    },
+    {
+      "problem": "Docker/Postgres startup failed due to SQLite-specific PRAGMA checks",
+      "resolution": "Replaced startup migration checks with DB-agnostic SQLAlchemy inspection",
+      "status": "resolved"
+    },
+    {
+      "problem": "Queue worker and API status visibility inconsistency in container mode",
+      "resolution": "Shared research volume, env-based API base override, queue-consumer stabilization",
+      "status": "resolved"
+    }
+  ],
+  "policy_and_enforcement": {
+    "team_skill_integrity_rule": "Enforced: team capabilities must map to standalone marketplace skills",
+    "validation_enforcement": "/teams/custom/validate emits errors for missing/non-skill refs",
+    "publish_enforcement": "/teams/custom/publish blocked on non-standalone refs",
+    "must_pass_policy": "10 scenarios required per team for production promotion"
+  },
+  "key_artifacts": [
+    "botstore/research/ci-gate-run-all-report.json",
+    "botstore/research/ranking-eval-current.json",
+    "botstore/research/team-must-pass-gate-report-v1.json",
+    "botstore/research/team-pack-qa-result-v3-plus-reddit.json",
+    "botstore/research/bootstrap-postgres-from-sqlite-report.json",
+    "botstore/research/hosting-phase1-execution-2026-03-18.md",
+    "botstore/research/botstore-manifest-and-adapter-contract-v1.md",
+    "botstore/research/quality-control-and-publishing-team-v1.md",
+    "botstore/research/hosting-plan-beyond-local-mac-v1.md"
+  ],
+  "open_risks": [
+    {
+      "risk": "Cloud staging deployment not yet executed end-to-end in managed environment",
+      "impact": "medium",
+      "mitigation": "Run staging rollout with alerting/rollback drill checklist"
+    },
+    {
+      "risk": "Adapter distribution beyond OpenClaw still in design stage",
+      "impact": "medium",
+      "mitigation": "Implement manifest endpoint + OpenClaw adapter v1 + second runtime adapter"
+    }
+  ],
+  "recommended_next_phase_tasks": [
+    "Execute staging deployment on cloud target with Postgres + object storage",
+    "Implement manifest endpoint + OpenClaw adapter contract execution path",
+    "Add publish-team weekly governance automation report",
+    "Introduce signed provenance for manifests and packs",
+    "Automate data seed/restore script in deployment pipeline"
+  ],
+  "recent_commits_top20": [
+    "49ca16a botstore: add postgres bootstrap verifier and confirm docker stack with full gate pass",
+    "374f8c8 botstore: stabilize docker stack (postgres-safe startup, shared queue volume, worker API base env)",
+    "dd0fda6 Worker lane: draft publish-ready copy for contact and clinic pages",
+    "fbdda34 Add deterministic soak orchestration and external rollout gate packet tooling",
+    "9ebd072 Soak: add deterministic 48h runner, SLO export, and report templates",
+    "04ab06f botstore: add post-install docker verification script for full stack smoke + gate",
+    "90cf417 Worker lane: draft publish-ready /haar copy and language fixes",
+    "69c3d55 Gate: add external rollout packet checklist, generator, and canary template",
+    "77733c1 Add worker-lane tracking QA scope and 7-day attribution baseline",
+    "83b3b0c botstore: add ChatGPT Pro follow-up JSON status report (2026-03-25)",
+    "5ff5b5d botstore: align regression promote check with strict production promotion gates",
+    "0e79367 Harden production trust admission with exact authority pinning and digest-bound receipts",
+    "9bbcd84 Add production trust-policy template with exact workflow identity pinning",
+    "a79d169 Add GPT Pro next-cycle JSON report (2026-03-24)",
+    "0919c30 Add policy SLO rollback controller, monitoring envelope, and cadence artifacts",
+    "9b287c0 Add cryptographic trust policy, receipts, and crypto verification endpoints",
+    "5ff6f67 Add comprehensive GPT Pro progress JSON for phase 2/3 completion",
+    "34b5273 Add launch scorecard, operator runbook, and go-no-go report",
+    "191449d Add runtime2 (python host-bot) certification and compatibility matrix artifacts",
+    "b98fb1a Add OpenClaw auth-bypass guard check and enforce it in conformance"
+  ]
+}
