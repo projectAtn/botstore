@@ -1,0 +1,38 @@
+{
+  "report_id": "staging-deploy-report",
+  "generated_at": "2026-03-25T09:18:00Z",
+  "phase": "S1-managed-staging-rollout",
+  "status": "in_progress",
+  "scope_lock": {
+    "reference_runtime": "openclaw",
+    "autonomous_pack_types": ["skill", "personality"],
+    "frozen_areas": [
+      "catalog_expansion",
+      "team_features",
+      "ranking_new_work",
+      "new_runtime_expansion"
+    ]
+  },
+  "baseline": {
+    "docker_stack_validated_local": true,
+    "services": ["api", "worker", "postgres"],
+    "ci_gate_last_status": "pass",
+    "commit": "49ca16a"
+  },
+  "managed_staging_requirements": {
+    "api_service": "pending",
+    "worker_service": "pending",
+    "managed_postgres": "pending",
+    "object_storage": "pending",
+    "secret_injection": "pending",
+    "migration_job": "implemented-local / pending-managed",
+    "logs_metrics_sink": "pending"
+  },
+  "progress_pct": 42,
+  "current_blocker": null,
+  "immediate_next_actions": [
+    "Produce staging-smoke-report.json with managed target checks",
+    "Add backup-restore-drill.json template and validation checklist",
+    "Define seed-restore-report.json automation contract"
+  ]
+}

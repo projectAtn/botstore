@@ -1,0 +1,20 @@
+{
+  "report_id": "staging-smoke-report",
+  "generated_at": "2026-03-25T09:18:30Z",
+  "phase": "S1-managed-staging-rollout",
+  "status": "draft-ready",
+  "checks": [
+    {"name": "health_endpoint", "expected": "200 + ok=true", "result": "pass-local", "notes": "validated on docker stack"},
+    {"name": "db_connectivity", "expected": "managed postgres reachable", "result": "pending-managed"},
+    {"name": "worker_queue_roundtrip", "expected": "queued->running->succeeded", "result": "pass-local"},
+    {"name": "artifact_publish", "expected": "artifact copied to configured storage", "result": "pass-local / pending-managed-storage"},
+    {"name": "migration_job", "expected": "upgrade head succeeds", "result": "pass-local"},
+    {"name": "seed_restore_step", "expected": "catalog bootstrap + integrity check", "result": "pass-local"}
+  ],
+  "summary": {
+    "local_passed": 5,
+    "local_total": 6,
+    "managed_pending": 6
+  },
+  "next_step": "Bind this smoke matrix to managed staging target and rerun with real cloud endpoints."
+}
