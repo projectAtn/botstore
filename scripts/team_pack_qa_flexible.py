@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import os
 import re
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-BASE = "http://127.0.0.1:8787"
+BASE = os.getenv("BOTSTORE_API_BASE", "http://127.0.0.1:8787")
 
 
 def http_json(path: str):

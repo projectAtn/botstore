@@ -25,6 +25,11 @@ services:
     container_name: botstore-api
     environment:
       DATABASE_URL: postgresql+psycopg://botstore:botstore-dev-password@db:5432/botstore
+      JOB_QUEUE_PATH: /app/research/job-queue.jsonl
+      JOB_STATUS_PATH: /app/research/job-status.json
+      ARTIFACTS_DIR: /app/research/artifacts
+    volumes:
+      - ./research:/app/research
     ports:
       - "8787:8787"
     depends_on:
@@ -42,6 +47,12 @@ services:
       DATABASE_URL: postgresql+psycopg://botstore:botstore-dev-password@db:5432/botstore
       WORKER_MODE: queue_consumer
       WORKER_INTERVAL_SECONDS: "30"
+      BOTSTORE_API_BASE: http://api:8787
+      JOB_QUEUE_PATH: /app/research/job-queue.jsonl
+      JOB_STATUS_PATH: /app/research/job-status.json
+      ARTIFACTS_DIR: /app/research/artifacts
+    volumes:
+      - ./research:/app/research
     depends_on:
       db:
         condition: service_healthy

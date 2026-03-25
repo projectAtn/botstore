@@ -7,7 +7,9 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-BASE = "http://127.0.0.1:8787"
+import os
+
+BASE = os.getenv("BOTSTORE_API_BASE", "http://127.0.0.1:8787")
 
 
 def http_json(path: str, method: str = "GET", payload=None):

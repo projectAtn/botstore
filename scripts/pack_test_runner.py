@@ -4,7 +4,9 @@ import time
 import urllib.request
 from pathlib import Path
 
-BASE = "http://127.0.0.1:8787"
+import os
+
+BASE = os.getenv("BOTSTORE_API_BASE", "http://127.0.0.1:8787")
 OUT = Path(__file__).resolve().parents[1] / "research" / "pack-test-report.md"
 JSON_OUT = Path(__file__).resolve().parents[1] / "research" / "pack-test-result.json"
 SUITE = "pack-smoke-v1"

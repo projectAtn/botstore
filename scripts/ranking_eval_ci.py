@@ -4,7 +4,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 import urllib.request
 
-BASE = "http://127.0.0.1:8787"
+import os
+
+BASE = os.getenv("BOTSTORE_API_BASE", "http://127.0.0.1:8787")
 ROOT = Path(__file__).resolve().parents[1]
 OUT_JSON = ROOT / "research" / "ranking-eval-current.json"
 OUT_MD = ROOT / "research" / "ranking-eval-report.md"

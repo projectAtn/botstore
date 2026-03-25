@@ -32,21 +32,13 @@ JOB_JSON=$(curl -sS -X POST http://127.0.0.1:8787/jobs/enqueue \
   -H "Content-Type: application/json" \
   -d '{"job_type":"ranking_eval_ci","payload":{}}')
 echo "$JOB_JSON"
-JOB_ID=$(python3 - <<'PY'
-import json,sys
-print(json.loads(sys.stdin.read()).get('job_id',''))
-PY
-<<<"$JOB_JSON")
+JOB_ID=$(echo "$JOB_JSON" | python3 -c 'import json,sys; print(json.loads(sys.stdin.read()).get("job_id",""))')
 
 if [[ -n "$JOB_ID" ]]; then
   for i in {1..20}; do
     ST=$(curl -sS "http://127.0.0.1:8787/jobs/$JOB_ID")
     echo "$ST"
-    STATUS=$(python3 - <<'PY'
-import json,sys
-print(json.loads(sys.stdin.read()).get('status',''))
-PY
-<<<"$ST")
+    STATUS=$(echo "$ST" | python3 -c 'import json,sys; print(json.loads(sys.stdin.read()).get("status",""))')
     [[ "$STATUS" == "succeeded" || "$STATUS" == "failed" ]] && break
     sleep 3
   done

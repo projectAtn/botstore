@@ -19,7 +19,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 from sqlmodel import Field, SQLModel, Session, create_engine, select
-from sqlalchemy import text
+from sqlalchemy import text, inspect
 
 
 class PackType(str, Enum):
@@ -823,6 +823,26 @@ app.add_middleware(
 )
 
 
+def _existing_columns(table_name: str) -> set[str]:
+    try:
+        insp = inspect(engine)
+        cols = insp.get_columns(table_name)
+        return {str(c.get("name")) for c in cols}
+    except Exception:
+        return set()
+
+
+def _ensure_columns(table_name: str, needed: dict[str, str]) -> None:
+    existing = _existing_columns(table_name)
+    if not existing:
+        return
+    with engine.begin() as conn:
+        for col, decl in needed.items():
+            if col in existing:
+                continue
+            conn.execute(text(f"ALTER TABLE {table_name} ADD COLUMN {col} {decl}"))
+
+
 def _ensure_packversion_trust_columns() -> None:
     needed = {
         "artifact_uri": "TEXT",
@@ -834,13 +854,7 @@ def _ensure_packversion_trust_columns() -> None:
         "verification_checked_at": "TEXT",
         "verification_verified_at": "TEXT",
     }
-    with engine.begin() as conn:
-        cols = conn.execute(text("PRAGMA table_info(packversion)")).fetchall()
-        existing = {str(row[1]) for row in cols}
-        for col, decl in needed.items():
-            if col in existing:
-                continue
-            conn.execute(text(f"ALTER TABLE packversion ADD COLUMN {col} {decl}"))
+    _ensure_columns("packversion", needed)
 
 
 def _ensure_installattempt_columns() -> None:
@@ -848,13 +862,7 @@ def _ensure_installattempt_columns() -> None:
         "install_target": "TEXT DEFAULT 'agent_workspace'",
         "activation_mode": "TEXT DEFAULT 'immediate_hot'",
     }
-    with engine.begin() as conn:
-        cols = conn.execute(text("PRAGMA table_info(installattempt)")).fetchall()
-        existing = {str(row[1]) for row in cols}
-        for col, decl in needed.items():
-            if col in existing:
-                continue
-            conn.execute(text(f"ALTER TABLE installattempt ADD COLUMN {col} {decl}"))
+    _ensure_columns("installattempt", needed)
 
 
 def _ensure_policybundle_columns() -> None:
@@ -862,13 +870,7 @@ def _ensure_policybundle_columns() -> None:
         "lifecycle_state": "TEXT DEFAULT 'draft'",
         "previous_active_bundle_id": "INTEGER",
     }
-    with engine.begin() as conn:
-        cols = conn.execute(text("PRAGMA table_info(policybundle)")).fetchall()
-        existing = {str(row[1]) for row in cols}
-        for col, decl in needed.items():
-            if col in existing:
-                continue
-            conn.execute(text(f"ALTER TABLE policybundle ADD COLUMN {col} {decl}"))
+    _ensure_columns("policybundle", needed)
 
 
 @app.on_event("startup")
