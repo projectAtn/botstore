@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-18T08:26:43.169501+00:00",
+  "generatedAt": "2026-03-25T07:07:43.406192+00:00",
   "summary": {
     "total": 8,
     "hit_top3": 8,
@@ -84,8 +84,8 @@
         "community-support-ops-bundle",
         "whatsapp-support-copilot",
         "discord-community-manager",
-        "empathetic-support-ally-persona",
-        "telegram-community-manager"
+        "customer-support-escalation-team-skill",
+        "empathetic-support-ally-persona"
       ]
     },
     {
@@ -97,15 +97,15 @@
         "research-reliability-bundle"
       ],
       "best_match_slug": "research-librarian-persona",
-      "best_rank": 1,
+      "best_rank": 2,
       "hit_top3": true,
       "hit_top5": true,
       "top5": [
+        "research-digest-compiler",
         "research-librarian-persona",
         "service-ops-verticals",
         "research-briefing-bundle",
-        "research-citation-packager",
-        "paper-to-notes"
+        "research-citation-packager"
       ]
     },
     {
@@ -145,7 +145,7 @@
         "product-strategist-persona",
         "price-change-sentinel",
         "self-host-healthcheck",
-        "onboarding-journey-optimizer"
+        "product-strategy-operator"
       ]
     },
     {
@@ -163,11 +163,15 @@
         "policy-sop-generator",
         "security-alert-triager",
         "deploy-rollback-guardian",
-        "incident-triage-commander"
+        "custom-revenue-tiger-team"
       ]
     }
   ],
   "drift": {
-    "has_previous": false
+    "has_previous": true,
+    "top3_rate_delta": 0.0,
+    "top5_rate_delta": 0.0,
+    "mean_rank_delta": 0.0,
+    "regressions": []
   }
 }

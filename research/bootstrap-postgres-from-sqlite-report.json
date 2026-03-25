@@ -1,0 +1,12 @@
+{
+  "source_sqlite": "/Users/claw/.openclaw/workspace/botstore/api/botstore.db",
+  "api_base": "http://127.0.0.1:8787",
+  "source_counts": {
+    "creators": 34,
+    "packs": 177
+  },
+  "created_creators": [],
+  "created_packs": 0,
+  "skipped_packs": 177,
+  "failed_packs": []
+}

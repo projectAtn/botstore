@@ -1,6 +1,6 @@
 # Ranking Eval CI Report
 
-Generated: 2026-03-18T08:26:43.169501+00:00
+Generated: 2026-03-25T07:07:43.406192+00:00
 
 Top-3 hit: **8/8** (1.0)
 Top-5 hit: **8/8** (1.0)
@@ -13,10 +13,13 @@ Top-5 hit: **8/8** (1.0)
 | `security-governance` | `security-alert-triager` | 1 | ✅ | ✅ |
 | `content-growth` | `seo-brief-builder` | 2 | ✅ | ✅ |
 | `community-support` | `whatsapp-support-copilot` | 2 | ✅ | ✅ |
-| `research-citations` | `research-librarian-persona` | 1 | ✅ | ✅ |
+| `research-citations` | `research-librarian-persona` | 2 | ✅ | ✅ |
 | `finance-controls` | `invoice-expense-audit-bundle` | 1 | ✅ | ✅ |
 | `market-intel` | `reddit-scout-pro` | 1 | ✅ | ✅ |
 | `personality-compliance` | `strict-compliance-officer-persona` | 1 | ✅ | ✅ |
 
 ## Drift
-- No previous baseline found.
+- top3_rate_delta: 0.0
+- top5_rate_delta: 0.0
+- mean_rank_delta: 0.0
+- Regressions: none
