@@ -113,6 +113,9 @@ Then open: `http://localhost:8787/docs`
 - Monitoring alert test: `scripts/monitoring_alert_test.py`
 - Progress heartbeat: `scripts/progress_heartbeat.py`
 - Phase gate summary: `scripts/phase_gate_summary.py`
+- External rollout gate checklist: `docs/external-rollout-gate-checklist-v1.md`
+- External rollout machine packet: `scripts/external_gate_packet.py` + `research/external-rollout-checklist.json`
+- Canary week report template: `research/canary-week-report-template.md`
 - Heartbeat stale check: `scripts/heartbeat_stale_check.py`
 - Verification policy: `docs/verification-tiers.md`
 - Pack test runner: `scripts/pack_test_runner.py` + `research/pack-test-report.md` + `research/pack-test-result.json`
