@@ -1,0 +1,4 @@
+{"ts": "2026-03-25T06:10:28.848504+00:00", "metric": "quarantine_rate", "value": 0.7273}
+{"ts": "2026-03-25T06:10:28.848734+00:00", "metric": "approval_latency_minutes_avg", "value": 0.0}
+{"ts": "2026-03-25T06:10:28.848740+00:00", "metric": "launch_go_nogo", "value": "GO"}
+{"ts": "2026-03-25T06:10:28.848743+00:00", "metric": "rollback_triggers", "value": ["quarantine_rate_spike:0.7273>0.3000", "activation_failure_proxy_spike:0.7273>0.2000", "force_trigger"]}

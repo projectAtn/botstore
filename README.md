@@ -85,6 +85,7 @@ Then open: `http://localhost:8787/docs`
 - Policy ops runbook v2 (auto rollback): `docs/policy-ops-runbook-v2.md`
 - Operator runbook: `docs/operator-runbook-v1.md`
 - Monitoring envelope: `docs/monitoring-envelope-v1.md`
+- External rollout gate checklist: `docs/external-rollout-gate-checklist-v1.md`
 - Content system starter: `docs/content-strategy-v1.md`
 - Candidate pack quality gate: `research/candidate-packs-v1.json` + `scripts/quality_check_candidates.py` + `research/candidate-packs-quality-report.md`
 - Runtime simulation + tier gate: `scripts/runtime_simulation_verify.py` + `research/runtime-simulation-report.md` + `research/runtime-simulation-result.json`

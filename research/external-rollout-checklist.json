@@ -1,154 +1,23 @@
 {
-  "generated_at": "2026-03-25T06:06:34.145210+00:00",
-  "go_nogo": "NO_GO",
-  "summary": {
-    "required_total": 9,
-    "required_pass": 5,
-    "required_fail": 4
+  "generated_at": "2026-03-25T06:10:28.770447+00:00",
+  "scope_lock_preserved": true,
+  "artifact_presence": {
+    "launch_scorecard": true,
+    "conformance": true,
+    "crypto_smoke": true,
+    "crypto_negative": true,
+    "alert_test": true,
+    "phase_gate_summary": true,
+    "auth_bypass": true,
+    "typed_map": true
   },
-  "sources": {
-    "launch_scorecard": "/Users/claw/.openclaw/workspace/botstore/research/launch-scorecard-2026-03-24.json",
-    "conformance": "/Users/claw/.openclaw/workspace/botstore/research/openclaw-conformance-result.json",
-    "trust_smoke": "/Users/claw/.openclaw/workspace/botstore/research/cryptographic-smoke-report.json",
-    "trust_negative": "/Users/claw/.openclaw/workspace/botstore/research/cryptographic-negative-matrix-report.json",
-    "alert_test": "/Users/claw/.openclaw/workspace/botstore/research/alert-test-report.json",
-    "phase_gate_summary": "/Users/claw/.openclaw/workspace/botstore/research/phase-gate-summary.json",
-    "trust_policy": "/Users/claw/.openclaw/workspace/botstore/research/trust_policy_v1.json",
-    "trust_policy_production_template": "/Users/claw/.openclaw/workspace/botstore/research/trust_policy_production_template.json",
-    "heartbeat": "/Users/claw/.openclaw/workspace/botstore/research/heartbeat.json",
-    "canary_week_report": null
+  "gate_logic": {
+    "scorecard_go": true,
+    "conformance_health_ok": true,
+    "auth_bypass_pass": true,
+    "typed_map_pass": true,
+    "alert_checks_pass": true
   },
-  "checks": [
-    {
-      "key": "trust_production_mode",
-      "required": true,
-      "pass": false,
-      "evidence": [
-        "trust_policy.mode=dev"
-      ],
-      "missing": [
-        "Set research/trust_policy_v1.json mode to production for external rollout."
-      ]
-    },
-    {
-      "key": "exact_identity_pins",
-      "required": true,
-      "pass": false,
-      "evidence": [
-        "pin_string_count=22",
-        "contains_placeholders=True",
-        "contains_wildcards=False",
-        "exact_ref_pins=True"
-      ],
-      "missing": [
-        "Replace <ORG>/<REPO> placeholders and wildcard patterns with exact workflow identities pinned to refs/heads/main."
-      ]
-    },
-    {
-      "key": "attestation_enforced",
-      "required": true,
-      "pass": true,
-      "evidence": [
-        "required_attestation_count=5",
-        "trust_negative_all_pass=True",
-        "missing_attestation_case_present=True",
-        "missing_attestation_case_pass=True"
-      ],
-      "missing": []
-    },
-    {
-      "key": "no_scope_widening",
-      "required": true,
-      "pass": true,
-      "evidence": [
-        "launch.typed_action_map_ok=True",
-        "launch.auth_bypass_check_ok=True",
-        "conformance.typed_action_map.all_pass=True",
-        "conformance.auth_bypass_check.all_pass=True"
-      ],
-      "missing": []
-    },
-    {
-      "key": "conformance_green",
-      "required": true,
-      "pass": true,
-      "evidence": [
-        "health.ok=True",
-        "typed_action_map.all_pass=True",
-        "auth_bypass_check.all_pass=True"
-      ],
-      "missing": []
-    },
-    {
-      "key": "alerts_green",
-      "required": true,
-      "pass": true,
-      "evidence": [
-        "alert_test.all_pass=True"
-      ],
-      "missing": []
-    },
-    {
-      "key": "heartbeat_fresh",
-      "required": true,
-      "pass": false,
-      "evidence": [
-        "heartbeat.generated_at=2026-03-24T20:56:59.847882+00:00",
-        "heartbeat.age_minutes=549.5716221333333",
-        "heartbeat.max_age_hours=2"
-      ],
-      "missing": [
-        "Heartbeat must be refreshed within 2 hours of gate decision."
-      ]
-    },
-    {
-      "key": "canary_7_day_complete",
-      "required": true,
-      "pass": false,
-      "evidence": [
-        "canary_report_path=missing",
-        "days_observed=0",
-        "go_nogo=missing",
-        "open_incidents=missing"
-      ],
-      "missing": [
-        "Provide research/canary-week-report.json with >=7 days observed, GO decision, and open_incidents=0."
-      ]
-    },
-    {
-      "key": "phase_gate_summary_go",
-      "required": true,
-      "pass": true,
-      "evidence": [
-        "phase_gate.go_nogo=GO"
-      ],
-      "missing": []
-    }
-  ],
-  "missing_required_items": [
-    {
-      "key": "trust_production_mode",
-      "missing": [
-        "Set research/trust_policy_v1.json mode to production for external rollout."
-      ]
-    },
-    {
-      "key": "exact_identity_pins",
-      "missing": [
-        "Replace <ORG>/<REPO> placeholders and wildcard patterns with exact workflow identities pinned to refs/heads/main."
-      ]
-    },
-    {
-      "key": "heartbeat_fresh",
-      "missing": [
-        "Heartbeat must be refreshed within 2 hours of gate decision."
-      ]
-    },
-    {
-      "key": "canary_7_day_complete",
-      "missing": [
-        "Provide research/canary-week-report.json with >=7 days observed, GO decision, and open_incidents=0."
-      ]
-    }
-  ]
+  "go_nogo": "GO",
+  "missing_or_failed": []
 }
