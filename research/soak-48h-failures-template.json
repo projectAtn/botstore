@@ -1,0 +1,26 @@
+{
+  "run_id": "soak48h-YYYYMMDDTHHMMSSZ-seed",
+  "generated_at": "2026-03-25T00:00:00+00:00",
+  "summary": {
+    "planned_cycles": 144,
+    "executed_cycles": 0,
+    "failure_count": 0,
+    "distinct_failure_signatures": 0
+  },
+  "failures": [
+    {
+      "cycle_index": 1,
+      "scenario": "steady_state",
+      "scheduled_at": "2026-03-25T00:00:00+00:00",
+      "command": [
+        "python3",
+        "scripts/progress_heartbeat.py"
+      ],
+      "returncode": 1,
+      "stderr_tail": "sample stderr",
+      "classification": "transient|permanent|unknown",
+      "owner": "ops|policy|trust|monitoring",
+      "remediation": "Describe mitigation or follow-up"
+    }
+  ]
+}

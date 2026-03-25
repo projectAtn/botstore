@@ -117,6 +117,10 @@ Then open: `http://localhost:8787/docs`
 - External rollout machine packet: `scripts/external_gate_packet.py` + `research/external-rollout-checklist.json`
 - Canary week report template: `research/canary-week-report-template.md`
 - Heartbeat stale check: `scripts/heartbeat_stale_check.py`
+- 48h soak orchestration runner: `scripts/soak_48h_runner.py`
+- Soak SLO series export: `scripts/soak_slo_series_export.py`
+- 48h soak report template: `research/soak-48h-report-template.md`
+- 48h soak failures template: `research/soak-48h-failures-template.json`
 - Verification policy: `docs/verification-tiers.md`
 - Pack test runner: `scripts/pack_test_runner.py` + `research/pack-test-report.md` + `research/pack-test-result.json`
 - Statement-based contract runner: `research/pack-performance-contracts.json` + `scripts/contract_task_runner.py` + `research/contract-task-report.md` + `research/contract-task-result.json`
