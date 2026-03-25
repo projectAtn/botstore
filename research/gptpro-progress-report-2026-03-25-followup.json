@@ -1,0 +1,99 @@
+{
+  "report_id": "gptpro-progress-report-2026-03-25-followup",
+  "generated_at": "2026-03-25T06:55:00Z",
+  "project": "BotStore",
+  "phase_context": "Post-phase-2/3 hardening follow-up",
+  "summary": {
+    "status": "ready_for_next_guidance",
+    "headline": "Previous ChatGPT Pro phase work completed; regression gate mismatch fixed; CI back to green.",
+    "confidence": 0.9
+  },
+  "completed_work": [
+    {
+      "item": "Strict trust-policy hardening and admission guardrails",
+      "evidence_commits": [
+        "9bbcd84",
+        "0e79367"
+      ]
+    },
+    {
+      "item": "Crypto receipts and verification endpoints/reporting artifacts",
+      "evidence_commits": [
+        "9b287c0"
+      ]
+    },
+    {
+      "item": "Policy SLO rollback controller + monitoring envelope",
+      "evidence_commits": [
+        "0919c30"
+      ]
+    },
+    {
+      "item": "Runtime2 compatibility/certification + launch scorecard/runbook/go-no-go pack",
+      "evidence_commits": [
+        "191449d",
+        "34b5273"
+      ]
+    },
+    {
+      "item": "Generated prior GPT Pro reports for phase handoff",
+      "evidence_commits": [
+        "5ff6f67",
+        "a79d169"
+      ]
+    },
+    {
+      "item": "Regression harness aligned with strict production promotion gates",
+      "evidence_commits": [
+        "5ff5b5d"
+      ]
+    }
+  ],
+  "current_validation": {
+    "ci_gate_status": "pass",
+    "must_pass_team_gate": {
+      "status": "pass",
+      "total_teams": 15,
+      "passed_teams": 15,
+      "failed_teams": 0,
+      "source": "botstore/research/team-must-pass-gate-report-v1.json"
+    },
+    "latest_ci_artifact": "botstore/research/ci-gate-run-all-report.json"
+  },
+  "problems_encountered": [
+    {
+      "problem": "BotStore API outage caused CI runner to fail",
+      "resolution": "API restarted and health restored",
+      "status": "resolved"
+    },
+    {
+      "problem": "Regression test expected promote-success while production gate can legitimately block",
+      "resolution": "Regression harness updated to treat strict 400 gate response as valid when marker present",
+      "status": "resolved",
+      "commit": "5ff5b5d"
+    }
+  ],
+  "open_risks": [
+    {
+      "risk": "Cloud stack still not end-to-end verified in Docker on host",
+      "impact": "Medium",
+      "mitigation": "Run docker-compose full stack test when host Docker available"
+    }
+  ],
+  "requests_for_chatgpt_pro_guidance": [
+    "Prioritize next hardening slice: staged cloud deployment checklist vs adapter-distribution implementation.",
+    "Review trust-policy strictness for potential false-positive rejections in production.",
+    "Recommend acceptance criteria for declaring production readiness after current green CI state."
+  ],
+  "proposed_next_actions": [
+    "Execute full Docker stack validation (api+db+worker) and publish verification artifact.",
+    "Implement BotStore manifest endpoint + OpenClaw adapter v1 install/validate flow.",
+    "Add staging deployment runbook with rollback drill and alert thresholds."
+  ],
+  "artifact_index": [
+    "botstore/research/ci-gate-run-all-report.json",
+    "botstore/research/team-must-pass-gate-report-v1.json",
+    "botstore/research/gptpro-progress-report-2026-03-24-phase2-3.json",
+    "botstore/research/gptpro-next-cycle-report-2026-03-24.json"
+  ]
+}
