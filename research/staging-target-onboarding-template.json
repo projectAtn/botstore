@@ -1,0 +1,29 @@
+{
+  "template_id": "staging-target-onboarding-template",
+  "phase": "S1-managed-staging-rollout",
+  "required_inputs": {
+    "cloud_provider": "(render|fly|railway|k8s)",
+    "staging_api_url": "",
+    "managed_postgres_url": "",
+    "object_storage": {
+      "provider": "(s3|r2|gcs)",
+      "bucket": "",
+      "region": "",
+      "access_key_ref": "",
+      "secret_key_ref": ""
+    },
+    "secrets": {
+      "BOTSTORE_BOT_KEY": "",
+      "DATABASE_URL": "",
+      "ARTIFACTS_DIR": "",
+      "JOB_QUEUE_PATH": "",
+      "JOB_STATUS_PATH": ""
+    }
+  },
+  "acceptance_gates": [
+    "staging-deploy-report.json updated with real endpoint evidence",
+    "staging-smoke-report.json all managed checks pass",
+    "backup-restore-drill.json executed and passed",
+    "seed-restore-report.json managed_staging_pending=false"
+  ]
+}
