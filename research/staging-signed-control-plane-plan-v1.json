@@ -1,0 +1,49 @@
+{
+  "plan_id": "staging-signed-control-plane-v1",
+  "generated_at": "2026-03-25T08:20:00Z",
+  "status": "in_progress",
+  "scope_lock": {
+    "reference_runtime": "openclaw",
+    "autonomous_pack_types": ["skill", "personality"],
+    "frozen_areas": [
+      "catalog_expansion",
+      "team_feature_expansion",
+      "ranking_feature_work",
+      "new_runtime_expansion"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "S1",
+      "name": "Managed staging rollout",
+      "state": "started",
+      "progress_pct": 35,
+      "next_actions": [
+        "create staging deployment checklist artifact",
+        "wire object-storage interface checks in staging mode",
+        "run reversible migration check and backup/restore drill skeleton"
+      ]
+    },
+    {
+      "id": "S2",
+      "name": "Signed manifest endpoint + OpenClaw execution",
+      "state": "queued"
+    },
+    {
+      "id": "S3",
+      "name": "Provenance unification",
+      "state": "queued"
+    },
+    {
+      "id": "S4",
+      "name": "48h staging soak + external canary packet",
+      "state": "queued"
+    },
+    {
+      "id": "S5",
+      "name": "Governance automation",
+      "state": "queued"
+    }
+  ],
+  "invariants_enforced": true
+}
