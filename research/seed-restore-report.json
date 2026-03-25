@@ -1,0 +1,21 @@
+{
+  "report_id": "seed-restore-report",
+  "generated_at": "2026-03-25T09:18:20Z",
+  "phase": "S1-managed-staging-rollout",
+  "status": "in_progress",
+  "pipeline_contract": {
+    "seed_step": "python3 scripts/bootstrap_postgres_from_sqlite.py",
+    "restore_step": "managed-db restore from backup artifact",
+    "post_restore_validation": [
+      "curl /health",
+      "python3 scripts/ci_gate_run_all.py",
+      "team_must_pass_gate"
+    ]
+  },
+  "latest_local_evidence": {
+    "bootstrap_report": "research/bootstrap-postgres-from-sqlite-report.json",
+    "ci_gate": "research/ci-gate-run-all-report.json",
+    "status": "pass"
+  },
+  "managed_staging_pending": true
+}

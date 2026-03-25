@@ -1,0 +1,18 @@
+{
+  "report_id": "backup-restore-drill",
+  "generated_at": "2026-03-25T09:18:00Z",
+  "phase": "S1-managed-staging-rollout",
+  "status": "draft-ready",
+  "objective": "Validate reproducible backup and restore without manual DB edits.",
+  "steps": [
+    {"step": 1, "name": "create_backup", "expected": "pg_dump artifact created and checksummed", "status": "pending-managed"},
+    {"step": 2, "name": "destroy_runtime_db", "expected": "fresh empty DB provisioned", "status": "pending-managed"},
+    {"step": 3, "name": "restore_backup", "expected": "schema+data restored via scripted command", "status": "pending-managed"},
+    {"step": 4, "name": "integrity_validation", "expected": "catalog counts + CI smoke match baseline", "status": "pending-managed"}
+  ],
+  "success_criteria": [
+    "No manual SQL edits",
+    "Restore completes from script only",
+    "Post-restore smoke and CI gate pass"
+  ]
+}
