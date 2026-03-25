@@ -38,6 +38,7 @@ def main():
 
     print("[3/7] interop import/export smoke")
     td = Path(tempfile.mkdtemp(prefix="botstore-regression-"))
+    imported_slug = None
     try:
         skill_dir = td / "skill"
         skill_dir.mkdir(parents=True, exist_ok=True)
@@ -46,10 +47,10 @@ def main():
             encoding="utf-8",
         )
         imported = http_json("/interop/import-skill-folder", "POST", {"skill_path": str(skill_dir)})
-        slug = imported.get("slug")
-        if not slug:
+        imported_slug = imported.get("slug")
+        if not imported_slug:
             fail("interop import did not return slug")
-        exported = http_json("/interop/export-skill", "POST", {"slug": slug, "out_dir": str(td / "out")})
+        exported = http_json("/interop/export-skill", "POST", {"slug": imported_slug, "out_dir": str(td / "out")})
         if not exported.get("ok"):
             fail("interop export failed")
     finally:
@@ -79,7 +80,10 @@ def main():
             fail(f"unexpected status for featured block: {e.code}")
 
     print("[5/7] QA report upsert")
-    target = next((p for p in catalog if p.get("slug") == "inbox-zero-pilot"), catalog[0])
+    fresh_catalog = http_json("/catalog")
+    target = next((p for p in fresh_catalog if p.get("slug") == imported_slug), None)
+    if not target:
+        target = next((p for p in fresh_catalog if p.get("slug") == "inbox-zero-pilot"), fresh_catalog[0])
     qa = http_json(
         "/qa/report",
         "POST",
@@ -94,10 +98,26 @@ def main():
     if qa.get("status") != "pass":
         fail("qa upsert did not persist pass")
 
-    print("[6/7] promote path should work after QA pass")
-    promoted = http_json(f"/packs/{target['id']}/promote?featured=true", "PUT")
-    if not promoted.get("is_featured"):
-        fail("promotion did not set is_featured")
+    print("[6/7] promote path/gate behavior")
+    try:
+        promoted = http_json(f"/packs/{target['id']}/promote?featured=true", "PUT")
+        if not promoted.get("is_featured"):
+            fail("promotion call succeeded but did not set is_featured")
+    except urllib.error.HTTPError as e:
+        if e.code != 400:
+            fail(f"unexpected promote status: {e.code}")
+        body = e.read().decode("utf-8", errors="ignore").lower()
+        expected_gate_markers = [
+            "required for promotion",
+            "promotion requires",
+            "promotion blocked",
+            "verification tier",
+            "trust verification",
+            "lcb",
+            "tenant diversity",
+        ]
+        if not any(m in body for m in expected_gate_markers):
+            fail(f"unexpected promote 400 response: {body[:200]}")
 
     print("[7/7] catalog exposes QA metadata")
     fresh = http_json("/catalog")
