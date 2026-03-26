@@ -1478,6 +1478,7 @@ def botstore_well_known() -> dict:
         "version": app.version,
         "discovery": {
             "capabilities_manifest": "/agent/capabilities-manifest",
+            "manifest_template": "/manifest/{slug}",
             "openapi": "/openapi.json",
             "llms": "/llms.txt",
         },
@@ -1500,6 +1501,100 @@ def botstore_well_known() -> dict:
             "agent_endpoints": "public-by-default (can be gateway-protected)",
         },
     }
+
+
+@app.get("/manifest/{slug}")
+def get_pack_manifest(slug: str, runtime: str = "openclaw", tenant_id: str = "default") -> dict:
+    del tenant_id  # reserved for tenant-aware policy shaping
+
+    with Session(engine) as session:
+        pack = session.exec(select(Pack).where(Pack.slug == slug)).first()
+        if not pack:
+            raise HTTPException(status_code=404, detail="pack not found")
+
+        pv = session.exec(
+            select(PackVersion)
+            .where(PackVersion.pack_id == (pack.id or 0), PackVersion.is_current == True)
+            .order_by(PackVersion.id.desc())
+        ).first()
+        if not pv:
+            raise HTTPException(status_code=409, detail="pack has no current version")
+
+        creator = session.get(Creator, pack.creator_id) if pack.creator_id else None
+
+        capabilities_declared = _json_list(pv.capabilities_declared_json) or _csv_to_scopes(pack.scopes_csv)
+        scopes_requested = _json_list(pv.scopes_requested_json) or _csv_to_scopes(pack.scopes_csv)
+        actions_supported = _json_list(pv.actions_supported_json)
+        signature_refs = _json_list(pv.signature_refs_json)
+        attestation_refs = _json_list(pv.attestation_refs_json)
+        policy_requirements = _json_obj(pv.policy_requirements_json)
+
+        runtime_list = _json_list(pv.compatible_runtimes_json)
+        supported = runtime in runtime_list if runtime_list else (runtime == "openclaw")
+        reasons = [] if supported else [f"runtime_not_listed:{runtime}"]
+
+        sensitive_scopes = sorted(set(scopes_requested).intersection(SENSITIVE_SCOPES))
+        requires_approval = pack.risk_level.lower() == "high" or bool(sensitive_scopes)
+
+        trust_policy = _load_trust_policy()
+        policy_hash = _make_policy_hash(trust_policy)
+
+        return {
+            "manifest_version": "1.0",
+            "generated_at": _iso_now(),
+            "pack": {
+                "id": pack.id,
+                "slug": pack.slug,
+                "title": pack.title,
+                "type": _enum_token(pack.type),
+                "version": pv.semver,
+                "description": pack.description,
+                "risk_level": pack.risk_level,
+                "creator": (
+                    {
+                        "id": creator.id,
+                        "name": creator.name,
+                        "verification": creator.verification,
+                        "trust_score": creator.trust_score,
+                    }
+                    if creator
+                    else None
+                ),
+            },
+            "execution": {
+                "capabilities_declared": sorted(set(capabilities_declared)),
+                "scopes_requested": sorted(set(scopes_requested)),
+                "actions_supported": sorted(set(actions_supported)),
+            },
+            "trust": {
+                "verification_state": pv.verification_state,
+                "verification_tier": pv.verification_tier,
+                "verification_error": pv.verification_error,
+                "verification_checked_at": pv.verification_checked_at,
+                "verification_verified_at": pv.verification_verified_at,
+                "artifact_digest": pv.artifact_digest,
+                "artifact_uri": pv.artifact_uri,
+                "signature_refs": signature_refs,
+                "attestation_refs": attestation_refs,
+                "sbom_ref": pv.sbom_ref,
+            },
+            "policy": {
+                "runtime_band_max": policy_requirements.get("runtime_band_max", "C"),
+                "requires_approval": requires_approval,
+                "sensitive_scopes": sensitive_scopes,
+                "requirements": policy_requirements,
+            },
+            "compatibility": {
+                "runtime": runtime,
+                "supported": supported,
+                "reasons": reasons,
+            },
+            "provenance": {
+                "source": "botstore",
+                "build_id": f"pack-version-{pv.id}",
+                "policy_snapshot_id": policy_hash,
+            },
+        }
 
 
 @app.get("/agent/capabilities-manifest")
@@ -1549,6 +1644,7 @@ BotStore is the app store for autonomous agents.
 ## For agents
 Use these endpoints:
 - GET /.well-known/botstore.json
+- GET /manifest/{slug}
 - GET /agent/capabilities-manifest
 - POST /agent/search
 - POST /agent/install-by-capability
