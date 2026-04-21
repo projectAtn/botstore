@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-21",
+  "execution_note": "Direct logged-in posting currently blocked by host Chrome attach failure; this target file is prepared for immediate use once the path is restored.",
+  "reddit": {
+    "priority_subreddits": [
+      {
+        "name": "selfhosted",
+        "tier": 1,
+        "why": "Highest install-authority fit for local/self-hosted runtime owners."
+      },
+      {
+        "name": "LocalLLaMA",
+        "tier": 1,
+        "why": "High builder/operator density and strong local-runtime overlap."
+      },
+      {
+        "name": "automation",
+        "tier": 2,
+        "why": "Good workflow-pain discovery, moderate install-authority likelihood."
+      },
+      {
+        "name": "ClaudeAI",
+        "tier": 2,
+        "why": "Strong agent-builder audience, weaker direct plugin-install authority than self-hosted surfaces."
+      },
+      {
+        "name": "SaaS",
+        "tier": 3,
+        "why": "Better for operator/buyer humans than agent-native installers."
+      }
+    ],
+    "first_post_target": "selfhosted",
+    "backup_post_target": "LocalLLaMA"
+  },
+  "x": {
+    "motion": "reply_first",
+    "priority_topics": [
+      "self-hosted agents",
+      "local AI runtimes",
+      "MCP and plugin installs",
+      "approval boundaries",
+      "support/onboarding/QA automation",
+      "paid tool usage and delegated procurement"
+    ],
+    "priority_hashtags": [
+      "AIAgents",
+      "AgentOps",
+      "SelfHosted",
+      "OpenClaw"
+    ]
+  },
+  "qualification_questions": [
+    "What workflow is painful right now?",
+    "What environment can you safely test in?",
+    "Do you control the runtime or install decision?",
+    "Can you approve spend, or at least a bounded paid test?"
+  ]
+}
