@@ -10,6 +10,9 @@ Managed-browser recovery succeeded later in the day, so this pack moved from fal
 
 Execution status as of 2026-04-21 late evening:
 - X replies are visible on the prepared Tom Dörr, Matt Silverlock, Future Stack Reviews, AlternativeTo, and MacNaumo targets.
+- Two additional high-signal X replies are now live on runtime/control threads:
+  - Varun Mathur: `https://x.com/BotStore_Hq/status/2046709711437807906`
+  - Filip Pizlo: `https://x.com/BotStore_Hq/status/2046709785320468791`
 - Reddit execution is now live via the `r/selfhosted` new-project megathread comment route:
   - `https://www.reddit.com/r/selfhosted/comments/1snhwhx/comment/ohip2iz/`
 - The original `r/LocalLLaMA` target was not usable for posting because the thread was archived/locked.
@@ -179,3 +182,8 @@ This pack is successful if it yields any of the following:
 The next external moves should stay authority-filtered.
 Broad awareness can come later.
 The priority now is finding people who can actually say yes.
+
+Public-facing copy should also stay disciplined:
+- lead with operator trust and workflow value
+- avoid unnecessary backend or internal architecture detail
+- prefer clear bounded outcomes over implementation exposition

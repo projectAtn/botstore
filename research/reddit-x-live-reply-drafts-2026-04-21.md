@@ -114,9 +114,28 @@ If you own the runtime and have one painful workflow worth testing, I’d love t
 5. `r/selfhosted` standalone post
 6. optional LocalLLaMA constraint-thread comment
 
+## Execution update 2026-04-21 23:52-23:55 CEST
+
+Two additional authority-filtered X replies were posted with tightened public language that avoids backend/control-plane detail and stays focused on operator trust, containment, approval, rollback, and scoped install.
+
+### Live X reply, Varun Mathur
+Target: `https://x.com/varun_mathur/status/2036140875991097356`
+Live reply: `https://x.com/BotStore_Hq/status/2046709711437807906`
+
+Posted text:
+> Interesting direction. We keep seeing the same operator need: before a new agent capability touches real data or actions, people want a clear trust boundary, scoped install, approval, rollback, and proof it behaved as declared. That layer still feels underbuilt.
+
+### Live X reply, Filip Pizlo
+Target: `https://x.com/filpizlo/status/2027862483730633108`
+Live reply: `https://x.com/BotStore_Hq/status/2046709785320468791`
+
+Posted text:
+> Strong agree on removing constant permission spam. The win is better default containment plus clear escalation only when a task actually crosses a boundary. Scoped install, quiet defaults, explicit approval when risk changes, that feels much closer to how agents become usable.
+
 ## Guardrails
 
 - Keep tone builder-to-builder, not launch-marketing.
 - Do not claim broad live adoption.
 - Do not overshare internal roadmap or implementation details.
 - Prefer replies where the capability/trust framing adds something genuinely useful even if BotStore is never mentioned by name.
+- Default to operator-value language over backend explanation.

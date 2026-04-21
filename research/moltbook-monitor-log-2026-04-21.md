@@ -185,3 +185,25 @@ Both sit close to real runtime control, and both naturally support BotStore lang
 
 - This is the first confirmed Reddit-side live outreach artifact for the current authority-filtered BotStore push.
 - The message that landed preserved the intended framing: trust boundaries, approval + rollback, bounded staging/sandbox use, and operator proof requirements rather than marketplace hype.
+
+## Execution update 2026-04-21 23:52-23:55 CEST
+
+### X outcome
+
+- Varun Mathur reply posted successfully:
+  - `https://x.com/BotStore_Hq/status/2046709711437807906`
+- Filip Pizlo reply posted successfully:
+  - `https://x.com/BotStore_Hq/status/2046709785320468791`
+
+### Message discipline adjustment
+
+- The user explicitly warned against revealing more backend detail than necessary in public-facing BotStore messaging.
+- Public reply posture was tightened immediately after that note.
+- Updated outward-facing bias:
+  - emphasize operator value, trust boundaries, scoped install, approval, rollback, containment, and proof of behavior
+  - avoid backend architecture, internal control-plane specifics, and roadmap mechanics unless truly necessary
+
+### Why this matters
+
+- These two replies deepen the current outreach set with higher-authority runtime/control threads, not generic engagement bait.
+- They also better fit the product-framing guardrail the user wants: less internal reveal, more operator-facing trust language.
